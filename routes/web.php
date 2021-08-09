@@ -27,9 +27,13 @@ Auth::routes();
 Route::get( '/home', [ HomeController::class, 'index' ] )->name( 'home' );
 
 Route::middleware( 'isAdmin' )->prefix( 'admin' )->group( function () {
-    Route::resources( [
-        'categories' => CategoryController::class,
-        'recipes'    => RecipeController::class,
-        'resources'  => ResourceController::class,
+    Route::resource( 'categories', CategoryController::class )->parameters( [
+        'categories' => 'id'
+    ] );
+    Route::resource( 'recipes', RecipeController::class )->parameters( [
+        'recipes' => 'id'
+    ] );
+    Route::resource( 'resources', ResourceController::class )->parameters( [
+        'resources' => 'id'
     ] );
 } );
