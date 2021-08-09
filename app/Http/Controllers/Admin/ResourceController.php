@@ -16,11 +16,6 @@ class ResourceController extends Controller {
     protected $name = 'resources.';
     protected $folderPath = 'admin.pages.resources.';
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
-    protected $isAdmin;
-
-    function __construct() {
-        $this->isAdmin = isAdmin();
-    }
 
 
     public function index() {
@@ -30,17 +25,11 @@ class ResourceController extends Controller {
     }
 
     public function create() {
-        if ( ! $this->isAdmin ) {
-            return Redirect::to( route( $this->name . 'index' ) );
-        }
 
         return view( $this->folderPath . 'create' );
     }
 
     public function store( AddResource $request ) {
-        if ( ! $this->isAdmin ) {
-            return Redirect::to( route( $this->name . 'index' ) );
-        }
         $slug = Str::slug( $request->name, '-' );
         $img  = $request->file( 'image' );
 
@@ -76,9 +65,6 @@ class ResourceController extends Controller {
 
 
     public function edit( int $id ) {
-        if ( ! $this->isAdmin ) {
-            return Redirect::to( route( $this->name . 'index' ) );
-        }
         $single = Resource::findOrFail( $id );
         $all    = Resource::orderBy( 'name', 'asc' )->get();
 
@@ -96,9 +82,6 @@ class ResourceController extends Controller {
      * Имя файла - текущая метка юникс( для уникальности имен) + слаг имени файла без расширения + расширение файла
      */
     public function update( EditResource $request, int $id ) {
-        if ( ! $this->isAdmin ) {
-            return Redirect::to( route( $this->name . 'index' ) );
-        }
         $method = $request->input( 'method' );
         $single = Resource::findOrFail( $id );
         $all    = Resource::orderBy( 'name', 'asc' )->get();
@@ -136,9 +119,6 @@ class ResourceController extends Controller {
 
 
     public function destroy( int $id ) {
-        if ( ! $this->isAdmin ) {
-            return Redirect::to( route( $this->name . 'index' ) );
-        }
         $single = Resource::findOrFail( $id );
 
         try {

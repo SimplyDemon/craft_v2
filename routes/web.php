@@ -26,7 +26,7 @@ Auth::routes();
 
 Route::get( '/home', [ HomeController::class, 'index' ] )->name( 'home' );
 
-Route::prefix( 'admin' )->group( function () {
+Route::middleware( 'isAdmin' )->prefix( 'admin' )->group( function () {
     Route::resources( [
         'categories' => CategoryController::class,
         'recipes'    => RecipeController::class,

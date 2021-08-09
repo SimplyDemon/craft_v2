@@ -19,11 +19,6 @@ class RecipeController extends Controller {
     protected $name = 'recipes.';
     protected $folderPath = 'admin.pages.recipes.';
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
-    protected $isAdmin;
-
-    function __construct() {
-        $this->isAdmin = isAdmin();
-    }
 
 
     public function index() {
@@ -45,9 +40,6 @@ class RecipeController extends Controller {
     }
 
     public function create() {
-        if ( ! $this->isAdmin ) {
-            return Redirect::to( route( $this->name . 'index' ) );
-        }
         $percentTypes = DB::select( DB::raw( 'SHOW COLUMNS FROM recipes WHERE Field = "percent"' ) )[0]->Type;
         $gradeTypes   = DB::select( DB::raw( 'SHOW COLUMNS FROM recipes WHERE Field = "grade"' ) )[0]->Type;
 
@@ -77,9 +69,6 @@ class RecipeController extends Controller {
     }
 
     public function store( AddRecipe $request ) {
-        if ( ! $this->isAdmin ) {
-            return Redirect::to( route( $this->name . 'index' ) );
-        }
         //if its resource recipe don't need put name, just get name from resource id
         if ( $request->resource_id ) {
             $resourceName = $request->name = Resource::findOrFail( $request->resource_id )->name;
@@ -115,9 +104,6 @@ class RecipeController extends Controller {
 
 
     public function edit( int $id ) {
-        if ( ! $this->isAdmin ) {
-            return Redirect::to( route( $this->name . 'index' ) );
-        }
         $single       = Recipe::findOrFail( $id );
         $percentTypes = DB::select( DB::raw( 'SHOW COLUMNS FROM recipes WHERE Field = "percent"' ) )[0]->Type;
         $gradeTypes   = DB::select( DB::raw( 'SHOW COLUMNS FROM recipes WHERE Field = "grade"' ) )[0]->Type;
@@ -154,9 +140,6 @@ class RecipeController extends Controller {
 
 
     public function update( EditRecipe $request, int $id ) {
-        if ( ! $this->isAdmin ) {
-            return Redirect::to( route( $this->name . 'index' ) );
-        }
         $method             = $request->input( 'method' );
         $resourceIDs        = $request->input( 'resource_ids' );
         $resourceQuantities = $request->input( 'resource_quantity' );
@@ -204,9 +187,6 @@ class RecipeController extends Controller {
 
 
     public function destroy( int $id ) {
-        if ( ! $this->isAdmin ) {
-            return Redirect::to( route( $this->name . 'index' ) );
-        }
         $single = Recipe::findOrFail( $id );
 
         try {
