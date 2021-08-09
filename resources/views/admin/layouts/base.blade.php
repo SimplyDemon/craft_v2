@@ -1,63 +1,76 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <!--[if IE]>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <meta charset="UTF-8">
-    <title>{{ $title ?? 'l2craft' }}</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="kywords" content="">
-    <meta name="description" content="">
+
+    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta property="og:site_name" content="l2craft"/>
-    <meta property="og:title" content="l2Craft - Калькулятор крафта Ла2"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="http://l2craft.ru"/>
-    {{--<meta property="og:image" content="/theme/images/icon/share.png" />--}}
-    <meta property="og:description"
-          content="Калькулятор крафта позволяет расчитать все необходимые ресурсы для крафта и прикинуть потенциальную прибыль"/>
+    <title>{{ config('app.name', 'Fire') }}</title>
 
-    {{--<link rel="apple-touch-icon" sizes="60x60" href="{{asset('img/icon/apple-touch-icon-57x57.png')}}">--}}
-    {{--<link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/icon/apple-touch-icon-76x76.png')}}">--}}
-    {{--<link rel="apple-touch-icon" sizes="120x120" href="{{asset('img/icon/apple-touch-icon-120x120.png')}}">--}}
-    {{--<link rel="apple-touch-icon" sizes="152x152" href="{{asset('img/icon/apple-touch-icon-152x152.png')}}">--}}
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-    {{--<link rel="shortcut icon" href="{{asset('img/icon/favicon.ico')}}" type="image/x-icon">--}}
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    {{--<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">--}}
-    {{--<link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">--}}
-    {{--<link rel="stylesheet" href="{{asset('css/main.min.css')}}">--}}
-
-    {{--<link rel="stylesheet" href="{{asset('js/owl-carousel/owl.carousel.css')}}">--}}
-    {{--<link rel="stylesheet" href="{{asset('js/owl-carousel/owl.theme.css')}}">--}}
-
-    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
-    <!-- Font Awesome pathAdminAsset -->
-    <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="{{ asset('Ionicons/css/ionicons.min.css') }}">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('css/AdminLTE.min.css') }}">
-
-    @stack('styles')
-    @stack('head-scripts')
-
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <main class="main" role="main">
-    <div class="wrapper">
-        <div class="container-fluid">
-            <ul>
-                <li><a href="{{route('resources.index')}}">Ресурсы</a></li>
-                <li><a href="{{route('recipes.index')}}">Рецепты</a></li>
-                <li><a href="{{route('categories.index')}}">Категории</a></li>
-            </ul>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="{{ route('resources.index') }}">
+                    Ресурсы
+                </a>
+                <a class="navbar-brand" href="{{ route('recipes.index') }}">
+                    Рецепты
+                </a>
+                <a class="navbar-brand" href="{{ route('categories.index') }}">
+                    Категории
+                </a>
 
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
 
-            @yield('content')
+                    <button type="submit" class="btn btn-primary">
+                        Выйти
+                    </button>
+                </form>
 
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+
+                        <div class="card-body">
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
+
+                            @if (Session::has('message'))
+                                <li class="list-group-item">{!! session('message') !!}</li>
+                            @endif
+                            @yield('content')
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+    </div>
     </div>
 </main>
 

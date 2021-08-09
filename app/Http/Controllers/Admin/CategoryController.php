@@ -71,7 +71,7 @@ class CategoryController extends Controller {
         $single = Category::findOrFail( $id );
         $all    = Category::orderBy( 'name', 'asc' )->get();
 
-        return view( $this->folderPath . 'edit', [ 'single' => $single, 'all' => $all ] );
+        return view( $this->folderPath . 'edit', [ 'single' => $single, 'all' => $all, 'id' => $id ] );
     }
 
 
@@ -97,7 +97,7 @@ class CategoryController extends Controller {
         $request->session()->flash( 'message', $message );
 
         if ( $method == 'Применить' ) {
-            return Redirect::to( route( $this->name . 'edit', [ 'single' => $single, 'all' => $all ] ) );
+            return Redirect::to( route( $this->name . 'edit', [ 'all' => $all, 'id' => $id ] ) );
         }
 
         return Redirect::to( route( $this->name . 'index' ) );
