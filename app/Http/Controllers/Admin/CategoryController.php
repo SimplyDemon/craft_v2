@@ -106,10 +106,14 @@ class CategoryController extends Controller {
     }
 
 
-    public function destroy( int $id ) {
-        $single = Category::findOrFail( $id );
+    public function destroy( Request $request, int $id ) {
+        $isDeleteChild = $request->request->get( 'deleteChild' ) == 1;
+        $single        = Category::findOrFail( $id );
 
         try {
+            if ( ! $isDeleteChild ) {
+                Category::where( 'category_id', $single->id )->update( [ 'category_id' => null ] );
+            }
             $single->delete();
             $message = 'Удаление выполнено успешно!';
         } catch ( QueryException $exception ) {

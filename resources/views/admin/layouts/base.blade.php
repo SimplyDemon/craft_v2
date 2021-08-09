@@ -62,6 +62,9 @@
                             @if (Session::has('message'))
                                 <li class="list-group-item">{!! session('message') !!}</li>
                             @endif
+                            @foreach ($errors->all() as $error)
+                                <li class="list-group-item">{{ $error }}</li>
+                            @endforeach
                             @yield('content')
 
                         </div>

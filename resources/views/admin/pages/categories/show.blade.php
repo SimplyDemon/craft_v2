@@ -21,6 +21,12 @@
         <form method="POST" action="{{ route( 'categories.destroy', [ 'id' => $single->id ] ) }}">
             @csrf
             @method('DELETE')
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="1" id="deleteChild" name="deleteChild">
+                <label class="form-check-label" for="deleteChild">
+                    Удалить дочерние
+                </label>
+            </div>
             <button class="btn btn-primary mb-2">Удалить</button>
         </form>
 
