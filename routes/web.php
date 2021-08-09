@@ -11,8 +11,12 @@
 |
 */
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\RecipeController;
+use App\Http\Controllers\Admin\ResourceController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 Route::get( '/', function () {
     return view( 'welcome' );
@@ -20,12 +24,12 @@ Route::get( '/', function () {
 
 Auth::routes();
 
-Route::get( '/home', 'HomeController@index' )->name( 'home' );
+Route::get( '/home', [ HomeController::class, 'index' ] )->name( 'home' );
 
-Route::group( [ 'namespace' => 'Admin' ], function () {
+Route::prefix( 'admin' )->group( function () {
     Route::resources( [
-        'categories' => 'CategoryController',
-        'recipes'    => 'RecipeController',
-        'resources'  => 'ResourceController',
+        'categories' => CategoryController::class,
+        'recipes'    => RecipeController::class,
+        'resources'  => ResourceController::class,
     ] );
 } );
