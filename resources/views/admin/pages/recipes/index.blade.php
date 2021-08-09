@@ -18,7 +18,7 @@
                     </a>
 
                     @if($single->subCategories)
-                        <ul>
+                        <ul class="list-group">
                             @foreach( $single->subCategories as $subCategory)
                                 <li class="list-group-item">
                                     <a href="{{ route( 'recipes.show', [ 'id' => $subCategory->id ] ) }}">

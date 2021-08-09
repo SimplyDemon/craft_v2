@@ -43,9 +43,9 @@ class ResourceController extends Controller {
 
         try {
 
-            $resourceID = Resource::create( $request->except( 'image' ) );
+            $resource = Resource::create( $request->except( 'image' ) );
 
-            $url     = route( $this->name . 'show', [ 'single' => $resourceID ] );
+            $url = route( $this->name . 'show', [ 'single' => $resource, 'id' => $resource->id ] );
             $message = "Добавление выполнено успешно! Нажмите <a href='{$url}'>сюда</a> что бы посмотреть";
         } catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
@@ -108,7 +108,11 @@ class ResourceController extends Controller {
         $request->session()->flash( 'message', $message );
 
         if ( $method == 'Применить' ) {
-            return Redirect::to( route( $this->name . 'edit', [ 'single' => $single, 'all' => $all ] ) );
+            return Redirect::to( route( $this->name . 'edit', [
+                'single' => $single,
+                'all'    => $all,
+                'id'     => $single->id
+            ] ) );
         }
 
         //save
