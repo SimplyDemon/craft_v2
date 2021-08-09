@@ -82,9 +82,9 @@ class RecipeController extends Controller {
 
 
         try {
-            $recipeID = Recipe::create( $request->except( 'image' ) );
+            $recipe = Recipe::create( $request->except( 'image' ) );
 
-            $url     = route( $this->name . 'show', [ 'single' => $recipeID ] );
+            $url     = route( $this->name . 'show', [ 'single' => $recipe, 'id' => $recipe->id ] );
             $message = "Добавление выполнено успешно! Нажмите <a href='{$url}'>сюда</a> что бы посмотреть";
         } catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
@@ -99,7 +99,7 @@ class RecipeController extends Controller {
     public function show( int $id ) {
         $single = Recipe::findOrFail( $id );
 
-        return view( $this->folderPath . 'show', [ 'single' => $single ] );
+        return view( $this->folderPath . 'show', [ 'single' => $single, 'id' => $single->id ] );
     }
 
 

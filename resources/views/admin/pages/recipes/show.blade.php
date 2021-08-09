@@ -1,34 +1,51 @@
 @extends('admin.layouts.primary')
 @section('content')
-    <div class="content-wrapper">
-        <section class="content-header">
-            <h1>
-                Одиночная страница
-            </h1>
-        </section>
-
-        <section class="content container-fluid">
-
-            Айди: {{$single->id}}<br>
-            Название: {{$single->name}}<br>
-            Слаг: {{$single->slug}}<br>
-            Цена: {{$single->cost}}<br>
-            Цена Крафта: {{$single->craft_cost}}<br>
-            Ссылка на изображение: {{$single->img}}<br>
-            Процент: {{$single->percent}}<br>
-            Грейд: {{$single->grade}}<br>
-            Айди категории: {{$single->category_id}}<br>
-            Дата создания: {{$single->created_at}}<br>
-            <form method="POST" action="{{ route( 'recipes.destroy', [ 'id' => $single->id ] ) }}">
-                @csrf
-                @method('DELETE')
-                <button>Удалить</button>
-            </form>
-            <br>
-            <a href="{{ route( 'recipes.edit', [ 'id' => $single->id ] ) }}">Редактировать</a>
-
-
-        </section>
+    <div class="card">
+        <h1 class="card-header">{{ $title ?? 'Одиночная страница' }}</h1>
     </div>
+
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            Айди: {{$single->id}}
+        </li>
+        <li class="list-group-item">
+            Название: {{$single->name}}
+        </li>
+        <li class="list-group-item">
+            Слаг: {{$single->slug}}
+        </li>
+        <li class="list-group-item">
+            Цена: {{$single->cost}}
+        </li>
+        <li class="list-group-item">
+            Цена Крафта: {{$single->craft_cost}}
+        </li>
+        <li class="list-group-item">
+            Ссылка на изображение: {{$single->img}}
+        </li>
+        <li class="list-group-item">
+            Процент: {{$single->percent}}
+        </li>
+        <li class="list-group-item">
+            Грейд: {{$single->grade}}
+        </li>
+        <li class="list-group-item">
+            Айди категории: {{$single->category_id}}
+        </li>
+        <li class="list-group-item">
+            Дата создания: {{$single->created_at}}
+        </li>
+
+    </ul>
+    <form method="POST" action="{{ route( 'recipes.destroy', [ 'id' => $single->id ] ) }}">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-primary">Удалить</button>
+    </form>
+
+    <a href="{{ route( 'recipes.edit', [ 'id' => $single->id ] ) }}">Редактировать</a>
+
+
 
 @endsection
