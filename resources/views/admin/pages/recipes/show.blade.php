@@ -1,9 +1,10 @@
 @extends('admin.layouts.primary')
 @section('content')
     <div class="card">
-        <h1 class="card-header">{{ $title ?? 'Одиночная страница' }}</h1>
+        <h1 class="card-header">
+            {{ $title ?? 'Одиночная страница' }}
+        </h1>
     </div>
-
 
     <ul class="list-group">
         <li class="list-group-item">
@@ -41,10 +42,14 @@
     <form method="POST" action="{{ route( 'recipes.destroy', [ 'id' => $single->id ] ) }}">
         @csrf
         @method('DELETE')
-        <button class="btn btn-primary">Удалить</button>
+        <button class="btn btn-primary">
+            Удалить
+        </button>
     </form>
 
-    <a href="{{ route( 'recipes.edit', [ 'id' => $single->id ] ) }}">Редактировать</a>
+    <a href="{{ route( 'recipes.edit', [ 'id' => $single->id ] ) }}">
+        Редактировать
+    </a>
 
 
 

@@ -60,10 +60,14 @@
                             @endif
 
                             @if (Session::has('message'))
-                                <li class="list-group-item">{!! session('message') !!}</li>
+                                <li class="list-group-item">
+                                    {!! session('message') !!}
+                                </li>
                             @endif
                             @foreach ($errors->all() as $error)
-                                <li class="list-group-item">{{ $error }}</li>
+                                <li class="list-group-item">
+                                    {{ $error }}
+                                </li>
                             @endforeach
                             @yield('content')
 
@@ -72,10 +76,7 @@
                 </div>
             </div>
         </div>
-
-    </div>
     </div>
 </main>
-
 </body>
 </html>

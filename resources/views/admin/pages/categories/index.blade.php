@@ -1,10 +1,15 @@
 @extends('admin.layouts.primary')
 @section('content')
     <div class="card">
-        <h1 class="card-header">{{ $title ?? 'Все Категории' }}</h1>
+        <h1 class="card-header">
+            {{ $title ?? 'Все Категории' }}
+        </h1>
     </div>
+
     <div>
-        <a href="{{ route( 'categories.create' ) }}">Добавить еще</a>
+        <a href="{{ route( 'categories.create' ) }}">
+            Добавить еще
+        </a>
     </div>
     @if ($all)
         <ul class="list-group">
@@ -23,13 +28,10 @@
                                     </a>
                                 </li>
                             @endforeach
-
                         </ul>
                     @endif
                 </li>
             @endforeach
         </ul>
     @endif
-
-
 @endsection

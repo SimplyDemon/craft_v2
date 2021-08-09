@@ -2,11 +2,15 @@
 @section('content')
 
     <div class="card">
-        <h1 class="card-header">{{ $title ?? 'Все Рецепты' }}</h1>
+        <h1 class="card-header">
+            {{ $title ?? 'Все Рецепты' }}
+        </h1>
     </div>
 
     <div>
-        <a href="{{ route( 'recipes.create' ) }}">Добавить еще</a>
+        <a href="{{ route( 'recipes.create' ) }}">
+            Добавить еще
+        </a>
     </div>
 
     @if ($all)
@@ -28,12 +32,9 @@
                             @endforeach
                         </ul>
                     @endif
-
-
                 </li>
             @endforeach
         </ul>
     @endif
-
 
 @endsection

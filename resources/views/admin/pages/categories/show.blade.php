@@ -1,7 +1,9 @@
 @extends('admin.layouts.primary')
 @section('content')
     <div class="card">
-        <h1 class="card-header">{{ $title ?? 'Одиночная страница' }}</h1>
+        <h1 class="card-header">
+            {{ $title ?? 'Одиночная страница' }}
+        </h1>
     </div>
 
     <ul class="list-group">
@@ -27,10 +29,15 @@
                     Удалить дочерние
                 </label>
             </div>
-            <button class="btn btn-primary">Удалить</button>
+
+            <button class="btn btn-primary">
+                Удалить
+            </button>
         </form>
 
-        <a href="{{ route( 'categories.edit', [ 'id' => $single->id ] ) }}">Редактировать</a>
+        <a href="{{ route( 'categories.edit', [ 'id' => $single->id ] ) }}">
+            Редактировать
+        </a>
 
 
     </ul>

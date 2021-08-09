@@ -1,8 +1,11 @@
 @extends('admin.layouts.primary')
 @section('content')
     <div class="card">
-        <h1 class="card-header">{{ $title ?? 'Одиночная страница' }}</h1>
+        <h1 class="card-header">
+            {{ $title ?? 'Одиночная страница' }}
+        </h1>
     </div>
+
     <ul class="list-group">
         <li class="list-group-item">
             Айди: {{$single->id}}
@@ -26,13 +29,18 @@
             Дата создания: {{$single->created_at}}
         </li>
     </ul>
+
     <form method="POST" action="{{ route( 'resources.destroy', [ 'id' => $single->id ] ) }}">
         @csrf
         @method('DELETE')
-        <button class="btn btn-primary">Удалить</button>
+        <button class="btn btn-primary">
+            Удалить
+        </button>
     </form>
 
-    <a href="{{ route( 'resources.edit', [ 'id' => $single->id ] ) }}">Редактировать</a>
+    <a href="{{ route( 'resources.edit', [ 'id' => $single->id ] ) }}">
+        Редактировать
+    </a>
 
 
 @endsection
