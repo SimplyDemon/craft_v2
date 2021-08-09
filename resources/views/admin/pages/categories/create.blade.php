@@ -23,7 +23,7 @@
         </div>
 
 
-        <button>Создать</button>
+        <button class="btn btn-primary">Создать</button>
     </form>
 
 @endsection

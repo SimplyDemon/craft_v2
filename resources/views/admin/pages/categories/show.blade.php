@@ -27,7 +27,7 @@
                     Удалить дочерние
                 </label>
             </div>
-            <button class="btn btn-primary mb-2">Удалить</button>
+            <button class="btn btn-primary">Удалить</button>
         </form>
 
         <a href="{{ route( 'categories.edit', [ 'id' => $single->id ] ) }}">Редактировать</a>

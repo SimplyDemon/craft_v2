@@ -33,9 +33,9 @@
             </select>
         </div>
 
-        <input type="submit" name="method" value="Применить">
-        <input type="submit" name="method" value="Сохранить">
-        <button onclick="history.back(); return false;">Назад</button>
+        <input class="btn btn-primary" type="submit" name="method" value="Применить">
+        <input class="btn btn-primary" type="submit" name="method" value="Сохранить">
+        <button class="btn btn-primary" onclick="history.back(); return false;">Назад</button>
     </form>
 
 
