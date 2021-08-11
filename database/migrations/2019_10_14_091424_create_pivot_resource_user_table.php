@@ -17,7 +17,7 @@ class CreatePivotResourceUserTable extends Migration {
             $table->bigInteger( 'resource_id' )->unsigned();
             $table->foreign( 'user_id' )->references( 'id' )->on( 'users' )->onDelete( 'cascade' );
             $table->foreign( 'resource_id' )->references( 'id' )->on( 'resources' )->onDelete( 'cascade' );
-            $table->string( 'prices' )->nullable(); //json values
+            $table->bigInteger( 'price' );
             $table->timestamps();
         } );
     }
