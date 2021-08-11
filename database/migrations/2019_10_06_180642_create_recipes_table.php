@@ -15,7 +15,7 @@ class CreateRecipesTable extends Migration {
             $table->bigIncrements( 'id' );
             $table->string( 'name' )->unique();
             $table->string( 'slug' )->unique();
-            $table->integer( 'cost' );
+            $table->integer( 'cost' )->nullable(); // set cost as admin for all users, if they don't inserted their price
             $table->string( 'img' ); //url
             $table->enum( 'percent', [ '60', '100' ] )->default( '100' ); //chance to craft
             $table->enum( 'grade', [ 'none', 'NG', 'C', 'B', 'A', 'S', 'S-80', 'S-84' ] )->default( 'none' );

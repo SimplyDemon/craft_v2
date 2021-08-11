@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class UpdateRecipesTableAddResourceId extends Migration {
     /**
-     * Run the migrations.
+     * For case if it recipe of resource
      *
      * @return void
      */
