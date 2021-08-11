@@ -18,7 +18,7 @@ class IsAdmin {
     public function handle( Request $request, Closure $next ) {
         $user = Auth::user();
 
-        if ( $user && $user->is_admin != 1 ) {
+        if ( ! $user || $user->is_admin != 1 ) {
             return redirect( 'home' );
 
         }
