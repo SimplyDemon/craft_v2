@@ -23,7 +23,6 @@ class EditRecipe extends FormRequest {
 		return [
 			'name'  => 'required|min:2|max:50|unique:recipes,id,' . $this->currentID,
 			'cost'  => 'integer',
-			'image' => 'file',
 		];
 	}
 }

@@ -14,6 +14,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\ResourceController;
+use App\Http\Controllers\Admin\ItemController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -35,5 +36,8 @@ Route::middleware( 'isAdmin' )->prefix( 'admin' )->group( function () {
     ] );
     Route::resource( 'resources', ResourceController::class )->parameters( [
         'resources' => 'id'
+    ] );
+    Route::resource( 'items', ItemController::class )->parameters( [
+        'items' => 'id'
     ] );
 } );

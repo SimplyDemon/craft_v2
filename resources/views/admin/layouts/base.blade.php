@@ -35,6 +35,9 @@
                 <a class="navbar-brand" href="{{ route('categories.index') }}">
                     Категории
                 </a>
+                <a class="navbar-brand" href="{{ route('items.index') }}">
+                    Вещи
+                </a>
 
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

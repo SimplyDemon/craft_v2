@@ -6,13 +6,13 @@
         </h1>
     </div>
 
-    <form method="post" action="<?= route( 'recipes.store' ) ?>">
+    <form method="post" action="{{ route( 'recipes.store' ) }}">
         @csrf
         <div class="form-group">
             <label for="name">
                 Рецепт
             </label>
-            <input class="form-control" type="text" name="name" id="name" value="{{old('name','res')}}">
+            <input class="form-control" type="text" name="name" id="name" value="{{old('name','')}}">
         </div>
 
         <div class="form-group">

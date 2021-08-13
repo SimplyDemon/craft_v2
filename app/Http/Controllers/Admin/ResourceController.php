@@ -43,9 +43,9 @@ class ResourceController extends Controller {
 
         try {
 
-            $resource = Resource::create( $request->except( 'image' ) );
+            $single = Resource::create( $request->except( 'image' ) );
 
-            $url = route( $this->name . 'show', [ 'single' => $resource, 'id' => $resource->id ] );
+            $url     = route( $this->name . 'show', [ 'id' => $single->id ] );
             $message = "Добавление выполнено успешно! Нажмите <a href='{$url}'>сюда</a> что бы посмотреть";
         } catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];

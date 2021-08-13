@@ -48,8 +48,10 @@ class CategoryController extends Controller {
         $request->merge( [ 'slug' => $slug ] );
 
         try {
-            Category::create( $request->all() );
-            $message = 'Добавление выполнено успешно!';
+            $single = Category::create( $request->all() );
+            $url    = route( $this->name . 'show', [ 'id' => $single->id ] );
+
+            $message = "Добавление выполнено успешно! Нажмите <a href='{$url}'>сюда</a> что бы посмотреть";
         } catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
         }

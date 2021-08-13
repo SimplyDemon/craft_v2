@@ -3,16 +3,15 @@
 
     <div class="card">
         <h1 class="card-header">
-            {{ $title ?? 'Все Рецепты' }}
+            {{ $title ?? 'Все Вещи' }}
         </h1>
     </div>
 
     <div>
-        <a href="{{ route( 'recipes.create' ) }}">
+        <a href="{{ route( 'items.create' ) }}">
             Добавить еще
         </a>
     </div>
-
 
     @if ($categories)
         <ul class="list-group">
@@ -25,7 +24,7 @@
                     @foreach($all as $single)
                         @if($single->category_id == $singleCategory->id)
                             <div>
-                                <a href="{{ route( 'recipes.show', [ 'id' => $single->id ] ) }}">
+                                <a href="{{ route( 'items.show', [ 'id' => $single->id ] ) }}">
                                     {{$single->name}}
                                 </a>
                             </div>
@@ -43,7 +42,7 @@
                                     @foreach($all as $single)
                                         @if($single->category_id == $subCategory->id)
                                             <div>
-                                                <a href="{{ route( 'recipes.show', [ 'id' => $single->id ] ) }}">
+                                                <a href="{{ route( 'items.show', [ 'id' => $single->id ] ) }}">
                                                     {{$single->name}}
                                                 </a>
                                             </div>

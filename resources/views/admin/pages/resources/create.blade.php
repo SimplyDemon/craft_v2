@@ -5,7 +5,7 @@
             {{ $title ?? 'Добавить' }}
         </h1>
     </div>
-    <form method="post" action="<?= route( 'resources.store' ) ?>" enctype="multipart/form-data">
+    <form method="post" action="<{{ route( 'resources.store' ) }}" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
