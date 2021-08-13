@@ -14,6 +14,7 @@
     </div>
 
 
+
     @if ($categories)
         <ul class="list-group">
             @foreach($categories as $singleCategory)
