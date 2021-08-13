@@ -10,8 +10,11 @@ class Item extends Model {
 
     protected $guarded = [ 'id', 'created_at', 'updated_at', 'deleted_at' ];
 
-    public function categories() {
+    public function category() {
         return $this->belongsTo( Category::class );
     }
 
+    public function recipe() {
+        return $this->hasOne( Recipe::class );
+    }
 }

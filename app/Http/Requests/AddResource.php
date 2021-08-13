@@ -21,7 +21,6 @@ class AddResource extends FormRequest {
 	 */
 	public function rules() {
 		return [
-            'name'  => 'required|min:2|max:50|unique:resources',
             'cost'  => 'required|integer',
             'image' => 'required|file',
         ];

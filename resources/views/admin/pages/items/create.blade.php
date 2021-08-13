@@ -12,21 +12,21 @@
             <label for="name">
                 Вещь
             </label>
-            <input class="form-control" type="text" name="name" id="name" value="{{old('name','')}}">
+            <input class="form-control" type="text" name="name" id="name" value="{{old('name')}}">
         </div>
 
         <div class="form-group">
             <label for="cost">
                 Цена
             </label>
-            <input class="form-control" type="number" name="cost" id="cost" value="{{old('cost','')}}" min="0">
+            <input class="form-control" type="number" name="cost" id="cost" value="{{old('cost')}}" min="0">
         </div>
 
         <div class="form-group">
             <label for="rare_cost">
                 Цена рарки
             </label>
-            <input class="form-control" type="number" name="rare_cost" id="rare_cost" value="{{old('rare_cost','')}}"
+            <input class="form-control" type="number" name="rare_cost" id="rare_cost" value="{{old('rare_cost')}}"
                    min="0">
         </div>
 
@@ -35,7 +35,7 @@
                 Количество кристаллов
             </label>
             <input class="form-control" type="number" name="crystal_count" id="crystal_count"
-                   value="{{old('crystal_count','')}}" min="0">
+                   value="{{old('crystal_count')}}" min="0">
         </div>
 
         <div class="form-group">
@@ -71,7 +71,7 @@
             <label for="p_attack">
                 p_attack
             </label>
-            <input class="form-control" type="number" name="p_attack" id="p_attack" value="{{old('p_attack','')}}"
+            <input class="form-control" type="number" name="p_attack" id="p_attack" value="{{old('p_attack')}}"
                    min="0">
         </div>
 
@@ -79,7 +79,7 @@
             <label for="m_attack">
                 m_attack
             </label>
-            <input class="form-control" type="number" name="m_attack" id="m_attack" value="{{old('m_attack','')}}"
+            <input class="form-control" type="number" name="m_attack" id="m_attack" value="{{old('m_attack')}}"
                    min="0">
         </div>
 
@@ -88,7 +88,7 @@
                 soul_shots_count
             </label>
             <input class="form-control" type="number" name="soul_shots_count" id="soul_shots_count"
-                   value="{{old('soul_shots_count','')}}" min="0">
+                   value="{{old('soul_shots_count')}}" min="0">
         </div>
 
         <div class="form-group">
@@ -96,21 +96,21 @@
                 spirit_shots_count
             </label>
             <input class="form-control" type="number" name="spirit_shots_count" id="spirit_shots_count"
-                   value="{{old('spirit_shots_count','')}}" min="0">
+                   value="{{old('spirit_shots_count')}}" min="0">
         </div>
 
         <div class="form-group">
             <label for="p_def">
                 p_def
             </label>
-            <input class="form-control" type="number" name="p_def" id="p_def" value="{{old('p_def','')}}" min="0">
+            <input class="form-control" type="number" name="p_def" id="p_def" value="{{old('p_def')}}" min="0">
         </div>
 
         <div class="form-group">
             <label for="m_def">
                 m_def
             </label>
-            <input class="form-control" type="number" name="m_def" id="m_def" value="{{old('m_def','')}}" min="0">
+            <input class="form-control" type="number" name="m_def" id="m_def" value="{{old('m_def')}}" min="0">
         </div>
 
         <div class="form-group">

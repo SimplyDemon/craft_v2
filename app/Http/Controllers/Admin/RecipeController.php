@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\AddRecipe;
 use App\Http\Requests\EditRecipe;
 use App\Models\Category;
+use App\Models\Item;
 use App\Models\Recipe;
 use App\Models\Resource;
 use Illuminate\Database\QueryException;
@@ -55,7 +56,7 @@ class RecipeController extends Controller {
             $gradeValues[] = trim( $value, "'" );
         }
 
-
+        $items      = Item::all();
         $categories = Category::orderBy( 'name', 'asc' )->get();
         $resources  = Resource::orderBy( 'name', 'asc' )->get();
 
@@ -65,14 +66,18 @@ class RecipeController extends Controller {
             'gradeValues'   => $gradeValues,
             'categories'    => $categories,
             'resources'     => $resources,
+            'items'         => $items,
         ] );
     }
 
     public function store( AddRecipe $request ) {
-        //if its resource recipe don't need put name, just get name from resource id
+        //if its resource or item recipe don't need put name, just get name from resource id
         if ( $request->resource_id ) {
             $resourceName = $request->name = Resource::findOrFail( $request->resource_id )->name;
             $request->merge( [ 'name' => $resourceName ] );
+        } else if ( $request->item_id ) {
+            $itemName = $request->name = Item::findOrFail( $request->item_id )->name;
+            $request->merge( [ 'name' => $itemName ] );
         }
 
 
@@ -146,6 +151,14 @@ class RecipeController extends Controller {
 
         $single = Recipe::findOrFail( $id );
 
+        //if its resource or item recipe don't need put name, just get name from resource id
+        if ( $request->resource_id && $single->resource_id != $request->resource_id ) {
+            $resourceName = $request->name = Resource::findOrFail( $request->resource_id )->name;
+            $request->merge( [ 'name' => $resourceName ] );
+        } else if ( $request->item_id && $single->item_id != $request->item_id ) {
+            $itemName = $request->name = Item::findOrFail( $request->item_id )->name;
+            $request->merge( [ 'name' => $itemName ] );
+        }
 
         //default delete all recipe values and write again its much better then make 1000 checks
         DB::table( 'recipe_resource' )->where( [

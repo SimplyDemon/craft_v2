@@ -67,16 +67,16 @@
         </div>
 
         <div class="form-group">
-            <label for="category_id">
-                Категория
+            <label for="item_id">
+                Вещь
             </label>
-            <select class="form-control" name="category_id" id="category_id">
-                <option value="">
-                    Без категории
+
+            <select class="form-control" name="item_id" id="item_id">
+                <option value="" selected>
+                    Не вещь
                 </option>
-                @foreach($categories as $item)
-                    <option value="{{$item->id}}"
-                            @if (isset($single->category_id) && $single->category_id == $item->id) selected @endif >
+                @foreach($items as $item)
+                    <option value="{{$item->id}}">
                         {{$item->name}}
                     </option>
                 @endforeach
@@ -91,19 +91,6 @@
                 @foreach($percentValues as $item)
                     <option value="{{$item}}" @if ($item == $single->percent) selected @endif>
                         {{$item}}%
-                    </option>
-                @endforeach
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="grade">
-                Грейд
-            </label>
-            <select class="form-control" name="grade" id="grade">
-                @foreach($gradeValues as $item)
-                    <option value="{{$item}}" @if ($item == $single->grade) selected @endif>
-                        {{$item}}
                     </option>
                 @endforeach
             </select>
@@ -137,10 +124,5 @@
             Назад
         </button>
     </form>
-
-
-
-
-
 
 @endsection

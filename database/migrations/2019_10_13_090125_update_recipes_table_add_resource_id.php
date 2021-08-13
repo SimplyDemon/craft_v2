@@ -12,7 +12,7 @@ class UpdateRecipesTableAddResourceId extends Migration {
      */
     public function up() {
         Schema::table( 'recipes', function ( Blueprint $table ) {
-            $table->bigInteger( 'resource_id' )->unsigned();
+            $table->bigInteger( 'resource_id' )->unsigned()->nullable();
             $table->foreign( 'resource_id' )->references( 'id' )->on( 'resources' )->onDelete( 'cascade' );
         } );
     }
