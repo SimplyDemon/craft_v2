@@ -15,7 +15,8 @@
 
 
 
-    @if ($categories)
+    @if (!$categories->isEmpty() && !$itemRecipes->isEmpty())
+        <h4>Вещи</h4>
         <ul class="list-group">
             @foreach($categories as $singleCategory)
                 <li class="list-group-item">
@@ -23,7 +24,7 @@
                         {{$singleCategory->name}}
                     </a>
 
-                    @foreach($all as $single)
+                    @foreach($itemRecipes as $single)
                         @if($single->category_id == $singleCategory->id)
                             <div>
                                 <a href="{{ route( 'recipes.show', [ 'id' => $single->id ] ) }}">
@@ -41,7 +42,7 @@
                                         {{$subCategory->name}}
                                     </a>
 
-                                    @foreach($all as $single)
+                                    @foreach($itemRecipes as $single)
                                         @if($single->category_id == $subCategory->id)
                                             <div>
                                                 <a href="{{ route( 'recipes.show', [ 'id' => $single->id ] ) }}">
@@ -59,4 +60,16 @@
         </ul>
     @endif
 
+    @if(!$resourceRecipes->isEmpty())
+        <h4>Ресурсы</h4>
+        <ul class="list-group">
+            @foreach($resourceRecipes as $single)
+                <li class="list-group-item">
+                    <a href="{{ route( 'recipes.show', [ 'id' => $single->id ] ) }}">
+                        {{$single->name}}
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+    @endif
 @endsection

@@ -37,6 +37,16 @@
         <li class="list-group-item">
             Дата создания: {{$single->created_at}}
         </li>
+        @if(!$single->resources->isEmpty())
+            <h4>Крафт</h4>
+            <ul>
+                @foreach($single->resources as $recipeResource)
+                    <li>
+                        {{$recipeResource->name}} - {{$recipeResource->pivot->resource_quantity}}
+                    </li>
+                @endforeach
+            </ul>
+        @endif
 
     </ul>
     <form method="POST" action="{{ route( 'recipes.destroy', [ 'id' => $single->id ] ) }}">

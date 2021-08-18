@@ -108,13 +108,13 @@
                     </option>
                     @foreach($resources as $item)
                         <option value="{{$item->id}}"
-                                @if ($item->id == $recipeResource->resource_id) selected @endif>
+                                @if ($item->id == $recipeResource->id) selected @endif>
                             {{$item->name}}
                         </option>
                     @endforeach
                 </select>
                 <input class="form-control" type="number" name="resource_quantity[]"
-                       value="{{$recipeResource->resource_quantity}}" min="1">
+                       value="{{$recipeResource->pivot->resource_quantity}}" min="1">
             @endforeach
         </div>
 

@@ -24,8 +24,9 @@ class RecipeController extends Controller {
 
 
     public function index() {
-        $categories = Category::orderBy( 'name', 'asc' )->whereNull( 'category_id' )->get();
-        $all        = Recipe::all();
+        $categories      = Category::orderBy( 'name', 'asc' )->whereNull( 'category_id' )->get();
+        $resourceRecipes = Recipe::orderBy( 'name', 'asc' )->whereNotNull( 'resource_id' )->get();
+        $itemRecipes     = Recipe::orderBy( 'name', 'asc' )->whereNotNull( 'item_id' )->get();
 
         $i = 0;
         foreach ( $categories as $item ) {
@@ -38,7 +39,11 @@ class RecipeController extends Controller {
         }
 
 
-        return view( $this->folderPath . 'index', [ 'all' => $all, 'categories' => $categories ] );
+        return view( $this->folderPath . 'index', [
+            'resourceRecipes' => $resourceRecipes,
+            'itemRecipes'     => $itemRecipes,
+            'categories'      => $categories,
+        ] );
     }
 
     public function create() {
@@ -92,16 +97,11 @@ class RecipeController extends Controller {
 
 
     public function edit( int $id ) {
-        $single = Recipe::findOrFail( $id );
-
-        $percentValues = Enum::getPossibleValues( 'recipes', 'percent' );
-
-        $recipeResources = DB::table( 'recipe_resource' )->where( [
-            [ 'recipe_id', '=', $single->id ],
-        ] )->get();
-
-        $items     = Item::all();
-        $resources = Resource::orderBy( 'name', 'asc' )->get();
+        $single          = Recipe::findOrFail( $id );
+        $percentValues   = Enum::getPossibleValues( 'recipes', 'percent' );
+        $recipeResources = $single->resources;
+        $items           = Item::all();
+        $resources       = Resource::orderBy( 'name', 'asc' )->get();
 
         return view( $this->folderPath . 'edit', [
             'single'          => $single,
