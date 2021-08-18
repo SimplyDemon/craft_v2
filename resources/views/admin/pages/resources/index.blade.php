@@ -12,16 +12,20 @@
         </a>
     </div>
 
-    @if ($all)
-        <ul class="list-group">
-            @foreach($all as $single)
-                <li class="list-group-item">
-                    <a href="{{ route( 'resources.show', [ 'id' => $single->id ] ) }}">
-                        {{$single->name}}
-                    </a>
-                </li>
-            @endforeach
-        </ul>
+    @if (!$groupedTypes->isEmpty())
+        @foreach($groupedTypes as $key => $type)
+            <h4>{{$key}}</h4>
+            <ul class="list-group">
+                @foreach($type as $single)
+                    <li class="list-group-item">
+                        <a href="{{ route( 'resources.show', [ 'id' => $single->id ] ) }}">
+                            {{$single->name}}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        @endforeach
     @endif
+
 
 @endsection

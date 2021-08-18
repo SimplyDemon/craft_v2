@@ -20,9 +20,12 @@ class ResourceController extends Controller {
 
 
     public function index() {
-        $all = Resource::orderBy( 'name', 'asc' )->get();
+        $all          = Resource::orderBy( 'name', 'asc' )->get();
+        $groupedTypes = $all->groupBy( 'type' );
 
-        return view( $this->folderPath . 'index', [ 'all' => $all ] );
+        return view( $this->folderPath . 'index', [
+            'groupedTypes' => $groupedTypes,
+        ] );
     }
 
     public function create() {
