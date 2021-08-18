@@ -11,10 +11,8 @@
             Айди: {{$single->id}}
         </li>
         <li class="list-group-item">
-            Название: {{$single->name}}
-        </li>
-        <li class="list-group-item">
-            Слаг: {{$single->slug}}
+            Название: <a
+                href="{{route( $single->craft_item->getTable() . '.show', [ 'id' => $single->craft_item->id ] )}}">{{$single->craft_item->name}}</a>
         </li>
         <li class="list-group-item">
             Цена: {{$single->cost}}
@@ -23,20 +21,30 @@
             Цена Крафта: {{$single->craft_cost}}
         </li>
         <li class="list-group-item">
-            Ссылка на изображение: {{$single->img}}
-        </li>
-        <li class="list-group-item">
             Процент: {{$single->percent}}
         </li>
-        <li class="list-group-item">
-            Грейд: {{$single->grade}}
-        </li>
-        <li class="list-group-item">
-            Айди категории: {{$single->category_id}}
-        </li>
+        @if($single->craft_item->grade)
+            <li class="list-group-item">
+                Грейд: {{$single->craft_item->grade}}
+            </li>
+        @endif
+        @if($single->craft_item->category_id)
+            <li class="list-group-item">
+                Айди категории: {{$single->craft_item->category_id}}
+            </li>
+        @endif
+        @if($single->craft_item->type)
+            <li class="list-group-item">
+                Тип: {{$single->craft_item->type}}
+            </li>
+        @endif
         <li class="list-group-item">
             Дата создания: {{$single->created_at}}
         </li>
+        <li class="list-group-item">
+            Изображение: <img src="{{asset('storage/' . $single->craft_item->img)}}" width="100" height="100">
+        </li>
+
         @if(!$single->resources->isEmpty())
             <h4>Крафт</h4>
             <ul>
@@ -60,7 +68,5 @@
     <a href="{{ route( 'recipes.edit', [ 'id' => $single->id ] ) }}">
         Редактировать
     </a>
-
-
 
 @endsection

@@ -26,13 +26,6 @@
         <input type="hidden" name="currentID" value="{{$single->id}}">
 
         <div class="form-group">
-            <label for="name">
-                Рецепт
-            </label>
-            <input class="form-control" type="text" name="name" id="name" value="{{old('name',$single->name)}}">
-        </div>
-
-        <div class="form-group">
             <label for="cost">
                 Цена
             </label>
@@ -76,7 +69,8 @@
                     Не вещь
                 </option>
                 @foreach($items as $item)
-                    <option value="{{$item->id}}">
+                    <option value="{{$item->id}}"
+                            @if (isset($single->item_id) && $single->item_id == $item->id) selected @endif >
                         {{$item->name}}
                     </option>
                 @endforeach

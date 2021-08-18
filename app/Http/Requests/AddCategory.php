@@ -21,7 +21,8 @@ class AddCategory extends FormRequest {
      */
     public function rules() {
         return [
-            'name' => 'required|min:2|max:50|unique:categories',
+            'name'        => 'required|min:2|max:50|unique:categories',
+            'category_id' => 'nullable|integer',
         ];
     }
 }

@@ -26,6 +26,8 @@ class ItemController extends Controller {
         $categories = Category::orderBy( 'name', 'asc' )->whereNull( 'category_id' )->get();
         $all        = Item::all();
 
+        $groupedItems = $all->groupBy( 'category_id' );
+
         $i = 0;
         foreach ( $categories as $item ) {
             $subCategories = Category::orderBy( 'name', 'asc' )->where( 'category_id', $item->id )->get();
@@ -37,7 +39,11 @@ class ItemController extends Controller {
         }
 
 
-        return view( $this->folderPath . 'index', [ 'all' => $all, 'categories' => $categories ] );
+        return view( $this->folderPath . 'index', [
+            'all'          => $all,
+            'categories'   => $categories,
+            'groupedItems' => $groupedItems,
+        ] );
     }
 
     public function create() {

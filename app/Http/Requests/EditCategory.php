@@ -21,8 +21,8 @@ class EditCategory extends FormRequest {
 	 */
 	public function rules() {
 		return [
-			'name'        => 'min:2|max:50|unique:categories,id,' . $this->currentID,
-			'category_id' => 'integer',
-		];
+            'name'        => 'min:2|max:50|unique:categories,id,' . $this->currentID,
+            'category_id' => 'nullable|integer',
+        ];
 	}
 }

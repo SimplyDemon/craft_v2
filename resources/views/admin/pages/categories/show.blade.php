@@ -20,6 +20,12 @@
             Дата создания: {{$single->created_at}}
         </li>
 
+        @if(!empty($single->parentCategory))
+            <li class="list-group-item">
+                Родительская категория: {{$single->parentCategory->name}}
+            </li>
+        @endif
+
         <form method="POST" action="{{ route( 'categories.destroy', [ 'id' => $single->id ] ) }}">
             @csrf
             @method('DELETE')

@@ -21,8 +21,9 @@ class AddRecipe extends FormRequest {
      */
     public function rules() {
         return [
-            'name' => 'max:50|unique:recipes',
-            'cost' => 'integer',
+            'cost'        => 'nullable|integer',
+            'item_id'     => 'nullable|unique:recipes',
+            'resource_id' => 'nullable|unique:recipes',
         ];
     }
 }

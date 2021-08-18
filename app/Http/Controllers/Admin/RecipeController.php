@@ -25,8 +25,15 @@ class RecipeController extends Controller {
 
     public function index() {
         $categories      = Category::orderBy( 'name', 'asc' )->whereNull( 'category_id' )->get();
-        $resourceRecipes = Recipe::orderBy( 'name', 'asc' )->whereNotNull( 'resource_id' )->get();
-        $itemRecipes     = Recipe::orderBy( 'name', 'asc' )->whereNotNull( 'item_id' )->get();
+        $resourceRecipes = Recipe::orderBy( 'id', 'asc' )->whereNotNull( 'resource_id' )->get();
+        $itemRecipes     = Recipe::orderBy( 'id', 'asc' )->whereNotNull( 'item_id' )->get();
+
+        $groupedItemRecipes = [];
+
+        foreach ( $itemRecipes as $itemRecipe ) {
+            $categoryId                          = $itemRecipe->craft_item->category_id;
+            $groupedItemRecipes[ $categoryId ][] = $itemRecipe;
+        }
 
         $i = 0;
         foreach ( $categories as $item ) {
@@ -40,9 +47,9 @@ class RecipeController extends Controller {
 
 
         return view( $this->folderPath . 'index', [
-            'resourceRecipes' => $resourceRecipes,
-            'itemRecipes'     => $itemRecipes,
-            'categories'      => $categories,
+            'resourceRecipes'    => $resourceRecipes,
+            'categories'         => $categories,
+            'groupedItemRecipes' => $groupedItemRecipes,
         ] );
     }
 
@@ -59,25 +66,22 @@ class RecipeController extends Controller {
     }
 
     public function store( AddRecipe $request ) {
-        //if its resource or item recipe don't need put name, just get name from resource id
-        if ( $request->resource_id ) {
-            $resourceName = $request->name = Resource::findOrFail( $request->resource_id )->name;
-            $request->merge( [ 'name' => $resourceName ] );
-        } else if ( $request->item_id ) {
-            $itemName = $request->name = Item::findOrFail( $request->item_id )->name;
-            $request->merge( [ 'name' => $itemName ] );
-        }
-
-
-        $slug = Str::slug( $request->name, '-' );
-
-        $request->merge( [ 'slug' => $slug ] );
-
+        $resourceIDs        = $request->input( 'resource_ids' );
+        $resourceQuantities = $request->input( 'resource_quantity' );
 
         try {
-            $recipe = Recipe::create( $request->except( 'image' ) );
+            $recipe = Recipe::create( $request->except( 'resource_ids', 'resource_quantity' ) );
 
-            $url     = route( $this->name . 'show', [ 'single' => $recipe, 'id' => $recipe->id ] );
+            if ( $resourceIDs && is_array( $resourceIDs ) ) {
+                $i = 0;
+                foreach ( $resourceIDs as $resourceID ) {
+                    $recipe->resources()->attach( $resourceID, [ 'resource_quantity' => $resourceQuantities[ $i ] ] );
+
+                    $i ++;
+                }
+            }
+
+            $url     = route( $this->name . 'show', [ 'id' => $recipe->id ] );
             $message = "Добавление выполнено успешно! Нажмите <a href='{$url}'>сюда</a> что бы посмотреть";
         } catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
@@ -92,7 +96,10 @@ class RecipeController extends Controller {
     public function show( int $id ) {
         $single = Recipe::findOrFail( $id );
 
-        return view( $this->folderPath . 'show', [ 'single' => $single, 'id' => $single->id ] );
+        return view( $this->folderPath . 'show', [
+            'single' => $single,
+            'id'     => $single->id,
+        ] );
     }
 
 
@@ -120,15 +127,6 @@ class RecipeController extends Controller {
 
         $single = Recipe::findOrFail( $id );
 
-        //if its resource or item recipe don't need put name, just get name from resource id
-        if ( $request->resource_id && $single->resource_id != $request->resource_id ) {
-            $resourceName = $request->name = Resource::findOrFail( $request->resource_id )->name;
-            $request->merge( [ 'name' => $resourceName ] );
-        } else if ( $request->item_id && $single->item_id != $request->item_id ) {
-            $itemName = $request->name = Item::findOrFail( $request->item_id )->name;
-            $request->merge( [ 'name' => $itemName ] );
-        }
-
         //default delete all recipe values and write again its much better then make 1000 checks
         DB::table( 'recipe_resource' )->where( [
             [ 'recipe_id', '=', $single->id ],
@@ -143,14 +141,8 @@ class RecipeController extends Controller {
             }
         }
 
-        $all = Recipe::orderBy( 'name', 'asc' )->get();
-
         try {
-
-            $slug = Str::slug( $request->name, '-' );
-            $request->merge( [ 'slug' => $slug ] );
-
-            $single->update( $request->except( 'currentID', 'method', 'image', 'resource_ids', 'resource_quantity' ) );;
+            $single->update( $request->except( 'currentID', 'method', 'resource_ids', 'resource_quantity' ) );;
             $message = 'Обновление выполнено успешно!';
         } catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];

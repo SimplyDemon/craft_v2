@@ -14,8 +14,17 @@ class Recipe extends Model {
         return $this->belongsTo( Item::class );
     }
 
+    public function resource() {
+        return $this->belongsTo( Resource::class );
+    }
+
     public function resources() {
         return $this->belongsToMany( Resource::class )->withPivot( 'resource_quantity' );
+    }
+
+    public function getCraftItemAttribute() {
+
+        return ! empty( $this->resource_id ) ? $this->resource : $this->item;
     }
 
 }

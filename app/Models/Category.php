@@ -10,4 +10,8 @@ class Category extends Model {
     public function items() {
         return $this->hasMany( Item::class );
     }
+
+    public function parentCategory() {
+        return $this->belongsTo( Category::class, 'category_id' );
+    }
 }

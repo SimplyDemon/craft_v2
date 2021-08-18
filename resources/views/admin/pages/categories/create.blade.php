@@ -20,11 +20,9 @@
                 Родительская категория
             </label>
             <select class="form-control" name="category_id">
-                {{--<option disabled hidden selected> Родительская категория</option>--}}
-                <option value="">Без категории</option>
+                <option value="" selected>Без категории</option>
                 @foreach($all as $item)
-                    <option value="{{$item->id}}"
-                            @if($item->name == 'Armor') selected @endif>
+                    <option value="{{$item->id}}">
                         {{$item->name}}
                     </option>
                 @endforeach

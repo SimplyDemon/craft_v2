@@ -1,5 +1,20 @@
 @extends('admin.layouts.primary')
 @section('content')
+
+    <script type="text/JavaScript">
+        function createNewElement() {
+            txtNewInputBox = '<select  class="form-control" name="resource_ids[]">\n' +
+                '                    <option value="" selected>Не ресурс</option>\n' +
+                '                    @foreach($resources as $item)\n' +
+                '                        <option value="{{$item->id}}">{{$item->name}}</option>\n' +
+                '                    @endforeach\n' +
+                '                </select><input  class="form-control" type="number" name="resource_quantity[]" value="1" min="1">';
+
+            document.getElementById("sd-repeater").insertAdjacentHTML('beforeend', txtNewInputBox);
+        }
+    </script>
+
+
     <div class="card">
         <h1 class="card-header">
             {{ $title ?? 'Добавить' }}
@@ -68,6 +83,22 @@
                     </option>
                 @endforeach
             </select>
+        </div>
+
+        <div class="form-group" id="sd-repeater">
+            <label for="resources">
+                Ресурсы
+            </label>
+            <input class="form-control" type="button" value="Добавить ресурс" onclick="createNewElement();"/>
+            <select class="form-control" name="resource_ids[]">
+                @foreach($resources as $item)
+                    <option value="{{$item->id}}">
+                        {{$item->name}}
+                    </option>
+                @endforeach
+            </select>
+            <input class="form-control" type="number" name="resource_quantity[]"
+                   value="1" min="1">
         </div>
 
         <button class="btn btn-primary">

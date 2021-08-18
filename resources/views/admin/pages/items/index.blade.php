@@ -21,15 +21,17 @@
                         {{$singleCategory->name}}
                     </a>
 
-                    @foreach($all as $single)
-                        @if($single->category_id == $singleCategory->id)
-                            <div>
-                                <a href="{{ route( 'items.show', [ 'id' => $single->id ] ) }}">
-                                    {{$single->name}}
-                                </a>
-                            </div>
-                        @endif
-                    @endforeach
+                    @if(isset($groupedItems[$singleCategory->id]))
+                        <ul class="list-group">
+                            @foreach($groupedItems[$singleCategory->id] as $single)
+                                <li class="list-group-item">
+                                    <a href="{{ route( 'items.show', [ 'id' => $single->id ] ) }}">
+                                        {{$single->name}}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
 
                     @if($singleCategory->subCategories)
                         <ul class="list-group">
@@ -39,15 +41,17 @@
                                         {{$subCategory->name}}
                                     </a>
 
-                                    @foreach($all as $single)
-                                        @if($single->category_id == $subCategory->id)
-                                            <div>
-                                                <a href="{{ route( 'items.show', [ 'id' => $single->id ] ) }}">
-                                                    {{$single->name}}
-                                                </a>
-                                            </div>
-                                        @endif
-                                    @endforeach
+                                    @if(isset($groupedItems[$subCategory->id]))
+                                        <ul class="list-group">
+                                            @foreach($groupedItems[$subCategory->id] as $single)
+                                                <li class="list-group-item">
+                                                    <a href="{{ route( 'items.show', [ 'id' => $single->id ] ) }}">
+                                                        {{$single->name}}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
                                 </li>
                             @endforeach
                         </ul>

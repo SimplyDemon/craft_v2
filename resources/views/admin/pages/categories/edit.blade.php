@@ -29,16 +29,12 @@
             </label>
             <select class="form-control" name="category_id">
                 @if (empty($single->category_id))
-                    <option disabled hidden selected>
-                        Родительская категория
+                    <option value="" selected>
+                        Без категории
                     </option>
                 @endif
-                <option value="">
-                    Без категории
-                </option>
                 @foreach($all as $item)
                     @if($item->id != $single->id)
-
                         <option value="{{$item->id}}"
                                 @if($item->id == $single->category_id) selected @endif>
                             {{$item->name}}

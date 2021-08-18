@@ -20,8 +20,11 @@ class EditRecipe extends FormRequest {
 	 * @return array
 	 */
 	public function rules() {
+
 		return [
-			'cost'  => 'integer',
-		];
+            'cost'        => 'nullable|integer',
+            'item_id'     => 'nullable|unique:recipes,item_id,' . $this->currentID,
+            'resource_id' => 'nullable|unique:recipes,resource_id,' . $this->currentID,
+        ];
 	}
 }

@@ -23,8 +23,8 @@ class EditItem extends FormRequest {
         return [
             'name'        => 'required|min:2|max:100|unique:items,id,' . $this->currentID,
             'category_id' => 'required|integer',
-            'image'       => 'required|file',
 
+            'image'              => 'nullable|file',
             'cost'               => 'nullable|integer',
             'rare_cost'          => 'nullable|integer',
             'crystal_count'      => 'nullable|integer',

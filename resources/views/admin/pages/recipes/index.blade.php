@@ -15,7 +15,7 @@
 
 
 
-    @if (!$categories->isEmpty() && !$itemRecipes->isEmpty())
+    @if (!$categories->isEmpty() && !empty($groupedItemRecipes))
         <h4>Вещи</h4>
         <ul class="list-group">
             @foreach($categories as $singleCategory)
@@ -23,34 +23,38 @@
                     <a href="{{ route( 'categories.show', [ 'id' => $singleCategory->id ] ) }}">
                         {{$singleCategory->name}}
                     </a>
-
-                    @foreach($itemRecipes as $single)
-                        @if($single->category_id == $singleCategory->id)
-                            <div>
-                                <a href="{{ route( 'recipes.show', [ 'id' => $single->id ] ) }}">
-                                    {{$single->name}}
-                                </a>
-                            </div>
-                        @endif
-                    @endforeach
+                    @if(isset($groupedItemRecipes[$singleCategory->id]))
+                        <ul class="list-group">
+                            @foreach($groupedItemRecipes[$singleCategory->id] as $single)
+                                <li class="list-group-item">
+                                    <a href="{{ route( 'recipes.show', [ 'id' => $single->id ] ) }}">
+                                        {{$single->craft_item->name}}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
 
                     @if($singleCategory->subCategories)
                         <ul class="list-group">
                             @foreach( $singleCategory->subCategories as $subCategory)
                                 <li class="list-group-item">
-                                    <a href="{{ route( 'recipes.show', [ 'id' => $subCategory->id ] ) }}">
+                                    <a href="{{ route( 'categories.show', [ 'id' => $subCategory->id ] ) }}">
                                         {{$subCategory->name}}
                                     </a>
 
-                                    @foreach($itemRecipes as $single)
-                                        @if($single->category_id == $subCategory->id)
-                                            <div>
-                                                <a href="{{ route( 'recipes.show', [ 'id' => $single->id ] ) }}">
-                                                    {{$single->name}}
-                                                </a>
-                                            </div>
-                                        @endif
-                                    @endforeach
+                                    @if(isset($groupedItemRecipes[$subCategory->id]))
+                                        <ul class="list-group">
+                                            @foreach($groupedItemRecipes[$subCategory->id] as $single)
+                                                <li class="list-group-item">
+                                                    <a href="{{ route( 'recipes.show', [ 'id' => $single->id ] ) }}">
+                                                        {{$single->craft_item->name}}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+
                                 </li>
                             @endforeach
                         </ul>
@@ -66,7 +70,7 @@
             @foreach($resourceRecipes as $single)
                 <li class="list-group-item">
                     <a href="{{ route( 'recipes.show', [ 'id' => $single->id ] ) }}">
-                        {{$single->name}}
+                        {{$single->craft_item->name}}
                     </a>
                 </li>
             @endforeach

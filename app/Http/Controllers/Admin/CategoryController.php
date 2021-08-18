@@ -84,12 +84,7 @@ class CategoryController extends Controller {
 
         try {
             $slug = Str::slug( $request->name, '-' );
-//			$category_id = $request->category_id;
-//			if ( empty( $category_id ) ) {
-//				$category_id = null;
-//			}
             $request->merge( [ 'slug' => $slug ] );
-//			$request->merge( [ 'category_id' => $category_id ] );
             $single->update( $request->except( 'currentID', 'method' ) );
             $message = 'Обновление выполнено успешно!';
         } catch ( QueryException $exception ) {
