@@ -20,6 +20,9 @@
             Цена: {{$single->cost}}
         </li>
         <li class="list-group-item">
+            Тип: {{$single->type}}
+        </li>
+        <li class="list-group-item">
             Ссылка на изображение: {{asset('storage/') . $single->img}}
         </li>
         <li class="list-group-item">

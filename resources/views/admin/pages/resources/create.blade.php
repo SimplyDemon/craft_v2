@@ -5,7 +5,7 @@
             {{ $title ?? 'Добавить' }}
         </h1>
     </div>
-    <form method="post" action="<{{ route( 'resources.store' ) }}" enctype="multipart/form-data">
+    <form method="post" action="{{ route( 'resources.store' ) }}" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
@@ -20,6 +20,19 @@
                 Цена
             </label>
             <input class="form-control" type="number" name="cost" id="cost" value="{{old('cost','0')}}" min="0">
+        </div>
+
+        <div class="form-group">
+            <label for="type">
+                Тип
+            </label>
+            <select class="form-control" name="type" id="type">
+                @foreach($typeValues as $item)
+                    <option value="{{$item}}" @if ($item == 'regular') selected @endif>
+                        {{$item}}
+                    </option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">

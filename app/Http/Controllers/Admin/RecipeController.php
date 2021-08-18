@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Helpers\Enum;
 use App\Http\Requests\AddRecipe;
 use App\Http\Requests\EditRecipe;
 use App\Models\Category;
@@ -41,30 +42,12 @@ class RecipeController extends Controller {
     }
 
     public function create() {
-        $percentTypes = DB::select( DB::raw( 'SHOW COLUMNS FROM recipes WHERE Field = "percent"' ) )[0]->Type;
-        $gradeTypes   = DB::select( DB::raw( 'SHOW COLUMNS FROM recipes WHERE Field = "grade"' ) )[0]->Type;
-
-        preg_match( '/^enum\((.*)\)$/', $percentTypes, $matches );
-        $percentValues = [];
-        foreach ( explode( ',', $matches[1] ) as $value ) {
-            $percentValues[] = trim( $value, "'" );
-        }
-
-        preg_match( '/^enum\((.*)\)$/', $gradeTypes, $matches );
-        $gradeValues = [];
-        foreach ( explode( ',', $matches[1] ) as $value ) {
-            $gradeValues[] = trim( $value, "'" );
-        }
-
-        $items      = Item::all();
-        $categories = Category::orderBy( 'name', 'asc' )->get();
-        $resources  = Resource::orderBy( 'name', 'asc' )->get();
-
+        $percentValues = Enum::getPossibleValues( 'recipes', 'percent' );
+        $items         = Item::all();
+        $resources     = Resource::orderBy( 'name', 'asc' )->get();
 
         return view( $this->folderPath . 'create', [
             'percentValues' => $percentValues,
-            'gradeValues'   => $gradeValues,
-            'categories'    => $categories,
             'resources'     => $resources,
             'items'         => $items,
         ] );
@@ -109,37 +92,23 @@ class RecipeController extends Controller {
 
 
     public function edit( int $id ) {
-        $single       = Recipe::findOrFail( $id );
-        $percentTypes = DB::select( DB::raw( 'SHOW COLUMNS FROM recipes WHERE Field = "percent"' ) )[0]->Type;
-        $gradeTypes   = DB::select( DB::raw( 'SHOW COLUMNS FROM recipes WHERE Field = "grade"' ) )[0]->Type;
+        $single = Recipe::findOrFail( $id );
 
-        preg_match( '/^enum\((.*)\)$/', $percentTypes, $matches );
-        $percentValues = [];
-        foreach ( explode( ',', $matches[1] ) as $value ) {
-            $percentValues[] = trim( $value, "'" );
-        }
-
-        preg_match( '/^enum\((.*)\)$/', $gradeTypes, $matches );
-        $gradeValues = [];
-        foreach ( explode( ',', $matches[1] ) as $value ) {
-            $gradeValues[] = trim( $value, "'" );
-        }
-
+        $percentValues = Enum::getPossibleValues( 'recipes', 'percent' );
 
         $recipeResources = DB::table( 'recipe_resource' )->where( [
             [ 'recipe_id', '=', $single->id ],
         ] )->get();
 
-        $categories = Category::orderBy( 'name', 'asc' )->get();
-        $resources  = Resource::orderBy( 'name', 'asc' )->get();
+        $items     = Item::all();
+        $resources = Resource::orderBy( 'name', 'asc' )->get();
 
         return view( $this->folderPath . 'edit', [
             'single'          => $single,
             'percentValues'   => $percentValues,
-            'gradeValues'     => $gradeValues,
-            'categories'      => $categories,
             'resources'       => $resources,
             'recipeResources' => $recipeResources,
+            'items'           => $items,
         ] );
     }
 

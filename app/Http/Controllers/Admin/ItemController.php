@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Helpers\Enum;
 use App\Http\Requests\AddItem;
 use App\Http\Requests\EditItem;
 use App\Models\Category;
@@ -40,13 +41,7 @@ class ItemController extends Controller {
     }
 
     public function create() {
-        $gradeTypes = DB::select( DB::raw( 'SHOW COLUMNS FROM items WHERE Field = "grade"' ) )[0]->Type;
-
-        preg_match( '/^enum\((.*)\)$/', $gradeTypes, $matches );
-        $gradeValues = [];
-        foreach ( explode( ',', $matches[1] ) as $value ) {
-            $gradeValues[] = trim( $value, "'" );
-        }
+        $gradeValues = Enum::getPossibleValues( 'items', 'grade' );
 
         $categories = Category::orderBy( 'name', 'asc' )->get();
 
@@ -92,14 +87,8 @@ class ItemController extends Controller {
 
 
     public function edit( int $id ) {
-        $single     = Item::findOrFail( $id );
-        $gradeTypes = DB::select( DB::raw( 'SHOW COLUMNS FROM items WHERE Field = "grade"' ) )[0]->Type;
-
-        preg_match( '/^enum\((.*)\)$/', $gradeTypes, $matches );
-        $gradeValues = [];
-        foreach ( explode( ',', $matches[1] ) as $value ) {
-            $gradeValues[] = trim( $value, "'" );
-        }
+        $single      = Item::findOrFail( $id );
+        $gradeValues = Enum::getPossibleValues( 'items', 'grade' );
 
         $categories = Category::orderBy( 'name', 'asc' )->get();
 

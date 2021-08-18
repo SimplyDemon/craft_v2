@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Helpers\Enum;
 use App\Http\Requests\AddResource;
 use App\Http\Requests\EditResource;
 use App\Models\Resource;
@@ -25,8 +26,11 @@ class ResourceController extends Controller {
     }
 
     public function create() {
+        $typeValues = Enum::getPossibleValues( 'resources', 'type' );
 
-        return view( $this->folderPath . 'create' );
+        return view( $this->folderPath . 'create', [
+            'typeValues' => $typeValues,
+        ] );
     }
 
     public function store( AddResource $request ) {
@@ -65,10 +69,13 @@ class ResourceController extends Controller {
 
 
     public function edit( int $id ) {
-        $single = Resource::findOrFail( $id );
-        $all    = Resource::orderBy( 'name', 'asc' )->get();
+        $single     = Resource::findOrFail( $id );
+        $typeValues = Enum::getPossibleValues( 'resources', 'type' );
 
-        return view( $this->folderPath . 'edit', [ 'single' => $single, 'all' => $all ] );
+        return view( $this->folderPath . 'edit', [
+            'single'     => $single,
+            'typeValues' => $typeValues,
+        ] );
     }
 
 

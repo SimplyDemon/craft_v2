@@ -29,6 +29,19 @@
         </div>
 
         <div class="form-group">
+            <label for="type">
+                Тип
+            </label>
+            <select class="form-control" name="type" id="type">
+                @foreach($typeValues as $item)
+                    <option value="{{$item}}" @if ($item == $single->type) selected @endif>
+                        {{$item}}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
             <label for="image">
                 Изображение
             </label>
