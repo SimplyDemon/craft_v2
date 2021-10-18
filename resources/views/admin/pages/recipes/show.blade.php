@@ -37,8 +37,49 @@
         <li class="list-group-item">
             Дата создания: {{$single->created_at}}
         </li>
-
     </ul>
+    <h1>{{$single->name}}</h1>
+    @if($recipeResources)
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Ресурс</th>
+                <th scope="col">Количество</th>
+                <th scope="col">Цена за штуку</th>
+                <th scope="col">Цена за все</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($recipeResources as $recipeResource)
+                <tr>
+
+                    <?php
+                    $resourceId = $recipeResource->resource_id;
+                    $resource = \App\Models\Resource::FindOrFail( $resourceId );
+                    $recipeId = $recipeResource->recipe_id;
+                    $resourceQuantity = $recipeResource->resource_quantity;
+                    $resourcePrice = $resource->cost;
+                    $resourceLinePrice = $resource->cost * $resourceQuantity;
+                    if ( ! isset( $total ) ) {
+                        $total = 0;
+                    }
+                    $total += $resourceLinePrice;
+                    ?>
+                    <td><img width="30px" src="{{asset('storage') . '/' . $resource->img}}">{{$resource->name}}</td>
+                    <td>{{$resourceQuantity}}</td>
+                    <td>{{number_format($resourcePrice, 0, ' ', ' ')}}</td>
+                    <td>{{number_format($resourceLinePrice, 0, ' ', ' ') }}</td>
+
+                </tr>
+            @endforeach
+            <tr>
+                <td colspan="3"><b>Итого:</b></td>
+                <td><b>{{number_format($total, 0, ' ', ' ')}}</b></td>
+            </tr>
+            </tbody>
+        </table>
+    @endif
+
     <form method="POST" action="{{ route( 'recipes.destroy', [ 'id' => $single->id ] ) }}">
         @csrf
         @method('DELETE')

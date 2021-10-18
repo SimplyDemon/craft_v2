@@ -13,9 +13,9 @@
         </a>
     </div>
 
-    @if ($all)
+    @if ($categories)
         <ul class="list-group">
-            @foreach($all as $single)
+            @foreach($categories as $single)
                 <li class="list-group-item">
                     <a href="{{ route( 'categories.show', [ 'id' => $single->id ] ) }}">
                         {{$single->name}}
@@ -25,9 +25,20 @@
                         <ul class="list-group">
                             @foreach( $single->subCategories as $subCategory)
                                 <li class="list-group-item">
-                                    <a href="{{ route( 'recipes.show', [ 'id' => $subCategory->id ] ) }}">
+                                    <a href="{{ route( 'categories.show', [ 'id' => $subCategory->id ] ) }}">
                                         {{$subCategory->name}}
                                     </a>
+                                    @if($subCategory->recipes)
+                                        <ul class="list-group">
+                                            @foreach( $subCategory->recipes as $recipe)
+                                                <li class="list-group-item">
+                                                    <a href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
+                                                        {{$recipe->name}}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
                                 </li>
                             @endforeach
                         </ul>

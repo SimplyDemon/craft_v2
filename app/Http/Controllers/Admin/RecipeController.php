@@ -22,21 +22,10 @@ class RecipeController extends Controller {
 
 
     public function index() {
-        $all = Category::orderBy( 'name', 'asc' )->whereNull( 'category_id' )->get();
+        $categories = Category::orderBy( 'name', 'asc' )->whereNull( 'category_id' )->get();
 
 
-        $i = 0;
-        foreach ( $all as $item ) {
-            $subCategories = Recipe::orderBy( 'name', 'asc' )->where( 'category_id', $item->id )->get();
-            if ( $subCategories ) {
-                $all[ $i ]['subCategories'] = $subCategories;
-            }
-
-            $i ++;
-        }
-
-
-        return view( $this->folderPath . 'index', [ 'all' => $all ] );
+        return view( $this->folderPath . 'index', [ 'categories' => $categories ] );
     }
 
     public function create() {
@@ -97,9 +86,16 @@ class RecipeController extends Controller {
 
 
     public function show( int $id ) {
-        $single = Recipe::findOrFail( $id );
+        $single          = Recipe::findOrFail( $id );
+        $recipeResources = DB::table( 'recipe_resource' )->where( [
+            [ 'recipe_id', '=', $single->id ],
+        ] )->get();
 
-        return view( $this->folderPath . 'show', [ 'single' => $single, 'id' => $single->id ] );
+        return view( $this->folderPath . 'show', [
+            'single'          => $single,
+            'id'              => $single->id,
+            'recipeResources' => $recipeResources,
+        ] );
     }
 
 
