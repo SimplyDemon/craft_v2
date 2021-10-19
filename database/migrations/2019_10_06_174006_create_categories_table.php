@@ -13,8 +13,8 @@ class CreateCategoriesTable extends Migration {
     public function up() {
         Schema::create( 'categories', function ( Blueprint $table ) {
             $table->bigIncrements( 'id' );
-            $table->string( 'name' )->unique();
-            $table->string( 'slug' )->unique();
+            $table->string( 'name' );
+            $table->string( 'slug' );
             $table->bigInteger( 'category_id' )->nullable()->unsigned();
             $table->foreign( 'category_id' )->references( 'id' )->on( 'categories' )->onDelete( 'cascade' );
             $table->timestamps();

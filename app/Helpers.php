@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\File;
  * @return string|bool Return false in error case and relative path if ok
  */
 function copyFile( string $filePath, string $pathTo ) {
+    $filePath     = '/' . $filePath;
     $path         = resource_path() . $filePath;
     $baseName     = File::basename( $path );
     $folderPath   = storage_path( $pathTo );

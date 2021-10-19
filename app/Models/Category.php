@@ -19,7 +19,7 @@ class Category extends Model {
 
     public function getRecipesAttribute() {
 
-        return Recipe::orderBy( 'name', 'asc' )->where( 'category_id', $this->id )->get();
+        return Recipe::orderBy( 'grade', 'asc' )->where( 'category_id', $this->id )->get();
     }
 
 
