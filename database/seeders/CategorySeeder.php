@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 class CategorySeeder extends Seeder {
     protected Category $weaponCategory;
     protected Category $armorCategory;
-    protected Category $jewerlyCategory;
+    protected Category $jewelryCategory;
 
     /**
      * Run the database seeds.
@@ -25,9 +25,9 @@ class CategorySeeder extends Seeder {
             'name' => 'Armor',
             'slug' => Str::slug( 'Armor', '-' ),
         ] );
-        $this->jewerlyCategory = Category::create( [
-            'name' => 'Jewerly',
-            'slug' => Str::slug( 'Jewerly', '-' ),
+        $this->jewelryCategory = Category::create( [
+            'name' => 'Jewelry',
+            'slug' => Str::slug( 'Jewelry', '-' ),
         ] );
         Category::create( [
             'name' => 'Shield',
@@ -42,7 +42,7 @@ class CategorySeeder extends Seeder {
         $this->addArmorHeavy();
         $this->addArmorLight();
         $this->addArmorRobe();
-        $this->addJewerly();
+        $this->addJewelry();
         $this->addWeapons();
     }
 
@@ -189,21 +189,21 @@ class CategorySeeder extends Seeder {
         ] );
     }
 
-    protected function addJewerly() {
+    protected function addJewelry() {
         Category::create( [
             'name'        => 'Necklace',
             'slug'        => Str::slug( 'Necklace', '-' ),
-            'category_id' => $this->jewerlyCategory->id,
+            'category_id' => $this->jewelryCategory->id,
         ] );
         Category::create( [
             'name'        => 'Earring',
             'slug'        => Str::slug( 'Earring', '-' ),
-            'category_id' => $this->jewerlyCategory->id,
+            'category_id' => $this->jewelryCategory->id,
         ] );
         Category::create( [
             'name'        => 'Ring',
             'slug'        => Str::slug( 'Ring', '-' ),
-            'category_id' => $this->jewerlyCategory->id,
+            'category_id' => $this->jewelryCategory->id,
         ] );
     }
 }
