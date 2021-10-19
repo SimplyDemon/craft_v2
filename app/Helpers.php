@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Recipe;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 /**
  * Copy file from resources path to another directory
@@ -28,4 +30,17 @@ function copyFile( string $filePath, string $pathTo ) {
     File::copy( $path, $filePathTo );
 
     return $explodedPath[1];
+}
+
+function seederAddRecipe( string $name, string $imagePath, int $price, string $grade, int $categoryId, int $craftCost = 0, string $percent = '60' ) {
+    return Recipe::create( [
+        'name'        => $name,
+        'slug'        => Str::slug( $name, '-' ),
+        'price_sell'  => $price,
+        'percent'     => $percent,
+        'grade'       => $grade,
+        'img'         => copyFile( "image/$imagePath/" . $name . '.png', "app/public/uploads/$imagePath/" ),
+        'category_id' => $categoryId,
+        'craft_cost'  => $craftCost,
+    ] );
 }
