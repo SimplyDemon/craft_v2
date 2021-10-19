@@ -15,7 +15,8 @@ class CreateResourcesTable extends Migration {
             $table->bigIncrements( 'id' );
             $table->string( 'name' )->unique();
             $table->string( 'slug' )->unique();
-            $table->integer( 'cost' )->nullable(); // set cost as admin for all users, if they don't inserted their price
+            $table->integer( 'price_buy' )->nullable(); // set buy price  as admin for all users, if they don't inserted their price
+            $table->integer( 'price_sell' )->nullable(); // set sell price  as admin for all users, if they don't inserted their price
             $table->string( 'img' ); //url
             $table->timestamps();
             $table->softDeletes();

@@ -21,10 +21,10 @@
         </div>
 
         <div class="form-group">
-            <label for="cost">
+            <label for="price_sell">
                 Цена
             </label>
-            <input class="form-control" type="number" name="cost" id="cost" value="{{old('cost',$single->cost)}}"
+            <input class="form-control" type="number" name="price_sell" id="price_sell" value="{{old('price_sell',$single->price_sell)}}"
                    min="1">
         </div>
 

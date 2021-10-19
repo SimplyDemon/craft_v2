@@ -21,9 +21,9 @@ class EditResource extends FormRequest {
 	 */
 	public function rules() {
 		return [
-			'name'  => 'required|min:2|max:50|unique:resources,id,' . $this->currentID,
-			'cost'  => 'integer',
-			'image' => 'file',
-		];
+            'name'       => 'required|min:2|max:50|unique:resources,id,' . $this->currentID,
+            'price_sell' => 'integer',
+            'image'      => 'file',
+        ];
 	}
 }

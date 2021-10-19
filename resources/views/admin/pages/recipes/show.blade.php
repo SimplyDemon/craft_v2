@@ -17,7 +17,7 @@
             Слаг: {{$single->slug}}
         </li>
         <li class="list-group-item">
-            Цена: {{$single->cost}}
+            Цена: {{$single->price_sell}}
         </li>
         <li class="list-group-item">
             Цена Крафта: {{$single->craft_cost}}
@@ -38,8 +38,13 @@
             Дата создания: {{$single->created_at}}
         </li>
     </ul>
+
     <h1>{{$single->name}}</h1>
+    <h3>
+        <img width="50px" src="{{asset('storage') . '/' . $single->img}}"> Цена: {{number_format($single->price_sell, 0, ' ', ' ')}}
+    </h3>
     @if($recipeResources)
+        <h2>Закупка ресурсов у торговцев</h2>
         <table class="table">
             <thead>
             <tr>
@@ -52,14 +57,13 @@
             <tbody>
             @foreach($recipeResources as $recipeResource)
                 <tr>
-
                     <?php
                     $resourceId = $recipeResource->resource_id;
                     $resource = \App\Models\Resource::FindOrFail( $resourceId );
                     $recipeId = $recipeResource->recipe_id;
                     $resourceQuantity = $recipeResource->resource_quantity;
-                    $resourcePrice = $resource->cost;
-                    $resourceLinePrice = $resource->cost * $resourceQuantity;
+                    $resourcePrice = $resource->price_sell;
+                    $resourceLinePrice = $resourcePrice * $resourceQuantity;
                     if ( ! isset( $total ) ) {
                         $total = 0;
                     }
@@ -70,6 +74,45 @@
                     <td>{{number_format($resourcePrice, 0, ' ', ' ')}}</td>
                     <td>{{number_format($resourceLinePrice, 0, ' ', ' ') }}</td>
 
+                </tr>
+            @endforeach
+            <tr>
+                <td colspan="3"><b>Итого:</b></td>
+                <td><b>{{number_format($total, 0, ' ', ' ')}}</b></td>
+                <?php unset( $total ) ?>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>Сесть на закупку ресурсов</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Ресурс</th>
+                <th scope="col">Количество</th>
+                <th scope="col">Цена за штуку</th>
+                <th scope="col">Цена за все</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($recipeResources as $recipeResource)
+                <tr>
+                    <?php
+                    $resourceId = $recipeResource->resource_id;
+                    $resource = \App\Models\Resource::FindOrFail( $resourceId );
+                    $recipeId = $recipeResource->recipe_id;
+                    $resourceQuantity = $recipeResource->resource_quantity;
+                    $resourcePrice = $resource->price_buy ?? $resource->price_sell;
+                    $resourceLinePrice = $resourcePrice * $resourceQuantity;
+                    if ( ! isset( $total ) ) {
+                        $total = 0;
+                    }
+                    $total += $resourceLinePrice;
+                    ?>
+                    <td><img width="30px" src="{{asset('storage') . '/' . $resource->img}}">{{$resource->name}}</td>
+                    <td>{{$resourceQuantity}}</td>
+                    <td>{{number_format($resourcePrice, 0, ' ', ' ')}}</td>
+                    <td>{{number_format($resourceLinePrice, 0, ' ', ' ') }}</td>
                 </tr>
             @endforeach
             <tr>
@@ -91,7 +134,5 @@
     <a href="{{ route( 'recipes.edit', [ 'id' => $single->id ] ) }}">
         Редактировать
     </a>
-
-
 
 @endsection

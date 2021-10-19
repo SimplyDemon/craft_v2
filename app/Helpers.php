@@ -13,11 +13,15 @@ use Illuminate\Support\Facades\File;
 function copyFile( string $filePath, string $pathTo ) {
     $path         = resource_path() . $filePath;
     $baseName     = File::basename( $path );
-    $filePathTo   = storage_path( $pathTo . $baseName );
+    $folderPath   = storage_path( $pathTo );
+    $filePathTo   = $folderPath . $baseName;
     $explodedPath = explode( '/public/', $filePathTo );
-
     if ( ! isset( $explodedPath[1] ) || empty( $explodedPath[1] ) ) {
         return false;
+    }
+
+    if ( ! file_exists( $folderPath ) ) {
+        mkdir( $folderPath, 0777, true );
     }
 
     File::copy( $path, $filePathTo );

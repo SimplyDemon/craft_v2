@@ -17,7 +17,7 @@
             Слаг: {{$single->slug}}
         </li>
         <li class="list-group-item">
-            Цена: {{$single->cost}}
+            Цена: {{$single->price_sell}}
         </li>
         <li class="list-group-item">
             Ссылка на изображение: {{asset('storage/') . $single->img}}

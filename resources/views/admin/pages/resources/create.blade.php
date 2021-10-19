@@ -16,10 +16,10 @@
         </div>
 
         <div class="form-group">
-            <label for="cost">
+            <label for="price_sell">
                 Цена
             </label>
-            <input class="form-control" type="number" name="cost" id="cost" value="{{old('cost','0')}}" min="0">
+            <input class="form-control" type="number" name="price_sell" id="price_sell" value="{{old('price_sell','0')}}" min="0">
         </div>
 
         <div class="form-group">

@@ -21,9 +21,9 @@ class EditRecipe extends FormRequest {
 	 */
 	public function rules() {
 		return [
-			'name'  => 'required|min:2|max:50|unique:recipes,id,' . $this->currentID,
-			'cost'  => 'integer',
-			'image' => 'file',
-		];
+            'name'       => 'required|min:2|max:50|unique:recipes,id,' . $this->currentID,
+            'price_sell' => 'integer',
+            'image'      => 'file',
+        ];
 	}
 }

@@ -17,7 +17,7 @@ class RecipeSeeder extends Seeder {
         Recipe::create( [
             'name'        => 'Saint Spear',
             'slug'        => Str::slug( 'Saint Spear', '-' ),
-            'cost'        => 100000000,
+            'price_sell'  => 100000000,
             'percent'     => '60',
             'grade'       => 'S',
             'category_id' => Category::where( 'name', 'Polearm' )->firstOrFail()->id,
@@ -26,9 +26,10 @@ class RecipeSeeder extends Seeder {
         Recipe::create( [
             'name'        => 'Dynasty Knife',
             'slug'        => Str::slug( 'Dynasty Knife', '-' ),
-            'cost'        => 100000000,
+            'price_sell'  => 275000000,
             'percent'     => '60',
             'grade'       => 'S',
+            'img'         => copyFile( '/image/item/weapon/dagger/Dynasty Dagger.png', 'app/public/uploads/item/weapon/dagger/' ),
             'category_id' => Category::where( 'name', 'Dagger' )->firstOrFail()->id,
             'craft_cost'  => 300000,
         ] );
