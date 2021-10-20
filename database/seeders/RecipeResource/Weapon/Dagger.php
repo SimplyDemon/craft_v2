@@ -10,10 +10,10 @@ use Illuminate\Database\Seeder;
 
 class Dagger extends Seeder {
     protected Category $category;
-    protected Resource $ResourceHelper;
+    protected ResourceHelper $ResourceHelper;
 
     public function seed() {
-        $this->ResourceHelper = new Resource();
+        $this->ResourceHelper = new ResourceHelper();
         $this->setCategory();
         $this->add();
     }
