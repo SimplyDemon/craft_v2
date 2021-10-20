@@ -18,4 +18,13 @@ class Recipe extends Model {
         return $this->belongsToMany( 'App\Models\Resource' );
     }
 
+    public function getGradeImageAttribute() {
+        $grade = $this->grade;
+
+        if ( empty( $grade ) ) {
+            return null;
+        }
+
+        return asset( 'storage' ) . '/' . "uploads/grade/{$grade}.png";
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use Database\Seeders\Recipe\ShieldSeeder;
+use Database\Seeders\Recipe\SigilSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder {
@@ -17,6 +19,7 @@ class DatabaseSeeder extends Seeder {
             ResourceSeeder::class,
             RecipeSeeder::class,
             RecipeResourceSeeder::class,
+            GradeImageSeeder::class,
         ] );
     }
 }
