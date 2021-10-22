@@ -34,12 +34,12 @@ class ResourceSeeder extends Seeder {
     }
 
     protected function addRecipesPieces() {
-        $this->addRecipesPiecesSword();
-        $this->addRecipesPiecesBlunt();
-        $this->addRecipesPiecesPolearm();
-        $this->addRecipesPiecesBow();
-        $this->addRecipesPiecesDagger();
-        $this->addRecipesPiecesFist();
+        $this->addRecipesPiecesSwords();
+        $this->addRecipesPiecesBlunts();
+        $this->addRecipesPiecesPolearms();
+        $this->addRecipesPiecesBows();
+        $this->addRecipesPiecesDaggers();
+        $this->addRecipesPiecesFists();
     }
 
     /**
@@ -159,7 +159,7 @@ class ResourceSeeder extends Seeder {
 
     }
 
-    protected function addRecipesPiecesBlunt() {
+    protected function addRecipesPiecesBlunts() {
 
         $this->resources[] = [
             'name'            => 'Basalt Battlehammer Head',
@@ -354,7 +354,7 @@ class ResourceSeeder extends Seeder {
 
     }
 
-    protected function addRecipesPiecesSword() {
+    protected function addRecipesPiecesSwords() {
         $this->resources[] = [
             'name'       => 'Damascus Sword Blade',
             'price_sell' => 30000,
@@ -520,7 +520,7 @@ class ResourceSeeder extends Seeder {
 
     }
 
-    protected function addRecipesPiecesPolearm() {
+    protected function addRecipesPiecesPolearms() {
         $this->resources[] = [
             'name'       => 'Saint Spear Blade',
             'price_sell' => 100000,
@@ -574,7 +574,7 @@ class ResourceSeeder extends Seeder {
         ];
     }
 
-    protected function addRecipesPiecesBow() {
+    protected function addRecipesPiecesBows() {
         $this->resources[] = [
             'name'            => 'Draconic Bow Shaft',
             'price_sell'      => 100000,
@@ -629,7 +629,7 @@ class ResourceSeeder extends Seeder {
 
     }
 
-    protected function addRecipesPiecesDagger() {
+    protected function addRecipesPiecesDaggers() {
         $this->resources[] = [
             'name'       => 'Angel Slayer Blade',
             'price_sell' => 100000,
@@ -684,7 +684,7 @@ class ResourceSeeder extends Seeder {
 
     }
 
-    protected function addRecipesPiecesFist() {
+    protected function addRecipesPiecesFists() {
         $this->resources[] = [
             'name'       => 'Demon Splinter Blade',
             'price_sell' => 100000,
