@@ -8,6 +8,7 @@ use App\Models\Resource;
 use Database\Seeders\RecipeResource\Weapon\Blunt;
 use Database\Seeders\RecipeResource\Weapon\Bow;
 use Database\Seeders\RecipeResource\Weapon\Dagger;
+use Database\Seeders\RecipeResource\Weapon\Fist;
 use Database\Seeders\RecipeResource\Weapon\Polearm;
 use Database\Seeders\RecipeResource\Weapon\Sword;
 use Illuminate\Database\Seeder;
@@ -42,6 +43,9 @@ class RecipeResourceSeeder extends Seeder {
 
         $bow = new Bow();
         $bow->seed();
+
+        $fist = new Fist();
+        $fist->seed();
     }
 
 }

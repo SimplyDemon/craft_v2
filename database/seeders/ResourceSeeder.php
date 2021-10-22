@@ -39,6 +39,7 @@ class ResourceSeeder extends Seeder {
         $this->addRecipesPiecesPolearm();
         $this->addRecipesPiecesBow();
         $this->addRecipesPiecesDagger();
+        $this->addRecipesPiecesFist();
     }
 
     /**
@@ -676,6 +677,62 @@ class ResourceSeeder extends Seeder {
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Shaper (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+    }
+
+    protected function addRecipesPiecesFist() {
+        $this->resources[] = [
+            'name'       => 'Demon Splinter Blade',
+            'price_sell' => 100000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Demon Splinter (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'            => 'Dynasty Bagh-Nakh Piece',
+            'price_sell'      => 100000,
+            'price_buy'       => 60000,
+            'is_custom_piece' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Dynasty Bagh-Nakh (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+
+        $this->resources[] = [
+            'name'            => 'Icarus Hand Piece',
+            'price_sell'      => 100000,
+            'price_buy'       => 60000,
+            'is_custom_piece' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Icarus Hand (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'            => 'Vesper Fighter Piece',
+            'price_sell'      => 100000,
+            'price_buy'       => 60000,
+            'is_custom_piece' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Vesper Fighter (60%)',
             'price_sell' => 800000,
             'price_buy'  => 60000,
             'filePath'   => $this->recipeSImageFilePath,
