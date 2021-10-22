@@ -36,6 +36,7 @@ class ResourceSeeder extends Seeder {
     protected function addRecipesPieces() {
         $this->addRecipesPiecesSword();
         $this->addRecipesPiecesBlunt();
+        $this->addRecipesPiecesPolearm();
     }
 
     /**
@@ -352,19 +353,6 @@ class ResourceSeeder extends Seeder {
 
     protected function addRecipesPiecesSword() {
         $this->resources[] = [
-            'name'       => 'Saint Spear Blade',
-            'price_sell' => 100000,
-            'price_buy'  => 60000,
-            'filePath'   => $this->defaultWeaponBladeFilePath,
-        ];
-        $this->resources[] = [
-            'name'       => 'Recipe: Saint Spear (60%)',
-            'price_sell' => 800000,
-            'price_buy'  => 60000,
-            'filePath'   => $this->recipeSImageFilePath,
-        ];
-
-        $this->resources[] = [
             'name'       => 'Damascus Sword Blade',
             'price_sell' => 30000,
             'price_buy'  => 60000,
@@ -540,6 +528,60 @@ class ResourceSeeder extends Seeder {
             'filePath'   => $this->recipeSImageFilePath,
         ];
 
+    }
+
+    protected function addRecipesPiecesPolearm() {
+        $this->resources[] = [
+            'name'       => 'Saint Spear Blade',
+            'price_sell' => 100000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Saint Spear (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'            => 'Dynasty Halberd Piece',
+            'price_sell'      => 1800000,
+            'price_buy'       => 600000,
+            'is_custom_piece' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Dynasty Halberd (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'       => 'Icarus Trident Piece',
+            'price_sell' => 1800000,
+            'price_buy'  => 600000,
+            'filePath'   => $this->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Icarus Trident (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'            => 'Vesper Stormer Piece',
+            'price_sell'      => 1800000,
+            'price_buy'       => 600000,
+            'is_custom_piece' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Vesper Stormer (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
     }
 
     protected function seed() {

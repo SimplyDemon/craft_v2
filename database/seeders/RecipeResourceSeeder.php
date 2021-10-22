@@ -40,5 +40,4 @@ class RecipeResourceSeeder extends Seeder {
         $blunt->seed();
     }
 
-
 }
