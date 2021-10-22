@@ -14,6 +14,35 @@ class ResourceSeeder extends Seeder {
      * @return void
      */
     public function run() {
+        $this->addResources();
+        $this->addRecipesPieces();
+    }
+
+    /**
+     * Copy file from resources path to another directory
+     *
+     * @param string $name
+     * @param int $priceSell
+     * @param int $priceBuy
+     *
+     * @return Resource
+     */
+    protected function createResource( string $name, int $priceSell, int $priceBuy = null, $filePath = null ): Resource {
+        $imagePath = 'resource';
+        if ( ! $filePath ) {
+            $filePath = "image/$imagePath/" . $name . '.png';
+        }
+
+        return Resource::create( [
+            'name'       => $name,
+            'slug'       => Str::slug( $name, '-' ),
+            'price_sell' => $priceSell,
+            'price_buy'  => $priceBuy,
+            'img'        => copyFile( $filePath, "app/public/uploads/$imagePath/" ),
+        ] );
+    }
+
+    protected function addResources() {
         $resources = [];
 
         $resources[] = [
@@ -90,204 +119,7 @@ class ResourceSeeder extends Seeder {
             'price_buy'  => 405000,
         ];
 
-
-        $resources[] = [
-            'name'       => 'Saint Spear Blade',
-            'price_sell' => 100000,
-            'price_buy'  => 60000,
-            'filePath'   => 'image/resource/Weapon Blade.png',
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Saint Spear (60%)',
-            'price_sell' => 800000,
-            'price_buy'  => 60000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-
-        $resources[] = [
-            'name'       => 'Damascus Sword Blade',
-            'price_sell' => 30000,
-            'price_buy'  => 60000,
-            'filePath'   => 'image/resource/Weapon Blade.png',
-        ];
-
-        $resources[] = [
-            'name'       => 'Recipe: Damascus Sword (60%)',
-            'price_sell' => 1000000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe B.png',
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Damascus Sword',
-            'price_sell' => 5000000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe B.png',
-        ];
-
-        $resources[] = [
-            'name'       => 'Dynasty Knife Piece',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-            'filePath'   => 'image/resource/Weapon Blade.png',
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Dynasty Knife (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-
-
-        $resources[] = [
-            'name'       => 'Forgotten Blade Edge',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-            'filePath'   => 'image/resource/Weapon Blade.png',
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Forgotten Blade (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-
-        $resources[] = [
-            'name'       => 'Heavens Divider Edge',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-            'filePath'   => 'image/resource/Weapon Blade.png',
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Heavens Divider (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-
-
-        $resources[] = [
-            'name'       => 'Dynasty Sword Piece',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-            'filePath'   => 'image/resource/Weapon Blade.png',
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Dynasty Sword (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-
-        $resources[] = [
-            'name'       => 'Dynasty Blade Piece',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-            'filePath'   => 'image/resource/Weapon Blade.png',
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Dynasty Blade (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-        $resources[] = [
-            'name'       => 'Dynasty Phantom Piece',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-            'filePath'   => 'image/resource/Weapon Blade.png',
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Dynasty Phantom (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Icarus Sawsword (60%)',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-            'filePath'   => 'image/resource/Weapon Blade.png',
-        ];
-        $resources[] = [
-            'name'       => 'Icarus Sawsword Piece',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-        $resources[] = [
-            'name'       => 'Icarus Spirit Piece',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-            'filePath'   => 'image/resource/Weapon Blade.png',
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Icarus Spirit (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-        $resources[] = [
-            'name'       => 'Icarus Heavy Arms Piece',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-            'filePath'   => 'image/resource/Weapon Blade.png',
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Icarus Heavy Arms (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-        $resources[] = [
-            'name'       => 'Vesper Cutter Piece',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Vesper Cutter (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-        $resources[] = [
-            'name'       => 'Vesper Slasher Piece',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Vesper Slasher (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-        $resources[] = [
-            'name'       => 'Vesper Buster Piece',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-        ];
-        $resources[] = [
-            'name'       => 'Recipe: Vesper Buster (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-
-        $resources[] = [
-            'name'       => 'Piece',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-            'filePath'   => 'image/resource/Weapon Blade.png',
-        ];
-        $resources[] = [
-            'name'       => 'Recipe',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => 'image/resource/Recipe S.png',
-        ];
-
-
         foreach ( $resources as $resource ) {
-            $args = [];
 
             $this->createResource(
                 $resource['name'],
@@ -298,28 +130,228 @@ class ResourceSeeder extends Seeder {
         }
     }
 
-    /**
-     * Copy file from resources path to another directory
-     *
-     * @param string $name
-     * @param int $priceSell
-     * @param int $priceBuy
-     *
-     * @return Resource
-     */
-    protected function createResource( string $name, int $priceSell, int $priceBuy = null, $filePath = null ): Resource {
-        $imagePath = 'resource';
-        if ( ! $filePath ) {
-            $filePath = "image/$imagePath/" . $name . '.png';
-        }
+    protected function addRecipesPieces() {
+        $resources        = [];
+        $pieceFolderPath  = 'image/resource/piece/';
+        $recipeFolderPath = 'image/resource/recipe/';
 
-        return Resource::create( [
-            'name'       => $name,
-            'slug'       => Str::slug( $name, '-' ),
-            'price_sell' => $priceSell,
-            'price_buy'  => $priceBuy,
-            'img'        => copyFile( $filePath, "app/public/uploads/$imagePath/" ),
-        ] );
+        $defaultWeaponBladeFilePath = $pieceFolderPath . 'Weapon Blade.png';
+        $recipeSImageFilePath       = $recipeFolderPath . 'Recipe S.png';
+        $recipeBImageFilePath       = $recipeFolderPath . 'Recipe B.png';
+
+        $resources[] = [
+            'name'       => 'Saint Spear Blade',
+            'price_sell' => 100000,
+            'price_buy'  => 60000,
+            'filePath'   => $defaultWeaponBladeFilePath,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Saint Spear (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'       => 'Damascus Sword Blade',
+            'price_sell' => 30000,
+            'price_buy'  => 60000,
+            'filePath'   => $defaultWeaponBladeFilePath,
+        ];
+
+        $resources[] = [
+            'name'       => 'Recipe: Damascus Sword (60%)',
+            'price_sell' => 1000000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeBImageFilePath,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Damascus Sword',
+            'price_sell' => 5000000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeBImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'       => 'Dynasty Knife Piece',
+            'price_sell' => 1800000,
+            'price_buy'  => 600000,
+            'filePath'   => $defaultWeaponBladeFilePath,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Dynasty Knife (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'       => 'Forgotten Blade Edge',
+            'price_sell' => 1800000,
+            'price_buy'  => 600000,
+            'filePath'   => $defaultWeaponBladeFilePath,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Forgotten Blade (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'       => 'Heavens Divider Edge',
+            'price_sell' => 1800000,
+            'price_buy'  => 600000,
+            'filePath'   => $defaultWeaponBladeFilePath,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Heavens Divider (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'       => 'Dynasty Sword Piece',
+            'price_sell' => 1800000,
+            'price_buy'  => 600000,
+            'filePath'   => $defaultWeaponBladeFilePath,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Dynasty Sword (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'       => 'Dynasty Blade Piece',
+            'price_sell' => 1800000,
+            'price_buy'  => 600000,
+            'filePath'   => $defaultWeaponBladeFilePath,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Dynasty Blade (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'       => 'Dynasty Phantom Piece',
+            'price_sell' => 1800000,
+            'price_buy'  => 600000,
+            'filePath'   => $defaultWeaponBladeFilePath,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Dynasty Phantom (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'       => 'Recipe: Icarus Sawsword (60%)',
+            'price_sell' => 1800000,
+            'price_buy'  => 600000,
+            'filePath'   => $defaultWeaponBladeFilePath,
+        ];
+        $resources[] = [
+            'name'       => 'Icarus Sawsword Piece',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'       => 'Icarus Spirit Piece',
+            'price_sell' => 1800000,
+            'price_buy'  => 600000,
+            'filePath'   => $defaultWeaponBladeFilePath,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Icarus Spirit (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'       => 'Icarus Heavy Arms Piece',
+            'price_sell' => 1800000,
+            'price_buy'  => 600000,
+            'filePath'   => $defaultWeaponBladeFilePath,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Icarus Heavy Arms (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'                       => 'Vesper Cutter Piece',
+            'price_sell'                 => 1800000,
+            'price_buy'                  => 600000,
+            'is_non_default_piece_image' => true,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Vesper Cutter (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'                       => 'Vesper Slasher Piece',
+            'price_sell'                 => 1800000,
+            'price_buy'                  => 600000,
+            'is_non_default_piece_image' => true,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Vesper Slasher (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'                       => 'Vesper Buster Piece',
+            'price_sell'                 => 1800000,
+            'price_buy'                  => 600000,
+            'is_non_default_piece_image' => true,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe: Vesper Buster (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+        $resources[] = [
+            'name'       => 'Piece',
+            'price_sell' => 1800000,
+            'price_buy'  => 600000,
+            'filePath'   => $defaultWeaponBladeFilePath,
+        ];
+        $resources[] = [
+            'name'       => 'Recipe',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $recipeSImageFilePath,
+        ];
+
+
+        foreach ( $resources as $resource ) {
+            $filePath = isset( $resource['is_non_default_piece_image'] ) && $resource['is_non_default_piece_image'] ? "{$pieceFolderPath}{$resource['name']}.png" : $resource['filePath'] ?? null;
+
+            $this->createResource(
+                $resource['name'],
+                $resource['price_sell'],
+                $resource[ 'price_buy' ?? null ],
+                $filePath,
+            );
+        }
     }
 
 }
