@@ -7,6 +7,7 @@ use App\Models\Recipe;
 use App\Models\Resource;
 use Database\Seeders\RecipeResource\Weapon\Dagger;
 use Database\Seeders\RecipeResource\Weapon\Polearm;
+use Database\Seeders\RecipeResource\Weapon\Sword;
 use Illuminate\Database\Seeder;
 
 class RecipeResourceSeeder extends Seeder {
@@ -30,6 +31,9 @@ class RecipeResourceSeeder extends Seeder {
 
         $polearm = new Polearm();
         $polearm->seed();
+
+        $sword = new Sword();
+        $sword->seed();
     }
 
 

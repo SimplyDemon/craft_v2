@@ -41,6 +41,8 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->swordCategory->id;
         $imagePath  = 'item/weapon/sword';
 
+        seederAddRecipe( 'Damascus Sword', $imagePath, 20000000, 'B', $categoryId );
+        seederAddRecipe( 'Damascus Sword (60%)', $imagePath, 20000000, 'B', $categoryId );
         seederAddRecipe( 'Forgotten Blade', $imagePath, 100000000, 'S', $categoryId );
         seederAddRecipe( 'Heavens Divider', $imagePath, 100000000, 'S', $categoryId );
         seederAddRecipe( 'Dynasty Sword', $imagePath, 100000000, 'S', $categoryId );

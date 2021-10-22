@@ -27,4 +27,12 @@ class Recipe extends Model {
 
         return asset( 'storage' ) . '/' . "uploads/grade/{$grade}.png";
     }
+
+    /*
+     * Replace % on %25 for correct display percent symbol in url address
+     */
+    public function getImgAttribute() {
+
+        return str_replace( '%', '%25', $this->attributes['img'] );
+    }
 }

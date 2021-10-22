@@ -11,7 +11,7 @@ class GradeImageSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        $grades = [ 'S', 'S-80', 'S-84' ];
+        $grades = [ 'D', 'C', 'B', 'A', 'S', 'S-80', 'S-84' ];
         foreach ( $grades as $grade ) {
 
             copyFile( "image/grade/{$grade}.png", "app/public/uploads/grade/" );

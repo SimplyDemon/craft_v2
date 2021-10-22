@@ -55,6 +55,7 @@
             </tr>
             </thead>
             <tbody>
+            <?php $total = 0; ?>
             @foreach($recipeResources as $recipeResource)
                 <tr>
                     <?php
@@ -64,9 +65,6 @@
                     $resourceQuantity = $recipeResource->resource_quantity;
                     $resourcePrice = $resource->price_sell;
                     $resourceLinePrice = $resourcePrice * $resourceQuantity;
-                    if ( ! isset( $total ) ) {
-                        $total = 0;
-                    }
                     $total += $resourceLinePrice;
                     ?>
                     <td><img width="30px" src="{{asset('storage') . '/' . $resource->img}}">{{$resource->name}}</td>
@@ -95,6 +93,7 @@
             </tr>
             </thead>
             <tbody>
+            <?php $total = 0; ?>
             @foreach($recipeResources as $recipeResource)
                 <tr>
                     <?php
@@ -104,9 +103,6 @@
                     $resourceQuantity = $recipeResource->resource_quantity;
                     $resourcePrice = $resource->price_buy ?? $resource->price_sell;
                     $resourceLinePrice = $resourcePrice * $resourceQuantity;
-                    if ( ! isset( $total ) ) {
-                        $total = 0;
-                    }
                     $total += $resourceLinePrice;
                     ?>
                     <td><img width="30px" src="{{asset('storage') . '/' . $resource->img}}">{{$resource->name}}</td>
