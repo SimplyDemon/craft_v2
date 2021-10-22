@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Helpers\ResourceHelper;
 use App\Models\Recipe;
 use App\Models\Resource;
+use Database\Seeders\RecipeResource\Weapon\Blunt;
 use Database\Seeders\RecipeResource\Weapon\Dagger;
 use Database\Seeders\RecipeResource\Weapon\Polearm;
 use Database\Seeders\RecipeResource\Weapon\Sword;
@@ -34,6 +35,9 @@ class RecipeResourceSeeder extends Seeder {
 
         $sword = new Sword();
         $sword->seed();
+
+        $blunt = new Blunt();
+        $blunt->seed();
     }
 
 

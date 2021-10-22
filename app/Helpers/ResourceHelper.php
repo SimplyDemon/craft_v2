@@ -12,6 +12,9 @@ class ResourceHelper {
     public Resource $enria;
     public Resource $durableMetalPlate;
     public Resource $adamantine;
+    public Resource $coarseBonePowder;
+    public Resource $compoundBraid;
+    public Resource $oriharukon;
 
     public Resource $warsmithHolder;
     public Resource $artisansFrame;
@@ -35,6 +38,9 @@ class ResourceHelper {
         $this->enria             = Resource::where( 'name', 'Enria' )->firstOrFail();
         $this->durableMetalPlate = Resource::where( 'name', 'Durable Metal Plate' )->firstOrFail();
         $this->adamantine        = Resource::where( 'name', 'Adamantine' )->firstOrFail();
+        $this->coarseBonePowder  = Resource::where( 'name', 'Coarse Bone Powder' )->firstOrFail();
+        $this->compoundBraid     = Resource::where( 'name', 'Compound Braid' )->firstOrFail();
+        $this->oriharukon        = Resource::where( 'name', 'Oriharukon' )->firstOrFail();
 
         $this->warsmithHolder = Resource::where( 'name', 'Warsmith Holder' )->firstOrFail();
         $this->artisansFrame  = Resource::where( 'name', 'Artisans Frame' )->firstOrFail();
