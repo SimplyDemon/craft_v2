@@ -38,6 +38,7 @@ class ResourceSeeder extends Seeder {
         $this->addRecipesPiecesBlunt();
         $this->addRecipesPiecesPolearm();
         $this->addRecipesPiecesBow();
+        $this->addRecipesPiecesDagger();
     }
 
     /**
@@ -374,19 +375,6 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'       => 'Dynasty Knife Piece',
-            'price_sell' => 1800000,
-            'price_buy'  => 600000,
-            'filePath'   => $this->defaultWeaponBladeFilePath,
-        ];
-        $this->resources[] = [
-            'name'       => 'Recipe: Dynasty Knife (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
-            'filePath'   => $this->recipeSImageFilePath,
-        ];
-
-        $this->resources[] = [
             'name'       => 'Forgotten Blade Edge',
             'price_sell' => 1800000,
             'price_buy'  => 600000,
@@ -633,6 +621,61 @@ class ResourceSeeder extends Seeder {
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Thrower (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+    }
+
+    protected function addRecipesPiecesDagger() {
+        $this->resources[] = [
+            'name'       => 'Angel Slayer Blade',
+            'price_sell' => 100000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Angel Slayer (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'       => 'Dynasty Knife Piece',
+            'price_sell' => 1800000,
+            'price_buy'  => 600000,
+            'filePath'   => $this->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Dynasty Knife (60%)',
+            'price_sell' => 3200000,
+            'price_buy'  => 3200000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'       => 'Icarus Disperser Piece',
+            'price_sell' => 100000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Icarus Disperser (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'            => 'Vesper Shaper Piece',
+            'price_sell'      => 100000,
+            'price_buy'       => 60000,
+            'is_custom_piece' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Vesper Shaper (60%)',
             'price_sell' => 800000,
             'price_buy'  => 60000,
             'filePath'   => $this->recipeSImageFilePath,
