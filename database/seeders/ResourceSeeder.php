@@ -9,11 +9,16 @@ use Illuminate\Support\Str;
 
 class ResourceSeeder extends Seeder {
     protected array $resources;
-    protected string $pieceFolderPath;
+    protected string $pieceFolderPathWeapon;
     protected string $recipeFolderPath;
     protected string $defaultWeaponBladeFilePath;
     protected string $recipeSImageFilePath;
     protected string $recipeBImageFilePath;
+    protected string $pieceFolderPathArmor;
+    protected string $pieceFolderPathArmorLight;
+    protected string $pieceFolderPathArmorHeavy;
+    protected string $pieceFolderPathArmorRobe;
+    protected string $defaultArmorPieceFilePath;
 
     public function run() {
         $this->setup();
@@ -24,22 +29,48 @@ class ResourceSeeder extends Seeder {
     }
 
     protected function setup() {
-        $this->resources        = [];
-        $this->pieceFolderPath  = 'image/resource/piece/';
-        $this->recipeFolderPath = 'image/resource/recipe/';
+        $this->resources             = [];
+        $this->pieceFolderPathWeapon = 'image/resource/piece/weapon/';
+        $this->pieceFolderPathArmor  = 'image/resource/piece/armor/';
+        $this->recipeFolderPath      = 'image/resource/recipe/';
 
-        $this->defaultWeaponBladeFilePath = $this->pieceFolderPath . 'Weapon Blade.png';
-        $this->recipeSImageFilePath       = $this->recipeFolderPath . 'Recipe S.png';
-        $this->recipeBImageFilePath       = $this->recipeFolderPath . 'Recipe B.png';
+        $this->pieceFolderPathArmorLight = $this->pieceFolderPathArmor . 'light/';
+        $this->pieceFolderPathArmorHeavy = $this->pieceFolderPathArmor . 'heavy/';
+        $this->pieceFolderPathArmorRobe  = $this->pieceFolderPathArmor . 'robe/';
+
+
+        $this->defaultWeaponBladeFilePath = $this->pieceFolderPathWeapon . 'Blade.png';
+        $this->defaultArmorPieceFilePath  = $this->pieceFolderPathArmor . 'Piece.png';
+
+        $this->recipeSImageFilePath = $this->recipeFolderPath . 'Recipe S.png';
+        $this->recipeBImageFilePath = $this->recipeFolderPath . 'Recipe B.png';
     }
 
     protected function addRecipesPieces() {
+        $this->addRecipesPiecesWeapon();
+        $this->addRecipesPiecesArmor();
+    }
+
+    protected function addRecipesPiecesWeapon() {
         $this->addRecipesPiecesSwords();
         $this->addRecipesPiecesBlunts();
         $this->addRecipesPiecesPolearms();
         $this->addRecipesPiecesBows();
         $this->addRecipesPiecesDaggers();
         $this->addRecipesPiecesFists();
+    }
+
+    protected function addRecipesPiecesArmor() {
+        $this->addRecipesPiecesArmorLight();
+    }
+
+    protected function addRecipesPiecesArmorLight() {
+        $this->addRecipesPiecesArmorLightFullBody();
+        $this->addRecipesPiecesArmorLightUpper();
+        $this->addRecipesPiecesArmorLightLower();
+        $this->addRecipesPiecesArmorLightHelmet();
+        $this->addRecipesPiecesArmorLightBoot();
+        $this->addRecipesPiecesArmorLightGloves();
     }
 
     /**
@@ -118,6 +149,21 @@ class ResourceSeeder extends Seeder {
             'price_sell' => 10500,
             'price_buy'  => 11100,
         ];
+        $this->resources[] = [
+            'name'       => 'Metallic Fiber',
+            'price_sell' => 10500,
+            'price_buy'  => 11100,
+        ];
+        $this->resources[] = [
+            'name'       => 'Asofe',
+            'price_sell' => 10500,
+            'price_buy'  => 11100,
+        ];
+        $this->resources[] = [
+            'name'       => 'Orichalcum',
+            'price_sell' => 10500,
+            'price_buy'  => 11100,
+        ];
 
 
         $this->resources[] = [
@@ -132,6 +178,21 @@ class ResourceSeeder extends Seeder {
         ];
         $this->resources[] = [
             'name'       => 'Artisans Frame',
+            'price_sell' => 220000,
+            'price_buy'  => 5000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Arcsmith Anvil',
+            'price_sell' => 220000,
+            'price_buy'  => 5000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Reorins Mold',
+            'price_sell' => 220000,
+            'price_buy'  => 5000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Warsmith Mold',
             'price_sell' => 220000,
             'price_buy'  => 5000000,
         ];
@@ -162,10 +223,10 @@ class ResourceSeeder extends Seeder {
     protected function addRecipesPiecesBlunts() {
 
         $this->resources[] = [
-            'name'            => 'Basalt Battlehammer Head',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'is_custom_piece' => true,
+            'name'                   => 'Basalt Battlehammer Head',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Basalt Battlehammer (60%)',
@@ -175,10 +236,10 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Imperial Staff Head',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'is_custom_piece' => true,
+            'name'                   => 'Imperial Staff Head',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Imperial Staff (60%)',
@@ -201,11 +262,11 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Arcana Mace Head',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'filePath'        => $this->defaultWeaponBladeFilePath,
-            'is_custom_piece' => true,
+            'name'                   => 'Arcana Mace Head',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'filePath'               => $this->defaultWeaponBladeFilePath,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Arcana Mace (60%)',
@@ -215,11 +276,11 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Dynasty Cudgel Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'filePath'        => $this->defaultWeaponBladeFilePath,
-            'is_custom_piece' => true,
+            'name'                   => 'Dynasty Cudgel Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'filePath'               => $this->defaultWeaponBladeFilePath,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Dynasty Cudgel (60%)',
@@ -229,11 +290,11 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Dynasty Mace Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'filePath'        => $this->defaultWeaponBladeFilePath,
-            'is_custom_piece' => true,
+            'name'                   => 'Dynasty Mace Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'filePath'               => $this->defaultWeaponBladeFilePath,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Dynasty Mace (60%)',
@@ -269,11 +330,11 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Icarus Hammer Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'filePath'        => $this->defaultWeaponBladeFilePath,
-            'is_custom_piece' => true,
+            'name'                   => 'Icarus Hammer Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'filePath'               => $this->defaultWeaponBladeFilePath,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Icarus Hammer (60%)',
@@ -283,11 +344,11 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Icarus Hall Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'filePath'        => $this->defaultWeaponBladeFilePath,
-            'is_custom_piece' => true,
+            'name'                   => 'Icarus Hall Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'filePath'               => $this->defaultWeaponBladeFilePath,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Icarus Hall (60%)',
@@ -297,11 +358,11 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Vesper Avenger Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'filePath'        => $this->defaultWeaponBladeFilePath,
-            'is_custom_piece' => true,
+            'name'                   => 'Vesper Avenger Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'filePath'               => $this->defaultWeaponBladeFilePath,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Avenger (60%)',
@@ -311,11 +372,11 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Vesper Retributer Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'filePath'        => $this->defaultWeaponBladeFilePath,
-            'is_custom_piece' => true,
+            'name'                   => 'Vesper Retributer Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'filePath'               => $this->defaultWeaponBladeFilePath,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Retributer (60%)',
@@ -325,11 +386,11 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Vesper Caster Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'filePath'        => $this->defaultWeaponBladeFilePath,
-            'is_custom_piece' => true,
+            'name'                   => 'Vesper Caster Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'filePath'               => $this->defaultWeaponBladeFilePath,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Caster (60%)',
@@ -339,11 +400,11 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Vesper Singer Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'filePath'        => $this->defaultWeaponBladeFilePath,
-            'is_custom_piece' => true,
+            'name'                   => 'Vesper Singer Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'filePath'               => $this->defaultWeaponBladeFilePath,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Singer (60%)',
@@ -480,10 +541,10 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Vesper Cutter Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'is_custom_piece' => true,
+            'name'                   => 'Vesper Cutter Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Cutter (60%)',
@@ -493,10 +554,10 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Vesper Slasher Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'is_custom_piece' => true,
+            'name'                   => 'Vesper Slasher Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Slasher (60%)',
@@ -506,10 +567,10 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Vesper Buster Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'is_custom_piece' => true,
+            'name'                   => 'Vesper Buster Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Buster (60%)',
@@ -535,10 +596,10 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Dynasty Halberd Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'is_custom_piece' => true,
+            'name'                   => 'Dynasty Halberd Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Dynasty Halberd (60%)',
@@ -561,10 +622,10 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Vesper Stormer Piece',
-            'price_sell'      => 1800000,
-            'price_buy'       => 600000,
-            'is_custom_piece' => true,
+            'name'                   => 'Vesper Stormer Piece',
+            'price_sell'             => 1800000,
+            'price_buy'              => 600000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Stormer (60%)',
@@ -576,10 +637,10 @@ class ResourceSeeder extends Seeder {
 
     protected function addRecipesPiecesBows() {
         $this->resources[] = [
-            'name'            => 'Draconic Bow Shaft',
-            'price_sell'      => 100000,
-            'price_buy'       => 60000,
-            'is_custom_piece' => true,
+            'name'                   => 'Draconic Bow Shaft',
+            'price_sell'             => 100000,
+            'price_buy'              => 60000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Draconic Bow (60%)',
@@ -589,10 +650,10 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Dynasty Bow Piece',
-            'price_sell'      => 100000,
-            'price_buy'       => 60000,
-            'is_custom_piece' => true,
+            'name'                   => 'Dynasty Bow Piece',
+            'price_sell'             => 100000,
+            'price_buy'              => 60000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Dynasty Bow (60%)',
@@ -602,10 +663,10 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Icarus Spitter Piece',
-            'price_sell'      => 100000,
-            'price_buy'       => 60000,
-            'is_custom_piece' => true,
+            'name'                   => 'Icarus Spitter Piece',
+            'price_sell'             => 100000,
+            'price_buy'              => 60000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Icarus Spitter (60%)',
@@ -615,10 +676,10 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Vesper Thrower Piece',
-            'price_sell'      => 100000,
-            'price_buy'       => 60000,
-            'is_custom_piece' => true,
+            'name'                   => 'Vesper Thrower Piece',
+            'price_sell'             => 100000,
+            'price_buy'              => 60000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Thrower (60%)',
@@ -670,10 +731,10 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Vesper Shaper Piece',
-            'price_sell'      => 100000,
-            'price_buy'       => 60000,
-            'is_custom_piece' => true,
+            'name'                   => 'Vesper Shaper Piece',
+            'price_sell'             => 100000,
+            'price_buy'              => 60000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Shaper (60%)',
@@ -699,10 +760,10 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Dynasty Bagh-Nakh Piece',
-            'price_sell'      => 100000,
-            'price_buy'       => 60000,
-            'is_custom_piece' => true,
+            'name'                   => 'Dynasty Bagh-Nakh Piece',
+            'price_sell'             => 100000,
+            'price_buy'              => 60000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Dynasty Bagh-Nakh (60%)',
@@ -713,10 +774,10 @@ class ResourceSeeder extends Seeder {
 
 
         $this->resources[] = [
-            'name'            => 'Icarus Hand Piece',
-            'price_sell'      => 100000,
-            'price_buy'       => 60000,
-            'is_custom_piece' => true,
+            'name'                   => 'Icarus Hand Piece',
+            'price_sell'             => 100000,
+            'price_buy'              => 60000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Icarus Hand (60%)',
@@ -726,10 +787,10 @@ class ResourceSeeder extends Seeder {
         ];
 
         $this->resources[] = [
-            'name'            => 'Vesper Fighter Piece',
-            'price_sell'      => 100000,
-            'price_buy'       => 60000,
-            'is_custom_piece' => true,
+            'name'                   => 'Vesper Fighter Piece',
+            'price_sell'             => 100000,
+            'price_buy'              => 60000,
+            'is_custom_piece_weapon' => true,
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Fighter (60%)',
@@ -740,9 +801,282 @@ class ResourceSeeder extends Seeder {
 
     }
 
+    protected function addRecipesPiecesArmorLightFullBody() {
+        $this->resources[] = [
+            'name'       => 'Draconic Leather Armor Part',
+            'price_sell' => 100000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Draconic Leather Armor (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+    }
+
+    protected function addRecipesPiecesArmorLightUpper() {
+        $this->resources[] = [
+            'name'       => 'Dynasty Leather Armor Piece',
+            'price_sell' => 100000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Dynasty Leather Armor (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Moirai Leather Breastplate Piece',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Moirai Leather Breastplate (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Vesper Leather Breastplate Piece',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Vesper Leather Breastplate (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+    }
+
+    protected function addRecipesPiecesArmorLightLower() {
+        $this->resources[] = [
+            'name'       => 'Dynasty Leather Leggings Piece',
+            'price_sell' => 100000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Dynasty Leather Leggings (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Moirai Leather Leggings Piece',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Moirai Leather Leggings (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Vesper Leather Leggings Piece',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Vesper Leather Leggings (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+    }
+
+    protected function addRecipesPiecesArmorLightHelmet() {
+        $this->resources[] = [
+            'name'       => 'Draconic Leather Helmet Pattern',
+            'price_sell' => 100000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Draconic Leather Helmet (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'       => 'Dynasty Leather Helmet Piece',
+            'price_sell' => 100000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Dynasty Leather Helmet (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Moirai Leather Helmet Piece',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Moirai Leather Helmet (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Vesper Leather Helmet Piece',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Vesper Leather Helmet (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+    }
+
+    protected function addRecipesPiecesArmorLightBoot() {
+        $this->resources[] = [
+            'name'                  => 'Draconic Leather Boots Design',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Draconic Leather Boots (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Dynasty Leather Boots Piece',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Dynasty Leather Boots (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Moirai Leather Boots Piece',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Moirai Leather Boots (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Vesper Leather Boots Piece',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Vesper Leather Boots (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+    }
+
+    protected function addRecipesPiecesArmorLightGloves() {
+        $this->resources[] = [
+            'name'       => 'Draconic Leather Gloves Fabric',
+            'price_sell' => 100000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Draconic Leather Gloves (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Dynasty Leather Gloves Piece',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Dynasty Leather Gloves (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Moirai Leather Gloves Piece',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Moirai Leather Gloves (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Vesper Leather Gloves Piece',
+            'price_sell'            => 100000,
+            'price_buy'             => 60000,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Vesper Leather Gloves (60%)',
+            'price_sell' => 800000,
+            'price_buy'  => 60000,
+            'filePath'   => $this->recipeSImageFilePath,
+        ];
+
+    }
+
     protected function seed() {
         foreach ( $this->resources as $resource ) {
-            $filePath = isset( $resource['is_custom_piece'] ) && $resource['is_custom_piece'] ? "{$this->pieceFolderPath}{$resource['name']}.png" : $resource['filePath'] ?? null;
+            if ( isset( $resource['is_custom_piece_weapon'] ) && $resource['is_custom_piece_weapon'] ) {
+                $filePath = "{$this->pieceFolderPathWeapon}{$resource['name']}.png";
+            } else if ( isset( $resource['is_custom_piece_armor'] ) && $resource['is_custom_piece_armor'] ) {
+                $filePath = "{$this->pieceFolderPathArmor}{$resource['name']}.png";
+            } else if ( isset( $resource['filePath'] ) ) {
+                $filePath = $resource['filePath'];
+            } else {
+                $filePath = null;
+            }
 
             $this->createResource(
                 $resource['name'],
