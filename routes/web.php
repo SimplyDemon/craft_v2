@@ -14,17 +14,17 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\ResourceController;
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 
-Route::get( '/', function () {
-    return view( 'welcome' );
-} );
+Auth::routes( [
+    'register' => false, // Registration Routes...
+    'reset'    => false, // Password Reset Routes...
+    'verify'   => false, // Email Verification Routes...
+] );
 
-Auth::routes();
-
-Route::get( '/home', [ HomeController::class, 'index' ] )->name( 'home' );
+Route::middleware( 'auth' )->get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
 
 Route::middleware( 'isAdmin' )->prefix( 'admin' )->group( function () {
     Route::resource( 'categories', CategoryController::class )->parameters( [
