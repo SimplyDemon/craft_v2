@@ -90,6 +90,7 @@ class ResourceSeeder extends Seeder {
     protected function addRecipesPiecesArmor() {
         $this->addRecipesPiecesArmorLight();
         $this->addRecipesPiecesArmorHeavy();
+        $this->addRecipesPiecesArmorRobe();
     }
 
     protected function addRecipesPiecesArmorLight() {
@@ -131,6 +132,28 @@ class ResourceSeeder extends Seeder {
         $upperResources = $upper->getResources();
 
         $this->resources = array_merge( $this->resources, $bootResources, $glovesResources, $helmetResources, $lowerResources, $upperResources );
+    }
+
+    protected function addRecipesPiecesArmorRobe() {
+        $boot          = new \Database\Seeders\Resource\Armor\Robe\Boot();
+        $bootResources = $boot->getResources();
+
+        $fullBody          = new \Database\Seeders\Resource\Armor\Robe\FullBody();
+        $fullBodyResources = $fullBody->getResources();
+
+        $gloves          = new \Database\Seeders\Resource\Armor\Robe\Gloves();
+        $glovesResources = $gloves->getResources();
+
+        $helmet          = new \Database\Seeders\Resource\Armor\Robe\Helmet();
+        $helmetResources = $helmet->getResources();
+
+        $lower          = new \Database\Seeders\Resource\Armor\Robe\Lower();
+        $lowerResources = $lower->getResources();
+
+        $upper          = new \Database\Seeders\Resource\Armor\Robe\Upper();
+        $upperResources = $upper->getResources();
+
+        $this->resources = array_merge( $this->resources, $bootResources, $fullBodyResources, $glovesResources, $helmetResources, $lowerResources, $upperResources );
     }
 
     protected function addResources() {
