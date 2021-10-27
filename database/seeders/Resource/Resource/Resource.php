@@ -71,6 +71,21 @@ class Resource extends ResourceMain {
             'price_sell' => 10500,
             'price_buy'  => 11100,
         ];
+        $this->resources[] = [
+            'name'       => 'Varnish of Purity',
+            'price_sell' => 10500,
+            'price_buy'  => 11100,
+        ];
+        $this->resources[] = [
+            'name'       => 'Thons',
+            'price_sell' => 10500,
+            'price_buy'  => 11100,
+        ];
+        $this->resources[] = [
+            'name'       => 'Leonard',
+            'price_sell' => 10500,
+            'price_buy'  => 11100,
+        ];
 
 
         $this->resources[] = [
@@ -100,6 +115,11 @@ class Resource extends ResourceMain {
         ];
         $this->resources[] = [
             'name'       => 'Warsmith Mold',
+            'price_sell' => 220000,
+            'price_buy'  => 5000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Maestro Mold',
             'price_sell' => 220000,
             'price_buy'  => 5000000,
         ];

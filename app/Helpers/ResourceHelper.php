@@ -18,6 +18,9 @@ class ResourceHelper {
     public Resource $metallicFiber;
     public Resource $asofe;
     public Resource $orichalcum;
+    public Resource $varnishOfPurity;
+    public Resource $thons;
+    public Resource $leonard;
 
     public Resource $warsmithHolder;
     public Resource $artisansFrame;
@@ -25,6 +28,7 @@ class ResourceHelper {
     public Resource $arcsmithAnvil;
     public Resource $reorinsMold;
     public Resource $warsmithMold;
+    public Resource $maestroMold;
 
 
     public Resource $crystalS;
@@ -50,6 +54,9 @@ class ResourceHelper {
         $this->metallicFiber     = Resource::where( 'name', 'Metallic Fiber' )->firstOrFail();
         $this->asofe             = Resource::where( 'name', 'Asofe' )->firstOrFail();
         $this->orichalcum        = Resource::where( 'name', 'Orichalcum' )->firstOrFail();
+        $this->varnishOfPurity   = Resource::where( 'name', 'Varnish of Purity' )->firstOrFail();
+        $this->thons             = Resource::where( 'name', 'Thons' )->firstOrFail();
+        $this->leonard           = Resource::where( 'name', 'Leonard' )->firstOrFail();
 
         $this->warsmithHolder = Resource::where( 'name', 'Warsmith Holder' )->firstOrFail();
         $this->artisansFrame  = Resource::where( 'name', 'Artisans Frame' )->firstOrFail();
@@ -57,6 +64,7 @@ class ResourceHelper {
         $this->arcsmithAnvil  = Resource::where( 'name', 'Arcsmith Anvil' )->firstOrFail();
         $this->reorinsMold    = Resource::where( 'name', 'Reorins Mold' )->firstOrFail();
         $this->warsmithMold   = Resource::where( 'name', 'Warsmith Mold' )->firstOrFail();
+        $this->maestroMold    = Resource::where( 'name', 'Maestro Mold' )->firstOrFail();
 
         $this->crystalS  = Resource::where( 'name', 'Crystal S' )->firstOrFail();
         $this->crystalB  = Resource::where( 'name', 'Crystal B' )->firstOrFail();

@@ -9,6 +9,9 @@ use Database\Seeders\Resource\Armor\Light\Gloves;
 use Database\Seeders\Resource\Armor\Light\Helmet;
 use Database\Seeders\Resource\Armor\Light\Lower;
 use Database\Seeders\Resource\Armor\Light\Upper;
+use Database\Seeders\Resource\Jewelry\Earring;
+use Database\Seeders\Resource\Jewelry\Necklace;
+use Database\Seeders\Resource\Jewelry\Ring;
 use Database\Seeders\Resource\Weapon\Blunt;
 use Database\Seeders\Resource\Weapon\Bow;
 use Database\Seeders\Resource\Weapon\Dagger;
@@ -21,6 +24,7 @@ use Illuminate\Support\Str;
 class ResourceSeeder extends Seeder {
     public array $resources;
     public string $pieceFolderPathWeapon;
+    public string $pieceFolderPathJewelry;
     public string $recipeFolderPath;
     public string $defaultWeaponBladeFilePath;
     public string $recipeSImageFilePath;
@@ -43,10 +47,11 @@ class ResourceSeeder extends Seeder {
     }
 
     protected function setup() {
-        $this->resources             = [];
-        $this->pieceFolderPathWeapon = 'image/resource/piece/weapon/';
-        $this->pieceFolderPathArmor  = 'image/resource/piece/armor/';
-        $this->recipeFolderPath      = 'image/resource/recipe/';
+        $this->resources              = [];
+        $this->pieceFolderPathWeapon  = 'image/resource/piece/weapon/';
+        $this->pieceFolderPathArmor   = 'image/resource/piece/armor/';
+        $this->pieceFolderPathJewelry = 'image/resource/piece/jewelry/';
+        $this->recipeFolderPath       = 'image/resource/recipe/';
 
         $this->pieceFolderPathArmorLight = $this->pieceFolderPathArmor . 'light/';
         $this->pieceFolderPathArmorHeavy = $this->pieceFolderPathArmor . 'heavy/';
@@ -63,6 +68,7 @@ class ResourceSeeder extends Seeder {
     protected function addRecipesPieces() {
         $this->addRecipesPiecesWeapon();
         $this->addRecipesPiecesArmor();
+        $this->addRecipesPiecesJewelry();
     }
 
     protected function addRecipesPiecesWeapon() {
@@ -156,6 +162,19 @@ class ResourceSeeder extends Seeder {
         $this->resources = array_merge( $this->resources, $bootResources, $fullBodyResources, $glovesResources, $helmetResources, $lowerResources, $upperResources );
     }
 
+    protected function addRecipesPiecesJewelry() {
+        $necklace          = new Necklace();
+        $necklaceResources = $necklace->getResources();
+
+        $earring          = new Earring();
+        $earringResources = $earring->getResources();
+
+        $ring          = new Ring();
+        $ringResources = $ring->getResources();
+
+        $this->resources = array_merge( $this->resources, $necklaceResources, $earringResources, $ringResources );
+    }
+
     protected function addResources() {
         $resources          = new \Database\Seeders\Resource\Resource\Resource();
         $resourcesResources = $resources->getResources();
@@ -194,6 +213,8 @@ class ResourceSeeder extends Seeder {
                 $filePath = "{$this->pieceFolderPathWeapon}{$resource['name']}.png";
             } else if ( isset( $resource['is_custom_piece_armor'] ) && $resource['is_custom_piece_armor'] ) {
                 $filePath = "{$this->pieceFolderPathArmor}{$resource['name']}.png";
+            } else if ( isset( $resource['is_custom_piece_jewelry'] ) && $resource['is_custom_piece_jewelry'] ) {
+                $filePath = "{$this->pieceFolderPathJewelry}{$resource['name']}.png";
             } else if ( isset( $resource['filePath'] ) ) {
                 $filePath = $resource['filePath'];
             } else {

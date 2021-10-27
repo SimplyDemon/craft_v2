@@ -31,7 +31,7 @@ class RecipeResourceSeeder extends Seeder {
 
         $this->addWeapon();
         $this->addArmor();
-
+        $this->addJewelry();
     }
 
 
@@ -116,5 +116,16 @@ class RecipeResourceSeeder extends Seeder {
 
         $gloves = new RecipeResource\Armor\Robe\Gloves();
         $gloves->seed();
+    }
+
+    protected function addJewelry() {
+        $necklace = new RecipeResource\Jewelry\Necklace();
+        $necklace->seed();
+
+        $earring = new RecipeResource\Jewelry\Earring();
+        $earring->seed();
+
+        $ring = new RecipeResource\Jewelry\Ring();
+        $ring->seed();
     }
 }
