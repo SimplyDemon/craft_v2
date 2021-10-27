@@ -15,16 +15,16 @@ class Helmet extends RecipeResourceMain {
     }
 
     protected function add() {
-        $this->addDraconicLeatherHelmet();
-        $this->addDynastyLeatherHelmet();
-        $this->addMoiraiLeatherHelmet();
-        $this->addVesperLeatherHelmet();
+        $this->addImperialCrusaderHelmet();
+        $this->addDynastyHelmet();
+        $this->addMoiraiHelmet();
+        $this->addVesperHelmet();
     }
 
-    protected function addDraconicLeatherHelmet() {
-        $piece  = Resource::where( 'name', 'Draconic Leather Helmet Pattern' )->firstOrFail();
-        $recipe = Resource::where( 'name', 'Recipe: Draconic Leather Helmet (60%)' )->firstOrFail();
-        $item   = Recipe::where( 'name', 'Draconic Leather Helmet' )->firstOrFail();
+    protected function addImperialCrusaderHelmet() {
+        $piece  = Resource::where( 'name', 'Imperial Crusader Helmet Pattern' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Imperial Crusader Helmet (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Imperial Crusader Helmet' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [
@@ -61,10 +61,10 @@ class Helmet extends RecipeResourceMain {
         }
     }
 
-    protected function addDynastyLeatherHelmet() {
-        $piece  = Resource::where( 'name', 'Dynasty Leather Helmet Piece' )->firstOrFail();
-        $recipe = Resource::where( 'name', 'Recipe: Dynasty Leather Helmet (60%)' )->firstOrFail();
-        $item   = Recipe::where( 'name', 'Dynasty Leather Helmet' )->firstOrFail();
+    protected function addDynastyHelmet() {
+        $piece  = Resource::where( 'name', 'Dynasty Helmet Piece' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Dynasty Helmet (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Dynasty Helmet' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [
@@ -105,10 +105,10 @@ class Helmet extends RecipeResourceMain {
         }
     }
 
-    protected function addMoiraiLeatherHelmet() {
-        $piece  = Resource::where( 'name', 'Moirai Leather Helmet Piece' )->firstOrFail();
-        $recipe = Resource::where( 'name', 'Recipe: Moirai Leather Helmet (60%)' )->firstOrFail();
-        $item   = Recipe::where( 'name', 'Moirai Leather Helmet' )->firstOrFail();
+    protected function addMoiraiHelmet() {
+        $piece  = Resource::where( 'name', 'Moirai Helmet Piece' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Moirai Helmet (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Moirai Helmet' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [
@@ -149,10 +149,10 @@ class Helmet extends RecipeResourceMain {
         }
     }
 
-    protected function addVesperLeatherHelmet() {
-        $piece  = Resource::where( 'name', 'Vesper Leather Helmet Piece' )->firstOrFail();
-        $recipe = Resource::where( 'name', 'Recipe: Vesper Leather Helmet (60%)' )->firstOrFail();
-        $item   = Recipe::where( 'name', 'Vesper Leather Helmet' )->firstOrFail();
+    protected function addVesperHelmet() {
+        $piece  = Resource::where( 'name', 'Vesper Helmet Piece' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Vesper Helmet (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Vesper Helmet' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [

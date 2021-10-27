@@ -15,49 +15,41 @@ class Upper extends RecipeResourceMain {
     }
 
     protected function add() {
-        $this->addDynastyLeatherArmor();
-        $this->addMoiraiLeatherBreastplate();
-        $this->addVesperLeatherBreastplate();
+        $this->addImperialCrusaderBreastplate();
+        $this->addDynastyBreastplate();
+        $this->addMoiraiBreastplate();
+        $this->addVesperBreastplate();
     }
 
-    protected function addDynastyLeatherArmor() {
-        $piece  = Resource::where( 'name', 'Dynasty Leather Armor Piece' )->firstOrFail();
-        $recipe = Resource::where( 'name', 'Recipe: Dynasty Leather Armor (60%)' )->firstOrFail();
-        $item   = Recipe::where( 'name', 'Dynasty Leather Armor' )->firstOrFail();
+    protected function addImperialCrusaderBreastplate() {
+        $piece  = Resource::where( 'name', 'Imperial Crusader Breastplate Part' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Imperial Crusader Breastplate (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Imperial Crusader Breastplate' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->crystalS->id,
-            'resourceQuantity' => 67,
+            'resourceQuantity' => 62,
         ];
         $resources[] = [
-            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
-            'resourceQuantity' => 470,
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 117,
         ];
-        $resources[] = [
-            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
-            'resourceQuantity' => 282,
-        ];
-
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->gemstoneS->id,
-            'resourceQuantity' => 14,
+            'resourceQuantity' => 11,
         ];
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->asofe->id,
-            'resourceQuantity' => 94,
+            'resourceQuantity' => 78,
         ];
         $resources[] = [
-            'resourceId'       => $this->ResourceHelper->reorinsMold->id,
-            'resourceQuantity' => 1,
-        ];
-        $resources[] = [
-            'resourceId'       => $this->ResourceHelper->orichalcum->id,
-            'resourceQuantity' => 77,
+            'resourceId'       => $this->ResourceHelper->arcsmithAnvil->id,
+            'resourceQuantity' => 3,
         ];
         $resources[] = [
             'resourceId'       => $piece->id,
-            'resourceQuantity' => 19,
+            'resourceQuantity' => 17,
         ];
         $resources[] = [
             'resourceId'       => $recipe->id,
@@ -69,39 +61,35 @@ class Upper extends RecipeResourceMain {
         }
     }
 
-    protected function addMoiraiLeatherBreastplate() {
-        $piece  = Resource::where( 'name', 'Moirai Leather Breastplate Piece' )->firstOrFail();
-        $recipe = Resource::where( 'name', 'Recipe: Moirai Leather Breastplate (60%)' )->firstOrFail();
-        $item   = Recipe::where( 'name', 'Moirai Leather Breastplate' )->firstOrFail();
+    protected function addDynastyBreastplate() {
+        $piece  = Resource::where( 'name', 'Dynasty Breastplate Piece' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Dynasty Breastplate (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Dynasty Breastplate' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->crystalS->id,
-            'resourceQuantity' => 110,
+            'resourceQuantity' => 98,
         ];
         $resources[] = [
-            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
-            'resourceQuantity' => 550,
-        ];
-        $resources[] = [
-            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
-            'resourceQuantity' => 330,
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 234,
         ];
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->gemstoneS->id,
-            'resourceQuantity' => 19,
+            'resourceQuantity' => 20,
         ];
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->asofe->id,
-            'resourceQuantity' => 110,
+            'resourceQuantity' => 156,
         ];
         $resources[] = [
-            'resourceId'       => $this->ResourceHelper->reorinsMold->id,
-            'resourceQuantity' => 1,
+            'resourceId'       => $this->ResourceHelper->arcsmithAnvil->id,
+            'resourceQuantity' => 3,
         ];
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->orichalcum->id,
-            'resourceQuantity' => 55,
+            'resourceQuantity' => 39,
         ];
         $resources[] = [
             'resourceId'       => $piece->id,
@@ -117,40 +105,79 @@ class Upper extends RecipeResourceMain {
         }
     }
 
-    protected function addVesperLeatherBreastplate() {
-        $piece  = Resource::where( 'name', 'Vesper Leather Breastplate Piece' )->firstOrFail();
-        $recipe = Resource::where( 'name', 'Recipe: Vesper Leather Breastplate (60%)' )->firstOrFail();
-        $item   = Recipe::where( 'name', 'Vesper Leather Breastplate' )->firstOrFail();
+    protected function addMoiraiBreastplate() {
+        $piece  = Resource::where( 'name', 'Moirai Breastplate Piece' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Moirai Breastplate (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Moirai Breastplate' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->crystalS->id,
-            'resourceQuantity' => 152,
+            'resourceQuantity' => 145,
         ];
         $resources[] = [
-            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
-            'resourceQuantity' => 770,
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 294,
         ];
-        $resources[] = [
-            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
-            'resourceQuantity' => 462,
-        ];
-
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->gemstoneS->id,
-            'resourceQuantity' => 26,
+            'resourceQuantity' => 25,
         ];
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->asofe->id,
-            'resourceQuantity' => 154,
+            'resourceQuantity' => 196,
         ];
         $resources[] = [
-            'resourceId'       => $this->ResourceHelper->reorinsMold->id,
-            'resourceQuantity' => 1,
+            'resourceId'       => $this->ResourceHelper->arcsmithAnvil->id,
+            'resourceQuantity' => 3,
         ];
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->orichalcum->id,
-            'resourceQuantity' => 77,
+            'resourceQuantity' => 49,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 18,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addVesperBreastplate() {
+        $piece  = Resource::where( 'name', 'Vesper Breastplate Piece' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Vesper Breastplate (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Vesper Breastplate' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalS->id,
+            'resourceQuantity' => 201,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 435,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneS->id,
+            'resourceQuantity' => 35,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->asofe->id,
+            'resourceQuantity' => 290,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->arcsmithAnvil->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->orichalcum->id,
+            'resourceQuantity' => 73,
         ];
         $resources[] = [
             'resourceId'       => $piece->id,
@@ -165,6 +192,5 @@ class Upper extends RecipeResourceMain {
             $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
         }
     }
-
 
 }
