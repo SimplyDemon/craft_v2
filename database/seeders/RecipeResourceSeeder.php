@@ -57,6 +57,7 @@ class RecipeResourceSeeder extends Seeder {
 
     protected function addArmor() {
         $this->addArmorLight();
+        $this->addArmorHeavy();
     }
 
     protected function addArmorLight() {
@@ -76,6 +77,23 @@ class RecipeResourceSeeder extends Seeder {
         $helmet->seed();
 
         $gloves = new Gloves();
+        $gloves->seed();
+    }
+
+    protected function addArmorHeavy() {
+        $upper = new RecipeResource\Armor\Heavy\Upper();
+        $upper->seed();
+
+        $lower = new RecipeResource\Armor\Heavy\Lower();
+        $lower->seed();
+
+        $boot = new RecipeResource\Armor\Heavy\Boot();
+        $boot->seed();
+
+        $helmet = new RecipeResource\Armor\Heavy\Helmet();
+        $helmet->seed();
+
+        $gloves = new RecipeResource\Armor\Heavy\Gloves();
         $gloves->seed();
     }
 }

@@ -91,7 +91,7 @@ class WeaponSeeder extends Seeder {
         $imagePath  = 'item/weapon/dagger';
 
         seederAddRecipe( 'Angel Slayer', $imagePath, 100000000, 'S', $categoryId );
-        seederAddRecipe( 'Dynasty Knife', $imagePath, 100000000, 'S', $categoryId );
+        seederAddRecipe( 'Dynasty Knife', $imagePath, 275000000, 'S', $categoryId );
         seederAddRecipe( 'Icarus Disperser', $imagePath, 100000000, 'S-80', $categoryId );
         seederAddRecipe( 'Vesper Shaper', $imagePath, 100000000, 'S-84', $categoryId );
     }

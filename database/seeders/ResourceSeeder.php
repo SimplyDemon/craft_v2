@@ -89,6 +89,7 @@ class ResourceSeeder extends Seeder {
 
     protected function addRecipesPiecesArmor() {
         $this->addRecipesPiecesArmorLight();
+        $this->addRecipesPiecesArmorHeavy();
     }
 
     protected function addRecipesPiecesArmorLight() {
@@ -111,6 +112,25 @@ class ResourceSeeder extends Seeder {
         $upperResources = $upper->getResources();
 
         $this->resources = array_merge( $this->resources, $bootResources, $fullBodyResources, $glovesResources, $helmetResources, $lowerResources, $upperResources );
+    }
+
+    protected function addRecipesPiecesArmorHeavy() {
+        $boot          = new \Database\Seeders\Resource\Armor\Heavy\Boot();
+        $bootResources = $boot->getResources();
+
+        $gloves          = new \Database\Seeders\Resource\Armor\Heavy\Gloves();
+        $glovesResources = $gloves->getResources();
+
+        $helmet          = new \Database\Seeders\Resource\Armor\Heavy\Helmet();
+        $helmetResources = $helmet->getResources();
+
+        $lower          = new \Database\Seeders\Resource\Armor\Heavy\Lower();
+        $lowerResources = $lower->getResources();
+
+        $upper          = new \Database\Seeders\Resource\Armor\Heavy\Upper();
+        $upperResources = $upper->getResources();
+
+        $this->resources = array_merge( $this->resources, $bootResources, $glovesResources, $helmetResources, $lowerResources, $upperResources );
     }
 
     protected function addResources() {
