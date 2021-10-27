@@ -2,22 +2,9 @@
 
 namespace Database\Seeders\Resource\Armor\Light;
 
-use Database\Seeders\ResourceSeeder;
+use Database\Seeders\Resource\ResourceMain;
 
-class Helmet {
-    protected array $resources;
-    protected ResourceSeeder $resourceSeeder;
-
-    public function __construct() {
-        $this->resources      = [];
-        $this->resourceSeeder = new ResourceSeeder();
-        $this->add();
-    }
-
-    public function getResources(): array {
-        return $this->resources;
-    }
-
+class Helmet extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'name'       => 'Draconic Leather Helmet Pattern',

@@ -114,7 +114,7 @@ class ResourceSeeder extends Seeder {
     }
 
     protected function addResources() {
-        $resources          = new \Database\Seeders\Resource\Resource();
+        $resources          = new \Database\Seeders\Resource\Resource\Resource();
         $resourcesResources = $resources->getResources();
 
         $this->resources = array_merge( $this->resources, $resourcesResources );
