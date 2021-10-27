@@ -2,22 +2,12 @@
 
 namespace Database\Seeders\RecipeResource\Weapon;
 
-use App\Helpers\ResourceHelper;
 use App\Models\Category;
 use App\Models\Recipe;
 use App\Models\Resource;
-use Illuminate\Database\Seeder;
+use Database\Seeders\RecipeResource\RecipeResourceMain;
 
-class Polearm extends Seeder {
-    protected Category $category;
-    protected ResourceHelper $ResourceHelper;
-
-    public function seed() {
-        $this->ResourceHelper = new ResourceHelper();
-        $this->setCategory();
-        $this->add();
-    }
-
+class Polearm extends RecipeResourceMain {
     protected function setCategory() {
         $this->category = Category::where( 'name', 'Dagger' )->firstOrFail();
     }
