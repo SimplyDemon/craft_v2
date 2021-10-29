@@ -32,6 +32,8 @@ class RecipeResourceSeeder extends Seeder {
         $this->addWeapon();
         $this->addArmor();
         $this->addJewelry();
+        $this->addShield();
+        $this->addSigil();
     }
 
 
@@ -59,7 +61,6 @@ class RecipeResourceSeeder extends Seeder {
         $this->addArmorLight();
         $this->addArmorHeavy();
         $this->addArmorRobe();
-        $this->addShield();
     }
 
     protected function addArmorLight() {
@@ -133,5 +134,10 @@ class RecipeResourceSeeder extends Seeder {
     protected function addShield() {
         $shield = new RecipeResource\Shield();
         $shield->seed();
+    }
+
+    protected function addSigil() {
+        $sigil = new RecipeResource\Sigil();
+        $sigil->seed();
     }
 }
