@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
-class IsAdmin {
+class IsCanUpdatePrice {
     /**
-     * Check user is admin
+     * Check is user can update admin prices
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure $next
@@ -19,7 +19,7 @@ class IsAdmin {
     public function handle( Request $request, Closure $next ) {
         $user = Auth::user();
 
-        if ( ! $user || $user->is_admin != 1 ) {
+        if ( ! $user || $user->is_can_update_price != 1 ) {
 
             return Redirect::to( route( 'index' ) );
         }

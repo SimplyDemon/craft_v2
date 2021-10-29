@@ -209,7 +209,7 @@ class ResourceSeeder extends Seeder {
      *
      * @return Resource
      */
-    protected function createResource( string $name, int $priceSell, int $priceBuy = null, $filePath = null ): Resource {
+    protected function createResource( string $name, int $priceSell, int $priceBuy = null, $filePath = null, $type = 'resource' ): Resource {
         $imagePath = 'resource';
         if ( ! $filePath ) {
             $filePath = "image/$imagePath/" . $name . '.png';
@@ -221,6 +221,7 @@ class ResourceSeeder extends Seeder {
             'price_sell' => $priceSell,
             'price_buy'  => $priceBuy,
             'img'        => copyFile( $filePath, "app/public/uploads/$imagePath/" ),
+            'type'       => $type,
         ] );
     }
 
@@ -244,6 +245,7 @@ class ResourceSeeder extends Seeder {
                 $resource['price_sell'],
                 $resource['price_buy'] ?? null,
                 $filePath,
+                $resource['type'] ?? 'resource',
             );
         }
     }

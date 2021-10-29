@@ -9,12 +9,14 @@ class Sigil extends ResourceMain {
             'price_sell'            => 100000,
             'price_buy'             => 60000,
             'is_custom_piece_armor' => true,
+            'type'                  => 'sigil',
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Arcana Sigil (60%)',
             'price_sell' => 800000,
             'price_buy'  => 60000,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
+            'type'       => 'sigil',
         ];
 
         $this->resources[] = [
@@ -22,12 +24,14 @@ class Sigil extends ResourceMain {
             'price_sell'            => 100000,
             'price_buy'             => 60000,
             'is_custom_piece_armor' => true,
+            'type'                  => 'sigil',
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Dynasty Sigil (60%)',
             'price_sell' => 800000,
             'price_buy'  => 60000,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
+            'type'       => 'sigil',
         ];
 
         $this->resources[] = [
@@ -35,12 +39,14 @@ class Sigil extends ResourceMain {
             'price_sell'            => 100000,
             'price_buy'             => 60000,
             'is_custom_piece_armor' => true,
+            'type'                  => 'sigil',
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Moirai Sigil (60%)',
             'price_sell' => 800000,
             'price_buy'  => 60000,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
+            'type'       => 'sigil',
         ];
 
         $this->resources[] = [
@@ -48,12 +54,14 @@ class Sigil extends ResourceMain {
             'price_sell'            => 100000,
             'price_buy'             => 60000,
             'is_custom_piece_armor' => true,
+            'type'                  => 'sigil',
         ];
         $this->resources[] = [
             'name'       => 'Recipe: Vesper Sigil (60%)',
             'price_sell' => 800000,
             'price_buy'  => 60000,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
+            'type'       => 'sigil',
         ];
 
     }

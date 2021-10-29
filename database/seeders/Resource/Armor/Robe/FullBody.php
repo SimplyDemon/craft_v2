@@ -7,12 +7,14 @@ use Database\Seeders\Resource\ResourceMain;
 class FullBody extends ResourceMain {
     protected function add() {
         $this->resources[] = [
+            'type'       => 'armor',
             'name'       => 'Major Arcana Robe Part',
             'price_sell' => 100000,
             'price_buy'  => 60000,
             'filePath'   => $this->resourceSeeder->defaultArmorPieceFilePath,
         ];
         $this->resources[] = [
+            'type'       => 'armor',
             'name'       => 'Recipe: Major Arcana Robe (60%)',
             'price_sell' => 800000,
             'price_buy'  => 60000,

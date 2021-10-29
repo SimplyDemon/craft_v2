@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\ResourceController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\IsCanUpdatePrice;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,14 +27,23 @@ Auth::routes( [
 
 Route::middleware( 'auth' )->get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
 
+Route::middleware( 'IsCanUpdatePrice' )->get( '/admin_prices', [
+    IsCanUpdatePrice::class,
+    'index',
+] )->name( 'admin_prices' );
+Route::middleware( 'IsCanUpdatePrice' )->post( '/admin_prices', [
+    IsCanUpdatePrice::class,
+    'update',
+] )->name( 'admin_prices_update' );
+
 Route::middleware( 'isAdmin' )->prefix( 'admin' )->group( function () {
     Route::resource( 'categories', CategoryController::class )->parameters( [
-        'categories' => 'id'
+        'categories' => 'id',
     ] );
     Route::resource( 'recipes', RecipeController::class )->parameters( [
-        'recipes' => 'id'
+        'recipes' => 'id',
     ] );
     Route::resource( 'resources', ResourceController::class )->parameters( [
-        'resources' => 'id'
+        'resources' => 'id',
     ] );
 } );

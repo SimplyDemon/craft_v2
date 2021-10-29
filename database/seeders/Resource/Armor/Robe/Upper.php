@@ -7,12 +7,14 @@ use Database\Seeders\Resource\ResourceMain;
 class Upper extends ResourceMain {
     protected function add() {
         $this->resources[] = [
+            'type'       => 'armor',
             'name'       => 'Dynasty Tunic Piece',
             'price_sell' => 100000,
             'price_buy'  => 60000,
             'filePath'   => $this->resourceSeeder->defaultArmorPieceFilePath,
         ];
         $this->resources[] = [
+            'type'       => 'armor',
             'name'       => 'Recipe: Dynasty Tunic (60%)',
             'price_sell' => 800000,
             'price_buy'  => 60000,
@@ -20,12 +22,14 @@ class Upper extends ResourceMain {
         ];
 
         $this->resources[] = [
+            'type'                  => 'armor',
             'name'                  => 'Moirai Tunic Piece',
             'price_sell'            => 100000,
             'price_buy'             => 60000,
             'is_custom_piece_armor' => true,
         ];
         $this->resources[] = [
+            'type'       => 'armor',
             'name'       => 'Recipe: Moirai Tunic (60%)',
             'price_sell' => 800000,
             'price_buy'  => 60000,
@@ -33,12 +37,14 @@ class Upper extends ResourceMain {
         ];
 
         $this->resources[] = [
+            'type'                  => 'armor',
             'name'                  => 'Vesper Tunic Piece',
             'price_sell'            => 100000,
             'price_buy'             => 60000,
             'is_custom_piece_armor' => true,
         ];
         $this->resources[] = [
+            'type'       => 'armor',
             'name'       => 'Recipe: Vesper Tunic (60%)',
             'price_sell' => 800000,
             'price_buy'  => 60000,
