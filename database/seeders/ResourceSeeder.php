@@ -12,6 +12,7 @@ use Database\Seeders\Resource\Armor\Light\Upper;
 use Database\Seeders\Resource\Jewelry\Earring;
 use Database\Seeders\Resource\Jewelry\Necklace;
 use Database\Seeders\Resource\Jewelry\Ring;
+use Database\Seeders\Resource\Shield;
 use Database\Seeders\Resource\Weapon\Blunt;
 use Database\Seeders\Resource\Weapon\Bow;
 use Database\Seeders\Resource\Weapon\Dagger;
@@ -69,6 +70,7 @@ class ResourceSeeder extends Seeder {
         $this->addRecipesPiecesWeapon();
         $this->addRecipesPiecesArmor();
         $this->addRecipesPiecesJewelry();
+        $this->addRecipesPiecesShield();
     }
 
     protected function addRecipesPiecesWeapon() {
@@ -173,6 +175,13 @@ class ResourceSeeder extends Seeder {
         $ringResources = $ring->getResources();
 
         $this->resources = array_merge( $this->resources, $necklaceResources, $earringResources, $ringResources );
+    }
+
+    protected function addRecipesPiecesShield() {
+        $shield          = new Shield();
+        $shieldResources = $shield->getResources();
+
+        $this->resources = array_merge( $this->resources, $shieldResources );
     }
 
     protected function addResources() {

@@ -59,6 +59,7 @@ class RecipeResourceSeeder extends Seeder {
         $this->addArmorLight();
         $this->addArmorHeavy();
         $this->addArmorRobe();
+        $this->addShield();
     }
 
     protected function addArmorLight() {
@@ -127,5 +128,10 @@ class RecipeResourceSeeder extends Seeder {
 
         $ring = new RecipeResource\Jewelry\Ring();
         $ring->seed();
+    }
+
+    protected function addShield() {
+        $shield = new RecipeResource\Shield();
+        $shield->seed();
     }
 }
