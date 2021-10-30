@@ -6,12 +6,11 @@
         </h1>
     </div>
 
-
-    @if ($resources)
-
+    @if ($resources && $recipes)
         <form method="post">
             @csrf
             @method('POST')
+
             <h2>Resources</h2>
             @include('pages.admin-price.table', [
                 'all' => $resources,
