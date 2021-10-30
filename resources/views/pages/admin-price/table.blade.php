@@ -17,15 +17,16 @@
             }
             $category .= $categoryModel->name;
         }
+        $collapseClass = 'collapse-' . str_replace( ' ', '', $category );
         ?>
         <tr>
             <td colspan="3">
-                <button type="button" class="btn btn-link" data-toggle="collapse" data-target=".collapse-{{$category}}" aria-expanded="false" aria-controls="{{$category}}">{{$category}}</button>
+                <button type="button" class="btn btn-link" data-toggle="collapse" data-target=".{{$collapseClass}}" aria-expanded="false" aria-controls="{{$category}}">{{$category}}</button>
             </td>
         </tr>
 
         @foreach($items as $single)
-            <tr class="collapse collapse-{{$category}} show">
+            <tr class="collapse {{$collapseClass}} show">
                 <td><img src="{{asset('storage/' . $single->img)}}">{{$single->name}}</td>
                 <td>
                     <input name="{{$prefix}}[{{$single->id}}][price_sell]" type="number" step="1" value="{{$single->price_sell}}">
