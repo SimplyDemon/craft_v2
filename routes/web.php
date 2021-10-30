@@ -15,7 +15,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\ResourceController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\IsCanUpdatePrice;
+use App\Http\Controllers\UpdatePrice;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,11 +28,11 @@ Auth::routes( [
 Route::middleware( 'auth' )->get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
 
 Route::middleware( 'IsCanUpdatePrice' )->get( '/admin_prices', [
-    IsCanUpdatePrice::class,
+    UpdatePrice::class,
     'index',
 ] )->name( 'admin_prices' );
 Route::middleware( 'IsCanUpdatePrice' )->post( '/admin_prices', [
-    IsCanUpdatePrice::class,
+    UpdatePrice::class,
     'update',
 ] )->name( 'admin_prices_update' );
 
