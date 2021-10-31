@@ -44,7 +44,11 @@
     <h1>{{$single->name}}</h1>
 
     <h3>
-        <img width="50px" src="{{asset('storage') . '/' . $single->img}}"> Цена: {{number_format($recipePriceSell, 0, ' ', ' ')}}
+        <img width="50px" src="{{asset('storage') . '/' . $single->img}}">
+        @if($single->gradeImage)
+            <img src="{{$single->gradeImage}}">
+        @endif
+        Цена: {{number_format($recipePriceSell, 0, ' ', ' ')}}
     </h3>
     @if($single)
         <h2>Закупка ресурсов у торговцев</h2>
