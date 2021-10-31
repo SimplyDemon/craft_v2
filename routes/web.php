@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\ResourceController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UpdatePrice;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
