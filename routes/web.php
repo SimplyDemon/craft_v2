@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ResourceController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UpdatePrice;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\User\UserPriceController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,27 +27,39 @@ Auth::routes( [
     'verify'   => false, // Email Verification Routes...
 ] );
 
-Route::middleware( 'auth' )->get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
+Route::middleware( 'auth' )->group( function () {
+    Route::get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
 
-Route::middleware( 'auth' )->get( '/user', [ UserController::class, 'index' ] )->name( 'index' );
+    Route::prefix( 'user' )->group( function () {
+        Route::get( '/', [ UserController::class, 'index' ] )->name( 'user' );
 
-Route::middleware( 'IsCanUpdatePrice' )->get( '/admin_prices', [
-    UpdatePrice::class,
-    'index',
-] )->name( 'admin_prices' );
-Route::middleware( 'IsCanUpdatePrice' )->post( '/admin_prices', [
-    UpdatePrice::class,
-    'update',
-] )->name( 'admin_prices_update' );
+        Route::prefix( 'price' )->group( function () {
+            Route::get( '/', [ UserPriceController::class, 'index' ] )->name( 'user.price' );
+            Route::post( '/', [ UserPriceController::class, 'update' ] )->name( 'user.price.update' );
+        } );
+    } );
 
-Route::middleware( 'isAdmin' )->prefix( 'admin' )->group( function () {
-    Route::resource( 'categories', CategoryController::class )->parameters( [
-        'categories' => 'id',
-    ] );
-    Route::resource( 'recipes', RecipeController::class )->parameters( [
-        'recipes' => 'id',
-    ] );
-    Route::resource( 'resources', ResourceController::class )->parameters( [
-        'resources' => 'id',
-    ] );
+    Route::middleware( 'IsCanUpdatePrice' )->prefix( 'admin_prices' )->group( function () {
+        Route::get( '/', [
+            UpdatePrice::class,
+            'index',
+        ] )->name( 'admin_prices' );
+        Route::post( '/', [
+            UpdatePrice::class,
+            'update',
+        ] )->name( 'admin_prices.update' );
+    } );
+
+    Route::middleware( 'isAdmin' )->prefix( 'admin' )->group( function () {
+        Route::resource( 'categories', CategoryController::class )->parameters( [
+            'categories' => 'id',
+        ] );
+        Route::resource( 'recipes', RecipeController::class )->parameters( [
+            'recipes' => 'id',
+        ] );
+        Route::resource( 'resources', ResourceController::class )->parameters( [
+            'resources' => 'id',
+        ] );
+    } );
+
 } );

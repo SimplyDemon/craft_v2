@@ -86,15 +86,13 @@ class RecipeController extends Controller {
 
 
     public function show( int $id ) {
-        $single          = Recipe::findOrFail( $id );
-        $recipeResources = DB::table( 'recipe_resource' )->where( [
-            [ 'recipe_id', '=', $single->id ],
-        ] )->get();
+        $single = Recipe::findOrFail( $id );
+        $user   = auth()->user();
 
         return view( $this->folderPath . 'show', [
-            'single'          => $single,
-            'id'              => $single->id,
-            'recipeResources' => $recipeResources,
+            'single' => $single,
+            'id'     => $single->id,
+            'user'   => $user,
         ] );
     }
 

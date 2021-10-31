@@ -14,4 +14,8 @@ class Resource extends Model {
         return $this->belongsToMany( 'App\Models\Recipe' );
     }
 
+    public function users() {
+        return $this->belongsToMany( 'App\Models\User' );
+    }
+
 }

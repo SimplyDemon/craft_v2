@@ -15,7 +15,11 @@ class Recipe extends Model {
     }
 
     public function resources() {
-        return $this->belongsToMany( 'App\Models\Resource' );
+        return $this->belongsToMany( 'App\Models\Resource' )->withPivot( 'resource_quantity' );
+    }
+
+    public function users() {
+        return $this->belongsToMany( 'App\Models\User' );
     }
 
     public function getGradeImageAttribute() {

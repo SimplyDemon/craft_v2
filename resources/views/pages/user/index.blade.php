@@ -9,6 +9,7 @@
     <section>
         <p>Email: {{$user->email}}</p>
         <p>Name: {{$user->name}}</p>
+        <p><a href="{{route('user.price')}}">Цены</a></p>
     </section>
 
 @endsection

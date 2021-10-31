@@ -7,7 +7,7 @@
     </div>
 
     @if ($resources && $recipes)
-        <form method="post">
+        <form method="post" action="{{route('user.price.update')}}">
             @csrf
             @method('POST')
 

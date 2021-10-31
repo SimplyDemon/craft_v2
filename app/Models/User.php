@@ -39,4 +39,13 @@ class User extends Authenticatable {
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function resources() {
+        return $this->belongsToMany( 'App\Models\Resource' )->withPivot( 'price_buy' )->withPivot( 'price_sell' );
+    }
+
+    public function recipes() {
+        return $this->belongsToMany( 'App\Models\Recipe' )->withPivot( 'price_buy' )->withPivot( 'price_sell' );
+    }
+
 }

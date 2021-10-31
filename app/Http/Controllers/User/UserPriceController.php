@@ -1,34 +1,48 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\Models\Recipe;
 use App\Models\Resource;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
-class UpdatePrice extends Controller {
-    protected $folderPath = 'pages.admin-price.';
+class UserPriceController extends Controller {
+    protected $folderPath = 'pages.user.price.';
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
 
     public function index() {
+        $user      = auth()->user();
         $resources = Resource::orderBy( 'name', 'asc' )->get()->groupBy( 'type' );
         $recipes   = Recipe::orderBy( 'name', 'asc' )->get()->groupBy( 'category_id' );
 
+        $userResources = $user->resources->groupBy( 'type' );
+        $userRecipes   = $user->recipes->groupBy( 'category_id' );
+
         return view( $this->folderPath . 'index', [
-            'resources' => $resources,
-            'recipes'   => $recipes,
+            'resources' => $userResources->isEmpty() ? $resources : $userResources,
+            'recipes'   => $userRecipes->isEmpty() ? $recipes : $userRecipes,
         ] );
     }
 
     public function update( Request $request ) {
-        $all = $request->all();
+        $all  = $request->all();
+        $user = auth()->user();
 
         if ( empty( $all ) || ! is_array( $all ) || empty( $all['resources'] || ! is_array( $all['resources'] ) || empty( $all['recipes'] ) || ! is_array( $all['recipes'] ) ) ) {
             $message = 'Входящие данные не валидны.';
         } else {
+
             $resources = $all['resources'];
             $recipes   = $all['recipes'];
+            DB::table( 'resource_user' )->where( [
+                [ 'user_id', '=', $user->id ],
+            ] )->delete();
+            DB::table( 'recipe_user' )->where( [
+                [ 'user_id', '=', $user->id ],
+            ] )->delete();
             foreach ( $resources as $id => $prices ) {
                 /*
                  * Exclude other requests
@@ -37,7 +51,7 @@ class UpdatePrice extends Controller {
                     continue;
                 }
 
-                Resource::findOrFail( $id )->update( [
+                $user->resources()->attach( $id, [
                     'price_sell' => (int) $prices['price_sell'],
                     'price_buy'  => (int) $prices['price_buy'],
                 ] );
@@ -51,7 +65,7 @@ class UpdatePrice extends Controller {
                     continue;
                 }
 
-                Recipe::findOrFail( $id )->update( [
+                $user->recipes()->attach( $id, [
                     'price_sell' => (int) $prices['price_sell'],
                     'price_buy'  => (int) $prices['price_buy'],
                 ] );
@@ -62,6 +76,6 @@ class UpdatePrice extends Controller {
 
         $request->session()->flash( 'message', $message );
 
-        return Redirect::to( route( 'admin_prices' ) );
+        return Redirect::to( route( 'user.price' ) );
     }
 }

@@ -27,12 +27,14 @@
 
         @foreach($items as $single)
             <tr class="collapse {{$collapseClass}} show">
-                <td><img src="{{asset('storage/' . $single->img)}}">{{$single->name}}</td>
                 <td>
-                    <input name="{{$prefix}}[{{$single->id}}][price_sell]" type="number" step="1" value="{{$single->price_sell}}">
+                    <img src="{{asset('storage/' . $single->img)}}">{{$single->name}}
                 </td>
                 <td>
-                    <input name="{{$prefix}}[{{$single->id}}][price_buy]" type="number" step="1" value="{{$single->price_buy}}">
+                    <input name="{{$prefix}}[{{$single->id}}][price_sell]" type="number" step="1" value="{{$single->pivot->price_sell ?? $single->price_sell}}">
+                </td>
+                <td>
+                    <input name="{{$prefix}}[{{$single->id}}][price_buy]" type="number" step="1" value="{{$single->pivot->price_buy ?? $single->price_buy}}">
                 </td>
             </tr>
         @endforeach

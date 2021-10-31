@@ -35,7 +35,21 @@
                 <a class="navbar-brand" href="{{ route('categories.index') }}">
                     Категории
                 </a>
-
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Личный кабинет
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="{{route('user')}}">Пользователь</a>
+                                    <a class="dropdown-item" href="{{route('user.price')}}">Цены</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 

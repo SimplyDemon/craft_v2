@@ -5,7 +5,9 @@
             {{ $title ?? 'Одиночная страница' }}
         </h1>
     </div>
-
+    <?php
+    $recipePriceSell = $user->recipes->find( $single->id ) && $user->recipes->find( $single->id )->pivot->price_sell ? $user->recipes->find( $single->id )->pivot->price_sell : $single->price_sell;
+    ?>
     <ul class="list-group">
         <li class="list-group-item">
             Айди: {{$single->id}}
@@ -17,7 +19,7 @@
             Слаг: {{$single->slug}}
         </li>
         <li class="list-group-item">
-            Цена: {{$single->price_sell}}
+            Цена: {{$recipePriceSell}}
         </li>
         <li class="list-group-item">
             Цена Крафта: {{$single->craft_cost}}
@@ -40,10 +42,11 @@
     </ul>
 
     <h1>{{$single->name}}</h1>
+
     <h3>
-        <img width="50px" src="{{asset('storage') . '/' . $single->img}}"> Цена: {{number_format($single->price_sell, 0, ' ', ' ')}}
+        <img width="50px" src="{{asset('storage') . '/' . $single->img}}"> Цена: {{number_format($recipePriceSell, 0, ' ', ' ')}}
     </h3>
-    @if($recipeResources)
+    @if($single)
         <h2>Закупка ресурсов у торговцев</h2>
         <table class="table">
             <thead>
@@ -56,14 +59,12 @@
             </thead>
             <tbody>
             <?php $total = 0; ?>
-            @foreach($recipeResources as $recipeResource)
+            @foreach($single->resources as $resource)
                 <tr>
                     <?php
-                    $resourceId = $recipeResource->resource_id;
-                    $resource = \App\Models\Resource::FindOrFail( $resourceId );
-                    $recipeId = $recipeResource->recipe_id;
-                    $resourceQuantity = $recipeResource->resource_quantity;
-                    $resourcePrice = $resource->price_sell;
+                    $resourceQuantity = $resource->pivot->resource_quantity;
+                    $resourcePrice = $user->resources->find( $resource->id ) && $user->resources->find( $resource->id )->pivot->price_sell ? $user->resources->find( $resource->id )->pivot->price_sell : $resource->price_sell;
+
                     $resourceLinePrice = $resourcePrice * $resourceQuantity;
                     $total += $resourceLinePrice;
                     ?>
@@ -94,14 +95,12 @@
             </thead>
             <tbody>
             <?php $total = 0; ?>
-            @foreach($recipeResources as $recipeResource)
+            @foreach($single->resources as $resource)
                 <tr>
                     <?php
-                    $resourceId = $recipeResource->resource_id;
-                    $resource = \App\Models\Resource::FindOrFail( $resourceId );
-                    $recipeId = $recipeResource->recipe_id;
-                    $resourceQuantity = $recipeResource->resource_quantity;
-                    $resourcePrice = $resource->price_buy ?? $resource->price_sell;
+                    $resourceQuantity = $resource->pivot->resource_quantity;
+                    $resourcePrice = $user->resources->find( $resource->id ) && $user->resources->find( $resource->id )->pivot->price_buy ? $user->resources->find( $resource->id )->pivot->price_buy : $resource->price_buy;
+
                     $resourceLinePrice = $resourcePrice * $resourceQuantity;
                     $total += $resourceLinePrice;
                     ?>
