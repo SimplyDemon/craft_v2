@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\ResourceController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UpdatePrice;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,8 @@ Auth::routes( [
 ] );
 
 Route::middleware( 'auth' )->get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
+
+Route::middleware( 'auth' )->get( '/user', [ UserController::class, 'index' ] )->name( 'index' );
 
 Route::middleware( 'IsCanUpdatePrice' )->get( '/admin_prices', [
     UpdatePrice::class,

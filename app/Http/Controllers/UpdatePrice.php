@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class UpdatePrice extends Controller {
-    protected $name = 'resources.';
     protected $folderPath = 'pages.admin-price.';
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
 
