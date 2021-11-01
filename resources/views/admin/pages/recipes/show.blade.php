@@ -43,8 +43,6 @@
 
     <h1>{{$single->name}}</h1>
 
-
-
     <h3>
         <img width="50px" src="{{asset('storage') . '/' . $single->img}}">
         @if($single->gradeImage)
@@ -82,8 +80,8 @@
                     $resourceAdminLinePrice = $adminResourcePriceSell * $resourceQuantity;
                     $totalAdminPrice += $resourceAdminLinePrice;
                     $tooltipResourcePriceImg = $adminResourcePriceSell === $resourcePrice ? $tooltipImagePathColored : $tooltipImagePathRegular;
-                    $tooltipResourcePriceText = 'Цена админа: ' . number_format( $adminResourcePriceSell, 0, ' ', ' ' );
-                    $tooltipLinePriceText = 'Цена админа: ' . number_format( $resourceAdminLinePrice, 0, ' ', ' ' );
+                    $tooltipResourcePriceText = 'Цена по умолчанию:<br><b>' . number_format( $adminResourcePriceSell, 0, ' ', ' ' ) . '</b>';
+                    $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . number_format( $resourceAdminLinePrice, 0, ' ', ' ' ) . '</b>';
 
                     ?>
                     <td>
@@ -93,26 +91,30 @@
                         {{$resourceQuantity}}
                     </td>
                     <td>
-                        <span data-toggle="tooltip" data-placement="top" title="{{$tooltipResourcePriceText}}">
+                        <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipResourcePriceText}}">
                             {!! file_get_contents( $tooltipResourcePriceImg) !!}
                         </span>
                         {{number_format($resourcePrice, 0, ' ', ' ')}}
                     </td>
                     <td>
-                        <span data-toggle="tooltip" data-placement="top" title="{{$tooltipLinePriceText}}">
+                        <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipLinePriceText}}">
                             {!! file_get_contents( $tooltipResourcePriceImg) !!}
                         </span>
                         {{number_format($resourceLinePrice, 0, ' ', ' ') }}
                     </td>
                 </tr>
             @endforeach
+            <?php
+            $totalAdminPriceText = 'Цена по умолчанию:<br><b>' . number_format( $totalAdminPrice, 0, ' ', ' ' ) . '</b>';
+            $tooltipAdminTotalPriceImg = $totalAdminPrice === $total ? $tooltipImagePathColored : $tooltipImagePathRegular;
+            ?>
             <tr>
                 <td colspan="3">
                     <b>Итого:</b>
                 </td>
                 <td>
-                    <span data-toggle="tooltip" data-placement="top" title="Цена админа: {{number_format($totalAdminPrice, 0, ' ', ' ')}}">
-                        {!! file_get_contents( $totalAdminPrice === $total ? $tooltipImagePathColored : $tooltipImagePathRegular) !!}
+                    <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
+                        {!! file_get_contents($tooltipAdminTotalPriceImg) !!}
                     </span>
                     <b>{{number_format($total, 0, ' ', ' ')}}</b>
                 </td>
@@ -148,33 +150,40 @@
                     $resourceAdminLinePrice = $adminResourcePriceBuy * $resourceQuantity;
                     $totalAdminPrice += $resourceAdminLinePrice;
                     $tooltipResourcePriceImg = $adminResourcePriceBuy === $resourcePrice ? $tooltipImagePathColored : $tooltipImagePathRegular;
-                    $tooltipResourcePriceText = 'Цена админа: ' . number_format( $adminResourcePriceBuy, 0, ' ', ' ' );
-                    $tooltipLinePriceText = 'Цена админа: ' . number_format( $resourceAdminLinePrice, 0, ' ', ' ' );
-
+                    $tooltipResourcePriceText = 'Цена по умолчанию:<br><b>' . number_format( $adminResourcePriceBuy, 0, ' ', ' ' ) . '</b>';
+                    $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . number_format( $resourceAdminLinePrice, 0, ' ', ' ' ) . '</b>';
                     ?>
-                    <td><img width="30px" src="{{asset('storage') . '/' . $resource->img}}">{{$resource->name}}</td>
+                    <td>
+                        <img width="30px" src="{{asset('storage') . '/' . $resource->img}}">{{$resource->name}}
+                    </td>
                     <td>
                         {{$resourceQuantity}}
                     </td>
                     <td>
-                            <span data-toggle="tooltip" data-placement="top" title="{{$tooltipResourcePriceText}}">
-                                {!! file_get_contents( $tooltipResourcePriceImg) !!}
-                            </span>
+                        <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipResourcePriceText}}">
+                            {!! file_get_contents( $tooltipResourcePriceImg) !!}
+                        </span>
                         {{number_format($resourcePrice, 0, ' ', ' ')}}
                     </td>
                     <td>
-                            <span data-toggle="tooltip" data-placement="top" title="{{$tooltipLinePriceText}}">
-                                {!! file_get_contents( $tooltipResourcePriceImg) !!}
-                            </span>
+                        <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipLinePriceText}}">
+                            {!! file_get_contents( $tooltipResourcePriceImg) !!}
+                        </span>
                         {{number_format($resourceLinePrice, 0, ' ', ' ') }}
                     </td>
                 </tr>
             @endforeach
+            <?php
+            $totalAdminPriceText = 'Цена по умолчанию:<br><b>' . number_format( $totalAdminPrice, 0, ' ', ' ' ) . '</b>';
+            $tooltipAdminTotalPriceImg = $totalAdminPrice === $total ? $tooltipImagePathColored : $tooltipImagePathRegular;
+            ?>
             <tr>
-                <td colspan="3"><b>Итого:</b></td>
+                <td colspan="3">
+                    <b>Итого:</b>
+                </td>
                 <td>
-                    <span data-toggle="tooltip" data-placement="top" title="Цена админа: {{number_format($totalAdminPrice, 0, ' ', ' ')}}">
-                        {!! file_get_contents( $totalAdminPrice === $total ? $tooltipImagePathColored : $tooltipImagePathRegular) !!}
+                    <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
+                        {!! file_get_contents($tooltipAdminTotalPriceImg) !!}
                     </span>
                     <b>{{number_format($total, 0, ' ', ' ')}}</b>
                 </td>
