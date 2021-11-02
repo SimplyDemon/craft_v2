@@ -17,10 +17,10 @@ class SigilSeeder extends Seeder {
         $categoryId = $this->sigilCategory->id;
         $imagePath  = 'item/sigil';
 
-        seederAddRecipe( 'Arcana Sigil', $imagePath, 100000000, 'S', $categoryId );
-        seederAddRecipe( 'Dynasty Sigil', $imagePath, 100000000, 'S', $categoryId );
-        seederAddRecipe( 'Moirai Sigil', $imagePath, 100000000, 'S-80', $categoryId );
-        seederAddRecipe( 'Vesper Sigil', $imagePath, 100000000, 'S-84', $categoryId );
+        seederAddRecipe( 'Arcana Sigil', $imagePath, 100000000, 'S', $categoryId, 0, '60', 'Increases M. Def by 2% and decreases magic canceling damage by 13.' );
+        seederAddRecipe( 'Dynasty Sigil', $imagePath, 100000000, 'S', $categoryId, 0, '60', 'Increases M. Def by 2% and Resistance to Dark by 2.' );
+        seederAddRecipe( 'Moirai Sigil', $imagePath, 100000000, 'S-80', $categoryId, 0, '60', 'Multiplies Magic Damage Vulnerability by 0.98' );
+        seederAddRecipe( 'Vesper Sigil', $imagePath, 100000000, 'S-84', $categoryId, 0, '60', 'Multiplies Magic Damage Vulnerability by 0.98' );
     }
 
 

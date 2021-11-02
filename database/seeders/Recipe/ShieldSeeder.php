@@ -17,10 +17,10 @@ class ShieldSeeder extends Seeder {
         $categoryId = $this->shieldCategory->id;
         $imagePath  = 'item/shield';
 
-        seederAddRecipe( 'Imperial Crusader Shield', $imagePath, 100000000, 'S', $categoryId );
-        seederAddRecipe( 'Dynasty Shield', $imagePath, 100000000, 'S', $categoryId );
-        seederAddRecipe( 'Moirai Shield', $imagePath, 100000000, 'S-80', $categoryId );
-        seederAddRecipe( 'Vesper Shield', $imagePath, 100000000, 'S-84', $categoryId );
+        seederAddRecipe( 'Imperial Crusader Shield', $imagePath, 100000000, 'S', $categoryId, 0, '60', 'Multiplies M.Def by 1.02' );
+        seederAddRecipe( 'Dynasty Shield', $imagePath, 100000000, 'S', $categoryId, 0, '60', 'Multiplies M.Def by 1.02' );
+        seederAddRecipe( 'Moirai Shield', $imagePath, 100000000, 'S-80', $categoryId, 0, '60', 'Multiplies Magic Damage Vulnerability by 0.98' );
+        seederAddRecipe( 'Vesper Shield', $imagePath, 100000000, 'S-84', $categoryId, 0, '60', 'Multiplies Magic Damage Vulnerability by 0.98' );
     }
 
 

@@ -39,14 +39,30 @@
         <li class="list-group-item">
             Дата создания: {{$single->created_at}}
         </li>
+        <li class="list-group-item">
+            Шанс рара: {{$single->rare_chance}}%
+        </li>
     </ul>
+    <?php
+    $masterWorkText = 'Crafter level <b>85</b><br>';
+    $masterWorkText .= 'Chance: <b>' . $single->rare_chance . '</b>%';
 
+    if ( $single->masterwork_name ) {
+        $masterWorkText .= '<br>' . $single->masterwork_name;
+    }
+    if ( $single->masterwork_description ) {
+        $masterWorkText .= '<br>' . $single->masterwork_description;
+    }
+    ?>
     <h1>{{$single->name}}</h1>
 
     <h3>
         <img width="50px" src="{{asset('storage') . '/' . $single->img}}">
         @if($single->gradeImage)
             <img src="{{$single->gradeImage}}">
+        @endif
+        @if($single->rare_chance)
+            <span style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$masterWorkText}}">Masterwork</span>
         @endif
         Цена: {{number_format($recipePriceSell, 0, ' ', ' ')}}
     </h3>

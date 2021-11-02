@@ -39,4 +39,28 @@ class Recipe extends Model {
 
         return str_replace( '%', '%25', $this->attributes['img'] );
     }
+
+    public function getRareChanceAttribute() {
+        $grade = $this->attributes['grade'];
+
+        switch ( $grade ) {
+            case 'S-84':
+                $craftLevel = 82;
+                break;
+
+            case 'S-80':
+            case 'S':
+                $craftLevel = 70;
+                break;
+
+            default:
+                return null;
+                break;
+        }
+
+        $crafterLevel = 85;
+        $rareChance   = 3 + ( $crafterLevel - $craftLevel ) * 0.2;
+
+        return $rareChance;
+    }
 }

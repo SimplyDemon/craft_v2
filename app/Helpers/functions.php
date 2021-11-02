@@ -32,15 +32,17 @@ function copyFile( string $filePath, string $pathTo ) {
     return $explodedPath[1];
 }
 
-function seederAddRecipe( string $name, string $imagePath, int $price, string $grade, int $categoryId, int $craftCost = 0, string $percent = '60' ) {
+function seederAddRecipe( string $name, string $imagePath, int $price, string $grade, int $categoryId, int $craftCost = 0, string $percent = '60', $masterworkDescription = null, $masterworkName = null ) {
     return Recipe::create( [
-        'name'        => $name,
-        'slug'        => Str::slug( $name, '-' ),
-        'price_sell'  => $price,
-        'percent'     => $percent,
-        'grade'       => $grade,
-        'img'         => copyFile( "image/$imagePath/" . $name . '.png', "app/public/uploads/$imagePath/" ),
-        'category_id' => $categoryId,
-        'craft_cost'  => $craftCost,
+        'name'                   => $name,
+        'slug'                   => Str::slug( $name, '-' ),
+        'price_sell'             => $price,
+        'percent'                => $percent,
+        'grade'                  => $grade,
+        'img'                    => copyFile( "image/$imagePath/" . $name . '.png', "app/public/uploads/$imagePath/" ),
+        'category_id'            => $categoryId,
+        'craft_cost'             => $craftCost,
+        'masterwork_description' => $masterworkDescription,
+        'masterwork_name'        => $masterworkName,
     ] );
 }
