@@ -8,7 +8,7 @@ class Category extends Model {
     protected $guarded = [ 'id', 'created_at', 'updated_at', 'deleted_at' ];
 
     public function recipes() {
-        return $this->hasMany( 'App\Models\Recipe' );
+        return $this->hasMany( Recipe::class );
     }
 
 

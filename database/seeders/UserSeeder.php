@@ -17,8 +17,18 @@ class UserSeeder extends Seeder {
             'is_admin'            => 1,
             'is_can_update_price' => 1,
             'name'                => 'sd',
-            'email'               => 'd_m_n04@mail.ru ',
+            'email'               => 'd_m_n04@mail.ru',
             'password'            => Hash::make( 'test' ),
+        ] );
+        User::create( [
+            'name'     => 'test',
+            'email'    => 'test@mail.ru',
+            'password' => Hash::make( 'test' ),
+        ] );
+        User::create( [
+            'name'     => 'test2',
+            'email'    => 'test2@mail.ru',
+            'password' => Hash::make( 'test' ),
         ] );
     }
 }
