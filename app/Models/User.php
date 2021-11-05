@@ -41,11 +41,25 @@ class User extends Authenticatable {
     ];
 
     public function resources() {
-        return $this->belongsToMany( 'App\Models\Resource' )->withPivot( 'price_buy' )->withPivot( 'price_sell' );
+        return $this->belongsToMany( Resource::class )->withPivot( 'price_buy' )->withPivot( 'price_sell' );
     }
 
     public function recipes() {
-        return $this->belongsToMany( 'App\Models\Recipe' )->withPivot( 'price_buy' )->withPivot( 'price_sell' );
+        return $this->belongsToMany( Recipe::class )->withPivot( 'price_buy' )->withPivot( 'price_sell' );
     }
+
+    public function conversations() {
+        return $this->belongsToMany( Conversation::class );
+    }
+
+    public function messages() {
+        return $this->belongsToMany( Message::class );
+    }
+
+    public function getIsAdminAttribute() {
+
+        return $this->attributes['is_admin'];
+    }
+
 
 }

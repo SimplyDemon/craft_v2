@@ -14,10 +14,13 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\ResourceController;
+use App\Http\Controllers\ConversationController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UpdatePrice;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\UserPriceController;
+use App\Models\Conversation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +32,14 @@ Auth::routes( [
 
 Route::middleware( 'auth' )->group( function () {
     Route::get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
+
+    Route::resource( 'conversations', ConversationController::class )->parameters( [
+        'conversations' => 'id',
+    ] )->only( [ 'index', 'create', 'store', 'show' ] );
+
+    Route::resource( 'messages', MessageController::class )->parameters( [
+        'messages' => 'id',
+    ] )->only( [ 'store' ] );
 
     Route::prefix( 'user' )->group( function () {
         Route::get( '/', [ UserController::class, 'index' ] )->name( 'user' );

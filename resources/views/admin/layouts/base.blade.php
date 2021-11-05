@@ -26,6 +26,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                <a class="navbar-brand" href="{{ route('index') }}">
+                    Craft Calc
+                </a>
                 <a class="navbar-brand" href="{{ route('resources.index') }}">
                     Ресурсы
                 </a>
@@ -45,6 +48,7 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="{{route('user')}}">Пользователь</a>
                                     <a class="dropdown-item" href="{{route('user.price')}}">Цены</a>
+                                    <a class="dropdown-item" href="{{route('conversations.index')}}">Поддержка</a>
                                 </div>
                             </li>
                         </ul>

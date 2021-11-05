@@ -11,15 +11,15 @@ class Recipe extends Model {
     protected $guarded = [ 'id', 'created_at', 'updated_at', 'deleted_at' ];
 
     public function categories() {
-        return $this->belongsTo( 'App\Models\Category' );
+        return $this->belongsTo( Category::class );
     }
 
     public function resources() {
-        return $this->belongsToMany( 'App\Models\Resource' )->withPivot( 'resource_quantity' );
+        return $this->belongsToMany( Resource::class )->withPivot( 'resource_quantity' );
     }
 
     public function users() {
-        return $this->belongsToMany( 'App\Models\User' );
+        return $this->belongsToMany( User::class );
     }
 
     public function getGradeImageAttribute() {
