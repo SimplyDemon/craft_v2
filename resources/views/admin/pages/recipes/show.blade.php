@@ -2,47 +2,12 @@
 @section('content')
     <div class="card">
         <h1 class="card-header">
-            {{ $title ?? 'Одиночная страница' }}
+            {{ $title ?? $single->name }}
         </h1>
     </div>
     <?php
     $recipePriceSell = $user->recipes->find( $single->id ) && $user->recipes->find( $single->id )->pivot->price_sell ? $user->recipes->find( $single->id )->pivot->price_sell : $single->price_sell;
     ?>
-    <ul class="list-group">
-        <li class="list-group-item">
-            Айди: {{$single->id}}
-        </li>
-        <li class="list-group-item">
-            Название: {{$single->name}}
-        </li>
-        <li class="list-group-item">
-            Слаг: {{$single->slug}}
-        </li>
-        <li class="list-group-item">
-            Цена: {{$recipePriceSell}}
-        </li>
-        <li class="list-group-item">
-            Цена Крафта: {{$single->craft_cost}}
-        </li>
-        <li class="list-group-item">
-            Ссылка на изображение: {{$single->img}}
-        </li>
-        <li class="list-group-item">
-            Процент: {{$single->percent}}
-        </li>
-        <li class="list-group-item">
-            Грейд: {{$single->grade}}
-        </li>
-        <li class="list-group-item">
-            Айди категории: {{$single->category_id}}
-        </li>
-        <li class="list-group-item">
-            Дата создания: {{$single->created_at}}
-        </li>
-        <li class="list-group-item">
-            Шанс рара: {{$single->rare_chance}}%
-        </li>
-    </ul>
     <?php
     $masterWorkText = 'Crafter level <b>85</b><br>';
     $masterWorkText .= 'Chance: <b>' . $single->rare_chance . '</b>%';
@@ -54,7 +19,6 @@
         $masterWorkText .= '<br>' . $single->masterwork_description;
     }
     ?>
-    <h1>{{$single->name}}</h1>
 
     <h3>
         <img width="50px" src="{{asset('storage') . '/' . $single->img}}">
@@ -95,7 +59,8 @@
 
                     $resourceAdminLinePrice = $adminResourcePriceSell * $resourceQuantity;
                     $totalAdminPrice += $resourceAdminLinePrice;
-                    $tooltipResourcePriceImg = $adminResourcePriceSell === $resourcePrice ? $tooltipImagePathColored : $tooltipImagePathRegular;
+                    $isPriceDifferent = $adminResourcePriceSell !== $resourcePrice;
+                    $tooltipResourcePriceImg = $isPriceDifferent ? $tooltipImagePathColored : $tooltipImagePathRegular;
                     $tooltipResourcePriceText = 'Цена по умолчанию:<br><b>' . number_format( $adminResourcePriceSell, 0, ' ', ' ' ) . '</b>';
                     $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . number_format( $resourceAdminLinePrice, 0, ' ', ' ' ) . '</b>';
 
@@ -107,32 +72,39 @@
                         {{$resourceQuantity}}
                     </td>
                     <td>
-                        <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipResourcePriceText}}">
+                        {{number_format($resourcePrice, 0, ' ', ' ')}}
+                        @if($isPriceDifferent)
+                            <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipResourcePriceText}}">
                             {!! file_get_contents( $tooltipResourcePriceImg) !!}
                         </span>
-                        {{number_format($resourcePrice, 0, ' ', ' ')}}
+                        @endif
                     </td>
                     <td>
-                        <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipLinePriceText}}">
+                        {{number_format($resourceLinePrice, 0, ' ', ' ') }}
+                        @if($isPriceDifferent)
+                            <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipLinePriceText}}">
                             {!! file_get_contents( $tooltipResourcePriceImg) !!}
                         </span>
-                        {{number_format($resourceLinePrice, 0, ' ', ' ') }}
+                        @endif
                     </td>
                 </tr>
             @endforeach
             <?php
             $totalAdminPriceText = 'Цена по умолчанию:<br><b>' . number_format( $totalAdminPrice, 0, ' ', ' ' ) . '</b>';
-            $tooltipAdminTotalPriceImg = $totalAdminPrice === $total ? $tooltipImagePathColored : $tooltipImagePathRegular;
+            $isPriceDifferent = $totalAdminPrice !== $total;
+            $tooltipAdminTotalPriceImg = $isPriceDifferent ? $tooltipImagePathColored : $tooltipImagePathRegular;
             ?>
             <tr>
                 <td colspan="3">
                     <b>Итого:</b>
                 </td>
                 <td>
-                    <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
+                    <b>{{number_format($total, 0, ' ', ' ')}}</b>
+                    @if($isPriceDifferent)
+                        <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
                         {!! file_get_contents($tooltipAdminTotalPriceImg) !!}
                     </span>
-                    <b>{{number_format($total, 0, ' ', ' ')}}</b>
+                    @endif
                 </td>
                 <?php unset( $total ) ?>
             </tr>
@@ -165,7 +137,8 @@
 
                     $resourceAdminLinePrice = $adminResourcePriceBuy * $resourceQuantity;
                     $totalAdminPrice += $resourceAdminLinePrice;
-                    $tooltipResourcePriceImg = $adminResourcePriceBuy === $resourcePrice ? $tooltipImagePathColored : $tooltipImagePathRegular;
+                    $isPriceDifferent = $adminResourcePriceBuy !== $resourcePrice;
+                    $tooltipResourcePriceImg = $isPriceDifferent ? $tooltipImagePathColored : $tooltipImagePathRegular;
                     $tooltipResourcePriceText = 'Цена по умолчанию:<br><b>' . number_format( $adminResourcePriceBuy, 0, ' ', ' ' ) . '</b>';
                     $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . number_format( $resourceAdminLinePrice, 0, ' ', ' ' ) . '</b>';
                     ?>
@@ -176,32 +149,39 @@
                         {{$resourceQuantity}}
                     </td>
                     <td>
-                        <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipResourcePriceText}}">
+                        {{number_format($resourcePrice, 0, ' ', ' ')}}
+                        @if($isPriceDifferent)
+                            <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipResourcePriceText}}">
                             {!! file_get_contents( $tooltipResourcePriceImg) !!}
                         </span>
-                        {{number_format($resourcePrice, 0, ' ', ' ')}}
+                        @endif
                     </td>
                     <td>
-                        <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipLinePriceText}}">
+                        {{number_format($resourceLinePrice, 0, ' ', ' ') }}
+                        @if($isPriceDifferent)
+                            <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipLinePriceText}}">
                             {!! file_get_contents( $tooltipResourcePriceImg) !!}
                         </span>
-                        {{number_format($resourceLinePrice, 0, ' ', ' ') }}
+                        @endif
                     </td>
                 </tr>
             @endforeach
             <?php
             $totalAdminPriceText = 'Цена по умолчанию:<br><b>' . number_format( $totalAdminPrice, 0, ' ', ' ' ) . '</b>';
-            $tooltipAdminTotalPriceImg = $totalAdminPrice === $total ? $tooltipImagePathColored : $tooltipImagePathRegular;
+            $isPriceDifferent = $totalAdminPrice !== $total;
+            $tooltipAdminTotalPriceImg = $isPriceDifferent ? $tooltipImagePathColored : $tooltipImagePathRegular;
             ?>
             <tr>
                 <td colspan="3">
                     <b>Итого:</b>
                 </td>
                 <td>
-                    <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
+                    <b>{{number_format($total, 0, ' ', ' ')}}</b>
+                    @if($isPriceDifferent)
+                        <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
                         {!! file_get_contents($tooltipAdminTotalPriceImg) !!}
                     </span>
-                    <b>{{number_format($total, 0, ' ', ' ')}}</b>
+                    @endif
                 </td>
             </tr>
             </tbody>

@@ -3,21 +3,15 @@
 
     <div class="card">
         <h1 class="card-header">
-            {{ $title ?? 'Все Рецепты' }}
+            {{ $title ?? 'Все Вещи' }}
         </h1>
-    </div>
-
-    <div>
-        <a href="{{ route( 'recipes.create' ) }}">
-            Добавить еще
-        </a>
     </div>
 
     @if ($categories)
         <ul class="list-group">
             @foreach($categories as $single)
                 <li class="list-group-item">
-                    <a href="{{ route( 'categories.show', [ 'id' => $single->id ] ) }}">
+                    <a href="#">
                         {{$single->name}}
                     </a>
 
@@ -25,7 +19,7 @@
                         <ul class="list-group">
                             @foreach( $single->subCategories as $subCategory)
                                 <li class="list-group-item">
-                                    <a href="{{ route( 'categories.show', [ 'id' => $subCategory->id ] ) }}">
+                                    <a href="#">
                                         {{$subCategory->name}}
                                     </a>
 
@@ -33,7 +27,7 @@
                                         <ul class="list-group">
                                             @foreach( $subCategory->subCategories as $subSubCategory)
                                                 <li class="list-group-item">
-                                                    <a href="{{ route( 'categories.show', [ 'id' => $subSubCategory->id ] ) }}">
+                                                    <a href="#">
                                                         {{$subSubCategory->name}}
                                                     </a>
                                                 </li>

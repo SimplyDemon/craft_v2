@@ -1,3 +1,8 @@
+<?php
+$user    = auth()->user();
+$isAuth  = $user;
+$isAdmin = $isAuth && $user->isAdmin;
+?>
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -29,38 +34,53 @@
                 <a class="navbar-brand" href="{{ route('index') }}">
                     Craft Calc
                 </a>
-                <a class="navbar-brand" href="{{ route('resources.index') }}">
-                    Ресурсы
-                </a>
                 <a class="navbar-brand" href="{{ route('recipes.index') }}">
-                    Рецепты
+                    Вещи
                 </a>
-                <a class="navbar-brand" href="{{ route('categories.index') }}">
-                    Категории
-                </a>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Личный кабинет
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="{{route('user')}}">Пользователь</a>
-                                    <a class="dropdown-item" href="{{route('user.price')}}">Цены</a>
-                                    <a class="dropdown-item" href="{{route('conversations.index')}}">Поддержка</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
+                @if($isAdmin)
+                    {{--                <a class="navbar-brand" href="{{ route('resources.index') }}">--}}
+                    {{--                    Ресурсы--}}
+                    {{--                </a>--}}
 
-                    <button type="submit" class="btn btn-primary">
-                        Выйти
-                    </button>
-                </form>
+                    {{--                <a class="navbar-brand" href="{{ route('categories.index') }}">--}}
+                    {{--                    Категории--}}
+                    {{--                </a>--}}
+                @endif
+
+                @if($isAuth)
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Личный кабинет
+                                    </a>
+
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="{{route('user')}}">Пользователь</a>
+                                        <a class="dropdown-item" href="{{route('user.price')}}">Цены</a>
+                                        <a class="dropdown-item" href="{{route('conversations.index')}}">Поддержка</a>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <button type="submit" class="btn btn-primary">
+                            Выйти
+                        </button>
+                    </form>
+                @else
+                    <a href="{{route('login')}}">
+                        <button type="submit" class="btn btn-primary">
+                            Войти
+                        </button>
+                    </a>
+                @endif
+
 
             </div>
         </nav>

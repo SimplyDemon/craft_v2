@@ -25,14 +25,19 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes( [
-    'register' => false, // Registration Routes...
+    'register' => true, // Registration Routes...
     'reset'    => false, // Password Reset Routes...
     'verify'   => false, // Email Verification Routes...
 ] );
 
-Route::middleware( 'auth' )->group( function () {
-    Route::get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
 
+Route::get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
+
+Route::resource( 'recipes', RecipeController::class )->parameters( [
+    'recipes' => 'id',
+] )->only( [ 'index', 'show' ] );
+
+Route::middleware( 'auth' )->group( function () {
     Route::resource( 'conversations', ConversationController::class )->parameters( [
         'conversations' => 'id',
     ] )->only( [ 'index', 'create', 'store', 'show' ] );
@@ -55,6 +60,7 @@ Route::middleware( 'auth' )->group( function () {
             UpdatePrice::class,
             'index',
         ] )->name( 'admin_prices' );
+
         Route::post( '/', [
             UpdatePrice::class,
             'update',
@@ -65,9 +71,11 @@ Route::middleware( 'auth' )->group( function () {
         Route::resource( 'categories', CategoryController::class )->parameters( [
             'categories' => 'id',
         ] );
+
         Route::resource( 'recipes', RecipeController::class )->parameters( [
             'recipes' => 'id',
-        ] );
+        ] )->except( [ 'index', 'show' ] );
+
         Route::resource( 'resources', ResourceController::class )->parameters( [
             'resources' => 'id',
         ] );
