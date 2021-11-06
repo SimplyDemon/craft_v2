@@ -11,7 +11,7 @@
     $masterWorkText .= 'Chance: <b>' . $single->rare_chance . '</b>%';
 
     if ( $single->masterwork_name ) {
-        $masterWorkText .= '<br>' . $single->masterwork_name;
+        $masterWorkText .= '<br><i>' . $single->masterwork_name . '</i>';
     }
     if ( $single->masterwork_description ) {
         $masterWorkText .= '<br>' . $single->masterwork_description;

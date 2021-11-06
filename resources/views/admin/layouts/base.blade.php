@@ -37,16 +37,24 @@ $isAdmin = $isAuth && $user->isAdmin;
                 <a class="navbar-brand" href="{{ route('recipes.index') }}">
                     Вещи
                 </a>
-                @if($isAdmin)
-                    {{--                <a class="navbar-brand" href="{{ route('resources.index') }}">--}}
-                    {{--                    Ресурсы--}}
-                    {{--                </a>--}}
+                {{--                @if($isAdmin)--}}
+                {{--                <a class="navbar-brand" href="{{ route('resources.index') }}">--}}
+                {{--                    Ресурсы--}}
+                {{--                </a>--}}
 
-                    {{--                <a class="navbar-brand" href="{{ route('categories.index') }}">--}}
-                    {{--                    Категории--}}
-                    {{--                </a>--}}
-                @endif
-
+                {{--                <a class="navbar-brand" href="{{ route('categories.index') }}">--}}
+                {{--                    Категории--}}
+                {{--                </a>--}}
+                {{--                @endif--}}
+                <form action="{{route('search')}}" method="get">
+                    @csrf
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="s" placeholder="Поиск" aria-label="" aria-describedby="basic-addon1">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary">Найти</button>
+                        </div>
+                    </div>
+                </form>
                 @if($isAuth)
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
