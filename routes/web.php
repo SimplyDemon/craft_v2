@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ResourceController;
 use App\Http\Controllers\ConversationController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UpdatePrice;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\UserPriceController;
@@ -32,6 +33,7 @@ Auth::routes( [
 
 
 Route::get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
+Route::get( '/search', [ SearchController::class, 'index' ] )->name( 'search' );
 
 Route::resource( 'recipes', RecipeController::class )->parameters( [
     'recipes' => 'id',

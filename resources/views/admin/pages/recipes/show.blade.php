@@ -6,14 +6,12 @@
         </h1>
     </div>
     <?php
-    $recipePriceSell = $user->recipes->find( $single->id ) && $user->recipes->find( $single->id )->pivot->price_sell ? $user->recipes->find( $single->id )->pivot->price_sell : $single->price_sell;
-    ?>
-    <?php
+    $recipePriceSell = isset( $user ) && $user->recipes->find( $single->id ) && $user->recipes->find( $single->id )->pivot->price_sell ? $user->recipes->find( $single->id )->pivot->price_sell : $single->price_sell;
     $masterWorkText = 'Crafter level <b>85</b><br>';
     $masterWorkText .= 'Chance: <b>' . $single->rare_chance . '</b>%';
 
     if ( $single->masterwork_name ) {
-        $masterWorkText .= '<br>' . $single->masterwork_name;
+        $masterWorkText .= '<br><i>' . $single->masterwork_name . '</i>';
     }
     if ( $single->masterwork_description ) {
         $masterWorkText .= '<br>' . $single->masterwork_description;
@@ -53,7 +51,7 @@
                     <?php
                     $resourceQuantity = $resource->pivot->resource_quantity;
                     $adminResourcePriceSell = $resource->price_sell;
-                    $resourcePrice = $user->resources->find( $resource->id ) && $user->resources->find( $resource->id )->pivot->price_sell ? $user->resources->find( $resource->id )->pivot->price_sell : $adminResourcePriceSell;
+                    $resourcePrice = isset( $user ) && $user->resources->find( $resource->id ) && $user->resources->find( $resource->id )->pivot->price_sell ? $user->resources->find( $resource->id )->pivot->price_sell : $adminResourcePriceSell;
                     $resourceLinePrice = $resourcePrice * $resourceQuantity;
                     $total += $resourceLinePrice;
 
@@ -131,7 +129,7 @@
                     <?php
                     $resourceQuantity = $resource->pivot->resource_quantity;
                     $adminResourcePriceBuy = $resource->price_buy;
-                    $resourcePrice = $user->resources->find( $resource->id ) && $user->resources->find( $resource->id )->pivot->price_buy ? $user->resources->find( $resource->id )->pivot->price_buy : $adminResourcePriceBuy;
+                    $resourcePrice = isset( $user ) && $user->resources->find( $resource->id ) && $user->resources->find( $resource->id )->pivot->price_buy ? $user->resources->find( $resource->id )->pivot->price_buy : $adminResourcePriceBuy;
                     $resourceLinePrice = $resourcePrice * $resourceQuantity;
                     $total += $resourceLinePrice;
 
