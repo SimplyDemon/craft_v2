@@ -61,5 +61,10 @@ class User extends Authenticatable {
         return $this->attributes['is_admin'];
     }
 
+    public function getIsCanUpdatePriceAttribute() {
+
+        return $this->attributes['is_can_update_price'];
+    }
+
 
 }

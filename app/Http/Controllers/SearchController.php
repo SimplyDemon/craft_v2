@@ -6,7 +6,7 @@ use App\Models\Recipe;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller {
-    protected $folderPath = 'pages.search.';
+    protected string $folderPath = 'pages.search.';
 
     public function index( Request $request ) {
         $search  = $request->input( 's' );
@@ -19,6 +19,7 @@ class SearchController extends Controller {
         return view( $this->folderPath . 'index', [
             'recipes' => $recipes,
             'search'  => $search,
+            'title'   => 'Поиск',
         ] );
     }
 

@@ -1,17 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Регистрация') }}</div>
+    <div class="nk-main">
 
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
+        <!-- START: Header Title -->
+        <div class="nk-box">
+            <div class="container">
+                <div class="nk-gap-5"></div>
+                <h1 class="nk-title">{{ $title ?? 'Авторизация' }}</h1>
+                <div class="nk-gap-4"></div>
+            </div>
+        </div>
+        <!-- END: Header Title -->
 
-                            <div class="form-group row">
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="">
+                        <div class="card-header">{{ __('Регистрация') }}</div>
+
+                        <div class="card-body">
+                            <form method="POST" action="{{ route('register') }}">
+                                @csrf
+
+                                <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                                 <div class="col-md-6">
@@ -78,10 +91,14 @@
                                     </button>
                                 </div>
                             </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="nk-gap-4"></div>
+        <div class="nk-gap-4"></div>
     </div>
 @endsection

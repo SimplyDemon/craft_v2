@@ -9,7 +9,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Redirect;
 
 class MessageController extends Controller {
-    protected $folderPath = 'pages.admin-price.';
+    protected string $folderPath = 'pages.admin-price.';
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
 
     public function store( AddMessage $request ) {
@@ -28,7 +28,7 @@ class MessageController extends Controller {
 
         try {
             Message::create( $request->except( '_token' ) );
-            $message = 'Добавление выполнено успешно!';
+            $message = 'Сообщение отправлено.';
         }
         catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
