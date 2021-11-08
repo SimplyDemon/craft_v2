@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
 class ResourceController extends Controller {
-    protected $name = 'resources.';
-    protected $folderPath = 'admin.pages.resources.';
+    protected string $name = 'resources.';
+    protected string $folderPath = 'admin.pages.resources.';
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
 
 

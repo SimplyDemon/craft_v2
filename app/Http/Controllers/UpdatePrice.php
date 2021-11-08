@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class UpdatePrice extends Controller {
-    protected $folderPath = 'pages.admin-price.';
+    protected string $folderPath = 'pages.admin-price.';
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
 
     public function index() {
@@ -18,6 +18,7 @@ class UpdatePrice extends Controller {
         return view( $this->folderPath . 'index', [
             'resources' => $resources,
             'recipes'   => $recipes,
+            'title'     => 'Админ цены',
         ] );
     }
 
@@ -56,7 +57,7 @@ class UpdatePrice extends Controller {
                     'price_buy'  => (int) $prices['price_buy'],
                 ] );
             }
-            $message = 'Цены обновлены';
+            $message = 'Цены обновлены.';
         }
 
 

@@ -13,11 +13,9 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
 class CategoryController extends Controller {
-
-    protected $name = 'categories.';
-    protected $folderPath = 'admin.pages.categories.';
+    protected string $name = 'categories.';
+    protected string $folderPath = 'admin.pages.categories.';
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
-
 
 
     public function index() {

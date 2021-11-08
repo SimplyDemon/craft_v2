@@ -37,15 +37,6 @@ $isAdmin = $isAuth && $user->isAdmin;
                 <a class="navbar-brand" href="{{ route('recipes.index') }}">
                     Вещи
                 </a>
-                {{--                @if($isAdmin)--}}
-                {{--                <a class="navbar-brand" href="{{ route('resources.index') }}">--}}
-                {{--                    Ресурсы--}}
-                {{--                </a>--}}
-
-                {{--                <a class="navbar-brand" href="{{ route('categories.index') }}">--}}
-                {{--                    Категории--}}
-                {{--                </a>--}}
-                {{--                @endif--}}
                 <form action="{{route('search')}}" method="get">
                     @csrf
                     <div class="input-group">

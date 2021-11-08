@@ -20,6 +20,6 @@ class IndexController extends Controller {
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        return view( 'index' );
+        return view( 'pages.index.index' );
     }
 }

@@ -1,12 +1,7 @@
-@extends('admin.layouts.primary')
-@section('content')
-    <div class="card">
-        <h1 class="card-header">
-            {{ $title ?? 'Цены' }}
-        </h1>
-    </div>
-
+@extends('pages.user.main-template', ['title' => $title ?? 'Craft Calc'])
+@section('user-content')
     @if ($resources && $recipes)
+
         <form method="post" action="{{route('user.price.update')}}">
             @csrf
             @method('POST')

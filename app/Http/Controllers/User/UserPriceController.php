@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class UserPriceController extends Controller {
-    protected $folderPath = 'pages.user.price.';
+    protected string $folderPath = 'pages.user.price.';
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
 
     public function index() {
@@ -24,6 +24,7 @@ class UserPriceController extends Controller {
         return view( $this->folderPath . 'index', [
             'resources' => $userResources->isEmpty() ? $resources : $userResources,
             'recipes'   => $userRecipes->isEmpty() ? $recipes : $userRecipes,
+            'title'     => 'Цены',
         ] );
     }
 

@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
 class RecipeController extends Controller {
-    protected $name = 'recipes.';
-    protected $folderPath = 'admin.pages.recipes.';
+    protected string $name = 'recipes.';
+    protected string $folderPath = 'admin.pages.recipes.';
+    protected string $folderPathUser = 'pages.recipes.';
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
 
 
@@ -25,7 +26,10 @@ class RecipeController extends Controller {
         $categories = Category::orderBy( 'name', 'asc' )->whereNull( 'category_id' )->get();
 
 
-        return view( $this->folderPath . 'index', [ 'categories' => $categories ] );
+        return view( $this->folderPathUser . 'index', [
+            'categories' => $categories,
+            'title'      => 'Все вещи',
+        ] );
     }
 
     public function create() {
@@ -89,10 +93,11 @@ class RecipeController extends Controller {
         $single = Recipe::findOrFail( $id );
         $user   = auth()->user();
 
-        return view( $this->folderPath . 'show', [
+        return view( $this->folderPathUser . 'show', [
             'single' => $single,
             'id'     => $single->id,
             'user'   => $user,
+            'title'  => $single->name,
         ] );
     }
 
