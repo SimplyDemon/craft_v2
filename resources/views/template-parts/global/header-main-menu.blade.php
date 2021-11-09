@@ -13,7 +13,7 @@
         <div class="nk-nav-table">
 
             <a href="{{route('index')}}" class="nk-nav-logo">
-                <img src="{{ asset('images/logo.png' ) }}" alt="" width="90">
+                <img src="{{ asset('images/logo.webp' ) }}" alt="" width="90">
             </a>
 
 

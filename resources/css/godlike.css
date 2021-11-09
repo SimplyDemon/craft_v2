@@ -3662,12 +3662,12 @@ img.rounded {
 
 .nk-page-border .nk-page-border-t {
     top: 0;
-    background-image: url("../image/theme/border-top.png");
+    background-image: url("../image/theme/webp/border-top.webp");
 }
 
 .nk-page-border .nk-page-border-b {
     bottom: 0;
-    background-image: url("../image/theme/border-bottom.png");
+    background-image: url("../image/theme/webp/border-bottom.webp");
 }
 
 .nk-page-border .nk-page-border-r,
@@ -3679,12 +3679,12 @@ img.rounded {
 
 .nk-page-border .nk-page-border-r {
     right: 0;
-    background-image: url("../image/theme/border-right.png");
+    background-image: url("../image/theme/webp/border-right.webp");
 }
 
 .nk-page-border .nk-page-border-l {
     left: 0;
-    background-image: url("../image/theme/border-left.png");
+    background-image: url("../image/theme/webp/border-left.webp");
 }
 
 @media (max-width: 575px) {

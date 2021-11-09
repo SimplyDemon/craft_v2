@@ -4,7 +4,7 @@
         <!-- START: Header Title -->
         <div class="nk-header-title nk-header-title-lg nk-header-title-parallax nk-header-title-parallax-opacity">
             <div class="bg-image">
-                <img src="{{ asset('images/index.jpg' ) }}" alt="" class="jarallax-img">
+                <img src="{{ asset('images/index.webp' ) }}" alt="" class="jarallax-img">
             </div>
             <div class="nk-header-table">
                 <div class="nk-header-table-cell">

@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,400i,700|Marcellus+SC);
-
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -11871,12 +11870,12 @@ img.rounded {
 }
 
 .nk-page-border .nk-page-border-t {
-    background-image: url(/images/border-top.png?796a288440644ee427110f3ae6d1aee7);
+    background-image: url(/images/border-top.webp?640da15facfc685951e9e1f74dd027ac);
     top: 0
 }
 
 .nk-page-border .nk-page-border-b {
-    background-image: url(/images/border-bottom.png?cc9b960146afe197a37f582b50904d6f);
+    background-image: url(/images/border-bottom.webp?22ac6e03759eff0b8eedc777a2f655b8);
     bottom: 0
 }
 
@@ -11887,12 +11886,12 @@ img.rounded {
 }
 
 .nk-page-border .nk-page-border-r {
-    background-image: url(/images/border-right.png?ccb6df2ed236529ce546e66d6c53f62e);
+    background-image: url(/images/border-right.webp?850ed370bdec3fd3fa19e2ba759a1dde);
     right: 0
 }
 
 .nk-page-border .nk-page-border-l {
-    background-image: url(/images/border-left.png?100528f0f952046764ddc2b27f9eda7c);
+    background-image: url(/images/border-left.webp?61e4b91c782ad70550f18a97b8616d3d);
     left: 0
 }
 

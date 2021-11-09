@@ -34,15 +34,15 @@ $isAdmin = $isAuth && $user->isAdmin;
          style="background-color: #000;"
          data-close-frames="23"
          data-close-speed="1.2"
-         data-close-sprites="{{ asset('images/preloader-bg.png' ) }}"
+         data-close-sprites="{{ asset('images/preloader-bg.webp' ) }}"
          data-open-frames="23"
          data-open-speed="1.2"
-         data-open-sprites="{{ asset('images/preloader-bg-bw.png' ) }}">
+         data-open-sprites="{{ asset('images/preloader-bg-bw.webp' ) }}">
     </div>
 
     <div class="nk-preloader-content">
         <div>
-            <img class="nk-img" src="{{ asset('images/logo.png' ) }}" alt="Craft Calc - Gaming Bootstrap 4 Template" width="170">
+            <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="Craft Calc - Gaming Bootstrap 4 Template" width="170">
             <div class="nk-preloader-animation"></div>
         </div>
     </div>
@@ -50,7 +50,7 @@ $isAdmin = $isAuth && $user->isAdmin;
     <div class="nk-preloader-skip">Skip</div>
 </div>
 
-<div class="nk-page-background op-5" data-video="https://youtu.be/UkeDo1LhUqQ" data-video-loop="true" data-video-mute="true" data-video-volume="0" data-video-start-time="0" data-video-end-time="0" data-video-pause-on-page-leave="true" style="background-image: url('{{ asset('images/page-background.jpg' ) }}');"></div>
+<div class="nk-page-background op-5" data-video="https://youtu.be/UkeDo1LhUqQ" data-video-loop="true" data-video-mute="true" data-video-volume="0" data-video-start-time="0" data-video-end-time="0" data-video-pause-on-page-leave="true" style="background-image: url('{{ asset('images/page-background.webp' ) }}');"></div>
 
 <div class="nk-page-border">
     <div class="nk-page-border-t"></div>
@@ -81,7 +81,7 @@ Additional Classes:
     <div class="nano">
         <div class="nano-content">
             <a href="{{route('index')}}" class="nk-nav-logo">
-                <img src="{{ asset('images/logo.png' ) }}" alt="" width="90">
+                <img src="{{ asset('images/logo.webp' ) }}" alt="" width="90">
             </a>
             <div class="nk-navbar-mobile-content">
                 <ul class="nk-nav">
