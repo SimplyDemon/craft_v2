@@ -3,7 +3,7 @@
 <!-- END: Scripts -->
 <script type="text/javascript">
 
-    // Ajax live seach
+    // Ajax live search
     $( '#search' ).bind( 'keyup click', function() {
         let $value = $( this ).val();
         if ( $value.length > 1 ) {
