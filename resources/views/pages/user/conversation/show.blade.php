@@ -2,15 +2,6 @@
 @section('user-content')
     <?php $currentUser = auth()->user() ?>
 
-    <style>
-        .text-position-left {
-            text-align: left;
-        }
-
-        .text-position-right {
-            text-align: right;
-        }
-    </style>
     <div class="nk-social-container">
         <!-- START: Messages -->
         <h2 class="nk-title">Переписка</h2>

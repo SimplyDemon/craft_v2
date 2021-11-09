@@ -5,14 +5,14 @@
         .nk-footer-parallax-opacity
 -->
 <footer class="nk-footer nk-footer-parallax nk-footer-parallax-opacity">
-    <img class="nk-footer-top-corner" src="{{ asset('vendor/images/footer-corner.png' ) }}" alt="">
+    <img class="nk-footer-top-corner" src="{{ asset('images/footer-corner.png' ) }}" alt="">
 
 
     <div class="container">
         <div class="nk-gap-2"></div>
         <div class="nk-footer-logos">
             <a href="{{route('index')}}">
-                <img class="nk-img" src="{{ asset('vendor/images/logo.png' ) }}" alt="craft_logo" width="120">
+                <img class="nk-img" src="{{ asset('images/logo.png' ) }}" alt="craft_logo" width="120">
             </a>
         </div>
         <div class="nk-gap"></div>

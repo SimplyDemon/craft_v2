@@ -57,3 +57,8 @@
 - Сделать верстку страниц и интегрировать её.
 
 - Заполнить главную страницу
+
+## Commands Prod
+
+php7.4 artisan migrate:fresh --seed COMPOSER_MEMORY_LIMIT=-1 composer-php7.4 update
+

@@ -1,0 +1,19 @@
+.list-group-item {
+    background-color: transparent;
+}
+
+td span svg {
+    margin-bottom: 5px;
+}
+
+img.grade {
+    margin-bottom: -10px;
+}
+
+.text-position-left {
+    text-align: left;
+}
+
+.text-position-right {
+    text-align: right;
+}

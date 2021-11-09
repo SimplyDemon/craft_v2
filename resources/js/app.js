@@ -4,7 +4,29 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require( './bootstrap' );
+require( './ofi.min' );
+require( './TweenMax.min' );
+require( './popper.min' );
+require( './jarallax.min' );
+require( './jarallax-video.min' );
+require( './imagesloaded.pkgd.min' );
+require( './flickity.pkgd.min' );
+require( './isotope.pkgd.min' );
+require( './photoswipe.min' );
+require( './photoswipe-ui-default.min' );
+require( './typed.min' );
+require( './jquery.validate.min' );
+require( './jquery.countdown.min' );
+require( './moment.min' );
+require( './moment-timezone-with-data.min' );
+require( './hammer.min' );
+require( './jquery.nanoscroller' );
+require( './soundmanager2-nodebug-jsmin' );
+require( './keymaster' );
+require( './summernote-bs4.min' );
+require( './godlike.min' );
+require( './godlike-init' );
 
 
 /**

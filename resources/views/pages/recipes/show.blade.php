@@ -12,15 +12,6 @@
         $masterWorkText .= '<br>' . $single->masterwork_description;
     }
     ?>
-    <style>
-        td span svg {
-            margin-bottom: 5px;
-        }
-
-        img.grade {
-            margin-bottom: -10px;
-        }
-    </style>
     <div class="nk-main">
 
         <!-- START: Header Title -->
@@ -209,11 +200,13 @@
     </div>
 
 
+@endsection
+
+@push('extra-scripts')
     <script type="text/javascript">
         $( function() {
 
             $( '[data-toggle="tooltip"]' ).tooltip()
         } )
     </script>
-
-@endsection
+@endpush
