@@ -27,6 +27,7 @@ require( './keymaster' );
 require( './summernote-bs4.min' );
 require( './godlike.min' );
 require( './godlike-init' );
+require( './custom' );
 
 
 /**

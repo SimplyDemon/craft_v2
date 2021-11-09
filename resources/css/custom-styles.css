@@ -17,3 +17,12 @@ img.grade {
 .text-position-right {
     text-align: right;
 }
+
+#search {
+    min-width: 275px;
+
+}
+
+#search:focus {
+    border-bottom: none;
+}

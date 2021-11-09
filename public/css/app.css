@@ -20014,5 +20014,13 @@ img.grade {
     text-align: right
 }
 
+#search {
+    min-width: 275px
+}
+
+#search:focus {
+    border-bottom: none
+}
+
 
 /*# sourceMappingURL=app.css.map*/

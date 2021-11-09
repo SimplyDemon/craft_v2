@@ -23,6 +23,22 @@ class SearchController extends Controller {
         ] );
     }
 
+    public function ajax( Request $request ) {
+        $search  = $request->input( 's' );
+        $search  = $this->sanitizeString( $search );
+        $recipes = [];
+        if ( $search ) {
+            $recipes         = Recipe::where( 'name', 'like', "%$search%" )->get();
+            $recipesModified = [];
+            foreach ( $recipes as &$recipe ) {
+                $recipe->jsUrl = route( 'recipes.show', [ 'id' => $recipe->id ] );
+                $recipe->jsImg = asset( 'storage' ) . '/' . $recipe->img;
+            }
+        }
+
+        return $recipes;
+    }
+
     protected function sanitizeString( $string ) {
         $string = strip_tags( $string );
         $string = addslashes( $string );

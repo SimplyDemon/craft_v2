@@ -47,7 +47,6 @@ $isAdmin = $isAuth && $user->isAdmin;
         </div>
     </div>
 
-    <div class="nk-preloader-skip">Skip</div>
 </div>
 
 <div class="nk-page-background op-5" data-video="https://youtu.be/UkeDo1LhUqQ" data-video-loop="true" data-video-mute="true" data-video-volume="0" data-video-start-time="0" data-video-end-time="0" data-video-pause-on-page-leave="true" style="background-image: url('{{ asset('images/page-background.webp' ) }}');"></div>
@@ -93,25 +92,6 @@ Additional Classes:
 </div>
 <!-- END: Navbar Mobile -->
 
-
-<!--
-START: Search
-
-Additional Classes:
-.nk-search-light
--->
-<div class="nk-search">
-    <div class="container">
-        <form action="{{route('search')}}" method="get">
-            @csrf
-            <fieldset class="form-group nk-search-field">
-                <input type="text" class="form-control" id="searchInput" placeholder="Поиск..." name="s">
-                <label for="searchInput"><i class="ion-ios-search"></i></label>
-            </fieldset>
-        </form>
-    </div>
-</div>
-<!-- END: Search -->
 @if($errors->any())
     @foreach ($errors->all() as $error)
         <div class="nk-info-box bg-danger">

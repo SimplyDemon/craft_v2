@@ -34,6 +34,7 @@ Auth::routes( [
 
 Route::get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
 Route::get( '/search', [ SearchController::class, 'index' ] )->name( 'search' );
+Route::post( '/search', [ SearchController::class, 'ajax' ] )->name( 'search.ajax' );
 
 Route::resource( 'recipes', RecipeController::class )->parameters( [
     'recipes' => 'id',

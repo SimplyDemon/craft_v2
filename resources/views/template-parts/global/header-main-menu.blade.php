@@ -23,6 +23,31 @@
                         Craft Calc
                     </a>
                 </li>
+                <li>
+                    <form action="{{route('search')}}" method="get">
+                        @csrf
+                        <div class="input-group">
+                            <input type="text" id="search" class="form-control" name="s" placeholder="Найти вещи" aria-label="" aria-describedby="basic-addon1" autocomplete="off">
+                        </div>
+                    </form>
+                    <div class="search_result">
+                        <ul id="search_result-ul">
+
+                        </ul>
+                    </div>
+                </li>
+                <style>
+                    .search_result {
+                        position: absolute;
+                        z-index: 2;
+                        top: calc(100% - 5px);
+                        left: 0;
+                        width: 100%;
+                        background-color: #0e0e0e;;
+                        border-radius: 0 0 5px 5px;
+                        overflow: hidden;
+                    }
+                </style>
                 <li class="{{Route::is('recipes.index') ? 'active' : ''}}">
                     <a href="{{ route('recipes.index') }}">
                         Вещи
@@ -75,12 +100,6 @@
                         </a>
                     </li>
                 @endif
-
-                <li class="single-icon">
-                    <a href="#" class="nk-search-toggle no-link-effect">
-                        <span class="nk-icon-search"></span>
-                    </a>
-                </li>
 
             </ul>
         </div>
