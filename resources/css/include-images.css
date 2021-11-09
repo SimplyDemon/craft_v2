@@ -1,0 +1,13 @@
+#hack-for-include-images-on-build:before {
+    content: url("../image/theme/border-bottom.webp");
+    content: url("../image/theme/border-left.webp");
+    content: url("../image/theme/border-right.webp");
+    content: url("../image/theme/border-top.webp");
+    content: url("../image/theme/footer-corner.webp");
+    content: url("../image/theme/index.webp");
+    content: url("../image/theme/logo.webp");
+    content: url("../image/theme/page-background.webp");
+    content: url("../image/theme/preloader-bg.webp");
+    content: url("../image/theme/preloader-bg-bw.webp");
+    content: url("../image/theme/icon-login.svg");
+}

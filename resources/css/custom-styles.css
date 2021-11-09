@@ -26,3 +26,16 @@ img.grade {
 .search-input:focus {
     border-bottom: none;
 }
+
+.icon-game:before {
+    content: url("../image/theme/icon-game.svg");
+}
+
+.icon-cog:before {
+    content: url("../image/theme/icon-cog.svg");
+}
+
+.icon-card:before {
+    content: url("../image/theme/icon-card.svg");
+}
+

@@ -20022,5 +20022,31 @@ img.grade {
     border-bottom: none
 }
 
+.icon-game:before {
+    content: url(/images/icon-game.svg?37c5649e6c17de1b64f72927fb84bfcc)
+}
+
+.icon-cog:before {
+    content: url(/images/icon-cog.svg?58c9f6ad64f47dc971112ab160fad703)
+}
+
+.icon-card:before {
+    content: url(/images/icon-card.svg?f4a77557da66582fdc002d596af6b2d7)
+}
+
+#hack-for-include-images-on-build:before {
+    content: url(/images/border-bottom.webp?22ac6e03759eff0b8eedc777a2f655b8);
+    content: url(/images/border-left.webp?61e4b91c782ad70550f18a97b8616d3d);
+    content: url(/images/border-right.webp?850ed370bdec3fd3fa19e2ba759a1dde);
+    content: url(/images/border-top.webp?640da15facfc685951e9e1f74dd027ac);
+    content: url(/images/footer-corner.webp?8463b278a5cea4406caa5569e045f11b);
+    content: url(/images/index.webp?0bfbec145bedc2c8cc73a90f16cb7f85);
+    content: url(/images/logo.webp?97ae1c3f2a3011df6d2b812827de244e);
+    content: url(/images/page-background.webp?852b84ef8bb4282a0d8ec4c454b13957);
+    content: url(/images/preloader-bg.webp?09da563737e4c3028854d9ed88443044);
+    content: url(/images/preloader-bg-bw.webp?f4dea97a9f27d44c3f63266f95658af6);
+    content: url(/images/icon-login.svg?031a758db74c2cf61516ef361eaeb197)
+}
+
 
 /*# sourceMappingURL=app.css.map*/

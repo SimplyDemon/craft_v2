@@ -89,14 +89,7 @@
                 @if(!$isAuth)
                     <li class="single-icon">
                         <a href="#" class="nk-sign-toggle no-link-effect">
-                        <span class="nk-icon-toggle">
-                            <span class="nk-icon-toggle-front">
-                                <span class="fa fa-sign-in"></span>
-                            </span>
-                            <span class="nk-icon-toggle-back">
-                                <span class="nk-icon-close"></span>
-                            </span>
-                        </span>
+                            <img width="20px" src="{{ asset('images/icon-login.svg' ) }}" alt="login">
                         </a>
                     </li>
                 @endif
