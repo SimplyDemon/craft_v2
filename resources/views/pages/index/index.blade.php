@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('content')
+    <?php
+    $user = auth()->user();
+    $isAuth = $user;
+    $isEnableAnimation = $isAuth && $user->isEnableAnimation;
+    ?>
     <div class="nk-main">
         <!-- START: Header Title -->
         <div class="nk-header-title nk-header-title-lg nk-header-title-parallax nk-header-title-parallax-opacity">
@@ -69,7 +74,7 @@
         <!-- END: Features -->
 
         <!-- START: About -->
-        <div class="nk-box bg-dark-1 sd-background">
+        <div class="nk-box bg-dark-1 {{$isEnableAnimation ? '' : 'sd-background'}}">
             <div class="container text-center">
                 <div class="nk-gap-6"></div>
                 <div class="nk-gap-2"></div>
