@@ -39,3 +39,6 @@ img.grade {
     content: url("../image/theme/icon-card.svg");
 }
 
+.sd-background {
+    background: url("../image/theme/dark-bg.webp");
+}

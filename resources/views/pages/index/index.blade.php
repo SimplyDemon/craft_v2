@@ -69,7 +69,7 @@
         <!-- END: Features -->
 
         <!-- START: About -->
-        <div class="nk-box bg-dark-1">
+        <div class="nk-box bg-dark-1 sd-background">
             <div class="container text-center">
                 <div class="nk-gap-6"></div>
                 <div class="nk-gap-2"></div>
