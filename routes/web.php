@@ -51,6 +51,7 @@ Route::middleware( 'auth' )->group( function () {
 
     Route::prefix( 'user' )->group( function () {
         Route::get( '/', [ UserController::class, 'index' ] )->name( 'user' );
+        Route::post( '/', [ UserController::class, 'update' ] )->name( 'user.update' );
 
         Route::prefix( 'price' )->group( function () {
             Route::get( '/', [ UserPriceController::class, 'index' ] )->name( 'user.price' );

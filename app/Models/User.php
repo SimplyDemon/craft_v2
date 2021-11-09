@@ -19,6 +19,7 @@ class User extends Authenticatable {
         'name',
         'email',
         'password',
+        'is_enable_animation',
     ];
 
     /**
@@ -66,5 +67,8 @@ class User extends Authenticatable {
         return $this->attributes['is_can_update_price'];
     }
 
+    public function getIsEnableAnimationAttribute() {
 
+        return $this->attributes['is_enable_animation'];
+    }
 }

@@ -1,7 +1,8 @@
 <?php
-$user    = auth()->user();
-$isAuth  = $user;
-$isAdmin = $isAuth && $user->isAdmin;
+$user              = auth()->user();
+$isAuth            = $user;
+$isAdmin           = $isAuth && $user->isAdmin;
+$isEnableAnimation = $isAuth && $user->isEnableAnimation;
 ?>
     <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -24,6 +25,7 @@ $isAdmin = $isAuth && $user->isAdmin;
 </head>
 
 <body>
+@if($isEnableAnimation)
 <div class="nk-preloader">
     <!--
          Preloader animation
@@ -50,6 +52,7 @@ $isAdmin = $isAuth && $user->isAdmin;
 </div>
 
 <div class="nk-page-background op-5" data-video="https://youtu.be/UkeDo1LhUqQ" data-video-loop="true" data-video-mute="true" data-video-volume="0" data-video-start-time="0" data-video-end-time="0" data-video-pause-on-page-leave="true" style="background-image: url('{{ asset('images/page-background.webp' ) }}');"></div>
+@endif
 
 <div class="nk-page-border">
     <div class="nk-page-border-t"></div>
