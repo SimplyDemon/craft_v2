@@ -41,8 +41,8 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->swordCategory->id;
         $imagePath  = 'item/weapon/sword';
 
-        seederAddRecipe( 'Damascus Sword', $imagePath, 20000000, 'B', $categoryId, 0, '60', '', '' );
-        seederAddRecipe( 'Damascus Sword (60%)', $imagePath, 20000000, 'B', $categoryId, 0, '60', '', '' );
+        //        seederAddRecipe( 'Damascus Sword', $imagePath, 20000000, 'B', $categoryId, 0, '60', '', '' );
+        //        seederAddRecipe( 'Damascus Sword (60%)', $imagePath, 20000000, 'B', $categoryId, 0, '60', '', '' );
         seederAddRecipe( 'Forgotten Blade', $imagePath, 100000000, 'S', $categoryId, 0, '60', 'Adds Rate Crit by 54.4', 'Lightning' );
         seederAddRecipe( 'Heavens Divider', $imagePath, 100000000, 'S', $categoryId, 0, '60', 'Adds Crit. Atk Add by 340', 'Thunder' );
         seederAddRecipe( 'Dynasty Sword', $imagePath, 100000000, 'S', $categoryId, 0, '60', 'Increases Max HP by 492', 'Earth' );

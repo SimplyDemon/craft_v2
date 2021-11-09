@@ -6,28 +6,28 @@ use Database\Seeders\Resource\ResourceMain;
 
 class Sword extends ResourceMain {
     protected function add() {
-        $this->resources[] = [
-            'type'       => 'weapon',
-            'name'       => 'Damascus Sword Blade',
-            'price_sell' => 30000,
-            'price_buy'  => 60000,
-            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
-        ];
-
-        $this->resources[] = [
-            'type'       => 'weapon',
-            'name'       => 'Recipe: Damascus Sword (60%)',
-            'price_sell' => 1000000,
-            'price_buy'  => 3200000,
-            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
-        ];
-        $this->resources[] = [
-            'type'       => 'weapon',
-            'name'       => 'Recipe: Damascus Sword',
-            'price_sell' => 5000000,
-            'price_buy'  => 3200000,
-            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
-        ];
+        //        $this->resources[] = [
+        //            'type'       => 'weapon',
+        //            'name'       => 'Damascus Sword Blade',
+        //            'price_sell' => 30000,
+        //            'price_buy'  => 60000,
+        //            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        //        ];
+        //
+        //        $this->resources[] = [
+        //            'type'       => 'weapon',
+        //            'name'       => 'Recipe: Damascus Sword (60%)',
+        //            'price_sell' => 1000000,
+        //            'price_buy'  => 3200000,
+        //            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        //        ];
+        //        $this->resources[] = [
+        //            'type'       => 'weapon',
+        //            'name'       => 'Recipe: Damascus Sword',
+        //            'price_sell' => 5000000,
+        //            'price_buy'  => 3200000,
+        //            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        //        ];
 
         $this->resources[] = [
             'type'       => 'weapon',
