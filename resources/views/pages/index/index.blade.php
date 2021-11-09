@@ -12,6 +12,9 @@
                         <div class="nk-header-text">
                             <h1 class="nk-title display-3">Craft Calc</h1>
                             <div class="nk-gap-2"></div>
+                            <a href="{{route('recipes.index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-4">
+                                <span>Каталог предметов</span>
+                            </a>
                             <div class="nk-gap-4"></div>
                         </div>
                     </div>

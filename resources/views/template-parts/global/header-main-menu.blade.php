@@ -27,7 +27,7 @@
                     <form action="{{route('search')}}" method="get">
                         @csrf
                         <div class="input-group">
-                            <input type="text" class="form-control search-input" name="s" placeholder="Найти вещи" aria-label="" aria-describedby="basic-addon1" autocomplete="off">
+                            <input type="text" class="form-control search-input" name="s" placeholder="Найти..." aria-label="" aria-describedby="basic-addon1" autocomplete="off">
                         </div>
                     </form>
                     <div class="search_result">
