@@ -59,6 +59,11 @@
                             Личный кабинет
                         </a>
                         <ul class="dropdown">
+                            <li class="{{Route::is('user') ? 'active' : ''}}">
+                                <a href="{{route('user')}}">
+                                    Аккаунт
+                                </a>
+                            </li>
                             <li class="{{Route::is('user.price') ? 'active' : ''}}">
                                 <a href="{{route('user.price')}}">
                                     Цены
