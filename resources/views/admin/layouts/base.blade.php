@@ -24,7 +24,7 @@ $isAdmin = $isAuth && $user->isAdmin;
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css.gz') }}" rel="stylesheet">
 </head>
 <body>
 <main class="main" role="main">
