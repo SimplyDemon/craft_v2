@@ -13,8 +13,8 @@ class Sword extends RecipeResourceMain {
     }
 
     protected function add() {
-        $this->addDamascusSword60();
-        $this->addDamascusSword();
+        //        $this->addDamascusSword60();
+        //        $this->addDamascusSword();
         $this->addForgottenBlade();
         $this->addHeavensDivider();
         $this->addDynastySword();
