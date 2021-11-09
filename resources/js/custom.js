@@ -12,3 +12,27 @@ $.ajaxSetup( {
         'X-CSRF-TOKEN': $( 'meta[name="csrf-token"]' ).attr( 'content' )
     }
 } );
+
+// Ajax live search
+$( '.search-input' ).bind( 'keyup click', function() {
+    let $value = $( this ).val();
+    if ( $value.length > 1 ) {
+        $.ajax( {
+            type: 'post',
+            url: '/search',
+            data: { 's': $value },
+            success: function( data ) {
+                let code = '';
+                if ( data !== null && data !== undefined ) {
+                    $.each( data, function( index, value ) {
+                        code += '<li><img style="margin-right: 5px" width="20px" src="' + value[ 'jsImg' ] + '" alt="' + value[ 'name' ] + '"><a href="' + value[ 'jsUrl' ] + '">' + value[ 'name' ] + '</a></li>';
+                    } );
+                }
+
+                $( '#search_result-ul' ).html( code );
+            }
+        } );
+    } else {
+        $( '#search_result-ul' ).html( '' );
+    }
+} )

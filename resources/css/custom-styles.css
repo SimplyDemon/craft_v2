@@ -18,11 +18,11 @@ img.grade {
     text-align: right;
 }
 
-#search {
+.search-input {
     min-width: 275px;
 
 }
 
-#search:focus {
+.search-input:focus {
     border-bottom: none;
 }
