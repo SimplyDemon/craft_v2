@@ -19,19 +19,19 @@ $isEnableAnimation = $isAuth && $user->isEnableAnimation;
     <title>{{ config('app.name', 'Craft Calc') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
 
 </head>
 
 <body>
 @if($isEnableAnimation)
-<div class="nk-preloader">
-    <!--
-         Preloader animation
-         data-close-... data used for closing preloader
-         data-open-...  data used for opening preloader
-    -->
+    <div class="nk-preloader">
+        <!--
+             Preloader animation
+             data-close-... data used for closing preloader
+             data-open-...  data used for opening preloader
+        -->
     <div class="nk-preloader-bg"
          style="background-color: #000;"
          data-close-frames="23"

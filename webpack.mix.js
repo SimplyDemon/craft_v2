@@ -15,6 +15,7 @@ const zlib              = require( "zlib" );
 
 mix.js( 'resources/js/app.js', 'public/js' )
     .sass( 'resources/sass/app.scss', 'public/css' )
+    .version()
     .sourceMaps()
     .webpackConfig( {
         plugins: [
@@ -31,5 +32,4 @@ mix.js( 'resources/js/app.js', 'public/js' )
             } )
         ]
     } )
-    .extract( ['jquery-countdown'], 'js/extract-countdown.js' )
     .extract( ['jquery'], 'js/jquery.js' );

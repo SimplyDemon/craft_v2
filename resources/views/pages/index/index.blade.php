@@ -107,7 +107,7 @@
                                     @endif
                                     <p class="nk-sub-title">{{$boss->status_respawn}}</p>
                                     <p>{{$boss->timer_status}}</p>
-                                    <div class="nk-countdown nk-sub-title" data-end="{{$boss->timer_date}}" data-timezone="EST"></div>
+                                    <div class="nk-countdown sd-countdown nk-sub-title" data-end="{{$boss->timer_date}}" data-timezone="EST"></div>
                                     <!-- END: Counter -->
                                 </div>
                             </div>
@@ -132,6 +132,8 @@
     $inProgresses = [
         'Поправить баги бета версии.',
         'Выпустить стабильный продакшен',
+        'Переделать страницу всех предметов (добавить поиск без перезагрузки, фильтр по категориям и грейдам).',
+        'Добавить поиск на страницу управления ценами',
         'Доработать чат.',
         'Книга рецептов - возможность добавлять рецепты в личный кабинет.',
         'Добавить блог для публикации статей, инфы о ченджлогах.',

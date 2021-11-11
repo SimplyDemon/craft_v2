@@ -1,7 +1,6 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/js/manifest.js": "/js/manifest.js",
-    "/css/app.css": "/css/app.css",
-    "/js/jquery.js": "/js/jquery.js",
-    "/js/extract-countdown.js": "/js/extract-countdown.js"
+    "/js/app.js": "/js/app.js?id=dbde040788a01a40282c",
+    "/js/manifest.js": "/js/manifest.js?id=fd612caa07097ab95125",
+    "/css/app.css": "/css/app.css?id=543179fb949fe0deac2f",
+    "/js/jquery.js": "/js/jquery.js?id=cac5e37d2d0201233c13"
 }

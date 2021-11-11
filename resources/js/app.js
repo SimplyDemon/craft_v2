@@ -23,6 +23,7 @@ require( './soundmanager2-nodebug-jsmin' );
 require( './keymaster' );
 require( './summernote-bs4.min' );
 require( './godlike' );
+require( './countdown-init' );
 require( './godlike-init' );
 require( './custom' );
 
