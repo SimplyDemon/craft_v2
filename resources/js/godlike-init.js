@@ -160,7 +160,7 @@
                 twitterFailText: 'Failed to fetch data',
                 twitterApiPath: 'php/twitter/tweet.php',
 
-                countdown: '<div>\n                <span>%D</span>\n                Days\n            </div>\n            <div>\n                <span>%H</span>\n                Hours\n            </div>\n            <div>\n                <span>%M</span>\n                Minutes\n            </div>\n            <div>\n                <span>%S</span>\n                Seconds\n            </div>'
+                countdown: ':%M:%S'
             },
 
             shortcuts: {

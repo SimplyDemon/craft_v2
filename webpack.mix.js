@@ -30,4 +30,6 @@ mix.js( 'resources/js/app.js', 'public/js' )
                 deleteOriginalAssets: false,
             } )
         ]
-    } );
+    } )
+    .extract( ['jquery-countdown'], 'js/extract-countdown.js' )
+    .extract( ['jquery'], 'js/jquery.js' );

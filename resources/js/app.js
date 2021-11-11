@@ -17,15 +17,12 @@ require( './photoswipe.min' );
 require( './photoswipe-ui-default.min' );
 require( './typed.min' );
 require( './jquery.validate.min' );
-require( './jquery.countdown.min' );
-require( './moment.min' );
-require( './moment-timezone-with-data.min' );
 require( './hammer.min' );
 require( './jquery.nanoscroller' );
 require( './soundmanager2-nodebug-jsmin' );
 require( './keymaster' );
 require( './summernote-bs4.min' );
-require( './godlike.min' );
+require( './godlike' );
 require( './godlike-init' );
 require( './custom' );
 

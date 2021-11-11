@@ -40,3 +40,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+
+try {
+    window.$ = window.jQuery = require( 'jquery' );
+    require( 'jquery-countdown' );
+}
+catch ( e ) {}
