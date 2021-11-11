@@ -92,17 +92,22 @@
                     <div class="nk-gap-2"></div>
                     <div class="row no-gutters">
 
-                        @foreach($subclassBossesDeathTime as $boss => $subclassBossDeathTime)
+                        @foreach($subclassBossesDeathTime as $boss)
                             <div class="col-md-3">
                                 <div class="nk-box-2 nk-box-line">
                                     <!-- START: Counter -->
-
-                                    <h2 class="nk-sub-title">{{$boss}}</h2>
-                                    <p>Начало респа: <br>{{$subclassBossDeathTime['dateRespawnStart']}}</p>
-                                    <p>Конец респа: <br>{{$subclassBossDeathTime['dateRespawnEnd']}}</p>
-                                    <p class="nk-sub-title">{{$subclassBossDeathTime['statusResp']}}</p>
-                                    <p>{{$subclassBossDeathTime['timerStatus']}}</p>
-                                    <div class="nk-countdown nk-sub-title" data-end="{{$subclassBossDeathTime['timerDate']}}" data-timezone="EST"></div>
+                                    <h2 class="nk-sub-title">{{$boss->name}}</h2>
+                                    <p>Начало респа: <br>{{$boss->respawn_start}}</p>
+                                    <p>Конец респа: <br>{{$boss->respawn_end}}</p>
+                                    @if($boss->description)
+                                        <p>{{$boss->description}}</p>
+                                    @endif
+                                    @if($boss->target)
+                                        <p>{{$boss->target}}</p>
+                                    @endif
+                                    <p class="nk-sub-title">{{$boss->status_respawn}}</p>
+                                    <p>{{$boss->timer_status}}</p>
+                                    <div class="nk-countdown nk-sub-title" data-end="{{$boss->timer_date}}" data-timezone="EST"></div>
                                     <!-- END: Counter -->
                                 </div>
                             </div>

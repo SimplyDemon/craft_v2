@@ -46,3 +46,7 @@ function seederAddRecipe( string $name, string $imagePath, int $price, string $g
         'masterwork_name'        => $masterworkName,
     ] );
 }
+
+function getCurrentTimeInUnix() {
+    return time();
+}
