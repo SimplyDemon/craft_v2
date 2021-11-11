@@ -34,7 +34,10 @@
                 @if($single->rare_chance)
                     <span style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$masterWorkText}}">Masterwork</span>
                 @endif
-                Цена: {{number_format($recipePriceSell, 0, ' ', ' ')}}
+
+                @if($recipePriceSell > 0)
+                    Цена: {{number_format($recipePriceSell, 0, ' ', ' ')}}
+                @endif
             </h3>
             @if($single)
                 <h2>Закупка ресурсов у торговцев</h2>
