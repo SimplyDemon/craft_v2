@@ -6,6 +6,9 @@ use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class ArmorSeeder extends Seeder {
+    protected Category $shieldCategory;
+    protected Category $sigilCategory;
+
     protected Category $armorLightCategory;
     protected Category $armorLightFullBodyCategory;
     protected Category $armorLightUpperCategory;
@@ -38,6 +41,9 @@ class ArmorSeeder extends Seeder {
         $this->addArmorLight();
         $this->addArmorHeavy();
         $this->addArmorRobe();
+        $this->addShield();
+        $this->addSigil();
+
     }
 
     protected function addArmorLight() {
@@ -66,9 +72,31 @@ class ArmorSeeder extends Seeder {
         $this->addArmorRobeUpper();
     }
 
+    protected function addShield() {
+        $categoryId = $this->shieldCategory->id;
+        $imagePath  = 'item/shield';
+
+        seederAddRecipe( 'Imperial Crusader Shield', $imagePath, 100000000, 'S', $categoryId, 0, '60', 'Multiplies M.Def by 1.02' );
+        seederAddRecipe( 'Dynasty Shield', $imagePath, 100000000, 'S', $categoryId, 0, '60', 'Multiplies M.Def by 1.02' );
+        seederAddRecipe( 'Moirai Shield', $imagePath, 100000000, 'S-80', $categoryId, 0, '60', 'Multiplies Magic Damage Vulnerability by 0.98' );
+        seederAddRecipe( 'Vesper Shield', $imagePath, 100000000, 'S-84', $categoryId, 0, '60', 'Multiplies Magic Damage Vulnerability by 0.98' );
+    }
+
+    protected function addSigil() {
+        $categoryId = $this->sigilCategory->id;
+        $imagePath  = 'item/sigil';
+
+        seederAddRecipe( 'Arcana Sigil', $imagePath, 100000000, 'S', $categoryId, 0, '60', 'Increases M. Def by 2% and decreases magic canceling damage by 13.' );
+        seederAddRecipe( 'Dynasty Sigil', $imagePath, 100000000, 'S', $categoryId, 0, '60', 'Increases M. Def by 2% and Resistance to Dark by 2.' );
+        seederAddRecipe( 'Moirai Sigil', $imagePath, 100000000, 'S-80', $categoryId, 0, '60', 'Multiplies Magic Damage Vulnerability by 0.98' );
+        seederAddRecipe( 'Vesper Sigil', $imagePath, 100000000, 'S-84', $categoryId, 0, '60', 'Multiplies Magic Damage Vulnerability by 0.98' );
+    }
 
     protected function setArmorCategories() {
         $armorCategory = Category::where( 'name', 'Armor' )->firstOrFail();
+
+        $this->sigilCategory  = Category::where( 'name', 'Sigil' )->firstOrFail();
+        $this->shieldCategory = Category::where( 'name', 'Shield' )->firstOrFail();
 
         $this->armorLightCategory         = Category::where( 'name', 'Light' )->where( 'category_id', $armorCategory->id )->firstOrFail();
         $this->armorLightFullBodyCategory = Category::where( 'name', 'Full body' )->where( 'category_id', $this->armorLightCategory->id )->firstOrFail();

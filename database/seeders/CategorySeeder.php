@@ -29,21 +29,30 @@ class CategorySeeder extends Seeder {
             'name' => 'Jewelry',
             'slug' => Str::slug( 'Jewelry', '-' ),
         ] );
-        Category::create( [
-            'name' => 'Shield',
-            'slug' => Str::slug( 'Shield', '-' ),
-        ] );
-        Category::create( [
-            'name' => 'Sigil',
-            'slug' => Str::slug( 'Sigil', '-' ),
-        ] );
-
 
         $this->addArmorHeavy();
         $this->addArmorLight();
         $this->addArmorRobe();
         $this->addJewelry();
         $this->addWeapons();
+        $this->addShield();
+        $this->addSigil();
+    }
+
+    protected function addShield() {
+        Category::create( [
+            'name'        => 'Shield',
+            'slug'        => Str::slug( 'Shield', '-' ),
+            'category_id' => $this->armorCategory->id,
+        ] );
+    }
+
+    protected function addSigil() {
+        Category::create( [
+            'name'        => 'Sigil',
+            'slug'        => Str::slug( 'Sigil', '-' ),
+            'category_id' => $this->armorCategory->id,
+        ] );
     }
 
     protected function addWeapons() {

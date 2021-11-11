@@ -20,10 +20,6 @@ class RecipeSeeder extends Seeder {
         $jewelrySeeder = new JewelrySeeder();
         $jewelrySeeder->seedJewelry();
 
-        $shieldSeeder = new ShieldSeeder();
-        $shieldSeeder->seedShield();
 
-        $sigilSeeder = new SigilSeeder();
-        $sigilSeeder->seedSigil();
     }
 }
