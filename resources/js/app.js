@@ -6,7 +6,6 @@
 
 require( './bootstrap' );
 require( './ofi.min' );
-require( './TweenMax.min' );
 require( './popper.min' );
 require( './jarallax.min' );
 require( './jarallax-video.min' );
@@ -21,7 +20,6 @@ require( './hammer.min' );
 require( './jquery.nanoscroller' );
 require( './soundmanager2-nodebug-jsmin' );
 require( './keymaster' );
-require( './summernote-bs4.min' );
 require( './godlike' );
 require( './countdown-init' );
 require( './godlike-init' );
