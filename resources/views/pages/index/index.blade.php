@@ -155,5 +155,4 @@
         </div>
         <div class="nk-gap-6"></div>
     </div>
-    </div>
 @endsection
