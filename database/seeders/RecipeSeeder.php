@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Database\Seeders\Recipe\ArmorSeeder;
 use Database\Seeders\Recipe\JewelrySeeder;
+use Database\Seeders\Recipe\OtherSeeder;
 use Database\Seeders\Recipe\ShieldSeeder;
 use Database\Seeders\Recipe\SigilSeeder;
 use Database\Seeders\Recipe\WeaponSeeder;
@@ -20,6 +21,7 @@ class RecipeSeeder extends Seeder {
         $jewelrySeeder = new JewelrySeeder();
         $jewelrySeeder->seedJewelry();
 
-
+        $other = new OtherSeeder();
+        $other->seedOther();
     }
 }

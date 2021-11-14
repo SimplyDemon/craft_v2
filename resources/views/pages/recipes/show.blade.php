@@ -102,6 +102,10 @@
                     $totalAdminPriceText = 'Цена по умолчанию:<br><b>' . number_format( $totalAdminPrice, 0, ' ', ' ' ) . '</b>';
                     $isPriceDifferent = $totalAdminPrice !== $total;
                     $tooltipAdminTotalPriceImg = $tooltipImagePathRegular;
+                    if ( $single->craft_count !== 1 ) {
+                        $total           = ceil( $total / $single->craft_count );
+                        $totalAdminPrice = ceil( $totalAdminPrice / $single->craft_count );
+                    }
                     ?>
                     <tr>
                         <td colspan="3">
@@ -111,8 +115,8 @@
                             <b>{{number_format($total, 0, ' ', ' ')}}</b>
                             @if($isPriceDifferent)
                                 <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
-                        {!! file_get_contents($tooltipAdminTotalPriceImg) !!}
-                    </span>
+                                    {!! file_get_contents($tooltipAdminTotalPriceImg) !!}
+                                </span>
                             @endif
                         </td>
                         <?php unset( $total ) ?>
@@ -161,16 +165,16 @@
                                 {{number_format($resourcePrice, 0, ' ', ' ')}}
                                 @if($isPriceDifferent)
                                     <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipResourcePriceText}}">
-                            {!! file_get_contents( $tooltipResourcePriceImg) !!}
-                        </span>
+                                        {!! file_get_contents( $tooltipResourcePriceImg) !!}
+                                    </span>
                                 @endif
                             </td>
                             <td>
                                 {{number_format($resourceLinePrice, 0, ' ', ' ') }}
                                 @if($isPriceDifferent)
                                     <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipLinePriceText}}">
-                            {!! file_get_contents( $tooltipResourcePriceImg) !!}
-                        </span>
+                                     {!! file_get_contents( $tooltipResourcePriceImg) !!}
+                                    </span>
                                 @endif
                             </td>
                         </tr>
@@ -179,6 +183,10 @@
                     $totalAdminPriceText = 'Цена по умолчанию:<br><b>' . number_format( $totalAdminPrice, 0, ' ', ' ' ) . '</b>';
                     $isPriceDifferent = $totalAdminPrice !== $total;
                     $tooltipAdminTotalPriceImg = $tooltipImagePathRegular;
+                    if ( $single->craft_count !== 1 ) {
+                        $total           = ceil( $total / $single->craft_count );
+                        $totalAdminPrice = ceil( $totalAdminPrice / $single->craft_count );
+                    }
                     ?>
                     <tr>
                         <td colspan="3">
@@ -188,8 +196,8 @@
                             <b>{{number_format($total, 0, ' ', ' ')}}</b>
                             @if($isPriceDifferent)
                                 <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
-                        {!! file_get_contents($tooltipAdminTotalPriceImg) !!}
-                    </span>
+                                    {!! file_get_contents($tooltipAdminTotalPriceImg) !!}
+                                </span>
                             @endif
                         </td>
                     </tr>

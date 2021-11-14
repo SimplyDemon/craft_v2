@@ -32,7 +32,7 @@ function copyFile( string $filePath, string $pathTo ) {
     return $explodedPath[1];
 }
 
-function seederAddRecipe( string $name, string $imagePath, int $price, string $grade, int $categoryId, int $craftCost = 0, string $percent = '60', $masterworkDescription = null, $masterworkName = null ) {
+function seederAddRecipe( string $name, string $imagePath, int $price, string $grade, int $categoryId, int $craftCost = 0, string $percent = '60', $masterworkDescription = null, $masterworkName = null, $count = 1 ) {
     return Recipe::create( [
         'name'                   => $name,
         'slug'                   => Str::slug( $name, '-' ),
@@ -44,6 +44,7 @@ function seederAddRecipe( string $name, string $imagePath, int $price, string $g
         'craft_cost'             => $craftCost,
         'masterwork_description' => $masterworkDescription,
         'masterwork_name'        => $masterworkName,
+        'craft_count'            => $count,
     ] );
 }
 

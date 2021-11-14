@@ -86,6 +86,16 @@ class Resource extends ResourceMain {
             'price_sell' => 26000,
             'price_buy'  => 9000,
         ];
+        $this->resources[] = [
+            'name'       => 'Spirit Ore',
+            'price_sell' => 440,
+            'price_buy'  => 440,
+        ];
+        $this->resources[] = [
+            'name'       => 'Soul Ore',
+            'price_sell' => 275,
+            'price_buy'  => 275,
+        ];
 
 
         $this->resources[] = [
@@ -130,7 +140,22 @@ class Resource extends ResourceMain {
             'price_buy'  => 16000,
         ];
         $this->resources[] = [
+            'name'       => 'Crystal A',
+            'price_sell' => 13600,
+            'price_buy'  => 13000,
+        ];
+        $this->resources[] = [
             'name'       => 'Crystal B',
+            'price_sell' => 13600,
+            'price_buy'  => 13000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Crystal C',
+            'price_sell' => 13600,
+            'price_buy'  => 13000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Crystal D',
             'price_sell' => 13600,
             'price_buy'  => 13000,
         ];

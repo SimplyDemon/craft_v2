@@ -21,6 +21,8 @@ class ResourceHelper {
     public Resource $varnishOfPurity;
     public Resource $thons;
     public Resource $leonard;
+    public Resource $spiritOre;
+    public Resource $soulOre;
 
     public Resource $warsmithHolder;
     public Resource $artisansFrame;
@@ -30,9 +32,11 @@ class ResourceHelper {
     public Resource $warsmithMold;
     public Resource $maestroMold;
 
-
     public Resource $crystalS;
+    public Resource $crystalA;
     public Resource $crystalB;
+    public Resource $crystalC;
+    public Resource $crystalD;
     public Resource $gemstoneS;
     public Resource $gemstoneB;
 
@@ -57,6 +61,8 @@ class ResourceHelper {
         $this->varnishOfPurity   = Resource::where( 'name', 'Varnish of Purity' )->firstOrFail();
         $this->thons             = Resource::where( 'name', 'Thons' )->firstOrFail();
         $this->leonard           = Resource::where( 'name', 'Leonard' )->firstOrFail();
+        $this->spiritOre         = Resource::where( 'name', 'Spirit Ore' )->firstOrFail();
+        $this->soulOre           = Resource::where( 'name', 'Soul Ore' )->firstOrFail();
 
         $this->warsmithHolder = Resource::where( 'name', 'Warsmith Holder' )->firstOrFail();
         $this->artisansFrame  = Resource::where( 'name', 'Artisans Frame' )->firstOrFail();
@@ -67,7 +73,10 @@ class ResourceHelper {
         $this->maestroMold    = Resource::where( 'name', 'Maestro Mold' )->firstOrFail();
 
         $this->crystalS  = Resource::where( 'name', 'Crystal S' )->firstOrFail();
+        $this->crystalA  = Resource::where( 'name', 'Crystal A' )->firstOrFail();
         $this->crystalB  = Resource::where( 'name', 'Crystal B' )->firstOrFail();
+        $this->crystalC  = Resource::where( 'name', 'Crystal C' )->firstOrFail();
+        $this->crystalD  = Resource::where( 'name', 'Crystal D' )->firstOrFail();
         $this->gemstoneS = Resource::where( 'name', 'Gemstone (S-grade)' )->firstOrFail();
         $this->gemstoneB = Resource::where( 'name', 'Gemstone (B-grade)' )->firstOrFail();
     }

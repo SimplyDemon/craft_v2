@@ -57,25 +57,32 @@ class ResourceSeeder extends Seeder {
 
         $this->pieceFolderPathArmorLight = $this->pieceFolderPathArmor . 'light/';
         $this->pieceFolderPathArmorHeavy = $this->pieceFolderPathArmor . 'heavy/';
-        $this->pieceFolderPathArmorRobe  = $this->pieceFolderPathArmor . 'robe/';
+	    $this->pieceFolderPathArmorRobe  = $this->pieceFolderPathArmor . 'robe/';
 
 
-        $this->defaultWeaponBladeFilePath = $this->pieceFolderPathWeapon . 'Blade.png';
-        $this->defaultArmorPieceFilePath  = $this->pieceFolderPathArmor . 'Piece.png';
+	    $this->defaultWeaponBladeFilePath = $this->pieceFolderPathWeapon . 'Blade.png';
+	    $this->defaultArmorPieceFilePath  = $this->pieceFolderPathArmor . 'Piece.png';
 
-        $this->recipeSImageFilePath = $this->recipeFolderPath . 'Recipe S.png';
-        $this->recipeBImageFilePath = $this->recipeFolderPath . 'Recipe B.png';
+	    $this->recipeSImageFilePath = $this->recipeFolderPath . 'Recipe S.png';
+	    $this->recipeBImageFilePath = $this->recipeFolderPath . 'Recipe B.png';
     }
 
-    protected function addRecipesPieces() {
-        $this->addRecipesPiecesWeapon();
-        $this->addRecipesPiecesArmor();
-        $this->addRecipesPiecesJewelry();
-        $this->addRecipesPiecesShield();
-        $this->addRecipesPiecesSigil();
-    }
+	protected function addResources() {
+		$resources          = new \Database\Seeders\Resource\Resource\Resource();
+		$resourcesResources = $resources->getResources();
 
-    protected function addRecipesPiecesWeapon() {
+		$this->resources = array_merge( $this->resources, $resourcesResources );
+	}
+
+	protected function addRecipesPieces() {
+		$this->addRecipesPiecesWeapon();
+		$this->addRecipesPiecesArmor();
+		$this->addRecipesPiecesJewelry();
+		$this->addRecipesPiecesShield();
+		$this->addRecipesPiecesSigil();
+	}
+
+	protected function addRecipesPiecesWeapon() {
         $blunt          = new Blunt();
         $bluntResources = $blunt->getResources();
 
@@ -191,13 +198,6 @@ class ResourceSeeder extends Seeder {
         $sigilResources = $sigil->getResources();
 
         $this->resources = array_merge( $this->resources, $sigilResources );
-    }
-
-    protected function addResources() {
-        $resources          = new \Database\Seeders\Resource\Resource\Resource();
-        $resourcesResources = $resources->getResources();
-
-        $this->resources = array_merge( $this->resources, $resourcesResources );
     }
 
     /**

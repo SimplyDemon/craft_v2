@@ -11,6 +11,7 @@ use Database\Seeders\RecipeResource\Armor\Light\Gloves;
 use Database\Seeders\RecipeResource\Armor\Light\Helmet;
 use Database\Seeders\RecipeResource\Armor\Light\Lower;
 use Database\Seeders\RecipeResource\Armor\Light\Upper;
+use Database\Seeders\RecipeResource\Other;
 use Database\Seeders\RecipeResource\Weapon\Blunt;
 use Database\Seeders\RecipeResource\Weapon\Bow;
 use Database\Seeders\RecipeResource\Weapon\Dagger;
@@ -34,6 +35,7 @@ class RecipeResourceSeeder extends Seeder {
         $this->addJewelry();
         $this->addShield();
         $this->addSigil();
+        $this->addOther();
     }
 
 
@@ -139,5 +141,10 @@ class RecipeResourceSeeder extends Seeder {
     protected function addSigil() {
         $sigil = new RecipeResource\Sigil();
         $sigil->seed();
+    }
+
+    protected function addOther() {
+        $other = new Other();
+        $other->seed();
     }
 }

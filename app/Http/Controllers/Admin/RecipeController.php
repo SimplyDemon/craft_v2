@@ -23,7 +23,7 @@ class RecipeController extends Controller {
 
 
     public function index() {
-        $categories = Category::orderBy( 'name', 'asc' )->whereNull( 'category_id' )->get();
+        $categories = Category::orderBy( 'id', 'asc' )->whereNull( 'category_id' )->get();
 
 
         return view( $this->folderPathUser . 'index', [

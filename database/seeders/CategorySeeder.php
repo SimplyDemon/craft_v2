@@ -10,6 +10,7 @@ class CategorySeeder extends Seeder {
     protected Category $weaponCategory;
     protected Category $armorCategory;
     protected Category $jewelryCategory;
+    protected Category $otherCategory;
 
     /**
      * Run the database seeds.
@@ -29,6 +30,10 @@ class CategorySeeder extends Seeder {
             'name' => 'Jewelry',
             'slug' => Str::slug( 'Jewelry', '-' ),
         ] );
+        $this->otherCategory   = Category::create( [
+            'name' => 'Other',
+            'slug' => Str::slug( 'Other', '-' ),
+        ] );
 
         $this->addArmorHeavy();
         $this->addArmorLight();
@@ -37,6 +42,8 @@ class CategorySeeder extends Seeder {
         $this->addWeapons();
         $this->addShield();
         $this->addSigil();
+
+
     }
 
     protected function addShield() {
