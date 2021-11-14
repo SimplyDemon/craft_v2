@@ -32,7 +32,7 @@
                     <img class="grade" src="{{$single->gradeImage}}" alt="grade">
                 @endif
                 @if($single->rare_chance)
-                    <span style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$masterWorkText}}">Masterwork</span>
+                    <span class="nk-btn nk-btn-md nk-btn-rounded link-effect-4" style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$masterWorkText}}">Masterwork</span>
                 @endif
 
                 @if($recipePriceSell > 0)
