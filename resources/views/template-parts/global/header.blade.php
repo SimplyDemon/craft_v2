@@ -1,8 +1,11 @@
 <?php
-$user              = auth()->user();
-$isAuth            = $user;
-$isAdmin           = $isAuth && $user->isAdmin;
-$isEnableAnimation = $isAuth && $user->isEnableAnimation;
+$user    = auth()->user();
+$isAuth  = $user;
+$isAdmin = $isAuth && $user->isAdmin;
+session_start();
+$isActivateFirstTimeAnimation     = ! isset( $_SESSION['isAnimationWasShowed'] );
+$isEnableAnimation                = ( $isAuth && $user->isEnableAnimation ) || $isActivateFirstTimeAnimation;
+$_SESSION['isAnimationWasShowed'] = true;
 ?>
     <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
