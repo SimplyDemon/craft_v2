@@ -38,12 +38,11 @@ class CategorySeeder extends Seeder {
         $this->addArmorHeavy();
         $this->addArmorLight();
         $this->addArmorRobe();
+        $this->addArmorUniversal();
         $this->addJewelry();
         $this->addWeapons();
         $this->addShield();
         $this->addSigil();
-
-
     }
 
     protected function addShield() {
@@ -141,6 +140,11 @@ class CategorySeeder extends Seeder {
             'category_id' => $this->armorCategory->id,
         ] );
         Category::create( [
+            'name'        => 'Full body',
+            'slug'        => Str::slug( 'Full body', '-' ),
+            'category_id' => $armorHeavy->id,
+        ] );
+        Category::create( [
             'name'        => 'Upper',
             'slug'        => Str::slug( 'Upper', '-' ),
             'category_id' => $armorHeavy->id,
@@ -220,6 +224,29 @@ class CategorySeeder extends Seeder {
             'name'        => 'Ring',
             'slug'        => Str::slug( 'Ring', '-' ),
             'category_id' => $this->jewelryCategory->id,
+        ] );
+    }
+
+    protected function addArmorUniversal() {
+        $armorUniversal = Category::create( [
+            'name'        => 'Universal',
+            'slug'        => Str::slug( 'Heavy', '-' ),
+            'category_id' => $this->armorCategory->id,
+        ] );
+        Category::create( [
+            'name'        => 'Helmet',
+            'slug'        => Str::slug( 'Helmet', '-' ),
+            'category_id' => $armorUniversal->id,
+        ] );
+        Category::create( [
+            'name'        => 'Boot',
+            'slug'        => Str::slug( 'Boot', '-' ),
+            'category_id' => $armorUniversal->id,
+        ] );
+        Category::create( [
+            'name'        => 'Gloves',
+            'slug'        => Str::slug( 'Gloves', '-' ),
+            'category_id' => $armorUniversal->id,
         ] );
     }
 }
