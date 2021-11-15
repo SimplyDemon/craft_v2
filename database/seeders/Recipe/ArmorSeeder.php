@@ -293,6 +293,7 @@ class ArmorSeeder extends Seeder {
         $imagePath  = 'item/armor/robe/full-body';
 
         seederAddRecipe( 'Avadon Robe', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Avadon Robe 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Dark Crystal Robe', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Robe of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Majestic Robe', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
@@ -304,8 +305,11 @@ class ArmorSeeder extends Seeder {
         $imagePath  = 'item/armor/robe/upper';
 
         seederAddRecipe( 'Tunic of Zubei', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Tunic of Zubei 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Blue Wolf Tunic', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Blue Wolf Tunic 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Tunic of Doom', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Tunic of Doom 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Tallum Tunic', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Dynasty Tunic', $imagePath, 40000000, 'S', $categoryId, 0, '60', 'Multiplies M.Atk Spd by 1.15' );
         seederAddRecipe( 'Moirai Tunic', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0811<br>Multiplies M.Atk Spd by 1.15<br>Decreases Paralyze Vulnerability by 5<br>Adds Water Resistance by 1<br>Adds Fire Resistance by 1<br>Adds Wind Resistance by 1<br>Adds Earth Resistance by 1<br>' );
@@ -317,8 +321,11 @@ class ArmorSeeder extends Seeder {
         $imagePath  = 'item/armor/robe/lower';
 
         seederAddRecipe( 'Stockings of Doom', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Stockings of Doom 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Blue Wolf Stockings', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Blue Wolf Stockings 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Stockings of Zubei', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Stockings of Zubei 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Tallum Stockings', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Dynasty Stockings', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0208<br>Adds Max MP by 133<br>Adds Dark Resistance by 3.33<br>' );
         seederAddRecipe( 'Moirai Stockings', $imagePath, 40000000, 'S-80', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0103<br>Decreases Paralyze Vulnerability by 5<br>Adds Water Resistance by 5<br>' );
