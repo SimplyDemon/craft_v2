@@ -15,9 +15,143 @@ class Upper extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addZubeisLeatherShirt();
+        $this->addZubeisLeatherShirt100();
+        $this->addDarkCrystalLeatherArmor();
         $this->addDynastyLeatherArmor();
         $this->addMoiraiLeatherBreastplate();
         $this->addVesperLeatherBreastplate();
+    }
+
+    protected function addZubeisLeatherShirt() {
+        $piece  = Resource::where( 'name', 'Zubei\'s Leather Shirt Fabric' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Zubei\'s Leather Shirt (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Zubei\'s Leather Shirt' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 65,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 20,
+        ];
+
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneB->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->asofe->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addZubeisLeatherShirt100() {
+        $piece  = Resource::where( 'name', 'Zubei\'s Leather Shirt Fabric' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Zubei\'s Leather Shirt' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Zubei\'s Leather Shirt 100%' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 118,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 58,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 29,
+        ];
+
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneB->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->asofe->id,
+            'resourceQuantity' => 29,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->maestroAnvilLock->id,
+            'resourceQuantity' => 2,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addDarkCrystalLeatherArmor() {
+        $piece  = Resource::where( 'name', 'Dark Crystal Leather Armor Pattern' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Dark Crystal Leather Armor (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Dark Crystal Leather Armor' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalB->id,
+            'resourceQuantity' => 37,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 100,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 60,
+        ];
+
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneB->id,
+            'resourceQuantity' => 73,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->asofe->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->maestroAnvilLock->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 13,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addDynastyLeatherArmor() {

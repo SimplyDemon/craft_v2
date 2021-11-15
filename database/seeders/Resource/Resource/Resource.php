@@ -135,8 +135,13 @@ class Resource extends ResourceMain {
         ];
         $this->resources[] = [
             'name'       => 'Blacksmith Frame',
-            'price_sell' => 430000,
-            'price_buy'  => 430000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
+        ];
+        $this->resources[] = [
+            'name'       => 'Maestro Anvil Lock',
+            'price_sell' => 0,
+            'price_buy'  => 0,
         ];
 
         $this->resources[] = [

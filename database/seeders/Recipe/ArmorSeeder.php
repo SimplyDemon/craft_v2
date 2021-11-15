@@ -147,8 +147,11 @@ class ArmorSeeder extends Seeder {
         $imagePath  = 'item/armor/light/full-body';
 
         seederAddRecipe( 'Avadon Leather Armor', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Avadon Leather Armor 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Blue Wolf Leather Armor', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Blue Wolf Leather Armor 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Leather Armor of Doom', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Leather Armor of Doom 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Tallum Leather Armor', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Leather Armor of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Majestic Leather Armor', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
@@ -160,6 +163,7 @@ class ArmorSeeder extends Seeder {
         $imagePath  = 'item/armor/light/upper';
 
         seederAddRecipe( 'Zubei\'s Leather Shirt', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Zubei\'s Leather Shirt 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Dark Crystal Leather Armor', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Dynasty Leather Armor', $imagePath, 0, 'S', $categoryId, 0, '60', 'Adds Accuracy Combat by 3.4<br>Adds Dark Resistance by 3.2<br>Adds Max MP by 492<br>Multiplies P.Atk Speed by 1.0477<br>Adds Rate Evasion by 3.4' );
         seederAddRecipe( 'Moirai Leather Breastplate', $imagePath, 150000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0426<br>Decreases Root Vulnerability by 5<br>Multiplies Regen MP by 1.04<br>Adds Water Resistance by 3' );
@@ -171,6 +175,7 @@ class ArmorSeeder extends Seeder {
         $imagePath  = 'item/armor/light/lower';
 
         seederAddRecipe( 'Zubei\'s Leather Gaiters', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Zubei\'s Leather Gaiters 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Dark Crystal Leggings', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Dynasty Leather Leggings', $imagePath, 0, 'S', $categoryId, 0, '60', 'Adds Accuracy Combat by 0.79<br>Adds Rate Evasion by 0.79<br>Adds Max HP by 205<br>Multiplies P.Atk Speed by 1.0068<br>Adds Dark Resistance by 2<br>' );
         seederAddRecipe( 'Moirai Leather Leggings', $imagePath, 40000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0208<br>Decreases Root Vulnerability by 5<br>Multiplies Regen MP by 1.0167<br>Adds Water Resistance by 3<br>' );

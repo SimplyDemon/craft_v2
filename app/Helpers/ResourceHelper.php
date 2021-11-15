@@ -32,6 +32,7 @@ class ResourceHelper {
     public Resource $warsmithMold;
     public Resource $maestroMold;
     public Resource $blacksmithFrame;
+    public Resource $maestroAnvilLock;
 
     public Resource $crystalS;
     public Resource $crystalA;
@@ -66,14 +67,15 @@ class ResourceHelper {
         $this->spiritOre         = Resource::where( 'name', 'Spirit Ore' )->firstOrFail();
         $this->soulOre           = Resource::where( 'name', 'Soul Ore' )->firstOrFail();
 
-        $this->warsmithHolder  = Resource::where( 'name', 'Warsmith Holder' )->firstOrFail();
-        $this->artisansFrame   = Resource::where( 'name', 'Artisans Frame' )->firstOrFail();
-        $this->craftsmanMold   = Resource::where( 'name', 'Craftsman Mold' )->firstOrFail();
-        $this->arcsmithAnvil   = Resource::where( 'name', 'Arcsmith Anvil' )->firstOrFail();
-        $this->reorinsMold     = Resource::where( 'name', 'Reorins Mold' )->firstOrFail();
-        $this->warsmithMold    = Resource::where( 'name', 'Warsmith Mold' )->firstOrFail();
-        $this->maestroMold     = Resource::where( 'name', 'Maestro Mold' )->firstOrFail();
-        $this->blacksmithFrame = Resource::where( 'name', 'Blacksmith Frame' )->firstOrFail();
+        $this->warsmithHolder   = Resource::where( 'name', 'Warsmith Holder' )->firstOrFail();
+        $this->artisansFrame    = Resource::where( 'name', 'Artisans Frame' )->firstOrFail();
+        $this->craftsmanMold    = Resource::where( 'name', 'Craftsman Mold' )->firstOrFail();
+        $this->arcsmithAnvil    = Resource::where( 'name', 'Arcsmith Anvil' )->firstOrFail();
+        $this->reorinsMold      = Resource::where( 'name', 'Reorins Mold' )->firstOrFail();
+        $this->warsmithMold     = Resource::where( 'name', 'Warsmith Mold' )->firstOrFail();
+        $this->maestroMold      = Resource::where( 'name', 'Maestro Mold' )->firstOrFail();
+        $this->blacksmithFrame  = Resource::where( 'name', 'Blacksmith Frame' )->firstOrFail();
+        $this->maestroAnvilLock = Resource::where( 'name', 'Maestro Anvil Lock' )->firstOrFail();
 
         $this->crystalS  = Resource::where( 'name', 'Crystal S' )->firstOrFail();
         $this->crystalA  = Resource::where( 'name', 'Crystal A' )->firstOrFail();
