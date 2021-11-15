@@ -86,6 +86,9 @@ class RecipeResourceSeeder extends Seeder {
     }
 
     protected function addArmorHeavy() {
+        $fullBody = new RecipeResource\Armor\Heavy\FullBody();
+        $fullBody->seed();
+
         $upper = new RecipeResource\Armor\Heavy\Upper();
         $upper->seed();
 

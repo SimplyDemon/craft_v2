@@ -29,8 +29,9 @@ class ResourceSeeder extends Seeder {
     public string $pieceFolderPathJewelry;
     public string $recipeFolderPath;
     public string $defaultWeaponBladeFilePath;
-    public string $recipeSImageFilePath;
     public string $recipeBImageFilePath;
+    public string $recipeAImageFilePath;
+    public string $recipeSImageFilePath;
     public string $pieceFolderPathArmor;
     public string $pieceFolderPathArmorLight;
     public string $pieceFolderPathArmorHeavy;
@@ -57,14 +58,16 @@ class ResourceSeeder extends Seeder {
 
         $this->pieceFolderPathArmorLight = $this->pieceFolderPathArmor . 'light/';
         $this->pieceFolderPathArmorHeavy = $this->pieceFolderPathArmor . 'heavy/';
-	    $this->pieceFolderPathArmorRobe  = $this->pieceFolderPathArmor . 'robe/';
+        $this->pieceFolderPathArmorRobe  = $this->pieceFolderPathArmor . 'robe/';
 
 
-	    $this->defaultWeaponBladeFilePath = $this->pieceFolderPathWeapon . 'Blade.png';
-	    $this->defaultArmorPieceFilePath  = $this->pieceFolderPathArmor . 'Piece.png';
+        $this->defaultWeaponBladeFilePath = $this->pieceFolderPathWeapon . 'Blade.png';
+        $this->defaultArmorPieceFilePath  = $this->pieceFolderPathArmor . 'Piece.png';
 
-	    $this->recipeSImageFilePath = $this->recipeFolderPath . 'Recipe S.png';
-	    $this->recipeBImageFilePath = $this->recipeFolderPath . 'Recipe B.png';
+        $this->recipeBImageFilePath = $this->recipeFolderPath . 'Recipe B.png';
+        $this->recipeAImageFilePath = $this->recipeFolderPath . 'Recipe A.png';
+        $this->recipeSImageFilePath = $this->recipeFolderPath . 'Recipe S.png';
+
     }
 
 	protected function addResources() {
@@ -133,6 +136,9 @@ class ResourceSeeder extends Seeder {
     }
 
     protected function addRecipesPiecesArmorHeavy() {
+        $fullBody          = new \Database\Seeders\Resource\Armor\Heavy\FullBody();
+        $fullBodyResources = $fullBody->getResources();
+
         $boot          = new \Database\Seeders\Resource\Armor\Heavy\Boot();
         $bootResources = $boot->getResources();
 
@@ -148,7 +154,7 @@ class ResourceSeeder extends Seeder {
         $upper          = new \Database\Seeders\Resource\Armor\Heavy\Upper();
         $upperResources = $upper->getResources();
 
-        $this->resources = array_merge( $this->resources, $bootResources, $glovesResources, $helmetResources, $lowerResources, $upperResources );
+        $this->resources = array_merge( $this->resources, $fullBodyResources, $bootResources, $glovesResources, $helmetResources, $lowerResources, $upperResources );
     }
 
     protected function addRecipesPiecesArmorRobe() {

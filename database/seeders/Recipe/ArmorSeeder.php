@@ -66,7 +66,7 @@ class ArmorSeeder extends Seeder {
         $this->armorRobeGlovesCategory   = Category::where( 'name', 'Gloves' )->where( 'category_id', $this->armorRobeCategory->id )->firstOrFail();
 
         $this->armorHeavyCategory         = Category::where( 'name', 'Heavy' )->where( 'category_id', $armorCategory->id )->firstOrFail();
-        $this->armorHeavyFullBodyCategory = Category::where( 'name', 'FullBody' )->where( 'category_id', $this->armorHeavyCategory->id )->firstOrFail();
+        $this->armorHeavyFullBodyCategory = Category::where( 'name', 'Full Body' )->where( 'category_id', $this->armorHeavyCategory->id )->firstOrFail();
         $this->armorHeavyUpperCategory    = Category::where( 'name', 'Upper' )->where( 'category_id', $this->armorHeavyCategory->id )->firstOrFail();
         $this->armorHeavyLowerCategory    = Category::where( 'name', 'Lower' )->where( 'category_id', $this->armorHeavyCategory->id )->firstOrFail();
         $this->armorHeavyHelmetCategory   = Category::where( 'name', 'Helmet' )->where( 'category_id', $this->armorHeavyCategory->id )->firstOrFail();
@@ -150,7 +150,7 @@ class ArmorSeeder extends Seeder {
         seederAddRecipe( 'Blue Wolf Leather Armor', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Leather Armor of Doom', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Tallum Leather Armor', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
-        seederAddRecipe( 'Armor of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Leather Armor of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Majestic Leather Armor', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Draconic Leather Armor', $imagePath, 0, 'S', $categoryId, 0, '60', 'Adds Max Load by 8159<br>Adds Max MP by 630<br>Multiplies P.Atk by 1.058<br>Multiplies P.Atk Speed by 1.058' );
     }
@@ -211,6 +211,7 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorHeavyFullBodyCategory->id;
         $imagePath  = 'item/armor/heavy/full-body';
         seederAddRecipe( 'Doom Plate Armor', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Doom Plate Armor 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Tallum Plate Armor', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Armor of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Majestic Plate Armor', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
@@ -224,6 +225,9 @@ class ArmorSeeder extends Seeder {
         seederAddRecipe( 'Zubei\'s Breastplate', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Avadon Breastplate', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Blue Wolf Breastplate', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Zubei\'s Breastplate 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Avadon Breastplate 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Blue Wolf Breastplate 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Dark Crystal breastplate', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Imperial Crusader Breastplate', $imagePath, 5000000, 'S', $categoryId, 0, '60', 'Adds Max HP by 889<br>Multiplies P.Def by 1.0724<br>Decreases Root Vulnerability by 28<br>Decreases Sleep Vulnerability by 28<br>' );
         seederAddRecipe( 'Dynasty Breastplate', $imagePath, 95000000, 'S', $categoryId, 0, '60', 'Adds Dark Resistance by 3.2<br>Adds Max HP by 984<br>Multiplies P.Def by 1.0724' );
@@ -236,8 +240,11 @@ class ArmorSeeder extends Seeder {
         $imagePath  = 'item/armor/heavy/lower';
 
         seederAddRecipe( 'Zubei\'s Gaiters', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Zubei\'s Gaiters 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Avadon Gaiters', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Avadon Gaiters 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Blue Wolf Gaiters', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Blue Wolf Gaiters 100%', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Dark Crystal Gaiters', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Imperial Crusader Gaiters', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0208<br>Adds Max HP by 185<br>Decreases Sleep Vulnerability by 17.5<br>Decreases Root Vulnerability by 17.5<br>' );
         seederAddRecipe( 'Dynasty Gaiters', $imagePath, 40000000, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0208<br>Adds Max HP by 205<br>Adds Dark Resistance by 2<br>' );
@@ -365,7 +372,7 @@ class ArmorSeeder extends Seeder {
         seederAddRecipe( 'Doom Boots', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Avadon Boots', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Zubei\'s Boots', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
-        seederAddRecipe( 'Majestic Circlet', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
+        seederAddRecipe( 'Majestic Boots', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Boots of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Tallum Boots', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Dark Crystal Boots', $imagePath, 0, 'A', $categoryId, 0, '60', '' );
@@ -375,7 +382,6 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorRobeGlovesCategory->id;
         $imagePath  = 'item/armor/universal/gloves';
 
-        seederAddRecipe( 'Dark Crystal Gloves', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Blue Wolf Gloves', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Avadon Gloves', $imagePath, 0, 'B', $categoryId, 0, '60', '' );
         seederAddRecipe( 'Zubei\'s Gauntlets', $imagePath, 0, 'B', $categoryId, 0, '60', '' );

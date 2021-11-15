@@ -31,14 +31,16 @@ class ResourceHelper {
     public Resource $reorinsMold;
     public Resource $warsmithMold;
     public Resource $maestroMold;
+    public Resource $blacksmithFrame;
 
     public Resource $crystalS;
     public Resource $crystalA;
     public Resource $crystalB;
     public Resource $crystalC;
     public Resource $crystalD;
-    public Resource $gemstoneS;
     public Resource $gemstoneB;
+    public Resource $gemstoneA;
+    public Resource $gemstoneS;
 
     public function __construct() {
         $this->setResources();
@@ -64,20 +66,22 @@ class ResourceHelper {
         $this->spiritOre         = Resource::where( 'name', 'Spirit Ore' )->firstOrFail();
         $this->soulOre           = Resource::where( 'name', 'Soul Ore' )->firstOrFail();
 
-        $this->warsmithHolder = Resource::where( 'name', 'Warsmith Holder' )->firstOrFail();
-        $this->artisansFrame  = Resource::where( 'name', 'Artisans Frame' )->firstOrFail();
-        $this->craftsmanMold  = Resource::where( 'name', 'Craftsman Mold' )->firstOrFail();
-        $this->arcsmithAnvil  = Resource::where( 'name', 'Arcsmith Anvil' )->firstOrFail();
-        $this->reorinsMold    = Resource::where( 'name', 'Reorins Mold' )->firstOrFail();
-        $this->warsmithMold   = Resource::where( 'name', 'Warsmith Mold' )->firstOrFail();
-        $this->maestroMold    = Resource::where( 'name', 'Maestro Mold' )->firstOrFail();
+        $this->warsmithHolder  = Resource::where( 'name', 'Warsmith Holder' )->firstOrFail();
+        $this->artisansFrame   = Resource::where( 'name', 'Artisans Frame' )->firstOrFail();
+        $this->craftsmanMold   = Resource::where( 'name', 'Craftsman Mold' )->firstOrFail();
+        $this->arcsmithAnvil   = Resource::where( 'name', 'Arcsmith Anvil' )->firstOrFail();
+        $this->reorinsMold     = Resource::where( 'name', 'Reorins Mold' )->firstOrFail();
+        $this->warsmithMold    = Resource::where( 'name', 'Warsmith Mold' )->firstOrFail();
+        $this->maestroMold     = Resource::where( 'name', 'Maestro Mold' )->firstOrFail();
+        $this->blacksmithFrame = Resource::where( 'name', 'Blacksmith Frame' )->firstOrFail();
 
         $this->crystalS  = Resource::where( 'name', 'Crystal S' )->firstOrFail();
         $this->crystalA  = Resource::where( 'name', 'Crystal A' )->firstOrFail();
         $this->crystalB  = Resource::where( 'name', 'Crystal B' )->firstOrFail();
         $this->crystalC  = Resource::where( 'name', 'Crystal C' )->firstOrFail();
         $this->crystalD  = Resource::where( 'name', 'Crystal D' )->firstOrFail();
-        $this->gemstoneS = Resource::where( 'name', 'Gemstone (S-grade)' )->firstOrFail();
         $this->gemstoneB = Resource::where( 'name', 'Gemstone (B-grade)' )->firstOrFail();
+        $this->gemstoneA = Resource::where( 'name', 'Gemstone (A-grade)' )->firstOrFail();
+        $this->gemstoneS = Resource::where( 'name', 'Gemstone (S-grade)' )->firstOrFail();
     }
 }

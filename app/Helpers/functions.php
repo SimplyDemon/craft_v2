@@ -33,13 +33,16 @@ function copyFile( string $filePath, string $pathTo ) {
 }
 
 function seederAddRecipe( string $name, string $imagePath, int $price, string $grade, int $categoryId, int $craftCost = 0, string $percent = '60', $masterworkDescription = null, $masterworkName = null, $count = 1 ) {
+    /* case for 100% recipes, don't want copy paste every image B-grade */
+    $imageName = str_replace( ' 100%', '', $name );
+
     return Recipe::create( [
         'name'                   => $name,
         'slug'                   => Str::slug( $name, '-' ),
         'price_sell'             => $price,
         'percent'                => $percent,
         'grade'                  => $grade,
-        'img'                    => copyFile( "image/$imagePath/" . $name . '.png', "app/public/uploads/$imagePath/" ),
+        'img'                    => copyFile( "image/$imagePath/" . $imageName . '.png', "app/public/uploads/$imagePath/" ),
         'category_id'            => $categoryId,
         'craft_cost'             => $craftCost,
         'masterwork_description' => $masterworkDescription,
