@@ -3,7 +3,8 @@
     <?php
     $user = auth()->user();
     $isAuth = $user;
-    $isEnableAnimation = $isAuth && $user->isEnableAnimation;
+    $isActivateFirstTimeAnimation = ! isset( $_SESSION['isAnimationWasShowed'] );
+    $isEnableAnimation = ( $isAuth && $user->isEnableAnimation ) || $isActivateFirstTimeAnimation;
     ?>
     <div class="nk-main">
         <!-- START: Header Title -->

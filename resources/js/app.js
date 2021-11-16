@@ -6,6 +6,7 @@
 
 require( './bootstrap' );
 require( './ofi.min' );
+require( './TweenMax.min' );
 require( './popper.min' );
 require( './jarallax.min' );
 require( './jarallax-video.min' );
