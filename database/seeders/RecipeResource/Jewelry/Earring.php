@@ -13,10 +13,280 @@ class Earring extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addAdamantiteEarring();
+        $this->addAdamantiteEarring100();
+        $this->addBlackOreEarring();
+        $this->addBlackOreEarring100();
+        $this->addPhoenixEarring();
+        $this->addMajesticEarring();
         $this->addTateossianEarring();
         $this->addDynastyEarring();
         $this->addMoiraiEarring();
         $this->addVesperEarring();
+    }
+
+    protected function addAdamantiteEarring() {
+        $piece  = Resource::where( 'name', 'Adamantite Earring Gemstone' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Adamantite Earring (70%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Adamantite Earring' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 28,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 6,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 30,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneB->id,
+            'resourceQuantity' => 4,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->thons->id,
+            'resourceQuantity' => 6,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addAdamantiteEarring100() {
+        $piece  = Resource::where( 'name', 'Adamantite Earring Gemstone' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Adamantite Earring' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Adamantite Earring 100%' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 35,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->maestroMold->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneB->id,
+            'resourceQuantity' => 4,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->thons->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addBlackOreEarring() {
+        $piece  = Resource::where( 'name', 'Black Ore Earring Piece' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Black Ore Earring (70%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Black Ore Earring' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalB->id,
+            'resourceQuantity' => 16,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 50,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneB->id,
+            'resourceQuantity' => 6,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->thons->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 13,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addBlackOreEarring100() {
+        $piece  = Resource::where( 'name', 'Black Ore Earring Piece' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Black Ore Earring' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Black Ore Earring 100%' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalB->id,
+            'resourceQuantity' => 25,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 13,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->maestroMold->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 65,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneB->id,
+            'resourceQuantity' => 6,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->thons->id,
+            'resourceQuantity' => 13,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 13,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addPhoenixEarring() {
+        $piece  = Resource::where( 'name', 'Phoenix Earring Gemstone' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Phoenix Earring (70%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Phoenix Earring' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalB->id,
+            'resourceQuantity' => 18,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 21,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->maestroMold->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 35,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneB->id,
+            'resourceQuantity' => 29,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->thons->id,
+            'resourceQuantity' => 7,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 13,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addMajesticEarring() {
+        $piece  = Resource::where( 'name', 'Majestic Earring Gemstone' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Majestic Earring (70%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Majestic Earring' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalB->id,
+            'resourceQuantity' => 15,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 39,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->maestroMold->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 65,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneA->id,
+            'resourceQuantity' => 5,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->thons->id,
+            'resourceQuantity' => 13,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 14,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addTateossianEarring() {

@@ -8,6 +8,80 @@ class Ring extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'                    => 'jewelry',
+            'name'                    => 'Adamantite Ring Wire',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Adamantite Ring (70%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Adamantite Ring',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Black Ore Ring Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Black Ore Ring (70%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Black Ore Ring',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Phoenix Ring Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Phoenix Ring (70%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Majestic Ring Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Majestic Ring (70%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
             'name'                    => 'Tateossian Ring Gem',
             'price_sell'              => 50000,
             'price_buy'               => 50000,

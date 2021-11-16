@@ -143,6 +143,11 @@ class Resource extends ResourceMain {
             'price_sell' => 180000,
             'price_buy'  => 180000,
         ];
+        $this->resources[] = [
+            'name'       => 'Silver Mold',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+        ];
 
         $this->resources[] = [
             'name'       => 'Crystal S',

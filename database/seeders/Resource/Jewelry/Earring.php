@@ -8,6 +8,80 @@ class Earring extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'                    => 'jewelry',
+            'name'                    => 'Adamantite Earring Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Adamantite Earring (70%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Adamantite Earring',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Black Ore Earring Piece',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Black Ore Earring (70%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Black Ore Earring',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Phoenix Earring Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Phoenix Earring (70%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Majestic Earring Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Majestic Earring (70%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
             'name'                    => 'Tateossian Earring Part',
             'price_sell'              => 12000,
             'price_buy'               => 12000,
