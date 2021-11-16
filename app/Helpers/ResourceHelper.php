@@ -34,6 +34,7 @@ class ResourceHelper {
     public Resource $blacksmithFrame;
     public Resource $maestroAnvilLock;
     public Resource $silverMold;
+    public Resource $maestroHolder;
 
     public Resource $crystalS;
     public Resource $crystalA;
@@ -78,6 +79,7 @@ class ResourceHelper {
         $this->blacksmithFrame  = Resource::where( 'name', 'Blacksmith Frame' )->firstOrFail();
         $this->maestroAnvilLock = Resource::where( 'name', 'Maestro Anvil Lock' )->firstOrFail();
         $this->silverMold       = Resource::where( 'name', 'Silver Mold' )->firstOrFail();
+        $this->maestroHolder    = Resource::where( 'name', 'Maestro Holder' )->firstOrFail();
 
         $this->crystalS  = Resource::where( 'name', 'Crystal S' )->firstOrFail();
         $this->crystalA  = Resource::where( 'name', 'Crystal A' )->firstOrFail();

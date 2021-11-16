@@ -148,6 +148,11 @@ class Resource extends ResourceMain {
             'price_sell' => 0,
             'price_buy'  => 0,
         ];
+        $this->resources[] = [
+            'name'       => 'Maestro Holder',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+        ];
 
         $this->resources[] = [
             'name'       => 'Crystal S',
