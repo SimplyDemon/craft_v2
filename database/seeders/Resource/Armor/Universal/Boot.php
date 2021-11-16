@@ -1,163 +1,157 @@
 <?php
 
-namespace Database\Seeders\Resource;
+namespace Database\Seeders\Resource\Armor\Universal;
 
-class Shield extends ResourceMain {
+use Database\Seeders\Resource\ResourceMain;
+
+class Boot extends ResourceMain {
     protected function add() {
         $this->resources[] = [
-            'name'                  => 'Zubei\'s Shield Fragment',
+            'type'                  => 'armor',
+            'name'                  => 'Zubei\'s Boots Design',
             'price_sell'            => 0,
             'price_buy'             => 0,
             'is_custom_piece_armor' => true,
-            'type'                  => 'shield',
         ];
         $this->resources[] = [
-            'name'       => 'Recipe: Zubei\'s Shield (60%)',
+            'type'       => 'armor',
+            'name'       => 'Recipe: Zubei\'s Boots (60%)',
             'price_sell' => 0,
             'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
-            'type'       => 'shield',
         ];
         $this->resources[] = [
-            'name'       => 'Recipe: Zubei\'s Shield',
+            'type'       => 'armor',
+            'name'       => 'Recipe: Zubei\'s Boots',
             'price_sell' => 0,
             'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
-            'type'       => 'shield',
         ];
 
         $this->resources[] = [
-            'name'                  => 'Avadon Shield Fragment',
+            'type'                  => 'armor',
+            'name'                  => 'Avadon Boots Design',
             'price_sell'            => 0,
             'price_buy'             => 0,
             'is_custom_piece_armor' => true,
-            'type'                  => 'shield',
         ];
         $this->resources[] = [
-            'name'       => 'Recipe: Avadon Shield (60%)',
+            'type'       => 'armor',
+            'name'       => 'Recipe: Avadon Boots (60%)',
             'price_sell' => 0,
             'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
-            'type'       => 'shield',
         ];
         $this->resources[] = [
-            'name'       => 'Recipe: Avadon Shield',
+            'type'       => 'armor',
+            'name'       => 'Recipe: Avadon Boots',
             'price_sell' => 0,
             'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
-            'type'       => 'shield',
         ];
 
         $this->resources[] = [
-            'name'                  => 'Doom Shield Fragment',
+            'type'                  => 'armor',
+            'name'                  => 'Doom Boots Part',
             'price_sell'            => 0,
             'price_buy'             => 0,
             'is_custom_piece_armor' => true,
-            'type'                  => 'shield',
         ];
         $this->resources[] = [
-            'name'       => 'Recipe: Doom Shield (60%)',
+            'type'       => 'armor',
+            'name'       => 'Recipe: Doom Boots (60%)',
             'price_sell' => 0,
             'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
-            'type'       => 'shield',
         ];
         $this->resources[] = [
-            'name'       => 'Recipe: Doom Shield',
+            'type'       => 'armor',
+            'name'       => 'Recipe: Doom Boots',
             'price_sell' => 0,
             'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
-            'type'       => 'shield',
         ];
 
         $this->resources[] = [
-            'name'                  => 'Dark Crystal Shield Fragment',
+            'type'                  => 'armor',
+            'name'                  => 'Blue Wolf Boots Design',
             'price_sell'            => 0,
             'price_buy'             => 0,
             'is_custom_piece_armor' => true,
-            'type'                  => 'shield',
         ];
         $this->resources[] = [
-            'name'       => 'Recipe: Dark Crystal Shield (60%)',
+            'type'       => 'armor',
+            'name'       => 'Recipe: Blue Wolf Boots (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Blue Wolf Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Dark Crystal Boots Lining',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Dark Crystal Boots (60%)',
             'price_sell' => 0,
             'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
-            'type'       => 'shield',
         ];
 
         $this->resources[] = [
-            'name'                  => 'Shield of Nightmare Fragment',
+            'type'                  => 'armor',
+            'name'                  => 'Tallum Boots Lining',
             'price_sell'            => 0,
             'price_buy'             => 0,
             'is_custom_piece_armor' => true,
-            'type'                  => 'shield',
         ];
         $this->resources[] = [
-            'name'       => 'Recipe: Shield of Nightmare (60%)',
+            'type'       => 'armor',
+            'name'       => 'Recipe: Tallum Boots (60%)',
             'price_sell' => 0,
             'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
-            'type'       => 'shield',
         ];
 
         $this->resources[] = [
-            'name'                  => 'Imperial Crusader Shield Part',
+            'type'                  => 'armor',
+            'name'                  => 'Boots of Nightmare Lining',
             'price_sell'            => 0,
             'price_buy'             => 0,
             'is_custom_piece_armor' => true,
-            'type'                  => 'shield',
         ];
         $this->resources[] = [
-            'name'       => 'Recipe: Imperial Crusader Shield (60%)',
+            'type'       => 'armor',
+            'name'       => 'Recipe: Boots of Nightmare (60%)',
             'price_sell' => 0,
             'price_buy'  => 0,
-            'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
-            'type'       => 'shield',
+            'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
         ];
 
         $this->resources[] = [
-            'name'                  => 'Dynasty Shield Fragment',
-            'price_sell'            => 350000,
-            'price_buy'             => 350000,
-            'is_custom_piece_armor' => true,
-            'type'                  => 'shield',
-        ];
-        $this->resources[] = [
-            'name'       => 'Recipe: Dynasty Shield (60%)',
-            'price_sell' => 0,
-            'price_buy'  => 0,
-            'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
-            'type'       => 'shield',
-        ];
-
-        $this->resources[] = [
-            'name'                  => 'Moirai Shield Fragment',
+            'type'                  => 'armor',
+            'name'                  => 'Majestic Boots Lining',
             'price_sell'            => 0,
             'price_buy'             => 0,
             'is_custom_piece_armor' => true,
-            'type'                  => 'shield',
         ];
         $this->resources[] = [
-            'name'       => 'Recipe: Moirai Shield (60%)',
+            'type'       => 'armor',
+            'name'       => 'Recipe: Majestic Boots (60%)',
             'price_sell' => 0,
             'price_buy'  => 0,
-            'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
-            'type'       => 'shield',
-        ];
-
-        $this->resources[] = [
-            'name'                  => 'Vesper Shield Piece',
-            'price_sell'            => 0,
-            'price_buy'             => 0,
-            'is_custom_piece_armor' => true,
-            'type'                  => 'shield',
-        ];
-        $this->resources[] = [
-            'name'       => 'Recipe: Vesper Shield (60%)',
-            'price_sell' => 0,
-            'price_buy'  => 0,
-            'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
-            'type'       => 'shield',
+            'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
         ];
 
     }
