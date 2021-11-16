@@ -189,19 +189,19 @@ class Lower extends RecipeResourceMain {
 	}
 
 	protected function addBlueWolfGaiters() {
-		$piece  = Resource::where( 'name', 'Blue Wolf Gaiters Material' )->firstOrFail();
-		$recipe = Resource::where( 'name', 'Recipe: Blue Wolf Gaiters (60%)' )->firstOrFail();
-		$item   = Recipe::where( 'name', 'Blue Wolf Gaiters 100%' )->firstOrFail();
+        $piece  = Resource::where( 'name', 'Blue Wolf Gaiters Material' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Blue Wolf Gaiters (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Blue Wolf Gaiters' )->firstOrFail();
 
-		$resources   = [];
-		$resources[] = [
-			'resourceId'       => $this->ResourceHelper->crystalB->id,
-			'resourceQuantity' => 20,
-		];
-		$resources[] = [
-			'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
-			'resourceQuantity' => 24,
-		];
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalB->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 24,
+        ];
 		$resources[] = [
 			'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
 			'resourceQuantity' => 2,
