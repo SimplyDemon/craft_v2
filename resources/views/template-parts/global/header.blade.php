@@ -70,6 +70,22 @@ $_SESSION['isAnimationWasShowed'] = true;
 
 </header>
 
+<nav class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-lg nk-navbar-align-center nk-navbar-overlay-content" id="nk-side">
+
+    <div class="nano">
+        <div class="nano-content">
+            <div class="nk-nav-table">
+
+                <div class="nk-nav-row">
+                    <a href="{{route('index')}}" class="nk-nav-logo">
+                        <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="150">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</nav>
 
 <!--
 START: Navbar Mobile
