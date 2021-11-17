@@ -14,7 +14,6 @@ class OtherSeeder extends Seeder {
         $this->addOther();
     }
 
-
     protected function setOtherCategories() {
         $this->otherCategory = Category::where( 'name', 'Other' )->firstOrFail();
     }
@@ -22,7 +21,6 @@ class OtherSeeder extends Seeder {
     protected function addOther() {
         $this->addSoulhots();
         $this->addSpiritshots();
-
     }
 
     protected function addSoulhots() {
@@ -39,7 +37,5 @@ class OtherSeeder extends Seeder {
         seederAddRecipe( 'Blessed Spiritshot (B-grade)', $this->imagePath, 391, 'B', $this->otherCategory->id, 0, '100', null, null, 100 );
         seederAddRecipe( 'Blessed Spiritshot (A-grade)', $this->imagePath, 390, 'A', $this->otherCategory->id, 0, '100', null, null, 200 );
         seederAddRecipe( 'Blessed Spiritshot (S-grade)', $this->imagePath, 354, 'S', $this->otherCategory->id, 0, '100', null, null, 200 );
-
     }
-
 }
