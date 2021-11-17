@@ -156,13 +156,13 @@ class ArmorSeeder extends Seeder {
 
         seederAddRecipe( 'Avadon Leather Armor', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Max Load by 11038<br>Multiplies M.Def by 1.1708' );
         seederAddRecipe( 'Avadon Leather Armor 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Max Load by 11038<br>Multiplies M.Def by 1.1708' );
-        seederAddRecipe( 'Blue Wolf Leather Armor', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies M.Atk Spd by 1.15<br>Multiplies P.Def by 1.0219<br>' );
-        seederAddRecipe( 'Blue Wolf Leather Armor 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies M.Atk Spd by 1.15<br>Multiplies P.Def by 1.0219<br>' );
-        seederAddRecipe( 'Leather Armor of Doom', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Breath by 383<br>Multiplies P.Atk by 1.0827<br>Decreases Poison Vulnerability by 13<br>Multiplies Regen MP by 1.0827<br>' );
-        seederAddRecipe( 'Leather Armor of Doom 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Breath by 383<br>Multiplies P.Atk by 1.0827<br>Decreases Poison Vulnerability by 13<br>Multiplies Regen MP by 1.0827<br>' );
-        seederAddRecipe( 'Tallum Leather Armor', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Bleed Vulnerability by 52<br>Adds Max MP by 315<br>Adds Poison Vulnerability by 52<br>Multiplies Regen MP by 1.0932<br>' );
-        seederAddRecipe( 'Leather Armor of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Life Steal by 3<br>Multiplies M.Def by 1.0827<br>Decreases Root Vulnerability by 29.16<br>Decreases Sleep Vulnerability by 29.16<br>' );
-        seederAddRecipe( 'Majestic Leather Armor', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Max Load by 8159<br>Adds Max MP by 340<br>Multiplies P.Atk by 1.0932<br>Adds Stun Vulnerability by 20.83<br>' );
+        seederAddRecipe( 'Blue Wolf Leather Armor', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies M.Atk Spd by 1.15<br>Multiplies P.Def by 1.0219' );
+        seederAddRecipe( 'Blue Wolf Leather Armor 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies M.Atk Spd by 1.15<br>Multiplies P.Def by 1.0219' );
+        seederAddRecipe( 'Leather Armor of Doom', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Breath by 383<br>Multiplies P.Atk by 1.0827<br>Decreases Poison Vulnerability by 13<br>Multiplies Regen MP by 1.0827' );
+        seederAddRecipe( 'Leather Armor of Doom 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Breath by 383<br>Multiplies P.Atk by 1.0827<br>Decreases Poison Vulnerability by 13<br>Multiplies Regen MP by 1.0827' );
+        seederAddRecipe( 'Tallum Leather Armor', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Bleed Vulnerability by 52<br>Adds Max MP by 315<br>Adds Poison Vulnerability by 52<br>Multiplies Regen MP by 1.0932' );
+        seederAddRecipe( 'Leather Armor of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Life Steal by 3<br>Multiplies M.Def by 1.0827<br>Decreases Root Vulnerability by 29.16<br>Decreases Sleep Vulnerability by 29.16' );
+        seederAddRecipe( 'Majestic Leather Armor', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Max Load by 8159<br>Adds Max MP by 340<br>Multiplies P.Atk by 1.0932<br>Adds Stun Vulnerability by 20.83' );
         seederAddRecipe( 'Draconic Leather Armor', $imagePath, 0, 'S', $categoryId, 0, '60', 'Adds Max Load by 8159<br>Adds Max MP by 630<br>Multiplies P.Atk by 1.058<br>Multiplies P.Atk Speed by 1.058' );
     }
 
@@ -172,10 +172,10 @@ class ArmorSeeder extends Seeder {
 
         seederAddRecipe( 'Zubei\'s Leather Shirt', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Rate Evasion by 9.55' );
         seederAddRecipe( 'Zubei\'s Leather Shirt 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Rate Evasion by 9.55' );
-        seederAddRecipe( 'Dark Crystal Leather Armor', $imagePath, 0, 'A', $categoryId, 0, '60', 'Decreases Paralyze Vulnerability by 20<br>Multiplies P.Atk Speed by 1.0724<br>Multiplies P.Atk by 1.0724<br>' );
+        seederAddRecipe( 'Dark Crystal Leather Armor', $imagePath, 0, 'A', $categoryId, 0, '60', 'Decreases Paralyze Vulnerability by 20<br>Multiplies P.Atk Speed by 1.0724<br>Multiplies P.Atk by 1.0724' );
         seederAddRecipe( 'Dynasty Leather Armor', $imagePath, 0, 'S', $categoryId, 0, '60', 'Adds Accuracy Combat by 3.4<br>Adds Dark Resistance by 3.2<br>Adds Max MP by 492<br>Multiplies P.Atk Speed by 1.0477<br>Adds Rate Evasion by 3.4' );
         seederAddRecipe( 'Moirai Leather Breastplate', $imagePath, 150000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0426<br>Decreases Root Vulnerability by 5<br>Multiplies Regen MP by 1.04<br>Adds Water Resistance by 3' );
-        seederAddRecipe( 'Vesper Leather Breastplate', $imagePath, 100000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0557<br>Multiplies P.Atk Speed by 1.05<br>Multiplies Regen MP by 1.05<br>Adds Max MP by 347<br>' );
+        seederAddRecipe( 'Vesper Leather Breastplate', $imagePath, 100000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0557<br>Multiplies P.Atk Speed by 1.05<br>Multiplies Regen MP by 1.05<br>Adds Max MP by 347' );
     }
 
     protected function addArmorLightLower() {
@@ -184,9 +184,9 @@ class ArmorSeeder extends Seeder {
 
         seederAddRecipe( 'Zubei\'s Leather Gaiters', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Rate Evasion by 1.47' );
         seederAddRecipe( 'Zubei\'s Leather Gaiters 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Rate Evasion by 1.47' );
-        seederAddRecipe( 'Dark Crystal Leggings', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.0103<br>Multiplies P.Atk by 1.0103<br>Decreases Paralyze Vulnerability by 12.5<br>' );
-        seederAddRecipe( 'Dynasty Leather Leggings', $imagePath, 0, 'S', $categoryId, 0, '60', 'Adds Accuracy Combat by 0.79<br>Adds Rate Evasion by 0.79<br>Adds Max HP by 205<br>Multiplies P.Atk Speed by 1.0068<br>Adds Dark Resistance by 2<br>' );
-        seederAddRecipe( 'Moirai Leather Leggings', $imagePath, 40000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0208<br>Decreases Root Vulnerability by 5<br>Multiplies Regen MP by 1.0167<br>Adds Water Resistance by 3<br>' );
+        seederAddRecipe( 'Dark Crystal Leggings', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.0103<br>Multiplies P.Atk by 1.0103<br>Decreases Paralyze Vulnerability by 12.5' );
+        seederAddRecipe( 'Dynasty Leather Leggings', $imagePath, 0, 'S', $categoryId, 0, '60', 'Adds Accuracy Combat by 0.79<br>Adds Rate Evasion by 0.79<br>Adds Max HP by 205<br>Multiplies P.Atk Speed by 1.0068<br>Adds Dark Resistance by 2' );
+        seederAddRecipe( 'Moirai Leather Leggings', $imagePath, 40000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0208<br>Decreases Root Vulnerability by 5<br>Multiplies Regen MP by 1.0167<br>Adds Water Resistance by 3' );
         seederAddRecipe( 'Vesper Leather Leggings', $imagePath, 40000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0068<br>Multiplies P.Atk Speed by 1.0068<br>Multiplies Regen MP by 1.0068<br>Adds Max MP by 145' );
     }
 
@@ -194,40 +194,40 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorLightHelmetCategory->id;
         $imagePath  = 'item/armor/light/helmet';
 
-        seederAddRecipe( 'Draconic Leather Helmet', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.0062<br>Multiplies P.Atk by 1.0062<br>Adds Max MP by 111<br>Adds Max Load by 1440<br>' );
+        seederAddRecipe( 'Draconic Leather Helmet', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.0062<br>Multiplies P.Atk by 1.0062<br>Adds Max MP by 111<br>Adds Max Load by 1440' );
         seederAddRecipe( 'Dynasty Leather Helmet', $imagePath, 10000000, 'S', $categoryId, 0, '60', 'Adds Accuracy Combat by 0.47<br>Adds Rate Evasion by 0.47<br>Adds Max HP by 123<br>Multiplies P.Atk Speed by 1.0041<br>Adds Dark Resistance by 1.2' );
-        seederAddRecipe( 'Moirai Leather Helmet', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0125<br>Decreases Root Vulnerability by 5<br>Multiplies Regen MP by 1.01<br>Adds Fire Resistance by 3<br>' );
-        seederAddRecipe( 'Vesper Leather Helmet', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0041<br>Multiplies P.Atk Speed by 1.0041<br>Multiplies Regen MP by 1.0041<br>Adds Max MP by 87<br>' );
+        seederAddRecipe( 'Moirai Leather Helmet', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0125<br>Decreases Root Vulnerability by 5<br>Multiplies Regen MP by 1.01<br>Adds Fire Resistance by 3' );
+        seederAddRecipe( 'Vesper Leather Helmet', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0041<br>Multiplies P.Atk Speed by 1.0041<br>Multiplies Regen MP by 1.0041<br>Adds Max MP by 87' );
     }
 
     protected function addArmorLightBoot() {
         $categoryId = $this->armorLightBootCategory->id;
         $imagePath  = 'item/armor/light/boot';
 
-        seederAddRecipe( 'Draconic Leather Boots', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.0041<br>Multiplies P.Atk by 1.0041<br>Adds Max MP by 74<br>Adds Max Load by 960<br>' );
-        seederAddRecipe( 'Dynasty Leather Boots', $imagePath, 35000000, 'S', $categoryId, 0, '60', 'Adds Accuracy Combat by 0.31<br>Adds Rate Evasion by 0.31<br>Adds Max HP by 82<br>Multiplies P.Atk Speed by 1.0027<br>Adds Dark Resistance by 0.8<br>' );
-        seederAddRecipe( 'Moirai Leather Boots', $imagePath, 20000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0083<br>Decreases Root Vulnerability by 5<br>Multiplies Regen MP by 1.0067<br>Adds Earth Resistance by 3<br>' );
-        seederAddRecipe( 'Vesper Leather Boots', $imagePath, 30000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0027<br>Multiplies P.Atk Speed by 1.0027<br>Multiplies Regen MP by 1.0027<br>Adds Max MP by 58<br>' );
+        seederAddRecipe( 'Draconic Leather Boots', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.0041<br>Multiplies P.Atk by 1.0041<br>Adds Max MP by 74<br>Adds Max Load by 960' );
+        seederAddRecipe( 'Dynasty Leather Boots', $imagePath, 35000000, 'S', $categoryId, 0, '60', 'Adds Accuracy Combat by 0.31<br>Adds Rate Evasion by 0.31<br>Adds Max HP by 82<br>Multiplies P.Atk Speed by 1.0027<br>Adds Dark Resistance by 0.8' );
+        seederAddRecipe( 'Moirai Leather Boots', $imagePath, 20000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0083<br>Decreases Root Vulnerability by 5<br>Multiplies Regen MP by 1.0067<br>Adds Earth Resistance by 3' );
+        seederAddRecipe( 'Vesper Leather Boots', $imagePath, 30000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0027<br>Multiplies P.Atk Speed by 1.0027<br>Multiplies Regen MP by 1.0027<br>Adds Max MP by 58' );
     }
 
     protected function addArmorLightGloves() {
         $categoryId = $this->armorLightGlovesCategory->id;
         $imagePath  = 'item/armor/light/gloves';
 
-        seederAddRecipe( 'Draconic Leather Gloves', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.0041<br>Multiplies P.Atk by 1.0041<br>Adds Max MP by 74<br>Adds Max Load by 960<br>' );
-        seederAddRecipe( 'Dynasty Leather Gloves', $imagePath, 0, 'S', $categoryId, 0, '60', 'Adds Rate Evasion by 0.31<br>Adds Accuracy Combat by 0.31<br>Adds Max HP by 82<br>Multiplies P.Atk Speed by 1.0027<br>Adds Dark Resistance by 0.8<br>' );
-        seederAddRecipe( 'Moirai Leather Gloves', $imagePath, 15000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0083<br>Decreases Root Vulnerability by 5<br>Multiplies Regen MP by 1.0067<br>Adds Wind Resistance by 3<br>' );
-        seederAddRecipe( 'Vesper Leather Gloves', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0027<br>Multiplies P.Atk Speed by 1.0027<br>Multiplies Regen MP by 1.0027<br>Adds Max MP by 58<br>' );
+        seederAddRecipe( 'Draconic Leather Gloves', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.0041<br>Multiplies P.Atk by 1.0041<br>Adds Max MP by 74<br>Adds Max Load by 960' );
+        seederAddRecipe( 'Dynasty Leather Gloves', $imagePath, 0, 'S', $categoryId, 0, '60', 'Adds Rate Evasion by 0.31<br>Adds Accuracy Combat by 0.31<br>Adds Max HP by 82<br>Multiplies P.Atk Speed by 1.0027<br>Adds Dark Resistance by 0.8' );
+        seederAddRecipe( 'Moirai Leather Gloves', $imagePath, 15000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0083<br>Decreases Root Vulnerability by 5<br>Multiplies Regen MP by 1.0067<br>Adds Wind Resistance by 3' );
+        seederAddRecipe( 'Vesper Leather Gloves', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0027<br>Multiplies P.Atk Speed by 1.0027<br>Multiplies Regen MP by 1.0027<br>Adds Max MP by 58' );
     }
 
     protected function addArmorHeavyFullBody() {
         $categoryId = $this->armorHeavyFullBodyCategory->id;
         $imagePath  = 'item/armor/heavy/full-body';
-        seederAddRecipe( 'Doom Plate Armor', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Breath by 383<br>Adds Max HP by 1093<br>' );
-        seederAddRecipe( 'Doom Plate Armor 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Breath by 383<br>Adds Max HP by 1093<br>' );
-        seederAddRecipe( 'Tallum Plate Armor', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Bleed Vulnerability by 52<br>Adds Max Load by 8159<br>Adds Poison Vulnerability by 52<br>Multiplies P.Atk Speed by 1.0932<br>' );
-        seederAddRecipe( 'Armor of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies P.Atk by 1.1708<br>Decreases Root Vulnerability by 29.16<br>Decreases Sleep Vulnerability by 29.16<br>' );
-        seederAddRecipe( 'Majestic Plate Armor', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Accuracy Combat by 0.579<br>Multiplies P.Atk by 1.0827<br>Adds Stun Vulnerability by 20.83<br>' );
+        seederAddRecipe( 'Doom Plate Armor', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Breath by 383<br>Adds Max HP by 1093' );
+        seederAddRecipe( 'Doom Plate Armor 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Breath by 383<br>Adds Max HP by 1093' );
+        seederAddRecipe( 'Tallum Plate Armor', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Bleed Vulnerability by 52<br>Adds Max Load by 8159<br>Adds Poison Vulnerability by 52<br>Multiplies P.Atk Speed by 1.0932' );
+        seederAddRecipe( 'Armor of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies P.Atk by 1.1708<br>Decreases Root Vulnerability by 29.16<br>Decreases Sleep Vulnerability by 29.16' );
+        seederAddRecipe( 'Majestic Plate Armor', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Accuracy Combat by 0.579<br>Multiplies P.Atk by 1.0827<br>Adds Stun Vulnerability by 20.83' );
 
     }
 
@@ -235,44 +235,44 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorHeavyUpperCategory->id;
         $imagePath  = 'item/armor/heavy/upper';
 
-        seederAddRecipe( 'Zubei\'s Breastplate', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Max HP by 294<br>Multiplies P.Def by 1.0724<br>' );
-        seederAddRecipe( 'Zubei\'s Breastplate 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Max HP by 294<br>Multiplies P.Def by 1.0724<br>' );
+        seederAddRecipe( 'Zubei\'s Breastplate', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Max HP by 294<br>Multiplies P.Def by 1.0724' );
+        seederAddRecipe( 'Zubei\'s Breastplate 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Max HP by 294<br>Multiplies P.Def by 1.0724' );
         seederAddRecipe( 'Avadon Breastplate', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Max HP by 833' );
         seederAddRecipe( 'Avadon Breastplate 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Max HP by 833' );
         seederAddRecipe( 'Blue Wolf Breastplate', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies Regen HP by 1.0724<br>Adds Run Speed by 7' );
         seederAddRecipe( 'Blue Wolf Breastplate 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies Regen HP by 1.0724<br>Adds Run Speed by 7' );
-        seederAddRecipe( 'Dark Crystal breastplate', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies Gain Hp by 1.12<br>Adds Paralyze Vulnerability by 20<br>' );
-        seederAddRecipe( 'Imperial Crusader Breastplate', $imagePath, 5000000, 'S', $categoryId, 0, '60', 'Adds Max HP by 889<br>Multiplies P.Def by 1.0724<br>Decreases Root Vulnerability by 28<br>Decreases Sleep Vulnerability by 28<br>' );
+        seederAddRecipe( 'Dark Crystal breastplate', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies Gain Hp by 1.12<br>Adds Paralyze Vulnerability by 20' );
+        seederAddRecipe( 'Imperial Crusader Breastplate', $imagePath, 5000000, 'S', $categoryId, 0, '60', 'Adds Max HP by 889<br>Multiplies P.Def by 1.0724<br>Decreases Root Vulnerability by 28<br>Decreases Sleep Vulnerability by 28' );
         seederAddRecipe( 'Dynasty Breastplate', $imagePath, 95000000, 'S', $categoryId, 0, '60', 'Adds Dark Resistance by 3.2<br>Adds Max HP by 984<br>Multiplies P.Def by 1.0724' );
-        seederAddRecipe( 'Moirai Breastplate', $imagePath, 100000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0426<br>Multiplies P.Atk Speed by 1.04<br>Decreases Stun Vulnerability by 5<br>Adds Water Resistance by 1<br>Adds Fire Resistance by 1<br>Adds Wind Resistance by 1<br>Adds Earth Resistance by 1<br>' );
-        seederAddRecipe( 'Vesper Breastplate', $imagePath, 100000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0557<br>Multiplies P.Def by 1.0557<br>Adds Max HP by 531<br>Decreases Sleep Vulnerability by 28<br>Decreases Root Vulnerability by 28<br>' );
+        seederAddRecipe( 'Moirai Breastplate', $imagePath, 100000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0426<br>Multiplies P.Atk Speed by 1.04<br>Decreases Stun Vulnerability by 5<br>Adds Water Resistance by 1<br>Adds Fire Resistance by 1<br>Adds Wind Resistance by 1<br>Adds Earth Resistance by 1' );
+        seederAddRecipe( 'Vesper Breastplate', $imagePath, 100000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0557<br>Multiplies P.Def by 1.0557<br>Adds Max HP by 531<br>Decreases Sleep Vulnerability by 28<br>Decreases Root Vulnerability by 28' );
     }
 
     protected function addArmorHeavyLower() {
         $categoryId = $this->armorHeavyLowerCategory->id;
         $imagePath  = 'item/armor/heavy/lower';
 
-        seederAddRecipe( 'Zubei\'s Gaiters', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies P.Def by 1.0208<br>Adds Max HP by 123<br>' );
-        seederAddRecipe( 'Zubei\'s Gaiters 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies P.Def by 1.0208<br>Adds Max HP by 123<br>' );
+        seederAddRecipe( 'Zubei\'s Gaiters', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies P.Def by 1.0208<br>Adds Max HP by 123' );
+        seederAddRecipe( 'Zubei\'s Gaiters 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies P.Def by 1.0208<br>Adds Max HP by 123' );
         seederAddRecipe( 'Avadon Gaiters', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Max HP by 122' );
         seederAddRecipe( 'Avadon Gaiters 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Max HP by 122' );
-        seederAddRecipe( 'Blue Wolf Gaiters', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Run Speed by 2.91<br>Multiplies Regen HP by 1.0208<br>' );
-        seederAddRecipe( 'Blue Wolf Gaiters 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Run Speed by 2.91<br>Multiplies Regen HP by 1.0208<br>' );
+        seederAddRecipe( 'Blue Wolf Gaiters', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Run Speed by 2.91<br>Multiplies Regen HP by 1.0208' );
+        seederAddRecipe( 'Blue Wolf Gaiters 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Run Speed by 2.91<br>Multiplies Regen HP by 1.0208' );
         seederAddRecipe( 'Dark Crystal Gaiters', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies Gain Hp by 1.02<br>Decreases Paralyze Vulnerability by 12.5' );
-        seederAddRecipe( 'Imperial Crusader Gaiters', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0208<br>Adds Max HP by 185<br>Decreases Sleep Vulnerability by 17.5<br>Decreases Root Vulnerability by 17.5<br>' );
-        seederAddRecipe( 'Dynasty Gaiters', $imagePath, 40000000, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0208<br>Adds Max HP by 205<br>Adds Dark Resistance by 2<br>' );
-        seederAddRecipe( 'Moirai Gaiters', $imagePath, 40000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0208<br>Multiplies P.Atk Speed by 1.0167<br>Decreases Stun Vulnerability by 5<br>Adds Water Resistance by 3<br>' );
-        seederAddRecipe( 'Vesper Gaiters', $imagePath, 100000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0103<br>Multiplies P.Def by 1.0103<br>Adds Max HP by 55<br>Decreases Sleep Vulnerability by 18<br>Decreases Root Vulnerability by 18<br>' );
+        seederAddRecipe( 'Imperial Crusader Gaiters', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0208<br>Adds Max HP by 185<br>Decreases Sleep Vulnerability by 17.5<br>Decreases Root Vulnerability by 17.5' );
+        seederAddRecipe( 'Dynasty Gaiters', $imagePath, 40000000, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0208<br>Adds Max HP by 205<br>Adds Dark Resistance by 2' );
+        seederAddRecipe( 'Moirai Gaiters', $imagePath, 40000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0208<br>Multiplies P.Atk Speed by 1.0167<br>Decreases Stun Vulnerability by 5<br>Adds Water Resistance by 3' );
+        seederAddRecipe( 'Vesper Gaiters', $imagePath, 100000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0103<br>Multiplies P.Def by 1.0103<br>Adds Max HP by 55<br>Decreases Sleep Vulnerability by 18<br>Decreases Root Vulnerability by 18' );
     }
 
     protected function addArmorHeavyHelmet() {
         $categoryId = $this->armorHeavyHelmetCategory->id;
         $imagePath  = 'item/armor/heavy/helmet';
 
-        seederAddRecipe( 'Imperial Crusader Helmet', $imagePath, 8000000, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0125<br>Adds Max HP by 111<br>Decreases Sleep Vulnerability by 10.5<br>Decreases Root Vulnerability by 10.5<br>' );
-        seederAddRecipe( 'Dynasty Helmet', $imagePath, 15000000, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0125<br>Adds Max HP by 123<br>Adds Dark Resistance by 1.2<br>' );
-        seederAddRecipe( 'Moirai Helmet', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0125<br>Multiplies P.Atk Speed by 1.01<br>Decreases Stun Vulnerability by 5<br>Adds Fire Resistance by 3<br>' );
-        seederAddRecipe( 'Vesper Helmet', $imagePath, 40000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0062<br>Multiplies P.Def by 1.0062<br>Adds Max HP by 133<br>Decreases Sleep Vulnerability by 1<br>Decreases Root Vulnerability by 1<br>' );
+        seederAddRecipe( 'Imperial Crusader Helmet', $imagePath, 8000000, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0125<br>Adds Max HP by 111<br>Decreases Sleep Vulnerability by 10.5<br>Decreases Root Vulnerability by 10.5' );
+        seederAddRecipe( 'Dynasty Helmet', $imagePath, 15000000, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0125<br>Adds Max HP by 123<br>Adds Dark Resistance by 1.2' );
+        seederAddRecipe( 'Moirai Helmet', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0125<br>Multiplies P.Atk Speed by 1.01<br>Decreases Stun Vulnerability by 5<br>Adds Fire Resistance by 3' );
+        seederAddRecipe( 'Vesper Helmet', $imagePath, 40000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0062<br>Multiplies P.Def by 1.0062<br>Adds Max HP by 133<br>Decreases Sleep Vulnerability by 1<br>Decreases Root Vulnerability by 1' );
     }
 
     protected function addArmorHeavyBoot() {
@@ -280,8 +280,8 @@ class ArmorSeeder extends Seeder {
         $imagePath  = 'item/armor/heavy/boot';
 
         seederAddRecipe( 'Imperial Crusader Boots', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0083<br>Adds Max HP by 74<br>Decreases Sleep Vulnerability by 7<br>Decreases Root Vulnerability by 7' );
-        seederAddRecipe( 'Dynasty Boots', $imagePath, 45000000, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0083<br>Adds Max HP by 82<br>Adds Dark Resistance by 0.8<br>' );
-        seederAddRecipe( 'Moirai Boots', $imagePath, 20000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0083<br>Multiplies P.Atk Speed by 1.0067<br>Decreases Stun Vulnerability by 5<br>Adds Earth Resistance by 3<br>' );
+        seederAddRecipe( 'Dynasty Boots', $imagePath, 45000000, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0083<br>Adds Max HP by 82<br>Adds Dark Resistance by 0.8' );
+        seederAddRecipe( 'Moirai Boots', $imagePath, 20000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0083<br>Multiplies P.Atk Speed by 1.0067<br>Decreases Stun Vulnerability by 5<br>Adds Earth Resistance by 3' );
         seederAddRecipe( 'Vesper Boots', $imagePath, 40000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0041<br>Multiplies P.Def by 1.0041<br>Adds Max HP by 22<br>Decreases Sleep Vulnerability by 7<br>Decreases Root Vulnerability by 7' );
     }
 
@@ -289,10 +289,10 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorHeavyGlovesCategory->id;
         $imagePath  = 'item/armor/heavy/gloves';
 
-        seederAddRecipe( 'Imperial Crusader Gauntlets', $imagePath, 3500000, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0083<br>Adds Max HP by 74<br>Decreases Sleep Vulnerability by 7<br>Decreases Root Vulnerability by 7<br>' );
-        seederAddRecipe( 'Dynasty Gauntlets', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0083<br>Adds Max HP by 82<br>Adds Dark Resistance by 0.8<br>' );
-        seederAddRecipe( 'Moirai Gauntlets', $imagePath, 15000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0083<br>Multiplies P.Atk Speed by 1.0067<br>Decreases Stun Vulnerability by 5<br>Adds Wind Resistance by 3<br>' );
-        seederAddRecipe( 'Vesper Gauntlets', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0041<br>Multiplies P.Def by 1.0041<br>Adds Max HP by 22<br>Decreases Sleep Vulnerability by 7<br>Decreases Root Vulnerability by 7<br>' );
+        seederAddRecipe( 'Imperial Crusader Gauntlets', $imagePath, 3500000, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0083<br>Adds Max HP by 74<br>Decreases Sleep Vulnerability by 7<br>Decreases Root Vulnerability by 7' );
+        seederAddRecipe( 'Dynasty Gauntlets', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Def by 1.0083<br>Adds Max HP by 82<br>Adds Dark Resistance by 0.8' );
+        seederAddRecipe( 'Moirai Gauntlets', $imagePath, 15000000, 'S-80', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0083<br>Multiplies P.Atk Speed by 1.0067<br>Decreases Stun Vulnerability by 5<br>Adds Wind Resistance by 3' );
+        seederAddRecipe( 'Vesper Gauntlets', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk by 1.0041<br>Multiplies P.Def by 1.0041<br>Adds Max HP by 22<br>Decreases Sleep Vulnerability by 7<br>Decreases Root Vulnerability by 7' );
     }
 
 
@@ -300,12 +300,12 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorRobeFullBodyCategory->id;
         $imagePath  = 'item/armor/robe/full-body';
 
-        seederAddRecipe( 'Avadon Robe', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies M.Atk Spd by 1.15<br>Multiplies M.Def by 1.1708<br>' );
-        seederAddRecipe( 'Avadon Robe 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies M.Atk Spd by 1.15<br>Multiplies M.Def by 1.1708<br>' );
-        seederAddRecipe( 'Dark Crystal Robe', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Cancel Vulnerability by 8.33<br>Multiplies M.Atk Spd by 1.15<br>Adds Paralyze Vulnerability by 20<br>Multiplies P.Def by 1.0333<br>Adds Run Speed by 2.91<br>' );
-        seederAddRecipe( 'Robe of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0827<br>Multiplies Regen MP by 1.0827<br>Decreases Root Vulnerability by 29.16<br>Decreases Sleep Vulnerability by 29.16<br>' );
-        seederAddRecipe( 'Majestic Robe', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies M.Atk Spd by 1.15<br>Multiplies Regen MP by 1.0333<br>Adds Stun Vulnerability by 20.83<br>' );
-        seederAddRecipe( 'Major Arcana Robe', $imagePath, 25000000, 'S', $categoryId, 0, '60', 'Decreases Cancel by 21<br>Adds Max Load by 8159<br>Multiplies M.Atk by 1.1603<br>Multiplies Run Speed by 1.0991<br>Decreases Stun Vulnerability by 20.83<br>' );
+        seederAddRecipe( 'Avadon Robe', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies M.Atk Spd by 1.15<br>Multiplies M.Def by 1.1708' );
+        seederAddRecipe( 'Avadon Robe 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies M.Atk Spd by 1.15<br>Multiplies M.Def by 1.1708' );
+        seederAddRecipe( 'Dark Crystal Robe', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Cancel Vulnerability by 8.33<br>Multiplies M.Atk Spd by 1.15<br>Adds Paralyze Vulnerability by 20<br>Multiplies P.Def by 1.0333<br>Adds Run Speed by 2.91' );
+        seederAddRecipe( 'Robe of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0827<br>Multiplies Regen MP by 1.0827<br>Decreases Root Vulnerability by 29.16<br>Decreases Sleep Vulnerability by 29.16' );
+        seederAddRecipe( 'Majestic Robe', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies M.Atk Spd by 1.15<br>Multiplies Regen MP by 1.0333<br>Adds Stun Vulnerability by 20.83' );
+        seederAddRecipe( 'Major Arcana Robe', $imagePath, 25000000, 'S', $categoryId, 0, '60', 'Decreases Cancel by 21<br>Adds Max Load by 8159<br>Multiplies M.Atk by 1.1603<br>Multiplies Run Speed by 1.0991<br>Decreases Stun Vulnerability by 20.83' );
     }
 
     protected function addArmorRobeUpper() {
@@ -314,60 +314,60 @@ class ArmorSeeder extends Seeder {
 
         seederAddRecipe( 'Tunic of Zubei', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies M.Atk by 1.15' );
         seederAddRecipe( 'Tunic of Zubei 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies M.Atk by 1.15' );
-        seederAddRecipe( 'Blue Wolf Tunic', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Max MP by 205<br>Multiplies Regen MP by 1.0724<br>' );
-        seederAddRecipe( 'Blue Wolf Tunic 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Max MP by 205<br>Multiplies Regen MP by 1.0724<br>' );
-        seederAddRecipe( 'Tunic of Doom', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Breath by 200<br>Multiplies Regen MP by 1.0724<br>Adds Run Speed by 7<br>' );
-        seederAddRecipe( 'Tunic of Doom 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Breath by 200<br>Multiplies Regen MP by 1.0724<br>Adds Run Speed by 7<br>' );
+        seederAddRecipe( 'Blue Wolf Tunic', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Max MP by 205<br>Multiplies Regen MP by 1.0724' );
+        seederAddRecipe( 'Blue Wolf Tunic 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Max MP by 205<br>Multiplies Regen MP by 1.0724' );
+        seederAddRecipe( 'Tunic of Doom', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Breath by 200<br>Multiplies Regen MP by 1.0724<br>Adds Run Speed by 7' );
+        seederAddRecipe( 'Tunic of Doom 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Breath by 200<br>Multiplies Regen MP by 1.0724<br>Adds Run Speed by 7' );
         seederAddRecipe( 'Tallum Tunic', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies M.Atk Spd by 1.15' );
         seederAddRecipe( 'Dynasty Tunic', $imagePath, 40000000, 'S', $categoryId, 0, '60', 'Multiplies M.Atk Spd by 1.15' );
-        seederAddRecipe( 'Moirai Tunic', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0811<br>Multiplies M.Atk Spd by 1.15<br>Decreases Paralyze Vulnerability by 5<br>Adds Water Resistance by 1<br>Adds Fire Resistance by 1<br>Adds Wind Resistance by 1<br>Adds Earth Resistance by 1<br>' );
-        seederAddRecipe( 'Vesper Tunic', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0847<br>Multiplies M.Atk Spd by 1.15<br>Multiplies Regen MP by 1.05<br>Decreases Stun Vulnerability by 20<br>Decreases Cancel by 12<br>' );
+        seederAddRecipe( 'Moirai Tunic', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0811<br>Multiplies M.Atk Spd by 1.15<br>Decreases Paralyze Vulnerability by 5<br>Adds Water Resistance by 1<br>Adds Fire Resistance by 1<br>Adds Wind Resistance by 1<br>Adds Earth Resistance by 1' );
+        seederAddRecipe( 'Vesper Tunic', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0847<br>Multiplies M.Atk Spd by 1.15<br>Multiplies Regen MP by 1.05<br>Decreases Stun Vulnerability by 20<br>Decreases Cancel by 12' );
     }
 
     protected function addArmorRobeLower() {
         $categoryId = $this->armorRobeLowerCategory->id;
         $imagePath  = 'item/armor/robe/lower';
 
-        seederAddRecipe( 'Stockings of Doom', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Run Speed by 2.91<br>Adds Breath by 88<br>Multiplies Regen MP by 1.0208<br>' );
-        seederAddRecipe( 'Stockings of Doom 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Run Speed by 2.91<br>Adds Breath by 88<br>Multiplies Regen MP by 1.0208<br>' );
-        seederAddRecipe( 'Blue Wolf Stockings', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Max MP by 85<br>Multiplies Regen MP by 1.0208<br>' );
-        seederAddRecipe( 'Blue Wolf Stockings 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Max MP by 85<br>Multiplies Regen MP by 1.0208<br>' );
+        seederAddRecipe( 'Stockings of Doom', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Run Speed by 2.91<br>Adds Breath by 88<br>Multiplies Regen MP by 1.0208' );
+        seederAddRecipe( 'Stockings of Doom 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Run Speed by 2.91<br>Adds Breath by 88<br>Multiplies Regen MP by 1.0208' );
+        seederAddRecipe( 'Blue Wolf Stockings', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Max MP by 85<br>Multiplies Regen MP by 1.0208' );
+        seederAddRecipe( 'Blue Wolf Stockings 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Max MP by 85<br>Multiplies Regen MP by 1.0208' );
         seederAddRecipe( 'Stockings of Zubei', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0208' );
         seederAddRecipe( 'Stockings of Zubei 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies M.Atk by 1.0208' );
         seederAddRecipe( 'Tallum Stockings', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies M.Def by 1.0333<br>Decreases Poison Vulnerability by 33.33<br>Decreases Bleed Vulnerability by 33.33' );
-        seederAddRecipe( 'Dynasty Stockings', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0208<br>Adds Max MP by 133<br>Adds Dark Resistance by 3.33<br>' );
-        seederAddRecipe( 'Moirai Stockings', $imagePath, 40000000, 'S-80', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0103<br>Decreases Paralyze Vulnerability by 5<br>Adds Water Resistance by 5<br>' );
-        seederAddRecipe( 'Vesper Stockings', $imagePath, 70000000, 'S-84', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0068<br>Multiplies Regen MP by 1.0068<br>Decreases Stun Vulnerability by 5<br>Decreases Cancel by 7.5<br>' );
+        seederAddRecipe( 'Dynasty Stockings', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0208<br>Adds Max MP by 133<br>Adds Dark Resistance by 3.33' );
+        seederAddRecipe( 'Moirai Stockings', $imagePath, 40000000, 'S-80', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0103<br>Decreases Paralyze Vulnerability by 5<br>Adds Water Resistance by 5' );
+        seederAddRecipe( 'Vesper Stockings', $imagePath, 70000000, 'S-84', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0068<br>Multiplies Regen MP by 1.0068<br>Decreases Stun Vulnerability by 5<br>Decreases Cancel by 7.5' );
     }
 
     protected function addArmorRobeHelmet() {
         $categoryId = $this->armorRobeHelmetCategory->id;
         $imagePath  = 'item/armor/robe/helmet';
 
-        seederAddRecipe( 'Major Arcana Circlet', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0062<br>Adds Run Speed by 1.175<br>Decreases Cancel by 13<br>Adds Max Load by 1440<br>Decreases Stun Vulnerability by 12.5<br>' );
-        seederAddRecipe( 'Dynasty Circlet', $imagePath, 18000000, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0125<br>Adds Max MP by 80<br>Adds Dark Resistance by 2<br>' );
-        seederAddRecipe( 'Moirai Circlet', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0062<br>Decreases Paralyze Vulnerability by 5<br>Adds Fire Resistance by 5<br>' );
-        seederAddRecipe( 'Vesper Circlet', $imagePath, 60000000, 'S-84', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0041<br>Multiplies Regen MP by 1.0041<br>Decreases Stun Vulnerability by 8<br>Decreases Cancel by 4.5<br>' );
+        seederAddRecipe( 'Major Arcana Circlet', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0062<br>Adds Run Speed by 1.175<br>Decreases Cancel by 13<br>Adds Max Load by 1440<br>Decreases Stun Vulnerability by 12.5' );
+        seederAddRecipe( 'Dynasty Circlet', $imagePath, 18000000, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0125<br>Adds Max MP by 80<br>Adds Dark Resistance by 2' );
+        seederAddRecipe( 'Moirai Circlet', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0062<br>Decreases Paralyze Vulnerability by 5<br>Adds Fire Resistance by 5' );
+        seederAddRecipe( 'Vesper Circlet', $imagePath, 60000000, 'S-84', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0041<br>Multiplies Regen MP by 1.0041<br>Decreases Stun Vulnerability by 8<br>Decreases Cancel by 4.5' );
     }
 
     protected function addArmorRobeBoot() {
         $categoryId = $this->armorRobeBootCategory->id;
         $imagePath  = 'item/armor/robe/boot';
 
-        seederAddRecipe( 'Major Arcana Boots', $imagePath, 8000000, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0041<br>Adds Run Speed by 1.16<br>Decreases Cancel by 8<br>Adds Max Load by 960<br>Decreases Stun Vulnerability by 8.3<br>' );
-        seederAddRecipe( 'Dynasty Shoes', $imagePath, 15000000, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0083<br>Adds Max MP by 53<br>Adds Dark Resistance by 1.33<br>' );
-        seederAddRecipe( 'Moirai Shoes', $imagePath, 10000000, 'S-80', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0041<br>Decreases Paralyze Vulnerability by 5<br>Adds Earth Resistance by 5<br>' );
-        seederAddRecipe( 'Vesper Shoes', $imagePath, 40000000, 'S-84', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0027<br>Multiplies Regen MP by 1.0027<br>Decreases Stun Vulnerability by 5<br>Decreases Cancel by 3<br>' );
+        seederAddRecipe( 'Major Arcana Boots', $imagePath, 8000000, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0041<br>Adds Run Speed by 1.16<br>Decreases Cancel by 8<br>Adds Max Load by 960<br>Decreases Stun Vulnerability by 8.3' );
+        seederAddRecipe( 'Dynasty Shoes', $imagePath, 15000000, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0083<br>Adds Max MP by 53<br>Adds Dark Resistance by 1.33' );
+        seederAddRecipe( 'Moirai Shoes', $imagePath, 10000000, 'S-80', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0041<br>Decreases Paralyze Vulnerability by 5<br>Adds Earth Resistance by 5' );
+        seederAddRecipe( 'Vesper Shoes', $imagePath, 40000000, 'S-84', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0027<br>Multiplies Regen MP by 1.0027<br>Decreases Stun Vulnerability by 5<br>Decreases Cancel by 3' );
     }
 
     protected function addArmorRobeGloves() {
         $categoryId = $this->armorRobeGlovesCategory->id;
         $imagePath  = 'item/armor/robe/gloves';
 
-        seederAddRecipe( 'Major Arcana Gloves', $imagePath, 10000000, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0041<br>Adds Run Speed by 1.16<br>Decreases Cancel by 8<br>Adds Max Load by 960<br>Decreases Stun Vulnerability by 8.3<br>' );
-        seederAddRecipe( 'Dynasty Gloves', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0083<br>Adds Max MP by 53<br>Adds Dark Resistance by 1.33<br>' );
+        seederAddRecipe( 'Major Arcana Gloves', $imagePath, 10000000, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0041<br>Adds Run Speed by 1.16<br>Decreases Cancel by 8<br>Adds Max Load by 960<br>Decreases Stun Vulnerability by 8.3' );
+        seederAddRecipe( 'Dynasty Gloves', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0083<br>Adds Max MP by 53<br>Adds Dark Resistance by 1.33' );
         seederAddRecipe( 'Moirai Gloves', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0041<br>Decreases Paralyze Vulnerability by 5<br>Adds Wind Resistance by 5' );
-        seederAddRecipe( 'Vesper Gloves', $imagePath, 30000000, 'S-84', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0027<br>Multiplies Regen MP by 1.0027<br>Decreases Stun Vulnerability by 5<br>Decreases Cancel by 3<br>' );
+        seederAddRecipe( 'Vesper Gloves', $imagePath, 30000000, 'S-84', $categoryId, 0, '60', 'Multiplies M.Atk by 1.0027<br>Multiplies Regen MP by 1.0027<br>Decreases Stun Vulnerability by 5<br>Decreases Cancel by 3' );
     }
 
     protected function addArmorUniversalHelmet() {
@@ -376,42 +376,42 @@ class ArmorSeeder extends Seeder {
 
         seederAddRecipe( 'Doom Helmet', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Adds Max HP by 80<br>Adds Breath by 50<br>Light:<br>Adds Breath by 50<br>Multiplies P.Atk by 1.0062<br>Multiplies Regen MP by 1.0062<br>Decreases Poison Vulnerability by 2<br>Robe:<br>Adds Run Speed by 1.75<br>Adds Breath by 50<br>Multiplies Regen MP by 1.0125' );
         seederAddRecipe( 'Doom Helmet 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Adds Max HP by 80<br>Adds Breath by 50<br>Light:<br>Adds Breath by 50<br>Multiplies P.Atk by 1.0062<br>Multiplies Regen MP by 1.0062<br>Decreases Poison Vulnerability by 2<br>Robe:<br>Adds Run Speed by 1.75<br>Adds Breath by 50<br>Multiplies Regen MP by 1.0125' );
-        seederAddRecipe( 'Blue Wolf Helmet', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Adds Run Speed by 1.75<br>Multiplies Regen HP by 1.0125<br>Light:<br>Multiplies P.Def by 1.0132<br>Robe:<br>Adds Max MP by 51<br>Multiplies Regen MP by 1.0125<br>' );
-        seederAddRecipe( 'Blue Wolf Helmet 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Adds Run Speed by 1.75<br>Multiplies Regen HP by 1.0125<br>Light:<br>Multiplies P.Def by 1.0132<br>Robe:<br>Adds Max MP by 51<br>Multiplies Regen MP by 1.0125<br>' );
+        seederAddRecipe( 'Blue Wolf Helmet', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Adds Run Speed by 1.75<br>Multiplies Regen HP by 1.0125<br>Light:<br>Multiplies P.Def by 1.0132<br>Robe:<br>Adds Max MP by 51<br>Multiplies Regen MP by 1.0125' );
+        seederAddRecipe( 'Blue Wolf Helmet 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Adds Run Speed by 1.75<br>Multiplies Regen HP by 1.0125<br>Light:<br>Multiplies P.Def by 1.0132<br>Robe:<br>Adds Max MP by 51<br>Multiplies Regen MP by 1.0125' );
         seederAddRecipe( 'Avadon Circlet', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Adds Max HP by 73<br>Light:<br>Multiplies M.Def by 1.0125<br>Adds Max Load by 1440<br>Robe:<br>Multiplies P.Def by 1.0125' );
         seederAddRecipe( 'Avadon Circlet 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Adds Max HP by 73<br>Light:<br>Multiplies M.Def by 1.0125<br>Adds Max Load by 1440<br>Robe:<br>Multiplies P.Def by 1.0125' );
         seederAddRecipe( 'Zubei\'s Helmet', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Multiplies P.Def by 1.0125<br>Adds Max HP by 74<br>Light:<br>Adds Rate Evasion by 0.88<br>Robe:<br>Multiplies M.Atk by 1.0125' );
         seederAddRecipe( 'Zubei\'s Helmet 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Multiplies P.Def by 1.0125<br>Adds Max HP by 74<br>Light:<br>Adds Rate Evasion by 0.88<br>Robe:<br>Multiplies M.Atk by 1.0125' );
-        seederAddRecipe( 'Majestic Circlet', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies P.Atk by 1.0062<br>Adds Accuracy Combat by 0.47<br>Decreases Stun Vulnerability by 12.5<br>Light:<br>Multiplies P.Atk by 1.0125<br>Adds Max MP by 60<br>Adds Max Load by 1440<br>Decreases Stun Vulnerability by 12.5<br>Robe:<br>Adds Max MP by 60<br>Multiplies Regen MP by 1.02<br>Decreases Stun Vulnerability by 12.5<br>' );
-        seederAddRecipe( 'Helm of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies P.Atk by 1.0125<br>Decreases Sleep Vulnerability by 17.5<br>Decreases Root Vulnerability by 17.5<br>Light:<br>Multiplies M.Def by 1.0062<br>Decreases Sleep Vulnerability by 17.5<br>Decreases Root Vulnerability by 17.5<br>Robe:<br>Multiplies Regen MP by 1.0062<br>Multiplies M.Atk by 1.0062<br>Decreases Sleep Vulnerability by 17.5<br>Decreases Root Vulnerability by 17.5<br>' );
+        seederAddRecipe( 'Majestic Circlet', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies P.Atk by 1.0062<br>Adds Accuracy Combat by 0.47<br>Decreases Stun Vulnerability by 12.5<br>Light:<br>Multiplies P.Atk by 1.0125<br>Adds Max MP by 60<br>Adds Max Load by 1440<br>Decreases Stun Vulnerability by 12.5<br>Robe:<br>Adds Max MP by 60<br>Multiplies Regen MP by 1.02<br>Decreases Stun Vulnerability by 12.5' );
+        seederAddRecipe( 'Helm of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies P.Atk by 1.0125<br>Decreases Sleep Vulnerability by 17.5<br>Decreases Root Vulnerability by 17.5<br>Light:<br>Multiplies M.Def by 1.0062<br>Decreases Sleep Vulnerability by 17.5<br>Decreases Root Vulnerability by 17.5<br>Robe:<br>Multiplies Regen MP by 1.0062<br>Multiplies M.Atk by 1.0062<br>Decreases Sleep Vulnerability by 17.5<br>Decreases Root Vulnerability by 17.5' );
         seederAddRecipe( 'Tallum Helmet', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies P.Atk Speed by 1.0125<br>Adds Max Load by 1440<br>Decreases Poison Vulnerability by 12<br>Decreases Bleed Vulnerability by 12<br>Light:<br>Multiplies Regen MP by 1.0125<br>Adds Max MP by 56<br>Decreases Poison Vulnerability by 12<br>Decreases Bleed Vulnerability by 12<br>Robe:<br>Multiplies M.Def by 1.02<br>Decreases Poison Vulnerability by 20<br>Decreases Bleed Vulnerability by 20' );
-        seederAddRecipe( 'Dark Crystal Helmet', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies Gain Hp by 1.01<br>Decreases Paralyze Vulnerability by 7.5<br>Light:<br>Multiplies P.Atk Speed by 1.0062<br>Multiplies P.Atk by 1.0062<br>Decreases Paralyze Vulnerability by 7.5<br>Robe:<br>Multiplies P.Def by 1.02<br>Adds Run Speed by 1.75<br>Decreases Cancel by 13<br>Decreases Paralyze Vulnerability by 12.5<br>' );
+        seederAddRecipe( 'Dark Crystal Helmet', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies Gain Hp by 1.01<br>Decreases Paralyze Vulnerability by 7.5<br>Light:<br>Multiplies P.Atk Speed by 1.0062<br>Multiplies P.Atk by 1.0062<br>Decreases Paralyze Vulnerability by 7.5<br>Robe:<br>Multiplies P.Def by 1.02<br>Adds Run Speed by 1.75<br>Decreases Cancel by 13<br>Decreases Paralyze Vulnerability by 12.5' );
     }
 
     protected function addArmorUniversalBoot() {
         $categoryId = $this->armorUniversalBootCategory->id;
         $imagePath  = 'item/armor/universal/boot';
 
-        seederAddRecipe( 'Blue Wolf Boots', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Adds Run Speed by 1.16<br>Multiplies Regen HP by 1.0083<br>Light:<br>Multiplies P.Def by 1.0088<br>Robe:<br>Adds Max MP by 34<br>Multiplies Regen MP by 1.0083<br>' );
-        seederAddRecipe( 'Blue Wolf Boots 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Adds Run Speed by 1.16<br>Multiplies Regen HP by 1.0083<br>Light:<br>Multiplies P.Def by 1.0088<br>Robe:<br>Adds Max MP by 34<br>Multiplies Regen MP by 1.0083<br>' );
-        seederAddRecipe( 'Doom Boots', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Adds Max HP by 53<br>Adds Breath by 33<br>Light:<br>Adds Breath by 33<br>Multiplies P.Atk by 1.0041<br>Multiplies Regen MP by 1.0041<br>Decreases Poison Vulnerability by 3<br>Robe:<br>Adds Run Speed by 1.16<br>Adds Breath by 33<br>Multiplies Regen MP by 1.0083<br>' );
-        seederAddRecipe( 'Doom Boots 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Adds Max HP by 53<br>Adds Breath by 33<br>Light:<br>Adds Breath by 33<br>Multiplies P.Atk by 1.0041<br>Multiplies Regen MP by 1.0041<br>Decreases Poison Vulnerability by 3<br>Robe:<br>Adds Run Speed by 1.16<br>Adds Breath by 33<br>Multiplies Regen MP by 1.0083<br>' );
+        seederAddRecipe( 'Blue Wolf Boots', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Adds Run Speed by 1.16<br>Multiplies Regen HP by 1.0083<br>Light:<br>Multiplies P.Def by 1.0088<br>Robe:<br>Adds Max MP by 34<br>Multiplies Regen MP by 1.0083' );
+        seederAddRecipe( 'Blue Wolf Boots 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Adds Run Speed by 1.16<br>Multiplies Regen HP by 1.0083<br>Light:<br>Multiplies P.Def by 1.0088<br>Robe:<br>Adds Max MP by 34<br>Multiplies Regen MP by 1.0083' );
+        seederAddRecipe( 'Doom Boots', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Adds Max HP by 53<br>Adds Breath by 33<br>Light:<br>Adds Breath by 33<br>Multiplies P.Atk by 1.0041<br>Multiplies Regen MP by 1.0041<br>Decreases Poison Vulnerability by 3<br>Robe:<br>Adds Run Speed by 1.16<br>Adds Breath by 33<br>Multiplies Regen MP by 1.0083' );
+        seederAddRecipe( 'Doom Boots 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Adds Max HP by 53<br>Adds Breath by 33<br>Light:<br>Adds Breath by 33<br>Multiplies P.Atk by 1.0041<br>Multiplies Regen MP by 1.0041<br>Decreases Poison Vulnerability by 3<br>Robe:<br>Adds Run Speed by 1.16<br>Adds Breath by 33<br>Multiplies Regen MP by 1.0083' );
         seederAddRecipe( 'Avadon Boots', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Adds Max HP by 49<br>Light:<br>Multiplies M.Def by 1.0083<br>Adds Max Load by 960<br>Robe:<br>Multiplies P.Def by 1.0083' );
         seederAddRecipe( 'Avadon Boots 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Adds Max HP by 49<br>Light:<br>Multiplies M.Def by 1.0083<br>Adds Max Load by 960<br>Robe:<br>Multiplies P.Def by 1.0083' );
         seederAddRecipe( 'Zubei\'s Boots', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Multiplies P.Def by 1.0083<br>Adds Max HP by 49<br>Light:<br>Adds Rate Evasion by 0.59<br>Robe:<br>Multiplies M.Atk by 1.0083' );
         seederAddRecipe( 'Zubei\'s Boots 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Multiplies P.Def by 1.0083<br>Adds Max HP by 49<br>Light:<br>Adds Rate Evasion by 0.59<br>Robe:<br>Multiplies M.Atk by 1.0083' );
         seederAddRecipe( 'Majestic Boots', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies P.Atk by 1.0062<br>Adds Accuracy Combat by 0.47<br>Decreases Stun Vulnerability by 8.33<br>Light:<br>Multiplies P.Atk by 1.0083<br>Adds Max MP by 40<br>Adds Max Load by 960<br>Decreases Stun Vulnerability by 8.33<br>Robe:<br>Adds Max MP by 40<br>Multiplies Regen MP by 1.0133<br>Decreases Stun Vulnerability by 8.33' );
-        seederAddRecipe( 'Boots of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies P.Atk by 1.0083<br>Decreases Sleep Vulnerability by 11.66<br>Decreases Root Vulnerability by 11.66<br>Light:<br>Multiplies P.Atk by 1.0041<br>Decreases Sleep Vulnerability by 11.66<br>Decreases Root Vulnerability by 11.66<br>Robe:<br>Multiplies Regen MP by 1.0041<br>Multiplies M.Atk by 1.0041<br>Decreases Sleep Vulnerability by 11.66<br>Decreases Root Vulnerability by 11.66<br>' );
+        seederAddRecipe( 'Boots of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies P.Atk by 1.0083<br>Decreases Sleep Vulnerability by 11.66<br>Decreases Root Vulnerability by 11.66<br>Light:<br>Multiplies P.Atk by 1.0041<br>Decreases Sleep Vulnerability by 11.66<br>Decreases Root Vulnerability by 11.66<br>Robe:<br>Multiplies Regen MP by 1.0041<br>Multiplies M.Atk by 1.0041<br>Decreases Sleep Vulnerability by 11.66<br>Decreases Root Vulnerability by 11.66' );
         seederAddRecipe( 'Tallum Boots', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies P.Atk Speed by 1.0083<br>Adds Max Load by 960<br>Decreases Poison Vulnerability by 8<br>Decreases Bleed Vulnerability by 8<br>Light:<br>Multiplies Regen MP by 1.0083<br>Adds Max MP by 37<br>Decreases Poison Vulnerability by 8<br>Decreases Bleed Vulnerability by 8<br>Robe:<br>Multiplies M.Def by 1.0133<br>Decreases Poison Vulnerability by 13.33<br>Decreases Bleed Vulnerability by 13.33' );
-        seederAddRecipe( 'Dark Crystal Boots', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies Gain Hp by 1.01<br>Decreases Paralyze Vulnerability by 5<br>Light:<br>Multiplies P.Atk Speed by 1.0041<br>Multiplies P.Atk by 1.0041<br>Decreases Paralyze Vulnerability by 5<br>Robe:<br>Multiplies P.Def by 1.0133<br>Adds Run Speed by 1.16<br>Decreases Cancel by 8<br>Decreases Paralyze Vulnerability by 8.33<br>' );
+        seederAddRecipe( 'Dark Crystal Boots', $imagePath, 0, 'A', $categoryId, 0, '60', 'Heavy:<br>Multiplies Gain Hp by 1.01<br>Decreases Paralyze Vulnerability by 5<br>Light:<br>Multiplies P.Atk Speed by 1.0041<br>Multiplies P.Atk by 1.0041<br>Decreases Paralyze Vulnerability by 5<br>Robe:<br>Multiplies P.Def by 1.0133<br>Adds Run Speed by 1.16<br>Decreases Cancel by 8<br>Decreases Paralyze Vulnerability by 8.33' );
     }
 
     protected function addArmorUniversalGloves() {
         $categoryId = $this->armorUniversalGlovesCategory->id;
         $imagePath  = 'item/armor/universal/gloves';
 
-        seederAddRecipe( 'Blue Wolf Gloves', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Adds Run Speed by 1.16<br>Multiplies Regen HP by 1.0083<br>Light:<br>Multiplies P.Def by 1.0088<br>Robe:<br>Adds Max MP by 34<br>Multiplies Regen MP by 1.0083<br>' );
-        seederAddRecipe( 'Blue Wolf Gloves 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Adds Run Speed by 1.16<br>Multiplies Regen HP by 1.0083<br>Light:<br>Multiplies P.Def by 1.0088<br>Robe:<br>Adds Max MP by 34<br>Multiplies Regen MP by 1.0083<br>' );
+        seederAddRecipe( 'Blue Wolf Gloves', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Adds Run Speed by 1.16<br>Multiplies Regen HP by 1.0083<br>Light:<br>Multiplies P.Def by 1.0088<br>Robe:<br>Adds Max MP by 34<br>Multiplies Regen MP by 1.0083' );
+        seederAddRecipe( 'Blue Wolf Gloves 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Adds Run Speed by 1.16<br>Multiplies Regen HP by 1.0083<br>Light:<br>Multiplies P.Def by 1.0088<br>Robe:<br>Adds Max MP by 34<br>Multiplies Regen MP by 1.0083' );
         seederAddRecipe( 'Avadon Gloves', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Adds Max HP by 49<br>Light:<br>Multiplies M.Def by 1.0083<br>Adds Max Load by 960<br>Robe:<br>Multiplies P.Def by 1.0083' );
         seederAddRecipe( 'Avadon Gloves 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Heavy:<br>Adds Max HP by 49<br>Light:<br>Multiplies M.Def by 1.0083<br>Adds Max Load by 960<br>Robe:<br>Multiplies P.Def by 1.0083' );
         seederAddRecipe( 'Zubei\'s Gauntlets', $imagePath, 0, 'B', $categoryId, 0, '60', 'Heavy:<br>Multiplies P.Atk Speed by 1.0041<br>Multiplies P.Atk by 1.0041<br>Decreases Paralyze Vulnerability by 5<br>Light:<br>Multiplies P.Def by 1.0083<br>Adds Max HP by 49<br>Robe:<br>Adds Rate Evasion by 0.59' );
