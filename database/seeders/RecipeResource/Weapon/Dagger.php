@@ -117,9 +117,9 @@ class Dagger extends RecipeResourceMain {
     }
 
     protected function addTwilightKnife() {
-        $piece  = Resource::where( 'name', 'Twilight Knife Edge' )->firstOrFail();
-        $recipe = Resource::where( 'name', 'Recipe: Twilight Knife (60%)' )->firstOrFail();
-        $item   = Recipe::where( 'name', 'Twilight Knife' )->firstOrFail();
+        $piece  = Resource::where( 'name', 'Hell Knife Edge' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Hell Knife (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Hell Knife' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [
@@ -161,9 +161,9 @@ class Dagger extends RecipeResourceMain {
     }
 
     protected function addTwilightKnife100() {
-        $piece  = Resource::where( 'name', 'Twilight Knife Edge' )->firstOrFail();
-        $recipe = Resource::where( 'name', 'Recipe: Twilight Knife' )->firstOrFail();
-        $item   = Recipe::where( 'name', 'Twilight Knife 100%' )->firstOrFail();
+        $piece  = Resource::where( 'name', 'Hell Knife Edge' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Hell Knife' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Hell Knife 100%' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [

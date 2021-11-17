@@ -29,25 +29,25 @@ class Dagger extends ResourceMain {
         ];
 
         $this->resources[] = [
-            'type'       => 'weapon',
-            'name'       => 'Twilight Knife Edge',
-            'price_sell' => 0,
-            'price_buy'  => 0,
-            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+	        'type'       => 'weapon',
+	        'name'       => 'Hell Knife Edge',
+	        'price_sell' => 0,
+	        'price_buy'  => 0,
+	        'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
         ];
         $this->resources[] = [
-            'type'       => 'weapon',
-            'name'       => 'Recipe: Twilight Knife (60%)',
-            'price_sell' => 0,
-            'price_buy'  => 0,
-            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+	        'type'       => 'weapon',
+	        'name'       => 'Recipe: Hell Knife (60%)',
+	        'price_sell' => 0,
+	        'price_buy'  => 0,
+	        'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
         ];
         $this->resources[] = [
-            'type'       => 'weapon',
-            'name'       => 'Recipe: Twilight Knife',
-            'price_sell' => 0,
-            'price_buy'  => 0,
-            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+	        'type'       => 'weapon',
+	        'name'       => 'Recipe: Hell Knife',
+	        'price_sell' => 0,
+	        'price_buy'  => 0,
+	        'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
         ];
 
         $this->resources[] = [
