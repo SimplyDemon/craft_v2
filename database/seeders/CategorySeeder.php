@@ -11,6 +11,7 @@ class CategorySeeder extends Seeder {
     protected Category $armorCategory;
     protected Category $jewelryCategory;
     protected Category $otherCategory;
+	protected Category $resourceCategory;
 
     /**
      * Run the database seeds.
@@ -18,31 +19,35 @@ class CategorySeeder extends Seeder {
      * @return void
      */
     public function run() {
-        $this->weaponCategory  = Category::create( [
+        $this->weaponCategory   = Category::create( [
             'name' => 'Weapon',
             'slug' => Str::slug( 'Weapon', '-' ),
         ] );
-        $this->armorCategory   = Category::create( [
-            'name' => 'Armor',
-            'slug' => Str::slug( 'Armor', '-' ),
+        $this->armorCategory    = Category::create( [
+	        'name' => 'Armor',
+	        'slug' => Str::slug( 'Armor', '-' ),
         ] );
-        $this->jewelryCategory = Category::create( [
-            'name' => 'Jewelry',
-            'slug' => Str::slug( 'Jewelry', '-' ),
-        ] );
-        $this->otherCategory   = Category::create( [
-            'name' => 'Other',
-            'slug' => Str::slug( 'Other', '-' ),
-        ] );
+	    $this->jewelryCategory  = Category::create( [
+		    'name' => 'Jewelry',
+		    'slug' => Str::slug( 'Jewelry', '-' ),
+	    ] );
+	    $this->otherCategory    = Category::create( [
+		    'name' => 'Other',
+		    'slug' => Str::slug( 'Other', '-' ),
+	    ] );
+	    $this->resourceCategory = Category::create( [
+		    'name' => 'Resource',
+		    'slug' => Str::slug( 'Resource', '-' ),
+	    ] );
 
-        $this->addArmorHeavy();
-        $this->addArmorLight();
-        $this->addArmorRobe();
-        $this->addArmorUniversal();
-        $this->addJewelry();
-        $this->addWeapons();
-        $this->addShield();
-        $this->addSigil();
+	    $this->addArmorHeavy();
+	    $this->addArmorLight();
+	    $this->addArmorRobe();
+	    $this->addArmorUniversal();
+	    $this->addJewelry();
+	    $this->addWeapons();
+	    $this->addShield();
+	    $this->addSigil();
     }
 
     protected function addShield() {

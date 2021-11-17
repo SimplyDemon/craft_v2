@@ -4,7 +4,6 @@ namespace Database\Seeders\RecipeResource;
 
 use App\Models\Category;
 use App\Models\Recipe;
-use App\Models\Resource;
 
 class Other extends RecipeResourceMain {
     protected function setCategory() {

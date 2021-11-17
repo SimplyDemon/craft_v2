@@ -44,7 +44,8 @@
                     Цена: {{number_format($recipePriceSell, 0, ' ', ' ')}}
                 @endif
             </h3>
-            @if($single)
+
+            @if(!$single->resources->isEmpty())
                 <h2>Закупка ресурсов у торговцев</h2>
                 <table class="table">
                     <thead>

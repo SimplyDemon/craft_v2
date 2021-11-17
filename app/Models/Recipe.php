@@ -25,7 +25,7 @@ class Recipe extends Model {
     public function getGradeImageAttribute() {
         $grade = $this->grade;
 
-        if ( empty( $grade ) ) {
+        if ( empty( $grade ) || $grade === 'none' ) {
             return null;
         }
 

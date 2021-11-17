@@ -38,9 +38,9 @@ class ArmorSeeder extends Seeder {
     protected Category $armorUniversalBootCategory;
     protected Category $armorUniversalGlovesCategory;
 
-    public function seedArmor() {
-        $this->setArmorCategories();
-        $this->addArmors();
+    public function seed() {
+	    $this->setArmorCategories();
+	    $this->addArmors();
     }
 
     protected function setArmorCategories() {

@@ -10,7 +10,7 @@ class JewelrySeeder extends Seeder {
     protected Category $jewelryEarringCategory;
     protected Category $jewelryRingCategory;
 
-    public function seedJewelry() {
+    public function seed() {
         $this->setJewelryCategories();
         $this->addJewelry();
     }

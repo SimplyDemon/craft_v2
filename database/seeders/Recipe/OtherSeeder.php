@@ -9,7 +9,7 @@ class OtherSeeder extends Seeder {
     protected Category $otherCategory;
     protected string $imagePath = 'other';
 
-    public function seedOther() {
+    public function seed() {
         $this->setOtherCategories();
         $this->addOther();
     }

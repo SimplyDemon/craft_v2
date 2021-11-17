@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Recipe;
+use App\Models\Resource;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
@@ -32,9 +33,15 @@ function copyFile( string $filePath, string $pathTo ) {
     return $explodedPath[1];
 }
 
-function seederAddRecipe( string $name, string $imagePath, int $price, string $grade, int $categoryId, int $craftCost = 0, string $percent = '60', $masterworkDescription = null, $masterworkName = null, $count = 1 ) {
+function seederAddRecipe( string $name, string $imagePath, int $price, string $grade, int $categoryId, int $craftCost = 0, string $percent = '60', $masterworkDescription = null, $masterworkName = null, $count = 1, $isResource = false ) {
     /* case for 100% recipes, don't want copy paste every image B-grade */
-    $imageName = str_replace( ' 100%', '', $name );
+    $imageName  = str_replace( ' 100%', '', $name );
+    $resourceId = null;
+    if ( $isResource ) {
+        $resource   = Resource::where( 'name', $name )->firstOrFail();
+        $price      = $resource->price_sell;
+        $resourceId = $resource->id;
+    }
 
     return Recipe::create( [
         'name'                   => $name,
@@ -48,6 +55,7 @@ function seederAddRecipe( string $name, string $imagePath, int $price, string $g
         'masterwork_description' => $masterworkDescription,
         'masterwork_name'        => $masterworkName,
         'craft_count'            => $count,
+        'resource_id'            => $resourceId,
     ] );
 }
 

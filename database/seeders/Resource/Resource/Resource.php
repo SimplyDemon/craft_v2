@@ -7,6 +7,121 @@ use Database\Seeders\Resource\ResourceMain;
 class Resource extends ResourceMain {
     protected function add() {
         $this->resources[] = [
+            'name'       => 'Steel',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Cokes',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Leather',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Cord',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Metallic Thread',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Braided Hemp',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Silver Nugget',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Mold Glue',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Mold Lubricant',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Mold Hardener',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Adamantite Nugget',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Mithril Ore',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Oriharukon Ore',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Coal',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Charcoal',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Suede',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Animal Bone',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Animal Skin',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Thread',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Iron Ore',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Varnish',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Stone of Purity',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Stem',
+            'price_sell' => 000000,
+            'price_buy'  => 000000,
+        ];
+        $this->resources[] = [
             'name'       => 'Adamantine',
             'price_sell' => 24000,
             'price_buy'  => 24000,
@@ -86,17 +201,6 @@ class Resource extends ResourceMain {
             'price_sell' => 18000,
             'price_buy'  => 12000,
         ];
-        $this->resources[] = [
-            'name'       => 'Spirit Ore',
-            'price_sell' => 440,
-            'price_buy'  => 440,
-        ];
-        $this->resources[] = [
-            'name'       => 'Soul Ore',
-            'price_sell' => 275,
-            'price_buy'  => 275,
-        ];
-
 
         $this->resources[] = [
             'name'       => 'Warsmith Holder',
@@ -153,21 +257,16 @@ class Resource extends ResourceMain {
             'price_sell' => 0,
             'price_buy'  => 0,
         ];
+        $this->resources[] = [
+            'name'       => 'Steel Mold',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+        ];
 
         $this->resources[] = [
-            'name'       => 'Crystal S',
-            'price_sell' => 15750,
-            'price_buy'  => 11100,
-        ];
-        $this->resources[] = [
-            'name'       => 'Crystal A',
-            'price_sell' => 17185,
-            'price_buy'  => 16500,
-        ];
-        $this->resources[] = [
-            'name'       => 'Crystal B',
-            'price_sell' => 13300,
-            'price_buy'  => 12300,
+            'name'       => 'Crystal D',
+            'price_sell' => 615,
+            'price_buy'  => 560,
         ];
         $this->resources[] = [
             'name'       => 'Crystal C',
@@ -175,14 +274,19 @@ class Resource extends ResourceMain {
             'price_buy'  => 3000,
         ];
         $this->resources[] = [
-            'name'       => 'Crystal D',
-            'price_sell' => 615,
-            'price_buy'  => 560,
+            'name'       => 'Crystal B',
+            'price_sell' => 13300,
+            'price_buy'  => 12300,
         ];
         $this->resources[] = [
-            'name'       => 'Gemstone (B-grade)',
-            'price_sell' => 11000,
-            'price_buy'  => 11000,
+            'name'       => 'Crystal A',
+            'price_sell' => 17185,
+            'price_buy'  => 16500,
+        ];
+        $this->resources[] = [
+            'name'       => 'Crystal S',
+            'price_sell' => 15750,
+            'price_buy'  => 11100,
         ];
         $this->resources[] = [
             'name'       => 'Gemstone (A-grade)',
@@ -195,5 +299,20 @@ class Resource extends ResourceMain {
             'price_buy'  => 380000,
         ];
 
+        $this->resources[] = [
+            'name'       => 'Gemstone (B-grade)',
+            'price_sell' => 11000,
+            'price_buy'  => 11000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Spirit Ore',
+            'price_sell' => 440,
+            'price_buy'  => 440,
+        ];
+        $this->resources[] = [
+            'name'       => 'Soul Ore',
+            'price_sell' => 275,
+            'price_buy'  => 275,
+        ];
     }
 }

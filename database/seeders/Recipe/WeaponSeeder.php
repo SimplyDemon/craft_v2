@@ -13,7 +13,7 @@ class WeaponSeeder extends Seeder {
     protected Category $polearmCategory;
     protected Category $fistCategory;
 
-    public function seedWeapon() {
+    public function seed() {
         $this->setWeaponCategories();
         $this->addWeapons();
     }

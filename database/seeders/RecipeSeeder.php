@@ -12,16 +12,20 @@ use Illuminate\Database\Seeder;
 
 class RecipeSeeder extends Seeder {
     public function run() {
-        $weaponSeeder = new WeaponSeeder();
-        $weaponSeeder->seedWeapon();
+	    $resource = new \Database\Seeders\Recipe\ResourceSeeder();
+	    $resource->seed();
 
-        $armorSeeder = new ArmorSeeder();
-        $armorSeeder->seedArmor();
+	    $weaponSeeder = new WeaponSeeder();
+	    $weaponSeeder->seed();
 
-        $jewelrySeeder = new JewelrySeeder();
-        $jewelrySeeder->seedJewelry();
+	    $armorSeeder = new ArmorSeeder();
+	    $armorSeeder->seed();
 
-        $other = new OtherSeeder();
-        $other->seedOther();
+	    $jewelrySeeder = new JewelrySeeder();
+	    $jewelrySeeder->seed();
+
+	    $other = new OtherSeeder();
+	    $other->seed();
+
     }
 }

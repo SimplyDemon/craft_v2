@@ -36,6 +36,7 @@ class RecipeResourceSeeder extends Seeder {
         $this->addShield();
         $this->addSigil();
         $this->addOther();
+        $this->addResource();
     }
 
 
@@ -162,5 +163,10 @@ class RecipeResourceSeeder extends Seeder {
     protected function addOther() {
         $other = new Other();
         $other->seed();
+    }
+
+    protected function addResource() {
+        $resource = new RecipeResource\Resource();
+        $resource->seed();
     }
 }
