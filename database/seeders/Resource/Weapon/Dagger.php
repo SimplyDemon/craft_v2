@@ -8,6 +8,117 @@ class Dagger extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'       => 'weapon',
+            'name'       => 'Kris Edge',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Kris (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Kris',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Twilight Knife Edge',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Twilight Knife (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Twilight Knife',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Demon\'s Dagger Edge',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Demon\'s Dagger (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Demon\'s Dagger',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Bloody Orchid Head',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Bloody Orchid (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Soul Separator Head',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Soul Separator (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Naga Storm Piece',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Naga Storm (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
             'name'       => 'Angel Slayer Blade',
             'price_sell' => 90000,
             'price_buy'  => 90000,

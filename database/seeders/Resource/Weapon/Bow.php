@@ -8,6 +8,95 @@ class Bow extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'                   => 'weapon',
+            'name'                   => 'Dark Elven Longbow Shaft',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Dark Elven Longbow (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Dark Elven Longbow',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Bow of Peril Shaft',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Bow of Peril (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Bow of Peril',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Carnage Bow Shaft',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Carnage Bow (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Soul Bow Shaft',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Soul Bow (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Shyeed\'s Bow Shaft',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Shyeed\'s Bow (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeAImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
             'name'                   => 'Draconic Bow Shaft',
             'price_sell'             => 70000,
             'price_buy'              => 70000,

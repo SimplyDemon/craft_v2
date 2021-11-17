@@ -129,6 +129,13 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->bowCategory->id;
         $imagePath  = 'item/weapon/bow';
 
+        seederAddRecipe( 'Dark Elven Longbow', $imagePath, 0, 'B', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Dark Elven Longbow 100%', $imagePath, 0, 'B', $categoryId, 0, '100', '', '' );
+        seederAddRecipe( 'Bow of Peril', $imagePath, 0, 'B', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Bow of Peril 100%', $imagePath, 0, 'B', $categoryId, 0, '100', '', '' );
+        seederAddRecipe( 'Carnage Bow', $imagePath, 0, 'A', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Soul Bow', $imagePath, 0, 'A', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Shyeed\'s Bow', $imagePath, 0, 'A', $categoryId, 0, '60', '', '' );
         seederAddRecipe( 'Draconic Bow', $imagePath, 60000000, 'S', $categoryId, 0, '60', 'Adds Max HP by 444', 'Earth' );
         seederAddRecipe( 'Dynasty Bow', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale' );
         seederAddRecipe( 'Icarus Spitter', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Adds Accuracy Combat by 3.3', 'Concentration' );
@@ -139,6 +146,15 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->daggerCategory->id;
         $imagePath  = 'item/weapon/dagger';
 
+        seederAddRecipe( 'Kris', $imagePath, 0, 'B', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Kris 100%', $imagePath, 0, 'B', $categoryId, 0, '100', '', '' );
+        seederAddRecipe( 'Twilight Knife', $imagePath, 0, 'B', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Twilight Knife 100%', $imagePath, 0, 'B', $categoryId, 0, '100', '', '' );
+        seederAddRecipe( 'Demon\'s Dagger', $imagePath, 0, 'B', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Demon\'s Dagger 100%', $imagePath, 0, 'B', $categoryId, 0, '100', '', '' );
+        seederAddRecipe( 'Bloody Orchid', $imagePath, 0, 'A', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Soul Separator', $imagePath, 0, 'A', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Naga Storm', $imagePath, 0, 'A', $categoryId, 0, '60', '', '' );
         seederAddRecipe( 'Angel Slayer', $imagePath, 0, 'S', $categoryId, 0, '60', 'Adds Accuracy Combat by 3.3', 'Concentration' );
         seederAddRecipe( 'Dynasty Knife', $imagePath, 230000000, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale' );
         seederAddRecipe( 'Icarus Disperser', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Adds Rate Evasion by 3.3', 'Confusion' );
@@ -149,6 +165,13 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->polearmCategory->id;
         $imagePath  = 'item/weapon/polearm';
 
+        seederAddRecipe( 'Great Axe', $imagePath, 0, 'B', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Great Axe 100%', $imagePath, 0, 'B', $categoryId, 0, '100', '', '' );
+        seederAddRecipe( 'Lance', $imagePath, 0, 'B', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Lance 100%', $imagePath, 0, 'B', $categoryId, 0, '100', '', '' );
+        seederAddRecipe( 'Halberd', $imagePath, 0, 'A', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Tallum Glaive', $imagePath, 0, 'A', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Tiphon\'s Spear', $imagePath, 0, 'A', $categoryId, 0, '60', '', '' );
         seederAddRecipe( 'Saint Spear', $imagePath, 65000000, 'S', $categoryId, 0, '60', 'Adds P.Atk by 31.25', 'Destruction' );
         seederAddRecipe( 'Dynasty Halberd', $imagePath, 160000000, 'S', $categoryId, 0, '60', 'Adds Max HP by 492', 'Earth' );
         seederAddRecipe( 'Icarus Trident', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Adds Crit. Atk Add by 377', 'Thunder' );
@@ -159,6 +182,13 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->fistCategory->id;
         $imagePath  = 'item/weapon/fist';
 
+        seederAddRecipe( 'Arthro Nail', $imagePath, 0, 'B', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Arthro Nail 100%', $imagePath, 0, 'B', $categoryId, 0, '100', '', '' );
+        seederAddRecipe( 'Bellion Cestus', $imagePath, 0, 'B', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Bellion Cestus 100%', $imagePath, 0, 'B', $categoryId, 0, '100', '', '' );
+        seederAddRecipe( 'Blood Tornado', $imagePath, 0, 'A', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Dragon Grinder', $imagePath, 0, 'A', $categoryId, 0, '60', '', '' );
+        seederAddRecipe( 'Sobekk\'s Hurricane', $imagePath, 0, 'A', $categoryId, 0, '60', '', '' );
         seederAddRecipe( 'Demon Splinter', $imagePath, 50000000, 'S', $categoryId, 0, '60', 'Adds Crit. Atk Add by 528', 'Thunder' );
         seederAddRecipe( 'Dynasty Bagh-Nakh', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale' );
         seederAddRecipe( 'Icarus Hand', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Adds P.Atk by 51.26', 'Destruction' );
