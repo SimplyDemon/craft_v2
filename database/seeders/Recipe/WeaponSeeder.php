@@ -95,7 +95,7 @@ class WeaponSeeder extends Seeder {
         seederAddRecipe( 'Staff of Evil Spirits 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Bonus Hp by 33', 'Holy Spirit' );
         seederAddRecipe( 'Kaim Vanul\'s Bones', $imagePath, 0, 'B', $categoryId, 0, '60', 'Adds Max HP by 319', 'Earth' );
         seederAddRecipe( 'Kaim Vanul\'s Bones 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds Max HP by 319', 'Earth' );
-        seederAddRecipe( 'Star Buster', $imagePath, 0, 'B', $categoryId, 0, '60', '', 'Great Gale' );
+        seederAddRecipe( 'Star Buster', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale' );
         seederAddRecipe( 'Star Buster 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies P.Atk Speed by 1.05', 'Great Gale' );
         seederAddRecipe( 'Dasparion\'s Staff', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds M.Atk by 27.63', 'Hail' );
         seederAddRecipe( 'Meteor Shower', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Max HP by 345', 'Earth' );
