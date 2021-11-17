@@ -356,7 +356,7 @@ class Resource extends RecipeResourceMain {
     }
 
     protected function addArtisansFrame() {
-        $item = Recipe::where( 'name', 'Artisans Frame' )->firstOrFail();
+        $item = Recipe::where( 'name', 'Artisan\'s Frame' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [
@@ -400,7 +400,7 @@ class Resource extends RecipeResourceMain {
     }
 
     protected function addArcsmithAnvil() {
-        $item = Recipe::where( 'name', 'Arcsmith Anvil' )->firstOrFail();
+        $item = Recipe::where( 'name', 'Arcsmith\' Anvil' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [
@@ -422,7 +422,7 @@ class Resource extends RecipeResourceMain {
     }
 
     protected function addReorinsMold() {
-        $item = Recipe::where( 'name', 'Reorins Mold' )->firstOrFail();
+        $item = Recipe::where( 'name', 'Reorin\'s Mold' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [
@@ -444,7 +444,7 @@ class Resource extends RecipeResourceMain {
     }
 
     protected function addWarsmithMold() {
-        $item = Recipe::where( 'name', 'Warsmith Mold' )->firstOrFail();
+        $item = Recipe::where( 'name', 'Warsmith\' Mold' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [
@@ -488,7 +488,7 @@ class Resource extends RecipeResourceMain {
     }
 
     protected function addBlacksmithFrame() {
-        $item = Recipe::where( 'name', 'Blacksmith Frame' )->firstOrFail();
+        $item = Recipe::where( 'name', 'Blacksmith\' Frame' )->firstOrFail();
 
         $resources   = [];
         $resources[] = [

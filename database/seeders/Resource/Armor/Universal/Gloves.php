@@ -8,6 +8,28 @@ class Gloves extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'                  => 'armor',
+            'name'                  => 'Doom Gloves Part',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Doom Gloves (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Doom Gloves',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
             'name'                  => 'Zubei\'s Gauntlets Part',
             'price_sell'            => 0,
             'price_buy'             => 0,

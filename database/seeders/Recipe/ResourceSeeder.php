@@ -42,13 +42,13 @@ class ResourceSeeder extends Seeder {
         seederAddRecipe( 'Braided Hemp', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
 
         seederAddRecipe( 'Warsmith Holder', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
-        seederAddRecipe( 'Artisans Frame', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
+        seederAddRecipe( 'Artisan\'s Frame', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
         seederAddRecipe( 'Craftsman Mold', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
-        seederAddRecipe( 'Arcsmith Anvil', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
-        seederAddRecipe( 'Reorins Mold', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
-        seederAddRecipe( 'Warsmith Mold', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
+        seederAddRecipe( 'Arcsmith\' Anvil', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
+        seederAddRecipe( 'Reorin\'s Mold', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
+        seederAddRecipe( 'Warsmith\' Mold', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
         seederAddRecipe( 'Maestro Mold', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
-        seederAddRecipe( 'Blacksmith Frame', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
+        seederAddRecipe( 'Blacksmith\' Frame', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
         seederAddRecipe( 'Maestro Anvil Lock', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
         seederAddRecipe( 'Silver Mold', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
         seederAddRecipe( 'Maestro Holder', $this->imagePath, 0, 'none', $this->resourceCategory->id, 0, '100', null, null, 1, true );
