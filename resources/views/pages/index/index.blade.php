@@ -1,10 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-    @if(isset($title))
-@section('title', $title)
-@endif
-
 <div class="nk-main">
     <div class="nk-header-title nk-header-title-lg nk-header-title-parallax nk-header-title-parallax-opacity">
         <div class="bg-image">

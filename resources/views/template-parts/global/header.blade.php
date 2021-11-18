@@ -19,7 +19,12 @@ $_SESSION['isAnimationWasShowed'] = true;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Craft Calc Asterios @yield('title','')</title>
+    @if(View::hasSection('title'))
+        <title>Craft Calc Asterios @yield('title')</title>
+    @else
+        <title>Craft Calc Asterios</title>
+    @endif
+
     <meta name="keywords" content="@yield('meta_keywords','крафт крафта крафтинг калькулятор кальк астериос asterios calculator craft calc crafting')">
     <meta name="description" content="@yield('meta_description','Craft calculator for server Asterios. Калькулятор крафта для сервера Астериос.')">
     <meta name="author" content="Craft Calc">
