@@ -31,7 +31,10 @@ class CategoryController extends Controller {
             $i ++;
         }
 
-        return view( $this->folderPath . 'index', [ 'all' => $all ] );
+        return view( $this->folderPath . 'index', [
+            'all'   => $all,
+            'title' => 'Все категории',
+        ] );
     }
 
     public function create() {

@@ -8,23 +8,28 @@ $isEnableAnimation                = ( $isAuth && $user->isEnableAnimation ) || $
 $_SESSION['isAnimationWasShowed'] = true;
 ?>
     <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="ru-RU">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Craft them all">
+    <meta name="description" content="Craft Calc">
+
+    <title>Craft Calc Asterios @yield('title','')</title>
+    <meta name="keywords" content="@yield('meta_keywords','крафт крафта крафтинг калькулятор кальк астериос asterios calculator craft calc crafting')">
+    <meta name="description" content="@yield('meta_description','Craft calculator for server Asterios. Калькулятор крафта для сервера Астериос.')">
     <meta name="author" content="Craft Calc">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Craft Calc') }}</title>
-
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
-
+    <link rel="canonical" href="{{route('index')}}" />
+    @if (Route::is('index'))
+        <link rel="canonical" href="{{route('recipes.index')}}" />
+    @endif
 </head>
 
 <body>

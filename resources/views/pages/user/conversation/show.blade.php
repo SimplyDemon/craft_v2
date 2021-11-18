@@ -1,15 +1,18 @@
 @extends('pages.user.main-template', ['title' => $title ?? 'Craft Calc'])
 @section('user-content')
-    <?php $currentUser = auth()->user() ?>
+    @if(isset($title))
+@section('title', ' - ' . $title)
+@endif
+<?php $currentUser = auth()->user() ?>
 
-    <div class="nk-social-container">
-        <!-- START: Messages -->
-        <h2 class="nk-title">Переписка</h2>
-        @if(!$messages->isEmpty())
-            @foreach($messages as $message)
-                <div class="nk-social-messages-single">
-                    <div class="nk-social-messages-single-content text-position-{{$currentUser->id === $message->user->id ? 'right' : 'left' }}">
-                        <div class="nk-social-messages-single-meta">
+<div class="nk-social-container">
+    <!-- START: Messages -->
+    <h2 class="nk-title">Переписка</h2>
+    @if(!$messages->isEmpty())
+        @foreach($messages as $message)
+            <div class="nk-social-messages-single">
+                <div class="nk-social-messages-single-content text-position-{{$currentUser->id === $message->user->id ? 'right' : 'left' }}">
+                    <div class="nk-social-messages-single-meta">
                             <p><b>{{$message->user->name}}</b> {{date('d-m-Y H:i:s',strtotime($message->created_at))}}
                             </p>
                         </div>

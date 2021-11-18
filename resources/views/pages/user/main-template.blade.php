@@ -1,15 +1,18 @@
 @extends('layouts.app')
 @section('content')
-    <?php
-    $user = auth()->user();
-    $isAuth = $user;
-    $isCanUpdatePrice = $isAuth && $user->isCanUpdatePrice;
-    ?>
-    <div class="nk-main">
+    @if(isset($title))
+@section('title', ' - ' . $title)
+@endif
+<?php
+$user = auth()->user();
+$isAuth = $user;
+$isCanUpdatePrice = $isAuth && $user->isCanUpdatePrice;
+?>
+<div class="nk-main">
 
-        <!-- START: Header Title -->
-        <div class="nk-box">
-            <div class="container">
+    <!-- START: Header Title -->
+    <div class="nk-box">
+        <div class="container">
                 <div class="nk-gap-5"></div>
                 <h1 class="nk-title">{{ $title ?? 'Личный кабинет' }}</h1>
                 <div class="nk-gap-4"></div>

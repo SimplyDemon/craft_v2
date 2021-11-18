@@ -1,16 +1,18 @@
 @extends('layouts.app')
 @section('content')
+    @if(isset($title))
+@section('title', ' - ' . $title)
+@endif
+<div class="nk-main">
 
-    <div class="nk-main">
-
-        <!-- START: Header Title -->
-        <div class="nk-box">
-            <div class="container">
-                <div class="nk-gap-5"></div>
-                <h1 class="nk-title">{{ $title ?? 'Цены админа' }}</h1>
-                <div class="nk-gap-4"></div>
-            </div>
+    <!-- START: Header Title -->
+    <div class="nk-box">
+        <div class="container">
+            <div class="nk-gap-5"></div>
+            <h1 class="nk-title">{{ $title ?? 'Цены админа' }}</h1>
+            <div class="nk-gap-4"></div>
         </div>
+    </div>
         <!-- END: Header Title -->
 
         <div class="container">
