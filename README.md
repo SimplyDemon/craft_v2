@@ -118,6 +118,8 @@
 
 ## Optimise
 
-php artisan route:cache - cache all routes php artisan route:clear - if need add routes
+- php artisan route:cache - cache all routes
+- php artisan route:clear - if need add routes
 
-php artisan config:cache - config all caches php artisan config:clear - if need update config
+- php artisan config:cache - config all caches
+- php artisan config:clear - if need update config
