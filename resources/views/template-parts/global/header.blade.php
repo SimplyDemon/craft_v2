@@ -5,8 +5,11 @@ $isAdmin = $isAuth && $user->isAdmin;
 if ( ! isset( $_SESSION ) ) {
     session_start();
 }
+$agent    = new \Jenssegers\Agent\Agent();
+$isMobile = $agent->isMobile();
+
 $isActivateFirstTimeAnimation     = ! isset( $_SESSION['isAnimationWasShowed'] );
-$isEnableAnimation                = ( $isAuth && $user->isEnableAnimation ) || $isActivateFirstTimeAnimation;
+$isEnableAnimation                = ( $isAuth && $user->isEnableAnimation ) || ( $isActivateFirstTimeAnimation && ! $isMobile );
 $_SESSION['isAnimationWasShowed'] = true;
 ?>
     <!DOCTYPE html>

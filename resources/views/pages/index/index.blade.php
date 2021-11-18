@@ -4,16 +4,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
-<?php
-$user = auth()->user();
-$isAuth = $user;
 
-if ( ! isset( $_SESSION ) ) {
-    session_start();
-}
-$isActivateFirstTimeAnimation = ! isset( $_SESSION['isAnimationWasShowed'] );
-$isEnableAnimation = ( $isAuth && $user->isEnableAnimation ) || $isActivateFirstTimeAnimation;
-?>
 <div class="nk-main">
     <div class="nk-header-title nk-header-title-lg nk-header-title-parallax nk-header-title-parallax-opacity">
         <div class="bg-image">
@@ -78,7 +69,7 @@ $isEnableAnimation = ( $isAuth && $user->isEnableAnimation ) || $isActivateFirst
         <div class="nk-gap-6"></div>
     </div>
 
-    <div class="nk-box bg-dark-1 {{$isEnableAnimation ? '' : 'sd-background'}}">
+    <div class="nk-box bg-dark-1 sd-background">
         <div class="container text-center">
             <div class="nk-gap-6"></div>
             <div class="nk-gap-2"></div>
