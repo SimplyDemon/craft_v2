@@ -18,7 +18,6 @@ if ( $single->masterwork_description ) {
     ?>
     <div class="nk-main">
 
-        <!-- START: Header Title -->
         <div class="nk-box">
             <div class="container">
                 <div class="nk-gap-5"></div>
@@ -26,7 +25,6 @@ if ( $single->masterwork_description ) {
                 <div class="nk-gap-4"></div>
             </div>
         </div>
-        <!-- END: Header Title -->
 
         <div class="container">
 
@@ -222,7 +220,6 @@ if ( $single->masterwork_description ) {
         </div>
 
     </div>
-
 
 @endsection
 

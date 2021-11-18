@@ -20,10 +20,8 @@ $_SESSION['isAnimationWasShowed'] = true;
     <meta name="description" content="@yield('meta_description','Craft calculator for server Asterios. Калькулятор крафта для сервера Астериос.')">
     <meta name="author" content="Craft Calc">
 
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     <link rel="canonical" href="{{route('index')}}" />
@@ -35,11 +33,6 @@ $_SESSION['isAnimationWasShowed'] = true;
 <body>
 @if($isEnableAnimation)
     <div class="nk-preloader">
-        <!--
-             Preloader animation
-             data-close-... data used for closing preloader
-             data-open-...  data used for opening preloader
-        -->
     <div class="nk-preloader-bg"
          style="background-color: #000;"
          data-close-frames="23"
@@ -70,9 +63,7 @@ $_SESSION['isAnimationWasShowed'] = true;
 </div>
 
 <header class="nk-header nk-header-opaque">
-
     @include('template-parts.global.header-main-menu')
-
 </header>
 
 <nav class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-lg nk-navbar-align-center nk-navbar-overlay-content" id="nk-side">
@@ -92,17 +83,6 @@ $_SESSION['isAnimationWasShowed'] = true;
     </div>
 </nav>
 
-<!--
-START: Navbar Mobile
-
-Additional Classes:
-.nk-navbar-left-side
-.nk-navbar-right-side
-.nk-navbar-lg
-.nk-navbar-overlay-content
-.nk-navbar-light
-.nk-navbar-no-link-effect
--->
 <div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-left-side nk-navbar-overlay-content d-lg-none">
     <div class="nano">
         <div class="nano-content">
@@ -117,7 +97,6 @@ Additional Classes:
         </div>
     </div>
 </div>
-<!-- END: Navbar Mobile -->
 
 @if($errors->any())
     @foreach ($errors->all() as $error)

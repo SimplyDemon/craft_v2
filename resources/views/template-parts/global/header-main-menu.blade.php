@@ -1,13 +1,3 @@
-<!--
-        START: Navbar
-
-        Additional Classes:
-            .nk-navbar-sticky
-            .nk-navbar-transparent
-            .nk-navbar-autohide
-            .nk-navbar-light
-            .nk-navbar-no-link-effect
-    -->
 <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-autohide">
     <div class="container">
         <div class="nk-nav-table">
@@ -15,7 +5,6 @@
             <a href="{{route('index')}}" class="nk-nav-logo">
                 <img src="{{ asset('images/logo.webp' ) }}" alt="" width="90">
             </a>
-
 
             <ul class="nk-nav nk-nav-right d-none d-lg-block" data-nav-mobile="#nk-nav-mobile">
                 <li class="{{Route::is('index') ? 'active' : ''}}">
@@ -103,4 +92,3 @@
         </div>
     </div>
 </nav>
-<!-- END: Navbar -->

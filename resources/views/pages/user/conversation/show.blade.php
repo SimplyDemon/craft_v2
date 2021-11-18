@@ -6,7 +6,6 @@
 <?php $currentUser = auth()->user() ?>
 
 <div class="nk-social-container">
-    <!-- START: Messages -->
     <h2 class="nk-title">Переписка</h2>
     @if(!$messages->isEmpty())
         @foreach($messages as $message)
@@ -41,7 +40,6 @@
             </div>
         </form>
 
-        <!-- END: Messages -->
     </div>
 
 @endsection

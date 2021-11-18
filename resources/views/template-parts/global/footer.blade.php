@@ -1,9 +1,3 @@
-<!-- START: Footer -->
-<!--
-    Additional Classes:
-        .nk-footer-parallax
-        .nk-footer-parallax-opacity
--->
 <footer class="nk-footer nk-footer-parallax nk-footer-parallax-opacity">
     <img class="nk-footer-top-corner" src="{{ asset('images/footer-corner.webp' ) }}" alt="">
 
@@ -21,22 +15,10 @@
             &copy; 2021
         </p>
 
-        {{--        <div class="nk-footer-links">--}}
-        {{--            <a href="#" class="link-effect">Terms of Service</a> <span>|</span>--}}
-        {{--            <a href="#" class="link-effect">Privacy Policy</a>--}}
-        {{--        </div>--}}
-
         <div class="nk-gap-4"></div>
     </div>
 </footer>
-<!-- END: Footer -->
 
-<!--
-START: Sign Form
-
-Additional Classes:
-.nk-sign-form-light
--->
 <div class="nk-sign-form">
     <div class="nk-gap-5"></div>
     <div class="container">
@@ -49,7 +31,6 @@ Additional Classes:
                     </div>
                     <div class="nk-gap-2"></div>
 
-                    <!-- START: Login Form -->
                     <form method="post" class="nk-sign-form-login active" action="{{ route('login') }}">
                         @csrf
                         <input class="form-control" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email">
@@ -71,9 +52,7 @@ Additional Classes:
                         <div class="clearfix"></div>
                         <div class="nk-gap-1"></div>
                     </form>
-                    <!-- END: Login Form -->
 
-                    <!-- START: Register Form -->
                     <form class="nk-sign-form-register" method="POST" action="{{ route('register') }}">
                         @csrf
                         <input class="form-control" type="text" placeholder="Имя" name="name"
@@ -91,11 +70,10 @@ Additional Classes:
                         <div class="nk-gap-2"></div>
                         <button class="nk-btn nk-btn-color-white link-effect-4 float-right">Регистрация</button>
                     </form>
-                    <!-- END: Register Form -->
+
                 </div>
             </div>
         </div>
     </div>
     <div class="nk-gap-5"></div>
 </div>
-<!-- END: Sign Form -->

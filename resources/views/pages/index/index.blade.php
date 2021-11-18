@@ -11,7 +11,6 @@ $isActivateFirstTimeAnimation = ! isset( $_SESSION['isAnimationWasShowed'] );
 $isEnableAnimation = ( $isAuth && $user->isEnableAnimation ) || $isActivateFirstTimeAnimation;
 ?>
 <div class="nk-main">
-    <!-- START: Header Title -->
     <div class="nk-header-title nk-header-title-lg nk-header-title-parallax nk-header-title-parallax-opacity">
         <div class="bg-image">
             <img src="{{ asset('images/index.webp' ) }}" alt="" class="jarallax-img">
@@ -32,9 +31,7 @@ $isEnableAnimation = ( $isAuth && $user->isEnableAnimation ) || $isActivateFirst
         </div>
 
     </div>
-    <!-- END: Header Title -->
 
-    <!-- START: Features -->
     <div class="container">
         <div class="nk-gap-6"></div>
         <div class="nk-gap-2"></div>
@@ -76,9 +73,7 @@ $isEnableAnimation = ( $isAuth && $user->isEnableAnimation ) || $isActivateFirst
         <div class="nk-gap-2"></div>
         <div class="nk-gap-6"></div>
     </div>
-    <!-- END: Features -->
 
-    <!-- START: About -->
     <div class="nk-box bg-dark-1 {{$isEnableAnimation ? '' : 'sd-background'}}">
         <div class="container text-center">
             <div class="nk-gap-6"></div>
@@ -124,7 +119,7 @@ $isEnableAnimation = ( $isAuth && $user->isEnableAnimation ) || $isActivateFirst
         <div class="nk-gap-4"></div>
     </div>
 </div>
-<!-- END: About -->
+
 <div class="nk-box">
     <div class="nk-gap-4"></div>
     <div class="container">
@@ -145,7 +140,7 @@ $inProgresses = [
 ];
 ?>
 
-<!-- START: Carousel -->
+
     <div class="nk-carousel-2 nk-carousel-x1" data-autoplay="12000" data-dots="true">
         <div class="nk-carousel-inner">
             @foreach($inProgresses as $inProgress)
