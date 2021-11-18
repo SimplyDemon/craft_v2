@@ -114,3 +114,8 @@
 - php7.4 artisan migrate:fresh --seed
 - COMPOSER_MEMORY_LIMIT=-1 composer-php7.4 update
 
+## Optimise
+
+php artisan route:cache - cache all routes php artisan route:clear - if need add routes
+
+php artisan config:cache - config all caches php artisan config:clear - if need update config
