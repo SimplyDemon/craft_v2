@@ -34,7 +34,7 @@
             </label>
             <input class="form-control" type="file" name="image" id="image">
             @if (isset($single->img))
-                <img src="{{asset('storage/' . $single->img)}}" width="100" height="100">
+                <img src="{{asset('storage/' . $single->img)}}" width="100" height="100" alt="edit">
             @endif
         </div>
 

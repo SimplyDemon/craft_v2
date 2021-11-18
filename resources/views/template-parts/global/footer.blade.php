@@ -1,5 +1,5 @@
 <footer class="nk-footer nk-footer-parallax nk-footer-parallax-opacity">
-    <img class="nk-footer-top-corner" src="{{ asset('images/footer-corner.webp' ) }}" alt="">
+    <img class="nk-footer-top-corner" src="{{ asset('images/footer-corner.webp' ) }}" alt="footer-corner">
 
 
     <div class="container">

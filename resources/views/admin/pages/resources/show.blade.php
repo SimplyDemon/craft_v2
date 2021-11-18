@@ -23,7 +23,7 @@
             Ссылка на изображение: {{asset('storage/') . $single->img}}
         </li>
         <li class="list-group-item">
-            Изображение: <img src="{{asset('storage/' . $single->img)}}" width="100" height="100">
+            Изображение: <img src="{{asset('storage/' . $single->img)}}" width="100" height="100" alt="img">
         </li>
         <li class="list-group-item">
             Дата создания: {{$single->created_at}}

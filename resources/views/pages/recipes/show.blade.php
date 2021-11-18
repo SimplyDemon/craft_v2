@@ -29,7 +29,7 @@ if ( $single->masterwork_description ) {
         <div class="container">
 
             <h3>
-                <img width="50px" src="{{asset('storage') . '/' . $single->img}}">
+                <img width="50px" src="{{asset('storage') . '/' . $single->img}}" alt="show">
                 @if($single->gradeImage)
                     <img class="grade" src="{{$single->gradeImage}}" alt="grade">
                 @endif
@@ -82,7 +82,7 @@ if ( $single->masterwork_description ) {
 
                             ?>
                             <td>
-                                <img width="30px" src="{{asset('storage') . '/' . $resource->img}}">{{$resource->name}}
+                                <img width="30px" src="{{asset('storage') . '/' . $resource->img}}" alt="resource">{{$resource->name}}
                             </td>
                             <td>
                                 {{$resourceQuantity}}
@@ -165,7 +165,7 @@ if ( $single->masterwork_description ) {
                             $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . number_format( $resourceAdminLinePrice, 0, ' ', ' ' ) . '</b>';
                             ?>
                             <td>
-                                <img width="30px" src="{{asset('storage') . '/' . $resource->img}}">{{$resource->name}}
+                                <img width="30px" src="{{asset('storage') . '/' . $resource->img}}" alt="resurce">{{$resource->name}}
                             </td>
                             <td>
                                 {{$resourceQuantity}}

@@ -27,7 +27,7 @@
         @foreach($items as $single)
             <tr class="collapse {{$collapseClass}} show">
                 <td>
-                    <img src="{{asset('storage/' . $single->img)}}">{{$single->name}}
+                    <img src="{{asset('storage/' . $single->img)}}" alt="img">{{$single->name}}
                 </td>
                 <td>
                     <input class="form-control" name="{{$prefix}}[{{$single->id}}][price_sell]" type="number" step="1" value="{{$single->pivot->price_sell ?? $single->price_sell}}">

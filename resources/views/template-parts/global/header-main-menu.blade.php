@@ -3,7 +3,7 @@
         <div class="nk-nav-table">
 
             <a href="{{route('index')}}" class="nk-nav-logo">
-                <img src="{{ asset('images/logo.webp' ) }}" alt="" width="90">
+                <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="90">
             </a>
 
             <ul class="nk-nav nk-nav-right d-none d-lg-block" data-nav-mobile="#nk-nav-mobile">

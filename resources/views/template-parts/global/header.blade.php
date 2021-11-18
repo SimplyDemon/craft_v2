@@ -24,12 +24,6 @@ $_SESSION['isAnimationWasShowed'] = true;
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-
-    <link rel="canonical" href="{{route('index')}}" />
-    @if (Route::is('index'))
-        <link rel="canonical" href="{{route('recipes.index')}}" />
-    @endif
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-87WEW2EL6C"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -42,6 +36,35 @@ $_SESSION['isAnimationWasShowed'] = true;
 
         gtag( 'config', 'G-87WEW2EL6C' );
     </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function( m, e, t, r, i, k, a ) {
+            m[ i ]   = m[ i ] || function() {
+                (m[ i ].a = m[ i ].a || []).push( arguments )
+            };
+            m[ i ].l = 1 * new Date();
+            k = e.createElement( t ), a = e.getElementsByTagName( t )[ 0 ], k.async = 1, k.src = r, a.parentNode.insertBefore( k, a )
+        })
+        ( window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym" );
+
+        ym( 86545727, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+        } );
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/86545727" style="position:absolute; left:-9999px;" alt="ya" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+    <link rel="canonical" href="{{route('index')}}" />
+    @if (Route::is('index'))
+        <link rel="canonical" href="{{route('recipes.index')}}" />
+    @endif
 </head>
 
 <body>
@@ -52,21 +75,21 @@ $_SESSION['isAnimationWasShowed'] = true;
              data-close-frames="23"
              data-close-speed="1.2"
              data-close-sprites="{{ asset('images/preloader-bg.webp' ) }}"
-         data-open-frames="23"
-         data-open-speed="1.2"
-         data-open-sprites="{{ asset('images/preloader-bg-bw.webp' ) }}">
-    </div>
-
-    <div class="nk-preloader-content">
-        <div>
-            <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="Craft Calc - Gaming Bootstrap 4 Template" width="170">
-            <div class="nk-preloader-animation"></div>
+             data-open-frames="23"
+             data-open-speed="1.2"
+             data-open-sprites="{{ asset('images/preloader-bg-bw.webp' ) }}">
         </div>
+
+        <div class="nk-preloader-content">
+            <div>
+                <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="Craft Calc Asterios" width="170">
+                <div class="nk-preloader-animation"></div>
+            </div>
+        </div>
+
     </div>
 
-</div>
-
-<div class="nk-page-background op-5" data-video="https://youtu.be/UkeDo1LhUqQ" data-video-loop="true" data-video-mute="true" data-video-volume="0" data-video-start-time="0" data-video-end-time="0" data-video-pause-on-page-leave="true" style="background-image: url('{{ asset('images/page-background.webp' ) }}');"></div>
+    <div class="nk-page-background op-5" data-video="https://youtu.be/UkeDo1LhUqQ" data-video-loop="true" data-video-mute="true" data-video-volume="0" data-video-start-time="0" data-video-end-time="0" data-video-pause-on-page-leave="true" style="background-image: url('{{ asset('images/page-background.webp' ) }}');"></div>
 @endif
 
 <div class="nk-page-border">
@@ -101,7 +124,7 @@ $_SESSION['isAnimationWasShowed'] = true;
     <div class="nano">
         <div class="nano-content">
             <a href="{{route('index')}}" class="nk-nav-logo">
-                <img src="{{ asset('images/logo.webp' ) }}" alt="" width="90">
+                <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="90">
             </a>
             <div class="nk-navbar-mobile-content">
                 <ul class="nk-nav">
