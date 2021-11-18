@@ -40,7 +40,7 @@ $isAdmin = $isAuth && $user->isAdmin;
                 <form action="{{route('search')}}" method="get">
                     @csrf
                     <div class="input-group">
-                        <input type="text" class="form-control" name="s" placeholder="Поиск" aria-label="" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" name="s" placeholder="Поиск" aria-label="">
                         <div class="input-group-prepend">
                             <button class="btn btn-outline-secondary">Найти</button>
                         </div>
