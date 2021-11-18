@@ -30,16 +30,28 @@ $_SESSION['isAnimationWasShowed'] = true;
     @if (Route::is('index'))
         <link rel="canonical" href="{{route('recipes.index')}}" />
     @endif
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-87WEW2EL6C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push( arguments );
+        }
+
+        gtag( 'js', new Date() );
+
+        gtag( 'config', 'G-87WEW2EL6C' );
+    </script>
 </head>
 
 <body>
 @if($isEnableAnimation)
     <div class="nk-preloader">
-    <div class="nk-preloader-bg"
-         style="background-color: #000;"
-         data-close-frames="23"
-         data-close-speed="1.2"
-         data-close-sprites="{{ asset('images/preloader-bg.webp' ) }}"
+        <div class="nk-preloader-bg"
+             style="background-color: #000;"
+             data-close-frames="23"
+             data-close-speed="1.2"
+             data-close-sprites="{{ asset('images/preloader-bg.webp' ) }}"
          data-open-frames="23"
          data-open-speed="1.2"
          data-open-sprites="{{ asset('images/preloader-bg-bw.webp' ) }}">
