@@ -28,7 +28,7 @@ class IndexController extends Controller {
 
         return view( 'pages.index.index', [
             'subclassBossesDeathTime' => $subclassBossesDeathTime,
-            'title'                   => 'Craft Calc Asterios',
+            'title'                   => 'Калькулятор крафта Asterios',
         ] );
     }
 

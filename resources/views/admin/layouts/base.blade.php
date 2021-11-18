@@ -3,7 +3,7 @@ $user    = auth()->user();
 $isAuth  = $user;
 $isAdmin = $isAuth && $user->isAdmin;
 ?>
-<!doctype html>
+    <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -12,7 +12,7 @@ $isAdmin = $isAuth && $user->isAdmin;
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Craft Calc') }}</title>
+    <title>{{ config('app.name', 'Калькулятор крафта Asterios') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
@@ -32,7 +32,7 @@ $isAdmin = $isAuth && $user->isAdmin;
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('index') }}">
-                    Craft Calc
+                    Калькулятор крафта
                 </a>
                 <a class="navbar-brand" href="{{ route('recipes.index') }}">
                     Вещи

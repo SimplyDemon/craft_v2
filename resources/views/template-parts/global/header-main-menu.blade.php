@@ -9,7 +9,7 @@
             <ul class="nk-nav nk-nav-right d-none d-lg-block" data-nav-mobile="#nk-nav-mobile">
                 <li class="{{Route::is('index') ? 'active' : ''}}">
                     <a href="{{route('index')}}">
-                        Craft Calc
+                        Калькулятор крафта
                     </a>
                 </li>
                 <li>

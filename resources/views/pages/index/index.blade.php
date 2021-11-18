@@ -1,27 +1,27 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="nk-main">
-    <div class="nk-header-title nk-header-title-lg nk-header-title-parallax nk-header-title-parallax-opacity">
-        <div class="bg-image">
-            <img src="{{ asset('images/index.webp' ) }}" alt="index" class="jarallax-img">
-        </div>
-        <div class="nk-header-table">
-            <div class="nk-header-table-cell">
-                <div class="container">
-                    <div class="nk-header-text">
-                        <h1 class="nk-title display-3">{{$title ?? 'Craft Calc'}}</h1>
-                        <div class="nk-gap-2"></div>
-                        <a href="{{route('recipes.index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-4">
-                            <span>Каталог предметов</span>
-                        </a>
-                        <div class="nk-gap-4"></div>
+    <div class="nk-main">
+        <div class="nk-header-title nk-header-title-lg nk-header-title-parallax nk-header-title-parallax-opacity">
+            <div class="bg-image">
+                <img src="{{ asset('images/index.webp' ) }}" alt="index" class="jarallax-img">
+            </div>
+            <div class="nk-header-table">
+                <div class="nk-header-table-cell">
+                    <div class="container">
+                        <div class="nk-header-text">
+                            <h1 class="nk-title display-3">{{$title ?? 'Калькулятор крафта Asterios'}}</h1>
+                            <div class="nk-gap-2"></div>
+                            <a href="{{route('recipes.index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-4">
+                                <span>Каталог предметов</span>
+                            </a>
+                            <div class="nk-gap-4"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
     <div class="container">
         <div class="nk-gap-6"></div>
@@ -65,16 +65,16 @@
         <div class="nk-gap-6"></div>
     </div>
 
-    <div class="nk-box bg-dark-1 sd-background">
-        <div class="container text-center">
-            <div class="nk-gap-6"></div>
-            <div class="nk-gap-2"></div>
-            <h2 class="nk-title h1">Калькулятор крафта</h2>
-            <div class="nk-gap-3"></div>
+        <div class="nk-box bg-dark-1 sd-background">
+            <div class="container text-center">
+                <div class="nk-gap-6"></div>
+                <div class="nk-gap-2"></div>
+                <h2 class="nk-title h1">Калькулятор крафта Asterios</h2>
+                <div class="nk-gap-3"></div>
 
-            <p class="lead">Сервис был создан для людей, которые увлекаются крафтом или решили освоить это ремесло. Насколько выгодно крафтить вещь или может лучше продать ресурсы и получишь больший профит? Ответы найдёшь на этом сайте.</p>
-            <p class="lead">Слишком скучный дизайн? Включи эпичную анимацию в
-                <a href="{{route('user')}}">личном кабинете</a>.</p>
+                <p class="lead">Сервис был создан для людей, которые увлекаются крафтом или решили освоить это ремесло. Насколько выгодно крафтить вещь или может лучше продать ресурсы и получишь больший профит? Ответы найдёшь на этом сайте.</p>
+                <p class="lead">Слишком скучный дизайн? Включи эпичную анимацию в
+                    <a href="{{route('user')}}">личном кабинете</a>.</p>
             <p class="lead">Сервис находится на стадии активной разработки, если нашли баг, несоответствие или есть пожелания - напишите об этом в
                 <a href="{{route('conversations.index')}}">поддержку</a>.</p>
 

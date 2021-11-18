@@ -20,14 +20,14 @@ $_SESSION['isAnimationWasShowed'] = true;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     @if(View::hasSection('title'))
-        <title>Craft Calc Asterios @yield('title')</title>
+        <title>Калькулятор крафта Asterios @yield('title')</title>
     @else
-        <title>Craft Calc Asterios</title>
+        <title>Калькулятор крафта Asterios</title>
     @endif
 
-    <meta name="keywords" content="@yield('meta_keywords','крафт крафта крафтинг калькулятор кальк астериос asterios calculator craft calc crafting')">
+    <meta name="keywords" content="@yield('meta_keywords','калькулятор крафта астериос крафт крафтинг кальк астериос craft calc calculator asterios crafting')">
     <meta name="description" content="@yield('meta_description','Craft calculator for server Asterios. Калькулятор крафта для сервера Астериос.')">
-    <meta name="author" content="Craft Calc">
+    <meta name="author" content="Калькулятор крафта Asterios">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/png" href="{{ URL::to('/') }}/favicon.ico" />
@@ -90,7 +90,7 @@ $_SESSION['isAnimationWasShowed'] = true;
 
         <div class="nk-preloader-content">
             <div>
-                <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="Craft Calc Asterios" width="170">
+                <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="Калькулятор крафта Asterios" width="170">
                 <div class="nk-preloader-animation"></div>
             </div>
         </div>
