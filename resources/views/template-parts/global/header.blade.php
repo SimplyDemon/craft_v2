@@ -93,7 +93,6 @@ $_SESSION['isAnimationWasShowed'] = true;
 
     </div>
 
-    <div class="nk-page-background op-5" data-video="https://youtu.be/UkeDo1LhUqQ" data-video-loop="true" data-video-mute="true" data-video-volume="0" data-video-start-time="0" data-video-end-time="0" data-video-pause-on-page-leave="true" style="background-image: url('{{ asset('images/page-background.webp' ) }}');"></div>
 @endif
 
 <div class="nk-page-border">
