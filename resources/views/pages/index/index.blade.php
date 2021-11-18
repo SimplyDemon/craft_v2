@@ -7,6 +7,10 @@
 <?php
 $user = auth()->user();
 $isAuth = $user;
+
+if ( ! isset( $_SESSION ) ) {
+    session_start();
+}
 $isActivateFirstTimeAnimation = ! isset( $_SESSION['isAnimationWasShowed'] );
 $isEnableAnimation = ( $isAuth && $user->isEnableAnimation ) || $isActivateFirstTimeAnimation;
 ?>
