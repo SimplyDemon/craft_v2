@@ -13,7 +13,7 @@ class SitemapController extends Controller {
 
         $recipes        = Recipe::orderBy( 'id', 'desc' )->get();
         $pageLastMod    = '2021-11-17T20:00:00Z';
-        $pageChangeFreq = 'changefreq';
+        $pageChangeFreq = 'weekly';
         $pagePriority   = '0.7';
 
         $routes = [
