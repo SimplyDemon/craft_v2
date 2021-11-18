@@ -18,6 +18,8 @@ class CreateRaidBossesTable extends Migration {
             $table->string( 'timer_status' );
             $table->text( 'description' )->nullable();
             $table->text( 'target' )->nullable();
+            $table->integer( 'respawn_base' ); // in hours
+            $table->integer( 'respawn_dynamic' ); // in hours
             $table->timestamp( 'respawn_start' )->nullable();
             $table->timestamp( 'respawn_end' )->nullable();
             $table->timestamp( 'timer_date' )->nullable();

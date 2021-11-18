@@ -53,3 +53,12 @@ img.grade {
     border-radius: 0 0 5px 5px;
     overflow: hidden;
 }
+
+.rb-tab {
+    width: 30%;
+    margin: auto;
+}
+
+.color-main-1-important {
+    color: #e08821 !important;
+}

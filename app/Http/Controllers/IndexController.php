@@ -23,11 +23,12 @@ class IndexController extends Controller {
      */
     public function index() {
         $RaidBossController      = new RaidBossController();
-        $subclassBossesDeathTime = $RaidBossController->getSubclassBossesDeathTime();
-
+        $subclassBossesDeathTime = $RaidBossController->getBossesDeathTime( 'subclass' );
+        $epicBossesDeathTime     = $RaidBossController->getBossesDeathTime( 'epic' );
 
         return view( 'pages.index.index', [
             'subclassBossesDeathTime' => $subclassBossesDeathTime,
+            'epicBossesDeathTime'     => $epicBossesDeathTime,
             'title'                   => 'Калькулятор крафта Asterios',
         ] );
     }

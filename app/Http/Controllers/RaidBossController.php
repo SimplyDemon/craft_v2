@@ -7,10 +7,20 @@ use Illuminate\Http\Request;
 
 class RaidBossController extends Controller {
 
+    /**
+     * $type 'epic' or 'subclass'
+     */
+    public function getBossesDeathTime( $type ) {
+        if ( $type === 'epic' ) {
+            $feed = 'https://asterios.tm/index.php?cmd=rss&serv=3&filter=epic&count=100&out=xml';
+        } else if ( $type === 'subclass' ) {
+            $feed = 'https://asterios.tm/index.php?cmd=rss&serv=3&filter=keyboss&count=30&out=xml';
+        } else {
+            return null;
+        }
 
-    public function getSubclassBossesDeathTime() {
         $boss = RaidBoss::where( [
-            [ 'type', 'subclass' ],
+            [ 'type', $type ],
         ] )->get()->first();
 
         /* Disable on local case of errors */
@@ -18,17 +28,17 @@ class RaidBossController extends Controller {
 
             /* Update respawn info every 5 min */
             if ( getCurrentTimeInUnix() > strtotime( '+5 minutes', strtotime( $boss->updated_at ) ) ) {
-                $this->updateRaidBossTime();
+                $subclassBossesFeed = simplexml_load_file( $feed );
+                $this->updateRaidBossTime( $subclassBossesFeed );
             }
         }
 
         return RaidBoss::where( [
-            [ 'type', 'subclass' ],
+            [ 'type', $type ],
         ] )->get();
     }
 
-    protected function updateRaidBossTime() {
-        $feed          = simplexml_load_file( 'https://asterios.tm/index.php?cmd=rss&serv=3&filter=keyboss&count=20&out=xml' );
+    protected function updateRaidBossTime( $feed ) {
         $updatedBosses = [];
 
         if ( isset( $feed->channel ) && isset( $feed->channel->item ) ) {
@@ -41,16 +51,21 @@ class RaidBossController extends Controller {
                 $updatedBosses[] = $bossName;
                 $boss            = RaidBoss::where( 'name', 'like', "%$bossName%" )->first();
                 if ( ! empty( $boss ) ) {
-                    $dateFormat       = 'Y-m-d H:i:s';
-                    $dateKill         = strtotime( $item->pubDate );
-                    $respawnStart     = strtotime( '+18 hours', $dateKill );
-                    $respawnEnd       = strtotime( '+30 hours', $dateKill );
-                    $currentTime      = getCurrentTimeInUnix();
-                    $isRespawnStarted = $currentTime > $respawnStart;
-                    $statusRespawn    = $isRespawnStarted ? 'Респ идёт' : 'Респ не начался';
-                    $timerStatus      = $isRespawnStarted ? 'До макс респа:' : 'До начала респа:';
-                    $timerDate        = $isRespawnStarted ? $respawnEnd : $respawnStart;
-                    $timerDate        = date( $dateFormat, $timerDate );
+                    $respawnBase    = $boss->respawn_base;
+                    $respawnDynamic = $boss->respawn_dynamic;
+
+                    $dateFormat        = 'Y-m-d H:i:s';
+                    $respawnHoursStart = $respawnBase - $respawnDynamic;
+                    $respawnHoursEnd   = $respawnBase + $respawnDynamic;
+                    $dateKill          = strtotime( $item->pubDate );
+                    $respawnStart      = strtotime( "+{$respawnHoursStart} hours", $dateKill );
+                    $respawnEnd        = strtotime( "+{$respawnHoursEnd} hours", $dateKill );
+                    $currentTime       = getCurrentTimeInUnix();
+                    $isRespawnStarted  = $currentTime > $respawnStart;
+                    $statusRespawn     = $isRespawnStarted ? 'Респ идёт' : 'Респ не начался';
+                    $timerStatus       = $isRespawnStarted ? 'До макс респа:' : 'До начала респа:';
+                    $timerDate         = $isRespawnStarted ? $respawnEnd : $respawnStart;
+                    $timerDate         = date( $dateFormat, $timerDate );
 
                     $boss->update( [
                         'status_respawn' => $statusRespawn,
@@ -67,4 +82,5 @@ class RaidBossController extends Controller {
 
         }
     }
+
 }
