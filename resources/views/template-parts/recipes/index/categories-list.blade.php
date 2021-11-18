@@ -1,9 +1,9 @@
 <ul class="list-group">
     @foreach( $categories as $category)
-        <div class="nk-accordion" id="accordion-1" role="tablist" aria-multiselectable="true">
+        <div class="nk-accordion" id="accordion-category-{{$category->id}}" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="category-{{$category->id}}-heading">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#category-{{$category->id}}" aria-expanded="false" aria-controls="category-{{$category->id}}">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion-category-{{$category->id}}" href="#category-{{$category->id}}" aria-expanded="false" aria-controls="category-{{$category->id}}">
                         {{$category->name}}
                     </a>
                 </div>
