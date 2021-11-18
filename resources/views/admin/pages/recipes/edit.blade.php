@@ -1,7 +1,7 @@
 @extends('admin.layouts.primary')
 @section('content')
 
-    <script type="text/JavaScript">
+    <script>
         function createNewElement() {
             txtNewInputBox = '<select  class="form-control" name="resource_ids[]">\n' +
                 '                    <option value="" selected>Не ресурс</option>\n' +

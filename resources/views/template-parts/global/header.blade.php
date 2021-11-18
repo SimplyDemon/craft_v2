@@ -15,7 +15,6 @@ $_SESSION['isAnimationWasShowed'] = true;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Craft Calc">
 
     <title>Craft Calc Asterios @yield('title','')</title>
     <meta name="keywords" content="@yield('meta_keywords','крафт крафта крафтинг калькулятор кальк астериос asterios calculator craft calc crafting')">
@@ -38,7 +37,7 @@ $_SESSION['isAnimationWasShowed'] = true;
     </script>
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
+    <script>
         (function( m, e, t, r, i, k, a ) {
             m[ i ]   = m[ i ] || function() {
                 (m[ i ].a = m[ i ].a || []).push( arguments )
@@ -55,7 +54,9 @@ $_SESSION['isAnimationWasShowed'] = true;
         } );
     </script>
     <noscript>
-        <div><img src="https://mc.yandex.ru/watch/86545727" style="position:absolute; left:-9999px;" alt="ya" /></div>
+        <div>
+            <img src="https://mc.yandex.ru/watch/86545727" style="position:absolute; left:-9999px;" alt="ya" />
+        </div>
     </noscript>
     <!-- /Yandex.Metrika counter -->
 

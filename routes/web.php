@@ -28,9 +28,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get( 'sitemap.xml', [ SitemapController::class, 'index' ] );
 
-Route::group( [ 'middleware' => 'HtmlMinifier' ], function () {
 
-    Auth::routes( [
+Auth::routes( [
         'register' => true, // Registration Routes...
         'reset'    => false, // Password Reset Routes...
         'verify'   => false, // Email Verification Routes...
@@ -91,4 +90,3 @@ Route::group( [ 'middleware' => 'HtmlMinifier' ], function () {
         } );
 
     } );
-} );

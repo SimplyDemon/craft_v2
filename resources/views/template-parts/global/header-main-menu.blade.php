@@ -25,18 +25,7 @@
                         </ul>
                     </div>
                 </li>
-                <style>
-                    .search_result {
-                        position: absolute;
-                        z-index: 2;
-                        top: calc(100% - 5px);
-                        left: 0;
-                        width: 100%;
-                        background-color: #0e0e0e;;
-                        border-radius: 0 0 5px 5px;
-                        overflow: hidden;
-                    }
-                </style>
+
                 <li class="{{Route::is('recipes.index') ? 'active' : ''}}">
                     <a href="{{ route('recipes.index') }}">
                         Вещи
@@ -83,7 +72,7 @@
                 @if(!$isAuth)
                     <li class="single-icon">
                         <a href="#" class="nk-sign-toggle no-link-effect">
-                            <img width="20px" src="{{ asset('images/icon-login.svg' ) }}" alt="login">
+                            <img width="20" src="{{ asset('images/icon-login.svg' ) }}" alt="login">
                         </a>
                     </li>
                 @endif
