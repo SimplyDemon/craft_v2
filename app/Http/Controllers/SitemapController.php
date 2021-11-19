@@ -1,8 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
+use App\Models\RaidBoss;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 
@@ -10,26 +8,35 @@ use Illuminate\Http\Request;
 class SitemapController extends Controller {
 
     public function index( Request $r ) {
-
         $recipes        = Recipe::orderBy( 'id', 'desc' )->get();
-        $pageLastMod    = '2021-11-17T20:00:00Z';
         $pageChangeFreq = 'weekly';
         $pagePriority   = '0.7';
 
+        $boss   = RaidBoss::firstOrFail();
         $routes = [
-            'index',
-            'search',
-            'recipes.index',
-            'login',
-            'register',
+            'index'         => [
+                'lastmod' => date( 'c', strtotime( $boss->updated_at ) ),
+            ],
+            'search'        => [
+                'lastmod' => date( 'c', filemtime( resource_path( 'views/pages/search/index.blade.php' ) ) ),
+            ],
+            'recipes.index' => [
+                'lastmod' => date( 'c', filemtime( resource_path( 'views/pages/recipes/index.blade.php' ) ) ),
+            ],
+            'login'         => [
+                'lastmod' => date( 'c', filemtime( resource_path( 'views/auth/login.blade.php' ) ) ),
+            ],
+            'register'      => [
+                'lastmod' => date( 'c', filemtime( resource_path( 'views/auth/register.blade.php' ) ) ),
+            ],
         ];
 
         $pageRoutes = [];
 
-        foreach ( $routes as $route ) {
+        foreach ( $routes as $route => $params ) {
             $pageRoutes[] = [
                 'loc'        => route( $route ),
-                'lastmod'    => $pageLastMod,
+                'lastmod'    => $params['lastmod'],
                 'changefreq' => $pageChangeFreq,
                 'priority'   => $pagePriority,
             ];

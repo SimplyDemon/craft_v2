@@ -11,9 +11,9 @@
     @foreach ($recipes as $recipe)
         <url>
             <loc>{{route('recipes.show', $recipe->id)}}</loc>
-            <lastmod>{{ gmdate('Y-m-d\TH:i:s\Z',strtotime($recipe->updated_at)) }}</lastmod>
+            <lastmod>{{ date('c',strtotime($recipe->updated_at)) }}</lastmod>
             <changefreq>weekly</changefreq>
-            <priority>0.6</priority>
+            <priority>0.5</priority>
         </url>
-        @endforeach
+    @endforeach
 </urlset>
