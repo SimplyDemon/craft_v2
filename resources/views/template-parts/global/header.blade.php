@@ -55,7 +55,7 @@ $_SESSION['isAnimationWasShowed'] = true;
 
 <body>
 <!-- Yandex.Metrika counter -->
-<script>
+<script type="text/javascript">
     (function( m, e, t, r, i, k, a ) {
         m[ i ]   = m[ i ] || function() {
             (m[ i ].a = m[ i ].a || []).push( arguments )
@@ -68,13 +68,12 @@ $_SESSION['isAnimationWasShowed'] = true;
     ym( 86545727, "init", {
         clickmap: true,
         trackLinks: true,
-        accurateTrackBounce: true
+        accurateTrackBounce: true,
+        webvisor: true
     } );
 </script>
 <noscript>
-    <div>
-        <img src="https://mc.yandex.ru/watch/86545727" style="position:absolute; left:-9999px;" alt="ya" />
-    </div>
+    <div><img src="https://mc.yandex.ru/watch/86545727" style="position:absolute; left:-9999px;" alt="ya" /></div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
 @if($isEnableAnimation)
