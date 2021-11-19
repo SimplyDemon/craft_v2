@@ -10,7 +10,7 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
         <th scope="col">Количество</th>
         <th scope="col">Цена за штуку</th>
         <th scope="col">Цена за все</th>
-        <th scope="col">Игнорировать<br>строку</th>
+        <th scope="col">Исключить</th>
     </tr>
     </thead>
     <tbody>
