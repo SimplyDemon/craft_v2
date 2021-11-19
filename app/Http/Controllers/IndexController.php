@@ -22,14 +22,20 @@ class IndexController extends Controller {
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        $RaidBossController      = new RaidBossController();
-        $subclassBossesDeathTime = $RaidBossController->getBossesDeathTime( 'subclass' );
-        $epicBossesDeathTime     = $RaidBossController->getBossesDeathTime( 'epic' );
+        $raidBossController = new RaidBossController();
+        $bossesX1           = [
+            'subclass' => $raidBossController->getBossesDeathTime( 'subclass', 'x1' ),
+            'epic'     => $raidBossController->getBossesDeathTime( 'epic', 'x1' ),
+        ];
+        $bossesX5           = [
+            'subclass' => $raidBossController->getBossesDeathTime( 'subclass', 'x5' ),
+            'epic'     => $raidBossController->getBossesDeathTime( 'epic', 'x5' ),
+        ];
 
         return view( 'pages.index.index', [
-            'subclassBossesDeathTime' => $subclassBossesDeathTime,
-            'epicBossesDeathTime'     => $epicBossesDeathTime,
-            'title'                   => 'Калькулятор крафта Asterios',
+            'bossesX1' => $bossesX1,
+            'bossesX5' => $bossesX5,
+            'title'    => 'Калькулятор крафта Asterios',
         ] );
     }
 

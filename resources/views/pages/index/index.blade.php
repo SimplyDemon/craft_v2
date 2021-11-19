@@ -61,14 +61,12 @@
                     </div>
                 </div>
             </div>
-            <div class="nk-gap-2"></div>
             <div class="nk-gap-6"></div>
         </div>
 
         <div class="nk-box bg-dark-1 sd-background">
             <div class="container text-center">
-                <div class="nk-gap-6"></div>
-                <div class="nk-gap-2"></div>
+                <div class="nk-gap-3"></div>
                 <h2 class="nk-title h1">Калькулятор крафта Asterios</h2>
                 <div class="nk-gap-3"></div>
 
@@ -79,69 +77,52 @@
                     <a href="{{route('conversations.index')}}">поддержку</a>.</p>
 
 
-            @if($subclassBossesDeathTime)
-
-
-
-                <!-- START: Tabs 3 -->
+                @if($bossesX1)
                     <div class="nk-tabs">
                         <ul class="nav nav-tabs rb-tab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active color-main-1-important" href="#tabs-3-1" role="tab" data-toggle="tab">Сабкласс РБ</a>
+                                <a class="nav-link active color-main-1-important" href="#server-x1" role="tab" data-toggle="tab">x1 - Prime</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link color-main-1-important" href="#tabs-3-2" role="tab" data-toggle="tab">Эпик РБ</a>
+                                <a class="nav-link color-main-1-important" href="#server-x5" role="tab" data-toggle="tab">x5 - Asterios</a>
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade show active" id="tabs-3-1">
+                            <div role="tabpanel" class="tab-pane fade show active" id="server-x1">
                                 <div class="nk-gap-1"></div>
 
-                                <h2 class="nk-title h1">Subclass RB respawn x1</h2>
+                                <h2 class="nk-title h1">x1 - Prime</h2>
                                 <div class="nk-gap-2"></div>
-                                <div class="row no-gutters">
+                                <div class="no-gutters">
 
-                                    @foreach($subclassBossesDeathTime as $boss)
-                                        @include('pages.index.boss-timer', [
-                                             'boss' => $boss,
-                                             'colNumber' => 3,
-                                         ])
-                                    @endforeach
+                                    @include('pages.index.bosses-tabs', [
+                                        'bosses' => $bossesX1,
+                                         'server' => 'x1',
+                                    ])
+
                                 </div>
 
                                 <div class="nk-gap-1"></div>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="tabs-3-2">
+                            <div role="tabpanel" class="tab-pane fade" id="server-x5">
                                 <div class="nk-gap-1"></div>
 
-                                <h2 class="nk-title h1">Epic RB respawn x1</h2>
-                                <p class="lead">
-                                    Внимательно следите за игровым чатом во время респа РБ, в нём анонсируется, что РБ респнется в течении
-                                    <span class="color-main-1-important">одного</span> или
-                                    <span class="color-main-1-important">двух</span> часов.
-                                </p>
+                                <h2 class="nk-title h1">x5 - Asterios</h2>
                                 <div class="nk-gap-2"></div>
-                                <div class="row no-gutters">
+                                <div class="no-gutters">
 
-                                    @foreach($epicBossesDeathTime as $boss)
-                                        @include('pages.index.boss-timer', [
-                                             'boss' => $boss,
-                                             'colNumber' => 4,
-
-                                         ])
-                                    @endforeach
+                                    @include('pages.index.bosses-tabs', [
+                                          'bosses' => $bossesX5,
+                                          'server' => 'x5',
+                                      ])
                                 </div>
 
                                 <div class="nk-gap-1"></div>
                             </div>
                         </div>
                     </div>
-                    <!-- END: Tabs 3 -->
-
-
             </div>
             @endif
-            <div class="nk-gap-4"></div>
         </div>
     </div>
 
@@ -164,7 +145,6 @@
             'Добавить блог для публикации статей, инфы о ченджлогах.',
         ];
         ?>
-
 
         <div class="nk-carousel-2 nk-carousel-x1" data-autoplay="12000" data-dots="true">
             <div class="nk-carousel-inner">

@@ -13,7 +13,7 @@ class CreateRaidBossesTable extends Migration {
     public function up() {
         Schema::create( 'raid_bosses', function ( Blueprint $table ) {
             $table->id();
-            $table->string( 'name' )->unique();
+            $table->string( 'name' );
             $table->string( 'status_respawn' );
             $table->string( 'timer_status' );
             $table->text( 'description' )->nullable();
@@ -28,6 +28,14 @@ class CreateRaidBossesTable extends Migration {
                     'epic',
                 ]
             )->default( 'subclass' );
+            $table->enum( 'server', [
+                    'x1',
+                    'x3',
+                    'x5',
+                    'x7',
+                    'x55',
+                ]
+            )->default( 'x1' );
             $table->timestamps();
         } );
     }

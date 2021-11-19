@@ -17,7 +17,7 @@ class RaidBossSeeder extends Seeder {
         $respawnDynamic = 6;
         $someDate       = '2021-11-05 12:30:17';
 
-        RaidBoss::create( [
+        $cabrioArgs = [
             'name'            => 'Shilen\'s Messenger Cabrio',
             'status_respawn'  => '',
             'timer_status'    => '',
@@ -31,9 +31,9 @@ class RaidBossSeeder extends Seeder {
             'type'            => 'subclass',
             'respawn_base'    => $respawnBase,
             'respawn_dynamic' => $respawnDynamic,
-        ] );
+        ];
 
-        RaidBoss::create( [
+        $hallateArgs = [
             'name'            => 'Death Lord Hallate',
             'status_respawn'  => '',
             'timer_status'    => '',
@@ -47,9 +47,9 @@ class RaidBossSeeder extends Seeder {
             'type'            => 'subclass',
             'respawn_base'    => $respawnBase,
             'respawn_dynamic' => $respawnDynamic,
-        ] );
+        ];
 
-        RaidBoss::create( [
+        $kernonArgs = [
             'name'            => 'Kernon',
             'status_respawn'  => '',
             'timer_status'    => '',
@@ -63,9 +63,9 @@ class RaidBossSeeder extends Seeder {
             'type'            => 'subclass',
             'respawn_base'    => $respawnBase,
             'respawn_dynamic' => $respawnDynamic,
-        ] );
+        ];
 
-        RaidBoss::create( [
+        $golkondaArgs = [
             'name'            => 'Longhorn Golkonda',
             'status_respawn'  => '',
             'timer_status'    => '',
@@ -79,14 +79,37 @@ class RaidBossSeeder extends Seeder {
             'type'            => 'subclass',
             'respawn_base'    => $respawnBase,
             'respawn_dynamic' => $respawnDynamic,
-        ] );
+        ];
+
+        $cabrioArgsX5   = $cabrioArgs;
+        $hallateArgsX5  = $hallateArgs;
+        $kernonArgsX5   = $kernonArgs;
+        $golkondaArgsX5 = $golkondaArgs;
+
+        $cabrioArgsX5['server']   = 'x5';
+        $hallateArgsX5['server']  = 'x5';
+        $kernonArgsX5['server']   = 'x5';
+        $golkondaArgsX5['server'] = 'x5';
+
+
+        /* x1 bosses */
+        RaidBoss::create( $cabrioArgs );
+        RaidBoss::create( $hallateArgs );
+        RaidBoss::create( $kernonArgs );
+        RaidBoss::create( $golkondaArgs );
+
+        /* x5 bosses */
+        RaidBoss::create( $cabrioArgsX5 );
+        RaidBoss::create( $hallateArgsX5 );
+        RaidBoss::create( $kernonArgsX5 );
+        RaidBoss::create( $golkondaArgsX5 );
 
     }
 
     protected function addEpicRb() {
         $someDate = '2021-11-05 12:30:17';
 
-        RaidBoss::create( [
+        $antharasArgs = [
             'name'            => 'Antharas',
             'status_respawn'  => '',
             'timer_status'    => '',
@@ -99,9 +122,9 @@ class RaidBossSeeder extends Seeder {
             'type'            => 'epic',
             'respawn_base'    => 228,
             'respawn_dynamic' => 12,
-        ] );
+        ];
 
-        RaidBoss::create( [
+        $valacasArgs = [
             'name'            => 'Valakas',
             'status_respawn'  => '',
             'timer_status'    => '',
@@ -114,9 +137,9 @@ class RaidBossSeeder extends Seeder {
             'type'            => 'epic',
             'respawn_base'    => 228,
             'respawn_dynamic' => 12,
-        ] );
+        ];
 
-        RaidBoss::create( [
+        $baiumArgs = [
             'name'            => 'Baium',
             'status_respawn'  => '',
             'timer_status'    => '',
@@ -129,7 +152,25 @@ class RaidBossSeeder extends Seeder {
             'type'            => 'epic',
             'respawn_base'    => 108,
             'respawn_dynamic' => 12,
-        ] );
+        ];
+
+        $antharasArgsX5 = $antharasArgs;
+        $valacasArgsX5  = $valacasArgs;
+        $baiumArgsX5    = $baiumArgs;
+
+        $antharasArgsX5['server'] = 'x5';
+        $valacasArgsX5['server']  = 'x5';
+        $baiumArgsX5['server']    = 'x5';
+
+        /* x1 bosses */
+        RaidBoss::create( $antharasArgs );
+        RaidBoss::create( $valacasArgs );
+        RaidBoss::create( $baiumArgs );
+
+        /* x5 bosses */
+        RaidBoss::create( $antharasArgsX5 );
+        RaidBoss::create( $valacasArgsX5 );
+        RaidBoss::create( $baiumArgsX5 );
 
     }
 }
