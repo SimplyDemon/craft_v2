@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@section('title', 'Login')
     <div class="nk-main">
 
         <!-- START: Header Title -->
