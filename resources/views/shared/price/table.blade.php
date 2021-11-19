@@ -30,10 +30,10 @@
                     <img src="{{asset('storage/' . $single->img)}}" alt="img">{{$single->name}}
                 </td>
                 <td>
-                    <input class="form-control" name="{{$prefix}}[{{$single->id}}][price_sell]" type="number" step="1" value="{{$single->pivot->price_sell ?? $single->price_sell}}">
+                    <input class="form-control" name="{{$prefix}}[{{$single->id}}][price_sell]" type="number" step="1" min="0" value="{{$single->pivot->price_sell ?? $single->price_sell ?? 0}}">
                 </td>
                 <td>
-                    <input class="form-control" name="{{$prefix}}[{{$single->id}}][price_buy]" type="number" step="1" value="{{$single->pivot->price_buy ?? $single->price_buy}}">
+                    <input class="form-control" name="{{$prefix}}[{{$single->id}}][price_buy]" type="number" step="1" min="0" value="{{$single->pivot->price_buy ?? $single->price_buy ?? 0}}">
                 </td>
             </tr>
         @endforeach

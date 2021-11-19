@@ -14,6 +14,10 @@ class Recipe extends Model {
         return $this->belongsTo( Category::class );
     }
 
+    public function resource() {
+        return $this->belongsTo( Resource::class );
+    }
+
     public function resources() {
         return $this->belongsToMany( Resource::class )->withPivot( 'resource_quantity' );
     }

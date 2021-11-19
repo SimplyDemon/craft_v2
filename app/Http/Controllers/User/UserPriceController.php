@@ -16,7 +16,7 @@ class UserPriceController extends Controller {
     public function index() {
         $user      = auth()->user();
         $resources = Resource::orderBy( 'name', 'asc' )->get()->groupBy( 'type' );
-        $recipes   = Recipe::orderBy( 'name', 'asc' )->get()->groupBy( 'category_id' );
+        $recipes   = Recipe::orderBy( 'name', 'asc' )->whereNull( 'resource_id' )->get()->groupBy( 'category_id' );
 
         $userResources = $user->resources->groupBy( 'type' );
         $userRecipes   = $user->recipes->groupBy( 'category_id' );
@@ -29,6 +29,7 @@ class UserPriceController extends Controller {
     }
 
     public function update( Request $request ) {
+
         $all  = $request->all();
         $user = auth()->user();
 
