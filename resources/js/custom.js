@@ -47,3 +47,21 @@ $( '.search-input' ).bind( 'keyup click', function() {
         $( '#search_result-ul' ).html( '' );
     }
 } )
+
+function updatePrices() {
+    let tables = $( 'table' );
+    tables.each( function() {
+        let totals   = $( this ).find( 'tbody tr:not(".disabled-with-js") [data-total]' );
+        let totalNew = 0;
+        totals.each( function() {
+            totalNew += parseInt( $( this ).attr( 'data-total' ) );
+        } );
+
+        $( this ).find( '.total' ).html( totalNew.toLocaleString() );
+    } );
+}
+
+$( ".disable-row" ).on( 'click', function() {
+    let tr = $( this ).closest( 'tr' ).toggleClass( 'disabled-with-js' );
+    updatePrices();
+} ).change();

@@ -62,3 +62,7 @@ img.grade {
 .color-main-1-important {
     color: #e08821 !important;
 }
+
+.disabled-with-js {
+    background-color: #000000;
+}
