@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @if(isset($title))
-@section('title', ' - ' . $title)
+@section('title', $title)
 @endif
 <?php
 $recipePriceSell = isset( $user ) && $user->recipes->find( $single->id ) && $user->recipes->find( $single->id )->pivot->price_sell ? $user->recipes->find( $single->id )->pivot->price_sell : $single->price_sell;

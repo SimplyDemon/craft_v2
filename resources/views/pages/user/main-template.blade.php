@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @if(isset($title))
-@section('title', ' - ' . $title)
+@section('title', $title)
 @endif
 <?php
 $user = auth()->user();

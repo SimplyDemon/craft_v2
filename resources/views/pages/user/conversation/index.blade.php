@@ -1,7 +1,7 @@
 @extends('pages.user.main-template', ['title' => $title ?? 'Калькулятор крафта Asterios'])
 @section('user-content')
     @if(isset($title))
-@section('title', ' - ' . $title)
+@section('title', $title)
 @endif
 <div class="nk-social-profile-info-actions">
     <a href="{{ route( 'conversations.create' ) }}" class="nk-btn link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Создать запрос</span></span><span class="link-effect-r"><span>Создать запрос</span></span><span class="link-effect-shade"><span>Создать запрос</span></span></span></a>
