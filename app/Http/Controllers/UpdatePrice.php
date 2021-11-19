@@ -13,7 +13,7 @@ class UpdatePrice extends Controller {
 
     public function index() {
         $resources = Resource::orderBy( 'name', 'asc' )->get()->groupBy( 'type' );
-        $recipes   = Recipe::orderBy( 'name', 'asc' )->get()->groupBy( 'category_id' );
+        $recipes   = Recipe::orderBy( 'name', 'asc' )->whereNull( 'resource_id' )->get()->groupBy( 'category_id' );
 
         return view( $this->folderPath . 'index', [
             'resources' => $resources,
