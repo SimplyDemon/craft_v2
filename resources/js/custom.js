@@ -57,6 +57,10 @@ function updatePrices() {
             totalNew += parseInt( $( this ).attr( 'data-total' ) );
         } );
 
+        let quantity = $( 'span[data-recipe-quantity]' );
+        if ( quantity.length > 0 ) {
+            totalNew = Math.ceil( totalNew / parseInt( quantity.attr( 'data-recipe-quantity' ) ) );
+        }
         $( this ).find( '.total' ).html( totalNew.toLocaleString() );
     } );
 }

@@ -63,7 +63,7 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
     if ( $isCountMoreThenOne ) {
         $total           = ceil( $total / $single->craft_count );
         $totalAdminPrice = ceil( $totalAdminPrice / $single->craft_count );
-        $totalText       = number_format( $total, 0, ' ', ' ' ) . ' (1 шт.)';
+        $totalText       = number_format( $total, 0, ' ', ' ' );
     }
     ?>
     <tr>
@@ -72,11 +72,15 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
         </td>
         <td>
             <b class="total">{{$totalText}}</b>
+            @if($isCountMoreThenOne)
+                (1 шт.)
+            @endif
             @if($isPriceDifferent)
                 <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
                     {!! file_get_contents($tooltipResourcePriceImg) !!}
                 </span>
             @endif
+
         </td>
         <td>
 
