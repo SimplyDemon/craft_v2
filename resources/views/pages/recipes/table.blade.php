@@ -3,14 +3,15 @@ $total = 0;
 $totalAdminPrice = 0;
 $tooltipResourcePriceImg = public_path() . '/question.svg';
 ?>
-<table class="table">
+<table class="table recipe">
     <thead>
     <tr>
         <th scope="col">Ресурс</th>
-        <th scope="col">Количество</th>
+        <th scope="col">Кол</th>
+        <th scope="col">В наличии</th>
         <th scope="col">Цена за штуку</th>
         <th scope="col">Цена за все</th>
-        <th scope="col">Исключить</th>
+        <th scope="col">Исклю-<br>чить</th>
     </tr>
     </thead>
     <tbody>
@@ -35,8 +36,11 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
             <td data-quantity="{{$resourceQuantity}}">
                 {{$resourceQuantity}}
             </td>
-            <td data-price="{{$resourcePrice}}">
-                {{number_format($resourcePrice, 0, ' ', ' ')}}
+            <td class="td-has" data-has="0">
+                <input class="form-control" type="number" step="1" min="0" max="{{$resourceQuantity}}" value="0">
+            </td>
+            <td class="td-price" data-price="{{$resourcePrice}}">
+                <input class="form-control" type="number" step="1" min="0" value="{{$resourcePrice ?? 0}}">
                 @if($isPriceDifferent)
                     <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipResourcePriceText}}">
                                         {!! file_get_contents( $tooltipResourcePriceImg) !!}
@@ -66,8 +70,8 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
         $totalText       = number_format( $total, 0, ' ', ' ' );
     }
     ?>
-    <tr>
-        <td colspan="3">
+    <tr class="tr-total">
+        <td colspan="4">
             <b>Итого:</b>
         </td>
         <td>
@@ -88,4 +92,3 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
     </tr>
     </tbody>
 </table>
-<?php unset( $total ) ?>

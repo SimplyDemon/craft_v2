@@ -66,3 +66,24 @@ img.grade {
 .disabled-with-js {
     background-color: #000000;
 }
+
+td.td-has {
+    max-width: 100px !important;
+}
+
+td.td-has input {
+    max-width: 100px !important;
+}
+
+td.td-price {
+    max-width: 130px !important;
+}
+
+td.td-price input {
+    max-width: 130px !important;
+}
+
+table.recipe td {
+    padding: 0.25rem;
+    vertical-align: middle;
+}

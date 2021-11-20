@@ -51,16 +51,17 @@ $( '.search-input' ).bind( 'keyup click', function() {
 function updatePrices() {
     let tables = $( 'table' );
     tables.each( function() {
-        let totals   = $( this ).find( 'tbody tr:not(".disabled-with-js") [data-total]' );
+        let rows     = $( this ).find( 'tbody tr:not(".disabled-with-js, .tr-total")' );
         let totalNew = 0;
-        totals.each( function() {
-            totalNew += parseInt( $( this ).attr( 'data-total' ) );
+        rows.each( function() {
+            totalNew += parseInt( $( this ).find( "[data-total]" ).first().attr( 'data-total' ) );
         } );
 
         let quantity = $( 'span[data-recipe-quantity]' );
         if ( quantity.length > 0 ) {
             totalNew = Math.ceil( totalNew / parseInt( quantity.attr( 'data-recipe-quantity' ) ) );
         }
+
         $( this ).find( '.total' ).html( totalNew.toLocaleString() );
     } );
 }
@@ -69,3 +70,55 @@ $( ".disable-row" ).on( 'click', function() {
     let tr = $( this ).closest( 'tr' ).toggleClass( 'disabled-with-js' );
     updatePrices();
 } ).change();
+
+function updateRowTotal( row ) {
+    let dataQuantity = row.find( "[data-quantity]" );
+    let dataHas      = row.find( "[data-has]" );
+    let dataPrice    = row.find( "[data-price]" );
+    let dataTotal    = row.find( "[data-total]" );
+
+    let total = (parseInt( dataQuantity.attr( "data-quantity" ) ) - parseInt( dataHas.attr( "data-has" ) )) * parseInt( dataPrice.attr( "data-price" ) );
+    if ( total < 0 ) {
+        total = 0;
+    }
+
+    dataTotal.attr( "data-total", total );
+    dataTotal.html( total.toLocaleString() );
+
+}
+
+function updateHas( input ) {
+    let has = parseInt( input.val() );
+    if ( isNaN( has ) || has < 0 ) {
+        has = 0;
+    }
+
+    input.closest( "[data-has]" ).attr( "data-has", has );
+}
+
+function updateColumn( input, dataAttribute ) {
+    let value = parseInt( input.val() );
+    if ( isNaN( value ) || value < 0 ) {
+        value = 0;
+    }
+
+    input.closest( "[" + dataAttribute + "]" ).attr( dataAttribute, value );
+}
+
+$( "td.td-has[data-has] input" ).on( 'change', function() {
+    let input = $( this );
+    updateColumn( input, 'data-has' );
+    let row = input.closest( 'tr' );
+
+    updateRowTotal( row );
+    updatePrices();
+} );
+
+$( "td.td-price[data-price] input" ).on( 'change', function() {
+    let input = $( this );
+    updateColumn( input, 'data-price' );
+    let row = input.closest( 'tr' );
+
+    updateRowTotal( row );
+    updatePrices();
+} );

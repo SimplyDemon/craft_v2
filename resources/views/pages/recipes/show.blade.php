@@ -58,22 +58,52 @@ $isCountMoreThenOne = $single->craft_count !== 1;
         </h3>
 
         @if(!$single->resources->isEmpty())
-            <h2>Закупка ресурсов у торговцев</h2>
-            @include('pages.recipes.table', [
-                'price' => 'price_sell',
-                'isCountMoreThenOne' => $isCountMoreThenOne,
-                'single' => $single,
-                'resource' => $resource ?? null,
-            ])
+            <div class="nk-tabs">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active color-main-1-important" href="#sell" role="tab" data-toggle="tab">Закупка ресурсов у торговцев</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-main-1-important" href="#buy" role="tab" data-toggle="tab">Сесть на закупку ресурсов</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade show active" id="sell">
+                        <div class="nk-gap-1"></div>
 
-            @include('pages.recipes.table', [
-                'price' => 'price_buy',
-                'isCountMoreThenOne' => $isCountMoreThenOne,
-                'single' => $single,
-                'resource' => $resource ?? null,
-            ])
+                        <h2 class="nk-title h1">Закупка ресурсов у торговцев</h2>
+                        <div class="nk-gap-2"></div>
+                        <div class="no-gutters">
 
-            <h2>Сесть на закупку ресурсов</h2>
+                            @include('pages.recipes.table', [
+                                'price' => 'price_sell',
+                                'isCountMoreThenOne' => $isCountMoreThenOne,
+                                'single' => $single,
+                                'resource' => $resource ?? null,
+                            ])
+
+                        </div>
+
+                        <div class="nk-gap-1"></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="buy">
+                        <div class="nk-gap-1"></div>
+
+                        <h2 class="nk-title h1">Сесть на закупку ресурсов</h2>
+                        <div class="nk-gap-2"></div>
+                        <div class="no-gutters">
+                            @include('pages.recipes.table', [
+                                'price' => 'price_buy',
+                                'isCountMoreThenOne' => $isCountMoreThenOne,
+                                'single' => $single,
+                                'resource' => $resource ?? null,
+                            ])
+                        </div>
+
+                        <div class="nk-gap-1"></div>
+                    </div>
+                </div>
+            </div>
 
         @endif
         <div class="nk-gap-4"></div>
@@ -87,7 +117,6 @@ $isCountMoreThenOne = $single->craft_count !== 1;
 @push('extra-scripts')
     <script>
         $( function() {
-
             $( '[data-toggle="tooltip"]' ).tooltip()
         } )
     </script>
