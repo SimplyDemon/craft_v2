@@ -15,8 +15,11 @@ if ( isset( $single->resource_id ) ) {
 
 $masterWorkText = null;
 if ( $single->masterwork_description ) {
-    $masterWorkText = 'Crafter level <b>85</b><br>';
-    $masterWorkText .= 'Chance: <b>' . $single->rare_chance . '</b>%';
+    $masterWorkText = '';
+    if ( $single->rare_chance ) {
+        $masterWorkText = 'Crafter level <b>85</b><br>';
+        $masterWorkText .= 'Chance: <b>' . $single->rare_chance . '</b>%';
+    }
     if ( $single->masterwork_name ) {
         $masterWorkText .= '<br><i>' . $single->masterwork_name . '</i>';
     }
