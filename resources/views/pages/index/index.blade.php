@@ -15,6 +15,9 @@
                             <a href="{{route('recipes.index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-4">
                                 <span>Каталог предметов</span>
                             </a>
+                            <a href="#rb" class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-4">
+                                <span>Респ РБ</span>
+                            </a>
                             <div class="nk-gap-4"></div>
                         </div>
                     </div>
@@ -78,7 +81,7 @@
 
 
                 @if($bossesX1)
-                    <div class="nk-tabs">
+                    <div class="nk-tabs" id="rb">
                         <ul class="nav nav-tabs rb-tab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active color-main-1-important" href="#server-x1" role="tab" data-toggle="tab">x1 - Prime</a>
@@ -167,4 +170,9 @@
         </div>
         <div class="nk-gap-6"></div>
     </div>
+
 @endsection
+
+@push('extra-scripts')
+    <script src="/ScrollToPlugin.min.js"></script>
+@endpush
