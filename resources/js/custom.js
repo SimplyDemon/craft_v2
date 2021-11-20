@@ -87,27 +87,23 @@ function updateRowTotal( row ) {
 
 }
 
-function updateHas( input ) {
-    let has = parseInt( input.val() );
-    if ( isNaN( has ) || has < 0 ) {
-        has = 0;
-    }
-
-    input.closest( "[data-has]" ).attr( "data-has", has );
-}
-
-function updateColumn( input, dataAttribute ) {
-    let value = parseInt( input.val() );
-    if ( isNaN( value ) || value < 0 ) {
-        value = 0;
-    }
-
+function updateColumn( input, dataAttribute, value ) {
     input.closest( "[" + dataAttribute + "]" ).attr( dataAttribute, value );
+    input.val( value );
 }
 
 $( "td.td-has[data-has] input" ).on( 'change', function() {
-    let input = $( this );
-    updateColumn( input, 'data-has' );
+    let input    = $( this );
+    let quantity = parseInt( input.closest( 'tr' ).find( "[data-quantity]" ).attr( "data-quantity" ) );
+    let value    = parseInt( input.val() );
+    if ( value > quantity ) {
+        value = quantity;
+    } else if ( value < 0 ) {
+        value = 0;
+    }
+
+
+    updateColumn( input, 'data-has', value );
     let row = input.closest( 'tr' );
 
     updateRowTotal( row );
@@ -116,7 +112,13 @@ $( "td.td-has[data-has] input" ).on( 'change', function() {
 
 $( "td.td-price[data-price] input" ).on( 'change', function() {
     let input = $( this );
-    updateColumn( input, 'data-price' );
+    let value = parseInt( input.val() );
+    if ( value < 0 ) {
+        value = 0;
+    }
+
+    updateColumn( input, 'data-price', value );
+
     let row = input.closest( 'tr' );
 
     updateRowTotal( row );
