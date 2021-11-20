@@ -83,6 +83,8 @@ function updateRowTotal( row ) {
     let total = (parseInt( dataQuantity.attr( "data-quantity" ) ) - parseInt( dataHas.attr( "data-has" ) )) * parseInt( dataPrice.attr( "data-price" ) );
     if ( total < 0 ) {
         total = 0;
+    } else if ( !total ) {
+        total = 0;
     }
 
     dataTotal.attr( "data-total", total );
@@ -102,6 +104,8 @@ $( "td.td-has[data-has] input" ).on( 'change', function() {
         value = quantity;
     } else if ( value < 0 ) {
         value = 0;
+    } else if ( !value ) {
+        value = 0;
     }
 
     updateColumn( input, 'data-has', value );
@@ -115,6 +119,8 @@ $( "td.td-price[data-price] input" ).on( 'change', function() {
     let input = $( this );
     let value = parseInt( input.val() );
     if ( value < 0 ) {
+        value = 0;
+    } else if ( !value ) {
         value = 0;
     }
 
@@ -132,6 +138,8 @@ $( "tr.tr-total td[data-craft-count] input" ).on( 'change', function() {
         value = 1;
     } else if ( value > 100 ) {
         value = 100;
+    } else if ( !value ) {
+        value = 1;
     }
 
     let recipeQuantity = $( '[data-recipe-quantity-base]' );
