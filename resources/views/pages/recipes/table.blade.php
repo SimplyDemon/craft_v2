@@ -33,7 +33,7 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
             <td>
                 <img width="30" src="{{asset('storage') . '/' . $resource->img}}" alt="resource">{{$resource->name}}
             </td>
-            <td data-quantity="{{$resourceQuantity}}">
+            <td data-quantity="{{$resourceQuantity}}" data-quantity-base="{{$resourceQuantity}}">
                 {{$resourceQuantity}}
             </td>
             <td class="td-has" data-has="0">
@@ -67,14 +67,20 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
     if ( $isCountMoreThenOne ) {
         $total           = ceil( $total / $single->craft_count );
         $totalAdminPrice = ceil( $totalAdminPrice / $single->craft_count );
-        $totalText       = number_format( $total, 0, ' ', ' ' );
+        $totalText       .= ' | ' . number_format( $total, 0, ' ', ' ' );
     }
     ?>
     <tr class="tr-total">
-        <td colspan="4">
+        <td colspan="1">
+            Количество крафтов:
+        </td>
+        <td colspan="2" data-craft-count="1">
+            <input style="max-width: 120px" class="form-control" type="number" step="1" min="1" max="100" value="1">
+        </td>
+        <td colspan="1">
             <b>Итого:</b>
         </td>
-        <td>
+        <td colspan="2">
             <b class="total">{{$totalText}}</b>
             @if($isCountMoreThenOne)
                 (1 шт.)
@@ -84,10 +90,6 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
                     {!! file_get_contents($tooltipResourcePriceImg) !!}
                 </span>
             @endif
-
-        </td>
-        <td>
-
         </td>
     </tr>
     </tbody>

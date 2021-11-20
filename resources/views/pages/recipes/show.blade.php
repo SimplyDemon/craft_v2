@@ -49,7 +49,8 @@ $isCountMoreThenOne = $single->craft_count !== 1;
             @endif
 
             @if($isCountMoreThenOne)
-                <span class="nk-btn-style-1 nk-btn-md nk-btn-color-main-1" data-recipe-quantity="{{$single->craft_count}}">{{$single->craft_count}} шт.</span>
+                <span class="nk-btn-style-1 nk-btn-md nk-btn-color-main-1" data-recipe-quantity-base="{{$single->craft_count}}" data-recipe-quantity="{{$single->craft_count}}">{{$single->craft_count}}</span>
+                <span> шт.</span>
             @endif
 
             @if($recipePriceSell > 0)
