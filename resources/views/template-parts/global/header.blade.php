@@ -47,11 +47,6 @@ $_SESSION['isAnimationWasShowed'] = true;
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
-    <link rel="canonical" href="{{route('index')}}">
-    <link rel="canonical" href="{{route('recipes.index')}}">
-    @if (Route::is('index'))
-        <link rel="canonical" href="{{route('recipes.index')}}">
-    @endif
 </head>
 
 <body>
