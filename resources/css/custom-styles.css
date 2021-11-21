@@ -87,3 +87,26 @@ table.recipe td {
     padding: 0.25rem;
     vertical-align: middle;
 }
+
+
+@media screen and (max-width: 767px) {
+    .mobile-hide {
+        display: none;
+    }
+
+    .mobile-no-padding {
+        padding: 0;
+    }
+
+    .mobile-font-size {
+        font-size: 12px;
+    }
+
+    .mobile-max-width {
+        max-width: 65px;
+    }
+
+    .mobile-min-width {
+        min-width: 75px;
+    }
+}

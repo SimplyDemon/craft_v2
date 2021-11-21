@@ -54,7 +54,7 @@ $isCountMoreThenOne = $single->craft_count !== 1;
             @endif
 
             @if($recipePriceSell > 0)
-                Цена: {{number_format($recipePriceSell, 0, ' ', ' ')}}
+                <p>Цена: {{number_format($recipePriceSell, 0, ' ', ' ')}}</p>
             @endif
         </h3>
 

@@ -3,15 +3,15 @@ $total = 0;
 $totalAdminPrice = 0;
 $tooltipResourcePriceImg = public_path() . '/question.svg';
 ?>
-<table class="table recipe">
+<table class="table recipe mobile-font-size">
     <thead>
     <tr>
         <th scope="col">Ресурс</th>
         <th scope="col">Кол</th>
-        <th scope="col">В наличии</th>
-        <th scope="col">Цена за штуку</th>
-        <th scope="col">Цена за все</th>
-        <th scope="col">Исклю-<br>чить</th>
+        <th scope="col" class="mobile-max-width">В наличии</th>
+        <th scope="col" class="mobile-max-width">Цена за штуку</th>
+        <th scope="col" class="mobile-min-width">Цена за все</th>
+        <th scope="col" class="mobile-hide">Исклю-<br>чить</th>
     </tr>
     </thead>
     <tbody>
@@ -37,10 +37,10 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
                 {{$resourceQuantity}}
             </td>
             <td class="td-has" data-has="0">
-                <input class="form-control" type="number" step="1" min="0" max="{{$resourceQuantity}}" value="0">
+                <input class="form-control mobile-no-padding" type="number" step="1" min="0" max="{{$resourceQuantity}}" value="0">
             </td>
             <td class="td-price" data-price="{{$resourcePrice}}">
-                <input class="form-control" type="number" step="1" min="0" value="{{$resourcePrice ?? 0}}">
+                <input class="form-control mobile-no-padding" type="number" step="1" min="0" value="{{$resourcePrice ?? 0}}">
                 @if($isPriceDifferent)
                     <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipResourcePriceText}}">
                                         {!! file_get_contents( $tooltipResourcePriceImg) !!}
@@ -55,7 +55,7 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
                     </span>
                 @endif
             </td>
-            <td>
+            <td class="mobile-hide">
                 <input type="checkbox" class="disable-row">
             </td>
         </tr>
@@ -80,7 +80,7 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
         <td colspan="1">
             <b>Итого:</b>
         </td>
-        <td colspan="2">
+        <td colspan="1">
             <b class="total">{{$totalText}}</b>
             @if($isCountMoreThenOne)
                 (1 шт.)
@@ -90,6 +90,9 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
                     {!! file_get_contents($tooltipResourcePriceImg) !!}
                 </span>
             @endif
+        </td>
+        <td class="mobile-hide">
+
         </td>
     </tr>
     </tbody>
