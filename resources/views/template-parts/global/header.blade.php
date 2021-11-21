@@ -86,7 +86,7 @@ $_SESSION['isAnimationWasShowed'] = true;
 
         <div class="nk-preloader-content">
             <div>
-                <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="Калькулятор крафта Asterios" width="170">
+                <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="Калькулятор крафта Asterios" width="170" height="40">
                 <div class="nk-preloader-animation"></div>
             </div>
         </div>
@@ -114,7 +114,7 @@ $_SESSION['isAnimationWasShowed'] = true;
 
                 <div class="nk-nav-row">
                     <a href="{{route('index')}}" class="nk-nav-logo">
-                        <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="150">
+                        <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="150" height="35">
                     </a>
                 </div>
 
@@ -127,7 +127,7 @@ $_SESSION['isAnimationWasShowed'] = true;
     <div class="nano">
         <div class="nano-content">
             <a href="{{route('index')}}" class="nk-nav-logo">
-                <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="90">
+                <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="90" height="21">
             </a>
             <div class="nk-navbar-mobile-content">
                 <ul class="nk-nav">

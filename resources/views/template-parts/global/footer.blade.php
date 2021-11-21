@@ -6,7 +6,7 @@
         <div class="nk-gap-2"></div>
         <div class="nk-footer-logos">
             <a href="{{route('index')}}">
-                <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="craft_logo" width="120">
+                <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="craft_logo" width="120" height="28">
             </a>
         </div>
         <div class="nk-gap"></div>

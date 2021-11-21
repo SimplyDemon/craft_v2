@@ -3,7 +3,7 @@
         <div class="nk-nav-table">
 
             <a href="{{route('index')}}" class="nk-nav-logo">
-                <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="90">
+                <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="90" height="21">
             </a>
 
             <ul class="nk-nav nk-nav-right d-none d-lg-block" data-nav-mobile="#nk-nav-mobile">
@@ -72,7 +72,7 @@
                 @if(!$isAuth)
                     <li class="single-icon">
                         <a href="#" class="nk-sign-toggle no-link-effect">
-                            <img width="20" src="{{ asset('images/icon-login.svg' ) }}" alt="login">
+                            <img width="20" height="20" src="{{ asset('images/icon-login.svg' ) }}" alt="login">
                         </a>
                     </li>
                 @endif
