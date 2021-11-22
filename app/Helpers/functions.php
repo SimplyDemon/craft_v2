@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\RaidBoss;
 use App\Models\Recipe;
 use App\Models\Resource;
 use Illuminate\Support\Facades\File;
@@ -61,4 +62,67 @@ function seederAddRecipe( string $name, string $imagePath, int $price, string $g
 
 function getCurrentTimeInUnix() {
     return time();
+}
+
+function generateSitemap() {
+    $recipes        = Recipe::orderBy( 'id', 'desc' )->get();
+    $pageChangeFreq = 'weekly';
+    $pagePriority   = '0.7';
+
+    $boss   = RaidBoss::firstOrFail();
+    $routes = [
+        'index'         => [
+            'lastmod' => date( 'c', strtotime( $boss->updated_at ) ),
+        ],
+        'search'        => [
+            'lastmod' => date( 'c', filemtime( resource_path( 'views/pages/search/index.blade.php' ) ) ),
+        ],
+        'recipes.index' => [
+            'lastmod' => date( 'c', filemtime( resource_path( 'views/pages/recipes/index.blade.php' ) ) ),
+        ],
+        'login'         => [
+            'lastmod' => date( 'c', filemtime( resource_path( 'views/auth/login.blade.php' ) ) ),
+        ],
+        'register'      => [
+            'lastmod' => date( 'c', filemtime( resource_path( 'views/auth/register.blade.php' ) ) ),
+        ],
+    ];
+
+    $pageRoutes = [];
+
+    foreach ( $routes as $route => $params ) {
+        $pageRoutes[] = [
+            'loc'        => route( $route ),
+            'lastmod'    => $params['lastmod'],
+            'changefreq' => $pageChangeFreq,
+            'priority'   => $pagePriority,
+        ];
+    }
+
+    $xml = new XMLWriter();
+    $xml->openUri( public_path() . '/sitemap.xml' );
+    $xml->startDocument( '1.0', 'utf-8' );
+    $xml->setIndent( 4 );
+    $xml->startElement( 'urlset' );
+    $xml->writeAttribute( 'xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9' );
+    foreach ( $pageRoutes as $route ) {
+        $xml->startElement( 'url' );
+        $xml->writeElement( 'loc', $route['loc'] );
+        $xml->writeElement( 'lastmod', $route['lastmod'] );
+        $xml->writeElement( 'changefreq', $route['changefreq'] );
+        $xml->writeElement( 'priority', $route['priority'] );
+        $xml->endElement();
+    }
+
+    foreach ( $recipes as $recipe ) {
+        $xml->startElement( 'url' );
+        $xml->writeElement( 'loc', route( 'recipes.show', $recipe->id ) );
+        $xml->writeElement( 'lastmod', date( 'c', strtotime( $recipe->updated_at ) ) );
+        $xml->writeElement( 'changefreq', 'weekly' );
+        $xml->writeElement( 'priority', '0.5' );
+        $xml->endElement();
+    }
+
+    $xml->endElement();
+    $xml->endDocument();
 }

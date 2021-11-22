@@ -26,8 +26,6 @@ use App\Models\Conversation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get( 'sitemap.xml', [ SitemapController::class, 'index' ] );
-
 
 Auth::routes( [
     'register' => true, // Registration Routes...
