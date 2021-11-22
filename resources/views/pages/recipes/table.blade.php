@@ -42,7 +42,7 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
             <td class="td-price" data-price="{{$resourcePrice}}">
                 <input class="form-control mobile-no-padding" type="number" step="1" min="0" value="{{$resourcePrice ?? 0}}">
                 @if($isPriceDifferent)
-                    <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipResourcePriceText}}">
+                    <span class="mobile-hide" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipResourcePriceText}}">
                                         {!! file_get_contents( $tooltipResourcePriceImg) !!}
                                     </span>
                 @endif
@@ -50,7 +50,7 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
             <td data-total="{{$resourceLinePrice}}">
                 {{number_format($resourceLinePrice, 0, ' ', ' ') }}
                 @if($isPriceDifferent)
-                    <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipLinePriceText}}">
+                    <span class="mobile-hide" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipLinePriceText}}">
                         {!! file_get_contents( $tooltipResourcePriceImg) !!}
                     </span>
                 @endif
@@ -86,7 +86,7 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
                 (1 шт.)
             @endif
             @if($isPriceDifferent)
-                <span data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
+                <span class="mobile-hide" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
                     {!! file_get_contents($tooltipResourcePriceImg) !!}
                 </span>
             @endif
