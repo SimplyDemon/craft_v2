@@ -28,7 +28,7 @@
 
                 <li class="{{Route::is('recipes.index') ? 'active' : ''}}">
                     <a href="{{ route('recipes.index') }}">
-                        Вещи
+                        Предметы
                     </a>
                 </li>
                 @if($isAuth)

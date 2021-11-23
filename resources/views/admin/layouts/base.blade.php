@@ -35,7 +35,7 @@ $isAdmin = $isAuth && $user->isAdmin;
                     Калькулятор крафта
                 </a>
                 <a class="navbar-brand" href="{{ route('recipes.index') }}">
-                    Вещи
+                    Предметы
                 </a>
                 <form action="{{route('search')}}" method="get">
                     @csrf
