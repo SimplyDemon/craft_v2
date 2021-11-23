@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AuthenticateOnceWithBasicAuthOnlyDev;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\IsCanUpdatePrice;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -65,5 +66,6 @@ class Kernel extends HttpKernel {
         'verified'         => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'isAdmin'          => IsAdmin::class,
         'IsCanUpdatePrice' => IsCanUpdatePrice::class,
+        'auth.dev'         => AuthenticateOnceWithBasicAuthOnlyDev::class,
     ];
 }
