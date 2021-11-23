@@ -12,14 +12,11 @@
                         <div class="nk-header-text">
                             <h1 class="nk-title display-3">{{$title ?? 'Калькулятор крафта Asterios'}}</h1>
                             <div class="nk-gap-2"></div>
-                            <h2 class="nk-title h1">Нужна помощь в поиске багов! 1 баг = 1 голд на сервере х1. Подробнее на
-                                <a href="https://forum.asterios.tm/topic/558751-kalkuljator-krafta-resp-sab-rb-i-jepik-rb/page/3/?tab=comments#comment-9093644" target="_blank">форуме</a>.
-                            </h2>
                             <a href="{{route('recipes.index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-4">
                                 <span>Каталог предметов</span>
                             </a>
-                            <a href="#rb" class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-4">
-                                <span>Респ РБ</span>
+                            <a href="#rb" class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-1">
+                                Респ РБ
                             </a>
                             <div class="nk-gap-4"></div>
                         </div>
@@ -52,7 +49,7 @@
                         <div class="nk-ibox-cont">
                             <h2 class="nk-ibox-title">Цены уже установлены</h2>
                             Цены на все ресурсы заполнены сразу и обновляются периодично, последнее обновление
-                            <b class="color-main-1-important">21.11.2021 22:30</b>. Просто перейди на страницу вещи и увидишь актуальную стоимость крафта.
+                            <b class="color-main-1-important">23.11.2021 19:00</b>. Просто перейди на страницу вещи и увидишь актуальную стоимость крафта.
                         </div>
                     </div>
                 </div>
@@ -142,15 +139,7 @@
         </div>
 
         <?php
-        $inProgresses = [
-            'Поправить баги бета версии.',
-            'Выпустить стабильный продакшен',
-            'Переделать страницу всех предметов (добавить поиск без перезагрузки, фильтр по категориям и грейдам).',
-            'Добавить поиск на страницу управления ценами',
-            'Доработать чат.',
-            'Книга рецептов - возможность добавлять рецепты в личный кабинет.',
-            'Добавить блог для публикации статей, инфы о ченджлогах.',
-        ];
+
         ?>
 
         <div class="nk-carousel-2 nk-carousel-x1" data-autoplay="12000" data-dots="true">

@@ -1,0 +1,133 @@
+.col-categories {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.col-categories .nk-btn:before:not('reset') {
+    border: none;
+}
+
+.col-categories .nk-btn {
+    background-color: transparent;
+}
+
+.col-categories .nk-btn a:hover {
+    background-color: transparent;
+}
+
+.col-categories .nk-btn:hover {
+    box-shadow: none;
+}
+
+.col-categories a {
+    padding-left: 25px !important;
+}
+
+.col-categories .subcategory a {
+    padding-left: 50px !important;
+}
+
+.nk-social-menu .nk-btn:hover {
+    transform: none;
+    color: white;
+}
+
+.categories-main a {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    padding-bottom: 2px !important;
+    padding-top: 2px !important;
+}
+
+.categories-main a:hover, .categories-main a:active, .categories-main a.category-active {
+    color: white;
+    background-color: #563c3c;
+    border-radius: 2px;
+    border: 1px solid #b56d19;
+    padding-bottom: 0 !important;
+}
+
+
+.category-active {
+    color: #e08821 !important;
+}
+
+.col-items .nk-social-menu-inline {
+    padding-left: 17px;
+}
+
+.col-items {
+    font-size: 14px;
+}
+
+.grade a, .percent a {
+    margin: 3px !important;
+    padding: 0 !important;
+
+}
+
+.nk-social-menu-inline {
+    padding-left: 0 !important;
+}
+
+.nk-social-menu-inline ul, .nk-social-menu-inline input {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 3px;
+}
+
+.nk-social-menu-inline input {
+    max-width: 200px;
+    margin-bottom: 6px;
+}
+
+@media (min-width: 767px) {
+    .nk-social-menu-inline ul.percent {
+        padding-left: 30px;
+    }
+
+    .nk-social-menu-inline ul.grade {
+        padding-left: 27px;
+    }
+}
+
+@media (max-width: 767px) {
+    .col-categories, #reset {
+        font-size: 12px;
+    }
+
+    .col-categories a {
+        padding-left: 0 !important;
+    }
+
+    .col-categories .subcategory a {
+        padding-left: 10px !important;
+    }
+
+    #reset {
+        white-space: normal;
+        word-spacing: 100vw; /* every new word on new line */
+        padding: 15px 0;
+
+    }
+
+    #reset:before {
+        border-radius: 10px;
+    }
+
+    .col-items {
+        font-size: 12px;
+    }
+
+    .col-items .item span {
+        font-size: 12px;
+    }
+}
+
+.col-items .item {
+    padding-bottom: 10px;
+}
+
+.nk-btn-color-warning:active {
+    color: #f0ad4e;;
+}

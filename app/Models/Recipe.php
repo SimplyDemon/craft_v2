@@ -10,7 +10,7 @@ class Recipe extends Model {
 
     protected $guarded = [ 'id', 'created_at', 'updated_at', 'deleted_at' ];
 
-    public function categories() {
+    public function category() {
         return $this->belongsTo( Category::class );
     }
 
@@ -66,5 +66,24 @@ class Recipe extends Model {
         $rareChance   = 3 + ( $crafterLevel - $craftLevel ) * 0.2;
 
         return $rareChance;
+    }
+
+    public function getMasterworkTextAttribute() {
+        $masterWorkText = null;
+
+        if ( $this->attributes['masterwork_description'] ) {
+            $masterWorkText = '';
+
+            if ( $this->rare_chance ) {
+                $masterWorkText = 'Crafter level <b>85</b><br>';
+                $masterWorkText .= 'Chance: <b>' . $this->rare_chance . '</b>%<br>';
+            }
+            if ( $this->attributes['masterwork_name'] ) {
+                $masterWorkText .= '<i>' . $this->attributes['masterwork_name'] . '</i><br>';
+            }
+            $masterWorkText .= $this->attributes['masterwork_description'];
+        }
+
+        return $masterWorkText;
     }
 }

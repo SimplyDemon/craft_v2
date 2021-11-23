@@ -27,39 +27,46 @@ $_SESSION['isAnimationWasShowed'] = true;
 
     <meta name="keywords" content="@yield('meta_keywords','калькулятор крафта астериос крафт крафтинг кальк астериос craft calc calculator asterios crafting')  @yield('title')">
     <meta name="description" content="@yield('meta_description','Калькулятор крафта Астериос  | Craft calculator Asterios')  @yield('title')">
-    <meta name="author" content="Калькулятор крафта Asterios">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="google-site-verification" content="r5IgAcubOAf7hWByU2jIi90T51Fy4wYNeLTcvH8vFaE" />
-    <link rel="icon" type="image/png" href="{{ URL::to('/') }}/favicon.ico" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-87WEW2EL6C"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push( arguments );
-        }
+    @if (env( 'APP_ENV' ) === 'prod')
+        <meta name="google-site-verification" content="r5IgAcubOAf7hWByU2jIi90T51Fy4wYNeLTcvH8vFaE" />
+        <link rel="icon" type="image/png" href="{{ URL::to('/') }}/favicon.ico" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-87WEW2EL6C"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-        gtag( 'js', new Date() );
+            function gtag() {
+                dataLayer.push( arguments );
+            }
 
-        gtag( 'config', 'G-87WEW2EL6C' );
-    </script>
+            gtag( 'js', new Date() );
+
+            gtag( 'config', 'G-87WEW2EL6C' );
+        </script>
+    @endif
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
+    @if(Route::is('recipes.index'))
+        <link href="{{ mix('css/recipes.css') }}" rel="stylesheet">
+    @endif
 </head>
 
 <body>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function( m, e, t, r, i, k, a ) {
-        m[ i ]   = m[ i ] || function() {
-            (m[ i ].a = m[ i ].a || []).push( arguments )
-        };
-        m[ i ].l = 1 * new Date();
-        k = e.createElement( t ), a = e.getElementsByTagName( t )[ 0 ], k.async = 1, k.src = r, a.parentNode.insertBefore( k, a )
-    })
-    ( window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym" );
+
+@if (env( 'APP_ENV' ) === 'prod')
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function( m, e, t, r, i, k, a ) {
+            m[ i ]   = m[ i ] || function() {
+                (m[ i ].a = m[ i ].a || []).push( arguments )
+            };
+            m[ i ].l = 1 * new Date();
+            k = e.createElement( t ), a = e.getElementsByTagName( t )[ 0 ], k.async = 1, k.src = r, a.parentNode.insertBefore( k, a )
+        })
+        ( window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym" );
 
     ym( 86545727, "init", {
         clickmap: true,
@@ -67,11 +74,13 @@ $_SESSION['isAnimationWasShowed'] = true;
         accurateTrackBounce: true,
         webvisor: true
     } );
-</script>
-<noscript>
-    <div><img src="https://mc.yandex.ru/watch/86545727" style="position:absolute; left:-9999px;" alt="ya" /></div>
-</noscript>
-<!-- /Yandex.Metrika counter -->
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/86545727" style="position:absolute; left:-9999px;" alt="ya" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+@endif
+
 @if($isEnableAnimation)
     <div class="nk-preloader">
         <div class="nk-preloader-bg"

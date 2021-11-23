@@ -22,6 +22,15 @@ class IndexController extends Controller {
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
+        $inProgresses = [
+            'Поправить баги бета версии.',
+            'Выпустить стабильный продакшен.',
+            'Добавить поиск на страницу управления ценами.',
+            'Доработать чат.',
+            'Книга рецептов - возможность добавлять рецепты в личный кабинет.',
+            'Добавить блог для публикации статей, инфы о ченджлогах.',
+        ];
+
         $raidBossController = new RaidBossController();
         $bossesX1           = [
             'subclass' => $raidBossController->getBossesDeathTime( 'subclass', 'x1' ),
@@ -33,9 +42,10 @@ class IndexController extends Controller {
         ];
 
         return view( 'pages.index.index', [
-            'bossesX1' => $bossesX1,
-            'bossesX5' => $bossesX5,
-            'title'    => 'Калькулятор крафта Asterios',
+            'bossesX1'     => $bossesX1,
+            'bossesX5'     => $bossesX5,
+            'inProgresses' => $inProgresses,
+            'title'        => 'Калькулятор крафта Asterios',
         ] );
     }
 

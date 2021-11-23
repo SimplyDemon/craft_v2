@@ -23,12 +23,53 @@ class RecipeController extends Controller {
 
 
     public function index() {
-        $categories = Category::orderBy( 'id', 'asc' )->whereNull( 'category_id' )->get();
+        $recipes = Recipe::orderBy( 'grade', 'desc' )->get();
 
+        $categories = [
+            'weapon'   => [
+                'title' => 'Оружие',
+                'list'  => [
+                    'sword'   => 'Мечи',
+                    'blunt'   => 'Ударное',
+                    'dagger'  => 'Кинжалы',
+                    'bow'     => 'Луки',
+                    'polearm' => 'Копья',
+                    'fist'    => 'Кастеты',
+                ],
+            ],
+            'armor'    => [
+                'title' => 'Броня',
+                'list'  => [
+                    'upper'     => 'Верх',
+                    'lower'     => 'Низ',
+                    'full body' => 'Цельное',
+                    'helmet'    => 'Шлемы',
+                    'gloves'    => 'Перчатки',
+                    'boot'      => 'Ботинки',
+                    'shield'    => 'Щиты',
+                    'sigil'     => 'Сигили',
+                ],
+            ],
+            'jewelry'  => [
+                'title' => 'Бижутерия',
+                'list'  => [
+                    'necklace' => 'Ожерелья',
+                    'earring'  => 'Серьги',
+                    'ring'     => 'Кольца',
+                ],
+            ],
+            'other'    => [
+                'title' => 'Шоты',
+            ],
+            'resource' => [
+                'title' => 'Ресурсы',
+            ],
+        ];
 
         return view( $this->folderPathUser . 'index', [
             'categories' => $categories,
-            'title'      => 'Все вещи',
+            'recipes'    => $recipes,
+            'title'      => 'Все предметы',
         ] );
     }
 
@@ -79,7 +120,8 @@ class RecipeController extends Controller {
 
             $url     = route( $this->name . 'show', [ 'single' => $recipe, 'id' => $recipe->id ] );
             $message = "Добавление выполнено успешно! Нажмите <a href='{$url}'>сюда</a> что бы посмотреть";
-        } catch ( QueryException $exception ) {
+        }
+        catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
         }
 
@@ -169,7 +211,8 @@ class RecipeController extends Controller {
 
             $single->update( $request->except( 'currentID', 'method', 'image', 'resource_ids', 'resource_quantity' ) );;
             $message = 'Обновление выполнено успешно!';
-        } catch ( QueryException $exception ) {
+        }
+        catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
         }
 
@@ -191,7 +234,8 @@ class RecipeController extends Controller {
         try {
             $single->delete();
             $message = 'Удаление выполнено успешно!';
-        } catch ( QueryException $exception ) {
+        }
+        catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
         }
 

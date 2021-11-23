@@ -13,18 +13,8 @@ if ( isset( $single->resource_id ) ) {
     $recipePriceSell = isset( $user ) && $user->recipes->find( $single->id ) && $user->recipes->find( $single->id )->pivot->price_sell ? $user->recipes->find( $single->id )->pivot->price_sell : $single->price_sell;
 }
 
-$masterWorkText = null;
-if ( $single->masterwork_description ) {
-    $masterWorkText = '';
-    if ( $single->rare_chance ) {
-        $masterWorkText = 'Crafter level <b>85</b><br>';
-        $masterWorkText .= 'Chance: <b>' . $single->rare_chance . '</b>%';
-    }
-    if ( $single->masterwork_name ) {
-        $masterWorkText .= '<br><i>' . $single->masterwork_name . '</i>';
-    }
-    $masterWorkText .= '<br>' . $single->masterwork_description;
-}
+$masterWorkText = $single->masterworkText;
+
 $isCountMoreThenOne = $single->craft_count !== 1;
 ?>
 <div class="nk-main">
