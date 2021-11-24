@@ -55,7 +55,6 @@ class UserPriceController extends Controller {
 
                 $user->resources()->attach( $id, [
                     'price_sell' => (int) $prices['price_sell'],
-                    'price_buy'  => (int) $prices['price_buy'],
                 ] );
             }
 
@@ -69,7 +68,6 @@ class UserPriceController extends Controller {
 
                 $user->recipes()->attach( $id, [
                     'price_sell' => (int) $prices['price_sell'],
-                    'price_buy'  => (int) $prices['price_buy'],
                 ] );
             }
             $message = 'Цены обновлены';

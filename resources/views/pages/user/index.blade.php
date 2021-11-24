@@ -1,4 +1,4 @@
-@extends('pages.user.main-template', ['title' => $title ?? 'Калькулятор крафта Asterios'])
+@extends('pages.user.main-template', ['title' => $title ?? 'Личный кабинет'])
 @section('user-content')
     @if(isset($title))
 @section('title', $title)

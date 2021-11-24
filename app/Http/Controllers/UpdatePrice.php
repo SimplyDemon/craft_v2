@@ -40,7 +40,6 @@ class UpdatePrice extends Controller {
 
                 Resource::findOrFail( $id )->update( [
                     'price_sell' => (int) $prices['price_sell'],
-                    'price_buy'  => (int) $prices['price_buy'],
                 ] );
             }
 
@@ -54,7 +53,6 @@ class UpdatePrice extends Controller {
 
                 Recipe::findOrFail( $id )->update( [
                     'price_sell' => (int) $prices['price_sell'],
-                    'price_buy'  => (int) $prices['price_buy'],
                 ] );
             }
             $message = 'Цены обновлены.';

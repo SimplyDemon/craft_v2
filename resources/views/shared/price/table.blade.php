@@ -1,9 +1,8 @@
 <table class="table table-bordered">
     <thead>
     <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Price sell</th>
-        <th scope="col">Price buy</th>
+        <th scope="col">Название</th>
+        <th scope="col">Цена</th>
     </tr>
     </thead>
     <tbody>
@@ -31,9 +30,6 @@
                 </td>
                 <td>
                     <input class="form-control" name="{{$prefix}}[{{$single->id}}][price_sell]" type="number" step="1" min="0" value="{{$single->pivot->price_sell ?? $single->price_sell ?? 0}}">
-                </td>
-                <td>
-                    <input class="form-control" name="{{$prefix}}[{{$single->id}}][price_buy]" type="number" step="1" min="0" value="{{$single->pivot->price_buy ?? $single->price_buy ?? 0}}">
                 </td>
             </tr>
         @endforeach

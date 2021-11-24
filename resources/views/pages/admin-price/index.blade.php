@@ -19,13 +19,13 @@
                     @csrf
                     @method('POST')
 
-                    <h2>Resources</h2>
+                    <h2>Ресурсы</h2>
                     @include('shared.price.table', [
                         'all' => $resources,
                         'prefix' => 'resources',
                     ])
 
-                    <h2>Items</h2>
+                    <h2>Предметы</h2>
                     @include('shared.price.table', [
                         'all' => $recipes,
                         'prefix' => 'recipes',

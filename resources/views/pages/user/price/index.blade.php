@@ -1,4 +1,4 @@
-@extends('pages.user.main-template', ['title' => $title ?? 'Калькулятор крафта Asterios'])
+@extends('pages.user.main-template', ['title' => $title ?? 'Цены'])
 @section('user-content')
     @if(isset($title))
 @section('title', $title)
@@ -9,19 +9,19 @@
         @csrf
         @method('POST')
 
-        <h2>Resources</h2>
+        <h2>Ресурсы</h2>
         @include('shared.price.table', [
             'all' => $resources,
             'prefix' => 'resources',
         ])
 
-            <h2>Items</h2>
-            @include('shared.price.table', [
-                'all' => $recipes,
-                'prefix' => 'recipes',
-            ])
-            <button class="btn btn-primary">Сохранить</button>
-        </form>
-    @endif
+        <h2>Предметы</h2>
+        @include('shared.price.table', [
+            'all' => $recipes,
+            'prefix' => 'recipes',
+        ])
+        <button class="btn btn-primary">Сохранить</button>
+    </form>
+@endif
 
 @endsection
