@@ -78,7 +78,15 @@ td.td-has input {
 td.td-price {
     max-width: 130px !important;
 }
+@media (min-width: 767px) {
+    td.td-price {
+        display: flex;
+    }
 
+    td.td-price span {
+        padding-top: 10px;
+    }
+}
 td.td-price input {
     max-width: 130px !important;
 }
