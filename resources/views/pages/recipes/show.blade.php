@@ -49,27 +49,22 @@ $isCountMoreThenOne = $single->craft_count !== 1;
         </h3>
 
         @if(!$single->resources->isEmpty())
-
-
-        <div class="no-gutters">
-
-                            @include('pages.recipes.table', [
-                                'price' => 'price_sell',
-                                'isCountMoreThenOne' => $isCountMoreThenOne,
-                                'single' => $single,
-                                'resource' => $resource ?? null,
-                            ])
-
-                        </div>
-
-                        <div class="nk-gap-1"></div>
-                    </div>
-
-
-        @endif
-        <div class="nk-gap-4"></div>
-        <div class="nk-gap-3"></div>
+            <div class="no-gutters">
+                @include('pages.recipes.table', [
+                    'price' => 'price_sell',
+                    'isCountMoreThenOne' => $isCountMoreThenOne,
+                    'single' => $single,
+                    'resource' => $resource ?? null,
+                ])
+            </div>
+            <div class="nk-gap-1"></div>
     </div>
+
+
+    @endif
+    <div class="nk-gap-4"></div>
+    <div class="nk-gap-3"></div>
+</div>
 
 </div>
 
