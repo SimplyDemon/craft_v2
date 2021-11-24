@@ -78,6 +78,7 @@ td.td-has input {
 td.td-price {
     max-width: 130px !important;
 }
+
 @media (min-width: 767px) {
     td.td-price {
         display: flex;
@@ -87,6 +88,7 @@ td.td-price {
         padding-top: 10px;
     }
 }
+
 td.td-price input {
     max-width: 130px !important;
 }
@@ -117,4 +119,9 @@ table.recipe td {
     .mobile-min-width {
         min-width: 75px;
     }
+}
+
+input#recipe-price {
+    width: 50%;
+    display: inline-block
 }

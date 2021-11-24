@@ -43,7 +43,16 @@ $isCountMoreThenOne = $single->craft_count !== 1;
                 <span> шт.</span>
             @endif
 
-            @if($recipePriceSell > 0)
+            @if($single->percent === '100')
+                <div class="form-group" data-recipe-price="{{$recipePriceSell ?? 0}}">
+                    <label for="recipe-price">Цена:</label>
+                    <input id="recipe-price" class="form-control" type="number" step="1" min="0" value="{{$recipePriceSell ?? 0}}">
+                    <p style="visibility: hidden" id="recipe-price-craft-with-count">Цена за
+                        <span id="recipe-price-craft-count"></span> шт.
+                        <span id="recipe-price-craft-cost">{{number_format($recipePriceSell ?? 0, 0, ' ', ' ')}}</span>
+                    </p>
+                </div>
+            @else
                 <p>Цена: {{number_format($recipePriceSell, 0, ' ', ' ')}}</p>
             @endif
         </h3>
@@ -60,9 +69,7 @@ $isCountMoreThenOne = $single->craft_count !== 1;
             <div class="nk-gap-1"></div>
     </div>
 
-
     @endif
-    <div class="nk-gap-4"></div>
     <div class="nk-gap-3"></div>
 </div>
 
@@ -70,10 +77,3 @@ $isCountMoreThenOne = $single->craft_count !== 1;
 
 @endsection
 
-@push('extra-scripts')
-    <script>
-        $( function() {
-            $( '[data-toggle="tooltip"]' ).tooltip()
-        } )
-    </script>
-@endpush
