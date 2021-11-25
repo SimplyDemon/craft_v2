@@ -7,11 +7,6 @@
             </a>
 
             <ul class="nk-nav nk-nav-right d-none d-lg-block" data-nav-mobile="#nk-nav-mobile">
-                <li class="{{Route::is('index') ? 'active' : ''}}">
-                    <a href="{{route('index')}}">
-                        Калькулятор крафта
-                    </a>
-                </li>
                 <li>
                     <form action="{{route('search')}}" method="get">
                         @csrf
