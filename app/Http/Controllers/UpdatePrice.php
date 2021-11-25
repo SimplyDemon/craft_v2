@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Recipe;
 use App\Models\Resource;
+use App\Models\ResourceAdminPrice;
+use App\Models\ResourcePriceAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -40,6 +42,11 @@ class UpdatePrice extends Controller {
 
                 Resource::findOrFail( $id )->update( [
                     'price_sell' => (int) $prices['price_sell'],
+                ] );
+
+                ResourceAdminPrice::create( [
+                    'resource_id' => $id,
+                    'price_sell'  => (int) $prices['price_sell'],
                 ] );
             }
 

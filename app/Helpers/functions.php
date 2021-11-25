@@ -66,24 +66,28 @@ function getCurrentTimeInUnix() {
 
 function generateSitemap() {
     $recipes        = Recipe::orderBy( 'id', 'desc' )->get();
+    $resources      = Resource::orderBy( 'name', 'asc' )->where( 'type', 'resource' )->get();
     $pageChangeFreq = 'weekly';
     $pagePriority   = '0.7';
 
     $boss   = RaidBoss::firstOrFail();
     $routes = [
-        'index'         => [
+        'index'           => [
             'lastmod' => date( 'c', strtotime( $boss->updated_at ) ),
         ],
-        'search'        => [
+        'search'          => [
             'lastmod' => date( 'c', filemtime( resource_path( 'views/pages/search/index.blade.php' ) ) ),
         ],
-        'recipes.index' => [
+        'recipes.index'   => [
             'lastmod' => date( 'c', filemtime( resource_path( 'views/pages/recipes/index.blade.php' ) ) ),
         ],
-        'login'         => [
+        'resources.index' => [
+            'lastmod' => date( 'c', filemtime( resource_path( 'views/pages/resources/index.blade.php' ) ) ),
+        ],
+        'login'           => [
             'lastmod' => date( 'c', filemtime( resource_path( 'views/auth/login.blade.php' ) ) ),
         ],
-        'register'      => [
+        'register'        => [
             'lastmod' => date( 'c', filemtime( resource_path( 'views/auth/register.blade.php' ) ) ),
         ],
     ];
@@ -123,6 +127,19 @@ function generateSitemap() {
         $xml->endElement();
     }
 
+    foreach ( $resources as $resource ) {
+        $xml->startElement( 'url' );
+        $xml->writeElement( 'loc', route( 'recipes.show', $resource->id ) );
+        $xml->writeElement( 'lastmod', date( 'c', strtotime( $resource->updated_at ) ) );
+        $xml->writeElement( 'changefreq', 'weekly' );
+        $xml->writeElement( 'priority', '0.5' );
+        $xml->endElement();
+    }
+
     $xml->endElement();
     $xml->endDocument();
+}
+
+function prettifyNumber( int $number ): string {
+    return number_format( $number, 0, ' ', ' ' );
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\AddResource;
 use App\Http\Requests\EditResource;
 use App\Models\Resource;
+use App\Models\ResourceAdminPrice;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,13 +16,17 @@ use Illuminate\Support\Str;
 class ResourceController extends Controller {
     protected string $name = 'resources.';
     protected string $folderPath = 'admin.pages.resources.';
+    protected string $folderPathUser = 'pages.resources.';
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
 
 
     public function index() {
-        $all = Resource::orderBy( 'name', 'asc' )->get();
+        $all = Resource::orderBy( 'name', 'asc' )->where( 'type', 'resource' )->get();
 
-        return view( $this->folderPath . 'index', [ 'all' => $all ] );
+        return view( $this->folderPathUser . 'index', [
+            'all'   => $all,
+            'title' => 'Ресурсы',
+        ] );
     }
 
     public function create() {
@@ -45,9 +50,10 @@ class ResourceController extends Controller {
 
             $resource = Resource::create( $request->except( 'image' ) );
 
-            $url = route( $this->name . 'show', [ 'single' => $resource, 'id' => $resource->id ] );
+            $url     = route( $this->name . 'show', [ 'single' => $resource, 'id' => $resource->id ] );
             $message = "Добавление выполнено успешно! Нажмите <a href='{$url}'>сюда</a> что бы посмотреть";
-        } catch ( QueryException $exception ) {
+        }
+        catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
         }
 
@@ -58,9 +64,23 @@ class ResourceController extends Controller {
 
 
     public function show( int $id ) {
-        $single = Resource::findOrFail( $id );
+        $single        = Resource::findOrFail( $id );
+        $pricesHistory = ResourceAdminPrice::where( 'resource_id', $id )->orderBy( 'id', 'desc' )->limit( 12 )->get();
 
-        return view( $this->folderPath . 'show', [ 'single' => $single ] );
+        $priceHistoryDates  = [];
+        $priceHistoryPrices = [];
+        if ( ! $pricesHistory->isEmpty() ) {
+            foreach ( $pricesHistory as $priceHistory ) {
+                $priceHistoryDates[]  = date( 'd.m.Y', strtotime( $priceHistory->created_at ) );
+                $priceHistoryPrices[] = $priceHistory->price_sell;
+            }
+        }
+
+        return view( $this->folderPathUser . 'show', [
+            'single'             => $single,
+            'priceHistoryDates'  => json_encode( $priceHistoryDates ),
+            'priceHistoryPrices' => json_encode( $priceHistoryPrices ),
+        ] );
     }
 
 
@@ -101,7 +121,8 @@ class ResourceController extends Controller {
             $single->update( $request->except( 'currentID', 'method', 'image' ) );
 
             $message = 'Обновление выполнено успешно!';
-        } catch ( QueryException $exception ) {
+        }
+        catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
         }
 
@@ -111,7 +132,7 @@ class ResourceController extends Controller {
             return Redirect::to( route( $this->name . 'edit', [
                 'single' => $single,
                 'all'    => $all,
-                'id'     => $single->id
+                'id'     => $single->id,
             ] ) );
         }
 
@@ -128,7 +149,8 @@ class ResourceController extends Controller {
         try {
             $single->delete();
             $message = 'Удаление выполнено успешно!';
-        } catch ( QueryException $exception ) {
+        }
+        catch ( QueryException $exception ) {
             $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
         }
 

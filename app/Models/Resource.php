@@ -14,6 +14,10 @@ class Resource extends Model {
         return $this->belongsToMany( Recipe::class );
     }
 
+    public function recipe() {
+        return $this->hasOne( Recipe::class );
+    }
+
     public function users() {
         return $this->belongsToMany( User::class );
     }

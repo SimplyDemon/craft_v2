@@ -27,8 +27,8 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
             $resourceAdminLinePrice = $adminResourcePrice * $resourceQuantity;
             $totalAdminPrice += $resourceAdminLinePrice;
             $isPriceDifferent = $adminResourcePrice !== $resourcePrice;
-            $tooltipResourcePriceText = 'Цена по умолчанию:<br><b>' . number_format( $adminResourcePrice, 0, ' ', ' ' ) . '</b>';
-            $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . number_format( $resourceAdminLinePrice, 0, ' ', ' ' ) . '</b>';
+            $tooltipResourcePriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $adminResourcePrice ) . '</b>';
+            $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $resourceAdminLinePrice ) . '</b>';
             ?>
             <td>
                 <img width="30" src="{{asset('storage') . '/' . $resource->img}}" alt="resource">{{$resource->name}}
@@ -48,7 +48,7 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
                 @endif
             </td>
             <td data-total="{{$resourceLinePrice}}">
-                {{number_format($resourceLinePrice, 0, ' ', ' ') }}
+                {{prettifyNumber($resourceLinePrice)}}
                 @if($isPriceDifferent)
                     <span class="mobile-hide" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipLinePriceText}}">
                         {!! file_get_contents( $tooltipResourcePriceImg) !!}
@@ -61,13 +61,13 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
         </tr>
     @endforeach
     <?php
-    $totalAdminPriceText = 'Цена по умолчанию:<br><b>' . number_format( $totalAdminPrice, 0, ' ', ' ' ) . '</b>';
+    $totalAdminPriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $totalAdminPrice ) . '</b>';
     $isPriceDifferent = $totalAdminPrice !== $total;
-    $totalText = number_format( $total, 0, ' ', ' ' );
+    $totalText = prettifyNumber( $total );
     if ( $isCountMoreThenOne ) {
         $total           = ceil( $total / $single->craft_count );
         $totalAdminPrice = ceil( $totalAdminPrice / $single->craft_count );
-        $totalText       .= ' | ' . number_format( $total, 0, ' ', ' ' );
+        $totalText       .= ' | ' . prettifyNumber( $total );
     }
     ?>
     <tr class="tr-total">

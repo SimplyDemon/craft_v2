@@ -15,3 +15,7 @@
 @if(Route::is('user.price') || Route::is('recipes.index')|| Route::is('admin_prices'))
     <script src="{{ mix('js/ajax-search.js') }}"></script>
 @endif
+
+@if(Route::is('resources.show'))
+    <script src="{{ mix('js/chart.js') }}"></script>
+@endif

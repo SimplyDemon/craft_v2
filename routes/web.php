@@ -18,11 +18,9 @@ use App\Http\Controllers\ConversationController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SearchController;
-use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\UpdatePrice;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\UserPriceController;
-use App\Models\Conversation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +38,10 @@ Route::middleware( 'auth.dev' )->group( function () {
 
     Route::resource( 'recipes', RecipeController::class )->parameters( [
         'recipes' => 'id',
+    ] )->only( [ 'index', 'show' ] );
+
+    Route::resource( 'resources', ResourceController::class )->parameters( [
+        'resources' => 'id',
     ] )->only( [ 'index', 'show' ] );
 
     Route::middleware( 'auth' )->group( function () {
@@ -84,7 +86,7 @@ Route::middleware( 'auth.dev' )->group( function () {
 
             Route::resource( 'resources', ResourceController::class )->parameters( [
                 'resources' => 'id',
-            ] );
+            ] )->except( [ 'index', 'show' ] );
         } );
 
     } );

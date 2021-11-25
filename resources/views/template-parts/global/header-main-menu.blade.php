@@ -31,6 +31,11 @@
                         Предметы
                     </a>
                 </li>
+                <li class="{{Route::is('resources.index') ? 'active' : ''}}">
+                    <a href="{{ route('resources.index') }}">
+                        Ресурсы
+                    </a>
+                </li>
                 @if($isAuth)
                     <li class="nk-drop-item {{Route::is('user') || Route::is('user.price') || Route::is('conversations.index') ? 'active' : ''}}">
                         <a href="{{route('user')}}">

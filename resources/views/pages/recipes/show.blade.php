@@ -28,34 +28,37 @@ $isCountMoreThenOne = $single->craft_count !== 1;
     </div>
 
     <div class="container">
+        <img width="50" src="{{asset('storage') . '/' . $single->img}}" alt="show">
+        @if($single->gradeImage)
+            <img class="grade" src="{{$single->gradeImage}}" alt="grade">
+        @endif
+        @if($masterWorkText)
+            <span class="nk-btn nk-btn-style-1 nk-btn-md nk-btn-color-main-1" style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$masterWorkText}}">Masterwork</span>
+        @endif
 
-        <h3>
-            <img width="50" src="{{asset('storage') . '/' . $single->img}}" alt="show">
-            @if($single->gradeImage)
-                <img class="grade" src="{{$single->gradeImage}}" alt="grade">
-            @endif
-            @if($masterWorkText)
-                <span class="nk-btn nk-btn-style-1 nk-btn-md nk-btn-color-main-1" style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$masterWorkText}}">Masterwork</span>
-            @endif
+        @if($isCountMoreThenOne)
+            <span class="nk-btn-style-1 nk-btn-md nk-btn-color-main-1" data-recipe-quantity-base="{{$single->craft_count}}" data-recipe-quantity="{{$single->craft_count}}">{{$single->craft_count}}</span>
+            <span> шт.</span>
+        @endif
 
-            @if($isCountMoreThenOne)
-                <span class="nk-btn-style-1 nk-btn-md nk-btn-color-main-1" data-recipe-quantity-base="{{$single->craft_count}}" data-recipe-quantity="{{$single->craft_count}}">{{$single->craft_count}}</span>
-                <span> шт.</span>
-            @endif
+        @if($single->percent === '100')
+            <div class="form-group" data-recipe-price="{{$recipePriceSell ?? 0}}">
+                <label for="recipe-price">Цена:</label>
+                <input id="recipe-price" class="form-control" type="number" step="1" min="0" value="{{$recipePriceSell ?? 0}}">
+                <p id="recipe-price-craft-with-count">Цена за
+                    <span id="recipe-price-craft-count">1</span> шт.
+                    <span id="recipe-price-craft-cost">{{prettifyNumber($recipePriceSell)}}</span>
+                </p>
+            </div>
+        @elseif($recipePriceSell && $recipePriceSell > 0)
+            <p>Цена: {{prettifyNumber($recipePriceSell)}}</p>
+        @endif
 
-            @if($single->percent === '100')
-                <div class="form-group" data-recipe-price="{{$recipePriceSell ?? 0}}">
-                    <label for="recipe-price">Цена:</label>
-                    <input id="recipe-price" class="form-control" type="number" step="1" min="0" value="{{$recipePriceSell ?? 0}}">
-                    <p style="visibility: hidden" id="recipe-price-craft-with-count">Цена за
-                        <span id="recipe-price-craft-count"></span> шт.
-                        <span id="recipe-price-craft-cost">{{number_format($recipePriceSell ?? 0, 0, ' ', ' ')}}</span>
-                    </p>
-                </div>
-            @else
-                <p>Цена: {{number_format($recipePriceSell, 0, ' ', ' ')}}</p>
-            @endif
-        </h3>
+        @if($single->resource)
+            <a href="{{ route( 'resources.show', [ 'id' => $single->resource->id ] ) }}">
+                <h3>Ресурс</h3>
+            </a>
+        @endif
 
         @if(!$single->resources->isEmpty())
             <div class="no-gutters">
@@ -66,14 +69,10 @@ $isCountMoreThenOne = $single->craft_count !== 1;
                     'resource' => $resource ?? null,
                 ])
             </div>
-            <div class="nk-gap-1"></div>
+        @endif
     </div>
 
-    @endif
-    <div class="nk-gap-3"></div>
-</div>
-
+    <div class="nk-gap-6"></div>
 </div>
 
 @endsection
-
