@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\RaidBossController;
+use App\Models\Resource;
 
 class IndexController extends Controller {
     /**
@@ -31,6 +30,8 @@ class IndexController extends Controller {
             'Добавить блог для публикации статей, инфы о ченджлогах.',
         ];
 
+        $lastResourcesUpdateTime = date( 'd.m.Y H:i', strtotime( Resource::where( 'name', 'Adamantine' )->firstOrFail()->updated_at ) );
+
         $raidBossController = new RaidBossController();
         $bossesX1           = [
             'subclass' => $raidBossController->getBossesDeathTime( 'subclass', 'x1' ),
@@ -42,10 +43,11 @@ class IndexController extends Controller {
         ];
 
         return view( 'pages.index.index', [
-            'bossesX1'     => $bossesX1,
-            'bossesX5'     => $bossesX5,
-            'inProgresses' => $inProgresses,
-            'title'        => 'Калькулятор крафта Asterios',
+            'bossesX1'                => $bossesX1,
+            'bossesX5'                => $bossesX5,
+            'inProgresses'            => $inProgresses,
+            'title'                   => 'Калькулятор крафта Asterios',
+            'lastResourcesUpdateTime' => $lastResourcesUpdateTime,
         ] );
     }
 
