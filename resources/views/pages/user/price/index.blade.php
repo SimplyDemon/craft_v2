@@ -20,7 +20,7 @@
             'all' => $recipes,
             'prefix' => 'recipes',
         ])
-        <button class="btn btn-primary">Сохранить</button>
+        <button class="btn btn-primary fixed-bottom save-prices">Сохранить</button>
     </form>
 @endif
 
