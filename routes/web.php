@@ -42,7 +42,8 @@ Route::middleware( 'auth.dev' )->group( function () {
 
     Route::resource( 'resources', ResourceController::class )->parameters( [
         'resources' => 'id',
-    ] )->only( [ 'index', 'show' ] );
+    ] )->only( [ 'show' ] );
+    Route::get( '/resources_list', [ ResourceController::class, 'index' ] )->name( 'resources.index' );
 
     Route::middleware( 'auth' )->group( function () {
         Route::resource( 'conversations', ConversationController::class )->parameters( [
