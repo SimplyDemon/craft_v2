@@ -65,7 +65,7 @@ class ResourceController extends Controller {
 
     public function show( int $id ) {
         $single        = Resource::findOrFail( $id );
-        $pricesHistory = ResourceAdminPrice::where( 'resource_id', $id )->orderBy( 'id', 'desc' )->limit( 12 )->get();
+        $pricesHistory = ResourceAdminPrice::where( 'resource_id', $id )->orderBy( 'id', 'desc' )->limit( 12 )->get()->reverse();
 
         $priceHistoryDates  = [];
         $priceHistoryPrices = [];
