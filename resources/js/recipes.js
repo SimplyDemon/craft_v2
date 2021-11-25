@@ -96,23 +96,6 @@ function generateFilterSelector( filter ) {
     return selector;
 }
 
-let timeout;
-// Ajax live search
-$( '#item-search' ).bind( 'keyup click', function() {
-    if ( timeout ) {
-        clearTimeout( timeout );
-    }
-    let value = $( this ).val().toLowerCase();
-    timeout   = setTimeout( function() {
-        let find = $( ".col-items .row .item" ).filter( function() {
-            return $( this ).attr( 'data-name' ).indexOf( value ) > - 1;
-        } );
-        items.hide();
-        resetFilter();
-        find.show();
-    }, 200 );
-} );
-
 $( "#reset" ).on( 'click', function( e ) {
     resetFilter();
     $( '#item-search' ).val( '' );
@@ -120,22 +103,24 @@ $( "#reset" ).on( 'click', function( e ) {
 
 } );
 
-function resetFilter() {
+export function resetFilter() {
     filter           = {};
     let categoryMain = $( '.col-categories a[data-category="any"]' );
     let gradeMain    = $( '.grade a[data-grade="any"]' ).closest( 'li' );
     let percentMain  = $( '.percent a[data-percent="any"]' ).closest( 'li' );
+    if ( categoryMain.length > 0 && gradeMain.length > 0 && percentMain.length > 0 ) {
+        $( ".col-categories a" ).not( categoryMain ).removeClass( 'category-active' );
+        categoryMain.addClass( 'category-active' );
 
-    $( ".col-categories a" ).not( categoryMain ).removeClass( 'category-active' );
-    categoryMain.addClass( 'category-active' );
+        $( "ul.grade li" ).not( gradeMain ).removeClass( 'active' );
+        gradeMain.addClass( 'active' );
 
-    $( "ul.grade li" ).not( gradeMain ).removeClass( 'active' );
-    gradeMain.addClass( 'active' );
-
-    $( "ul.percent li" ).not( percentMain ).removeClass( 'active' );
-    percentMain.addClass( 'active' );
+        $( "ul.percent li" ).not( percentMain ).removeClass( 'active' );
+        percentMain.addClass( 'active' );
+    }
 }
 
 $( function() {
     $( '[data-toggle="tooltip"]' ).tooltip()
 } )
+

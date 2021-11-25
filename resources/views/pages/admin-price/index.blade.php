@@ -20,6 +20,7 @@
                     @method('POST')
 
                     <h2>Ресурсы</h2>
+                    <input type="search" class="form-control input-price-search" id="item-search" placeholder="Поиск" aria-label="" autocomplete="off">
                     @include('shared.price.table', [
                         'all' => $resources,
                         'prefix' => 'resources',

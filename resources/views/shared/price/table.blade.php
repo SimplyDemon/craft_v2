@@ -1,4 +1,4 @@
-<table class="table table-bordered">
+<table class="table table-bordered col-items">
     <thead>
     <tr>
         <th scope="col">Название</th>
@@ -24,7 +24,7 @@
             </td>
         </tr>
         @foreach($items as $single)
-            <tr class="collapse {{$collapseClass}} show">
+            <tr class="collapse {{$collapseClass}} show item" data-name="{{strtolower($single->name)}}">
                 <td>
                     <img src="{{asset('storage/' . $single->img)}}" alt="img">{{$single->name}}
                 </td>

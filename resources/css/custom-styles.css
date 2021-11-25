@@ -139,3 +139,7 @@ input#recipe-price {
         font-size: 14px;
     }
 }
+
+input.input-price-search#item-search {
+    margin-bottom: 30px;
+}

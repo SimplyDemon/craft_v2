@@ -16,6 +16,7 @@ const zlib              = require( "zlib" );
 mix.js( 'resources/js/app.js', 'public/js' )
     .js( 'resources/js/recipes.js', 'public/js' )
     .js( 'resources/js/recipes-show.js', 'public/js' )
+    .js( 'resources/js/ajax-search.js', 'public/js' )
     .sass( 'resources/sass/app.scss', 'public/css' )
     .sass( 'resources/sass/recipes.scss', 'public/css' )
     .version()
