@@ -223,11 +223,11 @@ class ArmorSeeder extends Seeder {
     protected function addArmorHeavyFullBody() {
         $categoryId = $this->armorHeavyFullBodyCategory->id;
         $imagePath  = 'item/armor/heavy/full-body';
-        seederAddRecipe( 'Doom Plate Armor', $imagePath, 11000000, 'B', $categoryId, 0, '60', 'Увеличивает Объём Лёгких на 383<br>Увеличивает HP на 1093', null, 1, false, 'Латный Доспех Рока, дум, тело, light, лайт' );
-        seederAddRecipe( 'Doom Plate Armor 100%', $imagePath, 11000000, 'B', $categoryId, 0, '100', 'Увеличивает Объём Лёгких на 383<br>Увеличивает HP на 1093', null, 1, false, 'Латный Доспех Рока, дум, тело, light, лайт' );
-        seederAddRecipe( 'Tallum Plate Armor', $imagePath, 42000000, 'A', $categoryId, 0, '60', 'Увеличивает Защиту от Кровотечений на 52<br>Увеличивает Грузоподъёмность на 8159<br>Увеличивает Защиту от Яда на 52<br>Увеличивает Скорость Атаки на 9.32%', null, 1, false, 'Латный Доспех Таллума, тело, light, лайт', 7 );
-        seederAddRecipe( 'Armor of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Физ. Атк. на 17.08%<br>Увеличивает Защиту от Рута на 29.16<br>Увеличивает Защиту от Сна на 29.16', null, 1, false, 'Доспех Кошмаров, тело, light, лайт' );
-        seederAddRecipe( 'Majestic Plate Armor', $imagePath, 25000000, 'A', $categoryId, 0, '60', 'Увеличивает Точность на 0.579<br>Увеличивает Физ. Атк. на 8.27%<br>Увеличивает Защиту от Стана на 20.83', null, 1, false, 'Латный Доспех Величия, мж, mj, тело, light, лайт' );
+        seederAddRecipe( 'Doom Plate Armor', $imagePath, 11000000, 'B', $categoryId, 0, '60', 'Увеличивает Объём Лёгких на 383<br>Увеличивает HP на 1093', null, 1, false, 'Латный Доспех Рока, дум, тело, heavy, хеви' );
+        seederAddRecipe( 'Doom Plate Armor 100%', $imagePath, 11000000, 'B', $categoryId, 0, '100', 'Увеличивает Объём Лёгких на 383<br>Увеличивает HP на 1093', null, 1, false, 'Латный Доспех Рока, дум, тело, heavy, хеви' );
+        seederAddRecipe( 'Tallum Plate Armor', $imagePath, 42000000, 'A', $categoryId, 0, '60', 'Увеличивает Защиту от Кровотечений на 52<br>Увеличивает Грузоподъёмность на 8159<br>Увеличивает Защиту от Яда на 52<br>Увеличивает Скорость Атаки на 9.32%', null, 1, false, 'Латный Доспех Таллума, тело, heavy, хеви', 7 );
+        seederAddRecipe( 'Armor of Nightmare', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Физ. Атк. на 17.08%<br>Увеличивает Защиту от Рута на 29.16<br>Увеличивает Защиту от Сна на 29.16', null, 1, false, 'Доспех Кошмаров, тело, heavy, хеви' );
+        seederAddRecipe( 'Majestic Plate Armor', $imagePath, 25000000, 'A', $categoryId, 0, '60', 'Увеличивает Точность на 0.579<br>Увеличивает Физ. Атк. на 8.27%<br>Увеличивает Защиту от Стана на 20.83', null, 1, false, 'Латный Доспех Величия, мж, mj, тело, heavy, хеви' );
 
     }
 

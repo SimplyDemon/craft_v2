@@ -31,10 +31,13 @@ $( '.search-input' ).bind( 'keyup click', function() {
                 data: { 's': $value },
                 success: function( data ) {
                     let code = '';
-                    if ( data !== null && data !== undefined && data.length > 0 ) {
-                        $.each( data, function( index, value ) {
+                    if ( data.recipes !== null && data.recipes !== undefined && data.recipes.length > 0 ) {
+                        $.each( data.recipes, function( index, value ) {
                             code += '<li><img style="margin-right: 5px" width="20px" src="' + value[ 'jsImg' ] + '" alt="' + value[ 'name' ] + '"><a href="' + value[ 'jsUrl' ] + '">' + value[ 'name' ] + '</a></li>';
                         } );
+                        if ( data.hasMoreResults ) {
+                            code += '<li><a href="/search?s=' + $value + '" class="color-main-1-important">Все результаты</a></li>';
+                        }
                     } else {
                         code += '<li>Ничего не найдено.</li>';
                     }

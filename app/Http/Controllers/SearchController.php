@@ -11,28 +11,28 @@ class SearchController extends Controller {
     public function index( Request $request ) {
         $search  = $request->input( 's' );
         $search  = $this->sanitizeString( $search );
-        $recipes = $this->getResults( $search );
+        $results = $this->getResults( $search );
 
         return view( $this->folderPath . 'index', [
-            'recipes' => $recipes,
+            'recipes' => $results['recipes'],
             'search'  => $search,
             'title'   => 'Поиск',
         ] );
     }
 
     public function ajax( Request $request ) {
-        $search  = $request->input( 's' );
-        $search  = $this->sanitizeString( $search );
-        $recipes = $this->getResults( $search );
-        if ( ! empty( $recipes ) ) {
-            foreach ( $recipes as &$recipe ) {
+        $search = $request->input( 's' );
+        $search = $this->sanitizeString( $search );
+        $result = $this->getResults( $search, true );
+        if ( ! empty( $result['recipes'] ) ) {
+            foreach ( $result['recipes'] as &$recipe ) {
                 $recipe->jsUrl = route( 'recipes.show', [ 'id' => $recipe->id ] );
                 $recipe->jsImg = asset( 'storage' ) . '/' . $recipe->img;
             }
         }
 
 
-        return $recipes;
+        return $result;
     }
 
     protected function sanitizeString( $string ) {
@@ -42,17 +42,19 @@ class SearchController extends Controller {
         return filter_var( $string, FILTER_SANITIZE_STRING );
     }
 
-    protected function getResults( $search ) {
+    protected function getResults( $search, $isAjax = false ) {
+        $hasMoreResults           = false;
+        $result                   = [];
+        $result['recipes']        = [];
+        $result['hasMoreResults'] = $hasMoreResults;
         if ( ! $search ) {
             return [];
         }
-        $recipes = Recipe::where( 'name', 'like', "%$search%" )->orWhere( 'keywords', 'like', "%$search%" )->get();
 
-
+        $recipes        = Recipe::where( 'name', 'like', "%$search%" )->orWhere( 'keywords', 'like', "%$search%" )->orderBy( 'grade', 'desc' )->get();
         $explodedSearch = explode( ' ', $search );
-
         if ( is_array( $explodedSearch ) && count( $explodedSearch ) > 0 ) {
-            $searchCollection = Recipe::orderBy( 'name', 'asc' );
+            $searchCollection = Recipe::orderBy( 'grade', 'desc' );
             foreach ( $explodedSearch as $word ) {
                 $word = trim( $word );
                 if ( strlen( $word ) > 0 ) {
@@ -66,6 +68,15 @@ class SearchController extends Controller {
             }
         }
 
-        return $recipes;
+        if ( $isAjax ) {
+            /* Show only 15 items */
+            if ( $recipes->count() > 15 ) {
+                $recipes                  = $recipes->chunk( 15 )[0];
+                $result['hasMoreResults'] = true;
+            }
+        }
+        $result['recipes'] = $recipes;
+
+        return $result;
     }
 }
