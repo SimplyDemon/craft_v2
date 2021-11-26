@@ -34,7 +34,7 @@
 
         @if ($single->recipes)
             <div class="nk-gap-3"></div>
-            <h2 class="nk-title">Используется в предметах:</h2>
+            <h2 class="nk-title">Ингредиент для:</h2>
             <div class="row">
 
                 @foreach($single->recipes as $single)

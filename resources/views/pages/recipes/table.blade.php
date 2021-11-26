@@ -16,22 +16,28 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
     </thead>
     <tbody>
     @foreach($single->resources as $resource)
-        <tr>
-            <?php
-            $resourceQuantity = $resource->pivot->resource_quantity;
-            $adminResourcePrice = $resource->$price;
-            $resourcePrice = isset( $user ) && $user->resources->find( $resource->id ) && $user->resources->find( $resource->id )->pivot->$price ? $user->resources->find( $resource->id )->pivot->$price : $adminResourcePrice;
-            $resourceLinePrice = $resourcePrice * $resourceQuantity;
-            $total += $resourceLinePrice;
+        <?php
+        $resourceQuantity = $resource->pivot->resource_quantity;
+        $adminResourcePrice = $resource->$price;
+        $resourcePrice = isset( $user ) && $user->resources->find( $resource->id ) && $user->resources->find( $resource->id )->pivot->$price ? $user->resources->find( $resource->id )->pivot->$price : $adminResourcePrice;
+        $resourceLinePrice = $resourcePrice * $resourceQuantity;
+        $total += $resourceLinePrice;
 
-            $resourceAdminLinePrice = $adminResourcePrice * $resourceQuantity;
-            $totalAdminPrice += $resourceAdminLinePrice;
-            $isPriceDifferent = $adminResourcePrice !== $resourcePrice;
-            $tooltipResourcePriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $adminResourcePrice ) . '</b>';
-            $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $resourceAdminLinePrice ) . '</b>';
-            ?>
+        $resourceAdminLinePrice = $adminResourcePrice * $resourceQuantity;
+        $totalAdminPrice += $resourceAdminLinePrice;
+        $isPriceDifferent = $adminResourcePrice !== $resourcePrice;
+        $tooltipResourcePriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $adminResourcePrice ) . '</b>';
+        $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $resourceAdminLinePrice ) . '</b>';
+        ?>
+        <tr>
             <td>
-                <img width="30" src="{{asset('storage') . '/' . $resource->img}}" alt="resource">{{$resource->name}}
+                @if($resource->recipe)
+                    <a target="_blank" href="{{route('recipes.show', [ 'id' => $resource->recipe->id ]  )}}">
+                        @endif
+                        <img width="30" src="{{asset('storage') . '/' . $resource->img}}" alt="resource">{{$resource->name}}
+                        @if($resource->recipe)
+                    </a>
+                @endif
             </td>
             <td data-quantity="{{$resourceQuantity}}" data-quantity-base="{{$resourceQuantity}}">
                 {{$resourceQuantity}}
