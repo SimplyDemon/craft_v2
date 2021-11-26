@@ -6,6 +6,12 @@
 @if($single->keywords)
     @section('meta_keywords', $single->keywords)
 @endif
+<?php
+$recipe100 = \App\Models\Recipe::where( 'name', $single->name . ' 100%' )->first();
+?>
+@if($single->percent === '60' && $recipe100 )
+    @section('canonical', route( 'recipes.show', [ 'id' => $recipe100->id ] ))
+@endif
 
 <?php
 if ( isset( $single->resource_id ) ) {

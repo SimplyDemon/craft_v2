@@ -31,6 +31,10 @@ $_SESSION['isAnimationWasShowed'] = true;
         <meta name="keywords" content="@yield('meta_keywords','калькулятор крафта астериос, крафт, крафтинг, кальк, астериос, craft calc, craft, calculator asterios, crafting') @yield('title')">
     @endif
 
+    @if(Route::is('recipes.show') && View::hasSection('canonical'))
+        <link rel="canonical" href="@yield('canonical')" />
+    @endif
+
     <meta name="description" content="@yield('meta_description','Калькулятор крафта Астериос  | Craft calculator Asterios')  @yield('title')">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
