@@ -31,6 +31,23 @@
             </a>
         @endif
         <canvas id="price-chart"></canvas>
+
+        @if ($single->recipes)
+            <div class="nk-gap-3"></div>
+            <h2 class="nk-title">Используется в предметах:</h2>
+            <div class="row">
+
+                @foreach($single->recipes as $single)
+                    <div class="col-4 pb-10">
+                        <a href="{{ route( 'resources.show', [ 'id' => $single->id ] ) }}">
+                            <img width="30" src="{{asset('storage') . '/' . $single->img}}" alt="{{$single->name}}">
+                            {{$single->name}}
+                        </a>
+                    </div>
+                @endforeach
+
+            </div>
+        @endif
     </div>
 
     <div class="nk-gap-6"></div>
