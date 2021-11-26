@@ -34,11 +34,11 @@ class JewelrySeeder extends Seeder {
         $categoryId = $this->jewelryNecklaceCategory->id;
         $imagePath  = 'item/jewelry/necklace';
 
-        seederAddRecipe( 'Adamantite Necklace', $imagePath, 1800000, 'B', $categoryId, 0, '70', 'Decreases Stun Vulnerability by 3.57', null, 1, false, 'Адамантитовое Ожерелье, некля, шея, necklace, ожерелье' );
-        seederAddRecipe( 'Adamantite Necklace 100%', $imagePath, 1800000, 'B', $categoryId, 0, '100', 'Decreases Stun Vulnerability by 3.57', null, 1, false, 'Адамантитовое Ожерелье, некля, шея, necklace, ожерелье' );
+        seederAddRecipe( 'Adamantite Necklace', $imagePath, 1800000, 'B', $categoryId, 0, '70', 'Decreases Stun Vulnerability by 3.57', null, 1, false, 'Адамантитовое Ожерелье, некля, шея, necklace, ожерелье', 6 );
+        seederAddRecipe( 'Adamantite Necklace 100%', $imagePath, 1800000, 'B', $categoryId, 0, '100', 'Decreases Stun Vulnerability by 3.57', null, 1, false, 'Адамантитовое Ожерелье, некля, шея, necklace, ожерелье', 6 );
         seederAddRecipe( 'Black Ore Necklace', $imagePath, 2000000, 'B', $categoryId, 0, '70', 'Decreases Stun Vulnerability by 4.76', null, 1, false, 'Черное Ожерелье, bo, бо, некля, шея, necklace, ожерелье' );
         seederAddRecipe( 'Black Ore Necklace 100%', $imagePath, 2000000, 'B', $categoryId, 0, '100', 'Decreases Stun Vulnerability by 4.76', null, 1, false, 'Черное Ожерелье, bo, бо, некля, шея, necklace, ожерелье' );
-        seederAddRecipe( 'Phoenix Necklace', $imagePath, 0, 'A', $categoryId, 0, '70', 'Adds Max MP by 21', null, 1, false, 'Ожерелье Феникса, некля, шея, necklace, ожерелье' );
+        seederAddRecipe( 'Phoenix Necklace', $imagePath, 0, 'A', $categoryId, 0, '70', 'Adds Max MP by 21', null, 1, false, 'Ожерелье Феникса, некля, шея, necklace, ожерелье', 7 );
         seederAddRecipe( 'Majestic Necklace', $imagePath, 0, 'A', $categoryId, 0, '70', 'Multiplies M.Def by 1.01', null, 1, false, 'Ожерелье Величия, мж, mj, некля, шея, necklace, ожерелье' );
         seederAddRecipe( 'Tateossian Necklace', $imagePath, 8000000, 'S', $categoryId, 0, '70', 'Decreases Bleed Vulnerability by 7.61', null, 1, false, 'Ожерелье Татеосса, тт, tt, некля, шея, necklace, ожерелье' );
         seederAddRecipe( 'Dynasty Necklace', $imagePath, 0, 'S', $categoryId, 0, '70', 'Adds Max MP by 30', null, 1, false, 'Ожерелье Династии, дино, некля, шея, necklace, ожерелье' );
@@ -50,11 +50,11 @@ class JewelrySeeder extends Seeder {
         $categoryId = $this->jewelryEarringCategory->id;
         $imagePath  = 'item/jewelry/earring';
 
-        seederAddRecipe( 'Adamantite Earring', $imagePath, 800000, 'B', $categoryId, 0, '70', 'Adds Max MP by 17', null, 1, false, 'Адамантитовая Серьга' );
-        seederAddRecipe( 'Adamantite Earring 100%', $imagePath, 800000, 'B', $categoryId, 0, '100', 'Adds Max MP by 17', null, 1, false, 'Адамантитовая Серьга' );
+        seederAddRecipe( 'Adamantite Earring', $imagePath, 800000, 'B', $categoryId, 0, '70', 'Adds Max MP by 17', null, 1, false, 'Адамантитовая Серьга', 6 );
+        seederAddRecipe( 'Adamantite Earring 100%', $imagePath, 800000, 'B', $categoryId, 0, '100', 'Adds Max MP by 17', null, 1, false, 'Адамантитовая Серьга', 6 );
         seederAddRecipe( 'Black Ore Earring', $imagePath, 1200000, 'B', $categoryId, 0, '70', 'Adds Dark Resistance by 1.71', null, 1, false, 'Черная Серьга, бо, bo' );
         seederAddRecipe( 'Black Ore Earring 100%', $imagePath, 1200000, 'B', $categoryId, 0, '100', 'Adds Dark Resistance by 1.71', null, 1, false, 'Черная Серьга, бо, bo' );
-        seederAddRecipe( 'Phoenix Earring', $imagePath, 0, 'A', $categoryId, 0, '70', 'Multiplies M.Def by 1.01', null, 1, false, 'Серьга Феникса' );
+        seederAddRecipe( 'Phoenix Earring', $imagePath, 0, 'A', $categoryId, 0, '70', 'Multiplies M.Def by 1.01', null, 1, false, 'Серьга Феникса', 7 );
         seederAddRecipe( 'Majestic Earring', $imagePath, 5500000, 'A', $categoryId, 0, '70', 'Decreases Poison Vulnerability by 5.71', null, 1, false, 'Серьга Величия, мж, mj' );
         seederAddRecipe( 'Tateossian Earring', $imagePath, 10000000, 'S', $categoryId, 0, '70', 'Adds Max MP by 20', null, 1, false, 'Серьга Татеосса, тт, tt' );
         seederAddRecipe( 'Dynasty Earring', $imagePath, 0, 'S', $categoryId, 0, '70', 'Decreases Sleep Vulnerability by 5', null, 1, false, 'Серьга Династии, дино' );
@@ -66,11 +66,11 @@ class JewelrySeeder extends Seeder {
         $categoryId = $this->jewelryRingCategory->id;
         $imagePath  = 'item/jewelry/ring';
 
-        seederAddRecipe( 'Adamantite Ring', $imagePath, 650000, 'B', $categoryId, 0, '70', 'Multiplies Regen MP by 1.0071', null, 1, false, 'Адамантитовое Кольцо' );
-        seederAddRecipe( 'Adamantite Ring 100%', $imagePath, 650000, 'B', $categoryId, 0, '100', 'Multiplies Regen MP by 1.0071', null, 1, false, 'Адамантитовое Кольцо' );
+        seederAddRecipe( 'Adamantite Ring', $imagePath, 650000, 'B', $categoryId, 0, '70', 'Multiplies Regen MP by 1.0071', null, 1, false, 'Адамантитовое Кольцо', 6 );
+        seederAddRecipe( 'Adamantite Ring 100%', $imagePath, 650000, 'B', $categoryId, 0, '100', 'Multiplies Regen MP by 1.0071', null, 1, false, 'Адамантитовое Кольцо', 6 );
         seederAddRecipe( 'Black Ore Ring', $imagePath, 1000000, 'B', $categoryId, 0, '70', 'Adds Max MP by 9', null, 1, false, 'Черное Кольцо, бо, bo' );
         seederAddRecipe( 'Black Ore Ring 100%', $imagePath, 1000000, 'B', $categoryId, 0, '100', 'Adds Max MP by 9', null, 1, false, 'Черное Кольцо, бо, bo' );
-        seederAddRecipe( 'Phoenix Ring', $imagePath, 3000000, 'A', $categoryId, 0, '70', 'Multiplies Regen MP by 1.0071', null, 1, false, 'Кольцо Феникса' );
+        seederAddRecipe( 'Phoenix Ring', $imagePath, 3000000, 'A', $categoryId, 0, '70', 'Multiplies Regen MP by 1.0071', null, 1, false, 'Кольцо Феникса', 7 );
         seederAddRecipe( 'Majestic Ring', $imagePath, 0, 'A', $categoryId, 0, '70', 'Adds Max MP by 11', null, 1, false, 'Кольцо Величия, мж, mj' );
         seederAddRecipe( 'Tateossian Ring', $imagePath, 8000000, 'S', $categoryId, 0, '70', 'Adds Earth Resistance by 1.14', null, 1, false, 'Кольцо Татеосса, тт, tt' );
         seederAddRecipe( 'Dynasty Ring', $imagePath, 0, 'S', $categoryId, 0, '70', 'Adds Dark Resistance by 1.14', null, 1, false, 'Кольцо Династии, дино' );

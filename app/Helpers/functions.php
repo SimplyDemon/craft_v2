@@ -34,7 +34,7 @@ function copyFile( string $filePath, string $pathTo ) {
     return $explodedPath[1];
 }
 
-function seederAddRecipe( string $name, string $imagePath, int $price, string $grade, int $categoryId, int $craftCost = 0, string $percent = '60', $masterworkDescription = null, $masterworkName = null, $count = 1, $isResource = false, $keywords = null ) {
+function seederAddRecipe( string $name, string $imagePath, int $price, string $grade, int $categoryId, int $craftCost = 0, string $percent = '60', $masterworkDescription = null, $masterworkName = null, $count = 1, $isResource = false, $keywords = null, $lvl = null ) {
     /* case for 100% recipes, don't want copy paste every image B-grade */
     $imageName  = str_replace( ' 100%', '', $name );
     $resourceId = null;
@@ -58,6 +58,7 @@ function seederAddRecipe( string $name, string $imagePath, int $price, string $g
         'craft_count'            => $count,
         'resource_id'            => $resourceId,
         'keywords'               => $keywords,
+        'lvl'                    => $lvl,
     ] );
 }
 
