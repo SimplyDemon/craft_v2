@@ -22,6 +22,7 @@ use App\Http\Controllers\UpdatePrice;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\UserPriceController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,6 +34,9 @@ Route::middleware( 'auth.dev' )->group( function () {
     ] );
 
     Route::get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
+    Route::get( '/public', function () {
+        return Redirect::to( route( 'index' ) );
+    } )->name( 'public' );
     Route::get( '/search', [ SearchController::class, 'index' ] )->name( 'search' );
     Route::post( '/search', [ SearchController::class, 'ajax' ] )->name( 'search.ajax' );
 
