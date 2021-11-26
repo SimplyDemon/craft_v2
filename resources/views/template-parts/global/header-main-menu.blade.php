@@ -6,7 +6,7 @@
                 <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="90" height="21">
             </a>
 
-            <ul class="nk-nav nk-nav-right d-none d-lg-block" data-nav-mobile="#nk-nav-mobile">
+            <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="nk-nav nk-nav-right d-none d-lg-block" data-nav-mobile="#nk-nav-mobile">
                 <li>
                     <form action="{{route('search')}}" method="get">
                         @csrf
@@ -22,33 +22,33 @@
                 </li>
 
                 <li class="{{Route::is('recipes.index') ? 'active' : ''}}">
-                    <a href="{{ route('recipes.index') }}">
+                    <a itemprop="url" href="{{ route('recipes.index') }}">
                         Предметы
                     </a>
                 </li>
                 <li class="{{Route::is('resources.index') ? 'active' : ''}}">
-                    <a href="{{ route('resources.index') }}">
+                    <a itemprop="url" href="{{ route('resources.index') }}">
                         Ресурсы
                     </a>
                 </li>
                 @if($isAuth)
                     <li class="nk-drop-item {{Route::is('user') || Route::is('user.price') || Route::is('conversations.index') ? 'active' : ''}}">
-                        <a href="{{route('user')}}">
+                        <a itemprop="url" href="{{route('user')}}">
                             Личный кабинет
                         </a>
-                        <ul class="dropdown">
+                        <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="dropdown">
                             <li class="{{Route::is('user') ? 'active' : ''}}">
-                                <a href="{{route('user')}}">
+                                <a itemprop="url" href="{{route('user')}}">
                                     Аккаунт
                                 </a>
                             </li>
                             <li class="{{Route::is('user.price') ? 'active' : ''}}">
-                                <a href="{{route('user.price')}}">
+                                <a itemprop="url" href="{{route('user.price')}}">
                                     Цены
                                 </a>
                             </li>
                             <li class="{{Route::is('conversations.index') ? 'active' : ''}}">
-                                <a href="{{route('conversations.index')}}">
+                                <a itemprop="url" href="{{route('conversations.index')}}">
                                     Поддержка
                                 </a>
                             </li>

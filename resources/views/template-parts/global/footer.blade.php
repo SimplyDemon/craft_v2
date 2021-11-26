@@ -1,4 +1,4 @@
-<footer class="nk-footer nk-footer-parallax nk-footer-parallax-opacity">
+<footer itemscope itemtype="http://schema.org/WPFooter" class="nk-footer nk-footer-parallax nk-footer-parallax-opacity">
     <img class="nk-footer-top-corner" src="{{ asset('images/footer-corner.webp' ) }}" alt="footer-corner">
 
 
@@ -10,9 +10,9 @@
             </a>
         </div>
         <div class="nk-gap"></div>
-
+        <meta itemprop="copyrightYear" content="2021">
         <p>
-            &copy; 2021
+            &copy; <?= date( 'Y' ) == 2021 ? 2021 : '2021—' . date( 'Y' )?>
         </p>
 
         <div class="nk-gap-4"></div>

@@ -14,28 +14,28 @@ $_SESSION['isAnimationWasShowed'] = true;
 ?>
     <!DOCTYPE html>
 <html lang="ru">
-<head>
+<head itemscope itemtype="http://schema.org/WPHeader">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     @if(View::hasSection('title'))
-        <title>Калькулятор крафта Asterios | @yield('title')</title>
+        <title itemprop="headline">Калькулятор крафта Asterios | @yield('title')</title>
     @else
-        <title>Калькулятор крафта Asterios</title>
+        <title itemprop="headline">Калькулятор крафта Asterios</title>
     @endif
 
     @if(Route::is('recipes.show') && View::hasSection('single'))
-        <meta name="keywords" content="@yield('meta_keywords') @yield('title')">
+        <meta itemprop="keywords" name="keywords" content="@yield('meta_keywords') @yield('title')">
     @else
-        <meta name="keywords" content="@yield('meta_keywords','калькулятор крафта астериос, крафт, крафтинг, кальк, астериос, craft calc, craft, calculator asterios, crafting') @yield('title')">
+        <meta itemprop="keywords" name="keywords" content="@yield('meta_keywords','калькулятор крафта астериос, крафт, крафтинг, кальк, астериос, craft calc, craft, calculator asterios, crafting') @yield('title')">
     @endif
 
     @if(Route::is('recipes.show') && View::hasSection('canonical'))
         <link rel="canonical" href="@yield('canonical')" />
     @endif
 
-    <meta name="description" content="@yield('meta_description','Калькулятор крафта Астериос  | Craft calculator Asterios')  @yield('title')">
+    <meta itemprop="description" name="description" content="@yield('meta_description','Калькулятор крафта Астериос создан для людей, которые увлекаются крафтом или просто накопили кучу ресурсов и ищут что с ними сделать. Стоит ли крафтить предмет, выгодно ли это или стоит продать все ресурсы на рынок? Какой шанс крафта Рар предмета и что вообще даёт Masterwork? Нормальная ли это цена за ресурс или раньше она сильно упала? Когда реснутся сабкласс РБ или Эпик РБ? Ответы на вопросы найдёшь на этом сайте!')">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
