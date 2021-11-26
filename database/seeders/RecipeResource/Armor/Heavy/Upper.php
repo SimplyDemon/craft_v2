@@ -270,7 +270,7 @@ class Upper extends RecipeResourceMain {
     }
 
     protected function addDarkCrystalBreastplate() {
-        $piece  = Resource::where( 'name', 'Dark Crystal breastplate Pattern' )->firstOrFail();
+        $piece  = Resource::where( 'name', 'Dark Crystal Breastplate Pattern' )->firstOrFail();
         $recipe = Resource::where( 'name', 'Recipe: Dark Crystal Breastplate (60%)' )->firstOrFail();
         $item   = Recipe::where( 'name', 'Dark Crystal Breastplate' )->firstOrFail();
 

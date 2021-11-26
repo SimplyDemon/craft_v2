@@ -41,38 +41,38 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->swordCategory->id;
         $imagePath  = 'item/weapon/sword';
 
-        seederAddRecipe( 'Great Sword', $imagePath, 17000000, 'B', $categoryId, 0, '60', 'Adds Rate Crit by 54.4', 'Lightning', 1, false, 'Большой Меч' );
-        seederAddRecipe( 'Great Sword 100%', $imagePath, 17000000, 'B', $categoryId, 0, '100', 'Adds Rate Crit by 54.4', 'Lightning', 1, false, 'Большой Меч' );
-        seederAddRecipe( 'Keshanberk', $imagePath, 13500000, 'B', $categoryId, 0, '60', 'Adds P.Atk by 17.42', 'Destruction', 1, false, 'Кешанберк, кешенберк, Кашенберк, кашенберг, kashenberk' );
-        seederAddRecipe( 'Keshanberk 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds P.Atk by 17.42', 'Destruction', 1, false, 'Кешанберк, кешенберк, Кашенберк, кашенберг, kashenberk' );
-        seederAddRecipe( 'Sword of Valhalla', $imagePath, 15000000, 'B', $categoryId, 0, '60', 'Adds Max MP by 187', 'Nature', 1, false, 'Меч Вальхаллы, Валя, Валька' );
-        seederAddRecipe( 'Sword of Valhalla 100%', $imagePath, 15000000, 'B', $categoryId, 0, '100', 'Adds Max MP by 187', 'Nature', 1, false, 'Меч Вальхаллы, Валя, Валька' );
-        seederAddRecipe( 'Damascus Sword', $imagePath, 20000000, 'B', $categoryId, 0, '60', 'Adds Max HP by 319', 'Earth', 1, false, 'Дамаскус' );
-        seederAddRecipe( 'Damascus Sword 100%', $imagePath, 20000000, 'B', $categoryId, 0, '100', 'Adds Max HP by 319', 'Earth', 1, false, 'Дамаскус' );
-        seederAddRecipe( 'Guardian\'s Sword', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Меч Стража, Гвардиан' );
-        seederAddRecipe( 'Guardian\'s Sword 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Меч Стража, Гвардиан' );
-        seederAddRecipe( 'Wizard\'s Tear', $imagePath, 22000000, 'B', $categoryId, 0, '60', 'Multiplies Regen MP by 1.05', 'Cleverness', 1, false, 'Слезы Чародея, визард, визарт' );
-        seederAddRecipe( 'Wizard\'s Tear 100%', $imagePath, 22000000, 'B', $categoryId, 0, '100', 'Multiplies Regen MP by 1.05', 'Cleverness', 1, false, 'Слезы Чародея, визард, визарт' );
-        seederAddRecipe( 'Tallum Blade', $imagePath, 19000000, 'A', $categoryId, 0, '60', 'Adds P.Atk by 22.1', 'Destruction', 1, false, 'Клинок Таллума' );
-        seederAddRecipe( 'Elemental Sword', $imagePath, 17000000, 'A', $categoryId, 0, '60', 'Adds M.Atk by 21.77', 'Hail', 1, false, 'Меч Стихий, елементал, элементал' );
-        seederAddRecipe( 'Infernal Master', $imagePath, 22000000, 'A', $categoryId, 0, '60', 'Adds Accuracy Combat by 3.9', 'Concentration', 1, false, 'Мастер Инферно, inferno' );
-        seederAddRecipe( 'Dragon Slayer', $imagePath, 44000000, 'A', $categoryId, 0, '60', 'Adds Life Steal by 3', 'Evil Spirit', 1, false, 'Убийца Драконов, драгон, слеер' );
-        seederAddRecipe( 'Sword of Miracles', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Bonus Hp by 37', 'Holy Spirit', 1, false, 'Легендарный Меч, сом, som, миракл' );
-        seederAddRecipe( 'Dark Legion\'s Edge', $imagePath, 53000000, 'A', $categoryId, 0, '60', 'Adds Crit. Atk Add by 220', 'Thunder', 1, false, 'Темный Легион' );
-        seederAddRecipe( 'Sirra\'s Blade', $imagePath, 0, 'A', $categoryId, 0, '60', 'Has a 6% chance to stun the enemy during a regular attack', 'Landslide', 1, false, 'Клинок Сирры, сиры, сира, сирра' );
-        seederAddRecipe( 'Sword of Ipos', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Max HP by 398', 'Earth', 1, false, 'Меч Ипоса' );
-        seederAddRecipe( 'Themis\' Tongue', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies Regen MP by 1.05', 'Cleverness', 1, false, 'Язык Темиса' );
-        seederAddRecipe( 'Forgotten Blade', $imagePath, 60000000, 'S', $categoryId, 0, '60', 'Adds Rate Crit by 54.4', 'Lightning', 1, false, 'Забытый Клинок, fg, фг' );
-        seederAddRecipe( 'Heavens Divider', $imagePath, 74000000, 'S', $categoryId, 0, '60', 'Adds Crit. Atk Add by 340', 'Thunder', 1, false, 'Разделитель Небес, хд. hd' );
-        seederAddRecipe( 'Dynasty Sword', $imagePath, 160000000, 'S', $categoryId, 0, '60', 'Increases Max HP by 492', 'Earth', 1, false, 'Меч Династии, дино' );
-        seederAddRecipe( 'Dynasty Blade', $imagePath, 135000000, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Клинок Династии, дино' );
-        seederAddRecipe( 'Dynasty Phantom', $imagePath, 165000000, 'S', $categoryId, 0, '60', 'Increases Max MP by 334', 'Nature', 1, false, 'Фантом Династии, дино' );
-        seederAddRecipe( 'Icarus Sawsword', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Increases P. Atk by 42.12', 'Destruction', 1, false, 'Зазубренный Меч Икара, ик' );
-        seederAddRecipe( 'Icarus Spirit', $imagePath, 130000000, 'S-80', $categoryId, 0, '60', 'Adds Max MP by 334', 'Nature', 1, false, 'Дух Икара, спирит, ик' );
-        seederAddRecipe( 'Icarus Heavy Arms', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Adds Rate Crit by 54.4', 'Lightning', 1, false, 'Тяжелые Руки Икара, ик' );
-        seederAddRecipe( 'Vesper Cutter', $imagePath, 250000000, 'S-84', $categoryId, 0, '60', 'Adds Rate Crit by 54.4', 'Thunder', 1, false, 'Резак Венеры, кутер, веспер' );
-        seederAddRecipe( 'Vesper Slasher', $imagePath, 200000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Gale', 1, false, 'Эспадон Венеры, слешер, веспер' );
-        seederAddRecipe( 'Vesper Buster', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies Regen MP by 1.05', 'Clevernes', 1, false, 'Расчленитель Венеры, бустер, веспер' );
+        seederAddRecipe( 'Great Sword', $imagePath, 17000000, 'B', $categoryId, 0, '60', 'Adds Rate Crit by 54.4', 'Lightning', 1, false, 'Большой Меч, меч, sword' );
+        seederAddRecipe( 'Great Sword 100%', $imagePath, 17000000, 'B', $categoryId, 0, '100', 'Adds Rate Crit by 54.4', 'Lightning', 1, false, 'Большой Меч, меч, sword' );
+        seederAddRecipe( 'Keshanberk', $imagePath, 13500000, 'B', $categoryId, 0, '60', 'Adds P.Atk by 17.42', 'Destruction', 1, false, 'Кешанберк, кешенберк, Кашенберк, кашенберг, kashenberk, меч, sword' );
+        seederAddRecipe( 'Keshanberk 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Adds P.Atk by 17.42', 'Destruction', 1, false, 'Кешанберк, кешенберк, Кашенберк, кашенберг, kashenberk, меч, sword' );
+        seederAddRecipe( 'Sword of Valhalla', $imagePath, 15000000, 'B', $categoryId, 0, '60', 'Adds Max MP by 187', 'Nature', 1, false, 'Меч Вальхаллы, Валя, Валька, меч, sword' );
+        seederAddRecipe( 'Sword of Valhalla 100%', $imagePath, 15000000, 'B', $categoryId, 0, '100', 'Adds Max MP by 187', 'Nature', 1, false, 'Меч Вальхаллы, Валя, Валька, меч, sword' );
+        seederAddRecipe( 'Damascus Sword', $imagePath, 20000000, 'B', $categoryId, 0, '60', 'Adds Max HP by 319', 'Earth', 1, false, 'Дамаскус, меч, sword' );
+        seederAddRecipe( 'Damascus Sword 100%', $imagePath, 20000000, 'B', $categoryId, 0, '100', 'Adds Max HP by 319', 'Earth', 1, false, 'Дамаскус, меч, sword' );
+        seederAddRecipe( 'Guardian\'s Sword', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Меч Стража, Гвардиан, меч, sword' );
+        seederAddRecipe( 'Guardian\'s Sword 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Меч Стража, Гвардиан, меч, sword' );
+        seederAddRecipe( 'Wizard\'s Tear', $imagePath, 22000000, 'B', $categoryId, 0, '60', 'Multiplies Regen MP by 1.05', 'Cleverness', 1, false, 'Слезы Чародея, визард, визарт, меч, sword' );
+        seederAddRecipe( 'Wizard\'s Tear 100%', $imagePath, 22000000, 'B', $categoryId, 0, '100', 'Multiplies Regen MP by 1.05', 'Cleverness', 1, false, 'Слезы Чародея, визард, визарт, меч, sword' );
+        seederAddRecipe( 'Tallum Blade', $imagePath, 19000000, 'A', $categoryId, 0, '60', 'Adds P.Atk by 22.1', 'Destruction', 1, false, 'Клинок Таллума, меч, sword' );
+        seederAddRecipe( 'Elemental Sword', $imagePath, 17000000, 'A', $categoryId, 0, '60', 'Adds M.Atk by 21.77', 'Hail', 1, false, 'Меч Стихий, елементал, элементал, меч, sword' );
+        seederAddRecipe( 'Infernal Master', $imagePath, 22000000, 'A', $categoryId, 0, '60', 'Adds Accuracy Combat by 3.9', 'Concentration', 1, false, 'Мастер Инферно, inferno, меч, sword' );
+        seederAddRecipe( 'Dragon Slayer', $imagePath, 44000000, 'A', $categoryId, 0, '60', 'Adds Life Steal by 3', 'Evil Spirit', 1, false, 'Убийца Драконов, драгон, слеер, меч, sword' );
+        seederAddRecipe( 'Sword of Miracles', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Bonus Hp by 37', 'Holy Spirit', 1, false, 'Легендарный Меч, сом, som, миракл, меч, sword' );
+        seederAddRecipe( 'Dark Legion\'s Edge', $imagePath, 53000000, 'A', $categoryId, 0, '60', 'Adds Crit. Atk Add by 220', 'Thunder', 1, false, 'Темный Легион, меч, sword' );
+        seederAddRecipe( 'Sirra\'s Blade', $imagePath, 0, 'A', $categoryId, 0, '60', 'Has a 6% chance to stun the enemy during a regular attack', 'Landslide', 1, false, 'Клинок Сирры, сиры, сира, сирра, меч, sword' );
+        seederAddRecipe( 'Sword of Ipos', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Max HP by 398', 'Earth', 1, false, 'Меч Ипоса, меч, sword' );
+        seederAddRecipe( 'Themis\' Tongue', $imagePath, 0, 'A', $categoryId, 0, '60', 'Multiplies Regen MP by 1.05', 'Cleverness', 1, false, 'Язык Темиса, меч, sword' );
+        seederAddRecipe( 'Forgotten Blade', $imagePath, 60000000, 'S', $categoryId, 0, '60', 'Adds Rate Crit by 54.4', 'Lightning', 1, false, 'Забытый Клинок, fg, фг, меч, sword' );
+        seederAddRecipe( 'Heavens Divider', $imagePath, 74000000, 'S', $categoryId, 0, '60', 'Adds Crit. Atk Add by 340', 'Thunder', 1, false, 'Разделитель Небес, хд. hd, меч, sword' );
+        seederAddRecipe( 'Dynasty Sword', $imagePath, 160000000, 'S', $categoryId, 0, '60', 'Increases Max HP by 492', 'Earth', 1, false, 'Меч Династии, дино, меч, sword' );
+        seederAddRecipe( 'Dynasty Blade', $imagePath, 135000000, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Клинок Династии, дино, меч, sword' );
+        seederAddRecipe( 'Dynasty Phantom', $imagePath, 165000000, 'S', $categoryId, 0, '60', 'Increases Max MP by 334', 'Nature', 1, false, 'Фантом Династии, дино, меч, sword' );
+        seederAddRecipe( 'Icarus Sawsword', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Increases P. Atk by 42.12', 'Destruction', 1, false, 'Зазубренный Меч Икара, ик, меч, sword' );
+        seederAddRecipe( 'Icarus Spirit', $imagePath, 130000000, 'S-80', $categoryId, 0, '60', 'Adds Max MP by 334', 'Nature', 1, false, 'Дух Икара, спирит, ик, меч, sword' );
+        seederAddRecipe( 'Icarus Heavy Arms', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Adds Rate Crit by 54.4', 'Lightning', 1, false, 'Тяжелые Руки Икара, ик, меч, sword' );
+        seederAddRecipe( 'Vesper Cutter', $imagePath, 250000000, 'S-84', $categoryId, 0, '60', 'Adds Rate Crit by 54.4', 'Thunder', 1, false, 'Резак Венеры, кутер, веспер, меч, sword' );
+        seederAddRecipe( 'Vesper Slasher', $imagePath, 200000000, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Gale', 1, false, 'Эспадон Венеры, слешер, веспер, меч, sword' );
+        seederAddRecipe( 'Vesper Buster', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies Regen MP by 1.05', 'Clevernes', 1, false, 'Расчленитель Венеры, бустер, веспер, меч, sword' );
     }
 
     protected function addBlunts() {
@@ -117,7 +117,7 @@ class WeaponSeeder extends Seeder {
         seederAddRecipe( 'Dynasty Mace', $imagePath, 185000000, 'S', $categoryId, 0, '60', 'Adds Max HP by 492', 'Earth', 1, false, 'Булава Династии, мейс, дино' );
         seederAddRecipe( 'Dynasty Staff', $imagePath, 195000000, 'S', $categoryId, 0, '60', 'Increases the power of ones own recovery magic by 43', 'Holy Spirit', 1, false, 'Посох Династии, стафф, дино' );
         seederAddRecipe( 'Dynasty Crusher', $imagePath, 0, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Крушитель Династии, дино крашер, крушак' );
-        seederAddRecipe( 'Icarus Hammer', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Adds Max HP by 511', 'Earth', 1, false, 'Молот Икара, ик хаммер, хамер' );
+        seederAddRecipe( 'Icarus Hammer', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Adds Max HP by 511', 'Earth', 1, false, 'Молот Икара, ик хаммер,' );
         seederAddRecipe( 'Icarus Hall', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Adds M.Atk by 45.81', 'Hail', 1, false, 'Холл Икара, ик' );
         seederAddRecipe( 'Vesper Avenger', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Has a chance to stun the enemy during a regular attack. (chance = 8%)', 'Landslide', 1, false, 'Мститель Венеры, веспер' );
         seederAddRecipe( 'Vesper Retributer', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Gale', 1, false, 'Возмездие Венеры, ретрик, веспер' );
@@ -136,7 +136,7 @@ class WeaponSeeder extends Seeder {
         seederAddRecipe( 'Carnage Bow', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Accuracy Combat by 3.3', 'Concentration', 1, false, 'Кровавый Лук, коряга, корняга, корнаж, каряга, лук' );
         seederAddRecipe( 'Soul Bow', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds P.Atk Range by 100', 'Clairvoyance', 1, false, 'Пронзатель Душ, сб, sb, лук' );
         seederAddRecipe( 'Shyeed\'s Bow', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds Accuracy Combat by 3.3', 'Concentration', 1, false, 'Лук Шиид,' );
-        seederAddRecipe( 'Draconic Bow', $imagePath, 60000000, 'S', $categoryId, 0, '60', 'Adds Max HP by 444', 'Earth', 1, false, 'Лук Дракона, драк лук' );
+        seederAddRecipe( 'Draconic Bow', $imagePath, 60000000, 'S', $categoryId, 0, '60', 'Adds Max HP by 444', 'Earth', 1, false, 'Лук Дракона, драконик лук' );
         seederAddRecipe( 'Dynasty Bow', $imagePath, 140000000, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Лук Династии, дино' );
         seederAddRecipe( 'Icarus Spitter', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Adds Accuracy Combat by 3.3', 'Concentration', 1, false, 'Лук Икара, ик спитер' );
         seederAddRecipe( 'Vesper Thrower', $imagePath, 200000000, 'S-84', $categoryId, 0, '60', 'Adds P.Atk Range by 100', 'Clairvoyance', 1, false, 'Бросок Венеры, веспер лук' );
@@ -182,17 +182,17 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->fistCategory->id;
         $imagePath  = 'item/weapon/fist';
 
-        seederAddRecipe( 'Arthro Nail', $imagePath, 13000000, 'B', $categoryId, 0, '60', 'Adds P.Atk by 21.2', 'Destruction', 1, false, 'Коготь Артро, артро нейл, когти, кастеты, костеты' );
-        seederAddRecipe( 'Arthro Nail 100%', $imagePath, 13000000, 'B', $categoryId, 0, '100', 'Adds P.Atk by 21.2', 'Destruction', 1, false, 'Коготь Артро, артро нейл, когти, кастеты, костеты' );
-        seederAddRecipe( 'Bellion Cestus', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Цестус Беллиона, беллионы, белионы, когти, кастеты, костеты' );
-        seederAddRecipe( 'Bellion Cestus 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Цестус Беллиона, беллионы, белионы, когти, кастеты, костеты' );
-        seederAddRecipe( 'Blood Tornado', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds P.Atk by 26.9', 'Destruction', 1, false, 'Кровавое Торнадо, блуд, блудик, когти, кастеты, костеты' );
-        seederAddRecipe( 'Dragon Grinder', $imagePath, 39000000, 'A', $categoryId, 0, '60', 'Adds Max HP by 372', 'Earth', 1, false, 'Погибель Дракона, драгон гриндер, когти, кастеты, костеты' );
-        seederAddRecipe( 'Sobekk\'s Hurricane', $imagePath, 0, 'A', $categoryId, 0, '60', 'Has a chance 6% to stun the enemy during a regular attack', 'Landslide', 1, false, 'Ураган Собекка, когти, кастеты, костеты' );
-        seederAddRecipe( 'Demon Splinter', $imagePath, 58000000, 'S', $categoryId, 0, '60', 'Adds Crit. Atk Add by 528', 'Thunder', 1, false, 'Демон Одиночка, сплинтер, когти, кастеты, костеты' );
-        seederAddRecipe( 'Dynasty Bagh-Nakh', $imagePath, 110000000, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Коготь Тигра Династии, дино, когти, кастеты, костеты' );
-        seederAddRecipe( 'Icarus Hand', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Adds P.Atk by 51.26', 'Destruction', 1, false, 'Рука Икара, ик, когти, кастеты, костеты' );
-        seederAddRecipe( 'Vesper Fighter', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Gale', 1, false, 'Воитель Венеры, веспер когти, кастеты, костеты' );
+        seederAddRecipe( 'Arthro Nail', $imagePath, 13000000, 'B', $categoryId, 0, '60', 'Adds P.Atk by 21.2', 'Destruction', 1, false, 'Коготь Артро, артро нейл, когти, кастеты, костеты, кости' );
+        seederAddRecipe( 'Arthro Nail 100%', $imagePath, 13000000, 'B', $categoryId, 0, '100', 'Adds P.Atk by 21.2', 'Destruction', 1, false, 'Коготь Артро, артро нейл, когти, кастеты, костеты, кости' );
+        seederAddRecipe( 'Bellion Cestus', $imagePath, 0, 'B', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Цестус Беллиона, беллионы, белионы, когти, кастеты, костеты, кости' );
+        seederAddRecipe( 'Bellion Cestus 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Цестус Беллиона, беллионы, белионы, когти, кастеты, костеты, кости' );
+        seederAddRecipe( 'Blood Tornado', $imagePath, 0, 'A', $categoryId, 0, '60', 'Adds P.Atk by 26.9', 'Destruction', 1, false, 'Кровавое Торнадо, блуд, блудик, когти, кастеты, костеты, кости' );
+        seederAddRecipe( 'Dragon Grinder', $imagePath, 39000000, 'A', $categoryId, 0, '60', 'Adds Max HP by 372', 'Earth', 1, false, 'Погибель Дракона, драгон гриндер, когти, кастеты, костеты, кости' );
+        seederAddRecipe( 'Sobekk\'s Hurricane', $imagePath, 0, 'A', $categoryId, 0, '60', 'Has a chance 6% to stun the enemy during a regular attack', 'Landslide', 1, false, 'Ураган Собекка, когти, кастеты, костеты, кости' );
+        seederAddRecipe( 'Demon Splinter', $imagePath, 58000000, 'S', $categoryId, 0, '60', 'Adds Crit. Atk Add by 528', 'Thunder', 1, false, 'Демон Одиночка, сплинтер, когти, кастеты, костеты, кости' );
+        seederAddRecipe( 'Dynasty Bagh-Nakh', $imagePath, 110000000, 'S', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Great Gale', 1, false, 'Коготь Тигра Династии, дино, когти, кастеты, костеты, кости' );
+        seederAddRecipe( 'Icarus Hand', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Adds P.Atk by 51.26', 'Destruction', 1, false, 'Рука Икара, ик, когти, кастеты, костеты, кости' );
+        seederAddRecipe( 'Vesper Fighter', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Multiplies P.Atk Speed by 1.05', 'Gale', 1, false, 'Воитель Венеры, веспер когти, кастеты, костеты, кости' );
     }
 
 }

@@ -25,7 +25,12 @@ $_SESSION['isAnimationWasShowed'] = true;
         <title>Калькулятор крафта Asterios</title>
     @endif
 
-    <meta name="keywords" content="@yield('meta_keywords','калькулятор крафта астериос, крафт, крафтинг, кальк, астериос, craft calc, craft, calculator asterios, crafting')  @yield('title')">
+    @if(Route::is('recipes.show') && View::hasSection('single'))
+        <meta name="keywords" content="@yield('meta_keywords') @yield('title')">
+    @else
+        <meta name="keywords" content="@yield('meta_keywords','калькулятор крафта астериос, крафт, крафтинг, кальк, астериос, craft calc, craft, calculator asterios, crafting') @yield('title')">
+    @endif
+
     <meta name="description" content="@yield('meta_description','Калькулятор крафта Астериос  | Craft calculator Asterios')  @yield('title')">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -68,12 +73,12 @@ $_SESSION['isAnimationWasShowed'] = true;
         })
         ( window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym" );
 
-    ym( 86545727, "init", {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
-        webvisor: true
-    } );
+        ym( 86545727, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        } );
     </script>
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/86545727" style="position:absolute; left:-9999px;" alt="ya" /></div>

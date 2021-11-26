@@ -2,6 +2,9 @@
 @section('content')
     @if(isset($title))
 @section('title', $title)
+@if($single->keywords)
+    @section('meta_keywords', $single->keywords)
+@endif
 @endif
 <?php
 if ( isset( $single->resource_id ) ) {
