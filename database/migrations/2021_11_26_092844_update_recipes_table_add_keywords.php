@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateRecipesTableAddMasterworkFields extends Migration {
+class UpdateRecipesTableAddKeywords extends Migration {
     /**
      * Run the migrations.
      *
@@ -12,8 +12,7 @@ class UpdateRecipesTableAddMasterworkFields extends Migration {
      */
     public function up() {
         Schema::table( 'recipes', function ( Blueprint $table ) {
-            $table->text( 'masterwork_name' )->nullable();
-            $table->text( 'masterwork_description' )->nullable(); // With <br> tag for separate lines
+            $table->text( 'keywords' )->nullable();
         } );
     }
 
@@ -24,8 +23,7 @@ class UpdateRecipesTableAddMasterworkFields extends Migration {
      */
     public function down() {
         Schema::table( 'recipes', function ( Blueprint $table ) {
-            $table->dropColumn( 'masterwork_name' );
-            $table->dropColumn( 'masterwork_description' );
+            $table->dropColumn( 'keywords' );
         } );
     }
 }

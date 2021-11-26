@@ -25,7 +25,7 @@ $_SESSION['isAnimationWasShowed'] = true;
         <title>Калькулятор крафта Asterios</title>
     @endif
 
-    <meta name="keywords" content="@yield('meta_keywords','калькулятор крафта астериос крафт крафтинг кальк астериос craft calc calculator asterios crafting')  @yield('title')">
+    <meta name="keywords" content="@yield('meta_keywords','калькулятор крафта астериос, крафт, крафтинг, кальк, астериос, craft calc, craft, calculator asterios, crafting')  @yield('title')">
     <meta name="description" content="@yield('meta_description','Калькулятор крафта Астериос  | Craft calculator Asterios')  @yield('title')">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">

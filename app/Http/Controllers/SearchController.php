@@ -13,7 +13,7 @@ class SearchController extends Controller {
         $search  = $this->sanitizeString( $search );
         $recipes = [];
         if ( $search ) {
-            $recipes = Recipe::where( 'name', 'like', "%$search%" )->get();
+            $recipes = Recipe::where( 'name', 'like', "%$search%" )->orWhere( 'keywords', 'like', "%$search%" )->get();
         }
 
         return view( $this->folderPath . 'index', [
@@ -28,7 +28,7 @@ class SearchController extends Controller {
         $search  = $this->sanitizeString( $search );
         $recipes = [];
         if ( $search ) {
-            $recipes         = Recipe::where( 'name', 'like', "%$search%" )->get();
+            $recipes         = Recipe::where( 'name', 'like', "%$search%" )->orWhere( 'keywords', 'like', "%$search%" )->get();
             $recipesModified = [];
             foreach ( $recipes as &$recipe ) {
                 $recipe->jsUrl = route( 'recipes.show', [ 'id' => $recipe->id ] );
