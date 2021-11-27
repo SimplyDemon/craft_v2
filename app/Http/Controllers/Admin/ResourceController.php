@@ -76,10 +76,31 @@ class ResourceController extends Controller {
             }
         }
 
+        if ( $pricesHistory->count() > 1 ) {
+
+            $priceHistoryPreLast    = $pricesHistory[1];
+            $priceHistoryDifference = $single->price_sell - $priceHistoryPreLast->price_sell;
+            $isDifferencePositive   = $priceHistoryDifference >= 0;
+            if ( $isDifferencePositive ) {
+                $priceHistoryDifference = '+' . $priceHistoryDifference;
+            }
+            $priceHistoryDifferenceClass = 'sd-background-grey ';
+            $priceHistoryDifferenceClass .= $isDifferencePositive ? 'sd-color-green' : 'sd-color-red';
+            if ( $single->price_sell > 0 && $priceHistoryPreLast->price_sell > 0 ) {
+                $priceHistoryDifferencePercent = $isDifferencePositive ? '+' : '';
+                $priceHistoryDifferencePercent .= number_format( ( $single->price_sell * 100 ) / $priceHistoryPreLast->price_sell - 100, '2', ',', ' ' );
+
+                $priceHistoryDifferencePercent .= '%';
+            }
+        }
+
         return view( $this->folderPathUser . 'show', [
-            'single'             => $single,
-            'priceHistoryDates'  => json_encode( $priceHistoryDates ),
-            'priceHistoryPrices' => json_encode( $priceHistoryPrices ),
+            'single'                        => $single,
+            'priceHistoryDates'             => json_encode( $priceHistoryDates ),
+            'priceHistoryPrices'            => json_encode( $priceHistoryPrices ),
+            'priceHistoryDifference'        => $priceHistoryDifference ?? null,
+            'priceHistoryDifferencePercent' => $priceHistoryDifferencePercent ?? null,
+            'priceHistoryDifferenceClass'   => $priceHistoryDifferenceClass ?? null,
         ] );
     }
 

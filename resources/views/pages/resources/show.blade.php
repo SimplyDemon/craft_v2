@@ -23,7 +23,21 @@
     </div>
     <div class="container">
         <img width="50" src="{{asset('storage') . '/' . $single->img}}" alt="{{$single->name}}">
-        <p>Цена: {{prettifyNumber($single->price_sell)}}</p>
+        <p>
+            Цена: {{prettifyNumber($single->price_sell)}}
+        </p>
+        @if($priceHistoryDifference || $priceHistoryDifferencePercent)
+            <p>
+                Изменение цены:
+                @if($priceHistoryDifference)
+                    <span class="px-2 {{$priceHistoryDifferenceClass}}">{{ $priceHistoryDifference }}</span>
+                @endif
+
+                @if($priceHistoryDifferencePercent)
+                    <span class="px-2 {{$priceHistoryDifferenceClass}}">{{$priceHistoryDifferencePercent}}</span>
+                @endif
+            </p>
+        @endif
 
         @if($single->recipe)
             <a href="{{ route( 'recipes.show', [ 'id' => $single->recipe->id ] ) }}">

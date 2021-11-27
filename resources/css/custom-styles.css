@@ -147,3 +147,16 @@ input.input-price-search#item-search {
 canvas#price-chart {
     background-color: #282323;
 }
+
+.sd-color-green {
+    color: rgba(92, 184, 92, .9);
+}
+
+.sd-color-red {
+    color: rgba(217, 83, 79, 0.9);
+}
+
+.sd-background-grey {
+    background-color: #302a2a;
+}
+
