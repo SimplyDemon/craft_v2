@@ -84,8 +84,8 @@ class ResourceController extends Controller {
             if ( $isDifferencePositive ) {
                 $priceHistoryDifference = '+' . $priceHistoryDifference;
             }
-            $priceHistoryDifferenceClass = 'sd-background-grey ';
-            $priceHistoryDifferenceClass .= $isDifferencePositive ? 'sd-color-green' : 'sd-color-red';
+
+            $priceHistoryDifferenceClass = $isDifferencePositive ? 'sd-color-green' : 'sd-color-red';
             if ( $single->price_sell > 0 && $priceHistoryPreLast->price_sell > 0 ) {
                 $priceHistoryDifferencePercent = $isDifferencePositive ? '+' : '';
                 $priceHistoryDifferencePercent .= number_format( ( $single->price_sell * 100 ) / $priceHistoryPreLast->price_sell - 100, '2', ',', ' ' );

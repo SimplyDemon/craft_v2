@@ -30,11 +30,11 @@
             <p>
                 Изменение цены:
                 @if($priceHistoryDifference)
-                    <span class="px-2 {{$priceHistoryDifferenceClass}}">{{ $priceHistoryDifference }}</span>
+                    <span class="px-2 d-background-grey {{$priceHistoryDifferenceClass}}">{{ $priceHistoryDifference }}</span>
                 @endif
 
                 @if($priceHistoryDifferencePercent)
-                    <span class="px-2 {{$priceHistoryDifferenceClass}}">{{$priceHistoryDifferencePercent}}</span>
+                    <span class="px-2 d-background-grey {{$priceHistoryDifferenceClass}}">{{$priceHistoryDifferencePercent}}</span>
                 @endif
             </p>
         @endif
