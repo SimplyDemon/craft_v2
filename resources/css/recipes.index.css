@@ -131,3 +131,7 @@
 .nk-btn-color-warning:active {
     color: #f0ad4e;;
 }
+
+.image-link-no-underline:hover {
+    text-decoration: none;
+}

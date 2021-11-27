@@ -121,7 +121,9 @@
                             @endif
                             @endif
                         >
-                            <img width="30" src="{{asset('storage') . '/' . $recipe->img}}" alt="img">
+                            <a class="image-link-no-underline" href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
+                                <img width="30" src="{{asset('storage') . '/' . $recipe->img}}" alt="img">
+                            </a>
                             @if($recipe->masterworkText)
                                 <span class="nk-btn nk-btn-style-1 nk-btn-xs nk-btn-color-main-1" style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$recipe->masterworkText}}">MW</span>
                             @endif
