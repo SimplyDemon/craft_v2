@@ -23,7 +23,7 @@ class RecipeController extends Controller {
 
 
     public function index() {
-        $recipes = Recipe::orderBy( 'grade', 'desc' )->get();
+        $recipes = Recipe::orderBy( 'grade', 'desc' )->orderBy( 'id', 'desc' )->get();
 
         $categories = [
             'weapon'   => [
