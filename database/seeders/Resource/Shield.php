@@ -5,6 +5,111 @@ namespace Database\Seeders\Resource;
 class Shield extends ResourceMain {
     protected function add() {
         $this->resources[] = [
+            'name'                  => 'Eldarake Temper',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'type'                  => 'shield',
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Eldarake',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+            'type'       => 'shield',
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Chain Shield Fragment',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'type'                  => 'shield',
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Chain Shield',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+            'type'       => 'shield',
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Dwarven Chain Shield Fragment',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'type'                  => 'shield',
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Dwarven Chain Shield',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+            'type'       => 'shield',
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Knight\'s Shield Fragment',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'type'                  => 'shield',
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Knight\'s Shield',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+            'type'       => 'shield',
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Tower Shield Fragment',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'type'                  => 'shield',
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Tower Shield',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+            'type'       => 'shield',
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Compound Shield Fragment',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'type'                  => 'shield',
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Compound Shield',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+            'type'       => 'shield',
+        ];
+
+        $this->resources[] = [
+            'name'                  => 'Full Plate Shield Fragment',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'type'                  => 'shield',
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'name'       => 'Recipe: Full Plate Shield',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+            'type'       => 'shield',
+        ];
+
+        $this->resources[] = [
             'name'                  => 'Zubei\'s Shield Fragment',
             'price_sell'            => 0,
             'price_buy'             => 0,

@@ -8,6 +8,67 @@ class Earring extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'                    => 'jewelry',
+            'name'                    => 'Moonstone Earring Wire',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Moonstone Earring',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Earring of Protection Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Earring of Protection',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Earring of Seal Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Earring of Seal',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Nassen\'s Earring Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Nassen\'s Earring',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
             'name'                    => 'Adamantite Earring Gemstone',
             'price_sell'              => 0,
             'price_buy'               => 0,

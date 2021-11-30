@@ -7,6 +7,51 @@ use Database\Seeders\Resource\ResourceMain;
 class Upper extends ResourceMain {
     protected function add() {
         $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Karmian Tunic Pattern',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Karmian Tunic',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Demon\'s Tunic Fabric',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Demon\'s Tunic',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Divine Tunic Fabric',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Divine Tunic',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
             'type'       => 'armor',
             'name'       => 'Tunic of Zubei Fabric',
             'price_sell' => 0,

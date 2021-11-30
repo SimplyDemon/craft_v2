@@ -7,6 +7,51 @@ use Database\Seeders\Resource\ResourceMain;
 class Lower extends ResourceMain {
     protected function add() {
         $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Karmian Stockings Design',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Karmian Stockings',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Demon\'s Stockings Pattern',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Demon\'s Stockings',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Divine Stockings Pattern',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Divine Stockings',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
             'type'       => 'armor',
             'name'       => 'Stockings of Zubei Fabric',
             'price_sell' => 0,

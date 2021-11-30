@@ -41,6 +41,24 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->swordCategory->id;
         $imagePath  = 'item/weapon/sword';
 
+        seederAddRecipe( 'Flamberge', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 4 );
+        seederAddRecipe( 'Storm Bringer', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'шторм, меч, sword', 4 );
+        seederAddRecipe( 'Mysterious Sword', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'мистериос, меч, sword', 4 );
+        seederAddRecipe( 'Shamshir', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 5 );
+        seederAddRecipe( 'Katana', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 5 );
+        seederAddRecipe( 'Spirit Sword', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 5 );
+        seederAddRecipe( 'Raid Sword', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 5 );
+        seederAddRecipe( 'Caliburs', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 5 );
+        seederAddRecipe( 'Sword of Delusion', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'делюжен, делюшен, меч, sword', 5 );
+        seederAddRecipe( 'Tsurugi', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 5 );
+        seederAddRecipe( 'Homunkulus\' Sword', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'хома, хомка, меч, sword', 5 );
+        seederAddRecipe( 'Sword of Limit', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 5 );
+        seederAddRecipe( 'Sword of Nightmare', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 5 );
+        seederAddRecipe( 'Sword of Whispering Death', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 5 );
+        seederAddRecipe( 'Pa\'agrian Sword', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 5 );
+        seederAddRecipe( 'Samurai Long Sword', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'самурай, слс, меч, sword', 6 );
+        seederAddRecipe( 'Berserker Blade', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'берсеркер, меч, sword', 6 );
+        seederAddRecipe( 'Ecliptic Sword', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 6 );
         seederAddRecipe( 'Great Sword', $imagePath, 17000000, 'B', $categoryId, 0, '60', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Lightning', 1, false, 'Большой Меч, меч, sword', 6 );
         seederAddRecipe( 'Great Sword 100%', $imagePath, 17000000, 'B', $categoryId, 0, '100', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Lightning', 1, false, 'Большой Меч, меч, sword', 6 );
         seederAddRecipe( 'Keshanberk', $imagePath, 13500000, 'B', $categoryId, 0, '60', 'Добавляет 17.42 Физ. Атк.', 'Destruction', 1, false, 'Кешанберк, кешенберк, Кашенберк, кашенберг, kashenberk, меч, sword', 6 );
@@ -79,6 +97,33 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->bluntCategory->id;
         $imagePath  = 'item/weapon/blunt';
 
+        seederAddRecipe( 'Big Hammer', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 4 );
+        seederAddRecipe( 'Battle Axe', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 4 );
+        seederAddRecipe( 'Silver Axe', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 4 );
+        seederAddRecipe( 'Skull Graver', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 4 );
+        seederAddRecipe( 'Heavy Doom Hammer', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 4 );
+        seederAddRecipe( 'Crystal Staff', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 4 );
+        seederAddRecipe( 'Stick of Faith', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 4 );
+        seederAddRecipe( 'Heavy Doom Axe', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 4 );
+        seederAddRecipe( 'Cursed Staff', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 5 );
+        seederAddRecipe( 'Dwarven War Hammer', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 5 );
+        seederAddRecipe( 'War Axe', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'вар акс', 5 );
+        seederAddRecipe( 'Nirvana Axe', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 5 );
+        seederAddRecipe( 'Stick of Eternity', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 5 );
+        seederAddRecipe( 'Paradia Staff', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 5 );
+        seederAddRecipe( 'Inferno Staff', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'инферно', 5 );
+        seederAddRecipe( 'Pa\'agrio Hammer', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 5 );
+        seederAddRecipe( 'Sage\'s Staff', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 5 );
+        seederAddRecipe( 'Club of Nature', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 5 );
+        seederAddRecipe( 'Mace of Underworld', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 5 );
+        seederAddRecipe( 'Karik Horn', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 5 );
+        seederAddRecipe( 'Pa\'agrio Axe', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 5 );
+        seederAddRecipe( 'Deadman\'s Staff', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 6 );
+        seederAddRecipe( 'Ghoul\'s Staff', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 6 );
+        seederAddRecipe( 'Demon\'s Staff', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 6 );
+        seederAddRecipe( 'Yaksa Mace', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'якса', 6 );
+        seederAddRecipe( 'Ecliptic Axe', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 6 );
+        seederAddRecipe( 'Dwarven Hammer', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 6 );
         seederAddRecipe( 'Heavy War Axe', $imagePath, 13000000, 'B', $categoryId, 0, '60', 'Увеличивает HP на 319', 'Earth', 1, false, 'Тяжелый Топор Войны, вар акс', 6 );
         seederAddRecipe( 'Heavy War Axe 100%', $imagePath, 13000000, 'B', $categoryId, 0, '100', 'Увеличивает HP на 319', 'Earth', 1, false, 'Тяжелый Топор Войны, вар акс', 6 );
         seederAddRecipe( 'Spirit\'s Staff', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Маг. Атк. на 21.77', 'Hail', 1, false, 'Посох Духа, спирит стаф', 6 );
@@ -129,6 +174,11 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->bowCategory->id;
         $imagePath  = 'item/weapon/bow';
 
+        seederAddRecipe( 'Crystallized Ice Bow', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'кристалайз лук', 6 );
+        seederAddRecipe( 'Elemental Bow', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'елементал лук', 5 );
+        seederAddRecipe( 'Noble Elven Bow', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'лук', 5 );
+        seederAddRecipe( 'Akat Longbow', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'акат лук', 5 );
+        seederAddRecipe( 'Eminence Bow', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'емик эмик лук', 6 );
         seederAddRecipe( 'Dark Elven Longbow', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Точность на 3.3', 'Concentration', 1, false, 'Длинный Лук Темных Эльфов', 6 );
         seederAddRecipe( 'Dark Elven Longbow 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает Точность на 3.3', 'Concentration', 1, false, 'Длинный Лук Темных Эльфов', 6 );
         seederAddRecipe( 'Bow of Peril', $imagePath, 24000000, 'B', $categoryId, 0, '60', 'Увеличивает HP на 444', 'Earth', 1, false, 'Лук Угрозы, боп, bop, перил' );
@@ -146,25 +196,40 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->daggerCategory->id;
         $imagePath  = 'item/weapon/dagger';
 
-        seederAddRecipe( 'Kris', $imagePath, 14000000, 'B', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Крис дагер даггер dagger dager', 6 );
-        seederAddRecipe( 'Kris 100%', $imagePath, 14000000, 'B', $categoryId, 0, '100', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Крис дагер даггер dagger dager', 6 );
-        seederAddRecipe( 'Hell Knife', $imagePath, 14000000, 'B', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Нож Ада, Twilight Knife дагер даггер dagger dager', 6 );
-        seederAddRecipe( 'Hell Knife 100%', $imagePath, 14000000, 'B', $categoryId, 0, '100', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Нож Ада, Twilight Knife дагер даггер dagger dager', 6 );
-        seederAddRecipe( 'Demon\'s Dagger', $imagePath, 24000000, 'B', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Кинжал Демона, демон дагер даггер dagger dager' );
-        seederAddRecipe( 'Demon\'s Dagger 100%', $imagePath, 24000000, 'B', $categoryId, 0, '100', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Кинжал Демона, демон дагер даггер dagger dager' );
-        seederAddRecipe( 'Bloody Orchid', $imagePath, 19000000, 'A', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Кровавая Орхидея, блудик, орчид дагер даггер dagger dager', 7 );
-        seederAddRecipe( 'Soul Separator', $imagePath, 47000000, 'A', $categoryId, 0, '60', 'Увеличивает реген HP на 5%', 'On Fire', 1, false, 'Душегуб, сепоратор дагер даггер dagger dager' );
-        seederAddRecipe( 'Naga Storm', $imagePath, 0, 'A', $categoryId, 0, '60', 'С вероятностью 5% отравляет врага при физической атаки', 'Molar', 1, false, 'Буря Наги, нага дагер даггер dagger dager' );
-        seederAddRecipe( 'Angel Slayer', $imagePath, 68000000, 'S', $categoryId, 0, '60', 'Увеличивает Точность на 3.3', 'Concentration', 1, false, 'Убийца Ангелов, as, ангел дагер даггер dagger dager' );
-        seederAddRecipe( 'Dynasty Knife', $imagePath, 195000000, 'S', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Нож Династии, дино дагер даггер dagger dager' );
-        seederAddRecipe( 'Icarus Disperser', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Распылитель Икара, ик нож дагер даггер dagger dager' );
-        seederAddRecipe( 'Vesper Shaper', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Gale', 1, false, 'Острие Венеры, шапер, веспер нож дагер даггер dagger dager' );
+        seederAddRecipe( 'Cursed Dagger', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'дагер, даггер, dagger, dager', 4 );
+        seederAddRecipe( 'Dark Elven Dagger', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'дагер, даггер, dagger, dager', 4 );
+        seederAddRecipe( 'Stiletto', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'дагер, даггер, dagger, dager', 5 );
+        seederAddRecipe( 'Soulfire Dirk', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'дагер, даггер, dagger, dager', 5 );
+        seederAddRecipe( 'Grace Dagger', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'дагер, даггер, dagger, dager', 5 );
+        seederAddRecipe( 'Dark Screamer', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'дс ds дарк скример дагер, даггер, dagger, dager', 5 );
+        seederAddRecipe( 'Crystal Dagger', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'кристал дагер, даггер, dagger, dager', 6 );
+        seederAddRecipe( 'Kris', $imagePath, 14000000, 'B', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Крис дагер, даггер, dagger, dager', 6 );
+        seederAddRecipe( 'Kris 100%', $imagePath, 14000000, 'B', $categoryId, 0, '100', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Крис дагер, даггер, dagger, dager', 6 );
+        seederAddRecipe( 'Hell Knife', $imagePath, 14000000, 'B', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Нож Ада, Twilight Knife дагер, даггер, dagger, dager', 6 );
+        seederAddRecipe( 'Hell Knife 100%', $imagePath, 14000000, 'B', $categoryId, 0, '100', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Нож Ада, Twilight Knife дагер, даггер, dagger, dager', 6 );
+        seederAddRecipe( 'Demon\'s Dagger', $imagePath, 24000000, 'B', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Кинжал Демона, демон дагер, даггер, dagger, dager' );
+        seederAddRecipe( 'Demon\'s Dagger 100%', $imagePath, 24000000, 'B', $categoryId, 0, '100', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Кинжал Демона, демон дагер, даггер, dagger, dager' );
+        seederAddRecipe( 'Bloody Orchid', $imagePath, 19000000, 'A', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Кровавая Орхидея, блудик, орчид дагер, даггер, dagger, dager', 7 );
+        seederAddRecipe( 'Soul Separator', $imagePath, 47000000, 'A', $categoryId, 0, '60', 'Увеличивает реген HP на 5%', 'On Fire', 1, false, 'Душегуб, сепоратор дагер, даггер, dagger, dager' );
+        seederAddRecipe( 'Naga Storm', $imagePath, 0, 'A', $categoryId, 0, '60', 'С вероятностью 5% отравляет врага при физической атаки', 'Molar', 1, false, 'Буря Наги, нага дагер, даггер, dagger, dager' );
+        seederAddRecipe( 'Angel Slayer', $imagePath, 68000000, 'S', $categoryId, 0, '60', 'Увеличивает Точность на 3.3', 'Concentration', 1, false, 'Убийца Ангелов, as, ангел дагер, даггер, dagger, dager' );
+        seederAddRecipe( 'Dynasty Knife', $imagePath, 195000000, 'S', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Нож Династии, дино дагер, даггер, dagger, dager' );
+        seederAddRecipe( 'Icarus Disperser', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Распылитель Икара, ик нож дагер, даггер, dagger, dager' );
+        seederAddRecipe( 'Vesper Shaper', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Gale', 1, false, 'Острие Венеры, шапер, веспер нож дагер, даггер, dagger, dager' );
     }
 
     protected function addPolearms() {
         $categoryId = $this->polearmCategory->id;
         $imagePath  = 'item/weapon/polearm';
 
+        seederAddRecipe( 'Scythe', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'пика, алебарда, древковое', 4 );
+        seederAddRecipe( 'Orcish Glaive', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'оркиш пика, алебарда, древковое', 4 );
+        seederAddRecipe( 'Body Slasher', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'пика, алебарда, древковое', 4 );
+        seederAddRecipe( 'Bec de Corbin', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'пика, алебарда, древковое', 5 );
+        seederAddRecipe( 'Poleaxe', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'пика, алебарда, древковое', 5 );
+        seederAddRecipe( 'Scorpion', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'пика, алебарда, древковое', 5 );
+        seederAddRecipe( 'Widow Maker', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'пика, алебарда, древковое', 5 );
+        seederAddRecipe( 'Orcish Poleaxe', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'оркиш пика, алебарда, древковое', 6 );
         seederAddRecipe( 'Great Axe', $imagePath, 16000000, 'B', $categoryId, 0, '60', 'Увеличивает мощь критической атаки на 156', 'Thunder', 1, false, 'Двуручный Топор, пика, алебарда, древковое', 6 );
         seederAddRecipe( 'Great Axe 100%', $imagePath, 16000000, 'B', $categoryId, 0, '100', 'Увеличивает мощь критической атаки на 156', 'Thunder', 1, false, 'Двуручный Топор, пика, алебарда, древковое' );
         seederAddRecipe( 'Lance', $imagePath, 22000000, 'B', $categoryId, 0, '60', 'Увеличивает HP на 319', 'Earth', 1, false, 'Пика, ланс, пика, алебарда, древковое' );
@@ -182,6 +247,10 @@ class WeaponSeeder extends Seeder {
         $categoryId = $this->fistCategory->id;
         $imagePath  = 'item/weapon/fist';
 
+        seederAddRecipe( 'Chakram', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'когти, кастеты, костеты, кости', 4 );
+        seederAddRecipe( 'Knuckle Duster', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'когти, кастеты, костеты, кости', 5 );
+        seederAddRecipe( 'Fisted Blade', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'когти, кастеты, костеты, кости', 5 );
+        seederAddRecipe( 'Great Pata', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'пата когти, кастеты, костеты, кости', 6 );
         seederAddRecipe( 'Arthro Nail', $imagePath, 13000000, 'B', $categoryId, 0, '60', 'Добавляет 21.2 Физ. Атк.', 'Destruction', 1, false, 'Коготь Артро, артро нейл, когти, кастеты, костеты, кости', 6 );
         seederAddRecipe( 'Arthro Nail 100%', $imagePath, 13000000, 'B', $categoryId, 0, '100', 'Добавляет 21.2 Физ. Атк.', 'Destruction', 1, false, 'Коготь Артро, артро нейл, когти, кастеты, костеты, кости', 6 );
         seederAddRecipe( 'Bellion Cestus', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Цестус Беллиона, беллионы, белионы, когти, кастеты, костеты, кости' );

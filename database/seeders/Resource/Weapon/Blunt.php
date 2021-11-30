@@ -8,6 +8,411 @@ class Blunt extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'                   => 'weapon',
+            'name'                   => 'Big Hammer Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Big Hammer',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Battle Axe Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Battle Axe',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Silver Axe Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Silver Axe',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Skull Graver Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Skull Graver',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Heavy Doom Hammer Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Heavy Doom Hammer',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Crystal Staff Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Crystal Staff',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Stick of Faith Shaft',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Stick of Faith',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Heavy Doom Axe Blade',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Heavy Doom Axe',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Cursed Staff Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Cursed Staff',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Dwarven War Hammer Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Dwarven War Hammer',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'War Axe Blade',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: War Axe',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Nirvana Axe Blade',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Nirvana Axe',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Stick of Eternity Shaft',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Stick of Eternity',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Paradia Staff Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Paradia Staff',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Inferno Staff Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Inferno Staff',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Pa\'agrio Hammer Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Pa\'agrio Hammer',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Sage\'s Staff Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Sage\'s Staff',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Club of Nature Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Club of Nature',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Mace of Underworld Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Mace of Underworld',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Karik Horn Piece',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Karik Horn',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Pa\'agrio Axe Blade',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Pa\'agrio Axe',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Deadman\'s Staff Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Deadman\'s Staff',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Ghoul\'s Staff Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Ghoul\'s Staff',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Demon\'s Staff Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Demon\'s Staff',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Yaksa Mace Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Yaksa Mace',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Ecliptic Axe Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Ecliptic Axe',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Dwarven Hammer Piece',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Dwarven Hammer',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
             'name'                   => 'Heavy War Axe Head',
             'price_sell'             => 0,
             'price_buy'              => 0,

@@ -15,12 +15,57 @@ class FullBody extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addRobeOfSeal();
         $this->addAvadonRobe();
         $this->addAvadonRobe100();
         $this->addDarkCrystalRobe();
         $this->addRobeOfNightmare();
         $this->addMajesticRobe();
         $this->addMajorArcanaRobe();
+    }
+
+    protected function addRobeOfSeal() {
+        $piece  = Resource::where( 'name', 'Robe of Seal Fabric' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Robe of Seal' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Robe of Seal' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 95,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 16,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 65,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 32,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneB->id,
+            'resourceQuantity' => 14,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->asofe->id,
+            'resourceQuantity' => 16,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addAvadonRobe() {

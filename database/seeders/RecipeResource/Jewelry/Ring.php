@@ -13,6 +13,10 @@ class Ring extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addAquastoneRing();
+        $this->addRingOfProtection();
+        $this->addRingOfAges();
+        $this->addRingOfSeal();
         $this->addAdamantiteRing();
         $this->addAdamantiteRing100();
         $this->addBlackOreRing();
@@ -23,6 +27,166 @@ class Ring extends RecipeResourceMain {
         $this->addDynastyRing();
         $this->addMoiraiRing();
         $this->addVesperRing();
+    }
+
+    protected function addAquastoneRing() {
+        $piece  = Resource::where( 'name', 'Aquastone Ring Wire' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Aquastone Ring' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Aquastone Ring' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 25,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->silverMold->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 15,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 2,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addRingOfProtection() {
+        $piece  = Resource::where( 'name', 'Ring of Protection Gemstone' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Ring of Protection' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Ring of Protection' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->silverMold->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 15,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addRingOfAges() {
+        $piece  = Resource::where( 'name', 'Ring of Ages Gemstone' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Ring of Ages' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Ring of Ages' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->silverMold->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 6,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 30,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 5,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addRingOfSeal() {
+        $piece  = Resource::where( 'name', 'Ring of Seal Gemstone' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Ring of Seal' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Ring of Seal' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->silverMold->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 7,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addAdamantiteRing() {

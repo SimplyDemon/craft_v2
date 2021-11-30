@@ -8,6 +8,66 @@ class Ring extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'                    => 'jewelry',
+            'name'                    => 'Aquastone Ring Wire',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Aquastone Ring',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Ring of Protection Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Ring of Protection',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Ring of Ages Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Ring of Ages',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Ring of Seal Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Ring of Seal',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
             'name'                    => 'Adamantite Ring Wire',
             'price_sell'              => 0,
             'price_buy'               => 0,

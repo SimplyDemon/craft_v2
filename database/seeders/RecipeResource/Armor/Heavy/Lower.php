@@ -15,28 +15,102 @@ class Lower extends RecipeResourceMain {
     }
 
     protected function add() {
-	    $this->addZubeisGaiters();
-	    $this->addZubeisGaiters100();
-	    $this->addAvadonGaiters();
-	    $this->addAvadonGaiters100();
-	    $this->addBlueWolfGaiters();
-	    $this->addBlueWolfGaiters100();
-	    $this->addDarkCrystalGaiters();
-	    $this->addImperialCrusaderGaiters();
-	    $this->addDynastyGaiters();
-	    $this->addMoiraiGaiters();
-	    $this->addVesperGaiters();
+        $this->addChainGaiters();
+        $this->addDwarvenChainGaiters();
+        $this->addZubeisGaiters();
+        $this->addZubeisGaiters100();
+        $this->addAvadonGaiters();
+        $this->addAvadonGaiters100();
+        $this->addBlueWolfGaiters();
+        $this->addBlueWolfGaiters100();
+        $this->addDarkCrystalGaiters();
+        $this->addImperialCrusaderGaiters();
+        $this->addDynastyGaiters();
+        $this->addMoiraiGaiters();
+        $this->addVesperGaiters();
     }
 
-	protected function addZubeisGaiters() {
-		$piece  = Resource::where( 'name', 'Zubei\'s Gaiters Material' )->firstOrFail();
-		$recipe = Resource::where( 'name', 'Recipe: Zubei\'s Gaiters (60%)' )->firstOrFail();
-		$item   = Recipe::where( 'name', 'Zubei\'s Gaiters' )->firstOrFail();
+    protected function addChainGaiters() {
+        $piece  = Resource::where( 'name', 'Chain Gaiters Part' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Chain Gaiters' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Chain Gaiters' )->firstOrFail();
 
-		$resources   = [];
-		$resources[] = [
-			'resourceId'       => $this->ResourceHelper->crystalC->id,
-			'resourceQuantity' => 45,
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 90,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 2,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addDwarvenChainGaiters() {
+        $piece  = Resource::where( 'name', 'Dwarven Chain Gaiters Material' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Dwarven Chain Gaiters' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Dwarven Chain Gaiters' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 25,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 2,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addZubeisGaiters() {
+        $piece  = Resource::where( 'name', 'Zubei\'s Gaiters Material' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Zubei\'s Gaiters (60%)' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Zubei\'s Gaiters' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 45,
 		];
 		$resources[] = [
 			'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,

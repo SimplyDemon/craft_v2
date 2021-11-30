@@ -22,6 +22,7 @@ class ResourceHelper {
     public Resource $cord;
     public Resource $metallicThread;
     public Resource $braidedHemp;
+    public Resource $metalHardener;
 
     public Resource $enria;
     public Resource $adamantine;
@@ -64,6 +65,8 @@ class ResourceHelper {
     public Resource $crystalB;
     public Resource $crystalC;
     public Resource $crystalD;
+    public Resource $gemstoneD;
+    public Resource $gemstoneC;
     public Resource $gemstoneB;
     public Resource $gemstoneA;
     public Resource $gemstoneS;
@@ -91,6 +94,7 @@ class ResourceHelper {
         $this->cord              = Resource::where( 'name', 'Cord' )->firstOrFail();
         $this->metallicThread    = Resource::where( 'name', 'Metallic Thread' )->firstOrFail();
         $this->braidedHemp       = Resource::where( 'name', 'Braided Hemp' )->firstOrFail();
+        $this->metalHardener     = Resource::where( 'name', 'Metal Hardener' )->firstOrFail();
 
         $this->leonard          = Resource::where( 'name', 'Leonard' )->firstOrFail();
         $this->enria            = Resource::where( 'name', 'Enria' )->firstOrFail();
@@ -134,8 +138,10 @@ class ResourceHelper {
         $this->crystalB  = Resource::where( 'name', 'Crystal B' )->firstOrFail();
         $this->crystalC  = Resource::where( 'name', 'Crystal C' )->firstOrFail();
         $this->crystalD  = Resource::where( 'name', 'Crystal D' )->firstOrFail();
-        $this->gemstoneA = Resource::where( 'name', 'Gemstone (A-grade)' )->firstOrFail();
+        $this->gemstoneD = Resource::where( 'name', 'Gemstone (D-grade)' )->firstOrFail();
+        $this->gemstoneC = Resource::where( 'name', 'Gemstone (C-grade)' )->firstOrFail();
         $this->gemstoneB = Resource::where( 'name', 'Gemstone (B-grade)' )->firstOrFail();
+        $this->gemstoneA = Resource::where( 'name', 'Gemstone (A-grade)' )->firstOrFail();
         $this->gemstoneS = Resource::where( 'name', 'Gemstone (S-grade)' )->firstOrFail();
         $this->spiritOre = Resource::where( 'name', 'Spirit Ore' )->firstOrFail();
         $this->soulOre   = Resource::where( 'name', 'Soul Ore' )->firstOrFail();

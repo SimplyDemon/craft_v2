@@ -29,6 +29,7 @@ class ResourceSeeder extends Seeder {
     public string $pieceFolderPathJewelry;
     public string $recipeFolderPath;
     public string $defaultWeaponBladeFilePath;
+    public string $recipeCImageFilePath;
     public string $recipeBImageFilePath;
     public string $recipeAImageFilePath;
     public string $recipeSImageFilePath;
@@ -64,6 +65,7 @@ class ResourceSeeder extends Seeder {
         $this->defaultWeaponBladeFilePath = $this->pieceFolderPathWeapon . 'Blade.png';
         $this->defaultArmorPieceFilePath  = $this->pieceFolderPathArmor . 'Piece.png';
 
+        $this->recipeCImageFilePath = $this->recipeFolderPath . 'Recipe C.png';
         $this->recipeBImageFilePath = $this->recipeFolderPath . 'Recipe B.png';
         $this->recipeAImageFilePath = $this->recipeFolderPath . 'Recipe A.png';
         $this->recipeSImageFilePath = $this->recipeFolderPath . 'Recipe S.png';

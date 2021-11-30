@@ -8,6 +8,111 @@ class Dagger extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'       => 'weapon',
+            'name'       => 'Cursed Dagger Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Cursed Dagger',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Dark Elven Dagger Edge',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Dark Elven Dagger',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Stiletto Edge',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Stiletto',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Soulfire Dirk Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Soulfire Dirk',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Grace Dagger Edge',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Grace Dagger',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Dark Screamer Edge',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Dark Screamer',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Crystal Dagger Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Crystal Dagger',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
             'name'       => 'Kris Edge',
             'price_sell' => 0,
             'price_buy'  => 0,

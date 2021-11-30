@@ -15,12 +15,160 @@ class Lower extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addReinforcedMithrilGaiters();
+        $this->addPlatedLeatherGaiters();
+        $this->addRindLeatherGaiters();
+        $this->addThecaLeatherGaiters();
         $this->addZubeisLeatherGaiters();
         $this->addZubeisLeatherGaiters100();
         $this->addDarkCrystalLeggings();
         $this->addDynastyLeatherLeggings();
         $this->addMoiraiLeatherLeggings();
         $this->addVesperLeatherLeggings();
+    }
+
+    protected function addReinforcedMithrilGaiters() {
+        $piece  = Resource::where( 'name', 'Reinforced Mithril Gaiters Fragment' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Reinforced Mithril Gaiters' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Reinforced Mithril Gaiters' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 70,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 15,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 15,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 6,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addPlatedLeatherGaiters() {
+        $piece  = Resource::where( 'name', 'Plated Leather Gaiters Material' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Plated Leather Gaiters' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Plated Leather Gaiters' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 18,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 18,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 18,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 7,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addRindLeatherGaiters() {
+        $piece  = Resource::where( 'name', 'Rind Leather Gaiters Material' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Rind Leather Gaiters' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Rind Leather Gaiters' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addThecaLeatherGaiters() {
+        $piece  = Resource::where( 'name', 'Theca Leather Gaiters Pattern' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Theca Leather Gaiters' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Theca Leather Gaiters' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 35,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 32,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 32,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 15,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addZubeisLeatherGaiters() {

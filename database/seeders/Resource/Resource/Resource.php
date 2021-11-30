@@ -201,6 +201,11 @@ class Resource extends ResourceMain {
             'price_sell' => 17000,
             'price_buy'  => 12000,
         ];
+        $this->resources[] = [
+            'name'       => 'Metal Hardener',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+        ];
 
         $this->resources[] = [
             'name'       => 'Warsmith Holder',
@@ -299,6 +304,16 @@ class Resource extends ResourceMain {
             'price_buy'  => 380000,
         ];
 
+        $this->resources[] = [
+            'name'       => 'Gemstone (D-grade)',
+            'price_sell' => 11000,
+            'price_buy'  => 11000,
+        ];
+        $this->resources[] = [
+            'name'       => 'Gemstone (C-grade)',
+            'price_sell' => 11000,
+            'price_buy'  => 11000,
+        ];
         $this->resources[] = [
             'name'       => 'Gemstone (B-grade)',
             'price_sell' => 11000,

@@ -15,6 +15,9 @@ class Upper extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addKarmianTunic();
+        $this->addDemonsTunic();
+        $this->addDivineTunic();
         $this->addTunicOfZubei();
         $this->addTunicOfZubei100();
         $this->addBlueWolfTunic();
@@ -26,6 +29,114 @@ class Upper extends RecipeResourceMain {
         $this->addDynastyTunic();
         $this->addMoiraiTunic();
         $this->addVesperTunic();
+    }
+
+    protected function addKarmianTunic() {
+        $piece  = Resource::where( 'name', 'Karmian Tunic Pattern' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Karmian Tunic' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Karmian Tunic' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 120,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 24,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addDemonsTunic() {
+        $piece  = Resource::where( 'name', 'Demon\'s Tunic Fabric' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Demon\'s Tunic' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Demon\'s Tunic' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 50,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 48,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 24,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 22,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addDivineTunic() {
+        $piece  = Resource::where( 'name', 'Divine Tunic Fabric' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Divine Tunic' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Divine Tunic' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 72,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 70,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 35,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 34,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addTunicOfZubei() {

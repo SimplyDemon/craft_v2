@@ -8,6 +8,51 @@ class Helmet extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'                  => 'armor',
+            'name'                  => 'Chain Hood Pattern',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Chain Hood',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Compound Helmet Design',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Compound Helmet',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Full Plate Helmet Design',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Full Plate Helmet',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
             'name'                  => 'Zubei\'s Helmet Design',
             'price_sell'            => 0,
             'price_buy'             => 0,

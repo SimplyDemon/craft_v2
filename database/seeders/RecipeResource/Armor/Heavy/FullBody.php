@@ -15,11 +15,94 @@ class FullBody extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addCompoundArmor();
+        $this->addFullPlateArmor();
         $this->addDoomPlateArmor();
         $this->addDoomPlateArmor100();
         $this->addTallumPlateArmor();
         $this->addArmorOfNightmare();
         $this->addMajesticPlateArmor();
+    }
+
+    protected function addCompoundArmor() {
+        $piece  = Resource::where( 'name', 'Compound Armor Temper' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Compound Armor' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Compound Armor' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 95,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 7,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 21,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 4,
+        ];
+
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 48,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addFullPlateArmor() {
+        $piece  = Resource::where( 'name', 'Full Plate Armor Temper' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Full Plate Armor' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Full Plate Armor' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 140,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 36,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 4,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 73,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addDoomPlateArmor() {

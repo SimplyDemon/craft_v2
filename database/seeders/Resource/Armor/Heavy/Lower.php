@@ -7,6 +7,36 @@ use Database\Seeders\Resource\ResourceMain;
 class Lower extends ResourceMain {
     protected function add() {
         $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Chain Gaiters Part',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Chain Gaiters',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Dwarven Chain Gaiters Material',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Dwarven Chain Gaiters',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
             'type'       => 'armor',
             'name'       => 'Zubei\'s Gaiters Material',
             'price_sell' => 0,

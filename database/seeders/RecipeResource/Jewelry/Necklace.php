@@ -13,6 +13,10 @@ class Necklace extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addAquastoneNecklace();
+        $this->addNecklaceOfProtection();
+        $this->addNecklaceOfMermaid();
+        $this->addNecklaceOfSeal();
         $this->addAdamantiteNecklace();
         $this->addAdamantiteNecklace100();
         $this->addBlackOreNecklace();
@@ -23,6 +27,166 @@ class Necklace extends RecipeResourceMain {
         $this->addDynastyNecklace();
         $this->addMoiraiNecklace();
         $this->addVesperNecklace();
+    }
+
+    protected function addAquastoneNecklace() {
+        $piece  = Resource::where( 'name', 'Aquastone Necklace Chain' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Aquastone Necklace' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Aquastone Necklace' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 65,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 5,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 5,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addNecklaceOfProtection() {
+        $piece  = Resource::where( 'name', 'Necklace of Protection Gemstone' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Necklace of Protection' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Necklace of Protection' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 16,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 2,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 7,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addNecklaceOfMermaid() {
+        $piece  = Resource::where( 'name', 'Necklace of Mermaid Teardrop' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Necklace of Mermaid' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Necklace of Mermaid' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 26,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 4,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addNecklaceOfSeal() {
+        $piece  = Resource::where( 'name', 'Necklace of Seal Chain' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Necklace of Seal' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Necklace of Seal' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 38,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnishOfPurity->id,
+            'resourceQuantity' => 7,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 35,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 16,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addAdamantiteNecklace() {

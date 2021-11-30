@@ -15,6 +15,8 @@ class Upper extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addChainMailShirt();
+        $this->addDwarvenChainMailShirt();
         $this->addZubeisBreastplate();
         $this->addZubeisBreastplate100();
         $this->addAvadonBreastplate();
@@ -28,6 +30,77 @@ class Upper extends RecipeResourceMain {
         $this->addVesperBreastplate();
     }
 
+    protected function addChainMailShirt() {
+        $piece  = Resource::where( 'name', 'Chain Mail Shirt Material' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Chain Mail Shirt' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Chain Mail Shirt' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 150,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 14,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addDwarvenChainMailShirt() {
+        $piece  = Resource::where( 'name', 'Dwarven Chain Mail Shirt Material' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Dwarven Chain Mail Shirt' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Dwarven Chain Mail Shirt' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 42,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 5,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 19,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
 
     protected function addZubeisBreastplate() {
         $piece  = Resource::where( 'name', 'Zubei\'s Breastplate Part' )->firstOrFail();

@@ -8,6 +8,21 @@ class FullBody extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'       => 'armor',
+            'name'       => 'Drake Leather Armor Texture',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Drake Leather Armor',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'armor',
             'name'       => 'Avadon Leather Armor Lining',
             'price_sell' => 0,
             'price_buy'  => 0,

@@ -8,6 +8,36 @@ class Upper extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'       => 'armor',
+            'name'       => 'Chain Mail Shirt Material',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Chain Mail Shirt',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Dwarven Chain Mail Shirt Material',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Dwarven Chain Mail Shirt',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'armor',
             'name'       => 'Zubei\'s Breastplate Part',
             'price_sell' => 0,
             'price_buy'  => 0,

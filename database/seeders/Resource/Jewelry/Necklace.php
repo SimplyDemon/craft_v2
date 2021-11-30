@@ -8,6 +8,66 @@ class Necklace extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'                    => 'jewelry',
+            'name'                    => 'Aquastone Necklace Chain',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Aquastone Necklace',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Necklace of Protection Gemstone',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Necklace of Protection',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Necklace of Mermaid Teardrop',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Necklace of Mermaid',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
+            'name'                    => 'Necklace of Seal Chain',
+            'price_sell'              => 0,
+            'price_buy'               => 0,
+            'is_custom_piece_jewelry' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'jewelry',
+            'name'       => 'Recipe: Necklace of Seal',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                    => 'jewelry',
             'name'                    => 'Adamantite Necklace Chain',
             'price_sell'              => 0,
             'price_buy'               => 0,

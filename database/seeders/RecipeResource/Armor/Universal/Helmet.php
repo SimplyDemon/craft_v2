@@ -15,6 +15,9 @@ class Helmet extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addChainHood();
+        $this->addCompoundHelmet();
+        $this->addFullPlateHelmet();
         $this->addZubeisHelmet();
         $this->addZubeisHelmet100();
         $this->addAvadonCirclet();
@@ -27,6 +30,114 @@ class Helmet extends RecipeResourceMain {
         $this->addTallumHelmet();
         $this->addHelmOfNightmare();
         $this->addMajesticCirclet();
+    }
+
+    protected function addChainHood() {
+        $piece  = Resource::where( 'name', 'Chain Hood Pattern' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Chain Hood' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Chain Hood' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 60,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 2,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 5,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addCompoundHelmet() {
+        $piece  = Resource::where( 'name', 'Compound Helmet Design' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Compound Helmet' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Compound Helmet' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 25,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 14,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addFullPlateHelmet() {
+        $piece  = Resource::where( 'name', 'Full Plate Helmet Design' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Full Plate Helmet' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Full Plate Helmet' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 36,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->blacksmithFrame->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 26,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 15,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addZubeisHelmet() {

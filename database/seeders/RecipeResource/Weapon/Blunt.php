@@ -13,6 +13,33 @@ class Blunt extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addBigHammer();
+        $this->addBattleAxe();
+        $this->addSilverAxe();
+        $this->addSkullGraver();
+        $this->addHeavyDoomHammer();
+        $this->addCrystalStaff();
+        $this->addStickOfFaith();
+        $this->addHeavyDoomAxe();
+        $this->addCursedStaff();
+        $this->addDwarvenWarHammer();
+        $this->addWarAxe();
+        $this->addNirvanaAxe();
+        $this->addStickOfEternity();
+        $this->addParadiaStaff();
+        $this->addInfernoStaff();
+        $this->addPaagrioHammer();
+        $this->addSagesStaff();
+        $this->addClubOfNature();
+        $this->addMaceOfUnderworld();
+        $this->addKarikHorn();
+        $this->addPaagrioAxe();
+        $this->addDeadmansStaff();
+        $this->addGhoulsStaff();
+        $this->addDemonsStaff();
+        $this->addYaksaMace();
+        $this->addEclipticAxe();
+        $this->addDwarvenHammer();
         $this->addHeavyWarAxe();
         $this->addHeavyWarAxe100();
         $this->addSpiritsStaff();
@@ -57,6 +84,1194 @@ class Blunt extends RecipeResourceMain {
         $this->addVesperRetributer();
         $this->addVesperCaster();
         $this->addVesperSinger();
+    }
+
+    protected function addBigHammer() {
+        $piece  = Resource::where( 'name', 'Big Hammer Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Big Hammer' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Big Hammer' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 700,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 15,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 30,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 30,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 81,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 60,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addBattleAxe() {
+        $piece  = Resource::where( 'name', 'Battle Axe Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Battle Axe' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Battle Axe' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 700,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 15,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 30,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 30,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 81,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 60,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addSilverAxe() {
+        $piece  = Resource::where( 'name', 'Silver Axe Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Silver Axe' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Silver Axe' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 700,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 15,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 30,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 30,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 81,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 60,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addSkullGraver() {
+        $piece  = Resource::where( 'name', 'Skull Graver Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Skull Graver' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Skull Graver' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 700,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 15,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 30,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 30,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 81,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 60,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addHeavyDoomHammer() {
+        $piece  = Resource::where( 'name', 'Heavy Doom Hammer Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Heavy Doom Hammer' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Heavy Doom Hammer' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 700,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 81,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 50,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addCrystalStaff() {
+        $piece  = Resource::where( 'name', 'Crystal Staff Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Crystal Staff' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Crystal Staff' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 700,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 81,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 60,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addStickOfFaith() {
+        $piece  = Resource::where( 'name', 'Stick of Faith Shaft' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Stick of Faith' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Stick of Faith' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 700,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 81,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 60,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addHeavyDoomAxe() {
+        $piece  = Resource::where( 'name', 'Heavy Doom Axe Blade' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Heavy Doom Axe' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Heavy Doom Axe' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 700,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 81,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 50,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addCursedStaff() {
+        $piece  = Resource::where( 'name', 'Cursed Staff Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Cursed Staff' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Cursed Staff' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 180,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->coarseBonePowder->id,
+            'resourceQuantity' => 52,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 26,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->oriharukon->id,
+            'resourceQuantity' => 26,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 105,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 78,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addDwarvenWarHammer() {
+        $piece  = Resource::where( 'name', 'Dwarven War Hammer Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Dwarven War Hammer' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Dwarven War Hammer' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 180,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 19,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 38,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 38,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 105,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 76,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addWarAxe() {
+        $piece  = Resource::where( 'name', 'War Axe Blade' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: War Axe' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'War Axe' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 300,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 27,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 166,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 108,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addNirvanaAxe() {
+        $piece  = Resource::where( 'name', 'Nirvana Axe Blade' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Nirvana Axe' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Nirvana Axe' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 300,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 27,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 166,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 108,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addStickOfEternity() {
+        $piece  = Resource::where( 'name', 'Stick of Eternity Shaft' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Stick of Eternity' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Stick of Eternity' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 300,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->coarseBonePowder->id,
+            'resourceQuantity' => 74,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 37,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->oriharukon->id,
+            'resourceQuantity' => 37,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 166,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 111,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addParadiaStaff() {
+        $piece  = Resource::where( 'name', 'Paradia Staff Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Paradia Staff' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Paradia Staff' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 300,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->coarseBonePowder->id,
+            'resourceQuantity' => 74,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 37,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->oriharukon->id,
+            'resourceQuantity' => 37,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 166,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 111,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addInfernoStaff() {
+        $piece  = Resource::where( 'name', 'Inferno Staff Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Inferno Staff' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Inferno Staff' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 300,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->coarseBonePowder->id,
+            'resourceQuantity' => 74,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 37,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->oriharukon->id,
+            'resourceQuantity' => 37,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 166,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 111,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addPaagrioHammer() {
+        $piece  = Resource::where( 'name', 'Pa\'agrio Hammer Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Pa\'agrio Hammer' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Pa\'agrio Hammer' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 300,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 18,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 36,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 72,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 166,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 90,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addSagesStaff() {
+        $piece  = Resource::where( 'name', 'Sage\'s Staff Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Sage\'s Staff' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Sage\'s Staff' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 300,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->coarseBonePowder->id,
+            'resourceQuantity' => 74,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 37,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->oriharukon->id,
+            'resourceQuantity' => 37,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 166,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 111,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addClubOfNature() {
+        $piece  = Resource::where( 'name', 'Club of Nature Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Club of Nature' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Club of Nature' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 300,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->coarseBonePowder->id,
+            'resourceQuantity' => 74,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 37,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->oriharukon->id,
+            'resourceQuantity' => 37,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 166,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 111,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addMaceOfUnderworld() {
+        $piece  = Resource::where( 'name', 'Mace of Underworld Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Mace of Underworld' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Mace of Underworld' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 300,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 27,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 166,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 108,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addKarikHorn() {
+        $piece  = Resource::where( 'name', 'Karik Horn Piece' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Karik Horn' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Karik Horn' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 300,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 18,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 36,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 72,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 166,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 90,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addPaagrioAxe() {
+        $piece  = Resource::where( 'name', 'Pa\'agrio Axe Blade' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Pa\'agrio Axe' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Pa\'agrio Axe' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 330,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 80,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 187,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 100,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addDeadmansStaff() {
+        $piece  = Resource::where( 'name', 'Deadman\'s Staff Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Deadman\'s Staff' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Deadman\'s Staff' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 410,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->coarseBonePowder->id,
+            'resourceQuantity' => 108,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->oriharukon->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 248,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 162,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addGhoulsStaff() {
+        $piece  = Resource::where( 'name', 'Ghoul\'s Staff Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Ghoul\'s Staff' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Ghoul\'s Staff' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 410,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->coarseBonePowder->id,
+            'resourceQuantity' => 108,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->oriharukon->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 248,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 162,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addDemonsStaff() {
+        $piece  = Resource::where( 'name', 'Demon\'s Staff Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Demon\'s Staff' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Demon\'s Staff' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 410,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->coarseBonePowder->id,
+            'resourceQuantity' => 108,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->oriharukon->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 248,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 162,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addYaksaMace() {
+        $piece  = Resource::where( 'name', 'Yaksa Mace Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Yaksa Mace' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Yaksa Mace' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 410,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 80,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 80,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 248,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 160,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addEclipticAxe() {
+        $piece  = Resource::where( 'name', 'Ecliptic Axe Head' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Ecliptic Axe' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Ecliptic Axe' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 410,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 80,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 80,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 248,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 160,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addDwarvenHammer() {
+        $piece  = Resource::where( 'name', 'Dwarven Hammer Piece' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Dwarven Hammer' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Dwarven Hammer' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 420,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 26,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+            'resourceQuantity' => 52,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 104,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 248,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 130,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addHeavyWarAxe() {

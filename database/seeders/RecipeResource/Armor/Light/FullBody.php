@@ -15,6 +15,7 @@ class FullBody extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addDrakeLeatherArmor();
         $this->addAvadonLeatherArmor();
         $this->addAvadonLeatherArmor100();
         $this->addBlueWolfLeatherArmor();
@@ -25,6 +26,46 @@ class FullBody extends RecipeResourceMain {
         $this->addLeatherArmorOfNightmare();
         $this->addMajesticLeatherArmor();
         $this->addDraconicLeatherArmor();
+    }
+
+    protected function addDrakeLeatherArmor() {
+        $piece  = Resource::where( 'name', 'Drake Leather Armor Texture' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Drake Leather Armor' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Drake Leather Armor' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 100,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 24,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 96,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metallicFiber->id,
+            'resourceQuantity' => 48,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 53,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addAvadonLeatherArmor() {

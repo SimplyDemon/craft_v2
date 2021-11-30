@@ -15,6 +15,17 @@ class Gloves extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addReinforcedMithrilGloves();
+        $this->addChainGloves();
+        $this->addKarmianGloves();
+        $this->addPlatedLeatherGloves();
+        $this->addRindLeatherGloves();
+        $this->addMithrilGauntlets();
+        $this->addDemonsGloves();
+        $this->addThecaLeatherGloves();
+        $this->addDrakeLeatherGloves();
+        $this->addFullPlateGauntlets();
+        $this->addDivineGloves();
         $this->addDoomGloves();
         $this->addDoomGloves100();
         $this->addZubeisGauntlets();
@@ -27,6 +38,402 @@ class Gloves extends RecipeResourceMain {
         $this->addTallumGloves();
         $this->addGauntletsOfNightmare();
         $this->addMajesticGauntlets();
+    }
+
+    protected function addReinforcedMithrilGloves() {
+        $piece  = Resource::where( 'name', 'Reinforced Mithril Gloves Design' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Reinforced Mithril Gloves' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Reinforced Mithril Gloves' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addChainGloves() {
+        $piece  = Resource::where( 'name', 'Chain Gloves Design' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Chain Gloves' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Chain Gloves' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addKarmianGloves() {
+        $piece  = Resource::where( 'name', 'Karmian Gloves Fabric' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Karmian Gloves' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Karmian Gloves' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 40,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addPlatedLeatherGloves() {
+        $piece  = Resource::where( 'name', 'Plated Leather Gloves Design' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Plated Leather Gloves' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Plated Leather Gloves' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addRindLeatherGloves() {
+        $piece  = Resource::where( 'name', 'Rind Leather Gloves Design' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Rind Leather Gloves' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Rind Leather Gloves' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 1,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 4,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addMithrilGauntlets() {
+        $piece  = Resource::where( 'name', 'Mithril Gauntlets Design' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Mithril Gauntlets' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Mithril Gauntlets' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 16,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 2,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 16,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 6,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addDemonsGloves() {
+        $piece  = Resource::where( 'name', 'Demon\'s Gloves Fabric' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Demon\'s Gloves' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Demon\'s Gloves' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 16,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 2,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 16,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 6,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addThecaLeatherGloves() {
+        $piece  = Resource::where( 'name', 'Theca Leather Gloves Texture' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Theca Leather Gloves' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Theca Leather Gloves' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 20,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 2,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 18,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 7,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addDrakeLeatherGloves() {
+        $piece  = Resource::where( 'name', 'Drake Leather Gloves Design' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Drake Leather Gloves' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Drake Leather Gloves' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 24,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 24,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addFullPlateGauntlets() {
+        $piece  = Resource::where( 'name', 'Full Plate Gauntlets Part' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Full Plate Gauntlets' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Full Plate Gauntlets' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 24,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 24,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addDivineGloves() {
+        $piece  = Resource::where( 'name', 'Divine Gloves Pattern' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Divine Gloves' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Divine Gloves' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 24,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 3,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->craftedLeather->id,
+            'resourceQuantity' => 24,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addDoomGloves() {

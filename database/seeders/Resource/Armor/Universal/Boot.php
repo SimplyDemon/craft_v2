@@ -8,6 +8,201 @@ class Boot extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'                  => 'armor',
+            'name'                  => 'Reinforced Mithril Boots Design',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Reinforced Mithril Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Chain Boots Part',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Chain Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Karmian Boots Fabric',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Karmian Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Plated Leather Boots Lining',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Plated Leather Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Dwarven Chain Boots Part',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Dwarven Chain Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Boots of Seal Pattern',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Boots of Seal',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Crimson Boots Fabric',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Crimson Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Rind Leather Boots Lining',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Rind Leather Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Compound Boots Part',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Compound Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Demon\'s Boots Fabric',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Demon\'s Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Theca Leather Boots Texture',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Theca Leather Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Drake Leather Boots Design',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Drake Leather Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Full Plate Boots Part',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Full Plate Boots',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
             'name'                  => 'Zubei\'s Boots Design',
             'price_sell'            => 0,
             'price_buy'             => 0,

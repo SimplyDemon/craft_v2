@@ -27,6 +27,8 @@ class Resource extends RecipeResourceMain {
         $this->addCord();
         $this->addMetallicThread();
         $this->addBraidedHemp();
+        $this->addMetalHardener();
+
         $this->addWarsmithHolder();
         $this->addArtisansFrame();
         $this->addCraftsmanMold();
@@ -326,6 +328,28 @@ class Resource extends RecipeResourceMain {
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->stem->id,
             'resourceQuantity' => 5,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addMetalHardener() {
+        $item = Recipe::where( 'name', 'Metal Hardener' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->stem->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->varnish->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->ironOre->id,
+            'resourceQuantity' => 10,
         ];
 
         foreach ( $resources as $resource ) {

@@ -8,6 +8,276 @@ class Sword extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'       => 'weapon',
+            'name'       => 'Flamberge Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Flamberge',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Storm Bringer Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Storm Bringer',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Mysterious Sword Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Mysterious Sword',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Shamshir Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Shamshir',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Katana Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Katana',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Spirit Sword Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Spirit Sword',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Raid Sword Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Raid Sword',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Caliburs Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Caliburs',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Sword of Delusion Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Sword of Delusion',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Tsurugi Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Tsurugi',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Homunkulus\' Sword Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Homunkulus\' Sword',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Sword of Limit Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Sword of Limit',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Sword of Nightmare Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Sword of Nightmare',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Sword of Whispering Death Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Sword of Whispering Death',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Pa\'agrian Sword Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Pa\'agrian Sword',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Samurai Long Sword Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Samurai Long Sword',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Berserker Blade Edge',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Berserker Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Ecliptic Sword Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Ecliptic Sword',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
             'name'       => 'Great Sword Blade',
             'price_sell' => 0,
             'price_buy'  => 0,

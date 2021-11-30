@@ -7,6 +7,66 @@ use Database\Seeders\Resource\ResourceMain;
 class Lower extends ResourceMain {
     protected function add() {
         $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Reinforced Mithril Gaiters Fragment',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Reinforced Mithril Gaiters',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Plated Leather Gaiters Material',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Plated Leather Gaiters',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Rind Leather Gaiters Material',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Rind Leather Gaiters',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Theca Leather Gaiters Pattern',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultArmorPieceFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Theca Leather Gaiters',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
             'type'       => 'armor',
             'name'       => 'Zubei\'s Leather Gaiters Texture',
             'price_sell' => 0,

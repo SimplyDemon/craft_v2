@@ -7,6 +7,126 @@ use Database\Seeders\Resource\ResourceMain;
 class Polearm extends ResourceMain {
     protected function add() {
         $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Scythe Edge',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Scythe',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Orcish Glaive Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Orcish Glaive',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Body Slasher Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Body Slasher',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Bec de Corbin Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Bec de Corbin',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Poleaxe Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Poleaxe',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Scorpion Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Scorpion',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Widow Maker Head',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Widow Maker',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Orcish Poleaxe Blade',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Orcish Poleaxe',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
             'type'                   => 'weapon',
             'name'                   => 'Great Axe Head',
             'price_sell'             => 0,

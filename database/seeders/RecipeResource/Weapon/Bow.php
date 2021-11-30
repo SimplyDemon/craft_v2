@@ -13,6 +13,11 @@ class Bow extends RecipeResourceMain {
     }
 
     protected function add() {
+        $this->addCrystallizedIceBow();
+        $this->addElementalBow();
+        $this->addNobleElvenBow();
+        $this->addAkatLongbow();
+        $this->addEminenceBow();
         $this->addDarkElvenLongbow();
         $this->addDarkElvenLongbow100();
         $this->addBowOfPeril();
@@ -24,6 +29,226 @@ class Bow extends RecipeResourceMain {
         $this->addDynastyBow();
         $this->addIcarusSpitter();
         $this->addVesperThrower();
+    }
+
+    protected function addCrystallizedIceBow() {
+        $piece  = Resource::where( 'name', 'Crystallized Ice Bow Shaft' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Crystallized Ice Bow' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Crystallized Ice Bow' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalD->id,
+            'resourceQuantity' => 700,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 45,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 81,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 54,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 8,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addElementalBow() {
+        $piece  = Resource::where( 'name', 'Elemental Bow Shaft' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Elemental Bow' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Elemental Bow' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 170,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 60,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 105,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 72,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addNobleElvenBow() {
+        $piece  = Resource::where( 'name', 'Noble Elven Bow Shaft' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Noble Elven Bow' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Noble Elven Bow' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 170,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 12,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 60,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 105,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 72,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 9,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addAkatLongbow() {
+        $piece  = Resource::where( 'name', 'Akat Longbow Shaft' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Akat Longbow' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Akat Longbow' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 290,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 17,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 17,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 85,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 166,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 102,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 10,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
+    }
+
+    protected function addEminenceBow() {
+        $piece  = Resource::where( 'name', 'Eminence Bow Shaft' )->firstOrFail();
+        $recipe = Resource::where( 'name', 'Recipe: Eminence Bow' )->firstOrFail();
+        $item   = Recipe::where( 'name', 'Eminence Bow' )->firstOrFail();
+
+        $resources   = [];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->crystalC->id,
+            'resourceQuantity' => 420,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->highGradeSuede->id,
+            'resourceQuantity' => 24,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->compoundBraid->id,
+            'resourceQuantity' => 24,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
+            'resourceQuantity' => 120,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->gemstoneC->id,
+            'resourceQuantity' => 248,
+        ];
+        $resources[] = [
+            'resourceId'       => $this->ResourceHelper->metalHardener->id,
+            'resourceQuantity' => 144,
+        ];
+        $resources[] = [
+            'resourceId'       => $piece->id,
+            'resourceQuantity' => 11,
+        ];
+        $resources[] = [
+            'resourceId'       => $recipe->id,
+            'resourceQuantity' => 1,
+        ];
+
+        foreach ( $resources as $resource ) {
+            $item->resources()->attach( $resource['resourceId'], [ 'resource_quantity' => $resource['resourceQuantity'] ] );
+        }
     }
 
     protected function addDarkElvenLongbow() {

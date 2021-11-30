@@ -6,6 +6,82 @@ use Database\Seeders\Resource\ResourceMain;
 
 class Bow extends ResourceMain {
     protected function add() {
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Crystallized Ice Bow Shaft',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Crystallized Ice Bow',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Elemental Bow Shaft',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Elemental Bow',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Noble Elven Bow Shaft',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Noble Elven Bow',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Akat Longbow Shaft',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Akat Longbow',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                   => 'weapon',
+            'name'                   => 'Eminence Bow Shaft',
+            'price_sell'             => 0,
+            'price_buy'              => 0,
+            'is_custom_piece_weapon' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Eminence Bow',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+        ];
+
         $this->resources[] = [
             'type'                   => 'weapon',
             'name'                   => 'Dark Elven Longbow Shaft',

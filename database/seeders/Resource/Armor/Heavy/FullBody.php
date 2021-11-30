@@ -8,6 +8,36 @@ class FullBody extends ResourceMain {
     protected function add() {
         $this->resources[] = [
             'type'                  => 'armor',
+            'name'                  => 'Compound Armor Temper',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Compound Armor',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
+            'name'                  => 'Full Plate Armor Temper',
+            'price_sell'            => 0,
+            'price_buy'             => 0,
+            'is_custom_piece_armor' => true,
+        ];
+        $this->resources[] = [
+            'type'       => 'armor',
+            'name'       => 'Recipe: Full Plate Armor',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeCImageFilePath,
+        ];
+
+        $this->resources[] = [
+            'type'                  => 'armor',
             'name'                  => 'Doom Plate Armor Temper',
             'price_sell'            => 0,
             'price_buy'             => 0,
