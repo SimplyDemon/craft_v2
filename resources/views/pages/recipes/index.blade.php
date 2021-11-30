@@ -62,6 +62,9 @@
                             <a data-grade="any" href="#">Любой</a>
                         </li>
                         <li>
+                            <a data-grade="c" href="#">C</a>
+                        </li>
+                        <li>
                             <a data-grade="b" href="#">B</a>
                         </li>
                         <li>
@@ -125,7 +128,13 @@
                                 <img width="30" src="{{asset('storage') . '/' . $recipe->img}}" alt="img">
                             </a>
                             @if($recipe->masterworkText)
-                                <span class="nk-btn nk-btn-style-1 nk-btn-xs nk-btn-color-main-1" style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$recipe->masterworkText}}">MW</span>
+                                @if($recipe->grade ==='C')
+                                    <?php $masterworkTitle = 'DC'; ?>
+                                @else
+                                    <?php $masterworkTitle = 'MW'; ?>
+                                @endif
+                                <span class="nk-btn nk-btn-style-1 nk-btn-xs nk-btn-color-main-1" style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$recipe->masterworkText}}">{{$masterworkTitle}}</span>
+
                             @endif
                             <br>
                             @if($recipe->gradeImage)

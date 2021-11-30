@@ -161,17 +161,20 @@ class Recipe extends Model {
     public function getMasterworkTextAttribute() {
         $masterWorkText = null;
 
-        if ( $this->attributes['masterwork_description'] ) {
-            $masterWorkText = '';
+        if ( ( $this->attributes['grade'] === 'C' || $this->attributes['masterwork_description'] ) && $this->rare_chance ) {
+            $chanceText = 'Шанс МВ';
+            if ( $this->attributes['grade'] === 'C' ) {
+                $chanceText = 'Шанс дабл крафта';
+            }
+            $masterWorkText = 'Уровень крафтера: <b>85</b><br>';
+            $masterWorkText .= $chanceText . ': <b>' . $this->rare_chance . '</b>%<br>';
 
-            if ( $this->rare_chance ) {
-                $masterWorkText = 'Уровень крафтера: <b>85</b><br>';
-                $masterWorkText .= 'Шанс: <b>' . $this->rare_chance . '</b>%<br>';
+            if ( $this->attributes['masterwork_description'] ) {
+                if ( $this->attributes['masterwork_name'] ) {
+                    $masterWorkText .= '<i>' . $this->attributes['masterwork_name'] . '</i><br>';
+                }
+                $masterWorkText .= $this->attributes['masterwork_description'];
             }
-            if ( $this->attributes['masterwork_name'] ) {
-                $masterWorkText .= '<i>' . $this->attributes['masterwork_name'] . '</i><br>';
-            }
-            $masterWorkText .= $this->attributes['masterwork_description'];
         }
 
         return $masterWorkText;

@@ -23,6 +23,11 @@ if ( isset( $single->resource_id ) ) {
     $recipePriceSell = isset( $user ) && $user->recipes->find( $single->id ) && $user->recipes->find( $single->id )->pivot->price_sell ? $user->recipes->find( $single->id )->pivot->price_sell : $single->price_sell;
 }
 
+$chanceText = 'MasterWork';
+if ( $single->grade === 'C' ) {
+    $chanceText = 'DoubleCraft';
+}
+
 $masterWorkText = $single->masterworkText;
 
 $isCountMoreThenOne = $single->craft_count !== 1;
@@ -43,7 +48,7 @@ $isCountMoreThenOne = $single->craft_count !== 1;
             <img class="grade" src="{{$single->gradeImage}}" alt="grade">
         @endif
         @if($masterWorkText)
-            <span class="nk-btn nk-btn-style-1 nk-btn-md nk-btn-color-main-1" style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$masterWorkText}}">Masterwork</span>
+            <span class="nk-btn nk-btn-style-1 nk-btn-md nk-btn-color-main-1" style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$masterWorkText}}">{{$chanceText}}</span>
         @endif
 
         @if($isCountMoreThenOne)
