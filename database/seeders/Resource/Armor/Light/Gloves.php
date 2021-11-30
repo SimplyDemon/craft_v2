@@ -16,8 +16,8 @@ class Gloves extends ResourceMain {
         $this->resources[] = [
             'type'       => 'armor',
             'name'       => 'Recipe: Draconic Leather Gloves (60%)',
-            'price_sell' => 400000,
-            'price_buy'  => 400000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 
@@ -31,23 +31,23 @@ class Gloves extends ResourceMain {
         $this->resources[] = [
             'type'       => 'armor',
             'name'       => 'Recipe: Dynasty Leather Gloves (60%)',
-            'price_sell' => 1350000,
-            'price_buy'  => 60000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 
         $this->resources[] = [
             'type'                  => 'armor',
             'name'                  => 'Moirai Leather Gloves Piece',
-            'price_sell'            => 445000,
-            'price_buy'             => 445000,
+            'price_sell'            => 0,
+            'price_buy'             => 0,
             'is_custom_piece_armor' => true,
         ];
         $this->resources[] = [
             'type'       => 'armor',
             'name'       => 'Recipe: Moirai Leather Gloves (60%)',
-            'price_sell' => 5000000,
-            'price_buy'  => 5000000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 

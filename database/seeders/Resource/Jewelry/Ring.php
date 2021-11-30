@@ -143,15 +143,15 @@ class Ring extends ResourceMain {
         $this->resources[] = [
             'type'                    => 'jewelry',
             'name'                    => 'Tateossian Ring Gem',
-            'price_sell'              => 50000,
-            'price_buy'               => 50000,
+            'price_sell'              => 0,
+            'price_buy'               => 0,
             'is_custom_piece_jewelry' => true,
         ];
         $this->resources[] = [
             'type'       => 'jewelry',
             'name'       => 'Recipe: Tateossian Ring (70%)',
-            'price_sell' => 1650000,
-            'price_buy'  => 1650000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 
@@ -173,15 +173,15 @@ class Ring extends ResourceMain {
         $this->resources[] = [
             'type'                    => 'jewelry',
             'name'                    => 'Moirai Ring Gem',
-            'price_sell'              => 500000,
-            'price_buy'               => 500000,
+            'price_sell'              => 0,
+            'price_buy'               => 0,
             'is_custom_piece_jewelry' => true,
         ];
         $this->resources[] = [
             'type'       => 'jewelry',
             'name'       => 'Recipe: Moirai Ring (70%)',
-            'price_sell' => 2000000,
-            'price_buy'  => 2000000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 

@@ -222,8 +222,8 @@ class Shield extends ResourceMain {
 
         $this->resources[] = [
             'name'                  => 'Dynasty Shield Fragment',
-            'price_sell'            => 350000,
-            'price_buy'             => 350000,
+            'price_sell'            => 0,
+            'price_buy'             => 0,
             'is_custom_piece_armor' => true,
             'type'                  => 'shield',
         ];

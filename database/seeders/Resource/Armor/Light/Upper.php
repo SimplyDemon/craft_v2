@@ -106,23 +106,23 @@ class Upper extends ResourceMain {
         $this->resources[] = [
             'type'       => 'armor',
             'name'       => 'Dynasty Leather Armor Piece',
-            'price_sell' => 450000,
-            'price_buy'  => 450000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->defaultArmorPieceFilePath,
         ];
         $this->resources[] = [
             'type'       => 'armor',
             'name'       => 'Recipe: Dynasty Leather Armor (60%)',
-            'price_sell' => 2000000,
-            'price_buy'  => 2000000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 
         $this->resources[] = [
             'type'                  => 'armor',
             'name'                  => 'Moirai Leather Breastplate Piece',
-            'price_sell'            => 5000000,
-            'price_buy'             => 5000000,
+            'price_sell'            => 0,
+            'price_buy'             => 0,
             'is_custom_piece_armor' => true,
         ];
         $this->resources[] = [

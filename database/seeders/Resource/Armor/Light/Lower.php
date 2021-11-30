@@ -106,8 +106,8 @@ class Lower extends ResourceMain {
         $this->resources[] = [
             'type'       => 'armor',
             'name'       => 'Dynasty Leather Leggings Piece',
-            'price_sell' => 1500000,
-            'price_buy'  => 1500000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->defaultArmorPieceFilePath,
         ];
         $this->resources[] = [
@@ -128,8 +128,8 @@ class Lower extends ResourceMain {
         $this->resources[] = [
             'type'       => 'armor',
             'name'       => 'Recipe: Moirai Leather Leggings (60%)',
-            'price_sell' => 4500000,
-            'price_buy'  => 4500000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 

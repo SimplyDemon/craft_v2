@@ -346,22 +346,22 @@ class Sword extends ResourceMain {
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Damascus Sword Blade',
-            'price_sell' => 30000,
-            'price_buy'  => 60000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
         ];
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Recipe: Damascus Sword (60%)',
-            'price_sell' => 1000000,
-            'price_buy'  => 3200000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
         ];
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Recipe: Damascus Sword',
-            'price_sell' => 5000000,
-            'price_buy'  => 3200000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
         ];
 
@@ -547,30 +547,30 @@ class Sword extends ResourceMain {
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Forgotten Blade Edge',
-            'price_sell' => 47000,
-            'price_buy'  => 47000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
         ];
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Recipe: Forgotten Blade (60%)',
-            'price_sell' => 400000,
-            'price_buy'  => 400000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Heavens Divider Edge',
-            'price_sell' => 65000,
-            'price_buy'  => 65000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
         ];
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Recipe: Heavens Divider (60%)',
-            'price_sell' => 400000,
-            'price_buy'  => 400000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 
@@ -584,23 +584,23 @@ class Sword extends ResourceMain {
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Recipe: Dynasty Sword (60%)',
-            'price_sell' => 3000000,
-            'price_buy'  => 3200000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Dynasty Blade Piece',
-            'price_sell' => 300000,
-            'price_buy'  => 300000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
         ];
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Recipe: Dynasty Blade (60%)',
-            'price_sell' => 3000000,
-            'price_buy'  => 3000000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 
@@ -614,8 +614,8 @@ class Sword extends ResourceMain {
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Recipe: Dynasty Phantom (60%)',
-            'price_sell' => 3200000,
-            'price_buy'  => 3200000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 
@@ -652,8 +652,8 @@ class Sword extends ResourceMain {
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Icarus Heavy Arms Piece',
-            'price_sell' => 3000000,
-            'price_buy'  => 600000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
         ];
         $this->resources[] = [

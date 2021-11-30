@@ -134,25 +134,25 @@ class Dagger extends ResourceMain {
         ];
 
         $this->resources[] = [
-	        'type'       => 'weapon',
-	        'name'       => 'Hell Knife Edge',
-	        'price_sell' => 0,
-	        'price_buy'  => 0,
-	        'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
+            'type'       => 'weapon',
+            'name'       => 'Hell Knife Edge',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
         ];
         $this->resources[] = [
-	        'type'       => 'weapon',
-	        'name'       => 'Recipe: Hell Knife (60%)',
-	        'price_sell' => 0,
-	        'price_buy'  => 0,
-	        'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Hell Knife (60%)',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
         ];
         $this->resources[] = [
-	        'type'       => 'weapon',
-	        'name'       => 'Recipe: Hell Knife',
-	        'price_sell' => 0,
-	        'price_buy'  => 0,
-	        'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
+            'type'       => 'weapon',
+            'name'       => 'Recipe: Hell Knife',
+            'price_sell' => 0,
+            'price_buy'  => 0,
+            'filePath'   => $this->resourceSeeder->recipeBImageFilePath,
         ];
 
         $this->resources[] = [
@@ -225,30 +225,30 @@ class Dagger extends ResourceMain {
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Angel Slayer Blade',
-            'price_sell' => 90000,
-            'price_buy'  => 90000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
         ];
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Recipe: Angel Slayer (60%)',
-            'price_sell' => 350000,
-            'price_buy'  => 350000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Dynasty Knife Piece',
-            'price_sell' => 1800000,
-            'price_buy'  => 1400000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
         ];
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Recipe: Dynasty Knife (60%)',
-            'price_sell' => 2400000,
-            'price_buy'  => 2400000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 
@@ -262,8 +262,8 @@ class Dagger extends ResourceMain {
         $this->resources[] = [
             'type'       => 'weapon',
             'name'       => 'Recipe: Icarus Disperser (60%)',
-            'price_sell' => 23000000,
-            'price_buy'  => 23000000,
+            'price_sell' => 0,
+            'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeSImageFilePath,
         ];
 
