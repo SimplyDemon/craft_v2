@@ -34,10 +34,10 @@ class JewelrySeeder extends Seeder {
         $categoryId = $this->jewelryNecklaceCategory->id;
         $imagePath  = 'item/jewelry/necklace';
 
-        seederAddRecipe( 'Aquastone Necklace', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'некля, шея, necklace, ожерелье', 4 );
-        seederAddRecipe( 'Necklace of Protection', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'некля, шея, necklace, ожерелье', 5 );
-        seederAddRecipe( 'Necklace of Mermaid', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'некля, шея, necklace, ожерелье', 5 );
-        seederAddRecipe( 'Necklace of Seal', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'некля, шея, necklace, ожерелье', 6 );
+        seederAddRecipe( 'Aquastone Necklace', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
+        seederAddRecipe( 'Necklace of Protection', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
+        seederAddRecipe( 'Necklace of Mermaid', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
+        seederAddRecipe( 'Necklace of Seal', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 6 );
         seederAddRecipe( 'Adamantite Necklace', $imagePath, 1800000, 'B', $categoryId, 0, '70', 'Увеличивает Сопротивление к Стану на 3.57', null, 1, false, 'Адамантитовое Ожерелье, некля, шея, necklace, ожерелье', 6 );
         seederAddRecipe( 'Adamantite Necklace 100%', $imagePath, 1800000, 'B', $categoryId, 0, '100', 'Увеличивает Сопротивление к Стану на 3.57', null, 1, false, 'Адамантитовое Ожерелье, некля, шея, necklace, ожерелье', 6 );
         seederAddRecipe( 'Black Ore Necklace', $imagePath, 2000000, 'B', $categoryId, 0, '70', 'Увеличивает Сопротивление к Стану на 4.76', null, 1, false, 'Черное Ожерелье, bo, бо, некля, шея, necklace, ожерелье' );
@@ -54,10 +54,10 @@ class JewelrySeeder extends Seeder {
         $categoryId = $this->jewelryEarringCategory->id;
         $imagePath  = 'item/jewelry/earring';
 
-        seederAddRecipe( 'Moonstone Earring', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'Серьга', 4 );
-        seederAddRecipe( 'Earring of Protection', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'Серьга', 5 );
-        seederAddRecipe( 'Earring of Seal', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'Серьга', 5 );
-        seederAddRecipe( 'Nassen\'s Earring', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'Серьга', 6 );
+        seederAddRecipe( 'Moonstone Earring', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
+        seederAddRecipe( 'Earring of Protection', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
+        seederAddRecipe( 'Earring of Seal', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
+        seederAddRecipe( 'Nassen\'s Earring', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 6 );
         seederAddRecipe( 'Adamantite Earring', $imagePath, 800000, 'B', $categoryId, 0, '70', 'Увеличивает MP на 17', null, 1, false, 'Адамантитовая Серьга', 6 );
         seederAddRecipe( 'Adamantite Earring 100%', $imagePath, 800000, 'B', $categoryId, 0, '100', 'Увеличивает MP на 17', null, 1, false, 'Адамантитовая Серьга', 6 );
         seederAddRecipe( 'Black Ore Earring', $imagePath, 1200000, 'B', $categoryId, 0, '70', 'Увеличивает Защиту от Тьмы на 1.71', null, 1, false, 'Черная Серьга, бо, bo' );
@@ -74,10 +74,10 @@ class JewelrySeeder extends Seeder {
         $categoryId = $this->jewelryRingCategory->id;
         $imagePath  = 'item/jewelry/ring';
 
-        seederAddRecipe( 'Aquastone Ring', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'Кольцо', 4 );
-        seederAddRecipe( 'Ring of Protection', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'Кольцо', 5 );
-        seederAddRecipe( 'Ring of Ages', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'Кольцо', 5 );
-        seederAddRecipe( 'Ring of Seal', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'Кольцо', 6 );
+        seederAddRecipe( 'Aquastone Ring', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
+        seederAddRecipe( 'Ring of Protection', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
+        seederAddRecipe( 'Ring of Ages', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
+        seederAddRecipe( 'Ring of Seal', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 6 );
         seederAddRecipe( 'Adamantite Ring', $imagePath, 650000, 'B', $categoryId, 0, '70', 'Увеличивает Реген MP на 0.71%', null, 1, false, 'Адамантитовое Кольцо', 6 );
         seederAddRecipe( 'Adamantite Ring 100%', $imagePath, 650000, 'B', $categoryId, 0, '100', 'Увеличивает Реген MP на 0.71%', null, 1, false, 'Адамантитовое Кольцо', 6 );
         seederAddRecipe( 'Black Ore Ring', $imagePath, 1000000, 'B', $categoryId, 0, '70', 'Увеличивает MP на 9', null, 1, false, 'Черное Кольцо, бо, bo' );

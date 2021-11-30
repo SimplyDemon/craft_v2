@@ -126,13 +126,13 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->shieldCategory->id;
         $imagePath  = 'item/shield';
 
-        seederAddRecipe( 'Eldarake', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'щит', 4 );
-        seederAddRecipe( 'Chain Shield', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'щит', 4 );
-        seederAddRecipe( 'Dwarven Chain Shield', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'щит', 5 );
-        seederAddRecipe( 'Knight\'s Shield', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'щит', 5 );
-        seederAddRecipe( 'Tower Shield', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'щит', 5 );
-        seederAddRecipe( 'Compound Shield', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'щит', 5 );
-        seederAddRecipe( 'Full Plate Shield', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'щит', 6 );
+        seederAddRecipe( 'Eldarake', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
+        seederAddRecipe( 'Chain Shield', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
+        seederAddRecipe( 'Dwarven Chain Shield', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
+        seederAddRecipe( 'Knight\'s Shield', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
+        seederAddRecipe( 'Tower Shield', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
+        seederAddRecipe( 'Compound Shield', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
+        seederAddRecipe( 'Full Plate Shield', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 6 );
         seederAddRecipe( 'Zubei\'s Shield', $imagePath, 1300000, 'B', $categoryId, 0, '60', 'Увеличивает Маг. Защ. на 2%', null, 1, false, 'Щит Зубея, зубей', 6 );
         seederAddRecipe( 'Zubei\'s Shield 100%', $imagePath, 1300000, 'B', $categoryId, 0, '100', 'Увеличивает Маг. Защ. на 2%', null, 1, false, 'Щит Зубея, зубей', 6 );
         seederAddRecipe( 'Avadon Shield', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Маг. Защ. на 1%', null, 1, false, 'Щит Авадона', 6 );
@@ -161,7 +161,7 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorLightFullBodyCategory->id;
         $imagePath  = 'item/armor/light/full-body';
 
-        seederAddRecipe( 'Drake Leather Armor', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'Кожаный Доспех Дрейка, тело, лайт, light', 6 );
+        seederAddRecipe( 'Drake Leather Armor', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 6 );
         seederAddRecipe( 'Avadon Leather Armor', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Грузоподъёмность на 11038<br>Увеличивает Маг. Защ.  на 17.08%', null, 1, false, 'Кожаный Доспех Авадона, тело, лайт, light', 6 );
         seederAddRecipe( 'Avadon Leather Armor 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает Грузоподъёмность на 11038<br>Увеличивает Маг. Защ.  на 17.08%', null, 1, false, 'Кожаный Доспех Авадона, тело, лайт, light', 6 );
         seederAddRecipe( 'Blue Wolf Leather Armor', $imagePath, 5000000, 'B', $categoryId, 0, '60', 'Увеличивает Скорость Каста  на 15%<br>Увеличивает Физ. Защ.  на 2.19%', null, 1, false, 'Кожаный Доспех Синего Волка, бв, bw, тело, лайт, light' );
@@ -178,9 +178,9 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorLightUpperCategory->id;
         $imagePath  = 'item/armor/light/upper';
 
-        seederAddRecipe( 'Reinforced Mithril Shirt', $imagePath, 0, 'C', $categoryId, 0, '100', '', null, 1, false, 'верх, тело, лайт, light', 4 );
+        seederAddRecipe( 'Reinforced Mithril Shirt', $imagePath, 0, 'C', $categoryId, 0, '100', '', null, 1, false, null, 4 );
         seederAddRecipe( 'Plated Leather Armor', $imagePath, 0, 'C', $categoryId, 0, '100', '', null, 1, false, 'пл, верх, тело, лайт, light', 5 );
-        seederAddRecipe( 'Rind Leather Armor', $imagePath, 0, 'C', $categoryId, 0, '100', '', null, 1, false, 'верх, тело, лайт, light', 5 );
+        seederAddRecipe( 'Rind Leather Armor', $imagePath, 0, 'C', $categoryId, 0, '100', '', null, 1, false, null, 5 );
         seederAddRecipe( 'Theca Leather Armor', $imagePath, 0, 'C', $categoryId, 0, '100', '', null, 1, false, 'Тека, верх, тело, лайт, light', 5 );
         seederAddRecipe( 'Zubei\'s Leather Shirt', $imagePath, 1500000, 'B', $categoryId, 0, '60', 'Увеличивает Уклонение на 9.55', null, 1, false, 'Кожаная Рубаха Зубея, зубей, верх, тело, лайт, light', 6 );
         seederAddRecipe( 'Zubei\'s Leather Shirt 100%', $imagePath, 1500000, 'B', $categoryId, 0, '100', 'Увеличивает Уклонение на 9.55', null, 1, false, 'Кожаная Рубаха Зубея, зубей, верх, тело, лайт, light', 6 );
@@ -194,9 +194,9 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorLightLowerCategory->id;
         $imagePath  = 'item/armor/light/lower';
 
-        seederAddRecipe( 'Reinforced Mithril Gaiters', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'низ, лайт, light', 4 );
+        seederAddRecipe( 'Reinforced Mithril Gaiters', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
         seederAddRecipe( 'Plated Leather Gaiters', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'пл, низ, лайт, light', 5 );
-        seederAddRecipe( 'Rind Leather Gaiters', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'низ, лайт, light', 5 );
+        seederAddRecipe( 'Rind Leather Gaiters', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
         seederAddRecipe( 'Theca Leather Gaiters', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'Тека, низ, лайт, light', 5 );
         seederAddRecipe( 'Zubei\'s Leather Gaiters', $imagePath, 2500000, 'B', $categoryId, 0, '60', 'Увеличивает Уклонение на 1.47', null, 1, false, 'Кожаные Набедренники Зубея, зубей, низ, лайт, light', 6 );
         seederAddRecipe( 'Zubei\'s Leather Gaiters 100%', $imagePath, 2500000, 'B', $categoryId, 0, '100', 'Увеличивает Уклонение на 1.47', null, 1, false, 'Кожаные Набедренники Зубея, зубей, низ, лайт, light', 6 );
@@ -253,8 +253,8 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorHeavyUpperCategory->id;
         $imagePath  = 'item/armor/heavy/upper';
 
-        seederAddRecipe( 'Chain Mail Shirt', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'верх, хеви, heavy', 4 );
-        seederAddRecipe( 'Dwarven Chain Mail Shirt', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'верх, хеви, heavy', 5 );
+        seederAddRecipe( 'Chain Mail Shirt', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
+        seederAddRecipe( 'Dwarven Chain Mail Shirt', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
         seederAddRecipe( 'Zubei\'s Breastplate', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает HP на 294<br>Увеличивает Физ. Защ. на 7.24%', null, 1, false, 'Кираса Зубея, зубей, верх, хеви, heavy', 6 );
         seederAddRecipe( 'Zubei\'s Breastplate 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает HP на 294<br>Увеличивает Физ. Защ. на 7.24%', null, 1, false, 'Кираса Зубея, зубей, верх, хеви, heavy', 6 );
         seederAddRecipe( 'Avadon Breastplate', $imagePath, 3000000, 'B', $categoryId, 0, '60', 'Увеличивает HP на 833', null, 1, false, 'Кираса Авадона, верх, хеви, heavy', 6 );
@@ -272,8 +272,8 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorHeavyLowerCategory->id;
         $imagePath  = 'item/armor/heavy/lower';
 
-        seederAddRecipe( 'Chain Gaiters', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'низ, ноги, хеви, heavy', 4 );
-        seederAddRecipe( 'Dwarven Chain Gaiters', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'низ, ноги, хеви, heavy', 5 );
+        seederAddRecipe( 'Chain Gaiters', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
+        seederAddRecipe( 'Dwarven Chain Gaiters', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
         seederAddRecipe( 'Zubei\'s Gaiters', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Физ. Защ. на 2.08%<br>Увеличивает HP на 123', null, 1, false, 'Набедренники Зубея, зубей, низ, ноги, хеви, heavy', 6 );
         seederAddRecipe( 'Zubei\'s Gaiters 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает Физ. Защ. на 2.08%<br>Увеличивает HP на 123', null, 1, false, 'Набедренники Зубея, зубей, низ, ноги, хеви, heavy', 6 );
         seederAddRecipe( 'Avadon Gaiters', $imagePath, 2000000, 'B', $categoryId, 0, '60', 'Увеличивает HP на 122', null, 1, false, 'Набедренники Авадона, низ, ноги, хеви, heavy', 6 );
@@ -322,7 +322,7 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorRobeFullBodyCategory->id;
         $imagePath  = 'item/armor/robe/full-body';
 
-        seederAddRecipe( 'Robe of Seal', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'тело, роба, robe, маг', 5 );
+        seederAddRecipe( 'Robe of Seal', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
         seederAddRecipe( 'Avadon Robe', $imagePath, 3700000, 'B', $categoryId, 0, '60', 'Увеличивает Скорость Каста  на 15%<br>Увеличивает Маг. Защ.  на 17.08%', null, 1, false, 'Мантия Авадона, тело, роба, robe, маг', 6 );
         seederAddRecipe( 'Avadon Robe 100%', $imagePath, 3700000, 'B', $categoryId, 0, '100', 'Увеличивает Скорость Каста  на 15%<br>Увеличивает Маг. Защ.  на 17.08%', null, 1, false, 'Мантия Авадона, тело, роба, robe, маг', 6 );
         seederAddRecipe( 'Dark Crystal Robe', $imagePath, 1250000, 'A', $categoryId, 0, '60', 'Увеличивает Защиту от Кансела на 8.33<br>Увеличивает Скорость Каста  на 15%<br>Увеличивает Защиту от Паралича на 20<br>Увеличивает Физ. Защ. на 3.33%<br>Увеличивает Скорость Бега на 2.91', null, 1, false, 'Мантия Кристалла Тьмы, dc, дк, тело, роба, robe, маг', 7 );
@@ -403,7 +403,7 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorUniversalHelmetCategory->id;
         $imagePath  = 'item/armor/universal/helmet';
 
-        seederAddRecipe( 'Chain Hood', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'шлем, каска, голова', 4 );
+        seederAddRecipe( 'Chain Hood', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
         seederAddRecipe( 'Compound Helmet', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'компот, шлем, каска, голова', 5 );
         seederAddRecipe( 'Full Plate Helmet', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'фп, шлем, каска, голова', 6 );
         seederAddRecipe( 'Doom Helmet', $imagePath, 4000000, 'B', $categoryId, 0, '60', '<b>Heavy</b>:<br>Увеличивает HP на 80<br>Увеличивает Объём Лёгких на 50<br><b>Light</b>:<br>Увеличивает Объём Лёгких на 50<br>Увеличивает Физ. Атк. на 0.62%<br>Увеличивает Реген MP на 0.62%<br>Увеличивает Защиту от Отправления на 2<br><b>Robe</b>:<br>Увеличивает Скорость Бега на 1.75<br>Увеличивает Объём Лёгких на 50<br>Увеличивает Реген MP на 1.25%', null, 1, false, 'Шлем Рока, дум, шлем, каска, голова' );
@@ -424,18 +424,18 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorUniversalBootCategory->id;
         $imagePath  = 'item/armor/universal/boot';
 
-        seederAddRecipe( 'Reinforced Mithril Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'боты, сапоги, ботинки', 4 );
-        seederAddRecipe( 'Chain Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'боты, сапоги, ботинки', 4 );
+        seederAddRecipe( 'Reinforced Mithril Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
+        seederAddRecipe( 'Chain Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
         seederAddRecipe( 'Karmian Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'кармиан, боты, сапоги, ботинки', 4 );
         seederAddRecipe( 'Plated Leather Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'пл, боты, сапоги, ботинки', 4 );
-        seederAddRecipe( 'Dwarven Chain Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'боты, сапоги, ботинки', 4 );
-        seederAddRecipe( 'Boots of Seal', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'боты, сапоги, ботинки', 4 );
-        seederAddRecipe( 'Crimson Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'боты, сапоги, ботинки', 5 );
-        seederAddRecipe( 'Rind Leather Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'боты, сапоги, ботинки', 5 );
+        seederAddRecipe( 'Dwarven Chain Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
+        seederAddRecipe( 'Boots of Seal', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
+        seederAddRecipe( 'Crimson Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
+        seederAddRecipe( 'Rind Leather Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
         seederAddRecipe( 'Compound Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'компот, боты, сапоги, ботинки', 5 );
         seederAddRecipe( 'Demon\'s Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'боты, сапоги, ботинки', 5 );
         seederAddRecipe( 'Theca Leather Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'тека, боты, сапоги, ботинки', 5 );
-        seederAddRecipe( 'Drake Leather Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'боты, сапоги, ботинки', 6 );
+        seederAddRecipe( 'Drake Leather Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 6 );
         seederAddRecipe( 'Full Plate Boots', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'фп, боты, сапоги, ботинки', 6 );
         seederAddRecipe( 'Blue Wolf Boots', $imagePath, 1500000, 'B', $categoryId, 0, '60', '<b>Heavy</b>:<br>Увеличивает Скорость Бега на 1.16<br>Увеличивает Реген HP на 0.83%<br><b>Light</b>:<br>Увеличивает Физ. Защ. на 0.88%<br><b>Robe</b>:<br>Увеличивает MP на 34<br>Увеличивает Реген MP на 0.83%', null, 1, false, 'Сапоги Синего Волка, бв, bw, боты, сапоги, ботинки' );
         seederAddRecipe( 'Blue Wolf Boots 100%', $imagePath, 1500000, 'B', $categoryId, 0, '100', '<b>Heavy</b>:<br>Увеличивает Скорость Бега на 1.16<br>Увеличивает Реген HP на 0.83%<br><b>Light</b>:<br>Увеличивает Физ. Защ. на 0.88%<br><b>Robe</b>:<br>Увеличивает MP на 34<br>Увеличивает Реген MP на 0.83%', null, 1, false, 'Сапоги Синего Волка, бв, bw, боты, сапоги, ботинки' );
@@ -455,15 +455,15 @@ class ArmorSeeder extends Seeder {
         $categoryId = $this->armorUniversalGlovesCategory->id;
         $imagePath  = 'item/armor/universal/gloves';
 
-        seederAddRecipe( 'Reinforced Mithril Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'перчатки, перчи, рукавицы', 4 );
-        seederAddRecipe( 'Chain Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'перчатки, перчи, рукавицы', 4 );
+        seederAddRecipe( 'Reinforced Mithril Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
+        seederAddRecipe( 'Chain Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 4 );
         seederAddRecipe( 'Karmian Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'кармиан, перчатки, перчи, рукавицы', 4 );
         seederAddRecipe( 'Plated Leather Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'пл, перчатки, перчи, рукавицы', 5 );
-        seederAddRecipe( 'Rind Leather Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'перчатки, перчи, рукавицы', 5 );
-        seederAddRecipe( 'Mithril Gauntlets', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'перчатки, перчи, рукавицы', 5 );
+        seederAddRecipe( 'Rind Leather Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
+        seederAddRecipe( 'Mithril Gauntlets', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 5 );
         seederAddRecipe( 'Demon\'s Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'перчатки, перчи, рукавицы', 5 );
         seederAddRecipe( 'Theca Leather Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'тека, перчатки, перчи, рукавицы', 5 );
-        seederAddRecipe( 'Drake Leather Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'перчатки, перчи, рукавицы', 6 );
+        seederAddRecipe( 'Drake Leather Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, null, 6 );
         seederAddRecipe( 'Full Plate Gauntlets', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'фп, перчатки, перчи, рукавицы', 6 );
         seederAddRecipe( 'Divine Gloves', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'перчатки, перчи, рукавицы', 6 );
         seederAddRecipe( 'Doom Gloves', $imagePath, 1700000, 'B', $categoryId, 0, '60', '<b>Heavy</b>:<br>Увеличивает HP на 53<br>Увеличивает Объём Лёгких на 33<br><b>Light</b>:<br>Увеличивает Объём Лёгких на 33<br>Увеличивает Физ. Атк. на 0.41%<br>Увеличивает Реген MP на 0.41%<br>Увеличивает Защиту от Отправления на 2<br><b>Robe</b>:<br>Увеличивает Скорость Бега на 1.16<br>Увеличивает Объём Лёгких на 33<br>Увеличивает Реген MP на 0.83%', null, 1, false, 'Перчатки Рока, дум, перчатки, перчи, рукавицы' );
