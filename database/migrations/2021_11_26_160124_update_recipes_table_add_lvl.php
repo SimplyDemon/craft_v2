@@ -12,7 +12,7 @@ class UpdateRecipesTableAddLvl extends Migration {
      */
     public function up() {
         Schema::table( 'recipes', function ( Blueprint $table ) {
-            $table->text( 'lvl' )->nullable(); // recipe lvl for calculate chance of masterwork and double craft
+            $table->bigInteger( 'lvl' )->nullable(); // recipe lvl for calculate chance of masterwork and double craft
         } );
     }
 

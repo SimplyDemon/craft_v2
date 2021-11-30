@@ -26,6 +26,5 @@ class RecipeSeeder extends Seeder {
 
         $weaponSeeder = new WeaponSeeder();
         $weaponSeeder->seed();
-
     }
 }

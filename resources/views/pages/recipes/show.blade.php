@@ -8,20 +8,15 @@
 @endif
 <?php
 $recipe100 = \App\Models\Recipe::where( 'name', $single->name . ' 100%' )->first();
+$crystalsText = '';
 ?>
 @if($single->percent === '60' && $recipe100 )
     @section('canonical', route( 'recipes.show', [ 'id' => $recipe100->id ] ))
 @endif
 
+
 <?php
-if ( isset( $single->resource_id ) ) {
-    $resource = $single->resource;
-
-    $recipePriceSell = isset( $user ) && $user->resources->find( $resource->id ) && $user->resources->find( $resource->id )->pivot->price_sell ? $user->resources->find( $resource->id )->pivot->price_sell : $resource->price_sell;
-
-} else {
-    $recipePriceSell = isset( $user ) && $user->recipes->find( $single->id ) && $user->recipes->find( $single->id )->pivot->price_sell ? $user->recipes->find( $single->id )->pivot->price_sell : $single->price_sell;
-}
+$recipePriceSell = $single->price;
 
 $chanceText = 'MasterWork';
 if ( $single->grade === 'C' ) {
@@ -65,9 +60,14 @@ $isCountMoreThenOne = $single->craft_count !== 1;
                     <span id="recipe-price-craft-cost">{{prettifyNumber($recipePriceSell)}}</span>
                 </p>
             </div>
+
+            {{$crystalsText}}
         @elseif($recipePriceSell && $recipePriceSell > 0)
             <p>Цена: {{prettifyNumber($recipePriceSell)}}</p>
         @endif
+        <p>
+            {!!$single->crystals_text !!}
+        </p>
 
         @if($single->resource)
             <a href="{{ route( 'resources.show', [ 'id' => $single->resource->id ] ) }}">

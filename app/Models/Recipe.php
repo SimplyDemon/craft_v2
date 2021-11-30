@@ -179,4 +179,48 @@ class Recipe extends Model {
 
         return $masterWorkText;
     }
+
+    public function getCrystalsTextAttribute() {
+        $crystalsText = null;
+
+        if ( $this->grade && $this->crystals_count ) {
+            switch ( $this->grade ) {
+                case 'S-84':
+                case 'S-80':
+                    $crystalsGrade = 'S';
+                    break;
+                default:
+                    $crystalsGrade = $this->grade;
+                    break;
+            }
+
+            $crystalResource = \App\Models\Resource::where( 'name', 'Crystal ' . $crystalsGrade )->firstOrFail();
+            $crystalImgPath  = asset( 'storage' ) . '/' . $crystalResource->img;
+
+            $crystalsText .= "<img width='20' src='{$crystalImgPath}' alt='{$crystalResource->name}'>";
+
+            $crystalsPrice = prettifyNumber( $crystalResource->price * $this->crystals_count );
+            $crystalsText  .= "$crystalResource->name: {$this->crystals_count}. Их цена: $crystalsPrice";
+        }
+
+        return $crystalsText;
+
+    }
+
+    public function getPriceAttribute() {
+        $user = auth()->user();
+
+        if ( $this->attributes['resource_id'] ) {
+            $resource = $this->resource;
+
+            $recipePriceSell = $user && $user->resources->find( $resource->id ) && $user->resources->find( $resource->id )->pivot->price_sell ? $user->resources->find( $resource->id )->pivot->price_sell : $resource->price_sell;
+
+        } else {
+            $recipePriceSell = $user && $user->recipes->find( $this->id ) && $user->recipes->find( $this->id )->pivot->price_sell ? $user->recipes->find( $this->id )->pivot->price_sell : $this->price_sell;
+
+        }
+
+        return $recipePriceSell;
+    }
+
 }

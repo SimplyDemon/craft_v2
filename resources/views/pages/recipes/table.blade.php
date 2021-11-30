@@ -19,7 +19,7 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
         <?php
         $resourceQuantity = $resource->pivot->resource_quantity;
         $adminResourcePrice = $resource->$price;
-        $resourcePrice = isset( $user ) && $user->resources->find( $resource->id ) && $user->resources->find( $resource->id )->pivot->$price ? $user->resources->find( $resource->id )->pivot->$price : $adminResourcePrice;
+        $resourcePrice = $resource->price;
         $resourceLinePrice = $resourcePrice * $resourceQuantity;
         $total += $resourceLinePrice;
 

@@ -22,5 +22,9 @@ class Resource extends Model {
         return $this->belongsToMany( User::class );
     }
 
+    public function getPriceAttribute() {
+        $user = auth()->user();
 
+        return $user && $user->resources->find( $this->id ) && $user->resources->find( $this->id )->pivot->price_sell ? $user->resources->find( $this->id )->pivot->price_sell : $this->price_sell;
+    }
 }
