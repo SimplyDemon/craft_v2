@@ -165,8 +165,8 @@ class Recipe extends Model {
             $masterWorkText = '';
 
             if ( $this->rare_chance ) {
-                $masterWorkText = 'Crafter level <b>85</b><br>';
-                $masterWorkText .= 'Chance: <b>' . $this->rare_chance . '</b>%<br>';
+                $masterWorkText = 'Уровень крафтера: <b>85</b><br>';
+                $masterWorkText .= 'Шанс: <b>' . $this->rare_chance . '</b>%<br>';
             }
             if ( $this->attributes['masterwork_name'] ) {
                 $masterWorkText .= '<i>' . $this->attributes['masterwork_name'] . '</i><br>';
