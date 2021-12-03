@@ -162,18 +162,24 @@ class Recipe extends Model {
     public function getMasterworkTextAttribute() {
         $masterWorkText = null;
 
-        if ( ( $this->attributes['grade'] === 'C' || $this->attributes['masterwork_description'] ) && $this->rare_chance ) {
+        /*
+         * C items has no masterwork description
+         * Craft count only 1, exclude shots
+         */
+        if ( $this->craft_count === 1 && ( $this->grade === 'C' || $this->masterwork_description ) && $this->grade && $this->rare_chance ) {
             $chanceText = 'Шанс МВ';
-            if ( $this->attributes['grade'] === 'C' ) {
+            if ( $this->grade === 'C' ) {
                 $chanceText = 'Шанс дабл крафта';
             }
+
             $masterWorkText = 'Уровень крафтера: <b>85</b><br>';
             $masterWorkText .= $chanceText . ': <b>' . $this->rare_chance . '</b>%<br>';
 
-            if ( $this->attributes['masterwork_description'] ) {
-                if ( $this->attributes['masterwork_name'] ) {
-                    $masterWorkText .= '<i>' . $this->attributes['masterwork_name'] . '</i><br>';
-                }
+            if ( $this->masterwork_name ) {
+                $masterWorkText .= '<i>' . $this->masterwork_name . '</i><br>';
+            }
+
+            if ( $this->masterwork_description ) {
                 $masterWorkText .= $this->attributes['masterwork_description'];
             }
         }
