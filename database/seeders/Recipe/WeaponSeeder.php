@@ -77,41 +77,41 @@ class WeaponSeeder extends Seeder {
             8, 555, 'Focus', 'Critical Damage', 'Haste', 'Увеличивает Физ. Крит. Атк. на 73', 'Увеличивает Физ. Атк. на 270 при критической атаке', 'Увеличивает Скорость атаки на 7%' );
         seederAddRecipe( 'Ecliptic Sword', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'меч, sword', 6, 1885,
             8, 555, 'Empower', 'M. Atk.', 'Magic Silence', 'Увеличивает Маг. Атк. на 26', 'При использовании магических умений увеличивает потребление МП на 15% и Маг. Атк. на 112', 'Даёт 10% шанс наложить Безмолвие при использовании вредоносного умения на цель' );
-        seederAddRecipe( 'Great Sword', $imagePath, 17000000, 'B', $categoryId, 0, '60', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Lightning', 1, false, 'Большой Меч, меч, sword', 6, 891,
+        seederAddRecipe( 'Great Sword', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Lightning', 1, false, 'Большой Меч, меч, sword', 6, 891,
             9, 222, 'Health', 'Critical Damage', 'Focus', 'Увеличивает HP на 25%', 'Atk. на 247 при критической атаке', 'Увеличивает Физ. Крит. Атк. на 68' );
-        seederAddRecipe( 'Great Sword 100%', $imagePath, 17000000, 'B', $categoryId, 0, '100', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Lightning', 1, false, 'Большой Меч, меч, sword', 6, 891,
+        seederAddRecipe( 'Great Sword 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Lightning', 1, false, 'Большой Меч, меч, sword', 6, 891,
             9, 222, 'Health', 'Critical Damage', 'Focus', 'Увеличивает HP на 25%', 'Atk. на 247 при критической атаке', 'Увеличивает Физ. Крит. Атк. на 68' );
-        seederAddRecipe( 'Keshanberk', $imagePath, 13500000, 'B', $categoryId, 0, '60', 'Добавляет 17.42 Физ. Атк.', 'Destruction', 1, false, 'Кешанберк, кешенберк, Кашенберк, кашенберг, kashenberk, меч, sword', 6, 891,
+        seederAddRecipe( 'Keshanberk', $imagePath, 0, 'B', $categoryId, 0, '60', 'Добавляет 17.42 Физ. Атк.', 'Destruction', 1, false, 'Кешанберк, кешенберк, Кашенберк, кашенберг, kashenberk, меч, sword', 6, 891,
             9, 222, 'Guidance', 'Focus', 'Back Blow', 'Увеличивает Точность на 5', 'Увеличивает Физ. Крит. Атк. на 68', 'Физ. Крит. Атк. на 56 при атаке сзади' );
         seederAddRecipe( 'Keshanberk 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Добавляет 17.42 Физ. Атк.', 'Destruction', 1, false, 'Кешанберк, кешенберк, Кашенберк, кашенберг, kashenberk, меч, sword', 6, 891,
             9, 222, 'Guidance', 'Focus', 'Back Blow', 'Увеличивает Точность на 5', 'Увеличивает Физ. Крит. Атк. на 68', 'Физ. Крит. Атк. на 56 при атаке сзади' );
-        seederAddRecipe( 'Sword of Valhalla', $imagePath, 15000000, 'B', $categoryId, 0, '60', 'Увеличивает HP на 187', 'Nature', 1, false, 'Меч Вальхаллы, Валя, Валька, меч, sword', 6, 891,
+        seederAddRecipe( 'Sword of Valhalla', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает HP на 187', 'Nature', 1, false, 'Меч Вальхаллы, Валя, Валька, меч, sword', 6, 891,
             9, 222, 'Acumen', 'Magic Weakness', 'Magic Regeneration', 'Увеличивает Скорость Каста на 15%', 'Даёт 7% шанс колдовства Weakness при использовании вредоносного умения на цель', '30% шанс наложения Regeneration (lvl 3) при использовании благотворного умения на цель' );
-        seederAddRecipe( 'Sword of Valhalla 100%', $imagePath, 15000000, 'B', $categoryId, 0, '100', 'Увеличивает HP на 187', 'Nature', 1, false, 'Меч Вальхаллы, Валя, Валька, меч, sword', 6, 891,
+        seederAddRecipe( 'Sword of Valhalla 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает HP на 187', 'Nature', 1, false, 'Меч Вальхаллы, Валя, Валька, меч, sword', 6, 891,
             9, 222, 'Acumen', 'Magic Weakness', 'Magic Regeneration', 'Увеличивает Скорость Каста на 15%', 'Даёт 7% шанс колдовства Weakness при использовании вредоносного умения на цель', '30% шанс наложения Regeneration (lvl 3) при использовании благотворного умения на цель' );
-        seederAddRecipe( 'Damascus Sword', $imagePath, 20000000, 'B', $categoryId, 0, '60', 'Увеличивает HP на 319', 'Earth', 1, false, 'Дамаскус, меч, sword', null, 1346,
+        seederAddRecipe( 'Damascus Sword', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает HP на 319', 'Earth', 1, false, 'Дамаскус, меч, sword', null, 1346,
             10, 339, 'Focus', 'Critical Damage', 'Haste', 'Увеличивает Физ. Крит. Атк. на 64', 'Увеличивает Физ. Атк. на 262 при критической атаке', 'Увеличивает Скорость атаки на 6%' );
-        seederAddRecipe( 'Damascus Sword 100%', $imagePath, 20000000, 'B', $categoryId, 0, '100', 'Увеличивает HP на 319', 'Earth', 1, false, 'Дамаскус, меч, sword', null, 1346,
+        seederAddRecipe( 'Damascus Sword 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает HP на 319', 'Earth', 1, false, 'Дамаскус, меч, sword', null, 1346,
             10, 339, 'Focus', 'Critical Damage', 'Haste', 'Увеличивает Физ. Крит. Атк. на 64', 'Увеличивает Физ. Атк. на 262 при критической атаке', 'Увеличивает Скорость атаки на 6%' );
         seederAddRecipe( 'Guardian\'s Sword', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Меч Стража, Гвардиан, меч, sword', null, 1346,
             10, 339, 'Critical Drain', 'Health', 'Critical Bleed', 'Поглощает 8 HP  при критической атаке', 'Увеличивает HP на 25%', 'Вызывает кровотечение цели с вероятностью 24% при критической атаке' );
         seederAddRecipe( 'Guardian\'s Sword 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Меч Стража, Гвардиан, меч, sword', null, 1346,
             10, 339, 'Critical Drain', 'Health', 'Critical Bleed', 'Поглощает 8 HP  при критической атаке', 'Увеличивает HP на 25%', 'Вызывает кровотечение цели с вероятностью 24% при критической атаке' );
-        seederAddRecipe( 'Wizard\'s Tear', $imagePath, 22000000, 'B', $categoryId, 0, '60', 'Увеличивает MP реген на 5%', 'Cleverness', 1, false, 'Слезы Чародея, визард, визарт, меч, sword', null, 1346,
+        seederAddRecipe( 'Wizard\'s Tear', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает MP реген на 5%', 'Cleverness', 1, false, 'Слезы Чародея, визард, визарт, меч, sword', null, 1346,
             10, 339, 'Acumen', 'M. Atk.', 'Conversion', 'Увеличивает Скорость Каста на 15%', 'При использовании магических умений увеличивает потребление МП на 15% и Маг. Атк. на 139', 'Увеличивает MP на 60% и уменьшает HP на 40%' );
-        seederAddRecipe( 'Wizard\'s Tear 100%', $imagePath, 22000000, 'B', $categoryId, 0, '100', 'Увеличивает MP реген на 5%', 'Cleverness', 1, false, 'Слезы Чародея, визард, визарт, меч, sword', null, 1346,
+        seederAddRecipe( 'Wizard\'s Tear 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает MP реген на 5%', 'Cleverness', 1, false, 'Слезы Чародея, визард, визарт, меч, sword', null, 1346,
             10, 339, 'Acumen', 'M. Atk.', 'Conversion', 'Увеличивает Скорость Каста на 15%', 'При использовании магических умений увеличивает потребление МП на 15% и Маг. Атк. на 139', 'Увеличивает MP на 60% и уменьшает HP на 40%' );
-        seederAddRecipe( 'Tallum Blade', $imagePath, 19000000, 'A', $categoryId, 0, '60', 'Добавляет 22.1 Физ. Атк.', 'Destruction', 1, false, 'Клинок Таллума, меч, sword', 7, 1128,
+        seederAddRecipe( 'Tallum Blade', $imagePath, 0, 'A', $categoryId, 0, '60', 'Добавляет 22.1 Физ. Атк.', 'Destruction', 1, false, 'Клинок Таллума, меч, sword', 7, 1128,
             11, 147, 'Critical Poison', 'Haste', 'Anger', 'Даёт 10% шанс отправить при критической атаки', 'Увеличивает Скорость атаки на 6%', 'Уменьшает HP на 15% и Увеличивает Физ. Атк. на 31' );
-        seederAddRecipe( 'Elemental Sword', $imagePath, 17000000, 'A', $categoryId, 0, '60', 'Увеличивает Маг. Атк. на 21.77', 'Hail', 1, false, 'Меч Стихий, елементал, элементал, меч, sword', 7, 1128,
+        seederAddRecipe( 'Elemental Sword', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Маг. Атк. на 21.77', 'Hail', 1, false, 'Меч Стихий, елементал, элементал, меч, sword', 7, 1128,
             11, 147, 'M. Atk.', 'Magic Paralyze', 'Empower', 'При использовании магических умений увеличивает потребление МП на 15% и Маг. Атк. на 153', 'Даёт 5% шанс наложить Паралич, используя вредоносное умение', 'Увеличивает Маг. Атк. на 30' );
-        seederAddRecipe( 'Infernal Master', $imagePath, 22000000, 'A', $categoryId, 0, '60', 'Увеличивает Точность на 3.9', 'Concentration', 1, false, 'Мастер Инферно, inferno, меч, sword', 7, 1128,
+        seederAddRecipe( 'Infernal Master', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Точность на 3.9', 'Concentration', 1, false, 'Мастер Инферно, inferno, меч, sword', 7, 1128,
             11, 157, 'Haste', 'Critical Damage', 'Focus', 'Увеличивает Скорость атаки на 6%', 'Увеличивает Физ. Крит. Атк. при критической атаке на 297', 'Увеличивает Физ. Крит. Атк. на 61' );
-        seederAddRecipe( 'Dragon Slayer', $imagePath, 44000000, 'A', $categoryId, 0, '60', 'Увеличивает Вампиризм на 3', 'Evil Spirit', 1, false, 'Убийца Драконов, драгон, слеер, меч, sword', null, 1659,
+        seederAddRecipe( 'Dragon Slayer', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Вампиризм на 3', 'Evil Spirit', 1, false, 'Убийца Драконов, драгон, слеер, меч, sword', null, 1659,
             12, 140, 'Health', 'Critical Bleed', 'Critical Drain', 'Увеличивает HP на 25%', 'Даёт 24% шанс наложения вызвать кровотечение при критической атаки', 'При критической атаке, Поглощает 11 HP' );
         seederAddRecipe( 'Sword of Miracles', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Силу Хила на 37', 'Holy Spirit', 1, false, 'Легендарный Меч, сом, som, миракл, меч, sword', null, 1659,
             12, 140, 'M. Atk.', 'Magic Silence', 'Acumen', 'При использовании магических умений увеличивает потребление МП на 15% и Увеличивает Маг. Атк. на 167', 'Даёт 10% шанс наложить Безмолвие при использовании вредоносного умения на цель', 'Увеличивает Скорость Каста на 15%' );
-        seederAddRecipe( 'Dark Legion\'s Edge', $imagePath, 53000000, 'A', $categoryId, 0, '60', 'Увеличивает мощь критической атаки на 220', 'Thunder', 1, false, 'Темный Легион, меч, sword', null, 1659,
+        seederAddRecipe( 'Dark Legion\'s Edge', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает мощь критической атаки на 220', 'Thunder', 1, false, 'Темный Легион, меч, sword', null, 1659,
             12, 157, 'Critical Damage', 'Health', 'Rsk. Focus', 'При критической атаке, Увеличивает Физ. Атк. на 326', 'Увеличивает HP на 25%', 'При HP равном 60% или ниже, увеличивает Фик. Крит. Атк. на 130' );
         seederAddRecipe( 'Sirra\'s Blade', $imagePath, 0, 'A', $categoryId, 0, '60', 'С вероятностью 6% оглушает врага при физической атаке', 'Landslide', 1, false, 'Клинок Сирры, сиры, сира, сирра, меч, sword', null, 2157,
             12, 157, 'Haste', 'Health', 'Critical Poison', 'Увеличивает Скорость атаки на 6%', 'Увеличивает HP на 25%', 'Вероятность отравить цель 15% при критической атаке' );
@@ -119,25 +119,25 @@ class WeaponSeeder extends Seeder {
             12, 157, 'Focus', 'Haste', 'Health', 'Увеличивает Физ. Крит. Атк. на 61', 'Увеличивает Скорость атаки на 6%', 'Увеличивает HP на 25%' );
         seederAddRecipe( 'Themis\' Tongue', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает MP реген на 5%', 'Cleverness', 1, false, 'Язык Темиса, меч, sword', null, 2157,
             12, 157, 'Mana Up', 'Mental Shield', 'Magic Focus', 'Увеличивает MP на 30%', 'Даёт 50% шанс наложения Mental Shield (lvl 4) при использовании благотворного умения на цель', 'Даёт 20% шанс наложения Focus (lvl 3) при использовании благотворного умения на цель' );
-        seederAddRecipe( 'Forgotten Blade', $imagePath, 60000000, 'S', $categoryId, 0, '60', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Lightning', 1, false, 'Забытый Клинок, fg, фг, меч, sword', null, 2052,
+        seederAddRecipe( 'Forgotten Blade', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Lightning', 1, false, 'Забытый Клинок, fg, фг, меч, sword', null, 2052,
             13, 82, 'Haste', 'Health', 'Focus', 'Увеличивает Скорость атаки на 7%', 'Увеличивает HP на 25%', 'Увеличивает Физ. Крит. Атк. на 84' );
-        seederAddRecipe( 'Heavens Divider', $imagePath, 74000000, 'S', $categoryId, 0, '60', 'Увеличивает мощь критической атаки на 340', 'Thunder', 1, false, 'Разделитель Небес, хд. hd, меч, sword', null, 2052,
+        seederAddRecipe( 'Heavens Divider', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает мощь критической атаки на 340', 'Thunder', 1, false, 'Разделитель Небес, хд. hd, меч, sword', null, 2052,
             13, 82, 'Haste', 'Health', 'Focus', 'Увеличивает Скорость атаки на 7%', 'Увеличивает HP на 25%', 'Увеличивает Физ. Крит. Атк. на 84' );
-        seederAddRecipe( 'Dynasty Sword', $imagePath, 160000000, 'S', $categoryId, 0, '60', 'Увеличивает HP на 492', 'Earth', 1, false, 'Меч Династии, дино, меч, sword', null, 3597,
+        seederAddRecipe( 'Dynasty Sword', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает HP на 492', 'Earth', 1, false, 'Меч Династии, дино, меч, sword', null, 3597,
             14, 285, 'Focus', 'Health', 'Light', 'Увеличивает Физ. Крит. Атк. на 111', 'Увеличивает HP на 25%', 'Увеличивает лимит веса на 20%' );
-        seederAddRecipe( 'Dynasty Blade', $imagePath, 135000000, 'S', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Клинок Династии, дино, меч, sword', null, 3597,
+        seederAddRecipe( 'Dynasty Blade', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Клинок Династии, дино, меч, sword', null, 3597,
             14, 285, 'Focus', 'Health', 'Light', 'Увеличивает Физ. Крит. Атк. на 111', 'Увеличивает HP на 25%', 'Увеличивает лимит веса на 20%' );
-        seederAddRecipe( 'Dynasty Phantom', $imagePath, 165000000, 'S', $categoryId, 0, '60', 'Увеличивает MP на 334', 'Nature', 1, false, 'Фантом Династии, дино, меч, sword', null, 3597,
+        seederAddRecipe( 'Dynasty Phantom', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает MP на 334', 'Nature', 1, false, 'Фантом Династии, дино, меч, sword', null, 3597,
             14, 285, 'Acumen', 'Mana Up', 'Conversion', 'Увеличивает Скорость Каста на 15%', 'Увеличивает MP на 30%', 'Увеличивает MP на 60% и уменьшает HP на 40%' );
         seederAddRecipe( 'Icarus Sawsword', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Увеличивает Физ. Атк. на 42.12', 'Destruction', 1, false, 'Зазубренный Меч Икара, ик, меч, sword', null, 4965,
             15, 399, 'Focus', 'Health', 'Light', 'Увеличивает Физ. Крит. Атк. на 111', 'Увеличивает HP на 25%', 'Увеличивает лимит веса на 20%' );
-        seederAddRecipe( 'Icarus Spirit', $imagePath, 130000000, 'S-80', $categoryId, 0, '60', 'Увеличивает HP на 334', 'Nature', 1, false, 'Дух Икара, спирит, ик, меч, sword', null, 4965,
+        seederAddRecipe( 'Icarus Spirit', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Увеличивает HP на 334', 'Nature', 1, false, 'Дух Икара, спирит, ик, меч, sword', null, 4965,
             15, 399, 'Acumen', 'Mana Up', 'Conversion', 'Увеличивает Скорость Каста на 15%', 'Увеличивает MP на 30%', 'Увеличивает MP на 60% и уменьшает HP на 40%' );
         seederAddRecipe( 'Icarus Heavy Arms', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Lightning', 1, false, 'Тяжелые Руки Икара, ик, меч, sword', null, 4965,
             15, 399, 'Focus', 'Health', 'Light', 'Увеличивает Физ. Крит. Атк. на 111', 'Увеличивает HP на 25%', 'Увеличивает лимит веса на 20%' );
-        seederAddRecipe( 'Vesper Cutter', $imagePath, 250000000, 'S-84', $categoryId, 0, '60', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Thunder', 1, false, 'Резак Венеры, кутер, веспер, меч, sword', null, 7050,
+        seederAddRecipe( 'Vesper Cutter', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Thunder', 1, false, 'Резак Венеры, кутер, веспер, меч, sword', null, 7050,
             16, 623, 'Health', 'Focus', 'Haste', 'Увеличивает HP на 25%', 'Увеличивает Физ. Крит. Атк. на 131', 'Увеличивает Скорость атаки на 11%' );
-        seederAddRecipe( 'Vesper Slasher', $imagePath, 200000000, 'S-84', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Gale', 1, false, 'Эспадон Венеры, слешер, веспер, меч, sword', null, 7050,
+        seederAddRecipe( 'Vesper Slasher', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Gale', 1, false, 'Эспадон Венеры, слешер, веспер, меч, sword', null, 7050,
             16, 623, 'Focus', 'Haste', 'Health', 'Увеличивает Физ. Крит. Атк. на 131', 'Увеличивает Скорость Атаки на 11%', 'Увеличивает HP на 25%' );
         seederAddRecipe( 'Vesper Buster', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Увеличивает MP реген на 5%', 'Clevernes', 1, false, 'Расчленитель Венеры, бустер, веспер, меч, sword', null, 7050,
             16, 623, 'Magic Hold', 'Mana Up', 'Acumen', 'Дает шанс 20% наложить Dryad Root при использовании вредоносного умения на цель', 'Увеличивает MP на 30%', 'Увеличивает Скорость Каста на 15%' );
@@ -201,9 +201,9 @@ class WeaponSeeder extends Seeder {
             8, 555, 'Conversion', 'M. Atk.', 'Magic Hold', 'Увеличивает MP на 60% и уменьшает HP на 40%', 'При использовании магических умений увеличивает потребление МП на 15%, и Маг. Атк. на 112', 'Даёт 10% шанс наложить Dryad Root при использовании вредоносного умения на цель' );
         seederAddRecipe( 'Dwarven Hammer', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, '', 6, 1885,
             8, 555, 'Health', 'Anger', 'Critical Bleed', 'Увеличивает HP на 25%', 'Уменьшает HP на 15% и Увеличивает Физ. Атк. на 26', 'Вызывает кровотечение цели с вероятностью 42% при критической атаке' );
-        seederAddRecipe( 'Heavy War Axe', $imagePath, 13000000, 'B', $categoryId, 0, '60', 'Увеличивает HP на 319', 'Earth', 1, false, 'Тяжелый Топор Войны, вар акс', 6, 891,
+        seederAddRecipe( 'Heavy War Axe', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает HP на 319', 'Earth', 1, false, 'Тяжелый Топор Войны, вар акс', 6, 891,
             9, 222, 'Anger', 'Health', 'Rsk. Focus', 'Увеличивает Физ. Атк. на 28 уменьшает HP на 15%', 'Увеличивает HP на 25%', 'Увеличивает Физ. Крит. Атк. на 107 при HP 60% и ниже' );
-        seederAddRecipe( 'Heavy War Axe 100%', $imagePath, 13000000, 'B', $categoryId, 0, '100', 'Увеличивает HP на 319', 'Earth', 1, false, 'Тяжелый Топор Войны, вар акс', 6, 891,
+        seederAddRecipe( 'Heavy War Axe 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает HP на 319', 'Earth', 1, false, 'Тяжелый Топор Войны, вар акс', 6, 891,
             9, 222, 'Anger', 'Health', 'Rsk. Focus', 'Увеличивает Физ. Атк. на 28 уменьшает HP на 15%', 'Увеличивает HP на 25%', 'Увеличивает Физ. Крит. Атк. на 107 при HP 60% и ниже' );
         seederAddRecipe( 'Spirit\'s Staff', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Маг. Атк. на 21.77', 'Hail', 1, false, 'Посох Духа, спирит стаф', 6, 891,
             9, 222, 'Regeneration', 'Mental Shield', 'Hold', 'Даёт 30% шанс наложения Regeneration (lvl 3) при использовании благотворного умения на цель', 'Даёт 50% шанс наложения Mental Shield (lvl 4) при использовании благотворного умения на цель', 'Даёт 50% шанс наложения Mental Shield при использовании благотворного умения на цель' );
@@ -217,17 +217,17 @@ class WeaponSeeder extends Seeder {
             9, 222, 'Focus', 'Anger', 'Critical Bleed', 'Увеличивает Физ. Крит. Атк. на 68', 'Уменьшает HP 15% и Увеличивает Физ. Атк. на 28', 'Вызывает кровотечение цели с вероятностью 41% при критической атаке' );
         seederAddRecipe( 'Ice Storm Hammer 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает Физ. Крит. Атк. на 52.2', 'Lightning', 1, false, 'Молот Ледяной Бури', 6, 891,
             9, 222, 'Focus', 'Anger', 'Critical Bleed', 'Увеличивает Физ. Крит. Атк. на 68', 'Уменьшает HP 15% и Увеличивает Физ. Атк. на 28', 'Вызывает кровотечение цели с вероятностью 41% при критической атаке' );
-        seederAddRecipe( 'Deadman\'s Glory', $imagePath, 21000000, 'B', $categoryId, 0, '60', 'С вероятностью 5% оглушает врага при физической атаке.', 'Landslide', 1, false, 'Топор Мертвеца', null, 1346,
+        seederAddRecipe( 'Deadman\'s Glory', $imagePath, 0, 'B', $categoryId, 0, '60', 'С вероятностью 5% оглушает врага при физической атаке.', 'Landslide', 1, false, 'Топор Мертвеца', null, 1346,
             10, 339, 'Anger', 'Health', 'Haste', 'Увеличивает Физ. Атк. на 30 уменьшает HP на 15%', 'Увеличивает HP на 25%', 'Увеличивает Скорость атаки на 6%' );
-        seederAddRecipe( 'Deadman\'s Glory 100%', $imagePath, 21000000, 'B', $categoryId, 0, '100', 'С вероятностью 5% оглушает врага при физической атаке.', 'Landslide', 1, false, 'Топор Мертвеца', null, 1346,
+        seederAddRecipe( 'Deadman\'s Glory 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'С вероятностью 5% оглушает врага при физической атаке.', 'Landslide', 1, false, 'Топор Мертвеца', null, 1346,
             10, 339, 'Anger', 'Health', 'Haste', 'Увеличивает Физ. Атк. на 30 уменьшает HP на 15%', 'Увеличивает HP на 25%', 'Увеличивает Скорость атаки на 6%' );
-        seederAddRecipe( 'Art of Battle Axe', $imagePath, 21000000, 'B', $categoryId, 0, '60', 'С вероятностью 5% оглушает врага при физической атаке.', 'Landslide', 1, false, 'Топор Искусства Войны, аоба, aoba', null, 1346,
+        seederAddRecipe( 'Art of Battle Axe', $imagePath, 0, 'B', $categoryId, 0, '60', 'С вероятностью 5% оглушает врага при физической атаке.', 'Landslide', 1, false, 'Топор Искусства Войны, аоба, aoba', null, 1346,
             10, 339, 'Health', 'Rsk. Focus', 'Haste', 'Увеличивает HP на 25%', 'Увеличивает Физ. Крит. Атк. на 99 при HP 60% и ниже', 'Увеличивает Скорость атаки на 6%' );
-        seederAddRecipe( 'Art of Battle Axe 100%', $imagePath, 21000000, 'B', $categoryId, 0, '100', 'С вероятностью 5% оглушает врага при физической атаке.', 'Landslide', 1, false, 'Топор Искусства Войны, аоба, aoba', null, 1346,
+        seederAddRecipe( 'Art of Battle Axe 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'С вероятностью 5% оглушает врага при физической атаке.', 'Landslide', 1, false, 'Топор Искусства Войны, аоба, aoba', null, 1346,
             10, 339, 'Health', 'Rsk. Focus', 'Haste', 'Увеличивает HP на 25%', 'Увеличивает Физ. Крит. Атк. на 99 при HP 60% и ниже', 'Увеличивает Скорость атаки на 6%' );
-        seederAddRecipe( 'Staff of Evil Spirits', $imagePath, 22000000, 'B', $categoryId, 0, '60', 'Увеличивает Силу Хила на 33', 'Holy Spirit', 1, false, 'Посох Злых Духов, спирит', null, 1346,
+        seederAddRecipe( 'Staff of Evil Spirits', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Силу Хила на 33', 'Holy Spirit', 1, false, 'Посох Злых Духов, спирит', null, 1346,
             10, 339, 'Focus', 'Blessed Body', 'Poison', 'Даёт 20% шанс наложения Focus (lvl 3) при использовании благотворного умения на цель', 'Даёт 20% шанс наложить Blessed Body (lvl 5) при использовании благотворного умения на цель', 'Даёт 6% шанс наложить Poison при использовании вредоносного умения на цель' );
-        seederAddRecipe( 'Staff of Evil Spirits 100%', $imagePath, 22000000, 'B', $categoryId, 0, '100', 'Увеличивает Силу Хила на 33', 'Holy Spirit', 1, false, 'Посох Злых Духов, спирит', null, 1346,
+        seederAddRecipe( 'Staff of Evil Spirits 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает Силу Хила на 33', 'Holy Spirit', 1, false, 'Посох Злых Духов, спирит', null, 1346,
             10, 339, 'Focus', 'Blessed Body', 'Poison', 'Даёт 20% шанс наложения Focus (lvl 3) при использовании благотворного умения на цель', 'Даёт 20% шанс наложить Blessed Body (lvl 5) при использовании благотворного умения на цель', 'Даёт 6% шанс наложить Poison при использовании вредоносного умения на цель' );
         seederAddRecipe( 'Kaim Vanul\'s Bones', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает HP на 319', 'Earth', 1, false, 'Кости Каим Ванула', null, 1346,
             10, 339, 'Mana Up', 'Magic Silence', 'Conversion', 'Увеличивает MP на 30%', 'Даёт 10% шанс наложить Безмолвие при использовании вредоносного умения на цель', 'Увеличивает MP на 60% и уменьшает HP на 40%' );
@@ -237,13 +237,13 @@ class WeaponSeeder extends Seeder {
             10, 339, 'Health', 'Haste', 'Rsk. Focus', 'Увеличивает HP на 25%', 'Увеличивает Скорость атаки на 6%', 'Увеличивает Физ. Крит. Атк. на 99 при HP меньше 60%' );
         seederAddRecipe( 'Star Buster 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Звезда Боли', null, 1346,
             10, 339, 'Health', 'Haste', 'Rsk. Focus', 'Увеличивает HP на 25%', 'Увеличивает Скорость атаки на 6%', 'Увеличивает Физ. Крит. Атк. на 99 при HP меньше 60%' );
-        seederAddRecipe( 'Dasparion\'s Staff', $imagePath, 22000000, 'A', $categoryId, 0, '60', 'Увеличивает Маг. Атк. на 27.63', 'Hail', 1, false, 'Посох Даспариона', 7, 1128,
+        seederAddRecipe( 'Dasparion\'s Staff', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Маг. Атк. на 27.63', 'Hail', 1, false, 'Посох Даспариона', 7, 1128,
             11, 147, 'Mana Up', 'Conversion', 'Acumen', 'Увеличивает MP на 30%', 'Увеличивает MP на 60% и уменьшает HP на 40%', 'Увеличивает Скорость Каста на 15%' );
-        seederAddRecipe( 'Meteor Shower', $imagePath, 21000000, 'A', $categoryId, 0, '60', 'Увеличивает HP на 345', 'Earth', 1, false, 'Метеоритный Дождь', 7, 1128,
+        seederAddRecipe( 'Meteor Shower', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает HP на 345', 'Earth', 1, false, 'Метеоритный Дождь', 7, 1128,
             11, 157, 'Focus', 'Critical Bleed', 'Rsk. Haste', 'Увеличивает Физ. Крит. Атк. на 61', 'Даёт 42% шанс наложения вызвать кровотечение при критической атаки', 'Увеличивает Скорость атаки на 11% при HP 60% и ниже' );
         seederAddRecipe( 'Spiritual Eye', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Маг. Атк. на 27.63', 'Hail', 1, false, 'Глаз Духа', 7, 1128,
             11, 147, 'Mana Up', 'Magic Poison', 'Acumen', 'Увеличивает MP на 30%', 'Даёт 8% шанс наложить Poison при использовании вредоносного умения на цель', 'Увеличивает Скорость Каста на 15%' );
-        seederAddRecipe( 'Destroyer Hammer', $imagePath, 28000000, 'A', $categoryId, 0, '60', 'Увеличивает Физ. Крит. Атк. на 52.2', 'Lightning', 1, false, 'Молот Разрушителя, дестроер', 7, 1128,
+        seederAddRecipe( 'Destroyer Hammer', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Физ. Крит. Атк. на 52.2', 'Lightning', 1, false, 'Молот Разрушителя, дестроер', 7, 1128,
             11, 157, 'Health', 'Haste', 'Critical Drain', 'Увеличивает HP на 25%', 'Увеличивает Скорость Атаки на 6%', 'Поглощает 18 HP  при критической атаке' );
         seederAddRecipe( 'Elysian', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Элизиум', null, 1659,
             12, 140, 'Health', 'Anger', 'Critical Drain', 'Увеличивает HP на 25%', 'Уменьшает HP на 15% и Увеличивает Физ. Атк. на 32', 'При критической атаке, Поглощает 19 HP' );
@@ -255,25 +255,25 @@ class WeaponSeeder extends Seeder {
             12, 157, 'Health', 'Anger', 'Rsk. Haste', 'Увеличивает HP на 25%', 'Уменьшает HP на 15% и Увеличивает Физ. Атк. на 11%', 'Увеличивает Скорость атаки на 11% при HP 60% и ниже' );
         seederAddRecipe( 'Barakiel\'s Axe', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает реген HP на 5%', 'On Fire', 1, false, 'Топор Баракиэля', null, 2157,
             12, 157, 'Health', 'Haste', 'Focus', 'Увеличивает HP на 25%', 'Увеличивает Скорость атаки на 6%', 'Увеличивает Физ. Крит. Атк. на 61' );
-        seederAddRecipe( 'Behemoth\' Tuning Fork', $imagePath, 65000000, 'A', $categoryId, 0, '60', 'Добавляет 32.97 Физ. Атк.', 'Destruction', 1, false, 'Трезубец Чудовища, бегемот', null, 2157,
+        seederAddRecipe( 'Behemoth\' Tuning Fork', $imagePath, 0, 'A', $categoryId, 0, '60', 'Добавляет 32.97 Физ. Атк.', 'Destruction', 1, false, 'Трезубец Чудовища, бегемот', null, 2157,
             12, 157, 'Focus', 'Health', 'Anger', 'Увеличивает Физ. Крит. Атк. на 61', 'Увеличивает HP на 25%', 'Уменьшает HP на 15% и Увеличивает Физ. Атк. на 32' );
-        seederAddRecipe( 'Cabrio\'s Hand', $imagePath, 60000000, 'A', $categoryId, 0, '60', 'Увеличивает MP реген на 5%', 'Cleverness', 1, false, 'Рука Кабрио', null, 2157,
+        seederAddRecipe( 'Cabrio\'s Hand', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает MP реген на 5%', 'Cleverness', 1, false, 'Рука Кабрио', null, 2157,
             12, 157, 'Conversion', 'Mana Up', 'Magic Silence', 'Увеличивает MP на 60% и уменьшает HP на 40%', 'Увеличивает MP на 30%', 'Даёт 10% шанс наложить Безмолвие при использовании вредоносного умения на цель' );
-        seederAddRecipe( 'Daimon Crystal', $imagePath, 84000000, 'A', $categoryId, 0, '60', 'Снижает Потребление MP на 5%', 'Wisdom', 1, false, 'Кристалл Дэймона', null, 2157,
+        seederAddRecipe( 'Daimon Crystal', $imagePath, 0, 'A', $categoryId, 0, '60', 'Снижает Потребление MP на 5%', 'Wisdom', 1, false, 'Кристалл Дэймона', null, 2157,
             12, 157, 'Mana Up', 'Acumen', 'Mental Shield', 'Увеличивает MP на 30%', 'Увеличивает Скорость Каста на 15%', 'Даёт 50% шанс наложения Mental Shield (lvl 4) при использовании благотворного умения на цель' );
-        seederAddRecipe( 'Basalt Battlehammer', $imagePath, 67000000, 'S', $categoryId, 0, '60', 'Увеличивает Точность на 4.2', 'Concentration', 1, false, 'Базальтовый Боевой Молот, басальт', null, 2052,
+        seederAddRecipe( 'Basalt Battlehammer', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает Точность на 4.2', 'Concentration', 1, false, 'Базальтовый Боевой Молот, басальт', null, 2052,
             13, 82, 'HP Drain', 'Health', 'HP Regeneration', 'Даёт 3% вампиризма', 'Увеличивает HP на 25%', 'Увеличивает восстановление HP' );
-        seederAddRecipe( 'Imperial Staff', $imagePath, 50000000, 'S', $categoryId, 0, '60', 'Увеличивает HP на 289', 'Nature', 1, false, 'Имперский Посох, империал стафф', null, 2052,
+        seederAddRecipe( 'Imperial Staff', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает HP на 289', 'Nature', 1, false, 'Имперский Посох, империал стафф', null, 2052,
             13, 82, 'Empower', 'MP Regeneration', 'Magic Hold', 'Увеличивает Маг. Атк. на 60', 'Увеличивает восстановление MP', 'Даёт 20% шанс наложить Dryad Root при использовании вредоносного умения на цель' );
-        seederAddRecipe( 'Dragon Hunter Axe', $imagePath, 72000000, 'S', $categoryId, 0, '60', 'Увеличивает мощь критической атаки на 415', 'Thunder', 1, false, 'Топор Охотника на Драконов, драгон хантер', null, 2052,
+        seederAddRecipe( 'Dragon Hunter Axe', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает мощь критической атаки на 415', 'Thunder', 1, false, 'Топор Охотника на Драконов, драгон хантер', null, 2052,
             13, 82, 'HP Regeneration', 'Health', 'HP Drain', 'Увеличивает восстановление HP', 'Увеличивает HP на 25%', 'Даёт 3% вампиризма' );
-        seederAddRecipe( 'Arcana Mace', $imagePath, 87000000, 'S', $categoryId, 0, '60', 'Увеличивает HP на 289', 'Nature', 1, false, 'Посох Тайн, аркана', null, 2052,
+        seederAddRecipe( 'Arcana Mace', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает HP на 289', 'Nature', 1, false, 'Посох Тайн, аркана', null, 2052,
             13, 82, 'Acumen', 'MP Regeneration', 'Mana Up', 'Увеличивает Скорость Каста на 15%', 'Увеличивает восстановление MP', 'Увеличивает MP на 30%' );
-        seederAddRecipe( 'Dynasty Cudgel', $imagePath, 147000000, 'S', $categoryId, 0, '60', 'С вероятностью 8% оглушает врага при физической атаке)', 'Landslide', 1, false, 'Дубина Династии, дино', null, 3597,
+        seederAddRecipe( 'Dynasty Cudgel', $imagePath, 0, 'S', $categoryId, 0, '60', 'С вероятностью 8% оглушает врага при физической атаке)', 'Landslide', 1, false, 'Дубина Династии, дино', null, 3597,
             14, 285, 'Anger', 'Health', 'Rsk. Focus', 'Уменьшает HP на 15% и Увеличивает Физ. Атк. на 78', 'Увеличивает HP на 25%', 'Увеличивает Физ. Крит. Атк. на 164 при HP 60% и ниже' );
-        seederAddRecipe( 'Dynasty Mace', $imagePath, 185000000, 'S', $categoryId, 0, '60', 'Увеличивает HP на 492', 'Earth', 1, false, 'Булава Династии, мейс, дино', null, 3597,
+        seederAddRecipe( 'Dynasty Mace', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает HP на 492', 'Earth', 1, false, 'Булава Династии, мейс, дино', null, 3597,
             14, 285, 'Mana Up', 'Conversion', 'Acumen', 'Увеличивает MP на 30%', 'Увеличивает MP на 60% и уменьшает HP на 40%', 'Увеличивает Скорость Каста на 15%' );
-        seederAddRecipe( 'Dynasty Staff', $imagePath, 195000000, 'S', $categoryId, 0, '60', 'Увеличивает Силу Хила на 43', 'Holy Spirit', 1, false, 'Посох Династии, стафф, дино', null, 3597,
+        seederAddRecipe( 'Dynasty Staff', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает Силу Хила на 43', 'Holy Spirit', 1, false, 'Посох Династии, стафф, дино', null, 3597,
             14, 285, 'Mana Up', 'Conversion', 'Acumen', 'Увеличивает MP на 30%', 'Увеличивает MP на 60% и уменьшает HP на 40%', 'Увеличивает Скорость Каста на 15%' );
         seederAddRecipe( 'Dynasty Crusher', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Крушитель Династии, дино крашер, крушак', null, 3597,
             14, 285, 'Anger', 'Health', 'Rsk. Focus', 'Уменьшает HP на 15% Увеличивает Физ. Атк. на 78', 'Увеличивает HP на 25%', 'Увеличивает Физ. Крит. Атк. на 164 при HP 60% и ниже' );
@@ -285,7 +285,7 @@ class WeaponSeeder extends Seeder {
             16, 623, 'Health', 'HP Regeneration', 'HP Drain', 'Увеличивает HP на 25%', 'Увеличивает восстановление HP', 'Даёт 4% вампиризма' );
         seederAddRecipe( 'Vesper Retributer', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Gale', 1, false, 'Возмездие Венеры, ретрик, веспер', false, 7050,
             16, 623, 'Health', 'HP Drain', 'HP Regeneration', 'Увеличивает HP на 25%', 'Даёт 4% вампиризма', 'Увеличивает восстановление HP' );
-        seederAddRecipe( 'Vesper Caster', $imagePath, 200000000, 'S-84', $categoryId, 0, '60', 'Увеличивает MP реген на 5%', 'Cleverness', 1, false, 'Заклинатель Венеры, кастер, веспер', false, 7050,
+        seederAddRecipe( 'Vesper Caster', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Увеличивает MP реген на 5%', 'Cleverness', 1, false, 'Заклинатель Венеры, кастер, веспер', false, 7050,
             16, 623, 'MP Regeneration', 'Mana Up', 'Acumen', 'Увеличивает восстановление MP', 'Увеличивает MP на 30%', 'Увеличивает Скорость Каста на 15%' );
         seederAddRecipe( 'Vesper Singer', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Увеличивает Маг. Атк. на 45.81', 'Hail', 1, false, 'Певец Венеры, сингер, веспер', false, 7050,
             16, 623, 'Empower', 'MP Regeneration', 'Magic Hold', 'Увеличивает Маг. Атк. на 151', 'Увеличивает восстановление MP', 'Дает шанс 20% наложить Root при использовании вредоносного умения на цель' );
@@ -309,9 +309,9 @@ class WeaponSeeder extends Seeder {
             9, 222, 'Evasion', 'Critical Bleed', 'Miser', 'Увеличивает Уклонение на 2', 'Вызывает кровотечение цели с вероятностью 41% при критической атаке', 'Даёт 19% уменьшить расход Soulshots до 2' );
         seederAddRecipe( 'Dark Elven Longbow 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает Точность на 3.3', 'Concentration', 1, false, 'Длинный Лук Темных Эльфов', 6, 891,
             9, 222, 'Evasion', 'Critical Bleed', 'Miser', 'Увеличивает Уклонение на 2', 'Вызывает кровотечение цели с вероятностью 41% при критической атаке', 'Даёт 19% уменьшить расход Soulshots до 2' );
-        seederAddRecipe( 'Bow of Peril', $imagePath, 24000000, 'B', $categoryId, 0, '60', 'Увеличивает HP на 444', 'Earth', 1, false, 'Лук Угрозы, боп, bop, перил', null, 1346,
+        seederAddRecipe( 'Bow of Peril', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает HP на 444', 'Earth', 1, false, 'Лук Угрозы, боп, bop, перил', null, 1346,
             10, 339, 'Guidance', 'Quick Recovery', 'Cheap Shot', 'Увеличивает Точность на 3', 'Уменьшает время перезарядки на 13%', 'Шанс 42% уменьшить расход MP до 1 при обычной атаке' );
-        seederAddRecipe( 'Bow of Peril 100%', $imagePath, 24000000, 'B', $categoryId, 0, '100', 'Увеличивает HP на 444', 'Earth', 1, false, 'Лук Угрозы, боп, bop, перил', null, 1346,
+        seederAddRecipe( 'Bow of Peril 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает HP на 444', 'Earth', 1, false, 'Лук Угрозы, боп, bop, перил', null, 1346,
             10, 339, 'Guidance', 'Quick Recovery', 'Cheap Shot', 'Увеличивает Точность на 3', 'Уменьшает время перезарядки на 13%', 'Шанс 42% уменьшить расход MP до 1 при обычной атаке' );
         seederAddRecipe( 'Carnage Bow', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Точность на 3.3', 'Concentration', 1, false, 'Кровавый Лук, коряга, корняга, корнаж, каряга, лук', 7, 1128,
             11, 147, 'Light', 'Critical Bleed', 'Mana Up', 'Увеличивает лимит веса на 20%', 'Даёт 35% шанс наложения вызвать кровотечение при критической атаки', 'Увеличивает MP на 30%' );
@@ -319,13 +319,13 @@ class WeaponSeeder extends Seeder {
             12, 140, 'Cheap Shot', 'Quick Recovery', 'Critical Poison', 'Шанс 42% уменьшить расход MP до 1 при обычной атаке', 'Уменьшает время перезарядки на 15%', 'Даёт 18% шанс отправить при критической атаки' );
         seederAddRecipe( 'Shyeed\'s Bow', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Точность на 3.3', 'Concentration', 1, false, 'Лук Шиид,', null, 2157,
             12, 157, 'Cheap Shot', 'Focus', 'Quick Recovery', 'Шанс 30% уменьшить расход MP до 1 при обычной атаке', 'Увеличивает Физ. Крит. Атк. на 61', 'Уменьшает время перезарядки на 17%' );
-        seederAddRecipe( 'Draconic Bow', $imagePath, 60000000, 'S', $categoryId, 0, '60', 'Увеличивает HP на 444', 'Earth', 1, false, 'Лук Дракона, драконик лук', null, 2052,
+        seederAddRecipe( 'Draconic Bow', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает HP на 444', 'Earth', 1, false, 'Лук Дракона, драконик лук', null, 2052,
             13, 82, 'Cheap Shot', 'Focus', 'Critical Slow', 'Шанс 26% уменьшить расход MP до 1 при обычной атаке', 'Увеличивает Физ. Крит. Атк. на 88', 'Даёт 16% шанс наложения Slow при крит. атаке' );
-        seederAddRecipe( 'Dynasty Bow', $imagePath, 140000000, 'S', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Лук Династии, дино', null, 3597,
+        seederAddRecipe( 'Dynasty Bow', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Лук Династии, дино', null, 3597,
             14, 285, 'Cheap Shot', 'Guidance', 'Focus', 'Дает 26% шанс понизить расход MP до 1 при обычной атаке', 'Увеличивает Точность на 5.32', 'Увеличивает Физ. Крит. Атк. на 116' );
         seederAddRecipe( 'Icarus Spitter', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Увеличивает Точность на 3.3', 'Concentration', 1, false, 'Лук Икара, ик спитер', null, 4965,
             15, 399, 'Cheap Shot', 'Guidance', 'Focus', 'При обычной атаке дает 26% шанс, что расход MP будет понижен до 1', 'Увеличивает Точность на 5.32', 'Увеличивает Физ. Крит. Атк. на 116' );
-        seederAddRecipe( 'Vesper Thrower', $imagePath, 200000000, 'S-84', $categoryId, 0, '60', 'Увеличивает Дальность Стрельбы на 100', 'Clairvoyance', 1, false, 'Бросок Венеры, веспер лук', null, 7050,
+        seederAddRecipe( 'Vesper Thrower', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Увеличивает Дальность Стрельбы на 100', 'Clairvoyance', 1, false, 'Бросок Венеры, веспер лук', null, 7050,
             16, 623, 'Cheap Shot', 'Critical Slow', 'Focus', 'При обычной атаке расход MP уменьшается до 1 с вероятностью 61%', 'Даёт 33% шанс наложения Slow при критической атаке', 'Увеличивает Физ. Крит. Атк. на 133' );
     }
 
@@ -347,27 +347,27 @@ class WeaponSeeder extends Seeder {
             7, 306, 'Evasion', 'Focus', 'Critical Bleed', 'Увеличивает Уклонение на 2', 'Увеличивает Физ. Крит. Атк. на 81', 'Вызывает кровотечение цели с вероятностью 14% при критической атаке' );
         seederAddRecipe( 'Crystal Dagger', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'кристал дагер, даггер, dagger, dager', 6, 1885,
             8, 555, 'Critical Bleed', 'Critical Poison', 'Critical Damage', 'Вызывает кровотечение цели с вероятностью 14% при критической атаке', 'Вероятность отравить цель 7% при критической атаке', 'Увеличивает Физ. Атк. на 140 при критической атаке' );
-        seederAddRecipe( 'Kris', $imagePath, 14000000, 'B', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Крис дагер, даггер, dagger, dager', 6, 891,
+        seederAddRecipe( 'Kris', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Крис дагер, даггер, dagger, dager', 6, 891,
             9, 222, 'Evasion', 'Focus', 'Back Blow', 'Увеличивает Уклонение на 2', 'Увеличивает Физ. Крит. Атк. на 71', 'Увеличивает Физ. Крит. Атк. на 86 при атаке сзади' );
-        seederAddRecipe( 'Kris 100%', $imagePath, 14000000, 'B', $categoryId, 0, '100', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Крис дагер, даггер, dagger, dager', 6, 891,
+        seederAddRecipe( 'Kris 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Крис дагер, даггер, dagger, dager', 6, 891,
             9, 222, 'Evasion', 'Focus', 'Back Blow', 'Увеличивает Уклонение на 2', 'Увеличивает Физ. Крит. Атк. на 71', 'Увеличивает Физ. Крит. Атк. на 86 при атаке сзади' );
-        seederAddRecipe( 'Hell Knife', $imagePath, 14000000, 'B', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Нож Ада, Twilight Knife дагер, даггер, dagger, dager', 6, 891,
+        seederAddRecipe( 'Hell Knife', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Нож Ада, Twilight Knife дагер, даггер, dagger, dager', 6, 891,
             9, 222, 'Mental Shield', 'Magic Weakness', 'Magic Regeneration', 'Даёт 50% шанс наложения Mental Shield (lvl 4) при использовании благотворного умения на цель', 'Даёт 7% шанс колдовства Weakness при использовании вредоносного умения на цель', 'Даёт 30% шанс наложения Regeneration (lvl 3) при использовании благотворного умения на цель' );
-        seederAddRecipe( 'Hell Knife 100%', $imagePath, 14000000, 'B', $categoryId, 0, '100', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Нож Ада, Twilight Knife дагер, даггер, dagger, dager', 6, 891,
+        seederAddRecipe( 'Hell Knife 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Нож Ада, Twilight Knife дагер, даггер, dagger, dager', 6, 891,
             9, 222, 'Mental Shield', 'Magic Weakness', 'Magic Regeneration', 'Даёт 50% шанс наложения Mental Shield (lvl 4) при использовании благотворного умения на цель', 'Даёт 7% шанс колдовства Weakness при использовании вредоносного умения на цель', 'Даёт 30% шанс наложения Regeneration (lvl 3) при использовании благотворного умения на цель' );
-        seederAddRecipe( 'Demon\'s Dagger', $imagePath, 24000000, 'B', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Кинжал Демона, демон дагер, даггер, dagger, dager', null, 1346,
+        seederAddRecipe( 'Demon\'s Dagger', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Кинжал Демона, демон дагер, даггер, dagger, dager', null, 1346,
             10, 339, 'Critical Bleed', 'Critical Poison', 'Critical Damage', 'Вызывает кровотечение цели с вероятностью 12% при критической атаке', 'Вероятность отравить цель 6% при критической атаке', 'Увеличивает Физ. Атк. на 160 при критической атаке' );
-        seederAddRecipe( 'Demon\'s Dagger 100%', $imagePath, 24000000, 'B', $categoryId, 0, '100', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Кинжал Демона, демон дагер, даггер, dagger, dager', null, 1346,
+        seederAddRecipe( 'Demon\'s Dagger 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Кинжал Демона, демон дагер, даггер, dagger, dager', null, 1346,
             10, 339, 'Critical Bleed', 'Critical Poison', 'Critical Damage', 'Вызывает кровотечение цели с вероятностью 12% при критической атаке', 'Вероятность отравить цель 6% при критической атаке', 'Увеличивает Физ. Атк. на 160 при критической атаке' );
-        seederAddRecipe( 'Bloody Orchid', $imagePath, 19000000, 'A', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Кровавая Орхидея, блудик, орчид дагер, даггер, dagger, dager', 7, 1128,
+        seederAddRecipe( 'Bloody Orchid', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Кровавая Орхидея, блудик, орчид дагер, даггер, dagger, dager', 7, 1128,
             11, 157, 'Focus', 'Back Blow', 'Critical Bleed', 'Увеличивает Физ. Крит. Атк. на 67', 'Увеличивает Физ. Крит. Атк. на 37% атакуя сзади', 'Даёт 12% шанс наложения вызвать кровотечение при критической атаки' );
-        seederAddRecipe( 'Soul Separator', $imagePath, 47000000, 'A', $categoryId, 0, '60', 'Увеличивает реген HP на 5%', 'On Fire', 1, false, 'Душегуб, сепоратор дагер, даггер, dagger, dager', null, 1659,
+        seederAddRecipe( 'Soul Separator', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает реген HP на 5%', 'On Fire', 1, false, 'Душегуб, сепоратор дагер, даггер, dagger, dager', null, 1659,
             12, 157, 'Guidance', 'Critical Damage', 'Rsk. Haste', 'Увеличивает Точность на 4', 'При критической атаке, Увеличивает Физ. Атк. на 200', 'Увеличивает Скорость атаки на 11% при HP 60% и ниже' );
         seederAddRecipe( 'Naga Storm', $imagePath, 0, 'A', $categoryId, 0, '60', 'С вероятностью 5% отравляет врага при физической атаки', 'Molar', 1, false, 'Буря Наги, нага дагер, даггер, dagger, dager', null, 2157,
             12, 157, 'Focus', 'Critical Damage', 'Back Blow', 'Увеличивает Физ. Крит. Атк. на 67', 'Увеличивает Физ. Атк. на 200 при критической атаке', 'Увеличивает Физ. Крит. Атк. на 37 атакуя сзади' );
-        seederAddRecipe( 'Angel Slayer', $imagePath, 68000000, 'S', $categoryId, 0, '60', 'Увеличивает Точность на 3.3', 'Concentration', 1, false, 'Убийца Ангелов, as, ангел дагер, даггер, dagger, dager', null, 2052,
+        seederAddRecipe( 'Angel Slayer', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает Точность на 3.3', 'Concentration', 1, false, 'Убийца Ангелов, as, ангел дагер, даггер, dagger, dager', null, 2052,
             13, 82, 'Critical Damage', 'HP Drain', 'Haste', 'Увеличивает Физ. Атк. на 265 при критической атаке', 'Даёт 3% вампиризма', 'Увеличивает Скорость атаки на 7%' );
-        seederAddRecipe( 'Dynasty Knife', $imagePath, 195000000, 'S', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Нож Династии, дино дагер, даггер, dagger, dager', null, 3597,
+        seederAddRecipe( 'Dynasty Knife', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Нож Династии, дино дагер, даггер, dagger, dager', null, 3597,
             14, 285, 'Focus', 'Evasion', 'Critical Damage', 'Увеличивает Физ. Крит. Атк. на 116', 'Увеличивает Уклонение на 5', 'Увеличивает Физ. Атк. на 559 при критической атаке' );
         seederAddRecipe( 'Icarus Disperser', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Распылитель Икара, ик нож дагер, даггер, dagger, dager', null, 4965,
             15, 399, 'Focus', 'Evasion', 'Crit. Damage', 'Увеличивает Физ. Крит. Атк. на 116', 'Увеличивает Уклонение на 5', 'Увеличивает Физ. Атк. на 559 при критической атаке' );
@@ -395,23 +395,23 @@ class WeaponSeeder extends Seeder {
             7, 225, 'Critical Stun', 'Towering Blow', 'Wide Blow', 'Даёт 16% шанс застанить При критической атаке', 'Увеличивает Дальность Атаки', 'Увеличивает Угол Атаки' );
         seederAddRecipe( 'Orcish Poleaxe', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'оркиш пика, алебарда, древковое', 6, 1885,
             8, 555, 'Critical Stun', 'Towering Blow', 'Wide Blow', 'Даёт 15% шанс застанить При критической атаке', 'Увеличивает Дальность Атаки', 'Увеличивает Угол Атаки' );
-        seederAddRecipe( 'Great Axe', $imagePath, 16000000, 'B', $categoryId, 0, '60', 'Увеличивает мощь критической атаки на 156', 'Thunder', 1, false, 'Двуручный Топор, пика, алебарда, древковое', 6, 891,
+        seederAddRecipe( 'Great Axe', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает мощь критической атаки на 156', 'Thunder', 1, false, 'Двуручный Топор, пика, алебарда, древковое', 6, 891,
             9, 222, 'Anger', 'Critical Stun', 'Light', 'Увеличивает Физ. Атк. на 28 уменьшает HP на 15%', 'Даёт 14% шанс застанить При критической атаке', 'Увеличивает лимит веса на 20%' );
-        seederAddRecipe( 'Great Axe 100%', $imagePath, 16000000, 'B', $categoryId, 0, '100', 'Увеличивает мощь критической атаки на 156', 'Thunder', 1, false, 'Двуручный Топор, пика, алебарда, древковое', null, 891,
+        seederAddRecipe( 'Great Axe 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает мощь критической атаки на 156', 'Thunder', 1, false, 'Двуручный Топор, пика, алебарда, древковое', null, 891,
             9, 222, 'Anger', 'Critical Stun', 'Light', 'Увеличивает Физ. Атк. на 28 уменьшает HP на 15%', 'Даёт 14% шанс застанить При критической атаке', 'Увеличивает лимит веса на 20%' );
-        seederAddRecipe( 'Lance', $imagePath, 22000000, 'B', $categoryId, 0, '60', 'Увеличивает HP на 319', 'Earth', 1, false, 'Пика, ланс, пика, алебарда, древковое', null, 1346,
+        seederAddRecipe( 'Lance', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает HP на 319', 'Earth', 1, false, 'Пика, ланс, пика, алебарда, древковое', null, 1346,
             10, 339, 'Anger', 'Critical Stun', 'Towering Blow', 'Увеличивает Физ. Атк. на 30 уменьшает HP на 15%', 'Даёт 13% шанс застанить При критической атаке', 'Увеличивает Дальность Атаки' );
-        seederAddRecipe( 'Lance 100%', $imagePath, 22000000, 'B', $categoryId, 0, '100', 'Увеличивает HP на 319', 'Earth', 1, false, 'Пика, ланс, пика, алебарда, древковое', null, 1346,
+        seederAddRecipe( 'Lance 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Увеличивает HP на 319', 'Earth', 1, false, 'Пика, ланс, пика, алебарда, древковое', null, 1346,
             10, 339, 'Anger', 'Critical Stun', 'Towering Blow', 'Увеличивает Физ. Атк. на 30 уменьшает HP на 15%', 'Даёт 13% шанс застанить При критической атаке', 'Увеличивает Дальность Атаки' );
-        seederAddRecipe( 'Halberd', $imagePath, 26000000, 'A', $categoryId, 0, '60', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Lightning', 1, false, 'Алебарда, халберд, пика, алебарда, древковое', 7, 1128,
+        seederAddRecipe( 'Halberd', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает Физ. Крит. Атк. на 54.4', 'Lightning', 1, false, 'Алебарда, халберд, пика, алебарда, древковое', 7, 1128,
             11, 157, 'Haste', 'Critical Stun', 'Wide Blow', 'Увеличивает Скорость атаки на 6%', 'Даёт 25% шанс застанить При критической атаке', 'Увеличивает Угол Атаки' );
-        seederAddRecipe( 'Tallum Glaive', $imagePath, 45000000, 'A', $categoryId, 0, '60', 'Увеличивает реген HP на 5%', 'On Fire', 1, false, 'Глефа Таллума, глейв, пика, алебарда, древковое', null, 1659,
+        seederAddRecipe( 'Tallum Glaive', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает реген HP на 5%', 'On Fire', 1, false, 'Глефа Таллума, глейв, пика, алебарда, древковое', null, 1659,
             12, 157, 'Guidance', 'Health', 'Wide Blow', 'Увеличивает Точность на 4', 'Увеличивает HP на 25%', 'Увеличивает Угол Атаки' );
         seederAddRecipe( 'Tiphon\'s Spear', $imagePath, 0, 'A', $categoryId, 0, '60', 'С вероятностью 6% оглушает врага при физической атаке', 'Landslide', 1, false, 'Копье Тифона, пика, алебарда, древковое', null, 2157,
             12, 157, 'Critical Stun', 'Towering Blow', 'Wide Blow', 'Даёт 25% шанс застанить При критической атаке', 'Увеличивает Дальность Атаки', 'Увеличивает Угол Атаки' );
-        seederAddRecipe( 'Saint Spear', $imagePath, 65000000, 'S', $categoryId, 0, '60', 'Добавляет 31.25 Физ. Атк.', 'Destruction', 1, false, 'Святое Копье, саинт, сс, ss, пика, алебарда, древковое', null, 2052,
+        seederAddRecipe( 'Saint Spear', $imagePath, 0, 'S', $categoryId, 0, '60', 'Добавляет 31.25 Физ. Атк.', 'Destruction', 1, false, 'Святое Копье, саинт, сс, ss, пика, алебарда, древковое', null, 2052,
             13, 82, 'Health', 'Guidance', 'Haste', 'Увеличивает HP на 25%', 'Увеличивает Точность на 5', 'Увеличивает Скорость атаки на 7%' );
-        seederAddRecipe( 'Dynasty Halberd', $imagePath, 160000000, 'S', $categoryId, 0, '60', 'Увеличивает HP на 492', 'Earth', 1, false, 'Алебарда Династии, дино, пика, алебарда, древковое', null, 3597,
+        seederAddRecipe( 'Dynasty Halberd', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает HP на 492', 'Earth', 1, false, 'Алебарда Династии, дино, пика, алебарда, древковое', null, 3597,
             14, 285, 'Anger', 'Critical Stun', 'Light', 'Уменьшает HP на 15% и Увеличивает Физ. Атк. на 78', 'Даёт 48% шанс застанить при критической атаке', 'Увеличивает лимит веса на 20%' );
         seederAddRecipe( 'Icarus Trident', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Увеличивает мощь критической атаки на 377', 'Thunder', 1, false, 'Трезубец Икара, ик тридент, пика, алебарда, древковое', null, 4965,
             15, 399, 'Anger', 'Critical Stun', 'Light', 'Уменьшает HP на 15% Увеличивает Физ. Атк. на 78 При критической атаке', 'Даёт 48% шанс застанить при критической атаке', 'Увеличивает лимит веса на 20%' );
@@ -431,9 +431,9 @@ class WeaponSeeder extends Seeder {
             7, 306, 'Rsk. Evasion', 'Rsk. Haste', 'Haste', 'Увеличивает Уклонение на 6 при HP 60% и ниже', 'Увеличивает Скорость атаки на 12% при HP 60% и ниже', 'Увеличивает Скорость атаки на 7%' );
         seederAddRecipe( 'Great Pata', $imagePath, 0, 'C', $categoryId, 0, '100', null, null, 1, false, 'пата когти, кастеты, костеты, кости', 6, 1885,
             8, 555, 'Critical Drain', 'Critical Poison', 'Rsk. Haste', 'Поглощает 10 НР цели при критической атаке', 'Увеличивает Скорость атаки на 11% при HP 60% и ниже', 'Увеличивает Скорость атаки на 11% при HP 60% и ниже' );
-        seederAddRecipe( 'Arthro Nail', $imagePath, 13000000, 'B', $categoryId, 0, '60', 'Добавляет 21.2 Физ. Атк.', 'Destruction', 1, false, 'Коготь Артро, артро нейл, когти, кастеты, костеты, кости', 6, 891,
+        seederAddRecipe( 'Arthro Nail', $imagePath, 0, 'B', $categoryId, 0, '60', 'Добавляет 21.2 Физ. Атк.', 'Destruction', 1, false, 'Коготь Артро, артро нейл, когти, кастеты, костеты, кости', 6, 891,
             9, 222, 'Critical Poison', 'Rsk. Evasion', 'Rsk. Haste', 'Вероятность отравить цель 14% при критической атаке', 'Увеличивает Уклонение на 6 при HP 60% и ниже', 'Увеличивает Скорость атаки на 10% при HP 60% и ниже' );
-        seederAddRecipe( 'Arthro Nail 100%', $imagePath, 13000000, 'B', $categoryId, 0, '100', 'Добавляет 21.2 Физ. Атк.', 'Destruction', 1, false, 'Коготь Артро, артро нейл, когти, кастеты, костеты, кости', 6, 891,
+        seederAddRecipe( 'Arthro Nail 100%', $imagePath, 0, 'B', $categoryId, 0, '100', 'Добавляет 21.2 Физ. Атк.', 'Destruction', 1, false, 'Коготь Артро, артро нейл, когти, кастеты, костеты, кости', 6, 891,
             9, 222, 'Critical Poison', 'Rsk. Evasion', 'Rsk. Haste', 'Вероятность отравить цель 14% при критической атаке', 'Увеличивает Уклонение на 6 при HP 60% и ниже', 'Увеличивает Скорость атаки на 10% при HP 60% и ниже' );
         seederAddRecipe( 'Bellion Cestus', $imagePath, 0, 'B', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Цестус Беллиона, беллионы, белионы, когти, кастеты, костеты, кости', null, 1346,
             10, 339, 'Critical Drain', 'Critical Poison', 'Rsk. Haste', 'Поглощает 14 НР цели при критической атаке', 'Вероятность отравить цель 12% при критической атаке', 'Увеличивает Скорость атаки на 9% при HP 60% и ниже' );
@@ -441,13 +441,13 @@ class WeaponSeeder extends Seeder {
             10, 339, 'Critical Drain', 'Critical Poison', 'Rsk. Haste', 'Поглощает 14 НР цели при критической атаке', 'Вероятность отравить цель 12% при критической атаке', 'Увеличивает Скорость атаки на 9% при HP 60% и ниже' );
         seederAddRecipe( 'Blood Tornado', $imagePath, 0, 'A', $categoryId, 0, '60', 'Добавляет 26.9 Физ. Атк.', 'Destruction', 1, false, 'Кровавое Торнадо, блуд, блудик, когти, кастеты, костеты, кости', 7, 1128,
             11, 157, 'Haste', 'Focus', 'Anger', 'Увеличивает Скорость атаки на 6%', 'Увеличивает Физ. Крит. Атк. на 61', 'Уменьшает HP на 15% и Увеличивает Физ. Атк. на 38' );
-        seederAddRecipe( 'Dragon Grinder', $imagePath, 39000000, 'A', $categoryId, 0, '60', 'Увеличивает HP на 372', 'Earth', 1, false, 'Погибель Дракона, драгон гриндер, когти, кастеты, костеты, кости', null, 1659,
+        seederAddRecipe( 'Dragon Grinder', $imagePath, 0, 'A', $categoryId, 0, '60', 'Увеличивает HP на 372', 'Earth', 1, false, 'Погибель Дракона, драгон гриндер, когти, кастеты, костеты, кости', null, 1659,
             12, 157, 'Rsk. Evasion', 'Guidance', 'Health', 'При HP равном 60% или ниже, Увеличивает Уклонение на 6', 'Увеличивает Точность на 5', 'Увеличивает HP на 25%' );
         seederAddRecipe( 'Sobekk\'s Hurricane', $imagePath, 0, 'A', $categoryId, 0, '60', 'С вероятностью 6% оглушает врага при физической атаке', 'Landslide', 1, false, 'Ураган Собекка, когти, кастеты, костеты, кости', null, 2157,
             12, 157, 'Rsk. Haste', 'Haste', 'Critical Drain', 'Увеличивает Скорость атаки на 11% при HP 60% и ниже', 'Увеличивает Скорость атаки на 6%', 'Увеличивает возможность поглощения 14 HP при критической атаке' );
-        seederAddRecipe( 'Demon Splinter', $imagePath, 58000000, 'S', $categoryId, 0, '60', 'Увеличивает мощь критической атаки на 528', 'Thunder', 1, false, 'Демон Одиночка, сплинтер, когти, кастеты, костеты, кости', null, 2052,
+        seederAddRecipe( 'Demon Splinter', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает мощь критической атаки на 528', 'Thunder', 1, false, 'Демон Одиночка, сплинтер, когти, кастеты, костеты, кости', null, 2052,
             13, 82, 'Focus', 'Health', 'Critical Stun', 'Увеличивает Физ. Крит. Атк. на 80', 'Увеличивает HP на 25%', 'Даёт 27% шанс застанить при критической атаке' );
-        seederAddRecipe( 'Dynasty Bagh-Nakh', $imagePath, 110000000, 'S', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Коготь Тигра Династии, дино, когти, кастеты, костеты, кости', null, 3597,
+        seederAddRecipe( 'Dynasty Bagh-Nakh', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Коготь Тигра Династии, дино, когти, кастеты, костеты, кости', null, 3597,
             14, 285, 'Rsk. Evasion', 'Focus', 'Haste', 'Увеличивает Уклонение на 6.8 при HP 60% и ниже', 'увеличивает Фик. Крит. Атк. на 106', 'Увеличивает Скорость атаки на 10%' );
         seederAddRecipe( 'Icarus Hand', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Добавляет 51.26 Физ. Атк.', 'Destruction', 1, false, 'Рука Икара, ик, когти, кастеты, костеты, кости', null, 4965,
             15, 399, 'Rsk. Evasion', 'Focus', 'Haste', 'Увеличивает Уклонение на 6.8 при HP 60% и ниже', 'увеличивает Фик. Крит. Атк. на 106', 'Увеличивает Скорость атаки на 10%' );
