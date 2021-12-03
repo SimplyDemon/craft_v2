@@ -28,16 +28,19 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
         $isPriceDifferent = $adminResourcePrice !== $resourcePrice;
         $tooltipResourcePriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $adminResourcePrice ) . '</b>';
         $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $resourceAdminLinePrice ) . '</b>';
+
+        if ( $resource->recipe ) {
+            $resourceUrl = route( 'recipes.show', [ 'id' => $resource->recipe ] );
+        } else {
+            $resourceUrl = route( 'resources.show', [ 'id' => $resource ] );
+        }
         ?>
         <tr>
             <td>
-                @if($resource->recipe)
-                    <a target="_blank" href="{{route('recipes.show', [ 'id' => $resource->recipe->id ]  )}}">
-                        @endif
-                        <img width="30" src="{{asset('storage') . '/' . $resource->img}}" alt="resource">{{$resource->name}}
-                        @if($resource->recipe)
-                    </a>
-                @endif
+                <a class="resource-link" href="{{$resourceUrl}}">
+                    <img width="30" src="{{asset('storage') . '/' . $resource->img}}" alt="{{$resource->name}}">
+                    {{$resource->name}}
+                </a>
             </td>
             <td data-quantity="{{$resourceQuantity}}" data-quantity-base="{{$resourceQuantity}}">
                 {{$resourceQuantity}}

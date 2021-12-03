@@ -1,5 +1,11 @@
+let isConfirmAdded = false;
 function updatePrices() {
     let tables = $( 'table' );
+    if ( !isConfirmAdded ) {
+        addConfirm();
+        isConfirmAdded = true;
+    }
+
     tables.each( function() {
         let rows     = $( this ).find( 'tbody tr:not(".disabled-with-js, .tr-total")' );
         let output   = '';
@@ -48,7 +54,7 @@ function updateRecipesTotal() {
 
     if ( dataCraftCount.length > 0 && parseInt( dataCraftCount.attr( 'data-craft-count' ) ) > 0 && value.length > 0 && parseInt( value.attr( 'data-recipe-price' ) ) >= 0 ) {
         let craftCount       = parseInt( dataCraftCount.attr( 'data-craft-count' ) );
-        value                = parseInt( value.attr( 'data-recipe-price' ) );
+        value = parseInt( value.attr( 'data-recipe-price' ) );
         let valueForAllCount = value * craftCount;
         priceContainer.css( 'visibility', 'visible' );
         $( 'span#recipe-price-craft-count' ).html( craftCount );
@@ -149,4 +155,10 @@ $( "tr.tr-total td[data-craft-count] input" ).on( 'change', function() {
 
 $( function() {
     $( '[data-toggle="tooltip"]' ).tooltip()
-} )
+} );
+
+function addConfirm() {
+    $( '.resource-link' ).click( function() {
+        return confirm( 'При переходе все заполненные данные пропадут.' );
+    } )
+}
