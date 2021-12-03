@@ -22,6 +22,19 @@ $chanceText = 'MasterWork';
 if ( $single->grade === 'C' ) {
     $chanceText = 'DoubleCraft';
 }
+if ( $single->sa_lvl ) {
+    $saLvl              = $single->sa_lvl;
+    $saGemCount         = $single->sa_gem_count;
+    $saRedName          = $single->sa_red_name;
+    $saRedDescription   = $single->sa_red_description;
+    $saGreenName        = $single->sa_green_name;
+    $saGreenDescription = $single->sa_green_description;
+    $saBlueName         = $single->sa_blue_name;
+    $saBlueDescription  = $single->sa_blue_description;
+    $saRedImg           = asset( '/images/SA Red.png' );
+    $saGreenImg         = asset( '/images/SA Green.png' );
+    $saBlueImg          = asset( '/images/SA Blue.png' );
+}
 
 $masterWorkText = $single->masterworkText;
 
@@ -65,10 +78,12 @@ $isCountMoreThenOne = $single->craft_count !== 1;
         @elseif($recipePriceSell && $recipePriceSell > 0)
             <p>Цена: {{prettifyNumber($recipePriceSell)}}</p>
         @endif
-        <p>
-            {!!$single->crystals_text !!}
-        </p>
-
+        @if($single->crystals_text)
+            <p>
+                {!!$single->crystals_text !!}
+            </p>
+        @endif
+        {!! $single->sa_html !!}
         @if($single->resource)
             <a href="{{ route( 'resources.show', [ 'id' => $single->resource->id ] ) }}">
                 <h3>Ресурс</h3>

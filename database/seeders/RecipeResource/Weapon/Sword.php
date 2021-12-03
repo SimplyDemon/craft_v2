@@ -110,19 +110,19 @@ class Sword extends RecipeResourceMain {
     }
 
     protected function addStormBringer() {
-        $piece  = Resource::where( 'name', 'Storm Bringer Blade' )->firstOrFail();
-        $recipe = Resource::where( 'name', 'Recipe: Storm Bringer' )->firstOrFail();
-        $item   = Recipe::where( 'name', 'Storm Bringer' )->firstOrFail();
+	    $piece  = Resource::where( 'name', 'StormBringer Blade' )->firstOrFail();
+	    $recipe = Resource::where( 'name', 'Recipe: StormBringer' )->firstOrFail();
+	    $item   = Recipe::where( 'name', 'StormBringer' )->firstOrFail();
 
-        $resources   = [];
-        $resources[] = [
-            'resourceId'       => $this->ResourceHelper->crystalD->id,
-            'resourceQuantity' => 700,
-        ];
-        $resources[] = [
-            'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
-            'resourceQuantity' => 25,
-        ];
+	    $resources   = [];
+	    $resources[] = [
+		    'resourceId'       => $this->ResourceHelper->crystalD->id,
+		    'resourceQuantity' => 700,
+	    ];
+	    $resources[] = [
+		    'resourceId'       => $this->ResourceHelper->syntheticCokes->id,
+		    'resourceQuantity' => 25,
+	    ];
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->mithrilAlloy->id,
             'resourceQuantity' => 25,

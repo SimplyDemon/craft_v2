@@ -160,3 +160,15 @@ canvas#price-chart {
     background-color: #302a2a;
 }
 
+.sa-info p {
+    margin-bottom: 5px;
+}
+
+.tooltip-inner {
+    min-width: 100px;
+    max-width: 100%;
+}
+
+.tooltip-inner .col-4 {
+    max-width: 150px;
+}

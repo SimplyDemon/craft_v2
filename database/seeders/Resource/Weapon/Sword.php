@@ -23,14 +23,14 @@ class Sword extends ResourceMain {
 
         $this->resources[] = [
             'type'       => 'weapon',
-            'name'       => 'Storm Bringer Blade',
+            'name'       => 'StormBringer Blade',
             'price_sell' => 0,
             'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->defaultWeaponBladeFilePath,
         ];
         $this->resources[] = [
             'type'       => 'weapon',
-            'name'       => 'Recipe: Storm Bringer',
+            'name'       => 'Recipe: StormBringer',
             'price_sell' => 0,
             'price_buy'  => 0,
             'filePath'   => $this->resourceSeeder->recipeCImageFilePath,

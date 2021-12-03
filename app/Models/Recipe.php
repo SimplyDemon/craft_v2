@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\View\View;
 
 class Recipe extends Model {
     use SoftDeletes;
@@ -184,27 +185,30 @@ class Recipe extends Model {
         $crystalsText = null;
 
         if ( $this->grade && $this->crystals_count ) {
-            switch ( $this->grade ) {
-                case 'S-84':
-                case 'S-80':
-                    $crystalsGrade = 'S';
-                    break;
-                default:
-                    $crystalsGrade = $this->grade;
-                    break;
-            }
-
-            $crystalResource = \App\Models\Resource::where( 'name', 'Crystal ' . $crystalsGrade )->firstOrFail();
+            $crystalResource = \App\Models\Resource::where( 'name', 'Crystal ' . $this->basic_grade )->firstOrFail();
             $crystalImgPath  = asset( 'storage' ) . '/' . $crystalResource->img;
-
-            $crystalsText .= "<img width='20' src='{$crystalImgPath}' alt='{$crystalResource->name}'>";
-
-            $crystalsPrice = prettifyNumber( $crystalResource->price * $this->crystals_count );
-            $crystalsText  .= "$crystalResource->name: {$this->crystals_count}. Их цена: $crystalsPrice";
+            $crystalUrl      = route( 'resources.show', $crystalResource );
+            $crystalsText    .= "<a href='{$crystalUrl}'><img width='20' src='{$crystalImgPath}' alt='{$crystalResource->name}'></a>";
+            $crystalsPrice   = prettifyNumber( $crystalResource->price * $this->crystals_count );
+            $crystalsText    .= "$crystalResource->name: {$this->crystals_count}. Их цена: $crystalsPrice";
         }
 
         return $crystalsText;
 
+    }
+
+    public function getBasicGradeAttribute() {
+        switch ( $this->grade ) {
+            case 'S-84':
+            case 'S-80':
+                $basicGrade = 'S';
+                break;
+            default:
+                $basicGrade = $this->grade;
+                break;
+        }
+
+        return $basicGrade;
     }
 
     public function getPriceAttribute() {
@@ -223,4 +227,59 @@ class Recipe extends Model {
         return $recipePriceSell;
     }
 
+    public function getSaHtmlAttribute() {
+        $saHtml = null;
+        $saInfo = $this->sa_info;
+        if ( $saInfo ) {
+            $saHtml = view( 'pages.recipes.SaInfoShow', $saInfo );
+        }
+
+        return $saHtml;
+    }
+
+    public function getSaHtmlIndexAttribute() {
+        $saHtml = null;
+        $saInfo = $this->sa_info;
+        if ( $saInfo ) {
+            $saHtml = view( 'pages.recipes.SaInfoIndex', $saInfo );
+        }
+
+        return $saHtml;
+    }
+
+    public function getSaInfoAttribute() {
+        $saInfo = null;
+        if ( $this->sa_lvl ) {
+            $saInfo             = [];
+            $saLvl              = $this->sa_lvl;
+            $saGemCount         = $this->sa_gem_count;
+            $saRedName          = $this->sa_red_name;
+            $saRedDescription   = $this->sa_red_description;
+            $saGreenName        = $this->sa_green_name;
+            $saGreenDescription = $this->sa_green_description;
+            $saBlueName         = $this->sa_blue_name;
+            $saBlueDescription  = $this->sa_blue_description;
+            $saRedImg           = asset( '/images/SA Red.png' );
+            $saGreenImg         = asset( '/images/SA Green.png' );
+            $saBlueImg          = asset( '/images/SA Blue.png' );
+            $gem                = \App\Models\Resource::where( 'name', "Gemstone ({$this->basic_grade}-grade)" )->firstOrFail();
+            $gemsPriceTotal     = prettifyNumber( $gem->price * $saGemCount );
+
+            $saInfo['saLvl']              = $saLvl;
+            $saInfo['saGemCount']         = $saGemCount;
+            $saInfo['saRedName']          = $saRedName;
+            $saInfo['saRedDescription']   = $saRedDescription;
+            $saInfo['saGreenName']        = $saGreenName;
+            $saInfo['saGreenDescription'] = $saGreenDescription;
+            $saInfo['saBlueName']         = $saBlueName;
+            $saInfo['saBlueDescription']  = $saBlueDescription;
+            $saInfo['saRedImg']           = $saRedImg;
+            $saInfo['saGreenImg']         = $saGreenImg;
+            $saInfo['saBlueImg']          = $saBlueImg;
+            $saInfo['gem']                = $gem;
+            $saInfo['gemsPriceTotal']     = $gemsPriceTotal;
+        }
+
+        return $saInfo;
+    }
 }

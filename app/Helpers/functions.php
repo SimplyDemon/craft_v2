@@ -34,7 +34,30 @@ function copyFile( string $filePath, string $pathTo ) {
     return $explodedPath[1];
 }
 
-function seederAddRecipe( string $name, string $imagePath, int $price, string $grade, int $categoryId, int $craftCost = 0, string $percent = '60', $masterworkDescription = null, $masterworkName = null, $count = 1, $isResource = false, $keywords = null, $lvl = null, $crystalsCount = null ) {
+function seederAddRecipe(
+    string $name,
+    string $imagePath,
+    int $price,
+    string $grade,
+    int $categoryId,
+    int $craftCost = 0,
+    string $percent = '60',
+    $masterworkDescription = null,
+    $masterworkName = null,
+    $count = 1,
+    $isResource = false,
+    $keywords = null,
+    $lvl = null,
+    $crystalsCount = null,
+    $saLvl = null,
+    $saGemCount = null,
+    $saRedName = null,
+    $saGreenName = null,
+    $saBlueName = null,
+    $saRedDescription = null,
+    $saGreenDescription = null,
+    $saBlueDescription = null
+) {
     /* case for 100% recipes, don't want copy paste every image B-grade */
     $imageName  = str_replace( ' 100%', '', $name );
     $resourceId = null;
@@ -60,6 +83,14 @@ function seederAddRecipe( string $name, string $imagePath, int $price, string $g
         'keywords'               => $keywords,
         'lvl'                    => $lvl,
         'crystals_count'         => $crystalsCount,
+        'sa_lvl'                 => $saLvl,
+        'sa_gem_count'           => $saGemCount,
+        'sa_red_name'            => $saRedName,
+        'sa_red_description'     => $saRedDescription,
+        'sa_green_name'          => $saGreenName,
+        'sa_green_description'   => $saGreenDescription,
+        'sa_blue_name'           => $saBlueName,
+        'sa_blue_description'    => $saBlueDescription,
     ] );
 }
 
