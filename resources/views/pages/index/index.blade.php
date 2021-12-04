@@ -128,41 +128,39 @@
             </div>
             @endif
         </div>
-    </div>
+        @if($faq && is_array($faq))
+            <div class="nk-box bg-dark-1 sd-background">
+                <div class="container text-center">
+                    <div class="nk-gap-2"></div>
+                    <div class="text-center">
+                        <h2 class="nk-title h1">Вопросы и ответы</h2>
+                    </div>
 
-    <div class="nk-box">
-        <div class="nk-gap-4"></div>
-        <div class="container">
-            <div class="text-center">
-                <h2 class="nk-title h1">В разработке</h2>
-            </div>
-        </div>
-
-        <?php
-
-        ?>
-
-        <div class="nk-carousel-2 nk-carousel-x1" data-autoplay="12000" data-dots="true">
-            <div class="nk-carousel-inner">
-                @foreach($inProgresses as $inProgress)
-                    <div>
-                        <div>
-                            <div class="row">
-                                <div class="col-md-8 offset-md-2">
-                                    <blockquote class="nk-testimonial">
-                                        <div class="nk-testimonial-body">
-                                            <em>{{$inProgress}}</em>
-                                        </div>
-                                    </blockquote>
+                    <div id="accordion">
+                        @foreach($faq as $question => $answer)
+                            <div id="faq-{{$loop->index}}">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link nk-title h1" data-toggle="collapse" data-target="#faq-collapse-{{$loop->index}}" aria-expanded="false" aria-controls="#faq-collapse-{{$loop->index}}">
+                                        {{$question}}
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="faq-collapse-{{$loop->index}}" class="collapse {{$loop->index === 0 ? 'show' : ''}}" aria-labelledby="faq-{{$loop->index}}" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>
+                                        {{$answer}}
+                                    </p>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
+
                     </div>
-                @endforeach
+                </div>
             </div>
-        </div>
+        @endif
         <div class="nk-gap-6"></div>
     </div>
+
 
 @endsection
 

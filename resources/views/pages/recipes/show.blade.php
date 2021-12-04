@@ -27,7 +27,6 @@ $masterWorkText = $single->masterworkText;
 $isCountMoreThenOne = $single->craft_count !== 1;
 ?>
 <div class="nk-main">
-
     <div class="nk-box">
         <div class="container">
             <div class="nk-gap-5"></div>
