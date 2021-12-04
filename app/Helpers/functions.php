@@ -179,13 +179,13 @@ function prettifyNumber( int $number ): string {
 }
 
 function getFaqSchemaHtml( $faq ) {
-    return view( 'pages.index.FaqSchema', [
+    return view( 'pages.index.faq-schema', [
         'faq' => $faq,
     ] );
 }
 
 function getRecipeSchemaHtml( $recipe ) {
-    return view( 'pages.recipes.Schema', [
+    return view( 'pages.recipes.schema', [
         'single' => $recipe,
     ] );
 }

@@ -237,7 +237,7 @@ class Recipe extends Model {
         $saHtml = null;
         $saInfo = $this->sa_info;
         if ( $saInfo ) {
-            $saHtml = view( 'pages.recipes.SaInfoShow', $saInfo );
+            $saHtml = view( 'pages.recipes.sa-info-show', $saInfo );
         }
 
         return $saHtml;
@@ -247,7 +247,7 @@ class Recipe extends Model {
         $saHtml = null;
         $saInfo = $this->sa_info;
         if ( $saInfo ) {
-            $saHtml = view( 'pages.recipes.SaInfoIndex', $saInfo );
+            $saHtml = view( 'pages.recipes.sa-info-index', $saInfo );
         }
 
         return $saHtml;
@@ -265,9 +265,9 @@ class Recipe extends Model {
             $saGreenDescription = $this->sa_green_description;
             $saBlueName         = $this->sa_blue_name;
             $saBlueDescription  = $this->sa_blue_description;
-            $saRedImg           = asset( '/images/SA Red.png' );
-            $saGreenImg         = asset( '/images/SA Green.png' );
-            $saBlueImg          = asset( '/images/SA Blue.png' );
+            $saRedImg           = asset( '/images/SA Red.webp' );
+            $saGreenImg         = asset( '/images/SA Green.webp' );
+            $saBlueImg          = asset( '/images/SA Blue.webp' );
             $gem                = \App\Models\Resource::where( 'name', "Gemstone ({$this->basic_grade}-grade)" )->firstOrFail();
             $gemsPriceTotal     = prettifyNumber( $gem->price * $saGemCount );
 
