@@ -150,7 +150,7 @@
                             <div id="faq-collapse-{{$loop->index}}" class="collapse {{$loop->index === 0 ? 'show' : ''}}" aria-labelledby="faq-{{$loop->index}}" data-parent="#accordion">
                                 <div class="card-body">
                                     <p>
-                                        {{$answer}}
+                                        {!! $answer !!}
                                     </p>
                                 </div>
                             </div>

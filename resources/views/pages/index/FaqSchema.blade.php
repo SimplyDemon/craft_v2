@@ -9,12 +9,13 @@
         "name": "{{$question}}",
         "acceptedAnswer": {
         "@type": "Answer",
-        "text": "<p>{{$answer}}</p>"
+        "text": "<p>{!! $answer !!}</p>"
         }
     }{{$loop->last ? '' : ','}}
     @endforeach
     ]
 }
+
 
 
 </script>
