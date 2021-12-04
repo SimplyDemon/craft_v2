@@ -177,3 +177,15 @@ function generateSitemap() {
 function prettifyNumber( int $number ): string {
     return number_format( $number, 0, ' ', ' ' );
 }
+
+function getFaqSchemaHtml( $faq ) {
+    return view( 'pages.index.FaqSchema', [
+        'faq' => $faq,
+    ] );
+}
+
+function getRecipeSchemaHtml( $recipe ) {
+    return view( 'pages.recipes.Schema', [
+        'single' => $recipe,
+    ] );
+}

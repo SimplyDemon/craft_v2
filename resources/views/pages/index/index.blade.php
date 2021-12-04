@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+	'faq' => $faq
+])
 @section('content')
 
     <div class="nk-main">

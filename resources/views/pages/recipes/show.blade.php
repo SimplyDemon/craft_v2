@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+	'recipe' => $single,
+	])
 @section('content')
     @if(isset($title))
 @section('title', $title)

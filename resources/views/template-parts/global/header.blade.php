@@ -25,6 +25,14 @@ $_SESSION['isAnimationWasShowed'] = true;
         <title itemprop="headline">Калькулятор крафта Asterios</title>
     @endif
 
+    @if(isset($faq))
+        {!! getFaqSchemaHtml($faq) !!}
+    @endif
+
+    @if(isset($recipe))
+        {!! getRecipeSchemaHtml($recipe) !!}
+    @endif
+
     @if(Route::is('recipes.show') && View::hasSection('single'))
         <meta itemprop="keywords" name="keywords" content="@yield('meta_keywords') @yield('title')">
     @else
