@@ -194,7 +194,7 @@ class Recipe extends Model {
             $crystalResource = \App\Models\Resource::where( 'name', 'Crystal ' . $this->basic_grade )->firstOrFail();
             $crystalImgPath  = asset( 'storage' ) . '/' . $crystalResource->img;
             $crystalUrl      = route( 'resources.show', $crystalResource );
-            $crystalsText    .= "<a href='{$crystalUrl}'><img width='20' src='{$crystalImgPath}' alt='{$crystalResource->name}'></a>";
+            $crystalsText    .= "<a class='no-decoration resource-link' href='{$crystalUrl}'><img width='20' src='{$crystalImgPath}' alt='{$crystalResource->name}'></a>";
             $crystalsPrice   = prettifyNumber( $crystalResource->price * $this->crystals_count );
             $crystalsText    .= "$crystalResource->name: {$this->crystals_count}. Их цена: $crystalsPrice";
         }

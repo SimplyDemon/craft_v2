@@ -172,3 +172,7 @@ canvas#price-chart {
 .tooltip-inner .col-4 {
     max-width: 150px;
 }
+
+a.no-decoration:hover {
+    text-decoration: none;
+}

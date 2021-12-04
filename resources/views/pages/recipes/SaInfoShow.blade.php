@@ -1,7 +1,7 @@
 <div class="sa-info">
     <p>
         Уровень СА: {{$saLvl}} Гемов:
-        <a href="{{route('resources.show', $gem)}}">
+        <a class="no-decoration resource-link" href="{{route('resources.show', $gem)}}">
             <img width='20' src="{{asset('storage') . '/' . $gem->img}}" alt='{{$gem->name}}'>
         </a>
         {{$saGemCount}} ({{$gemsPriceTotal}})

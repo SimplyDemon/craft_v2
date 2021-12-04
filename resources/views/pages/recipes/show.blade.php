@@ -16,9 +16,9 @@
 <div class="nk-main">
     <div class="nk-box">
         <div class="container">
-            <div class="nk-gap-5"></div>
+            <div class="nk-gap-2"></div>
             <h1 class="nk-title">{{ $title ?? $single->name }}</h1>
-            <div class="nk-gap-4"></div>
+            <div class="nk-gap-2"></div>
         </div>
     </div>
 
