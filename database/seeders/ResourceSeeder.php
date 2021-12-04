@@ -61,15 +61,13 @@ class ResourceSeeder extends Seeder {
         $this->pieceFolderPathArmorHeavy = $this->pieceFolderPathArmor . 'heavy/';
         $this->pieceFolderPathArmorRobe  = $this->pieceFolderPathArmor . 'robe/';
 
+        $this->defaultWeaponBladeFilePath = $this->pieceFolderPathWeapon . 'Blade.webp';
+        $this->defaultArmorPieceFilePath  = $this->pieceFolderPathArmor . 'Piece.webp';
 
-        $this->defaultWeaponBladeFilePath = $this->pieceFolderPathWeapon . 'Blade.png';
-        $this->defaultArmorPieceFilePath  = $this->pieceFolderPathArmor . 'Piece.png';
-
-        $this->recipeCImageFilePath = $this->recipeFolderPath . 'Recipe C.png';
-        $this->recipeBImageFilePath = $this->recipeFolderPath . 'Recipe B.png';
-        $this->recipeAImageFilePath = $this->recipeFolderPath . 'Recipe A.png';
-        $this->recipeSImageFilePath = $this->recipeFolderPath . 'Recipe S.png';
-
+        $this->recipeCImageFilePath = $this->recipeFolderPath . 'Recipe C.webp';
+        $this->recipeBImageFilePath = $this->recipeFolderPath . 'Recipe B.webp';
+        $this->recipeAImageFilePath = $this->recipeFolderPath . 'Recipe A.webp';
+        $this->recipeSImageFilePath = $this->recipeFolderPath . 'Recipe S.webp';
     }
 
 	protected function addResources() {
@@ -182,7 +180,6 @@ class ResourceSeeder extends Seeder {
         $this->resources = array_merge( $this->resources, $bootResources, $fullBodyResources, $glovesResources, $helmetResources, $lowerResources, $upperResources );
     }
 
-
     protected function addRecipesPiecesArmorUniversal() {
         $boot          = new \Database\Seeders\Resource\Armor\Universal\Boot();
         $bootResources = $boot->getResources();
@@ -235,7 +232,7 @@ class ResourceSeeder extends Seeder {
     protected function createResource( string $name, int $priceSell, int $priceBuy = null, $filePath = null, $type = 'resource' ): Resource {
         $imagePath = 'resource';
         if ( ! $filePath ) {
-            $filePath = "image/$imagePath/" . $name . '.png';
+            $filePath = "image/{$imagePath}/{$name}.webp";
         }
 
         return Resource::create( [
@@ -243,20 +240,19 @@ class ResourceSeeder extends Seeder {
             'slug'       => Str::slug( $name, '-' ),
             'price_sell' => $priceSell,
             'price_buy'  => $priceBuy,
-            'img'        => copyFile( $filePath, "app/public/uploads/$imagePath/" ),
+            'img'        => copyFile( $filePath, "app/public/uploads/{$imagePath}/" ),
             'type'       => $type,
         ] );
     }
 
-
     protected function seed() {
         foreach ( $this->resources as $resource ) {
             if ( isset( $resource['is_custom_piece_weapon'] ) && $resource['is_custom_piece_weapon'] ) {
-                $filePath = "{$this->pieceFolderPathWeapon}{$resource['name']}.png";
+                $filePath = "{$this->pieceFolderPathWeapon}{$resource['name']}.webp";
             } else if ( isset( $resource['is_custom_piece_armor'] ) && $resource['is_custom_piece_armor'] ) {
-                $filePath = "{$this->pieceFolderPathArmor}{$resource['name']}.png";
+                $filePath = "{$this->pieceFolderPathArmor}{$resource['name']}.webp";
             } else if ( isset( $resource['is_custom_piece_jewelry'] ) && $resource['is_custom_piece_jewelry'] ) {
-                $filePath = "{$this->pieceFolderPathJewelry}{$resource['name']}.png";
+                $filePath = "{$this->pieceFolderPathJewelry}{$resource['name']}.webp";
             } else if ( isset( $resource['filePath'] ) ) {
                 $filePath = $resource['filePath'];
             } else {

@@ -73,7 +73,7 @@ function seederAddRecipe(
         'price_sell'             => $price,
         'percent'                => $percent,
         'grade'                  => $grade,
-        'img'                    => copyFile( "image/$imagePath/" . $imageName . '.png', "app/public/uploads/$imagePath/" ),
+        'img'                    => copyFile( "image/{$imagePath}/{$imageName}.webp", "app/public/uploads/{$imagePath}/" ),
         'category_id'            => $categoryId,
         'craft_cost'             => $craftCost,
         'masterwork_description' => $masterworkDescription,

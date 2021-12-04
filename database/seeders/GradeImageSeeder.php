@@ -14,7 +14,7 @@ class GradeImageSeeder extends Seeder {
         $grades = [ 'D', 'C', 'B', 'A', 'S', 'S-80', 'S-84' ];
         foreach ( $grades as $grade ) {
 
-            copyFile( "image/grade/{$grade}.png", "app/public/uploads/grade/" );
+            copyFile( "image/grade/{$grade}.webp", "app/public/uploads/grade/" );
         }
 
     }
