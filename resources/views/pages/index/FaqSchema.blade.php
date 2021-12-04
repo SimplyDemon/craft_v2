@@ -15,7 +15,4 @@
     @endforeach
     ]
 }
-
-
-
 </script>

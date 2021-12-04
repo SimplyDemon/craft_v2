@@ -132,14 +132,27 @@ class RecipeController extends Controller {
 
 
     public function show( int $id ) {
-        $single = Recipe::findOrFail( $id );
-        $user   = auth()->user();
+        $single       = Recipe::findOrFail( $id );
+        $user         = auth()->user();
+        $recipe100    = Recipe::where( 'name', $single->name . ' 100%' )->first();
+        $canonicalUrl = ( $single->percent === '60' && $recipe100 ) ? route( 'recipes.show', [ 'id' => $recipe100->id ] ) : null;
+        $recipePrice  = $single->price;
+
+        $chanceText = 'MasterWork';
+        if ( $single->grade === 'C' ) {
+            $chanceText = 'DoubleCraft';
+        }
+        $isCountMoreThenOne = $single->craft_count !== 1;
 
         return view( $this->folderPathUser . 'show', [
-            'single' => $single,
-            'id'     => $single->id,
-            'user'   => $user,
-            'title'  => $single->name,
+            'single'             => $single,
+            'id'                 => $single->id,
+            'user'               => $user,
+            'title'              => $single->name,
+            'canonicalUrl'       => $canonicalUrl,
+            'recipePrice'        => $recipePrice,
+            'chanceText'         => $chanceText,
+            'isCountMoreThenOne' => $isCountMoreThenOne,
         ] );
     }
 
