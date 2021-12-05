@@ -36,10 +36,14 @@
 
 - Калькулятор и таблицу манора.
 
+- Добавить расчёт себестоимость кри при разбиении, когда появится возможность получать цены автоматически. SELECT
+  id,name,crystal_count,default_price,default_price/crystal_count as sebestoimost FROM itemdata where crystal_type="b"
+  and crystal_count > 0 order by sebestoimost
+
 ## DONE
 
 - Перевести все изображения в webp.
-  
+
 - Отрефакторить код.
 
 - Больше микроразметки.
