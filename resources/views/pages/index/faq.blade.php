@@ -1,4 +1,4 @@
-<div class="nk-box bg-dark-1 sd-background">
+<div class="nk-box bg-dark-1 sd-background faq-block">
     <div class="container text-center">
         <div class="nk-gap-2"></div>
         <div class="text-center">

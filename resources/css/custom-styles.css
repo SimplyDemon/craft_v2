@@ -176,3 +176,7 @@ canvas#price-chart {
 a.no-decoration:hover {
     text-decoration: none;
 }
+
+.faq-block button {
+    white-space: normal;
+}
