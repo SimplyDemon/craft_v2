@@ -227,7 +227,7 @@ class Resource extends RecipeResourceMain {
         ];
         $resources[] = [
             'resourceId'       => $this->ResourceHelper->coarseBonePowder->id,
-            'resourceQuantity' => 1,
+            'resourceQuantity' => 3,
         ];
 
         foreach ( $resources as $resource ) {
