@@ -188,3 +188,7 @@ a.no-decoration:hover {
 .nk-box-2.nk-box-line p.target {
     min-height: 55px
 }
+
+.nk-box-2.nk-box-line {
+    padding: 10px
+}
