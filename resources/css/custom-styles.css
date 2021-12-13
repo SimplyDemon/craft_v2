@@ -192,3 +192,9 @@ a.no-decoration:hover {
 .nk-box-2.nk-box-line {
     padding: 10px
 }
+
+@media screen and (max-width: 767px) {
+    .nk-title.display-3 {
+        font-size: 45px;
+    }
+}
