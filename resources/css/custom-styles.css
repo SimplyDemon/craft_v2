@@ -180,3 +180,11 @@ a.no-decoration:hover {
 .faq-block button {
     white-space: normal;
 }
+
+.nk-box-2.nk-box-line h2 {
+    min-height: 65px;
+}
+
+.nk-box-2.nk-box-line p.target {
+    min-height: 55px
+}

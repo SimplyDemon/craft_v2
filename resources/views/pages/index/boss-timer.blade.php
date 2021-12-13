@@ -8,7 +8,7 @@
             <p>{{$boss->description}}</p>
         @endif
         @if($boss->target)
-            <p>{{$boss->target}}</p>
+            <p class="target">{{$boss->target}}</p>
         @endif
         <p class="nk-sub-title">{{$boss->status_respawn}}</p>
         <p>{{$boss->timer_status}}</p>
