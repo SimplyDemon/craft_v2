@@ -220,7 +220,7 @@ class ResourceController extends Controller {
 
             /* If value positive add symbol "+" if value is negative symbol "-" already set */
             $result['text'] = $result['isDifferencePositive'] ? '+' : '';
-            $result['text'] .= $result['number'];
+            $result['text'] .= prettifyNumber( $result['number'] );
 
 
             /* Show percent only if current price not 0 and previously price not 0 */
