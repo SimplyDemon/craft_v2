@@ -96,6 +96,7 @@ class ResourceController extends Controller {
 
         return view( $this->folderPathUser . 'show', [
             'single'                        => $single,
+            'title'                         => $single->name,
             'priceHistoryDates'             => json_encode( $priceHistoryDates ),
             'priceHistoryPrices'            => json_encode( $priceHistoryPrices ),
             'priceHistoryDifference'        => $priceHistoryDifference ?? null,
