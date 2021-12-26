@@ -9,11 +9,14 @@
         <div class="container">
             <div class="nk-gap-1"></div>
             <h1 class="nk-title">{{ $title ?? 'Все Ресурсы' }}</h1>
-            <p>Цены на ресурсы сохраняются, можно посмотреть как менялась цена со временем.</p>
+            <p>Цены на ресурсы сохраняются, можно посмотреть как менялась цена со временем. Так же показывается Топ изменения цен ресурсов с прошлого обновления цены.</p>
             <div class="nk-gap-1"></div>
         </div>
     </div>
     <div class="container">
+
+        @include('pages.resources.index-price-difference', ['historyDifference' => $historyDifference])
+
         @if ($all)
             <div class="row">
 
