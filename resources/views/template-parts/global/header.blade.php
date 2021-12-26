@@ -20,7 +20,7 @@ $_SESSION['isAnimationWasShowed'] = true;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     @if(View::hasSection('title'))
-        <title itemprop="headline">Калькулятор крафта Asterios | @yield('title')</title>
+        <title itemprop="headline">@yield('title') | Калькулятор крафта Asterios</title>
     @else
         <title itemprop="headline">Калькулятор крафта Asterios</title>
     @endif
