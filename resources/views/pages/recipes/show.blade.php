@@ -3,7 +3,7 @@
 	])
 @section('content')
     @if(isset($title))
-@section('title', $title)
+@section('title', $title . ' | Предметы')
 @endif
 @if($single->keywords)
     @section('meta_keywords', $single->keywords)

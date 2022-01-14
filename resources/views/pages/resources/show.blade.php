@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @if(isset($title))
-@section('title', $title)
+@section('title', $title . ' | Ресурсы')
 @endif
 <div id="chart-config"
      @if($priceHistoryDates)
