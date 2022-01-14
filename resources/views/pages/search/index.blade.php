@@ -19,7 +19,7 @@
             <h2>Результаты поиска по запросу "{{$search}}"</h2>
         @endif
 
-        @if($recipes)
+        @if(!$recipes->isEmpty())
             <ul class="list-group">
                 @foreach($recipes as $recipe)
                     <li class="list-group-item">
@@ -33,6 +33,9 @@
                     </li>
                 @endforeach
             </ul>
+        @else
+            <h4>Ничего не нашли, попробуйте воспользоваться
+                <a href="{{route('recipes.index')}}">каталогом предметов</a> с крутыми фильтрами!</h4>
         @endif
 
         <div class="nk-gap-4"></div>

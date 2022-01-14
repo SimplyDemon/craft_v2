@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\RaidBoss;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class RaidBossController extends Controller {
+    const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
 
     /**
      * $type 'epic' or 'subclass'
@@ -38,8 +40,14 @@ class RaidBossController extends Controller {
 
             /* Update respawn info every 5 min */
             if ( getCurrentTimeInUnix() > strtotime( '+5 minutes', strtotime( $boss->updated_at ) ) ) {
-                $subclassBossesFeed = simplexml_load_file( $feed );
-                $this->updateRaidBossTime( $subclassBossesFeed, $server );
+                try {
+                    $subclassBossesFeed = @simplexml_load_file( $feed );
+                    $this->updateRaidBossTime( $subclassBossesFeed, $server );
+                }
+                catch ( QueryException $exception ) {
+                    $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
+                }
+
             }
         }
 
