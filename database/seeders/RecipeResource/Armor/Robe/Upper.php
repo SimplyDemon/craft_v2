@@ -26,7 +26,6 @@ class Upper extends RecipeResourceMain {
         $this->addTunicOfDoom100();
         $this->addTallumTunic();
         $this->addDynastyTunic();
-        $this->addDynastyTunic();
         $this->addMoiraiTunic();
         $this->addVesperTunic();
     }
