@@ -1,8 +1,3 @@
-<?php
-$total = 0;
-$totalAdminPrice = 0;
-$tooltipResourcePriceImg = public_path() . '/question.svg';
-?>
 <table class="table recipe mobile-font-size">
     <thead>
     <tr>
@@ -15,94 +10,11 @@ $tooltipResourcePriceImg = public_path() . '/question.svg';
     </tr>
     </thead>
     <tbody>
-    @foreach($single->resources as $resource)
-        <?php
-        $resourceQuantity = $resource->pivot->resource_quantity;
-        $adminResourcePrice = $resource->$price;
-        $resourcePrice = $resource->price;
-        $resourceLinePrice = $resourcePrice * $resourceQuantity;
-        $total += $resourceLinePrice;
-
-        $resourceAdminLinePrice = $adminResourcePrice * $resourceQuantity;
-        $totalAdminPrice += $resourceAdminLinePrice;
-        $isPriceDifferent = $adminResourcePrice !== $resourcePrice;
-        $tooltipResourcePriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $adminResourcePrice ) . '</b>';
-        $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $resourceAdminLinePrice ) . '</b>';
-
-        if ( $resource->recipe ) {
-            $resourceUrl = route( 'recipes.show', [ 'id' => $resource->recipe ] );
-        } else {
-            $resourceUrl = route( 'resources.show', [ 'id' => $resource ] );
-        }
-        ?>
-        <tr>
-            <td>
-                <a class="resource-link" href="{{$resourceUrl}}">
-                    <img width="30" src="{{asset('storage') . '/' . $resource->img}}" alt="{{$resource->name}}">
-                    {{$resource->name}}
-                </a>
-            </td>
-            <td data-quantity="{{$resourceQuantity}}" data-quantity-base="{{$resourceQuantity}}">
-                {{$resourceQuantity}}
-            </td>
-            <td class="td-has" data-has="0">
-                <input class="form-control mobile-no-padding" type="number" step="1" min="0" max="{{$resourceQuantity}}" value="0">
-            </td>
-            <td class="td-price" data-price="{{$resourcePrice}}">
-                <input class="form-control mobile-no-padding" type="number" step="1" min="0" value="{{$resourcePrice ?? 0}}">
-                @if($isPriceDifferent)
-                    <span class="mobile-hide" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipResourcePriceText}}">
-                                        {!! file_get_contents( $tooltipResourcePriceImg) !!}
-                                    </span>
-                @endif
-            </td>
-            <td data-total="{{$resourceLinePrice}}">
-                {{prettifyNumber($resourceLinePrice)}}
-                @if($isPriceDifferent)
-                    <span class="mobile-hide" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$tooltipLinePriceText}}">
-                        {!! file_get_contents( $tooltipResourcePriceImg) !!}
-                    </span>
-                @endif
-            </td>
-            <td class="mobile-hide">
-                <input type="checkbox" class="disable-row">
-            </td>
-        </tr>
+    @foreach($resourcesData as $resource)
+        @include('pages.recipes.table-resource-line-show')
     @endforeach
-    <?php
-    $totalAdminPriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $totalAdminPrice ) . '</b>';
-    $isPriceDifferent = $totalAdminPrice !== $total;
-    $totalText = prettifyNumber( $total );
-    if ( $isCountMoreThenOne ) {
-        $total           = ceil( $total / $single->craft_count );
-        $totalAdminPrice = ceil( $totalAdminPrice / $single->craft_count );
-        $totalText       .= ' | ' . prettifyNumber( $total );
-    }
-    ?>
-    <tr class="tr-total">
-        <td colspan="1">
-            Количество крафтов:
-        </td>
-        <td colspan="2" data-craft-count="1">
-            <input style="max-width: 120px" class="form-control" type="number" step="1" min="1" max="100" value="1">
-        </td>
-        <td colspan="1">
-            <b>Итого:</b>
-        </td>
-        <td colspan="1">
-            <b class="total">{{$totalText}}</b>
-            @if($isCountMoreThenOne)
-                (1 шт.)
-            @endif
-            @if($isPriceDifferent)
-                <span class="mobile-hide" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
-                    {!! file_get_contents($tooltipResourcePriceImg) !!}
-                </span>
-            @endif
-        </td>
-        <td class="mobile-hide">
 
-        </td>
-    </tr>
+    @include('pages.recipes.table-resource-total-show')
+
     </tbody>
 </table>

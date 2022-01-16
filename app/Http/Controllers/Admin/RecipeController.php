@@ -7,6 +7,7 @@ use App\Http\Requests\EditRecipe;
 use App\Models\Category;
 use App\Models\Recipe;
 use App\Models\Resource;
+use App\Services\PrepareRecipeResourcesService;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -144,15 +145,24 @@ class RecipeController extends Controller {
         }
         $isCountMoreThenOne = $single->craft_count !== 1;
 
+        $prepareRecipe = new PrepareRecipeResourcesService( $isCountMoreThenOne );
+        $recipeData    = $prepareRecipe->prepare( $single );
+
         return view( $this->folderPathUser . 'show', [
-            'single'             => $single,
-            'id'                 => $single->id,
-            'user'               => $user,
-            'title'              => $single->name,
-            'canonicalUrl'       => $canonicalUrl,
-            'recipePrice'        => $recipePrice,
-            'chanceText'         => $chanceText,
-            'isCountMoreThenOne' => $isCountMoreThenOne,
+            'single'                => $single,
+            'id'                    => $single->id,
+            'user'                  => $user,
+            'title'                 => $single->name,
+            'canonicalUrl'          => $canonicalUrl,
+            'recipePrice'           => $recipePrice,
+            'chanceText'            => $chanceText,
+            'total'                 => $recipeData['total'],
+            'totalText'             => $recipeData['totalText'],
+            'totalAdminPrice'       => $recipeData['totalAdminPrice'],
+            'totalAdminPriceText'   => $recipeData['totalAdminPriceText'],
+            'isCountMoreThenOne'    => $recipeData['isCountMoreThenOne'],
+            'isTotalPriceDifferent' => $recipeData['isTotalPriceDifferent'],
+            'resourcesData'         => $recipeData['resourcesData'],
         ] );
     }
 
