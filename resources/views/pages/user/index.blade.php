@@ -13,10 +13,10 @@
         <label class="form-check-label" for="is_enable_animation">
             Включить эпичную анимацию
         </label>
-        </div>
+    </div>
 
-        <button class="nk-btn link-effect-4 ready">
-            <span class="link-effect-inner"><span class="link-effect-l"><span>Сохранить</span></span><span class="link-effect-r"><span>Сохранить</span></span><span class="link-effect-shade"><span>Сохранить</span></span></span>
-        </button>
-    </form>
+    <button class="nk-btn ready">
+        <span class="link-effect-inner"><span class="link-effect-l"><span>Сохранить</span></span><span class="link-effect-r"><span>Сохранить</span></span><span class="link-effect-shade"><span>Сохранить</span></span></span>
+    </button>
+</form>
 @endsection

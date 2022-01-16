@@ -31,7 +31,7 @@
                         <form action="#" novalidate="novalidate">
                             <textarea name="text" class="form-control" placeholder="Сообщение" rows="4"></textarea>
                             <div class="nk-gap"></div>
-                            <button class="nk-btn link-effect-4 float-right ready">
+                            <button class="nk-btn float-right ready">
                                 <span class="link-effect-inner"><span class="link-effect-l"><span>Отправить</span></span><span class="link-effect-r"><span>Отправить</span></span><span class="link-effect-shade"><span>Отправить</span></span></span>
                             </button>
                         </form>
@@ -40,6 +40,6 @@
             </div>
         </form>
 
-    </div>
+</div>
 
 @endsection

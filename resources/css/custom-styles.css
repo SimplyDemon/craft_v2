@@ -198,3 +198,7 @@ a.no-decoration:hover {
         font-size: 45px;
     }
 }
+
+.color-main-1-hover:hover, .color-main-1-hover:active, .color-main-1-hover:focus {
+    color: #e08821;
+}

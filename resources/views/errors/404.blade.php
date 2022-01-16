@@ -10,7 +10,7 @@
                     <div class="nk-header-text">
                         <h1 class="nk-title display-3">{{$title ?? 'Страница не найдена'}}</h1>
                         <div class="nk-gap-2"></div>
-                        <a href="{{route('index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-4">
+                        <a href="{{route('index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
                             <span>Главная страница</span>
                         </a>
                         <div class="nk-gap-4"></div>

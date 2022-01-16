@@ -22,33 +22,33 @@
                 </li>
 
                 <li class="{{Route::is('recipes.index') ? 'active' : ''}}">
-                    <a itemprop="url" href="{{ route('recipes.index') }}">
+                    <a class="color-main-1-hover" itemprop="url" href="{{ route('recipes.index') }}">
                         Предметы
                     </a>
                 </li>
                 <li class="{{Route::is('resources.index') ? 'active' : ''}}">
-                    <a itemprop="url" href="{{ route('resources.index') }}">
+                    <a class="color-main-1-hover" itemprop="url" href="{{ route('resources.index') }}">
                         Ресурсы
                     </a>
                 </li>
                 @if($isAuth)
                     <li class="nk-drop-item {{Route::is('user') || Route::is('user.price') || Route::is('conversations.index') ? 'active' : ''}}">
-                        <a itemprop="url" href="{{route('user')}}">
+                        <a class="color-main-1-hover" itemprop="url" href="{{route('user')}}">
                             Личный кабинет
                         </a>
                         <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="dropdown">
                             <li class="{{Route::is('user') ? 'active' : ''}}">
-                                <a itemprop="url" href="{{route('user')}}">
+                                <a class="color-main-1-hover" itemprop="url" href="{{route('user')}}">
                                     Аккаунт
                                 </a>
                             </li>
                             <li class="{{Route::is('user.price') ? 'active' : ''}}">
-                                <a itemprop="url" href="{{route('user.price')}}">
+                                <a class="color-main-1-hover" itemprop="url" href="{{route('user.price')}}">
                                     Цены
                                 </a>
                             </li>
                             <li class="{{Route::is('conversations.index') ? 'active' : ''}}">
-                                <a itemprop="url" href="{{route('conversations.index')}}">
+                                <a class="color-main-1-hover" itemprop="url" href="{{route('conversations.index')}}">
                                     Поддержка
                                 </a>
                             </li>

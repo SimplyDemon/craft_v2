@@ -47,7 +47,7 @@
                                 Запомнить меня
                             </label>
                         </div>
-                        <button class="nk-btn nk-btn-color-white link-effect-4 float-right">Log In</button>
+                        <button class="nk-btn nk-btn-color-white float-right">Log In</button>
 
                         <div class="clearfix"></div>
                         <div class="nk-gap-1"></div>
@@ -68,7 +68,7 @@
 
                         <input class="form-control" type="password" placeholder="Подтвердите пароль" name="password_confirmation" required autocomplete="new-password">
                         <div class="nk-gap-2"></div>
-                        <button class="nk-btn nk-btn-color-white link-effect-4 float-right">Регистрация</button>
+                        <button class="nk-btn nk-btn-color-white float-right">Регистрация</button>
                     </form>
 
                 </div>

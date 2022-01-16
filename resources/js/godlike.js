@@ -424,7 +424,7 @@
                 likeAnimationLiked: 'Liked!',
                 likeAnimationDisliked: 'Disliked!',
 
-                cookieAlert: '<span class="nk-cookie-alert-close"><span class="nk-icon-close"></span></span>\n            Cookie alert are ready to use. You can simply change content inside this alert or disable it in javascript theme options. <a href="#">Cookies policy</a>.\n            <div class="nk-gap"></div>\n            <span class="nk-cookie-alert-confirm nk-btn link-effect-4 nk-btn-bg-white nk-btn-color-dark-1">Confirm</span>',
+                cookieAlert: '<span class="nk-cookie-alert-close"><span class="nk-icon-close"></span></span>\n            Cookie alert are ready to use. You can simply change content inside this alert or disable it in javascript theme options. <a href="#">Cookies policy</a>.\n            <div class="nk-gap"></div>\n            <span class="nk-cookie-alert-confirm nk-btn nk-btn-bg-white nk-btn-color-dark-1">Confirm</span>',
 
                 plainVideoIcon: '<span class="nk-video-icon"><i class="fa fa-play pl-5"></i></span>',
                 plainVideoLoadIcon: '<span class="nk-loading-spinner"><i></i></span>',
@@ -2027,7 +2027,7 @@
             }
 
             // add link effect for navbar
-            (0, _utility.$)( '.nk-navbar:not(.nk-navbar-no-link-effect) ul > li > a:not(.btn):not(.nk-btn):not(.no-link-effect)' ).addClass( 'link-effect-4' );
+            (0, _utility.$)( '.nk-navbar:not(.nk-navbar-no-link-effect) ul > li > a:not(.btn):not(.nk-btn):not(.no-link-effect)' );
 
             // Link Effect 1 (rotate all letters)
             (0, _utility.$)( '.link-effect-1:not(.ready)' ).each( function eachLinkEffect1() {
