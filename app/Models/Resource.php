@@ -34,13 +34,11 @@ class Resource extends Model {
         $adminResourcePrice = $this->$priceType;
         $resourcePrice      = $this->price;
         $linePrice          = $resourcePrice * $resourceQuantity;
-        $this->total        += $linePrice;
 
-        $resourceAdminLinePrice = $adminResourcePrice * $resourceQuantity;
-        $this->totalAdminPrice  += $resourceAdminLinePrice;
-        $isPriceDifferent       = $adminResourcePrice !== $resourcePrice;
-        $tooltipPriceText       = 'Цена по умолчанию:<br><b>' . prettifyNumber( $adminResourcePrice ) . '</b>';
-        $tooltipLinePriceText   = 'Цена по умолчанию:<br><b>' . prettifyNumber( $resourceAdminLinePrice ) . '</b>';
+        $adminLinePrice       = $adminResourcePrice * $resourceQuantity;
+        $isPriceDifferent     = $adminResourcePrice !== $resourcePrice;
+        $tooltipPriceText     = 'Цена по умолчанию:<br><b>' . prettifyNumber( $adminResourcePrice ) . '</b>';
+        $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $adminLinePrice ) . '</b>';
 
         if ( $this->recipe ) {
             $resourceUrl = route( 'recipes.show', [ 'id' => $this->recipe ] );
@@ -49,21 +47,27 @@ class Resource extends Model {
         }
 
         if ( $this->recipe && $this->recipe->resources ) {
-            $subResources = $this->recipe->resources;
+            $subResources     = $this->recipe->resources;
+            $subResourcesData = [];
+            foreach ( $subResources as $subResource ) {
+                $subResourcesData[] = $subResource->resources_data;
+            }
         }
 
         return [
-            'url'                     => $resourceUrl,
-            'imgUrl'                  => asset( 'storage' ) . '/' . $this->img,
-            'name'                    => $this->name,
-            'quantity'                => $resourceQuantity,
-            'price'                   => $resourcePrice,
-            'linePrice'               => $linePrice,
-            'isPriceDifferent'        => $isPriceDifferent,
-            'tooltipPriceText'        => $tooltipPriceText,
-            'tooltipResourcePriceImg' => $this->tooltipPriceImg,
-            'tooltipLinePriceText'    => $tooltipLinePriceText,
-            'subResources'            => $subResources ?? null,
+            'url'                  => $resourceUrl,
+            'id'                   => $this->id,
+            'imgUrl'               => asset( 'storage' ) . '/' . $this->img,
+            'name'                 => $this->name,
+            'quantity'             => $resourceQuantity,
+            'price'                => $resourcePrice,
+            'linePrice'            => $linePrice,
+            'adminLinePrice'       => $adminLinePrice,
+            'isPriceDifferent'     => $isPriceDifferent,
+            'tooltipPriceText'     => $tooltipPriceText,
+            'tooltipLinePriceText' => $tooltipLinePriceText,
+            'subResources'         => $subResources ?? null,
+            'subResourcesData'     => $subResourcesData ?? null,
         ];
     }
 }

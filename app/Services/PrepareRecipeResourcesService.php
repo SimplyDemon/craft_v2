@@ -18,7 +18,10 @@ class PrepareRecipeResourcesService {
         $resources          = $recipe->resources;
         $resourcesData      = [];
         foreach ( $resources as $resource ) {
-            $resourcesData[] = $resource->resources_data;
+            $resourceData          = $resource->resources_data;
+            $this->total           += $resourceData['linePrice'];
+            $this->totalAdminPrice += $resourceData['adminLinePrice'];
+            $resourcesData[]       = $resourceData;
         }
 
         $totalAdminPriceText   = 'Цена по умолчанию:<br><b>' . prettifyNumber( $this->totalAdminPrice ) . '</b>';
@@ -31,13 +34,14 @@ class PrepareRecipeResourcesService {
         }
 
         return [
-            'total                 ' => $this->total,
-            'totalText'              => $totalText,
-            'totalAdminPrice'        => $this->totalAdminPrice,
-            'totalAdminPriceText'    => $totalAdminPriceText,
-            'isCountMoreThenOne'     => $isCountMoreThenOne,
-            'isTotalPriceDifferent'  => $isTotalPriceDifferent,
-            'resourcesData'          => $resourcesData,
+            'recipe'                => $recipe,
+            'total'                 => $this->total,
+            'totalText'             => $totalText,
+            'totalAdminPrice'       => $this->totalAdminPrice,
+            'totalAdminPriceText'   => $totalAdminPriceText,
+            'isCountMoreThenOne'    => $isCountMoreThenOne,
+            'isTotalPriceDifferent' => $isTotalPriceDifferent,
+            'resourcesData'         => $resourcesData,
         ];
 
     }

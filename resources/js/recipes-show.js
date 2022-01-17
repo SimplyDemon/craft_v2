@@ -162,3 +162,11 @@ function addConfirm() {
         return confirm( 'При переходе все заполненные данные пропадут.' );
     } )
 }
+
+$( '.resource_table_line-expand-resource, .resource_table_line-de-expand-resource' ).click( function() {
+    let tr         = $( this ).closest( 'tr' );
+    let resourceId = parseInt( tr.attr( 'data-id' ) );
+    tr.find( '.resource_table_line-de-expand-resource' ).toggleClass( 'd-none' );
+    tr.find( '.resource_table_line-expand-resource' ).toggleClass( 'd-none' );
+    $( 'tr[data-parent-id=' + resourceId + ']' ).toggleClass( 'd-none' );
+} );

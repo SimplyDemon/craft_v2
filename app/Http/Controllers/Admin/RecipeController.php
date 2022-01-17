@@ -133,20 +133,19 @@ class RecipeController extends Controller {
 
 
     public function show( int $id ) {
-        $single       = Recipe::findOrFail( $id );
-        $user         = auth()->user();
-        $recipe100    = Recipe::where( 'name', $single->name . ' 100%' )->first();
-        $canonicalUrl = ( $single->percent === '60' && $recipe100 ) ? route( 'recipes.show', [ 'id' => $recipe100->id ] ) : null;
-        $recipePrice  = $single->price;
-
-        $chanceText = 'MasterWork';
-        if ( $single->grade === 'C' ) {
-            $chanceText = 'DoubleCraft';
-        }
-
+        $single          = Recipe::findOrFail( $id );
+        $user            = auth()->user();
+        $recipe100       = Recipe::where( 'name', $single->name . ' 100%' )->first();
+        $canonicalUrl    = ( $single->percent === '60' && $recipe100 ) ? route( 'recipes.show', [ 'id' => $recipe100->id ] ) : null;
+        $recipePrice     = $single->price;
+        $chanceText      = 'MasterWork';
         $prepareRecipe   = new PrepareRecipeResourcesService();
         $recipeData      = $prepareRecipe->prepare( $single );
         $tooltipPriceImg = public_path() . '/question.svg';
+
+        if ( $single->grade === 'C' ) {
+            $chanceText = 'DoubleCraft';
+        }
 
         return view( $this->folderPathUser . 'show', [
             'single'                => $single,

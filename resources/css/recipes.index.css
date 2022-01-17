@@ -3,7 +3,7 @@
     font-size: 14px;
 }
 
-.col-categories .nk-btn:before:not('reset') {
+.col-categories .nk-btn:not(#reset):before {
     border: none;
 }
 
