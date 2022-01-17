@@ -143,10 +143,10 @@ class RecipeController extends Controller {
         if ( $single->grade === 'C' ) {
             $chanceText = 'DoubleCraft';
         }
-        $isCountMoreThenOne = $single->craft_count !== 1;
 
-        $prepareRecipe = new PrepareRecipeResourcesService( $isCountMoreThenOne );
-        $recipeData    = $prepareRecipe->prepare( $single );
+        $prepareRecipe   = new PrepareRecipeResourcesService();
+        $recipeData      = $prepareRecipe->prepare( $single );
+        $tooltipPriceImg = public_path() . '/question.svg';
 
         return view( $this->folderPathUser . 'show', [
             'single'                => $single,
@@ -163,6 +163,7 @@ class RecipeController extends Controller {
             'isCountMoreThenOne'    => $recipeData['isCountMoreThenOne'],
             'isTotalPriceDifferent' => $recipeData['isTotalPriceDifferent'],
             'resourcesData'         => $recipeData['resourcesData'],
+            'tooltipPriceImg'       => $tooltipPriceImg,
         ] );
     }
 

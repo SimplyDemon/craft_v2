@@ -15,7 +15,7 @@
         <input class="form-control mobile-no-padding" type="number" step="1" min="0" value="{{$resource['price'] ?? 0 }}">
         @if($resource['isPriceDifferent'])
             <span class="mobile-hide" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$resource['tooltipPriceText']}}">
-                {!! file_get_contents( $resource['tooltipResourcePriceImg']) !!}
+                {!! file_get_contents( $tooltipPriceImg) !!}
             </span>
         @endif
     </td>
@@ -23,7 +23,7 @@
         {{prettifyNumber($resource['linePrice'])}}
         @if($resource['isPriceDifferent'])
             <span class="mobile-hide" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$resource['tooltipLinePriceText']}}">
-                {!! file_get_contents( $resource['tooltipResourcePriceImg']) !!}
+                {!! file_get_contents( $tooltipPriceImg) !!}
             </span>
         @endif
     </td>

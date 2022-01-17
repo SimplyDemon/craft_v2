@@ -15,7 +15,7 @@
         @endif
         @if($isTotalPriceDifferent)
             <span class="mobile-hide" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$totalAdminPriceText}}">
-                {!! file_get_contents($tooltipResourcePriceImg) !!}
+                {!! file_get_contents($tooltipPriceImg) !!}
             </span>
         @endif
     </td>
