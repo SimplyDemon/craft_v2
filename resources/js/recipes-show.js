@@ -110,11 +110,16 @@ $( "td.td-price[data-price] input" ).on( 'change', function() {
     } else if ( !value ) {
         value = 0;
     }
+    let tr            = $( this ).closest( 'tr' );
+    let resourceId    = parseInt( tr.attr( 'data-id' ) );
+    let sameResources = $( 'tr[data-id=' + resourceId + ']' );
 
-    updateColumn( input, 'data-price', value );
-    let row = input.closest( 'tr' );
+    sameResources.each( function() {
+        input = $( this ).find( 'td.td-price[data-price] input' );
+        updateColumn( input, 'data-price', value );
+        updateRowTotal( $( this ) );
+    } );
 
-    updateRowTotal( row );
     updatePrices();
 } );
 
@@ -164,9 +169,32 @@ function addConfirm() {
 }
 
 $( '.resource_table_line-expand-resource, .resource_table_line-de-expand-resource' ).click( function() {
-    let tr         = $( this ).closest( 'tr' );
-    let resourceId = parseInt( tr.attr( 'data-id' ) );
+    let tr              = $( this ).closest( 'tr' );
+    let resourceId      = parseInt( tr.attr( 'data-id' ) );
+    let disableCheckbox = tr.find( '.disable-row' );
+
     tr.find( '.resource_table_line-de-expand-resource' ).toggleClass( 'd-none' );
     tr.find( '.resource_table_line-expand-resource' ).toggleClass( 'd-none' );
-    $( 'tr[data-parent-id=' + resourceId + ']' ).toggleClass( 'd-none' );
+
+    tr.toggleClass( 'disabled-with-js' );
+    $( 'tr[data-parent-id=' + resourceId + ']' ).toggleClass( 'd-none' ).toggleClass( 'disabled-with-js' );
+
+    if ( $( this ).hasClass( 'resource_table_line-de-expand-resource' ) ) {
+        /* If clicked minus de-expand all child tr */
+        tr.removeClass( 'disabled-with-js' );
+        disableCheckbox.prop( 'disabled', false ).prop( 'checked', false );
+        let nextTr = tr.next()
+        while ( nextTr.hasClass( 'child' ) ) {
+            nextTr.addClass( 'disabled-with-js' ).addClass( 'd-none' );
+            nextTr.find( '.resource_table_line-de-expand-resource' ).addClass( 'd-none' );
+            nextTr.find( '.resource_table_line-expand-resource' ).removeClass( 'd-none' );
+            nextTr.find( '.disable-row' ).prop( 'checked', false );
+            nextTr = nextTr.next();
+        }
+    } else {
+        tr.addClass( 'disabled-with-js' );
+        disableCheckbox.prop( 'disabled', true ).prop( 'checked', true );
+    }
+
+    updatePrices();
 } );

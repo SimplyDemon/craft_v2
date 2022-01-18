@@ -202,3 +202,23 @@ a.no-decoration:hover {
 .color-main-1-hover:hover, .color-main-1-hover:active, .color-main-1-hover:focus {
     color: #e08821;
 }
+
+tr.child-depth-1 td:first-child {
+    padding-left: 15px;
+}
+
+tr.child-depth-2 td:first-child {
+    padding-left: 30px;
+}
+
+tr.child-depth-3 td:first-child {
+    padding-left: 45px;
+}
+
+.resource_table_line-svg {
+    margin-left: 10px;
+}
+
+.resource_table_line-svg:hover {
+    cursor: pointer;
+}

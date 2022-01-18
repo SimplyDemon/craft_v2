@@ -2,34 +2,12 @@
 $depth = $depth ?? 0;
 $class = '';
 if ( isset( $parentResourceId ) ) {
-    $class .= 'd-none child-depth-' . $depth;
+    $class .= 'disabled-with-js d-none child child-depth-' . $depth;
 }
 if ( $resource['subResourcesData'] ) {
     $class .= ' has-child';
 }
 ?>
-<style>
-    tr.child-depth-1 td:first-child {
-        padding-left: 15px;
-    }
-
-    tr.child-depth-2 td:first-child {
-        padding-left: 30px;
-    }
-
-    tr.child-depth-3 td:first-child {
-        padding-left: 45px;
-    }
-
-    .resource_table_line-svg {
-        margin-left: 10px;
-    }
-
-    .resource_table_line-svg:hover {
-        cursor: pointer;
-    }
-
-</style>
 <tr class="resource_table_line {{$class}}" data-id="{{$resource['id']}}" data-parent-id="{{$parentResourceId ?? '' }}">
     <td>
         <a class="resource-link" href="{{$resource['url']}}">
