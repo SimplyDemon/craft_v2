@@ -4,7 +4,11 @@
 @section('title', $title)
 @endif
 <div class="nk-social-profile-info-actions">
-    <a href="{{ route( 'conversations.create' ) }}" class="nk-btn ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Создать запрос</span></span><span class="link-effect-r"><span>Создать запрос</span></span><span class="link-effect-shade"><span>Создать запрос</span></span></span></a>
+    <a href="{{ route( 'conversations.create' ) }}" class="nk-btn ready">
+        <span class="link-effect-inner">
+            <span class="link-effect-shade"><span>Создать запрос</span></span>
+        </span>
+    </a>
 </div>
 @if ($all)
     <h2 class="nk-title">Список запросов</h2>
