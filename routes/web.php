@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ResourceController;
 use App\Http\Controllers\ConversationController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\PriceParserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UpdatePrice;
 use App\Http\Controllers\User\UserController;
@@ -69,15 +70,20 @@ Route::middleware( 'auth.dev' )->group( function () {
         } );
 
         Route::middleware( 'IsCanUpdatePrice' )->prefix( 'admin_prices' )->group( function () {
-            Route::get( '/', [
+            Route::get('/', [
                 UpdatePrice::class,
                 'index',
-            ] )->name( 'admin_prices' );
+            ])->name('admin_prices');
 
-            Route::post( '/', [
+            Route::post('/', [
                 UpdatePrice::class,
                 'update',
-            ] )->name( 'admin_prices.update' );
+            ])->name('admin_prices.update');
+
+            Route::get('/parser/', [
+                PriceParserController::class,
+                'index',
+            ])->name('parser');
         } );
 
         Route::middleware( 'isAdmin' )->prefix( 'admin' )->group( function () {

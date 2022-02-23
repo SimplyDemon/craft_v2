@@ -1,3 +1,8 @@
+## Commands
+
+- ```php artisan parse:start``` Start prices parse
+- ```php artisan run prod``` Build assets
+
 ## TODO
 
 - Книга рецептов — возможность добавлять рецепты в личный кабинет(там будут все добавленные рецепты и количество
