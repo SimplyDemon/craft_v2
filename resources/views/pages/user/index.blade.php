@@ -16,7 +16,11 @@
     </div>
 
     <button class="nk-btn ready">
-        <span class="link-effect-inner"><span class="link-effect-l"><span>Сохранить</span></span><span class="link-effect-r"><span>Сохранить</span></span><span class="link-effect-shade"><span>Сохранить</span></span></span>
+        <span class="link-effect-inner">
+            <span class="link-effect-l">
+                <span>Сохранить</span>
+            </span>
+        </span>
     </button>
 </form>
 @endsection
