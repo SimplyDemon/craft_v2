@@ -1,8 +1,3 @@
-## Commands
-
-- ```php artisan parse:start``` Start prices parse
-- ```php artisan run prod``` Build assets
-
 ## TODO
 
 - Книга рецептов — возможность добавлять рецепты в личный кабинет(там будут все добавленные рецепты и количество
@@ -189,3 +184,12 @@
 
 - php7.4 artisan config:cache - config all caches
 - php7.4 artisan config:clear - if need update config
+
+## Build
+
+- ```npm run prod```
+
+## Commands
+
+- ```php artisan parse:start``` Start prices parse
+- ```php artisan run prod``` Build assets
