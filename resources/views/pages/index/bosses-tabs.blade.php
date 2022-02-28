@@ -3,9 +3,11 @@
         <li class="nav-item">
             <a class="nav-link active color-main-1-important" href="#{{$server}}-subclass" role="tab" data-toggle="tab">Сабкласс РБ</a>
         </li>
+        @if(!empty($bosses['epic']))
         <li class="nav-item">
             <a class="nav-link color-main-1-important" href="#{{$server}}-epic" role="tab" data-toggle="tab">Эпик РБ</a>
         </li>
+        @endif
     </ul>
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade show active" id="{{$server}}-subclass">
