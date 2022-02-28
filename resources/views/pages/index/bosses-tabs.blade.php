@@ -25,6 +25,7 @@
 
             <div class="nk-gap-1"></div>
         </div>
+        @if(!empty($bosses['epic']))
         <div role="tabpanel" class="tab-pane fade" id="{{$server}}-epic">
             <div class="nk-gap-1"></div>
 
@@ -48,5 +49,6 @@
 
             <div class="nk-gap-1"></div>
         </div>
+        @endif
     </div>
 </div>

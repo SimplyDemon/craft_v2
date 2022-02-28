@@ -11,10 +11,7 @@
                 @include('pages.index.description')
 
                 @if($bossesX1 && $bossesX5)
-                    @include('pages.index.bosses', [
-                        'bossesX1' => $bossesX1,
-                        'bossesX5' => $bossesX5,
-                    ])
+                    @include('pages.index.bosses')
                 @endif
             </div>
         </div>

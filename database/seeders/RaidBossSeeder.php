@@ -91,19 +91,34 @@ class RaidBossSeeder extends Seeder {
         $kernonArgsX5['server']   = 'x5';
         $golkondaArgsX5['server'] = 'x5';
 
+        $cabrioArgsX7   = $cabrioArgs;
+        $hallateArgsX7  = $hallateArgs;
+        $kernonArgsX7   = $kernonArgs;
+        $golkondaArgsX7 = $golkondaArgs;
+
+        $cabrioArgsX7['server']   = 'x7';
+        $hallateArgsX7['server']  = 'x7';
+        $kernonArgsX7['server']   = 'x7';
+        $golkondaArgsX7['server'] = 'x7';
+
 
         /* x1 bosses */
-        RaidBoss::create( $cabrioArgs );
-        RaidBoss::create( $hallateArgs );
-        RaidBoss::create( $kernonArgs );
-        RaidBoss::create( $golkondaArgs );
+        RaidBoss::create($cabrioArgs);
+        RaidBoss::create($hallateArgs);
+        RaidBoss::create($kernonArgs);
+        RaidBoss::create($golkondaArgs);
 
         /* x5 bosses */
-        RaidBoss::create( $cabrioArgsX5 );
-        RaidBoss::create( $hallateArgsX5 );
-        RaidBoss::create( $kernonArgsX5 );
-        RaidBoss::create( $golkondaArgsX5 );
+        RaidBoss::create($cabrioArgsX5);
+        RaidBoss::create($hallateArgsX5);
+        RaidBoss::create($kernonArgsX5);
+        RaidBoss::create($golkondaArgsX5);
 
+        /* x7 bosses */
+        RaidBoss::create($cabrioArgsX7);
+        RaidBoss::create($hallateArgsX7);
+        RaidBoss::create($kernonArgsX7);
+        RaidBoss::create($golkondaArgsX7);
     }
 
     protected function addEpicRb() {

@@ -37,21 +37,25 @@ class IndexController extends Controller {
 
         $raidBossController = new RaidBossController();
         $bossesX1           = [
-            'subclass' => $raidBossController->getBossesDeathTime( 'subclass', 'x1' ),
-            'epic'     => $raidBossController->getBossesDeathTime( 'epic', 'x1' ),
+            'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x1'),
+            'epic'     => $raidBossController->getBossesDeathTime('epic', 'x1'),
         ];
         $bossesX5           = [
-            'subclass' => $raidBossController->getBossesDeathTime( 'subclass', 'x5' ),
-            'epic'     => $raidBossController->getBossesDeathTime( 'epic', 'x5' ),
+            'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x5'),
+            'epic'     => $raidBossController->getBossesDeathTime('epic', 'x5'),
+        ];
+        $bossesX7           = [
+            'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x7'),
         ];
 
-        return view( 'pages.index.index', [
+        return view('pages.index.index', [
             'bossesX1'                => $bossesX1,
             'bossesX5'                => $bossesX5,
+            'bossesX7'                => $bossesX7,
             'title'                   => 'Калькулятор крафта Asterios',
             'lastResourcesUpdateTime' => $lastResourcesUpdateTime,
             'faq'                     => $faq,
-        ] );
+        ]);
     }
 
 

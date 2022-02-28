@@ -11,7 +11,7 @@ class RaidBossController extends Controller {
 
     /**
      * $type 'epic' or 'subclass'
-     * $server x1 is 3; x5 is 0
+     * $server x1 is 3; x5 is 0; x7 is 8
      */
     public function getBossesDeathTime( string $type, string $server ) {
         $feedFilter = $type;
@@ -21,8 +21,10 @@ class RaidBossController extends Controller {
 
         if ( $server === 'x1' ) {
             $feedServer = 3;
-        } else if ( $server === 'x5' ) {
+        } elseif ($server === 'x5') {
             $feedServer = 0;
+        } elseif ($server === 'x7') {
+            $feedServer = 8;
         } else {
             return null;
         }
