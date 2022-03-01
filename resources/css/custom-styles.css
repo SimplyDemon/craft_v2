@@ -215,6 +215,14 @@ tr.child-depth-3 td:first-child {
     padding-left: 45px;
 }
 
+tr.child-depth-4 td:first-child {
+    padding-left: 60px;
+}
+
+tr.child-depth-5 td:first-child {
+    padding-left: 75px;
+}
+
 .resource_table_line-svg {
     margin-left: 10px;
 }

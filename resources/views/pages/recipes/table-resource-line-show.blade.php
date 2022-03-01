@@ -1,14 +1,19 @@
 <?php
 $depth = $depth ?? 0;
 $class = '';
-if ( isset( $parentResourceId ) ) {
-    $class .= 'disabled-with-js d-none child child-depth-' . $depth;
+if (isset($parentResourceId)) {
+    $class .= 'disabled-with-js d-none child child-depth-'.$depth;
 }
-if ( $resource['subResourcesData'] ) {
+if ($resource['subResourcesData']) {
     $class .= ' has-child';
 }
+$linePrice = $resource['linePrice'];
+$quantity = $resource['quantity'];
+$quantity = isset($parentResourceQuantity) && $parentResourceQuantity > 0 ? $quantity * $parentResourceQuantity : $quantity;
+$linePrice = isset($parentResourceQuantity) && $parentResourceQuantity > 0 ? $linePrice * $parentResourceQuantity : $linePrice;
+$uniqueTrString = md5(uniqid(rand(), true));
 ?>
-<tr class="resource_table_line {{$class}}" data-id="{{$resource['id']}}" data-parent-id="{{$parentResourceId ?? '' }}">
+<tr class="resource_table_line {{$class}}" data-tr-unique="{{$uniqueTrString}}" data-id="{{$resource['id']}}" data-parent-tr-unique="{{$parentUniqueTrString ?? ''}}" data-parent-id="{{$parentResourceId ?? '' }}">
     <td>
         <a class="resource-link" href="{{$resource['url']}}">
             <img width="30" src="{{$resource['imgUrl']}}" alt="{{$resource['name']}}">
@@ -30,11 +35,11 @@ if ( $resource['subResourcesData'] ) {
 
 
     </td>
-    <td data-quantity="{{$resource['quantity']}}" data-quantity-base="{{$resource['quantity']}}">
-        {{$resource['quantity']}}
+    <td data-quantity="{{$quantity}}" data-quantity-base="{{$quantity}}">
+        {{$quantity}}
     </td>
     <td class="td-has" data-has="0">
-        <input class="form-control mobile-no-padding" type="number" step="1" min="0" max="{{$resource['quantity']}}" value="0">
+        <input class="form-control mobile-no-padding" type="number" step="1" min="0" max="{{$quantity}}" value="0">
     </td>
     <td class="td-price" data-price="{{$resource['price']}}">
         <input class="form-control mobile-no-padding" type="number" step="1" min="0" value="{{$resource['price'] ?? 0 }}">
@@ -44,8 +49,8 @@ if ( $resource['subResourcesData'] ) {
             </span>
         @endif
     </td>
-    <td data-total="{{$resource['linePrice']}}">
-        {{prettifyNumber($resource['linePrice'])}}
+    <td data-total="{{$linePrice}}">
+        {{prettifyNumber($linePrice)}}
         @if($resource['isPriceDifferent'])
             <span class="mobile-hide" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$resource['tooltipLinePriceText']}}">
                 {!! file_get_contents( $tooltipPriceImg) !!}
@@ -65,6 +70,8 @@ if ( $resource['subResourcesData'] ) {
     @foreach($resource['subResourcesData'] as $resource)
         @include('pages.recipes.table-resource-line-show', [
 	        'parentResourceId' => $parentResourceId,
+	        'parentUniqueTrString' => $uniqueTrString,
+	        'parentResourceQuantity' => $quantity,
 	        'depth' => $depth,
 	])
     @endforeach

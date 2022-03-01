@@ -171,13 +171,14 @@ function addConfirm() {
 $( '.resource_table_line-expand-resource, .resource_table_line-de-expand-resource' ).click( function() {
     let tr              = $( this ).closest( 'tr' );
     let resourceId      = parseInt( tr.attr( 'data-id' ) );
+    let trUnique        = tr.attr( 'data-tr-unique' );
     let disableCheckbox = tr.find( '.disable-row' );
 
     tr.find( '.resource_table_line-de-expand-resource' ).toggleClass( 'd-none' );
     tr.find( '.resource_table_line-expand-resource' ).toggleClass( 'd-none' );
 
     tr.toggleClass( 'disabled-with-js' );
-    $( 'tr[data-parent-id=' + resourceId + ']' ).toggleClass( 'd-none' ).toggleClass( 'disabled-with-js' );
+    $( 'tr[data-parent-tr-unique=' + trUnique + ']' ).toggleClass( 'd-none' ).toggleClass( 'disabled-with-js' );
 
     if ( $( this ).hasClass( 'resource_table_line-de-expand-resource' ) ) {
         /* If clicked minus de-expand all child tr */
