@@ -53,6 +53,12 @@ return [
             'level'  => env('LOG_LEVEL', 'debug'),
         ],
 
+        'bossesParser' => [
+            'driver' => 'single',
+            'path'   => storage_path('logs/bosses-parser.log'),
+            'level'  => env('LOG_LEVEL', 'debug'),
+        ],
+
         'daily' => [
             'driver' => 'daily',
             'path'   => storage_path('logs/laravel.log'),

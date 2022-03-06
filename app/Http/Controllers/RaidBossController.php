@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\RaidBoss;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class RaidBossController extends Controller {
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
@@ -29,7 +30,7 @@ class RaidBossController extends Controller {
             return null;
         }
 
-        $feed = "https://asterios.tm/index.php?cmd=rss&serv={$feedServer}&filter={$feedFilter}&count=100&out=xml";
+        $feed = "https://asterios.tm/index.php?cmd=rss&serv={$feedServer}&filter={$feedFilter}&count=1000&out=xml";
 
         $boss = RaidBoss::where( [
             [ 'type', $type ],
@@ -43,13 +44,13 @@ class RaidBossController extends Controller {
             /* Update respawn info every 5 min */
             if ( getCurrentTimeInUnix() > strtotime( '+5 minutes', strtotime( $boss->updated_at ) ) ) {
                 try {
-                    $subclassBossesFeed = @simplexml_load_file( $feed );
-                    $this->updateRaidBossTime( $subclassBossesFeed, $server );
+                    $subclassBossesFeed = @simplexml_load_file($feed);
+                    $this->updateRaidBossTime($subclassBossesFeed, $server);
+                } catch (\Exception $exception) {
+                    $message = $exception->getMessage();
+                    Log::channel('bossesParser')->info('Feed Url: '.$feed);
+                    Log::channel('bossesParser')->info($message);
                 }
-                catch ( QueryException $exception ) {
-                    $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
-                }
-
             }
         }
 
