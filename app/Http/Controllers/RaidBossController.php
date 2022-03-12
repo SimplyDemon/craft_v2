@@ -47,9 +47,11 @@ class RaidBossController extends Controller {
                     $subclassBossesFeed = @simplexml_load_file($feed);
                     $this->updateRaidBossTime($subclassBossesFeed, $server);
                 } catch (\Exception $exception) {
-                    $message = $exception->getMessage();
+                    $exceptionMessage = $exception->getMessage();
+                    $exceptionLine    = $exception->getLine();
+                    $exceptionFile    = $exception->getFile();
                     Log::channel('bossesParser')->info('Feed Url: '.$feed);
-                    Log::channel('bossesParser')->info($message);
+                    Log::channel('bossesParser')->info("Message: {$exceptionMessage}. {$exceptionFile}:{$exceptionLine}");
                 }
             }
         }
@@ -66,16 +68,22 @@ class RaidBossController extends Controller {
 
         if ( isset( $feed->channel ) && isset( $feed->channel->item ) ) {
             foreach ( $feed->channel->item as $item ) {
-                $bossName = explode( 'Убит босс ', $item->title )[1];
+                $bossMessagePrefix = 'Убит босс ';
 
-                if ( in_array( $bossName, $updatedBosses ) ) {
+                /* If that info not about raid boss */
+                if (strpos($item->title, $bossMessagePrefix) === false) {
+                    continue;
+                }
+                $bossName = explode($bossMessagePrefix, $item->title)[1];
+
+                if (in_array($bossName, $updatedBosses)) {
                     continue;
                 }
                 $updatedBosses[] = $bossName;
-                $boss            = RaidBoss::where( 'name', 'like', "%$bossName%" )->where( [
-                    [ 'server', $server ],
-                ] )->first();
-                if ( ! empty( $boss ) ) {
+                $boss            = RaidBoss::where('name', 'like', "%$bossName%")->where([
+                    ['server', $server],
+                ])->first();
+                if ( ! empty($boss)) {
                     $respawnBase    = $boss->respawn_base;
                     $respawnDynamic = $boss->respawn_dynamic;
 
