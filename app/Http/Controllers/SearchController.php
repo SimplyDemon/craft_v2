@@ -14,7 +14,7 @@ class SearchController extends Controller {
         $results = $this->getResults( $search );
 
         return view( $this->folderPath . 'index', [
-            'recipes' => $results['recipes'] ?? null,
+            'recipes' => $results['recipes'] ?? collect(),
             'search'  => $search,
             'title'   => 'Поиск',
         ] );
