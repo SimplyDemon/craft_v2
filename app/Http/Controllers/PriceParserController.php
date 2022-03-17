@@ -48,6 +48,8 @@ class PriceParserController extends Controller
                 ]);
             }
         }
+
+        OptionsController::updateLastResourcesPricesUpdateTime();
     }
 
     /*

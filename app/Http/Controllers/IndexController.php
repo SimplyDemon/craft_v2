@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Controllers\OptionsController;
 use App\Models\Recipe;
 use App\Models\Resource;
 
@@ -33,7 +34,7 @@ class IndexController extends Controller {
         $faq['Какой шикарный сайт, как я могу поддержать разработку?']                      = '<b>Никак</b>. Сайт создан не для монетизации и заработка, а для простых игроков, как я, которым всё еще нравится эта игра.';
         $faq['Я нашёл баг, это вообще нормально?']                                          = '<b>Это вполне естественно</b>. Даже огромные компании со штатом в десятки сотрудников и тестеров периодично пропускают баги. Я сам периодично сталкиваюсь с багами и их правлю. Огромная просьба - сообщайте в поддержку о них.';
 
-        $lastResourcesUpdateTime = date( 'd.m.Y H:i', strtotime( Resource::where( 'name', 'Adamantine' )->firstOrFail()->updated_at ) );
+        $lastResourcesUpdateTime = OptionsController::getLastResourcesPricesUpdateTime();
 
         $raidBossController = new RaidBossController();
         $bossesX1           = [
@@ -53,7 +54,7 @@ class IndexController extends Controller {
             'bossesX5'                => $bossesX5,
             'bossesX7'                => $bossesX7,
             'title'                   => 'Калькулятор крафта Asterios',
-            'lastResourcesUpdateTime' => $lastResourcesUpdateTime,
+            'lastResourcesUpdateTime' => $lastResourcesUpdateTime ?? '???',
             'faq'                     => $faq,
         ]);
     }

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Recipe;
 use App\Models\Resource;
 use App\Models\ResourceAdminPrice;
-use App\Models\ResourcePriceAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -65,8 +64,8 @@ class UpdatePrice extends Controller {
             $message = 'Цены обновлены.';
         }
 
-
-        $request->session()->flash( 'message', $message );
+        $request->session()->flash('message', $message);
+        OptionsController::updateLastResourcesPricesUpdateTime();
 
         return Redirect::to( route( 'admin_prices' ) );
     }
