@@ -47,6 +47,7 @@ class IndexController extends Controller {
         ];
         $bossesX7           = [
             'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x7'),
+            'epic'     => $raidBossController->getBossesDeathTime('epic', 'x7'),
         ];
 
         return view('pages.index.index', [
