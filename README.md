@@ -191,5 +191,5 @@
 
 ## Commands
 
-- ```php artisan parse:start``` Start prices parse
-- ```php artisan run prod``` Build assets
+- ```php7.4 artisan parse:start``` Start prices parse
+- ```php7.4 artisan run prod``` Build assets
