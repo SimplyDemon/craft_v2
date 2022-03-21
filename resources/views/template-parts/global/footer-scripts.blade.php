@@ -19,3 +19,7 @@
 @if(Route::is('resources.show'))
     <script src="{{ mix('js/chart.js') }}"></script>
 @endif
+
+@if(Route::is('index'))
+    <script src="{{ mix('js/index.js') }}"></script>
+@endif

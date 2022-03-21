@@ -36,6 +36,7 @@ class IndexController extends Controller {
 
         $lastResourcesUpdateTime = OptionsController::getLastResourcesPricesUpdateTime();
 
+        $bossesChosenServer = $_COOKIE['bossesChosenServer'] ?? 'x1';
         $raidBossController = new RaidBossController();
         $bossesX1           = [
             'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x1'),
@@ -54,6 +55,7 @@ class IndexController extends Controller {
             'bossesX1'                => $bossesX1,
             'bossesX5'                => $bossesX5,
             'bossesX7'                => $bossesX7,
+            'bossesChosenServer'      => $bossesChosenServer,
             'title'                   => 'Калькулятор крафта Asterios',
             'lastResourcesUpdateTime' => $lastResourcesUpdateTime ?? '???',
             'faq'                     => $faq,
