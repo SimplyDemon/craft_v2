@@ -44,7 +44,7 @@ class RaidBossController extends Controller {
             /* Update respawn info every 5 min */
             if ( getCurrentTimeInUnix() > strtotime( '+5 minutes', strtotime( $boss->updated_at ) ) ) {
                 try {
-                    $subclassBossesFeed = @simplexml_load_file($feed);
+                    $subclassBossesFeed = simplexml_load_file($feed);
                     $this->updateRaidBossTime($subclassBossesFeed, $server);
                 } catch (\Exception $exception) {
                     $exceptionMessage = $exception->getMessage();
