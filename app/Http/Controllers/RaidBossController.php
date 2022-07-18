@@ -7,20 +7,24 @@ use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class RaidBossController extends Controller {
+class RaidBossController extends Controller
+{
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
+    protected bool $isUseProxy = true;
+    protected int $intervalForUpdateBossTimerInMin = 15;
 
     /**
      * $type 'epic' or 'subclass'
      * $server x1 is 3; x5 is 0; x7 is 8
      */
-    public function getBossesDeathTime( string $type, string $server ) {
+    public function getBossesDeathTime(string $type, string $server)
+    {
         $feedFilter = $type;
-        if ( $type === 'subclass' ) {
+        if ($type === 'subclass') {
             $feedFilter = 'keyboss';
         }
 
-        if ( $server === 'x1' ) {
+        if ($server === 'x1') {
             $feedServer = 3;
         } elseif ($server === 'x5') {
             $feedServer = 0;
@@ -32,49 +36,54 @@ class RaidBossController extends Controller {
 
         $feed = "https://asterios.tm/index.php?cmd=rss&serv={$feedServer}&filter={$feedFilter}&count=1000&out=xml";
 
-        $boss = RaidBoss::where( [
-            [ 'type', $type ],
-        ] )->where( [
-            [ 'server', $server ],
-        ] )->get()->first();
+        $boss = RaidBoss::where([
+            ['type', $type],
+        ])->where([
+            ['server', $server],
+        ])->get()->first();
 
-        /* Disable on local case of errors */
-        if ( env( 'APP_ENV' ) !== 'local' ) {
-
-            /* Update respawn info every 5 min */
-            if ( getCurrentTimeInUnix() > strtotime( '+5 minutes', strtotime( $boss->updated_at ) ) ) {
-                try {
+        /* Update respawn info by interval time */
+        if (getCurrentTimeInUnix() > strtotime("+{$this->intervalForUpdateBossTimerInMin} minutes",
+                strtotime($boss->updated_at))) {
+            try {
+                if ($this->isUseProxy) {
+                    $feedXml            = curlRequestWithProxy($feed);
+                    $subclassBossesFeed = simplexml_load_string($feedXml);
+                } else {
                     $subclassBossesFeed = simplexml_load_file($feed);
-                    $this->updateRaidBossTime($subclassBossesFeed, $server);
-                } catch (\Exception $exception) {
-                    $exceptionMessage = $exception->getMessage();
-                    $exceptionLine    = $exception->getLine();
-                    $exceptionFile    = $exception->getFile();
-                    Log::channel('bossesParser')->info('Feed Url: '.$feed);
-                    Log::channel('bossesParser')->info("Message: {$exceptionMessage}. {$exceptionFile}:{$exceptionLine}");
                 }
+
+                $this->updateRaidBossTime($subclassBossesFeed, $server);
+            } catch (\Exception $exception) {
+                $exceptionMessage = $exception->getMessage();
+                $exceptionLine    = $exception->getLine();
+                $exceptionFile    = $exception->getFile();
+                Log::channel('bossesParser')->info('Feed Url: '.$feed);
+                Log::channel('bossesParser')->info("Message: {$exceptionMessage}. {$exceptionFile}:{$exceptionLine}");
             }
         }
 
-        return RaidBoss::where( [
-            [ 'type', $type ],
-        ] )->where( [
-            [ 'server', $server ],
-        ] )->get();
+        return RaidBoss::where([
+            ['type', $type],
+        ])->where([
+            ['server', $server],
+        ])->get();
     }
 
-    protected function updateRaidBossTime( $feed, $server ) {
+    protected function updateRaidBossTime($feed, $server)
+    {
         $updatedBosses = [];
 
-        if ( isset( $feed->channel ) && isset( $feed->channel->item ) ) {
-            foreach ( $feed->channel->item as $item ) {
-                $bossMessagePrefix = 'Убит босс ';
+        if (isset($feed->channel) && isset($feed->channel->item)) {
+            foreach ($feed->channel->item as $item) {
+                $bossMessagePrefix = ' was killed';
 
                 /* If that info not about raid boss */
                 if (strpos($item->title, $bossMessagePrefix) === false) {
                     continue;
                 }
-                $bossName = explode($bossMessagePrefix, $item->title)[1];
+                $bossName = explode($bossMessagePrefix, $item->title)[0];
+                $bossName = str_replace('Boss ', '', $bossName);
 
                 if (in_array($bossName, $updatedBosses)) {
                     continue;
@@ -90,29 +99,26 @@ class RaidBossController extends Controller {
                     $dateFormat        = 'Y-m-d H:i:s';
                     $respawnHoursStart = $respawnBase - $respawnDynamic;
                     $respawnHoursEnd   = $respawnBase + $respawnDynamic;
-                    $dateKill          = strtotime( $item->pubDate );
-                    $respawnStart      = strtotime( "+{$respawnHoursStart} hours", $dateKill );
-                    $respawnEnd        = strtotime( "+{$respawnHoursEnd} hours", $dateKill );
+                    $dateKill          = strtotime($item->pubDate);
+                    $respawnStart      = strtotime("+{$respawnHoursStart} hours", $dateKill);
+                    $respawnEnd        = strtotime("+{$respawnHoursEnd} hours", $dateKill);
                     $currentTime       = getCurrentTimeInUnix();
                     $isRespawnStarted  = $currentTime > $respawnStart;
                     $statusRespawn     = $isRespawnStarted ? 'Респ идёт' : 'Респ не начался';
                     $timerStatus       = $isRespawnStarted ? 'До макс респа:' : 'До начала респа:';
                     $timerDate         = $isRespawnStarted ? $respawnEnd : $respawnStart;
-                    $timerDate         = date( $dateFormat, $timerDate );
+                    $timerDate         = date($dateFormat, $timerDate);
 
-                    $boss->update( [
+                    $boss->update([
                         'status_respawn' => $statusRespawn,
-                        'respawn_start'  => date( $dateFormat, $respawnStart ),
-                        'respawn_end'    => date( $dateFormat, $respawnEnd ),
+                        'respawn_start'  => date($dateFormat, $respawnStart),
+                        'respawn_end'    => date($dateFormat, $respawnEnd),
                         'timer_date'     => $timerDate,
                         'timer_status'   => $timerStatus,
                         'updated_at'     => getCurrentTimeInUnix(),
-                    ] );
-
+                    ]);
                 }
-
             }
-
         }
     }
 

@@ -181,11 +181,50 @@ function prettifyNumber( int $number ): string {
 function getFaqSchemaHtml( $faq ) {
     return view( 'pages.index.faq-schema', [
         'faq' => $faq,
-    ] );
+    ]);
 }
 
-function getRecipeSchemaHtml( $recipe ) {
-    return view( 'pages.recipes.schema', [
+function getRecipeSchemaHtml($recipe)
+{
+    return view('pages.recipes.schema', [
         'single' => $recipe,
-    ] );
+    ]);
+}
+
+/**
+ * Access to url with curl and proxy
+ *
+ * @param  string  $url
+ * @param  bool  $isRemoveHeaders  // Remove headers for xml document parse
+ *
+ * @return bool|string
+ * @throws Exception
+ */
+function curlRequestWithProxy(string $url, bool $isRemoveHeaders = true)
+{
+    $proxyIp       = env('PROXY_IP');
+    $proxyPort     = env('PROXY_PORT');
+    $proxyLogin    = env('PROXY_LOGIN');
+    $proxyPassword = env('PROXY_PASSWORD');
+    if (empty($proxyIp) || empty($proxyPort) || empty($proxyLogin) || empty($proxyPassword)) {
+        throw new \Exception('Not enough proxy data');
+    }
+    $proxy     = "{$proxyIp}:{$proxyPort}";
+    $proxyAuth = "{$proxyLogin}:{$proxyPassword}";
+
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_PROXY, $proxy);
+    curl_setopt($curl, CURLOPT_PROXYUSERPWD, $proxyAuth);
+    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_HEADER, 1);
+    $response = curl_exec($curl);
+    curl_close($curl);
+
+    if ($isRemoveHeaders) {
+        $response = preg_replace('/HTTP(.*)<?xml/s', '<?xml', $response);
+    }
+
+    return $response;
 }
