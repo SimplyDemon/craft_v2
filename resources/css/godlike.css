@@ -13484,3 +13484,7 @@ span.active > .nk-icon-toggle, .nk-icon-toggle.active {
     opacity: 1;
     z-index: 1;
 }
+
+.respawn-started-color {
+    color: #d22525;
+}

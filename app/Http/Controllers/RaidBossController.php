@@ -11,7 +11,7 @@ class RaidBossController extends Controller
 {
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
     protected bool $isUseProxy = true;
-    protected int $intervalForUpdateBossTimerInMin = 15;
+    protected int $intervalForUpdateBossTimerInMin = 30;
 
     /**
      * $type 'epic' or 'subclass'
@@ -110,12 +110,13 @@ class RaidBossController extends Controller
                     $timerDate         = date($dateFormat, $timerDate);
 
                     $boss->update([
-                        'status_respawn' => $statusRespawn,
-                        'respawn_start'  => date($dateFormat, $respawnStart),
-                        'respawn_end'    => date($dateFormat, $respawnEnd),
-                        'timer_date'     => $timerDate,
-                        'timer_status'   => $timerStatus,
-                        'updated_at'     => getCurrentTimeInUnix(),
+                        'status_respawn'     => $statusRespawn,
+                        'respawn_start'      => date($dateFormat, $respawnStart),
+                        'respawn_end'        => date($dateFormat, $respawnEnd),
+                        'timer_date'         => $timerDate,
+                        'timer_status'       => $timerStatus,
+                        'updated_at'         => getCurrentTimeInUnix(),
+                        'is_respawn_started' => $isRespawnStarted,
                     ]);
                 }
             }
