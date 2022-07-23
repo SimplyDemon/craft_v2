@@ -46,15 +46,19 @@ class IndexController extends Controller {
             'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x5'),
             'epic'     => $raidBossController->getBossesDeathTime('epic', 'x5'),
         ];
+
+        /*
+         * x7 was merged, temp dont show x7 bosses on index
         $bossesX7           = [
             'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x7'),
             'epic'     => $raidBossController->getBossesDeathTime('epic', 'x7'),
         ];
+*/
 
         return view('pages.index.index', [
             'bossesX1'                => $bossesX1,
             'bossesX5'                => $bossesX5,
-            'bossesX7'                => $bossesX7,
+            //            'bossesX7'                => $bossesX7,
             'bossesChosenServer'      => $bossesChosenServer,
             'title'                   => 'Калькулятор крафта Asterios',
             'lastResourcesUpdateTime' => $lastResourcesUpdateTime ?? '???',
