@@ -11,7 +11,7 @@ class RaidBossController extends Controller
 {
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
     protected bool $isUseProxy = true;
-    protected int $intervalForUpdateBossTimerInMin = 30;
+    protected int $intervalForUpdateBossTimerInMin = 10;
 
     /**
      * $type 'epic' or 'subclass'

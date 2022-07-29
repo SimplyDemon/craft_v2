@@ -33,7 +33,7 @@
                     </li>
                 @endforeach
             </ul>
-        @else
+        @elseif($search)
             <h4>Ничего не нашли, попробуйте воспользоваться
                 <a href="{{route('recipes.index')}}">каталогом предметов</a> с крутыми фильтрами!</h4>
         @endif

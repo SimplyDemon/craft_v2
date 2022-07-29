@@ -31,6 +31,15 @@
                         Ресурсы
                     </a>
                 </li>
+                <li class="single-icon">
+                    <a href="#!" class="no-link-effect" data-nav-toggle="#nk-side">
+                        <span class="nk-icon-burger">
+                            <span class="nk-t-1"></span>
+                            <span class="nk-t-2"></span>
+                            <span class="nk-t-3"></span>
+                        </span>
+                    </a>
+                </li>
                 @if($isAuth)
                     <li class="nk-drop-item {{Route::is('user') || Route::is('user.price') || Route::is('conversations.index') ? 'active' : ''}}">
                         <a class="color-main-1-hover" itemprop="url" href="{{route('user')}}">

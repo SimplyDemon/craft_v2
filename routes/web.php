@@ -14,6 +14,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\ResourceController;
+use App\Http\Controllers\BossesRespawnController;
 use App\Http\Controllers\ConversationController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MessageController;
@@ -34,10 +35,11 @@ Route::middleware( 'auth.dev' )->group( function () {
         'verify'   => false, // Email Verification Routes...
     ] );
 
-    Route::get( '/', [ IndexController::class, 'index' ] )->name( 'index' );
-    Route::get( '/public', function () {
-        return Redirect::to( route( 'index' ) );
-    } )->name( 'public' );
+    Route::get('/', [IndexController::class, 'index'])->name('index');
+    Route::get('/bosses-respawn', [BossesRespawnController::class, 'index'])->name('bosses_respawn');
+    Route::get('/public', function () {
+        return Redirect::to(route('index'));
+    })->name('public');
     Route::get( '/search', [ SearchController::class, 'index' ] )->name( 'search' );
     Route::post( '/search', [ SearchController::class, 'ajax' ] )->name( 'search.ajax' );
 

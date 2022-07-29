@@ -230,3 +230,16 @@ tr.child-depth-5 td:first-child {
 .resource_table_line-svg:hover {
     cursor: pointer;
 }
+
+#nk-side {
+    text-shadow: 5px 5px 5px #000;
+}
+
+#nk-side a:hover {
+    color: #e08821;
+}
+
+img.sd-navbar-bg {
+    height: auto;
+    margin-top: 25%;
+}

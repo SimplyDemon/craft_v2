@@ -11,7 +11,7 @@
                     <a href="{{route('recipes.index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
                         <span>Каталог предметов</span>
                     </a>
-                    <a href="#rb" class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-1">
+                    <a href="{{route('bosses_respawn')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-1">
                         Респ РБ
                     </a>
                     <div class="nk-gap-4"></div>

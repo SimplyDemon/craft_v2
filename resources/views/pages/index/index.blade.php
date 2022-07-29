@@ -9,10 +9,6 @@
         <div class="nk-box bg-dark-1 sd-background">
             <div class="container text-center">
                 @include('pages.index.description')
-
-                @if($bossesX1 && $bossesX5)
-                    @include('pages.index.bosses')
-                @endif
             </div>
         </div>
         @if($faq && is_array($faq))

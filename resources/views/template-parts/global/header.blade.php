@@ -2,17 +2,17 @@
 $user    = auth()->user();
 $isAuth  = $user;
 $isAdmin = $isAuth && $user->isAdmin;
-if ( ! isset( $_SESSION ) ) {
+if ( ! isset($_SESSION)) {
     session_start();
 }
 $agent    = new \Jenssegers\Agent\Agent();
 $isMobile = $agent->isMobile();
 
-$isActivateFirstTimeAnimation     = ! isset( $_SESSION['isAnimationWasShowed'] );
-$isEnableAnimation                = ( $isAuth && $user->isEnableAnimation ) || ( $isActivateFirstTimeAnimation && ! $isMobile );
+$isActivateFirstTimeAnimation     = ! isset($_SESSION['isAnimationWasShowed']);
+$isEnableAnimation                = ($isAuth && $user->isEnableAnimation) || ($isActivateFirstTimeAnimation && ! $isMobile);
 $_SESSION['isAnimationWasShowed'] = true;
 ?>
-    <!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="ru">
 <head itemscope itemtype="http://schema.org/WPHeader">
     <meta charset="utf-8">
@@ -52,15 +52,15 @@ $_SESSION['isAnimationWasShowed'] = true;
         <link rel="icon" type="image/png" href="{{ URL::to('/') }}/favicon.ico" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-87WEW2EL6C"></script>
         <script>
-            window.dataLayer = window.dataLayer || [];
+			window.dataLayer = window.dataLayer || [];
 
-            function gtag() {
-                dataLayer.push( arguments );
-            }
+			function gtag() {
+				dataLayer.push( arguments );
+			}
 
-            gtag( 'js', new Date() );
+			gtag( 'js', new Date() );
 
-            gtag( 'config', 'G-87WEW2EL6C' );
+			gtag( 'config', 'G-87WEW2EL6C' );
         </script>
     @endif
 
@@ -75,14 +75,14 @@ $_SESSION['isAnimationWasShowed'] = true;
 
 @if (env( 'APP_ENV' ) === 'prod')
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript"> (function( m, e, t, r, i, k, a ) {
-            m[ i ]   = m[ i ] || function() {
-                (m[ i ].a = m[ i ].a || []).push( arguments )
-            };
-            m[ i ].l = 1 * new Date();
-            k = e.createElement( t ), a = e.getElementsByTagName( t )[ 0 ], k.async = 1, k.src = r, a.parentNode.insertBefore( k, a )
-        })( window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym" );
-        ym( 86545727, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true } ); </script>
+    <script type="text/javascript"> (function ( m, e, t, r, i, k, a ) {
+			m[ i ] = m[ i ] || function () {
+				(m[ i ].a = m[ i ].a || []).push( arguments )
+			};
+			m[ i ].l = 1 * new Date();
+			k = e.createElement( t ), a = e.getElementsByTagName( t )[ 0 ], k.async = 1, k.src = r, a.parentNode.insertBefore( k, a )
+		})( window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym" );
+		ym( 86545727, "init", {clickmap: true, trackLinks: true, accurateTrackBounce: true} ); </script>
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/86545727" style="position:absolute; left:-9999px;" alt="" /></div>
     </noscript> <!-- /Yandex.Metrika counter -->
@@ -123,6 +123,11 @@ $_SESSION['isAnimationWasShowed'] = true;
 </header>
 
 <nav class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-lg nk-navbar-align-center nk-navbar-overlay-content" id="nk-side">
+    <div class="nk-navbar-bg">
+        <div class="bg-image">
+            <img src="{{ asset('images/navbar-bg.webp' ) }}" alt="Elfie" class="img-fluid jarallax-img sd-navbar-bg">
+        </div>
+    </div>
 
     <div class="nano">
         <div class="nano-content">
@@ -132,6 +137,16 @@ $_SESSION['isAnimationWasShowed'] = true;
                     <a href="{{route('index')}}" class="nk-nav-logo">
                         <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="150" height="35">
                     </a>
+                </div>
+
+                <div class="nk-nav-row nk-nav-row-full nk-nav-row-center">
+                    <ul class="nk-nav">
+                        <li class=" ">
+                            <a href="{{route('bosses_respawn')}}">
+                                Респ РБ
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
             </div>
