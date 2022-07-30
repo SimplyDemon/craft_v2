@@ -3,6 +3,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
+@section('description', "Просмотр беседы #{$single->id}.")
 <?php $currentUser = auth()->user() ?>
 
 <div class="nk-social-container">

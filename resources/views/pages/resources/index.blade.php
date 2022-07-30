@@ -3,6 +3,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
+@section('description', 'Информация о всех ресурсах.')
 <div class="nk-main">
 
     <div class="nk-box">

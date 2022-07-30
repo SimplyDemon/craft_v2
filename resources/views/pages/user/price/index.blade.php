@@ -3,6 +3,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
+@section('description', "Кастомные цены для пользователя #{$userId}.")
 @if ($resources && $recipes)
 
     <form method="post" action="{{route('user.price.update')}}">

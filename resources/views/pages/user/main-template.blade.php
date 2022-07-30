@@ -3,6 +3,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
+@section('description', 'Личный кабинет пользователя.')
 <?php
 $user = auth()->user();
 $isAuth = $user;

@@ -2,6 +2,7 @@
 @section('content')
     @if(isset($title))
 @section('title', $title . ' | Ресурсы')
+@section('description', "Информация о ресурсе {$title}.")
 @endif
 <div id="chart-config"
      @if($priceHistoryDates)

@@ -2,6 +2,7 @@
 @section('content')
     @if(isset($title))
 @section('title', $title)
+@section('description', 'Таймеры показывают время респа нубл и эпик РБ на всех серверах.')
 @endif
 <div class="nk-main">
     <div class="nk-box bg-dark-1 sd-background">

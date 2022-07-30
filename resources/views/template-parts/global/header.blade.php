@@ -25,6 +25,12 @@ $_SESSION['isAnimationWasShowed'] = true;
         <title itemprop="headline">Калькулятор крафта Asterios</title>
     @endif
 
+    @if(View::hasSection('description'))
+        <meta itemprop="description" name="description" content="@yield('description')">
+    @else
+        <meta itemprop="description" name="description" content="@yield('meta_description','Калькулятор крафта Астериос создан для людей, которые увлекаются крафтом или просто накопили кучу ресурсов и ищут что с ними сделать. Стоит ли крафтить предмет, выгодно ли это или стоит продать все ресурсы на рынок? Какой шанс крафта Рар предмета и что вообще даёт Masterwork? Нормальная ли это цена за ресурс или раньше она сильно упала? Когда реснутся сабкласс РБ или Эпик РБ? Ответы на вопросы найдёшь на этом сайте!')">
+    @endif
+
     @if(isset($faq))
         {!! getFaqSchemaHtml($faq) !!}
     @endif
@@ -43,7 +49,6 @@ $_SESSION['isAnimationWasShowed'] = true;
         <link rel="canonical" href="@yield('canonical')" />
     @endif
 
-    <meta itemprop="description" name="description" content="@yield('meta_description','Калькулятор крафта Астериос создан для людей, которые увлекаются крафтом или просто накопили кучу ресурсов и ищут что с ними сделать. Стоит ли крафтить предмет, выгодно ли это или стоит продать все ресурсы на рынок? Какой шанс крафта Рар предмета и что вообще даёт Masterwork? Нормальная ли это цена за ресурс или раньше она сильно упала? Когда реснутся сабкласс РБ или Эпик РБ? Ответы на вопросы найдёшь на этом сайте!')">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

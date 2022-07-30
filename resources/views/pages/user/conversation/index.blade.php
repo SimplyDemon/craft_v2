@@ -3,6 +3,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
+@section('description', 'Все беседы.')
 <div class="nk-social-profile-info-actions">
     <a href="{{ route( 'conversations.create' ) }}" class="nk-btn ready">
         <span class="link-effect-inner">

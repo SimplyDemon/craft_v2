@@ -22,6 +22,7 @@ class UserPriceController extends Controller {
         $userRecipes   = $user->recipes->groupBy( 'category_id' );
 
         return view( $this->folderPath . 'index', [
+            'userId'    => $user->id,
             'resources' => $userResources->isEmpty() ? $resources : $userResources,
             'recipes'   => $userRecipes->isEmpty() ? $recipes : $userRecipes,
             'title'     => 'Цены',

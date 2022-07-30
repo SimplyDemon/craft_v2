@@ -4,7 +4,9 @@
 @section('content')
     @if(isset($title))
 @section('title', $title . ' | Предметы')
+@section('description', "Информация о крафте рецепта {$title}.")
 @endif
+
 @if($single->keywords)
     @section('meta_keywords', $single->keywords)
 @endif

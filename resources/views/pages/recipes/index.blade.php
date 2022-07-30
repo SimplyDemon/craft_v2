@@ -3,6 +3,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
+@section('description', 'Информация о всех предметах, которые можно скрафтить.')
 <div class="nk-main">
 
     <div class="nk-box">

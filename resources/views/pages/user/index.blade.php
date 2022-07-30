@@ -3,6 +3,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
+@section('description', 'Личный кабинет.')
 <p>Email: {{$user->email}}</p>
 <p>Name: {{$user->name}}</p>
 
