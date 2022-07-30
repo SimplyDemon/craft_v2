@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class="single-icon">
-                    <a href="#!" class="no-link-effect" data-nav-toggle="#nk-side">
+                    <a href="#sidebar" class="no-link-effect" data-nav-toggle="#nk-side">
                         <span class="nk-icon-burger">
                             <span class="nk-t-1"></span>
                             <span class="nk-t-2"></span>
