@@ -36,6 +36,8 @@ class RecipesExtraSeeder extends Seeder
         int $attackMagic = null,
         int $defenceMagic = null,
         int $defencePhysic = null,
+        string $masterworkDescription = null,
+        string $favoriteText = null,
 
     ) {
         $recipe = Recipe::where('name', $name)->firstOrFail();
@@ -59,6 +61,12 @@ class RecipesExtraSeeder extends Seeder
         }
         if ( ! empty($defencePhysic)) {
             $args['p_def'] = $defencePhysic;
+        }
+        if ( ! empty($masterworkDescription)) {
+            $args['masterwork_description'] = $masterworkDescription;
+        }
+        if ( ! empty($favoriteText)) {
+            $args['favorite_text'] = $favoriteText;
         }
 
         if ( ! empty($args)) {

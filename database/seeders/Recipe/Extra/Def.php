@@ -785,8 +785,9 @@ class Def extends RecipesExtraSeeder
                 'defenceMagic' => 68,
             ],
             [
-                'name'         => 'Black Ore Necklace',
-                'defenceMagic' => 72,
+                'name'                  => 'Black Ore Necklace',
+                'defenceMagic'          => 72,
+                'masterworkDescription' => 'Увеличивает Сопротивление к Стану на 4.76',
             ],
             [
                 'name'         => 'Phoenix Necklace',
@@ -821,10 +822,9 @@ class Def extends RecipesExtraSeeder
                 $item['name'],
                 defenceMagic: $item['defenceMagic'] ?? null,
                 defencePhysic: $item['defencePhysic'] ?? null,
+                masterworkDescription: $item['masterworkDescription'] ?? null,
             );
         }
-
-
     }
 
 }

@@ -9,11 +9,13 @@
 
 ## Optimise
 
-- php8.1 -n artisan route:cache - cache all routes
+- php8.1 -n artisan cache:clear - reset cache
+- php8.1 -n artisan config:clear - if need update config
 - php8.1 -n artisan route:clear - if need add routes
 
 - php8.1 -n artisan config:cache - config all caches
-- php8.1 -n artisan config:clear - if need update config
+- php8.1 -n artisan route:cache - cache all routes
+- php8.1 -n artisan config:cache - generate cache
 
 ## Build
 

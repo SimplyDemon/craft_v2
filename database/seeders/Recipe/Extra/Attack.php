@@ -139,6 +139,7 @@ class Attack extends RecipesExtraSeeder
                 'isMage'       => false,
                 'attackPhysic' => 213,
                 'attackMagic'  => 91,
+                'favoriteText' => 'Лучшее оружие для сумонера до Dynasty Knife. Даёт огромное количество шанса крита (122) за счёт СА и рар бонуса, которое передаются сумону. Так же с таким оружие комфортно качать физ саб классы.',
             ],
             [
                 'name'         => 'Keshanberk',
@@ -277,6 +278,7 @@ class Attack extends RecipesExtraSeeder
                 'isMage'       => false,
                 'attackPhysic' => 396,
                 'attackMagic'  => 176,
+                'favoriteText' => 'Рарный кутер - лучшее оружие для разгона шанса крита для сумона, даёт колоссальное количество шанса крита (185) за счёт СА и рар бонуса. Дико дорогой.',
             ],
             [
                 'name'         => 'Vesper Slasher',
@@ -549,6 +551,7 @@ class Attack extends RecipesExtraSeeder
                 'isMage'       => true,
                 'attackPhysic' => 186,
                 'attackMagic'  => 152,
+                'favoriteText' => 'Лучшее оружие для заливка за счёт рар бонуса, который позволяет тратить меньше маны на залив мп своей пати.',
             ],
             [
                 'name'         => 'Doom Crusher',
@@ -841,6 +844,7 @@ class Attack extends RecipesExtraSeeder
                 'isMage'       => false,
                 'attackPhysic' => 291,
                 'attackMagic'  => 151,
+                'favoriteText' => 'Для львиной доли сумонеров это лучшее оружие в игре. Лишь немного уступает Vesper Cutter.',
             ],
             [
                 'name'         => 'Icarus Disperser',
@@ -921,6 +925,7 @@ class Attack extends RecipesExtraSeeder
                 'isMage'       => false,
                 'attackPhysic' => 213,
                 'attackMagic'  => 107,
+                'favoriteText' => 'Одна из двух пик, рар бонус которой, даёт шанс крита (54). Вторая пика с критом - Vesper Stormer.',
             ],
             [
                 'name'         => 'Tallum Glaive',
@@ -1048,10 +1053,9 @@ class Attack extends RecipesExtraSeeder
                 isMage: $weapon['isMage'],
                 attackPhysic: $weapon['attackPhysic'],
                 attackMagic: $weapon['attackMagic'],
+                favoriteText: $weapon['favoriteText'] ?? null,
             );
         }
-
-
     }
 
 

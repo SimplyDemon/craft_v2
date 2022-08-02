@@ -18,8 +18,7 @@ return new class extends Migration {
             $table->boolean('is_two_hand')->default(0); /* For calc weapon enchant  */
             $table->integer('m_attack')->nullable();
             $table->integer('p_attack')->nullable();
-            $table->boolean('is_favorite')->default(0); /* Some weapons are favorite like Great Sword for summoners */
-            $table->text('favorite_text')->nullable();
+            $table->text('favorite_text')->nullable(); /* Some weapons are favorite like Great Sword for summoners */
 
             /* For armor */
             $table->integer('p_def')->nullable();
