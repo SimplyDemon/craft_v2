@@ -61,11 +61,19 @@
         {!! $single->sa_html !!}
 
         @if($single->p_attack)
-            <div>P.attack: <span class="nk-btn-color-main-1">{{$single->p_attack}}</span></div>
+            <div>Физ атака: <span class="nk-btn-color-main-1">{{$single->p_attack}}</span></div>
         @endif
 
         @if($single->m_attack)
-            <div>M.attack: <span class="nk-btn-color-main-1">{{$single->m_attack}}</span></div>
+            <div>Маг атака: <span class="nk-btn-color-main-1">{{$single->m_attack}}</span></div>
+        @endif
+
+        @if($single->p_def)
+            <div>Физ защита: <span class="nk-btn-color-main-1">{{$single->p_def}}</span></div>
+        @endif
+
+        @if($single->m_def)
+            <div>Маг защита: <span class="nk-btn-color-main-1">{{$single->m_def}}</span></div>
         @endif
 
         @if($single->resource)
