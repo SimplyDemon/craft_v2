@@ -19,7 +19,9 @@
     <div class="nk-box">
         <div class="container">
             <div class="nk-gap-2"></div>
-            <h1 class="nk-title">{{ $title ?? $single->name }}</h1>
+            <h1 class="nk-title">
+                {{ $title ?? $single->name }}
+            </h1>
             <div class="nk-gap-2"></div>
         </div>
     </div>
@@ -57,6 +59,15 @@
             </p>
         @endif
         {!! $single->sa_html !!}
+
+        @if($single->p_attack)
+            <div>P.attack: <span class="nk-btn-color-main-1">{{$single->p_attack}}</span></div>
+        @endif
+
+        @if($single->m_attack)
+            <div>M.attack: <span class="nk-btn-color-main-1">{{$single->m_attack}}</span></div>
+        @endif
+
         @if($single->resource)
             <a href="{{ route( 'resources.show', [ 'id' => $single->resource->id ] ) }}">
                 <h3>Ресурс</h3>
