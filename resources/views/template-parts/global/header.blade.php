@@ -2,15 +2,14 @@
 $user    = auth()->user();
 $isAuth  = $user;
 $isAdmin = $isAuth && $user->isAdmin;
-if ( ! isset($_SESSION)) {
-    session_start();
-}
+
 $agent    = new \Jenssegers\Agent\Agent();
 $isMobile = $agent->isMobile();
 
-$isActivateFirstTimeAnimation     = ! isset($_SESSION['isAnimationWasShowed']);
+$isActivateFirstTimeAnimation     = ! session('isAnimationWasShowed', false);
 $isEnableAnimation                = ($isAuth && $user->isEnableAnimation) || ($isActivateFirstTimeAnimation && ! $isMobile);
 $_SESSION['isAnimationWasShowed'] = true;
+session(['isAnimationWasShowed' => true]);
 ?>
         <!DOCTYPE html>
 <html lang="ru">
@@ -113,7 +112,6 @@ $_SESSION['isAnimationWasShowed'] = true;
         </div>
 
     </div>
-
 @endif
 
 <div class="nk-page-border">
