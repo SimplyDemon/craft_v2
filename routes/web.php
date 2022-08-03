@@ -20,6 +20,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PriceParserController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UpdatePrice;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\UserPriceController;
@@ -89,15 +90,17 @@ Route::middleware( 'auth.dev' )->group( function () {
         } );
 
         Route::middleware( 'isAdmin' )->prefix( 'admin' )->group( function () {
-            Route::resource( 'categories', CategoryController::class )->parameters( [
+            Route::get('/test', [TestController::class, 'index'])->name('test');
+
+            Route::resource('categories', CategoryController::class)->parameters([
                 'categories' => 'id',
-            ] );
+            ]);
 
-            Route::resource( 'recipes', RecipeController::class )->parameters( [
+            Route::resource('recipes', RecipeController::class)->parameters([
                 'recipes' => 'id',
-            ] )->except( [ 'index', 'show' ] );
+            ])->except(['index', 'show']);
 
-            Route::resource( 'resources', ResourceController::class )->parameters( [
+            Route::resource('resources', ResourceController::class)->parameters([
                 'resources' => 'id',
             ] )->except( [ 'index', 'show' ] );
         } );

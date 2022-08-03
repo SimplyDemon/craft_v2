@@ -1,14 +1,14 @@
-<?php
-$user = auth()->user();
-$isAuth = $user;
-$isAdmin = $isAuth && $user->isAdmin;
+@php
+    $user    = auth()->user();
+    $isAuth  = $user;
+    $isAdmin = $isAuth && $user->isAdmin;
 
-$agent = new \Jenssegers\Agent\Agent();
-$isMobile = $agent->isMobile();
+    $agent    = new \Jenssegers\Agent\Agent();
+    $isMobile = $agent->isMobile();
 
-$isActivateFirstTimeAnimation = ! session('isAnimationWasShowed', false);
-$isEnableAnimation = ($isAuth && $user->isEnableAnimation) || ($isActivateFirstTimeAnimation && ! $isMobile);
-?>
+    $isActivateFirstTimeAnimation = ! session('isAnimationWasShowed', false);
+    $isEnableAnimation            = ($isAuth && $user->isEnableAnimation) || ($isActivateFirstTimeAnimation && ! $isMobile);
+@endphp
         <!DOCTYPE html>
 <html lang="ru">
 <head itemscope itemtype="http://schema.org/WPHeader">
@@ -91,9 +91,9 @@ $isEnableAnimation = ($isAuth && $user->isEnableAnimation) || ($isActivateFirstT
 @endif
 
 @if($isEnableAnimation)
-    <?php
-    session(['isAnimationWasShowed' => true]);
-    ?>
+    @php
+        session(['isAnimationWasShowed' => true]);
+    @endphp
     <div class="nk-preloader">
         <div class="nk-preloader-bg"
              style="background-color: #000;"

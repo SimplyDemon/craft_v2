@@ -35,10 +35,19 @@ return [
     */
 
     'channels' => [
-        'stack' => [
+        'telegramLogger'           => [
+            'driver' => 'custom',
+            'via'    => App\Logging\TelegramLogger::class,
+        ],
+        'stack'                    => [
             'driver'            => 'stack',
-            'channels'          => ['single'],
+            'channels'          => ['single', 'telegramLogger'],
             'ignore_exceptions' => false,
+        ],
+        'bossesParserWithTelegram' => [
+            'driver'   => 'stack',
+            'name'     => 'bossesParserWithTelegram',
+            'channels' => ['bossesParser', 'telegramLogger'],
         ],
 
         'single' => [

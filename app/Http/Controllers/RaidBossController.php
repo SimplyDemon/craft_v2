@@ -58,8 +58,8 @@ class RaidBossController extends Controller
                 $exceptionMessage = $exception->getMessage();
                 $exceptionLine    = $exception->getLine();
                 $exceptionFile    = $exception->getFile();
-                Log::channel('bossesParser')->info('Feed Url: '.$feed);
-                Log::channel('bossesParser')->info("Message: {$exceptionMessage}. {$exceptionFile}:{$exceptionLine}");
+                Log::channel('bossesParserWithTelegram')->error('Feed Url: '.$feed);
+                Log::channel('bossesParserWithTelegram')->error("Message: {$exceptionMessage}. {$exceptionFile}:{$exceptionLine}");
             }
         }
 
