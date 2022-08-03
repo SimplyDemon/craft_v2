@@ -8,8 +8,6 @@ $isMobile = $agent->isMobile();
 
 $isActivateFirstTimeAnimation     = ! session('isAnimationWasShowed', false);
 $isEnableAnimation                = ($isAuth && $user->isEnableAnimation) || ($isActivateFirstTimeAnimation && ! $isMobile);
-$_SESSION['isAnimationWasShowed'] = true;
-session(['isAnimationWasShowed' => true]);
 ?>
         <!DOCTYPE html>
 <html lang="ru">
@@ -93,6 +91,9 @@ session(['isAnimationWasShowed' => true]);
 @endif
 
 @if($isEnableAnimation)
+    <?php
+    session(['isAnimationWasShowed' => true]);
+    ?>
     <div class="nk-preloader">
         <div class="nk-preloader-bg"
              style="background-color: #000;"
