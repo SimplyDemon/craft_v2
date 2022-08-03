@@ -1,13 +1,13 @@
 <?php
-$user    = auth()->user();
-$isAuth  = $user;
+$user = auth()->user();
+$isAuth = $user;
 $isAdmin = $isAuth && $user->isAdmin;
 
-$agent    = new \Jenssegers\Agent\Agent();
+$agent = new \Jenssegers\Agent\Agent();
 $isMobile = $agent->isMobile();
 
-$isActivateFirstTimeAnimation     = ! session('isAnimationWasShowed', false);
-$isEnableAnimation                = ($isAuth && $user->isEnableAnimation) || ($isActivateFirstTimeAnimation && ! $isMobile);
+$isActivateFirstTimeAnimation = ! session('isAnimationWasShowed', false);
+$isEnableAnimation = ($isAuth && $user->isEnableAnimation) || ($isActivateFirstTimeAnimation && ! $isMobile);
 ?>
         <!DOCTYPE html>
 <html lang="ru">
