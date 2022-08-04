@@ -142,7 +142,6 @@ class RecipeController extends Controller {
         $prepareRecipe   = new PrepareRecipeResourcesService();
         $recipeData      = $prepareRecipe->prepare( $single );
         $tooltipPriceImg = public_path() . '/question.svg';
-
         if ( $single->grade === 'C' ) {
             $chanceText = 'DoubleCraft';
         }

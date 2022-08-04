@@ -166,7 +166,7 @@ canvas#price-chart {
 
 .tooltip-inner {
     min-width: 100px;
-    max-width: 100%;
+    max-width: 500px;
 }
 
 .tooltip-inner .col-4 {
@@ -242,4 +242,49 @@ tr.child-depth-5 td:first-child {
 img.sd-navbar-bg {
     height: auto;
     margin-top: 25%;
+}
+
+.sd-color-silver {
+    border-color: #b49191;
+    color: #b49191;
+}
+
+.filter__recipe-item-info-special {
+    display: flex;
+    gap: 3px;
+}
+
+.filter__recipe-item-info-special span.nk-btn {
+    padding: 6px 18px;
+    font-size: 12px !important;
+}
+
+.filter__recipe-item-main-info {
+    display: flex;
+    gap: 3px;
+}
+
+.filter__recipe-item-main-info img {
+    align-self: center;
+}
+
+.recipe-crystals-info {
+    margin-top: 10px;
+}
+
+.recipe-info {
+    margin-bottom: 16px;
+}
+
+.recipe-main-info {
+    margin-top: 10px;
+    padding: 0 6px;
+}
+
+.sa-info {
+    padding: 6px 0;
+}
+
+.sa-info_cost {
+    margin-bottom: 10px;
 }

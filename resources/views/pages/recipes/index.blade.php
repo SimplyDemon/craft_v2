@@ -125,27 +125,36 @@
                             @endif
                             @endif
                         >
-                            <a class="image-link-no-underline" href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
-                                <img width="30" src="{{asset('storage') . '/' . $recipe->img}}" alt="img">
-                            </a>
-                            @if($recipe->masterworkText)
-                                @if($recipe->grade ==='C')
-                                    <?php $masterworkTitle = 'DC'; ?>
-                                @else
-                                    <?php $masterworkTitle = 'MW'; ?>
+                            <div class="filter__recipe-item-info-special">
+                                <a class="image-link-no-underline"
+                                   href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
+                                    <img width="30" src="{{asset('storage') . '/' . $recipe->img}}" alt="img">
+                                </a>
+                                @if($recipe->masterworkText)
+                                    @php
+                                        $masterworkTitle = $recipe->grade ==='C'  ? 'DC' : 'MW';
+                                    @endphp
+                                    <span class="nk-btn nk-btn-style-1 nk-btn-xs nk-btn-color-main-1"
+                                          style="font-size: 10px;" data-toggle="tooltip" data-html="true"
+                                          data-placement="top"
+                                          title="{{$recipe->masterworkText}}">{{$masterworkTitle}}</span>
                                 @endif
-                                <span class="nk-btn nk-btn-style-1 nk-btn-xs nk-btn-color-main-1" style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$recipe->masterworkText}}">{{$masterworkTitle}}</span>
 
-                            @endif
-                            {!! $recipe->sa_html_index !!}
-
-                            <br>
-                            @if($recipe->gradeImage)
-                                <img src="{{$recipe->gradeImage}}" alt="grade">
-                            @endif
-                            <a href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
-                                {{$recipe->name}}
-                            </a>
+                                {!! $recipe->sa_html_index !!}
+                                @if($recipe->bonus_pvp)
+                                    <span class="nk-btn nk-btn-style-1 nk-btn-xs sd-color-silver"
+                                          style="font-size: 10px;" data-toggle="tooltip" data-html="true"
+                                          data-placement="top" title="{{$recipe->bonus_pvp}}">PvP</span>
+                                @endif
+                            </div>
+                            <div class="filter__recipe-item-main-info">
+                                @if($recipe->gradeImage)
+                                    <img src="{{$recipe->gradeImage}}" alt="grade">
+                                @endif
+                                <a href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
+                                    {{$recipe->name}}
+                                </a>
+                            </div>
                         </div>
                     @endforeach
                 </div>

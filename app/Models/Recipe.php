@@ -4,45 +4,52 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 
-class Recipe extends Model {
+class Recipe extends Model
+{
     use SoftDeletes;
 
-    protected $guarded = [ 'id', 'created_at', 'updated_at', 'deleted_at' ];
+    protected $guarded = ['id', 'created_at', 'updated_at', 'deleted_at'];
 
-    public function category() {
-        return $this->belongsTo( Category::class );
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
-    public function resource() {
-        return $this->belongsTo( Resource::class );
+    public function resource()
+    {
+        return $this->belongsTo(Resource::class);
     }
 
-    public function resources() {
-        return $this->belongsToMany( Resource::class )->withPivot( 'resource_quantity' );
+    public function resources()
+    {
+        return $this->belongsToMany(Resource::class)->withPivot('resource_quantity');
     }
 
-    public function users() {
-        return $this->belongsToMany( User::class );
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 
-    public function getGradeImageAttribute() {
+    public function getGradeImageAttribute()
+    {
         $grade = $this->grade;
 
-        if ( empty( $grade ) || $grade === 'none' ) {
+        if (empty($grade) || $grade === 'none') {
             return null;
         }
 
-        return asset( 'storage' ) . '/' . "uploads/grade/{$grade}.png";
+        return asset('storage') . '/' . "uploads/grade/{$grade}.png";
     }
 
     /*
      * Replace % on %25 for correct display percent symbol in url address
      */
-    public function getImgAttribute() {
-
-        return str_replace( '%', '%25', $this->attributes['img'] );
+    public function getImgAttribute()
+    {
+        return str_replace('%', '%25', $this->attributes['img']);
     }
 
     /**
@@ -68,10 +75,11 @@ class Recipe extends Model {
      *
      * Use grade switch only for case if recipe lvl not set
      */
-    public function getRareChanceAttribute() {
+    public function getRareChanceAttribute()
+    {
         $lvl = $this->attributes['lvl'];
-        if ( $lvl ) {
-            switch ( $lvl ) {
+        if ($lvl) {
+            switch ($lvl) {
                 case 10:
                     $craftLevel = 82;
                     break;
@@ -118,12 +126,11 @@ class Recipe extends Model {
 
                 default:
                     return null;
-
             }
         } else {
             $grade = $this->attributes['grade'];
 
-            switch ( $grade ) {
+            switch ($grade) {
                 case 'S-84':
                     $craftLevel = 82;
                     break;
@@ -152,34 +159,35 @@ class Recipe extends Model {
 
         $crafterLevel = 85;
 
-        return 3 + ( $crafterLevel - $craftLevel ) * 0.2;
+        return 3 + ($crafterLevel - $craftLevel) * 0.2;
     }
 
     /*
      * Get master work text
      * Items of C grade has no masterwork bonuses, instead of this they has double craft chance.
      */
-    public function getMasterworkTextAttribute() {
+    public function getMasterworkTextAttribute()
+    {
         $masterWorkText = null;
 
         /*
          * C items has no masterwork description
          * Craft count only 1, exclude shots
          */
-        if ( $this->craft_count === 1 && ( $this->grade === 'C' || $this->masterwork_description ) && $this->grade && $this->rare_chance ) {
+        if ($this->craft_count === 1 && ($this->grade === 'C' || $this->masterwork_description) && $this->grade && $this->rare_chance) {
             $chanceText = 'Шанс МВ';
-            if ( $this->grade === 'C' ) {
+            if ($this->grade === 'C') {
                 $chanceText = 'Шанс дабл крафта';
             }
 
             $masterWorkText = 'Уровень крафтера: <b>85</b><br>';
             $masterWorkText .= $chanceText . ': <b>' . $this->rare_chance . '</b>%<br>';
 
-            if ( $this->masterwork_name ) {
+            if ($this->masterwork_name) {
                 $masterWorkText .= '<i>' . $this->masterwork_name . '</i><br>';
             }
 
-            if ( $this->masterwork_description ) {
+            if ($this->masterwork_description) {
                 $masterWorkText .= $this->attributes['masterwork_description'];
             }
         }
@@ -187,24 +195,29 @@ class Recipe extends Model {
         return $masterWorkText;
     }
 
-    public function getCrystalsTextAttribute() {
-        $crystalsText = null;
+    public function getCrystalsTextAttribute()
+    {
+        if ($this->grade && $this->crystals_count) {
+            $crystalResource = \App\Models\Resource::where('name', 'Crystal ' . $this->basic_grade)->firstOrFail();
+            $crystalImgPath = asset('storage') . '/' . $crystalResource->img;
+            $crystalUrl = route('resources.show', $crystalResource);
+            $crystalsPrice = prettifyNumber($crystalResource->price * $this->crystals_count);
 
-        if ( $this->grade && $this->crystals_count ) {
-            $crystalResource = \App\Models\Resource::where( 'name', 'Crystal ' . $this->basic_grade )->firstOrFail();
-            $crystalImgPath  = asset( 'storage' ) . '/' . $crystalResource->img;
-            $crystalUrl      = route( 'resources.show', $crystalResource );
-            $crystalsText    .= "<a class='no-decoration resource-link' href='{$crystalUrl}'><img width='20' src='{$crystalImgPath}' alt='{$crystalResource->name}'></a>";
-            $crystalsPrice   = prettifyNumber( $crystalResource->price * $this->crystals_count );
-            $crystalsText    .= "$crystalResource->name: {$this->crystals_count}. Их цена: $crystalsPrice";
+            return view('pages/recipes/crystals-text', [
+                'imagePath' => $crystalImgPath,
+                'url' => $crystalUrl,
+                'name' => $crystalResource->name,
+                'totalPrice' => $crystalsPrice,
+                'count' => $this->crystals_count,
+            ]);
         }
 
-        return $crystalsText;
-
+        return null;
     }
 
-    public function getBasicGradeAttribute() {
-        switch ( $this->grade ) {
+    public function getBasicGradeAttribute()
+    {
+        switch ($this->grade) {
             case 'S-84':
             case 'S-80':
                 $basicGrade = 'S';
@@ -217,75 +230,181 @@ class Recipe extends Model {
         return $basicGrade;
     }
 
-    public function getPriceAttribute() {
+    public function getPriceAttribute()
+    {
         $user = auth()->user();
 
-        if ( $this->attributes['resource_id'] ) {
+        if ($this->attributes['resource_id']) {
             $resource = $this->resource;
 
-            $recipePriceSell = $user && $user->resources->find( $resource->id ) && $user->resources->find( $resource->id )->pivot->price_sell ? $user->resources->find( $resource->id )->pivot->price_sell : $resource->price_sell;
-
+            $recipePriceSell = $user && $user->resources->find($resource->id) && $user->resources->find(
+                $resource->id
+            )->pivot->price_sell ? $user->resources->find($resource->id)->pivot->price_sell : $resource->price_sell;
         } else {
-            $recipePriceSell = $user && $user->recipes->find( $this->id ) && $user->recipes->find( $this->id )->pivot->price_sell ? $user->recipes->find( $this->id )->pivot->price_sell : $this->price_sell;
-
+            $recipePriceSell = $user && $user->recipes->find($this->id) && $user->recipes->find(
+                $this->id
+            )->pivot->price_sell ? $user->recipes->find($this->id)->pivot->price_sell : $this->price_sell;
         }
 
         return $recipePriceSell;
     }
 
-    public function getSaHtmlAttribute() {
+    public function getSaHtmlAttribute()
+    {
         $saHtml = null;
         $saInfo = $this->sa_info;
-        if ( $saInfo ) {
-            $saHtml = view( 'pages.recipes.sa-info-show', $saInfo );
+        if ($saInfo) {
+            $saHtml = view('pages.recipes.sa-info-show', $saInfo);
         }
 
         return $saHtml;
     }
 
-    public function getSaHtmlIndexAttribute() {
+    public function getSaHtmlIndexAttribute()
+    {
         $saHtml = null;
         $saInfo = $this->sa_info;
-        if ( $saInfo ) {
-            $saHtml = view( 'pages.recipes.sa-info-index', $saInfo );
+        if ($saInfo) {
+            $saHtml = view('pages.recipes.sa-info-index', $saInfo);
         }
 
         return $saHtml;
     }
 
-    public function getSaInfoAttribute() {
+    public function getSaInfoAttribute()
+    {
         $saInfo = null;
-        if ( $this->sa_lvl ) {
-            $saInfo             = [];
-            $saLvl              = $this->sa_lvl;
-            $saGemCount         = $this->sa_gem_count;
-            $saRedName          = $this->sa_red_name;
-            $saRedDescription   = $this->sa_red_description;
-            $saGreenName        = $this->sa_green_name;
+        if ($this->sa_lvl) {
+            $saInfo = [];
+            $saLvl = $this->sa_lvl;
+            $saGemCount = $this->sa_gem_count;
+            $saRedName = $this->sa_red_name;
+            $saRedDescription = $this->sa_red_description;
+            $saGreenName = $this->sa_green_name;
             $saGreenDescription = $this->sa_green_description;
-            $saBlueName         = $this->sa_blue_name;
-            $saBlueDescription  = $this->sa_blue_description;
-            $saRedImg           = asset( '/images/SA Red.webp' );
-            $saGreenImg         = asset( '/images/SA Green.webp' );
-            $saBlueImg          = asset( '/images/SA Blue.webp' );
-            $gem                = \App\Models\Resource::where( 'name', "Gemstone ({$this->basic_grade}-grade)" )->firstOrFail();
-            $gemsPriceTotal     = prettifyNumber( $gem->price * $saGemCount );
+            $saBlueName = $this->sa_blue_name;
+            $saBlueDescription = $this->sa_blue_description;
+            $saRedImg = asset('/images/SA Red.webp');
+            $saGreenImg = asset('/images/SA Green.webp');
+            $saBlueImg = asset('/images/SA Blue.webp');
+            $gem = \App\Models\Resource::where(
+                'name',
+                "Gemstone ({$this->basic_grade}-grade)"
+            )->firstOrFail();
+            $gemsPriceTotal = prettifyNumber($gem->price * $saGemCount);
 
-            $saInfo['saLvl']              = $saLvl;
-            $saInfo['saGemCount']         = $saGemCount;
-            $saInfo['saRedName']          = $saRedName;
-            $saInfo['saRedDescription']   = $saRedDescription;
-            $saInfo['saGreenName']        = $saGreenName;
+            $saInfo['saLvl'] = $saLvl;
+            $saInfo['saGemCount'] = $saGemCount;
+            $saInfo['saRedName'] = $saRedName;
+            $saInfo['saRedDescription'] = $saRedDescription;
+            $saInfo['saGreenName'] = $saGreenName;
             $saInfo['saGreenDescription'] = $saGreenDescription;
-            $saInfo['saBlueName']         = $saBlueName;
-            $saInfo['saBlueDescription']  = $saBlueDescription;
-            $saInfo['saRedImg']           = $saRedImg;
-            $saInfo['saGreenImg']         = $saGreenImg;
-            $saInfo['saBlueImg']          = $saBlueImg;
-            $saInfo['gem']                = $gem;
-            $saInfo['gemsPriceTotal']     = $gemsPriceTotal;
+            $saInfo['saBlueName'] = $saBlueName;
+            $saInfo['saBlueDescription'] = $saBlueDescription;
+            $saInfo['saRedImg'] = $saRedImg;
+            $saInfo['saGreenImg'] = $saGreenImg;
+            $saInfo['saBlueImg'] = $saBlueImg;
+            $saInfo['gem'] = $gem;
+            $saInfo['gemsPriceTotal'] = $gemsPriceTotal;
         }
 
         return $saInfo;
+    }
+
+    public function getBonusPvpAttribute()
+    {
+        $bonusText = $this->getBonusPvpWeapon($this);
+        if (!$bonusText) {
+            $bonusText = $this->getBonusPvpArmor($this);
+        }
+
+        return $bonusText;
+    }
+
+
+    protected function getBonusPvpWeapon($single)
+    {
+        $parentCategoryId = $this->category->category_id ?? null;
+        $availableGrades = ['S', 'S-80', 'S-84'];
+        $weaponCategoryId = 1;
+        $isWeapon = $parentCategoryId === $weaponCategoryId;
+        $isCorrectGrade = in_array($single->grade, $availableGrades);
+        $weaponPostfix = ' Перезарядка 10 сек. Увеличивает урон наносимый в PvP на 5%';
+        $cancelText = 'С вероятностью 10% канселит 1-3 вражеских положительных эффектов, при атаке в PvP.';
+        $bonusDamageText = 'С вероятностью 10% наносит дополнительный урон, примерно равный урону автоатаки, при атаке в PvP.';
+        if (!$isWeapon || !$isCorrectGrade) {
+            return null;
+        }
+
+        $text = match ($this->category->name) {
+            'Bow' => 'С вероятностью 10% увеличивает Скорость Атаки на 15% в течении 10 сек., при атаке в PvP.',
+            'Dagger', 'Fist' => $cancelText . ' С вероятностью 20% вешает дебаф, который значительно снижает защиту щитом в течении 10 сек, при атаке в PvP.',
+            'Polearm' => $bonusDamageText,
+            default => null,
+        };
+
+        if (empty($text)) {
+            if ($single->is_mage) {
+                $text = 'С вероятностью 5% увеличивает Скорость Каста на 15% в течении 10 сек., при получении урона в PvP.';
+            } elseif ($single->is_two_hands) {
+                $text = $bonusDamageText;
+            } else {
+                /* One hand physic weapons */
+                $text = 'С вероятностью 20% восстанавливает 200 CP, при атаке в PvP.';
+            }
+        }
+        if (empty($text)) {
+            Log::warning("Grade and category correct for weapon {$single->name}, but pvp bonus text is empty.");
+
+            return null;
+        } else {
+            $text .= $weaponPostfix;
+        }
+
+        return $text;
+    }
+
+    protected function getBonusPvpArmor($single)
+    {
+        $armorCategoryId = 2;
+        $category = $this->category;
+        $topParentCategoryId = $category->top_parent_category->id;
+        $preTopParentCategoryName = $category->pre_top_parent_category->name;
+
+        $parentCategoryId = $this->category->category_id ?? null;
+        $availableCategoryNames = [
+            'Full body',
+            'Upper',
+        ];
+        $availableGrades = [
+            'S',
+            'S-80',
+            'S-84'
+        ];
+        $isArmor = $topParentCategoryId === $armorCategoryId;
+        $isCorrectGrade = in_array($single->grade, $availableGrades);
+        $isCorrectCategory = in_array($category->name, $availableCategoryNames);
+
+        $armorPostfix = ' Перезарядка 10 сек. Уменьшает получаемый урон в PvP на 5%';
+        if (!$isArmor || !$isCorrectGrade || !$isCorrectCategory) {
+            return null;
+        }
+
+        $text = match ($preTopParentCategoryName) {
+            'Robe' => 'С вероятностью 20% уменьшает Шанс получения Критического удара и уменьшает получаемый Критический Урон на 15% в течении 10 сек., при получении урона в PvP.',
+            'Light' => 'С вероятностью 25% сбрасывает таргет противника, при получении урона в PvP.',
+            'Heavy' => 'С вероятностью 10% уменьшает противнику Скорость на 20%, Физическую Атаку на 20%, Магическую Атаку на 30% в течении 10 сек., при получении урона в PvP.',
+            default => null,
+        };
+
+        if (empty($text)) {
+            Log::warning("Grade and category correct for armor {$single->name}, but pvp bonus text is empty.");
+
+            return null;
+        } else {
+            $text .= $armorPostfix;
+        }
+
+        return $text;
     }
 }

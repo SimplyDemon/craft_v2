@@ -24,57 +24,75 @@
             </h1>
             <div class="nk-gap-2"></div>
         </div>
+
     </div>
 
     <div class="container">
-        <img width="50" src="{{asset('storage') . '/' . $single->img}}" alt="show">
-        @if($single->gradeImage)
-            <img class="grade" src="{{$single->gradeImage}}" alt="grade">
-        @endif
-        @if($single->masterworkText)
-            <span class="nk-btn nk-btn-style-1 nk-btn-md nk-btn-color-main-1" style="font-size: 10px;" data-toggle="tooltip" data-html="true" data-placement="top" title="{{$single->masterworkText}}">{{$chanceText}}</span>
-        @endif
+        <div class="row recipe-info">
+            <div class="col-5">
+                <img width="50" src="{{asset('storage') . '/' . $single->img}}" alt="show">
+                @if($single->gradeImage)
+                    <img class="grade" src="{{$single->gradeImage}}" alt="grade">
+                @endif
+                @if($single->masterworkText)
+                    <span class="nk-btn nk-btn-style-1 nk-btn-md nk-btn-color-main-1" style="font-size: 10px;"
+                          data-toggle="tooltip" data-html="true" data-placement="top"
+                          title="{{$single->masterworkText}}">{{$chanceText}}</span>
+                @endif
 
-        @if($isCountMoreThenOne)
-            <span class="nk-btn-style-1 nk-btn-md nk-btn-color-main-1" data-recipe-quantity-base="{{$single->craft_count}}" data-recipe-quantity="{{$single->craft_count}}">{{$single->craft_count}}</span>
-            <span> шт.</span>
-        @endif
+                @if($single->bonus_pvp)
+                    <span class="nk-btn nk-btn-style-1 nk-btn-md sd-color-silver" style="font-size: 10px;"
+                          data-toggle="tooltip" data-html="true" data-placement="top"
+                          title="{{$single->bonus_pvp}}">PvP</span>
+                @endif
 
-        @if($single->percent === '100')
-            <div class="form-group" data-recipe-price="{{$recipePrice ?? 0}}">
-                <label for="recipe-price">Цена:</label>
-                <input id="recipe-price" class="form-control" type="number" step="1" min="0" value="{{$recipePrice ?? 0}}">
-                <p id="recipe-price-craft-with-count">Цена за
-                    <span id="recipe-price-craft-count">1</span> шт.
-                    <span id="recipe-price-craft-cost">{{prettifyNumber($recipePrice)}}</span>
-                </p>
+                @if($isCountMoreThenOne)
+                    <span class="nk-btn-style-1 nk-btn-md nk-btn-color-main-1"
+                          data-recipe-quantity-base="{{$single->craft_count}}"
+                          data-recipe-quantity="{{$single->craft_count}}">{{$single->craft_count}}</span>
+                    <span> шт.</span>
+                @endif
+                <div class="recipe-main-info border rounded border-dark">
+                    @if($single->percent === '100')
+                        <div class="form-group" data-recipe-price="{{$recipePrice ?? 0}}">
+                            <label for="recipe-price">Цена:</label>
+                            <input id="recipe-price" class="form-control" type="number" step="1" min="0"
+                                   value="{{$recipePrice ?? 0}}">
+                            <p id="recipe-price-craft-with-count">Цена за
+                                <span id="recipe-price-craft-count">1</span> шт.
+                                <span id="recipe-price-craft-cost">{{prettifyNumber($recipePrice)}}</span>
+                            </p>
+                        </div>
+
+                    @elseif($recipePrice && $recipePrice > 0)
+                        <div>Цена: {{prettifyNumber($recipePrice)}}</div>
+                    @endif
+
+                    @if($single->crystals_text)
+                        {!!$single->crystals_text !!}
+                    @endif
+                    @if($single->p_attack)
+                        <div>Физ атака: <span class="nk-btn-color-main-1">{{$single->p_attack}}</span></div>
+                    @endif
+
+                    @if($single->m_attack)
+                        <div>Маг атака: <span class="nk-btn-color-main-1">{{$single->m_attack}}</span></div>
+                    @endif
+
+                    @if($single->p_def)
+                        <div>Физ защита: <span class="nk-btn-color-main-1">{{$single->p_def}}</span></div>
+                    @endif
+
+                    @if($single->m_def)
+                        <div>Маг защита: <span class="nk-btn-color-main-1">{{$single->m_def}}</span></div>
+                    @endif
+                </div>
             </div>
+            <div class="col-7">
+                {!! $single->sa_html !!}
+            </div>
+        </div>
 
-        @elseif($recipePrice && $recipePrice > 0)
-            <p>Цена: {{prettifyNumber($recipePrice)}}</p>
-        @endif
-        @if($single->crystals_text)
-            <p>
-                {!!$single->crystals_text !!}
-            </p>
-        @endif
-        {!! $single->sa_html !!}
-
-        @if($single->p_attack)
-            <div>Физ атака: <span class="nk-btn-color-main-1">{{$single->p_attack}}</span></div>
-        @endif
-
-        @if($single->m_attack)
-            <div>Маг атака: <span class="nk-btn-color-main-1">{{$single->m_attack}}</span></div>
-        @endif
-
-        @if($single->p_def)
-            <div>Физ защита: <span class="nk-btn-color-main-1">{{$single->p_def}}</span></div>
-        @endif
-
-        @if($single->m_def)
-            <div>Маг защита: <span class="nk-btn-color-main-1">{{$single->m_def}}</span></div>
-        @endif
 
         @if($single->resource)
             <a href="{{ route( 'resources.show', [ 'id' => $single->resource->id ] ) }}">
