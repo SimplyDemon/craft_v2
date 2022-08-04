@@ -38,7 +38,7 @@ class RecipesExtraSeeder extends Seeder
         int $defencePhysic = null,
         string $masterworkDescription = null,
         string $favoriteText = null,
-
+        bool $isTwoHands = false,
     ) {
         $recipe = Recipe::where('name', $name)->firstOrFail();
 
@@ -49,6 +49,9 @@ class RecipesExtraSeeder extends Seeder
 
         if ( ! empty($isMage)) {
             $args['is_mage'] = 1;
+        }
+        if ( ! empty($isTwoHands)) {
+            $args['is_two_hands'] = 1;
         }
         if ( ! empty($attackMagic)) {
             $args['m_attack'] = $attackMagic;

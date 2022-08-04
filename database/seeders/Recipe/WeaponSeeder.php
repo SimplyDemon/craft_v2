@@ -269,8 +269,11 @@ class WeaponSeeder extends Seeder {
             13, 82, 'HP Regeneration', 'Health', 'HP Drain', 'Увеличивает восстановление HP', 'Увеличивает HP на 25%', 'Даёт 3% вампиризма' );
         seederAddRecipe( 'Arcana Mace', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает HP на 289', 'Nature', 1, false, 'Посох Тайн, аркана', null, 2052,
             13, 82, 'Acumen', 'MP Regeneration', 'Mana Up', 'Увеличивает Скорость Каста на 15%', 'Увеличивает восстановление MP', 'Увеличивает MP на 30%' );
-        seederAddRecipe( 'Dynasty Cudgel', $imagePath, 0, 'S', $categoryId, 0, '60', 'С вероятностью 8% оглушает врага при физической атаке)', 'Landslide', 1, false, 'Дубина Династии, дино', null, 3597,
-            14, 285, 'Anger', 'Health', 'Rsk. Focus', 'Уменьшает HP на 15% и Увеличивает Физ. Атк. на 78', 'Увеличивает HP на 25%', 'Увеличивает Физ. Крит. Атк. на 164 при HP 60% и ниже' );
+        seederAddRecipe('Dynasty Cudgel', $imagePath, 0, 'S', $categoryId, 0, '60',
+            'С вероятностью 8% оглушает врага при физической атаке', 'Landslide', 1, false, 'Дубина Династии, дино',
+            null, 3597,
+            14, 285, 'Anger', 'Health', 'Rsk. Focus', 'Уменьшает HP на 15% и Увеличивает Физ. Атк. на 78',
+            'Увеличивает HP на 25%', 'Увеличивает Физ. Крит. Атк. на 164 при HP 60% и ниже');
         seederAddRecipe( 'Dynasty Mace', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает HP на 492', 'Earth', 1, false, 'Булава Династии, мейс, дино', null, 3597,
             14, 285, 'Mana Up', 'Conversion', 'Acumen', 'Увеличивает MP на 30%', 'Увеличивает MP на 60% и уменьшает HP на 40%', 'Увеличивает Скорость Каста на 15%' );
         seederAddRecipe( 'Dynasty Staff', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает Силу Хила на 43', 'Holy Spirit', 1, false, 'Посох Династии, стафф, дино', null, 3597,

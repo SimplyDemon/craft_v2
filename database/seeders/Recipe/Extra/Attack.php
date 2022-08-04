@@ -28,6 +28,7 @@ class Attack extends RecipesExtraSeeder
         $swords   = [
             [
                 'name'         => 'Flamberge',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 130,
                 'attackMagic'  => 61,
@@ -112,6 +113,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Pa\'agrian Sword',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 169,
                 'attackMagic'  => 76,
@@ -124,6 +126,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Berserker Blade',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 190,
                 'attackMagic'  => 83,
@@ -136,6 +139,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Great Sword',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 213,
                 'attackMagic'  => 91,
@@ -161,6 +165,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Guardian\'s Sword',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 236,
                 'attackMagic'  => 99,
@@ -185,12 +190,14 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Infernal Master',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 259,
                 'attackMagic'  => 107,
             ],
             [
                 'name'         => 'Dragon Slayer',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 282,
                 'attackMagic'  => 114,
@@ -215,6 +222,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Sword of Ipos',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 305,
                 'attackMagic'  => 121,
@@ -233,6 +241,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Heavens Divider',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 342,
                 'attackMagic'  => 132,
@@ -245,6 +254,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Dynasty Blade',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 405,
                 'attackMagic'  => 151,
@@ -269,6 +279,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Icarus Heavy Arms',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 442,
                 'attackMagic'  => 163,
@@ -282,6 +293,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Vesper Slasher',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 482,
                 'attackMagic'  => 176,
@@ -350,6 +362,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Dwarven War Hammer',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 122,
                 'attackMagic'  => 68,
@@ -410,6 +423,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Karik Horn',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 169,
                 'attackMagic'  => 76,
@@ -452,6 +466,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Dwarven Hammer',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 190,
                 'attackMagic'  => 83,
@@ -476,6 +491,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Ice Storm Hammer',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 213,
                 'attackMagic'  => 91,
@@ -506,6 +522,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Star Buster',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 236,
                 'attackMagic'  => 99,
@@ -530,6 +547,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Destroyer Hammer',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 259,
                 'attackMagic'  => 107,
@@ -555,6 +573,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Doom Crusher',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 282,
                 'attackMagic'  => 114,
@@ -567,6 +586,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Behemoth\' Tuning Fork',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 305,
                 'attackMagic'  => 121,
@@ -597,6 +617,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Dragon Hunter Axe',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 342,
                 'attackMagic'  => 132,
@@ -627,6 +648,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Dynasty Crusher',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 405,
                 'attackMagic'  => 151,
@@ -651,6 +673,7 @@ class Attack extends RecipesExtraSeeder
             ],
             [
                 'name'         => 'Vesper Retributer',
+                'is_two_hands' => true,
                 'isMage'       => false,
                 'attackPhysic' => 482,
                 'attackMagic'  => 176,
@@ -1054,6 +1077,7 @@ class Attack extends RecipesExtraSeeder
                 attackPhysic: $weapon['attackPhysic'],
                 attackMagic: $weapon['attackMagic'],
                 favoriteText: $weapon['favoriteText'] ?? null,
+                isTwoHands: $weapon['isTwoHands'] ?? false,
             );
         }
     }

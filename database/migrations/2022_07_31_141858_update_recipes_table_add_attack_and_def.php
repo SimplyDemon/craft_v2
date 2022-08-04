@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::table('recipes', function (Blueprint $table) {
             /* For weapon */
             $table->boolean('is_mage')->default(0);
-            $table->boolean('is_two_hand')->default(0); /* For calc weapon enchant  */
+            $table->boolean('is_two_hands')->default(0); /* Only for physic weapons */
             $table->integer('m_attack')->nullable();
             $table->integer('p_attack')->nullable();
             $table->text('favorite_text')->nullable(); /* Some weapons are favorite like Great Sword for summoners */
@@ -36,7 +36,13 @@ return new class extends Migration {
     public function down()
     {
         Schema::table('recipes', function (Blueprint $table) {
-            $table->dropColumn('is_respawn_started');
+            $table->dropColumn('is_mage');
+            $table->dropColumn('is_two_hands');
+            $table->dropColumn('m_attack');
+            $table->dropColumn('p_attack');
+            $table->dropColumn('favorite_text');
+            $table->dropColumn('p_def');
+            $table->dropColumn('m_def');
         });
     }
 };
