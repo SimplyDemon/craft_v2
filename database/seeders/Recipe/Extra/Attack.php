@@ -158,10 +158,11 @@ class Attack extends RecipesExtraSeeder
                 'attackMagic'  => 122,
             ],
             [
-                'name'         => 'Damascus Sword',
-                'isMage'       => false,
+                'name' => 'Damascus Sword',
+                'isMage' => false,
                 'attackPhysic' => 194,
-                'attackMagic'  => 99,
+                'attackMagic' => 99,
+                'isAvailableForSubQuest' => true,
             ],
             [
                 'name' => 'Guardian\'s Sword',
@@ -171,10 +172,11 @@ class Attack extends RecipesExtraSeeder
                 'attackMagic' => 99,
             ],
             [
-                'name'         => 'Wizard\'s Tear',
-                'isMage'       => true,
+                'name' => 'Wizard\'s Tear',
+                'isMage' => true,
                 'attackPhysic' => 155,
-                'attackMagic'  => 132,
+                'attackMagic' => 132,
+                'isAvailableForSubQuest' => true,
             ],
             [
                 'name'         => 'Tallum Blade',
@@ -508,28 +510,32 @@ class Attack extends RecipesExtraSeeder
                 'attackMagic' => 91,
             ],
             [
-                'name'         => 'Deadman\'s Glory',
-                'isMage'       => false,
+                'name' => 'Deadman\'s Glory',
+                'isMage' => false,
                 'attackPhysic' => 194,
-                'attackMagic'  => 99,
+                'attackMagic' => 99,
+                'isAvailableForSubQuest' => true,
             ],
             [
-                'name'         => 'Art of Battle Axe',
-                'isMage'       => false,
+                'name' => 'Art of Battle Axe',
+                'isMage' => false,
                 'attackPhysic' => 194,
-                'attackMagic'  => 99,
+                'attackMagic' => 99,
+                'isAvailableForSubQuest' => true,
             ],
             [
-                'name'         => 'Staff of Evil Spirits',
-                'isMage'       => true,
+                'name' => 'Staff of Evil Spirits',
+                'isMage' => true,
                 'attackPhysic' => 189,
-                'attackMagic'  => 145,
+                'attackMagic' => 145,
+                'isAvailableForSubQuest' => true,
             ],
             [
-                'name'         => 'Kaim Vanul\'s Bones',
-                'isMage'       => true,
+                'name' => 'Kaim Vanul\'s Bones',
+                'isMage' => true,
                 'attackPhysic' => 155,
-                'attackMagic'  => 132,
+                'attackMagic' => 132,
+                'isAvailableForSubQuest' => true,
             ],
             [
                 'name' => 'Star Buster',
@@ -537,6 +543,7 @@ class Attack extends RecipesExtraSeeder
                 'isMage' => false,
                 'attackPhysic' => 236,
                 'attackMagic' => 99,
+                'isAvailableForSubQuest' => true,
             ],
             [
                 'name'         => 'Dasparion\'s Staff',
@@ -754,10 +761,11 @@ class Attack extends RecipesExtraSeeder
                 'attackMagic'  => 100,
             ],
             [
-                'name'         => 'Bow of Peril',
-                'isMage'       => false,
+                'name' => 'Bow of Peril',
+                'isMage' => false,
                 'attackPhysic' => 400,
-                'attackMagic'  => 99,
+                'attackMagic' => 99,
+                'isAvailableForSubQuest' => true,
             ],
             [
                 'name'         => 'Carnage Bow',
@@ -862,10 +870,11 @@ class Attack extends RecipesExtraSeeder
                 'attackMagic'  => 122,
             ],
             [
-                'name'         => 'Demon\'s Dagger',
-                'isMage'       => false,
+                'name' => 'Demon\'s Dagger',
+                'isMage' => false,
                 'attackPhysic' => 170,
-                'attackMagic'  => 99,
+                'attackMagic' => 99,
+                'isAvailableForSubQuest' => true,
             ],
             [
                 'name'         => 'Bloody Orchid',
@@ -971,10 +980,11 @@ class Attack extends RecipesExtraSeeder
                 'attackMagic'  => 91,
             ],
             [
-                'name'         => 'Lance',
-                'isMage'       => false,
+                'name' => 'Lance',
+                'isMage' => false,
                 'attackPhysic' => 194,
-                'attackMagic'  => 99,
+                'attackMagic' => 99,
+                'isAvailableForSubQuest' => true,
             ],
             [
                 'name'         => 'Halberd',
@@ -1056,10 +1066,11 @@ class Attack extends RecipesExtraSeeder
                 'attackMagic'  => 91,
             ],
             [
-                'name'         => 'Bellion Cestus',
-                'isMage'       => false,
+                'name' => 'Bellion Cestus',
+                'isMage' => false,
                 'attackPhysic' => 236,
-                'attackMagic'  => 99,
+                'attackMagic' => 99,
+                'isAvailableForSubQuest' => true,
             ],
             [
                 'name'         => 'Blood Tornado',
@@ -1120,6 +1131,7 @@ class Attack extends RecipesExtraSeeder
                 favoriteText: $weapon['favoriteText'] ?? null,
                 isTwoHands: $weapon['isTwoHands'] ?? false,
                 age: $weapon['age'] ?? null,
+                isAvailableForSubQuest: $weapon['isAvailableForSubQuest'] ?? false,
             );
         }
     }

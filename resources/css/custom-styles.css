@@ -302,3 +302,9 @@ img.sd-navbar-bg {
     border: 1px solid #a294ff;
     background-color: #ff0;
 }
+
+.recipe-info_sub-quest-img {
+    padding: 1px;
+    border: 1px solid #386257;
+    background-color: #a294ff
+}

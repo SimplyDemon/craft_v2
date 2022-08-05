@@ -28,10 +28,17 @@
     <div class="container">
         <div class="row recipe-info">
             <div class="col-5">
-                <img class="rounded @if($single->favorite_text) recipe-info_favorite-img @endif" width="50"
-                     src="{{asset('storage') . '/' . $single->img}}" alt="show"
-                     @if($single->favorite_text)data-toggle="tooltip" data-placement="top"
-                     title="{{$single->favorite_text}}" @endif>
+                <img
+                    class="rounded
+@if($single->favorite_text) recipe-info_favorite-img @elseif($single->is_available_for_sub_quest) recipe-info_sub-quest-img @endif
+                        " width="50"
+                    src="{{asset('storage') . '/' . $single->img}}" alt="show"
+                    @if($single->favorite_text)data-toggle="tooltip" data-placement="top"
+                    title="{{$single->favorite_text}}" @elseif($single->is_available_for_sub_quest)
+                    data-toggle="tooltip" data-placement="top"
+                    title="Оружие подходит для саб класс квеста." @endif
+
+                >
                 @if($single->gradeImage)
                     <img class="grade" src="{{$single->gradeImage}}" alt="grade">
                 @endif
@@ -68,11 +75,23 @@
                         {!!$single->crystals_text !!}
                     @endif
                     @if($single->p_attack)
-                        <div>Физ атака: <span class="nk-btn-color-main-1">{{$single->p_attack}}</span></div>
+                        <div>Физ атака:
+                            <img
+                                height="18px"
+                                src="{{asset('storage') . '/' . \App\Models\Recipe::where('name', 'Soulshot (' .str_replace(['80', '-', '84'],'', $single->grade) .'-grade)')->first()->img}}"
+                                alt="soul shot">
+                            <span class="nk-btn-color-main-1">{{$single->p_attack}}</span>
+                        </div>
                     @endif
 
                     @if($single->m_attack)
-                        <div>Маг атака: <span class="nk-btn-color-main-1">{{$single->m_attack}}</span></div>
+                        <div>Маг атака:
+                            <img
+                                height="18px"
+                                src="{{asset('storage') . '/' . \App\Models\Recipe::where('name', 'Blessed Spiritshot (' .str_replace(['80', '-', '84'],'', $single->grade) .'-grade)')->first()->img}}"
+                                alt="spirit shots">
+                            <span class="nk-btn-color-main-1">{{$single->m_attack}}</span>
+                        </div>
                     @endif
 
                     @if($single->p_def)

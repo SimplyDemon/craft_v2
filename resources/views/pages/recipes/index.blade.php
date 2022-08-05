@@ -128,10 +128,15 @@
                             <div class="filter__recipe-item-info-special">
                                 <a class="image-link-no-underline"
                                    href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
-                                    <img class="rounded @if($recipe->favorite_text) recipe-info_favorite-img @endif"
-                                         width="30" src="{{asset('storage') . '/' . $recipe->img}}"
-                                         alt="{{$recipe->name}}" @if($recipe->favorite_text)data-toggle="tooltip"
-                                         data-placement="top" title="{{$recipe->favorite_text}}" @endif>
+                                    <img
+                                        class="rounded @if($recipe->favorite_text) recipe-info_favorite-img @elseif($recipe->is_available_for_sub_quest) recipe-info_sub-quest-img @endif
+                                            "
+                                        width="30" src="{{asset('storage') . '/' . $recipe->img}}"
+                                        alt="{{$recipe->name}}" @if($recipe->favorite_text)data-toggle="tooltip"
+                                        data-placement="top" title="{{$recipe->favorite_text}}"
+                                        @elseif($recipe->is_available_for_sub_quest)
+                                        data-toggle="tooltip" data-placement="top"
+                                        title="Оружие подходит для саб класс квеста." @endif>
                                 </a>
                                 @if($recipe->masterworkText)
                                     @php

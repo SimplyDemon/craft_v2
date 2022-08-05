@@ -41,6 +41,7 @@ class RecipesExtraSeeder extends Seeder
         bool $isTwoHands = false,
         string $age = null,
         int $nobleStonesForUpgrade = null,
+        bool $isAvailableForSubQuest = false,
     ) {
         $recipe = Recipe::where('name', $name)->firstOrFail();
 
@@ -78,6 +79,9 @@ class RecipesExtraSeeder extends Seeder
         }
         if (!empty($nobleStonesForUpgrade)) {
             $args['noble_stones_for_upgrade'] = $nobleStonesForUpgrade;
+        }
+        if (!empty($isAvailableForSubQuest)) {
+            $args['is_available_for_sub_quest'] = $isAvailableForSubQuest;
         }
 
         if (!empty($args)) {

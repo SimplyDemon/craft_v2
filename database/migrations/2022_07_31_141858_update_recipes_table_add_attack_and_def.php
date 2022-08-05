@@ -38,6 +38,8 @@ return new class extends Migration {
 
             /* For vesper armor */
             $table->integer('noble_stones_for_upgrade')->nullable();
+
+            $table->boolean('is_available_for_sub_quest')->default(0);
         });
     }
 
@@ -58,6 +60,7 @@ return new class extends Migration {
             $table->dropColumn('m_def');
             $table->dropColumn('age');
             $table->dropColumn('noble_stones_for_upgrade');
+            $table->dropColumn('is_available_for_sub_quest');
         });
     }
 };
