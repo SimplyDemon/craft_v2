@@ -22,9 +22,7 @@
             <h1 class="nk-title">
                 {{ $title ?? $single->name }}
             </h1>
-            <div class="nk-gap-2"></div>
         </div>
-
     </div>
 
     <div class="container">
@@ -39,12 +37,7 @@
                           data-toggle="tooltip" data-html="true" data-placement="top"
                           title="{{$single->masterworkText}}">{{$chanceText}}</span>
                 @endif
-
-                @if($single->bonus_pvp)
-                    <span class="nk-btn nk-btn-style-1 nk-btn-md sd-color-silver" style="font-size: 10px;"
-                          data-toggle="tooltip" data-html="true" data-placement="top"
-                          title="{{$single->bonus_pvp}}">PvP</span>
-                @endif
+                {!! $single->bonus_pvp_html !!}
 
                 @if($isCountMoreThenOne)
                     <span class="nk-btn-style-1 nk-btn-md nk-btn-color-main-1"
@@ -85,6 +78,11 @@
 
                     @if($single->m_def)
                         <div>Маг защита: <span class="nk-btn-color-main-1">{{$single->m_def}}</span></div>
+                    @endif
+
+                    @if($single->noble_stones_for_upgrade)
+                        <span>Необходимо <img width="20" src="{{asset('images/noble_stone.webp' )}}" alt="noble stones">
+                            <span class="nk-btn-color-main-1">{{$single->noble_stones_for_upgrade}}</span> для апгрейда.</span>
                     @endif
                 </div>
             </div>

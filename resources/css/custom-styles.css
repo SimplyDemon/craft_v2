@@ -288,3 +288,11 @@ img.sd-navbar-bg {
 .sa-info_cost {
     margin-bottom: 10px;
 }
+
+.recipe-pvp-cost.row {
+    margin-bottom: 16px;
+}
+
+.recipe-pvp-cost_text-resource-image {
+    margin-right: 4px;
+}

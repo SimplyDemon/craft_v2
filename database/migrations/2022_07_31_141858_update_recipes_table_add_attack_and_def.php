@@ -25,6 +25,19 @@ return new class extends Migration {
 
             /* For jewelry */
             $table->integer('m_def')->nullable();
+
+            /* Item age for calculate fame for pvp item  */
+            $table->enum('age', [
+                's',
+                'dynasty',
+                'moirai',
+                'vesper',
+                'vorpal',
+                'elegia',
+            ])->nullable();
+
+            /* For vesper armor */
+            $table->integer('noble_stones_for_upgrade')->nullable();
         });
     }
 
@@ -43,6 +56,8 @@ return new class extends Migration {
             $table->dropColumn('favorite_text');
             $table->dropColumn('p_def');
             $table->dropColumn('m_def');
+            $table->dropColumn('age');
+            $table->dropColumn('noble_stones_for_upgrade');
         });
     }
 };

@@ -141,11 +141,7 @@
                                 @endif
 
                                 {!! $recipe->sa_html_index !!}
-                                @if($recipe->bonus_pvp)
-                                    <span class="nk-btn nk-btn-style-1 nk-btn-xs sd-color-silver"
-                                          style="font-size: 10px;" data-toggle="tooltip" data-html="true"
-                                          data-placement="top" title="{{$recipe->bonus_pvp}}">PvP</span>
-                                @endif
+                                {!! $recipe->bonus_pvp_html !!}
                             </div>
                             <div class="filter__recipe-item-main-info">
                                 @if($recipe->gradeImage)

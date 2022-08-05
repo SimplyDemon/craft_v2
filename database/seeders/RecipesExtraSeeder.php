@@ -39,6 +39,8 @@ class RecipesExtraSeeder extends Seeder
         string $masterworkDescription = null,
         string $favoriteText = null,
         bool $isTwoHands = false,
+        string $age = null,
+        int $nobleStonesForUpgrade = null,
     ) {
         $recipe = Recipe::where('name', $name)->firstOrFail();
 
@@ -62,19 +64,25 @@ class RecipesExtraSeeder extends Seeder
         if ( ! empty($defenceMagic)) {
             $args['m_def'] = $defenceMagic;
         }
-        if ( ! empty($defencePhysic)) {
+        if (!empty($defencePhysic)) {
             $args['p_def'] = $defencePhysic;
         }
-        if ( ! empty($masterworkDescription)) {
+        if (!empty($masterworkDescription)) {
             $args['masterwork_description'] = $masterworkDescription;
         }
-        if ( ! empty($favoriteText)) {
+        if (!empty($favoriteText)) {
             $args['favorite_text'] = $favoriteText;
         }
+        if (!empty($age)) {
+            $args['age'] = $age;
+        }
+        if (!empty($nobleStonesForUpgrade)) {
+            $args['noble_stones_for_upgrade'] = $nobleStonesForUpgrade;
+        }
 
-        if ( ! empty($args)) {
+        if (!empty($args)) {
             $recipe->update($args);
-            if ( ! empty($recipePercent100)) {
+            if (!empty($recipePercent100)) {
                 $recipePercent100->update($args);
             }
         } else {

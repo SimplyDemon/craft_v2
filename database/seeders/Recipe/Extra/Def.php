@@ -25,797 +25,971 @@ class Def extends RecipesExtraSeeder
      */
     protected function updateDef()
     {
-        $light     = [
+        $light = [
             [
-                'name'          => 'Reinforced Mithril Gaiters',
+                'name' => 'Reinforced Mithril Gaiters',
                 'defencePhysic' => 56,
             ],
             [
-                'name'          => 'Plated Leather Gaiters',
+                'name' => 'Plated Leather Gaiters',
                 'defencePhysic' => 59,
             ],
             [
-                'name'          => 'Rind Leather Gaiters',
+                'name' => 'Rind Leather Gaiters',
                 'defencePhysic' => 60,
             ],
             [
-                'name'          => 'Reinforced Mithril Shirt',
+                'name' => 'Reinforced Mithril Shirt',
                 'defencePhysic' => 90,
             ],
             [
-                'name'          => 'Plated Leather Armor',
+                'name' => 'Plated Leather Armor',
                 'defencePhysic' => 94,
             ],
             [
-                'name'          => 'Rind Leather Armor',
+                'name' => 'Rind Leather Armor',
                 'defencePhysic' => 97,
             ],
             [
-                'name'          => 'Theca Leather Gaiters',
+                'name' => 'Theca Leather Gaiters',
                 'defencePhysic' => 66,
             ],
             [
-                'name'          => 'Theca Leather Armor',
+                'name' => 'Theca Leather Armor',
                 'defencePhysic' => 106,
             ],
             [
-                'name'          => 'Zubei\'s Leather Gaiters',
+                'name' => 'Zubei\'s Leather Gaiters',
                 'defencePhysic' => 73,
             ],
             [
-                'name'          => 'Zubei\'s Leather Shirt',
+                'name' => 'Zubei\'s Leather Shirt',
                 'defencePhysic' => 117,
             ],
             [
-                'name'          => 'Drake Leather Armor',
+                'name' => 'Drake Leather Armor',
                 'defencePhysic' => 179,
             ],
             [
-                'name'          => 'Dark Crystal Leggings',
+                'name' => 'Dark Crystal Leggings',
                 'defencePhysic' => 80,
             ],
             [
-                'name'          => 'Avadon Leather Armor',
+                'name' => 'Avadon Leather Armor',
                 'defencePhysic' => 191,
             ],
             [
-                'name'          => 'Dark Crystal Leather Armor',
+                'name' => 'Dark Crystal Leather Armor',
                 'defencePhysic' => 128,
             ],
             [
-                'name'          => 'Blue Wolf Leather Armor',
+                'name' => 'Blue Wolf Leather Armor',
                 'defencePhysic' => 202,
             ],
             [
-                'name'          => 'Leather Armor of Doom',
+                'name' => 'Leather Armor of Doom',
                 'defencePhysic' => 202,
             ],
             [
-                'name'          => 'Tallum Leather Armor',
+                'name' => 'Tallum Leather Armor',
                 'defencePhysic' => 209,
             ],
             [
-                'name'          => 'Leather Armor of Nightmare',
+                'name' => 'Leather Armor of Nightmare',
                 'defencePhysic' => 220,
             ],
             [
-                'name'          => 'Majestic Leather Armor',
+                'name' => 'Majestic Leather Armor',
                 'defencePhysic' => 220,
             ],
             [
-                'name'          => 'Dynasty Leather Leggings',
+                'name' => 'Dynasty Leather Leggings',
                 'defencePhysic' => 106,
             ],
             [
-                'name'          => 'Draconic Leather Armor',
+                'age' => 's',
+                'name' => 'Draconic Leather Armor',
                 'defencePhysic' => 249,
             ],
             [
-                'name'          => 'Moirai Leather Leggings',
+                'name' => 'Moirai Leather Leggings',
                 'defencePhysic' => 111,
             ],
             [
-                'name'          => 'Dynasty Leather Armor',
+                'age' => 'dynasty',
+                'name' => 'Dynasty Leather Armor',
                 'defencePhysic' => 170,
             ],
             [
-                'name'          => 'Vesper Leather Leggings',
+                'name' => 'Vesper Leather Leggings',
                 'defencePhysic' => 117,
+                'nobleStonesForUpgrade' => 540,
             ],
             [
-                'name'          => 'Moirai Leather Breastplate',
+                'age' => 'moirai',
+                'name' => 'Moirai Leather Breastplate',
                 'defencePhysic' => 178,
             ],
             [
-                'name'          => 'Vesper Leather Breastplate',
+                'age' => 'vesper',
+                'name' => 'Vesper Leather Breastplate',
                 'defencePhysic' => 187,
+                'nobleStonesForUpgrade' => 860,
             ],
         ];
-        $heavy     = [
+        $heavy = [
             [
-                'name'          => 'Chain Gaiters',
+                'name' => 'Chain Gaiters',
                 'defencePhysic' => 75,
             ],
             [
-                'name'          => 'Dwarven Chain Gaiters',
+                'name' => 'Dwarven Chain Gaiters',
                 'defencePhysic' => 80,
             ],
             [
-                'name'          => 'Chain Mail Shirt',
+                'name' => 'Chain Mail Shirt',
                 'defencePhysic' => 120,
             ],
             [
-                'name'          => 'Dwarven Chain Mail Shirt',
+                'name' => 'Dwarven Chain Mail Shirt',
                 'defencePhysic' => 129,
             ],
             [
-                'name'          => 'Zubei\'s Gaiters',
+                'name' => 'Zubei\'s Gaiters',
                 'defencePhysic' => 98,
             ],
             [
-                'name'          => 'Avadon Gaiters',
+                'name' => 'Avadon Gaiters',
                 'defencePhysic' => 98,
             ],
             [
-                'name'          => 'Compound Armor',
+                'name' => 'Compound Armor',
                 'defencePhysic' => 224,
             ],
             [
-                'name'          => 'Blue Wolf Gaiters',
+                'name' => 'Blue Wolf Gaiters',
                 'defencePhysic' => 104,
             ],
             [
-                'name'          => 'Zubei\'s Breastplate',
+                'name' => 'Zubei\'s Breastplate',
                 'defencePhysic' => 157,
             ],
             [
-                'name'          => 'Avadon Breastplate',
+                'name' => 'Avadon Breastplate',
                 'defencePhysic' => 157,
             ],
             [
-                'name'          => 'Full Plate Armor',
+                'name' => 'Full Plate Armor',
                 'defencePhysic' => 239,
             ],
             [
-                'name'          => 'Dark Crystal Gaiters',
+                'name' => 'Dark Crystal Gaiters',
                 'defencePhysic' => 107,
             ],
             [
-                'name'          => 'Blue Wolf Breastplate',
+                'name' => 'Blue Wolf Breastplate',
                 'defencePhysic' => 166,
             ],
             [
-                'name'          => 'Dark Crystal breastplate',
+                'name' => 'Dark Crystal breastplate',
                 'defencePhysic' => 171,
             ],
             [
-                'name'          => 'Doom Plate Armor',
+                'name' => 'Doom Plate Armor',
                 'defencePhysic' => 270,
             ],
             [
-                'name'          => 'Tallum Plate Armor',
+                'name' => 'Tallum Plate Armor',
                 'defencePhysic' => 278,
             ],
             [
-                'name'          => 'Imperial Crusader Gaiters',
+                'name' => 'Imperial Crusader Gaiters',
                 'defencePhysic' => 128,
             ],
             [
-                'name'          => 'Armor of Nightmare',
+                'name' => 'Armor of Nightmare',
                 'defencePhysic' => 293,
             ],
             [
-                'name'          => 'Majestic Plate Armor',
+                'name' => 'Majestic Plate Armor',
                 'defencePhysic' => 293,
             ],
             [
-                'name'          => 'Imperial Crusader Breastplate',
+                'age' => 's',
+                'name' => 'Imperial Crusader Breastplate',
                 'defencePhysic' => 205,
             ],
             [
-                'name'          => 'Dynasty Gaiters',
+                'name' => 'Dynasty Gaiters',
                 'defencePhysic' => 141,
             ],
             [
-                'name'          => 'Moirai Gaiters',
+                'name' => 'Moirai Gaiters',
                 'defencePhysic' => 141,
             ],
             [
-                'name'          => 'Dynasty Breastplate',
+                'age' => 'dynasty',
+                'name' => 'Dynasty Breastplate',
                 'defencePhysic' => 226,
             ],
             [
-                'name'          => 'Vesper Gaiters',
+                'name' => 'Vesper Gaiters',
                 'defencePhysic' => 156,
+                'nobleStonesForUpgrade' => 720,
             ],
             [
-                'name'          => 'Moirai Breastplate',
+                'age' => 'moirai',
+                'name' => 'Moirai Breastplate',
                 'defencePhysic' => 238,
             ],
             [
-                'name'          => 'Vesper Breastplate',
+                'age' => 'vesper',
+                'name' => 'Vesper Breastplate',
                 'defencePhysic' => 250,
+                'nobleStonesForUpgrade' => 1150,
             ],
         ];
-        $robe      = [
+        $robe = [
             [
-                'name'          => 'Karmian Stockings',
+                'name' => 'Karmian Stockings',
                 'defencePhysic' => 37,
             ],
             [
-                'name'          => 'Karmian Tunic',
+                'name' => 'Karmian Tunic',
                 'defencePhysic' => 60,
             ],
             [
-                'name'          => 'Demon\'s Stockings',
+                'name' => 'Demon\'s Stockings',
                 'defencePhysic' => 43,
             ],
             [
-                'name'          => 'Divine Stockings',
+                'name' => 'Divine Stockings',
                 'defencePhysic' => 46,
             ],
             [
-                'name'          => 'Demon\'s Tunic',
+                'name' => 'Demon\'s Tunic',
                 'defencePhysic' => 69,
             ],
             [
-                'name'          => 'Robe of Seal',
+                'name' => 'Robe of Seal',
                 'defencePhysic' => 105,
             ],
             [
-                'name'          => 'Stockings of Zubei',
+                'name' => 'Stockings of Zubei',
                 'defencePhysic' => 49,
             ],
             [
-                'name'          => 'Divine Tunic',
+                'name' => 'Divine Tunic',
                 'defencePhysic' => 74,
             ],
             [
-                'name'          => 'Blue Wolf Stockings',
+                'name' => 'Blue Wolf Stockings',
                 'defencePhysic' => 52,
             ],
             [
-                'name'          => 'Stockings of Doom',
+                'name' => 'Stockings of Doom',
                 'defencePhysic' => 52,
             ],
             [
-                'name'          => 'Tunic of Zubei',
+                'name' => 'Tunic of Zubei',
                 'defencePhysic' => 78,
             ],
             [
-                'name'          => 'Tallum Stockings',
+                'name' => 'Tallum Stockings',
                 'defencePhysic' => 53,
             ],
             [
-                'name'          => 'Blue Wolf Tunic',
+                'name' => 'Blue Wolf Tunic',
                 'defencePhysic' => 83,
             ],
             [
-                'name'          => 'Tunic of Doom',
+                'name' => 'Tunic of Doom',
                 'defencePhysic' => 83,
             ],
             [
-                'name'          => 'Avadon Robe',
+                'name' => 'Avadon Robe',
                 'defencePhysic' => 127,
             ],
             [
-                'name'          => 'Tallum Tunic',
+                'name' => 'Tallum Tunic',
                 'defencePhysic' => 86,
             ],
             [
-                'name'          => 'Dark Crystal Robe',
+                'name' => 'Dark Crystal Robe',
                 'defencePhysic' => 139,
             ],
             [
-                'name'          => 'Robe of Nightmare',
+                'name' => 'Robe of Nightmare',
                 'defencePhysic' => 147,
             ],
             [
-                'name'          => 'Majestic Robe',
+                'name' => 'Majestic Robe',
                 'defencePhysic' => 147,
             ],
             [
-                'name'          => 'Dynasty Stockings',
+                'name' => 'Dynasty Stockings',
                 'defencePhysic' => 71,
             ],
             [
-                'name'          => 'Major Arcana Robe',
+                'age' => 's',
+                'name' => 'Major Arcana Robe',
                 'defencePhysic' => 166,
             ],
             [
-                'name'          => 'Moirai Stockings',
+                'name' => 'Moirai Stockings',
                 'defencePhysic' => 74,
             ],
             [
-                'name'          => 'Dynasty Tunic',
+                'age' => 'dynasty',
+                'name' => 'Dynasty Tunic',
                 'defencePhysic' => 113,
             ],
             [
-                'name'          => 'Vesper Stockings',
+                'name' => 'Vesper Stockings',
                 'defencePhysic' => 78,
+                'nobleStonesForUpgrade' => 540,
             ],
             [
-                'name'          => 'Moirai Tunic',
+                'age' => 'moirai',
+                'name' => 'Moirai Tunic',
                 'defencePhysic' => 119,
             ],
             [
-                'name'          => 'Vesper Tunic',
+                'age' => 'vesper',
+                'name' => 'Vesper Tunic',
+                'nobleStonesForUpgrade' => 860,
                 'defencePhysic' => 125,
             ],
         ];
-        $helmet    = [
+        $helmet = [
             [
-                'name'          => 'Chain Hood',
+                'name' => 'Chain Hood',
                 'defencePhysic' => 47,
             ],
             [
-                'name'          => 'Compound Helmet',
+                'name' => 'Compound Helmet',
                 'defencePhysic' => 54,
             ],
             [
-                'name'          => 'Full Plate Helmet',
+                'name' => 'Full Plate Helmet',
                 'defencePhysic' => 58,
             ],
             [
-                'name'          => 'Zubei\'s Helmet',
+                'name' => 'Zubei\'s Helmet',
                 'defencePhysic' => 62,
             ],
             [
-                'name'          => 'Avadon Circlet',
+                'name' => 'Avadon Circlet',
                 'defencePhysic' => 62,
             ],
             [
-                'name'          => 'Blue Wolf Helmet',
+                'name' => 'Blue Wolf Helmet',
                 'defencePhysic' => 66,
             ],
             [
-                'name'          => 'Doom Helmet',
+                'name' => 'Doom Helmet',
                 'defencePhysic' => 66,
             ],
             [
-                'name'          => 'Dark Crystal Helmet',
+                'name' => 'Dark Crystal Helmet',
                 'defencePhysic' => 69,
             ],
             [
-                'name'          => 'Tallum Helmet',
+                'name' => 'Tallum Helmet',
                 'defencePhysic' => 69,
             ],
             [
-                'name'          => 'Helm of Nightmare',
+                'name' => 'Helm of Nightmare',
                 'defencePhysic' => 73,
             ],
             [
-                'name'          => 'Majestic Circlet',
+                'name' => 'Majestic Circlet',
                 'defencePhysic' => 73,
             ],
             [
-                'name'          => 'Imperial Crusader Helmet',
+                'name' => 'Imperial Crusader Helmet',
                 'defencePhysic' => 83,
             ],
             [
-                'name'          => 'Draconic Leather Helmet',
+                'name' => 'Draconic Leather Helmet',
                 'defencePhysic' => 83,
             ],
             [
-                'name'          => 'Major Arcana Circlet',
+                'name' => 'Major Arcana Circlet',
                 'defencePhysic' => 83,
             ],
             [
-                'name'          => 'Dynasty Helmet',
+                'name' => 'Dynasty Helmet',
                 'defencePhysic' => 92,
             ],
             [
-                'name'          => 'Dynasty Leather Helmet',
+                'name' => 'Dynasty Leather Helmet',
                 'defencePhysic' => 92,
             ],
             [
-                'name'          => 'Dynasty Circlet',
+                'name' => 'Dynasty Circlet',
                 'defencePhysic' => 92,
             ],
             [
-                'name'          => 'Moirai Helmet',
+                'name' => 'Moirai Helmet',
                 'defencePhysic' => 96,
             ],
             [
-                'name'          => 'Moirai Leather Helmet',
+                'name' => 'Moirai Leather Helmet',
                 'defencePhysic' => 96,
             ],
             [
-                'name'          => 'Moirai Circlet',
+                'name' => 'Moirai Circlet',
                 'defencePhysic' => 96,
             ],
             [
-                'name'          => 'Vesper Helmet',
+                'name' => 'Vesper Helmet',
                 'defencePhysic' => 101,
+                'nobleStonesForUpgrade' => 430,
             ],
             [
-                'name'          => 'Vesper Leather Helmet',
+                'name' => 'Vesper Leather Helmet',
                 'defencePhysic' => 101,
+                'nobleStonesForUpgrade' => 430,
             ],
             [
-                'name'          => 'Vesper Circlet',
+                'name' => 'Vesper Circlet',
                 'defencePhysic' => 101,
+                'nobleStonesForUpgrade' => 430,
             ],
         ];
-        $boots     = [
+        $boots = [
             [
-                'name'          => 'Reinforced Mithril Boots',
+                'name' => 'Reinforced Mithril Boots',
                 'defencePhysic' => 32,
             ],
             [
-                'name'          => 'Chain Boots',
+                'name' => 'Chain Boots',
                 'defencePhysic' => 32,
             ],
             [
-                'name'          => 'Karmian Boots',
+                'name' => 'Karmian Boots',
                 'defencePhysic' => 32,
             ],
             [
-                'name'          => 'Plated Leather Boots',
+                'name' => 'Plated Leather Boots',
                 'defencePhysic' => 32,
             ],
             [
-                'name'          => 'Dwarven Chain Boots',
+                'name' => 'Dwarven Chain Boots',
                 'defencePhysic' => 32,
             ],
             [
-                'name'          => 'Boots of Seal',
+                'name' => 'Boots of Seal',
                 'defencePhysic' => 32,
             ],
             [
-                'name'          => 'Crimson Boots',
+                'name' => 'Crimson Boots',
                 'defencePhysic' => 34,
             ],
             [
-                'name'          => 'Rind Leather Boots',
+                'name' => 'Rind Leather Boots',
                 'defencePhysic' => 34,
             ],
             [
-                'name'          => 'Compound Boots',
+                'name' => 'Compound Boots',
                 'defencePhysic' => 36,
             ],
             [
-                'name'          => 'Demon\'s Boots',
+                'name' => 'Demon\'s Boots',
                 'defencePhysic' => 36,
             ],
             [
-                'name'          => 'Theca Leather Boots',
+                'name' => 'Theca Leather Boots',
                 'defencePhysic' => 37,
             ],
             [
-                'name'          => 'Drake Leather Boots',
+                'name' => 'Drake Leather Boots',
                 'defencePhysic' => 39,
             ],
             [
-                'name'          => 'Full Plate Boots',
+                'name' => 'Full Plate Boots',
                 'defencePhysic' => 39,
             ],
             [
-                'name'          => 'Zubei\'s Boots',
+                'name' => 'Zubei\'s Boots',
                 'defencePhysic' => 41,
             ],
             [
-                'name'          => 'Avadon Boots',
+                'name' => 'Avadon Boots',
                 'defencePhysic' => 41,
             ],
             [
-                'name'          => 'Doom Boots',
+                'name' => 'Doom Boots',
                 'defencePhysic' => 44,
             ],
             [
-                'name'          => 'Blue Wolf Boots',
+                'name' => 'Blue Wolf Boots',
                 'defencePhysic' => 44,
             ],
             [
-                'name'          => 'Dark Crystal Boots',
+                'name' => 'Dark Crystal Boots',
                 'defencePhysic' => 46,
             ],
             [
-                'name'          => 'Tallum Boots',
+                'name' => 'Tallum Boots',
                 'defencePhysic' => 46,
             ],
             [
-                'name'          => 'Boots of Nightmare',
+                'name' => 'Boots of Nightmare',
                 'defencePhysic' => 49,
             ],
             [
-                'name'          => 'Majestic Boots',
+                'name' => 'Majestic Boots',
                 'defencePhysic' => 49,
             ],
             [
-                'name'          => 'Imperial Crusader Boots',
+                'name' => 'Imperial Crusader Boots',
                 'defencePhysic' => 55,
             ],
             [
-                'name'          => 'Draconic Leather Boots',
+                'name' => 'Draconic Leather Boots',
                 'defencePhysic' => 55,
             ],
             [
-                'name'          => 'Major Arcana Boots',
+                'name' => 'Major Arcana Boots',
                 'defencePhysic' => 55,
             ],
             [
-                'name'          => 'Dynasty Boots',
+                'name' => 'Dynasty Boots',
                 'defencePhysic' => 61,
             ],
             [
-                'name'          => 'Dynasty Leather Boots',
+                'name' => 'Dynasty Leather Boots',
                 'defencePhysic' => 61,
             ],
             [
-                'name'          => 'Dynasty Shoes',
+                'name' => 'Dynasty Shoes',
                 'defencePhysic' => 61,
             ],
             [
-                'name'          => 'Moirai Boots',
+                'name' => 'Moirai Boots',
                 'defencePhysic' => 64,
             ],
             [
-                'name'          => 'Moirai Leather Boots',
+                'name' => 'Moirai Leather Boots',
                 'defencePhysic' => 64,
             ],
             [
-                'name'          => 'Moirai Shoes',
+                'name' => 'Moirai Shoes',
                 'defencePhysic' => 64,
             ],
             [
-                'name'          => 'Vesper Boots',
+                'name' => 'Vesper Boots',
                 'defencePhysic' => 68,
+                'nobleStonesForUpgrade' => 290,
             ],
             [
-                'name'          => 'Vesper Boots',
+                'name' => 'Vesper Boots',
                 'defencePhysic' => 68,
+                'nobleStonesForUpgrade' => 290,
             ],
             [
-                'name'          => 'Vesper Leather Boots',
+                'name' => 'Vesper Leather Boots',
                 'defencePhysic' => 68,
+                'nobleStonesForUpgrade' => 290,
             ],
             [
-                'name'          => 'Vesper Shoes',
+                'name' => 'Vesper Shoes',
                 'defencePhysic' => 68,
+                'nobleStonesForUpgrade' => 290,
             ],
         ];
-        $shields   = [
+        $gloves = [
             [
-                'name'          => 'Eldarake',
+                'name' => 'Reinforced Mithril Gloves',
+                'defencePhysic' => 32,
+            ],
+            [
+                'name' => 'Chain Gloves',
+                'defencePhysic' => 32,
+            ],
+            [
+                'name' => 'Karmian Gloves',
+                'defencePhysic' => 32,
+            ],
+            [
+                'name' => 'Plated Leather Gloves',
+                'defencePhysic' => 33,
+            ],
+            [
+                'name' => 'Rind Leather Gloves',
+                'defencePhysic' => 34,
+            ],
+            [
+                'name' => 'Mithril Gauntlets',
+                'defencePhysic' => 36,
+            ],
+            [
+                'name' => 'Demon\'s Gloves',
+                'defencePhysic' => 36,
+            ],
+            [
+                'name' => 'Theca Leather Gloves',
+                'defencePhysic' => 37,
+            ],
+            [
+                'name' => 'Drake Leather Gloves',
+                'defencePhysic' => 39,
+            ],
+            [
+                'name' => 'Full Plate Gauntlets',
+                'defencePhysic' => 39,
+            ],
+            [
+                'name' => 'Divine Gloves',
+                'defencePhysic' => 39,
+            ],
+            [
+                'name' => 'Zubei\'s Gauntlets',
+                'defencePhysic' => 41,
+            ],
+            [
+                'name' => 'Avadon Gloves',
+                'defencePhysic' => 41,
+            ],
+            [
+                'name' => 'Blue Wolf Gloves',
+                'defencePhysic' => 44,
+            ],
+            [
+                'name' => 'Dark Crystal Gloves',
+                'defencePhysic' => 46,
+            ],
+            [
+                'name' => 'Tallum Gloves',
+                'defencePhysic' => 46,
+            ],
+            [
+                'name' => 'Gauntlets of Nightmare',
+                'defencePhysic' => 49,
+            ],
+            [
+                'name' => 'Majestic Gauntlets',
+                'defencePhysic' => 49,
+            ],
+            [
+                'name' => 'Imperial Crusader Gauntlets',
+                'defencePhysic' => 55,
+                'age' => 's',
+            ],
+            [
+                'name' => 'Draconic Leather Gloves',
+                'defencePhysic' => 55,
+                'age' => 's',
+            ],
+            [
+                'name' => 'Major Arcana Gloves',
+                'defencePhysic' => 55,
+                'age' => 's',
+            ],
+            [
+                'name' => 'Dynasty Gauntlets',
+                'defencePhysic' => 61,
+                'age' => 'dynasty',
+            ],
+            [
+                'name' => 'Dynasty Leather Gloves',
+                'defencePhysic' => 61,
+                'age' => 'dynasty',
+            ],
+            [
+                'name' => 'Dynasty Gloves',
+                'defencePhysic' => 61,
+                'age' => 'dynasty',
+            ],
+            [
+                'name' => 'Moirai Gauntlets',
+                'defencePhysic' => 64,
+                'age' => 'moirai',
+            ],
+            [
+                'name' => 'Moirai Leather Gloves',
+                'defencePhysic' => 64,
+                'age' => 'moirai',
+            ],
+            [
+                'name' => 'Moirai Gloves',
+                'defencePhysic' => 64,
+                'age' => 'moirai',
+            ],
+            [
+                'name' => 'Vesper Gauntlets',
+                'defencePhysic' => 68,
+                'age' => 'vesper',
+                'nobleStonesForUpgrade' => 290,
+            ],
+            [
+                'name' => 'Vesper Leather Gloves',
+                'defencePhysic' => 68,
+                'age' => 'vesper',
+                'nobleStonesForUpgrade' => 290,
+            ],
+            [
+                'name' => 'Vesper Gloves',
+                'defencePhysic' => 68,
+                'age' => 'vesper',
+                'nobleStonesForUpgrade' => 290,
+            ],
+        ];
+        $shields = [
+            [
+                'name' => 'Eldarake',
                 'defencePhysic' => 166,
             ],
             [
-                'name'          => 'Chain Shield',
+                'name' => 'Chain Shield',
                 'defencePhysic' => 166,
             ],
             [
-                'name'          => 'Dwarven Chain Shield',
+                'name' => 'Dwarven Chain Shield',
                 'defencePhysic' => 174,
             ],
             [
-                'name'          => 'Knight\'s Shield',
+                'name' => 'Knight\'s Shield',
                 'defencePhysic' => 178,
             ],
             [
-                'name'          => 'Tower Shield',
+                'name' => 'Tower Shield',
                 'defencePhysic' => 190,
             ],
             [
-                'name'          => 'Compound Shield',
+                'name' => 'Compound Shield',
                 'defencePhysic' => 190,
             ],
             [
-                'name'          => 'Full Plate Shield',
+                'name' => 'Full Plate Shield',
                 'defencePhysic' => 203,
             ],
             [
-                'name'          => 'Zubei\'s Shield',
+                'name' => 'Zubei\'s Shield',
                 'defencePhysic' => 216,
             ],
             [
-                'name'          => 'Avadon Shield',
+                'name' => 'Avadon Shield',
                 'defencePhysic' => 216,
             ],
             [
-                'name'          => 'Doom Shield',
+                'name' => 'Doom Shield',
                 'defencePhysic' => 230,
             ],
             [
-                'name'          => 'Dark Crystal Shield',
+                'name' => 'Dark Crystal Shield',
                 'defencePhysic' => 243,
             ],
             [
-                'name'          => 'Shield of Nightmare',
+                'name' => 'Shield of Nightmare',
                 'defencePhysic' => 256,
             ],
             [
-                'name'          => 'Imperial Crusader Shield',
+                'name' => 'Imperial Crusader Shield',
                 'defencePhysic' => 290,
             ],
             [
-                'name'          => 'Dynasty Shield',
+                'name' => 'Dynasty Shield',
                 'defencePhysic' => 321,
             ],
             [
-                'name'          => 'Moirai Shield',
+                'name' => 'Moirai Shield',
                 'defencePhysic' => 355,
             ],
             [
-                'name'          => 'Vesper Shield',
+                'name' => 'Vesper Shield',
                 'defencePhysic' => 371,
             ],
         ];
-        $sigils    = [
+        $sigils = [
             [
-                'name'          => 'Arcana Sigil',
+                'name' => 'Arcana Sigil',
                 'defencePhysic' => 13,
             ],
             [
-                'name'          => 'Dynasty Sigil',
+                'name' => 'Dynasty Sigil',
                 'defencePhysic' => 15,
             ],
             [
-                'name'          => 'Moirai Sigil',
+                'name' => 'Moirai Sigil',
                 'defencePhysic' => 16,
             ],
             [
-                'name'          => 'Vesper Sigil',
+                'name' => 'Vesper Sigil',
                 'defencePhysic' => 17,
             ],
         ];
-        $rings     = [
+        $rings = [
             [
-                'name'         => 'Aquastone Ring',
+                'name' => 'Aquastone Ring',
                 'defenceMagic' => 26,
             ],
             [
-                'name'         => 'Ring of Protection',
+                'name' => 'Ring of Protection',
                 'defenceMagic' => 28,
             ],
             [
-                'name'         => 'Ring of Ages',
+                'name' => 'Ring of Ages',
                 'defenceMagic' => 30,
             ],
             [
-                'name'         => 'Ring of Seal',
+                'name' => 'Ring of Seal',
                 'defenceMagic' => 32,
             ],
             [
-                'name'         => 'Adamantite Ring',
+                'name' => 'Adamantite Ring',
                 'defenceMagic' => 34,
             ],
             [
-                'name'         => 'Black Ore Ring',
+                'name' => 'Black Ore Ring',
                 'defenceMagic' => 36,
             ],
             [
-                'name'         => 'Phoenix Ring',
+                'name' => 'Phoenix Ring',
                 'defenceMagic' => 40,
             ],
             [
-                'name'         => 'Majestic Ring',
+                'name' => 'Majestic Ring',
                 'defenceMagic' => 42,
             ],
             [
-                'name'         => 'Tateossian Ring',
+                'name' => 'Tateossian Ring',
                 'defenceMagic' => 48,
             ],
             [
-                'name'         => 'Dynasty Ring',
+                'name' => 'Dynasty Ring',
                 'defenceMagic' => 60,
             ],
             [
-                'name'         => 'Moirai Ring',
+                'name' => 'Moirai Ring',
                 'defenceMagic' => 61,
             ],
             [
-                'name'         => 'Vesper Ring',
+                'name' => 'Vesper Ring',
                 'defenceMagic' => 62,
             ],
         ];
-        $earrings  = [
+        $earrings = [
             [
-                'name'         => 'Moonstone Earring',
+                'name' => 'Moonstone Earring',
                 'defenceMagic' => 39,
             ],
             [
-                'name'         => 'Earring of Protection',
+                'name' => 'Earring of Protection',
                 'defenceMagic' => 42,
             ],
             [
-                'name'         => 'Earring of Seal',
+                'name' => 'Earring of Seal',
                 'defenceMagic' => 45,
             ],
             [
-                'name'         => 'Earring of Seal',
+                'name' => 'Earring of Seal',
                 'defenceMagic' => 45,
             ],
             [
-                'name'         => 'Nassen\'s Earring',
+                'name' => 'Nassen\'s Earring',
                 'defenceMagic' => 48,
             ],
             [
-                'name'         => 'Adamantite Earring',
+                'name' => 'Adamantite Earring',
                 'defenceMagic' => 51,
             ],
             [
-                'name'         => 'Black Ore Earring',
+                'name' => 'Black Ore Earring',
                 'defenceMagic' => 54,
             ],
             [
-                'name'         => 'Phoenix Earring',
+                'name' => 'Phoenix Earring',
                 'defenceMagic' => 60,
             ],
             [
-                'name'         => 'Majestic Earring',
+                'name' => 'Majestic Earring',
                 'defenceMagic' => 63,
             ],
             [
-                'name'         => 'Tateossian Earring',
+                'name' => 'Tateossian Earring',
                 'defenceMagic' => 71,
             ],
             [
-                'name'         => 'Dynasty Earring',
+                'name' => 'Dynasty Earring',
                 'defenceMagic' => 79,
             ],
             [
-                'name'         => 'Moirai Earring',
+                'name' => 'Moirai Earring',
                 'defenceMagic' => 86,
             ],
             [
-                'name'         => 'Vesper Earring',
+                'name' => 'Vesper Earring',
                 'defenceMagic' => 94,
             ],
         ];
         $necklaces = [
             [
-                'name'         => 'Aquastone Necklace',
+                'name' => 'Aquastone Necklace',
                 'defenceMagic' => 52,
             ],
             [
-                'name'         => 'Necklace of Protection',
+                'name' => 'Necklace of Protection',
                 'defenceMagic' => 56,
             ],
             [
-                'name'         => 'Necklace of Mermaid',
+                'name' => 'Necklace of Mermaid',
                 'defenceMagic' => 60,
             ],
             [
-                'name'         => 'Necklace of Seal',
+                'name' => 'Necklace of Seal',
                 'defenceMagic' => 64,
             ],
             [
-                'name'         => 'Adamantite Necklace',
+                'name' => 'Adamantite Necklace',
                 'defenceMagic' => 68,
             ],
             [
-                'name'                  => 'Black Ore Necklace',
-                'defenceMagic'          => 72,
+                'name' => 'Black Ore Necklace',
+                'defenceMagic' => 72,
                 'masterworkDescription' => 'Увеличивает Сопротивление к Стану на 4.76',
             ],
             [
-                'name'         => 'Phoenix Necklace',
+                'name' => 'Phoenix Necklace',
                 'defenceMagic' => 80,
             ],
             [
-                'name'         => 'Majestic Necklace',
+                'name' => 'Majestic Necklace',
                 'defenceMagic' => 85,
             ],
             [
-                'name'         => 'Tateossian Necklace',
+                'name' => 'Tateossian Necklace',
                 'defenceMagic' => 95,
             ],
             [
-                'name'         => 'Dynasty Necklace',
+                'name' => 'Dynasty Necklace',
                 'defenceMagic' => 106,
             ],
             [
-                'name'         => 'Moirai Necklace',
+                'name' => 'Moirai Necklace',
                 'defenceMagic' => 115,
             ],
             [
-                'name'         => 'Vesper Necklace',
+                'name' => 'Vesper Necklace',
                 'defenceMagic' => 125,
             ],
         ];
 
-        $items = array_merge($light, $heavy, $robe, $helmet, $boots, $shields, $sigils, $rings, $earrings, $necklaces);
+        $items = array_merge(
+            $light,
+            $heavy,
+            $robe,
+            $helmet,
+            $boots,
+            $gloves,
+            $shields,
+            $sigils,
+            $rings,
+            $earrings,
+            $necklaces
+        );
 
         foreach ($items as $item) {
             $this->updateAttributes(
@@ -823,6 +997,8 @@ class Def extends RecipesExtraSeeder
                 defenceMagic: $item['defenceMagic'] ?? null,
                 defencePhysic: $item['defencePhysic'] ?? null,
                 masterworkDescription: $item['masterworkDescription'] ?? null,
+                age: $item['age'] ?? null,
+                nobleStonesForUpgrade: $item['nobleStonesForUpgrade'] ?? null,
             );
         }
     }

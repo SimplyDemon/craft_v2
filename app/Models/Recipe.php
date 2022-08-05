@@ -311,30 +311,44 @@ class Recipe extends Model
         return $saInfo;
     }
 
-    public function getBonusPvpAttribute()
+    public function getBonusPvpHtmlAttribute()
     {
-        $bonusText = $this->getBonusPvpWeapon($this);
-        if (!$bonusText) {
-            $bonusText = $this->getBonusPvpArmor($this);
+        $html = null;
+        $bonusPvp = $this->bonus_pvp;
+        if (!empty($bonusPvp['text'])) {
+            $html = view('pages.recipes.pvp-info', $bonusPvp);
         }
 
-        return $bonusText;
+        return $html;
+    }
+
+    public function getBonusPvpAttribute()
+    {
+        $bonusInfo = $this->getBonusPvpWeapon($this);
+        if (!$bonusInfo) {
+            $bonusInfo = $this->getBonusPvpArmor($this);
+        }
+
+        return $bonusInfo;
     }
 
 
-    protected function getBonusPvpWeapon($single)
+    protected function getBonusPvpWeapon(Recipe $single)
     {
         $parentCategoryId = $this->category->category_id ?? null;
         $availableGrades = ['S', 'S-80', 'S-84'];
         $weaponCategoryId = 1;
         $isWeapon = $parentCategoryId === $weaponCategoryId;
         $isCorrectGrade = in_array($single->grade, $availableGrades);
-        $weaponPostfix = ' Перезарядка 10 сек. Увеличивает урон наносимый в PvP на 5%';
-        $cancelText = 'С вероятностью 10% канселит 1-3 вражеских положительных эффектов, при атаке в PvP.';
-        $bonusDamageText = 'С вероятностью 10% наносит дополнительный урон, примерно равный урону автоатаки, при атаке в PvP.';
+
         if (!$isWeapon || !$isCorrectGrade) {
             return null;
         }
+        $cost = $this->getBonusPvpCostWeapon($this);
+
+        $weaponPostfix = ' Перезарядка 10 сек. Увеличивает урон наносимый в PvP на 5%';
+        $cancelText = 'С вероятностью 10% канселит 1-3 вражеских положительных эффектов, при атаке в PvP.';
+        $bonusDamageText = 'С вероятностью 10% наносит дополнительный урон, примерно равный урону автоатаки, при атаке в PvP.';
 
         $text = match ($this->category->name) {
             'Bow' => 'С вероятностью 10% увеличивает Скорость Атаки на 15% в течении 10 сек., при атаке в PvP.',
@@ -361,10 +375,13 @@ class Recipe extends Model
             $text .= $weaponPostfix;
         }
 
-        return $text;
+        return [
+            'text' => $text,
+            'cost' => $cost,
+        ];
     }
 
-    protected function getBonusPvpArmor($single)
+    protected function getBonusPvpArmor(Recipe $single)
     {
         $armorCategoryId = 2;
         $category = $this->category;
@@ -385,11 +402,11 @@ class Recipe extends Model
         $isCorrectGrade = in_array($single->grade, $availableGrades);
         $isCorrectCategory = in_array($category->name, $availableCategoryNames);
 
-        $armorPostfix = ' Перезарядка 10 сек. Уменьшает получаемый урон в PvP на 5%';
         if (!$isArmor || !$isCorrectGrade || !$isCorrectCategory) {
             return null;
         }
-
+        $cost = $this->getBonusPvpCostArmor($single);
+        $armorPostfix = ' Перезарядка 10 сек. Уменьшает получаемый урон в PvP на 5%';
         $text = match ($preTopParentCategoryName) {
             'Robe' => 'С вероятностью 20% уменьшает Шанс получения Критического удара и уменьшает получаемый Критический Урон на 15% в течении 10 сек., при получении урона в PvP.',
             'Light' => 'С вероятностью 25% сбрасывает таргет противника, при получении урона в PvP.',
@@ -404,7 +421,96 @@ class Recipe extends Model
         } else {
             $text .= $armorPostfix;
         }
+        return [
+            'text' => $text,
+            'cost' => $cost,
+        ];
+    }
 
-        return $text;
+    protected function getBonusPvpCostWeapon(Recipe $single): ?array
+    {
+        /* Dynasty daggers 43 950 славы + 4 395 050 */
+        /* Moirai daggers 30 400 славы + 6 089 000 */
+        /* Vesper daggers 42 900 славы + 8 576 500 */
+        /* Skull Edge Dagger Dual, top s84, Mamba Edge Dual Daggers 50 000 славы + 10 563 400 */
+
+        $cost = match ($single->age) {
+            's' => [
+                'adena' => 1154520,
+                'fame' => 11545,
+            ],
+            'dynasty' => [
+                'adena' => 3747300,
+                'fame' => 18700,
+            ],
+            'moirai' => [
+                'adena' => 5171950,
+                'fame' => 25900,
+            ],
+            'vesper' => [
+                'adena' => 7343750,
+                'fame' => 36700,
+            ],
+            'vorpal' => [
+                'adena' => 8576500,
+                'fame' => 42900,
+            ],
+            'elegia' => [
+                'adena' => 10563400,
+                'fame' => 50000,
+            ],
+            default => null,
+        };
+
+        return $cost;
+    }
+
+    protected function getBonusPvpCostArmor(Recipe $single): ?array
+    {
+        $category = $single->category;
+        $preTopParentCategoryName = $category->pre_top_parent_category->name;
+        $isHeavy = $preTopParentCategoryName === 'Heavy';
+
+        $cost = match ($single->age) {
+            's' => [
+                'adena' => $isHeavy ? 345105 : 420570,
+                'fame' => $isHeavy ? 3451 : 4206,
+            ],
+            'dynasty' => [
+                'С эссенцией' => [
+                    'adena' => $isHeavy ? 1268850 : 951630,
+                    'fame' => $isHeavy ? 12689 : 9516,
+                ],
+                'Обычный' => [
+                    'adena' => $isHeavy ? 860640 : 645480,
+                    'fame' => $isHeavy ? 8606 : 6455,
+                ],
+            ],
+            'moirai' => [
+                'adena' => $isHeavy ? 1268850 : 951630,
+                'fame' => $isHeavy ? 12689 : 9516,
+            ],
+            'vesper' => [
+                'Нубл' => [
+                    'adena' => $isHeavy ? 2792000 : 2094000,
+                    'fame' => $isHeavy ? 14000 : 10500,
+                ],
+                'Обычный' => [
+                    'adena' => $isHeavy ? 2333400 : 1750000,
+                    'fame' => $isHeavy ? 11700 : 8800,
+                ],
+            ],
+            'vorpal' => [
+                'adena' => $isHeavy ? 2792000 : 2094000,
+                'fame' => $isHeavy ? 14000 : 10500,
+            ],
+            'elegia' => [
+                'adena' => $isHeavy ? 3347650 : 2510750,
+                'fame' => $isHeavy ? 16700 : 12500,
+            ],
+            default => null,
+        };
+
+        return $cost;
     }
 }
