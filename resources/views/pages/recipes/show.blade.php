@@ -77,6 +77,7 @@
                     @if($single->p_attack)
                         <div>Физ атака:
                             <img
+                                class="rounded"
                                 height="18px"
                                 src="{{asset('storage') . '/' . \App\Models\Recipe::where('name', 'Soulshot (' .str_replace(['80', '-', '84'],'', $single->grade) .'-grade)')->first()->img}}"
                                 alt="soul shot">
@@ -85,27 +86,41 @@
                     @endif
 
                     @if($single->m_attack)
-                        <div>Маг атака:
-                            <img
-                                height="18px"
-                                src="{{asset('storage') . '/' . \App\Models\Recipe::where('name', 'Blessed Spiritshot (' .str_replace(['80', '-', '84'],'', $single->grade) .'-grade)')->first()->img}}"
-                                alt="spirit shots">
-                            <span class="nk-btn-color-main-1">{{$single->m_attack}}</span>
-                        </div>
-                    @endif
+                            <div>Маг атака:
+                                <img
+                                    class="rounded"
+                                    height="18px"
+                                    src="{{asset('storage') . '/' . \App\Models\Recipe::where('name', 'Blessed Spiritshot (' .str_replace(['80', '-', '84'],'', $single->grade) .'-grade)')->first()->img}}"
+                                    alt="spirit shots">
+                                <span class="nk-btn-color-main-1">{{$single->m_attack}}</span>
+                            </div>
+                        @endif
 
-                    @if($single->p_def)
-                        <div>Физ защита: <span class="nk-btn-color-main-1">{{$single->p_def}}</span></div>
-                    @endif
+                        @if($single->p_def)
+                            <div>Физ защита:
+                                <img
+                                    class="rounded"
+                                    height="18px"
+                                    src="{{asset('images/shield.webp' )}}"
+                                    alt="physic def">
+                                <span class="nk-btn-color-main-1">{{$single->p_def}}</span></div>
+                        @endif
 
-                    @if($single->m_def)
-                        <div>Маг защита: <span class="nk-btn-color-main-1">{{$single->m_def}}</span></div>
-                    @endif
+                        @if($single->m_def)
+                            <div>Маг защита:
+                                <img
+                                    class="rounded"
+                                    height="18px"
+                                    src="{{asset('images/magic_barrier.webp' )}}"
+                                    alt="magic def">
+                                <span class="nk-btn-color-main-1">{{$single->m_def}}</span></div>
+                        @endif
 
-                    @if($single->noble_stones_for_upgrade)
-                        <span>Необходимо <img width="20" src="{{asset('images/noble_stone.webp' )}}" alt="noble stones">
+                        @if($single->noble_stones_for_upgrade)
+                            <span>Необходимо <img width="20" src="{{asset('images/noble_stone.webp' )}}"
+                                                  alt="noble stones">
                             <span class="nk-btn-color-main-1">{{$single->noble_stones_for_upgrade}}</span> для апгрейда.</span>
-                    @endif
+                        @endif
                 </div>
             </div>
             <div class="col-7">

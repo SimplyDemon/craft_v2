@@ -1,6 +1,7 @@
 ## Commands Prod
 
 - ssh localhost -p222 - docker connect
+- php8.1 -n artisan migrate
 - php8.1 -n artisan migrate:fresh --seed
 - php8.1 -n artisan migrate:refresh --path=/database/migrations/2021_11_11_100732_create_raid_bosses_table.php
 - php8.1 -n artisan db:seed --class=RaidBossSeeder
