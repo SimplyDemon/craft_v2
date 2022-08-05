@@ -28,7 +28,10 @@
     <div class="container">
         <div class="row recipe-info">
             <div class="col-5">
-                <img width="50" src="{{asset('storage') . '/' . $single->img}}" alt="show">
+                <img class="rounded @if($single->favorite_text) recipe-info_favorite-img @endif" width="50"
+                     src="{{asset('storage') . '/' . $single->img}}" alt="show"
+                     @if($single->favorite_text)data-toggle="tooltip" data-placement="top"
+                     title="{{$single->favorite_text}}" @endif>
                 @if($single->gradeImage)
                     <img class="grade" src="{{$single->gradeImage}}" alt="grade">
                 @endif
@@ -90,7 +93,6 @@
                 {!! $single->sa_html !!}
             </div>
         </div>
-
 
         @if($single->resource)
             <a href="{{ route( 'resources.show', [ 'id' => $single->resource->id ] ) }}">

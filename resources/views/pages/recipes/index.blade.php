@@ -128,7 +128,10 @@
                             <div class="filter__recipe-item-info-special">
                                 <a class="image-link-no-underline"
                                    href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
-                                    <img width="30" src="{{asset('storage') . '/' . $recipe->img}}" alt="img">
+                                    <img class="rounded @if($recipe->favorite_text) recipe-info_favorite-img @endif"
+                                         width="30" src="{{asset('storage') . '/' . $recipe->img}}"
+                                         alt="{{$recipe->name}}" @if($recipe->favorite_text)data-toggle="tooltip"
+                                         data-placement="top" title="{{$recipe->favorite_text}}" @endif>
                                 </a>
                                 @if($recipe->masterworkText)
                                     @php

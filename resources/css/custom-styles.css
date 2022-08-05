@@ -296,3 +296,9 @@ img.sd-navbar-bg {
 .recipe-pvp-cost_text-resource-image {
     margin-right: 4px;
 }
+
+.recipe-info_favorite-img {
+    padding: 1px;
+    border: 1px solid #a294ff;
+    background-color: #ff0;
+}
