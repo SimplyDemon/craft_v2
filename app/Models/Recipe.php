@@ -33,6 +33,13 @@ class Recipe extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function recipes()
+    {
+        return $this->belongsToMany(Recipe::class, 'recipe_recipe', 'recipe_id', 'content_recipe_id')->withPivot(
+            'is_duplicate'
+        );
+    }
+
     public function getGradeImageAttribute()
     {
         $grade = $this->grade;

@@ -41,20 +41,22 @@ Route::middleware( 'auth.dev' )->group( function () {
     Route::get('/public', function () {
         return Redirect::to(route('index'));
     })->name('public');
-    Route::get( '/search', [ SearchController::class, 'index' ] )->name( 'search' );
-    Route::post( '/search', [ SearchController::class, 'ajax' ] )->name( 'search.ajax' );
+    Route::get('/search', [SearchController::class, 'index'])->name('search');
+    Route::post('/search', [SearchController::class, 'ajax'])->name('search.ajax');
 
-    Route::resource( 'recipes', RecipeController::class )->parameters( [
+    Route::resource('recipes', RecipeController::class)->parameters([
         'recipes' => 'id',
-    ] )->only( [ 'index', 'show' ] );
+    ])->only(['index', 'show']);
+    Route::get('/non-craftable', [RecipeController::class, 'nonCraftableItems'])->name('non_craftable');
 
-    Route::resource( 'resources', ResourceController::class )->parameters( [
+
+    Route::resource('resources', ResourceController::class)->parameters([
         'resources' => 'id',
-    ] )->only( [ 'show' ] );
-    Route::get( '/resources_list', [ ResourceController::class, 'index' ] )->name( 'resources.index' );
+    ])->only(['show']);
+    Route::get('/resources_list', [ResourceController::class, 'index'])->name('resources.index');
 
-    Route::middleware( 'auth' )->group( function () {
-        Route::resource( 'conversations', ConversationController::class )->parameters( [
+    Route::middleware('auth')->group(function () {
+        Route::resource('conversations', ConversationController::class)->parameters([
             'conversations' => 'id',
         ] )->only( [ 'index', 'create', 'store', 'show' ] );
 

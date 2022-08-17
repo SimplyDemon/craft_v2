@@ -372,10 +372,54 @@ class WeaponSeeder extends Seeder {
             13, 82, 'Critical Damage', 'HP Drain', 'Haste', 'Увеличивает Физ. Атк. на 265 при критической атаке', 'Даёт 3% вампиризма', 'Увеличивает Скорость атаки на 7%' );
         seederAddRecipe( 'Dynasty Knife', $imagePath, 0, 'S', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Great Gale', 1, false, 'Нож Династии, дино дагер, даггер, dagger, dager', null, 3597,
             14, 285, 'Focus', 'Evasion', 'Critical Damage', 'Увеличивает Физ. Крит. Атк. на 116', 'Увеличивает Уклонение на 5', 'Увеличивает Физ. Атк. на 559 при критической атаке' );
-        seederAddRecipe( 'Icarus Disperser', $imagePath, 0, 'S-80', $categoryId, 0, '60', 'Увеличивает Уклонение на 3.3', 'Confusion', 1, false, 'Распылитель Икара, ик нож дагер, даггер, dagger, dager', null, 4965,
-            15, 399, 'Focus', 'Evasion', 'Crit. Damage', 'Увеличивает Физ. Крит. Атк. на 116', 'Увеличивает Уклонение на 5', 'Увеличивает Физ. Атк. на 559 при критической атаке' );
-        seederAddRecipe( 'Vesper Shaper', $imagePath, 0, 'S-84', $categoryId, 0, '60', 'Увеличивает Скорость Атаки на 5%', 'Gale', 1, false, 'Острие Венеры, шапер, веспер нож дагер, даггер, dagger, dager', null, 7050,
-            16, 623, 'HP Drain', 'Haste', 'Critical Damage', 'Даёт 4% вампиризма', 'Увеличивает Скорость Атаки на 11%', 'Увеличивает Физ. Атк. на 906 При критической атаке' );
+        seederAddRecipe(
+            'Icarus Disperser',
+            $imagePath,
+            0,
+            'S-80',
+            $categoryId,
+            0,
+            '60',
+            'Увеличивает Уклонение на 3.3',
+            'Confusion',
+            1,
+            false,
+            'Распылитель Икара, ик нож дагер, даггер, dagger, dager',
+            null,
+            4965,
+            15,
+            399,
+            'Focus',
+            'Evasion',
+            'Crit. Damage',
+            'Увеличивает Физ. Крит. Атк. на 116',
+            'Увеличивает Уклонение на 5',
+            'Увеличивает Физ. Атк. на 559 при критической атаке'
+        );
+        seederAddRecipe(
+            'Vesper Shaper',
+            $imagePath,
+            0,
+            'S-84',
+            $categoryId,
+            0,
+            '60',
+            'Увеличивает Скорость Атаки на 5%',
+            'Gale',
+            1,
+            false,
+            'Острие Венеры, шапер, веспер нож дагер, даггер, dagger, dager',
+            null,
+            7050,
+            16,
+            623,
+            'HP Drain',
+            'Haste',
+            'Critical Damage',
+            'Даёт 4% вампиризма',
+            'Увеличивает Скорость Атаки на 11%',
+            'Увеличивает Физ. Атк. на 906 при Критической атаке'
+        );
     }
 
     protected function addPolearms() {

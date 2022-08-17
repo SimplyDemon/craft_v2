@@ -308,3 +308,17 @@ img.sd-navbar-bg {
     border: 1px solid #386257;
     background-color: #a294ff
 }
+
+.recipe_recipe {
+    align-self: center;
+}
+
+.recipe_recipe-container {
+    display: flex;
+}
+
+.recipe_recipe-plus-img {
+    fill: white;
+    margin: 14px;
+
+}

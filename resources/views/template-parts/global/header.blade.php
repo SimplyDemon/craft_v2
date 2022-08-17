@@ -68,7 +68,7 @@
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
-    @if(Route::is('recipes.index'))
+    @if(Route::is('recipes.index') || Route::is('non_craftable') )
         <link href="{{ mix('css/recipes.css') }}" rel="stylesheet">
     @endif
 </head>
@@ -145,9 +145,14 @@
 
                 <div class="nk-nav-row nk-nav-row-full nk-nav-row-center">
                     <ul class="nk-nav">
-                        <li class=" ">
+                        <li>
                             <a href="{{route('bosses_respawn')}}">
                                 Респ РБ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('non_craftable')}}">
+                                Предметы, которые не крафтятся
                             </a>
                         </li>
                     </ul>

@@ -24,7 +24,7 @@ class RecipeController extends Controller {
 
 
     public function index() {
-        $recipes = Recipe::orderBy( 'grade', 'desc' )->orderBy( 'id', 'desc' )->get();
+        $recipes = Recipe::where('is_non_craftable', false)->orderBy('grade', 'desc')->orderBy('id', 'desc')->get();
 
         $categories = [
             'weapon'   => [
@@ -264,5 +264,52 @@ class RecipeController extends Controller {
         Session::flash( 'message', $message );
 
         return Redirect::to( route( $this->name . 'index' ) );
+    }
+
+    public function nonCraftableItems()
+    {
+        $recipes = Recipe::where('is_non_craftable', true)->orderBy('grade', 'desc')->orderBy('id', 'desc')->get();
+
+        $categories = [
+            'weapon' => [
+                'title' => 'Оружие',
+                'list' => [
+                    'sword' => 'Мечи',
+                    'blunt' => 'Ударное',
+                    'dagger' => 'Кинжалы',
+                    'bow' => 'Луки',
+                    'polearm' => 'Копья',
+                    'fist' => 'Кастеты',
+                    'dual sword' => 'Дуал мечи',
+                    'dual dagger' => 'Дуал дагеры',
+                ],
+            ],
+            'armor' => [
+                'title' => 'Броня',
+                'list' => [
+                    'upper' => 'Верх',
+                    'lower' => 'Низ',
+                    'helmet' => 'Шлемы',
+                    'gloves' => 'Перчатки',
+                    'boot' => 'Ботинки',
+                    'shield' => 'Щиты',
+                    'sigil' => 'Сигили',
+                ],
+            ],
+            'jewelry' => [
+                'title' => 'Бижутерия',
+                'list' => [
+                    'necklace' => 'Ожерелья',
+                    'earring' => 'Серьги',
+                    'ring' => 'Кольца',
+                ],
+            ],
+        ];
+
+        return view($this->folderPathUser . 'index', [
+            'categories' => $categories,
+            'recipes' => $recipes,
+            'title' => 'Предметы, которые нельзя скрафтить',
+        ]);
     }
 }

@@ -7,6 +7,7 @@ use App\Models\Recipe;
 use Database\Seeders\RecipesExtraSeeder;
 use Exception;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Log;
 
 class Def extends RecipesExtraSeeder
 {
@@ -17,6 +18,7 @@ class Def extends RecipesExtraSeeder
             $this->updateDef();
         } catch (Exception $e) {
             var_dump($e->getMessage());
+            Log::error('Seeder error' . $e->getMessage());
         }
     }
 

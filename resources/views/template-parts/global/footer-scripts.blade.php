@@ -4,7 +4,7 @@
 
 @stack('extra-scripts')
 
-@if(Route::is('recipes.index'))
+@if(Route::is('recipes.index') || Route::is('non_craftable'))
     <script src="{{ mix('js/recipes.js') }}"></script>
 @endif
 

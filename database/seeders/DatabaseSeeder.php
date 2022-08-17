@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder {
             RecipeResourceSeeder::class,
             GradeImageSeeder::class,
             RaidBossSeeder::class,
+            RecipesExtraSeeder::class,
+            NonCraftableRecipesSeeder::class,
         ] );
     }
 }
