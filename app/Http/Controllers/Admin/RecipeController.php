@@ -241,7 +241,13 @@ class RecipeController extends Controller {
         $request->session()->flash( 'message', $message );
 
         if ( $method == 'Применить' ) {
-            return Redirect::to( route( $this->name . 'edit', [ 'single' => $single, 'all' => $all ] ) );
+            return Redirect::to(
+                route($this->name . 'edit', [
+                    'id' => $single->id,
+                    'single' => $single,
+                    'all' => $all,
+                ])
+            );
         }
 
         return Redirect::to( route( $this->name . 'index' ) );
@@ -256,14 +262,13 @@ class RecipeController extends Controller {
         try {
             $single->delete();
             $message = 'Удаление выполнено успешно!';
-        }
-        catch ( QueryException $exception ) {
-            $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
+        } catch (QueryException $exception) {
+            $message = $exception->errorInfo[self::QUERY_EXCEPTION_READABLE_MESSAGE];
         }
 
-        Session::flash( 'message', $message );
+        Session::flash('message', $message);
 
-        return Redirect::to( route( $this->name . 'index' ) );
+        return Redirect::to(route($this->name . 'index'));
     }
 
     public function nonCraftableItems()

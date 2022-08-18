@@ -47,6 +47,7 @@ Route::middleware( 'auth.dev' )->group( function () {
     Route::resource('recipes', RecipeController::class)->parameters([
         'recipes' => 'id',
     ])->only(['index', 'show']);
+
     Route::get('/non-craftable', [RecipeController::class, 'nonCraftableItems'])->name('non_craftable');
 
 

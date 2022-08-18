@@ -31,12 +31,13 @@
             </label>
             <input class="form-control" type="text" name="name" id="name" value="{{old('name',$single->name)}}">
         </div>
-
+        <textarea id="description" name="description">{{old('description',$single->description)}}</textarea>
         <div class="form-group">
             <label for="price_sell">
                 Цена
             </label>
-            <input class="form-control" type="number" name="price_sell" id="price_sell" value="{{old('price_sell',$single->price_sell)}}"
+            <input class="form-control" type="number" name="price_sell" id="price_sell"
+                   value="{{old('price_sell',$single->price_sell)}}"
                    min="0">
         </div>
 
@@ -138,9 +139,8 @@
         </button>
     </form>
 
-
-
-
-
-
 @endsection
+
+@push('footer_scripts')
+
+@endpush

@@ -96,30 +96,34 @@
                     @endif
 
                     @if($single->p_def)
-                        <div>Физ защита:
-                            <img
+                        <div><img
                                 class="rounded"
                                 height="18px"
                                 src="{{asset('images/shield.webp' )}}"
                                 alt="physic def">
+                            Физ защита:
                             <span class="nk-btn-color-main-1">{{$single->p_def}}</span></div>
                     @endif
 
                     @if($single->m_def)
-                        <div>Маг защита:
-                            <img
-                                class="rounded"
-                                height="18px"
-                                src="{{asset('images/magic_barrier.webp' )}}"
-                                alt="magic def">
-                            <span class="nk-btn-color-main-1">{{$single->m_def}}</span></div>
-                    @endif
+                            <div><img
+                                    class="rounded"
+                                    height="18px"
+                                    src="{{asset('images/magic_barrier.webp' )}}"
+                                    alt="magic def">
+                                Маг защита:
+                                <span class="nk-btn-color-main-1">{{$single->m_def}}</span></div>
+                        @endif
 
-                    @if($single->noble_stones_for_upgrade)
-                        <span>Необходимо <img width="20" src="{{asset('images/noble_stone.webp' )}}"
-                                              alt="noble stones">
+                        @if($single->noble_stones_for_upgrade)
+                            <span>Необходимо <img width="20" src="{{asset('images/noble_stone.webp' )}}"
+                                                  alt="noble stones">
                             <span class="nk-btn-color-main-1">{{$single->noble_stones_for_upgrade}}</span> для апгрейда.</span>
-                    @endif
+                        @endif
+
+                        @if($single->description)
+                            {!! $single->description !!}
+                        @endif
                 </div>
             </div>
             <div class="col-7 @if($single->recipes) recipe_recipe-container @endif">
