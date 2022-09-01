@@ -56,16 +56,17 @@
             <div class="col-9 col-items">
                 <div class="nk-gap-2 d-none d-lg-block"></div>
                 <div class="nk-social-menu-inline">
-                    <input type="search" class="form-control" id="item-search" placeholder="Поиск" aria-label="" autocomplete="off">
+                    <input type="search" class="form-control" id="item-search" placeholder="Поиск" aria-label=""
+                           autocomplete="off">
                     <ul class="grade">
                         <li class="nk-btn-color-warning">Грейд:</li>
                         <li class="active">
                             <a data-grade="any" href="#">Любой</a>
                         </li>
                         @if(empty($isNonCraftable))
-                        <li>
-                            <a data-grade="c" href="#">C</a>
-                        </li>
+                            <li>
+                                <a data-grade="c" href="#">C</a>
+                            </li>
                         @endif
                         <li>
                             <a data-grade="b" href="#">B</a>
@@ -85,44 +86,47 @@
 
                     </ul>
                     @if(empty($isNonCraftable))
-                    <ul class="percent">
-                        <li class="nk-btn-color-warning">Шанс:</li>
-                        <li class="active">
-                            <a data-percent="any" href="#">Любой</a>
-                        </li>
-                        <li>
-                            <a data-percent="60" href="#">60%</a>
-                        </li>
-                        <li>
-                            <a data-percent="70" data-toggle="tooltip" data-placement="top" title="Бижутерия" href="#">70%</a>
-                        </li>
-                        <li>
-                            <a data-percent="100" data-toggle="tooltip" data-placement="top" title="Предметы B грейда, соски, ресуры" href="#">100%</a>
-                        </li>
-                    </ul>
+                        <ul class="percent">
+                            <li class="nk-btn-color-warning">Шанс:</li>
+                            <li class="active">
+                                <a data-percent="any" href="#">Любой</a>
+                            </li>
+                            <li>
+                                <a data-percent="60" href="#">60%</a>
+                            </li>
+                            <li>
+                                <a data-percent="70" data-toggle="tooltip" data-placement="top" title="Бижутерия"
+                                   href="#">70%</a>
+                            </li>
+                            <li>
+                                <a data-percent="100" data-toggle="tooltip" data-placement="top"
+                                   title="Предметы B грейда, соски, ресуры" href="#">100%</a>
+                            </li>
+                        </ul>
                     @endif
                 </div>
                 <div class="row">
                     @foreach( $recipes as $recipe)
+                        @php($recipeCategoryName = $recipe?->category?->name)
                         <div class="item col-12 col-sm-6 col-lg-4"
                              @if($recipe->name)
                              data-name="{{strtolower($recipe->name)}}"
                              @endif
-                             @if($recipe->category)
-                             @if($recipe->category->name === 'Other' || $recipe->category->name === 'Resource')
-                             data-category-parent="{{strtolower($recipe->category->name)}}"
+
+                             @if($recipeCategoryName === 'Other' || $recipeCategoryName === 'Resource')
+                             data-category-parent="{{strtolower($recipeCategoryName)}}"
                              @endif
-                             data-category="{{strtolower($recipe->category->name)}}"
-                             @endif
-                             @if($recipe->grade && $recipe->category->name !== 'Other')
+                             data-category="{{strtolower($recipeCategoryName)}}"
+
+                             @if($recipe->grade && $recipeCategoryName !== 'Other')
                              data-grade="{{strtolower($recipe->grade)}}"
                              @endif
                              @if($recipe->percent)
                              data-percent="{{strtolower($recipe->percent)}}"
                              @endif
 
-                             @if($recipe->category && $recipe->category->category)
-                             @if($recipe->category->category->category)
+                             @if($recipe?->category?->category)
+                             @if($recipe?->category?->category?->category)
                              data-category-parent="{{strtolower($recipe->category->category->category->name)}}"
                              @else
                              data-category-parent="{{strtolower($recipe->category->category->name)}}"
@@ -137,9 +141,8 @@
                                     ])
                                 </a>
                                 @if($recipe->masterworkText)
-                                    @php
-                                        $masterworkTitle = $recipe->grade ==='C'  ? 'DC' : 'MW';
-                                    @endphp
+                                    @php($masterworkTitle = $recipe->grade ==='C'  ? 'DC' : 'MW')
+
                                     <span class="nk-btn nk-btn-style-1 nk-btn-xs nk-btn-color-main-1"
                                           style="font-size: 10px;" data-toggle="tooltip" data-html="true"
                                           data-placement="top"
@@ -147,7 +150,6 @@
                                 @endif
 
                                 {!! $recipe->sa_html_index !!}
-                                {!! $recipe->bonus_pvp_html !!}
                             </div>
                             <div class="filter__recipe-item-main-info">
                                 @if($recipe->gradeImage)
