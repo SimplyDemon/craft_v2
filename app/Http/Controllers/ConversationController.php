@@ -75,6 +75,12 @@ class ConversationController extends Controller {
                 $columnNameForUpdate => 0,
             ]);
         }
+        /* For cases without messages */
+        if ($user->is_admin && $single->is_has_new_messages_for_admin) {
+            $single->update([
+                'is_has_new_messages_for_admin' => 0,
+            ]);
+        }
 
         return view($this->folderPath . 'show', [
             'single' => $single,
