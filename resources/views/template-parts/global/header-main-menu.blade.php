@@ -51,7 +51,7 @@
                     </li>
                     <li class="{{Route::is('non_craftable') ? 'active' : ''}}">
                         <a class="color-main-1-hover" itemprop="url" href="{{route('non_craftable')}}">
-                            Предметы, которые не крафтятся
+                            Не крафтовые предметы
                         </a>
                     </li>
                     <li class="{{Route::is('jewelry.epic') ? 'active' : ''}}">

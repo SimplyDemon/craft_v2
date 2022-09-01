@@ -17,7 +17,7 @@
                             Респ РБ
                         </a>
                         <a href="{{route('non_craftable')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
-                            Предметы, которые не крафтятся
+                            Не крафтовые предметы
                         </a>
                     </div>
                     <div>
