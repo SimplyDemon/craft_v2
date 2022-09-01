@@ -38,9 +38,9 @@
         <meta property="og:description" content="@yield('description')">
     @else
         <meta itemprop="description" name="description"
-              content="@yield('meta_description','Калькулятор крафта Астериос создан для людей, которые увлекаются крафтом или просто накопили кучу ресурсов и ищут что с ними сделать. Стоит ли крафтить предмет, выгодно ли это или стоит продать все ресурсы на рынок? Какой шанс крафта Рар предмета и что вообще даёт Masterwork? Когда реснутся сабкласс РБ или Эпик РБ? Ответы на вопросы найдёшь на этом сайте!')">
+              content="@yield('meta_description','Калькулятор крафта Астериос для игры Lineage 2. Список ТВ бижи, Эпик бижутерии, поясов и многое другое. Таймер показывает респ Саб класс РБ и Эпик РБ.')">
         <meta property="og:description"
-              content="@yield('meta_description','Калькулятор крафта Астериос создан для людей, которые увлекаются крафтом или просто накопили кучу ресурсов и ищут что с ними сделать. Стоит ли крафтить предмет, выгодно ли это или стоит продать все ресурсы на рынок? Какой шанс крафта Рар предмета и что вообще даёт Masterwork? Когда реснутся сабкласс РБ или Эпик РБ? Ответы на вопросы найдёшь на этом сайте!')">
+              content="@yield('meta_description','Калькулятор крафта Астериос для игры Lineage 2. Список ТВ бижи, Эпик бижутерии, поясов и многое другое. Таймер показывает респ Саб класс РБ и Эпик РБ.')">
     @endif
 
     @if(isset($faq))
@@ -55,7 +55,7 @@
         <meta itemprop="keywords" name="keywords" content="@yield('meta_keywords') @yield('title')">
     @else
         <meta itemprop="keywords" name="keywords"
-              content="@yield('meta_keywords','калькулятор крафта астериос, крафт, кальк, астериос, craft calc, craft') @yield('title')">
+              content="@yield('meta_keywords','Калькулятор крафта Астериос, Респ РБ, таймер, список Эпик, ТВ бижи, пояса') @yield('title')">
     @endif
 
     @if(Route::is('recipes.show') && View::hasSection('canonical'))
