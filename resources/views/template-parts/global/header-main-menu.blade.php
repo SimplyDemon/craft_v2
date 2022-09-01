@@ -73,7 +73,7 @@
             </li>
             @if($isAuth)
                 <li class="nk-drop-item {{Route::is('user') || Route::is('user.price') || Route::is('conversations.index') ? 'active' : ''}}">
-                    <a class="color-main-1-hover" itemprop="url" href="{{route('user')}}">
+                    <a class="color-main-1-hover" itemprop="url" href="#1">
                         Личный кабинет
                     </a>
                     <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="dropdown">
