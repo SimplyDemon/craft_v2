@@ -1,2 +1,10 @@
 User-agent: *
+Disallow:
+Crawl-delay: 10
 Disallow: /*?*
+Disallow: /*.pdf
+Disallow: /conversation*
+Disallow: /user*
+Disallow: /admin_prices*
+Disallow: /admin*
+Sitemap: https://craft-calc.ru/sitemap.xml
