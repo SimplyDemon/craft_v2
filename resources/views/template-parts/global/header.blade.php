@@ -4,6 +4,7 @@
     $isAdmin = $isAuth && $user->isAdmin;
     if($isAuth) {
         $userIsHaveNewMessage = $user->is_has_new_message;
+        $isDisplayNewMessagesPopup = empty($_COOKIE['isClosedMessagesPopupRecently']) && $userIsHaveNewMessage;
     }
     $agent    = new \Jenssegers\Agent\Agent();
     $isMobile = $agent->isMobile();
@@ -221,6 +222,6 @@
     </div>
 @endif
 
-@if(!empty($userIsHaveNewMessage))
+@if(!empty($isDisplayNewMessagesPopup))
     @include('template-parts.global.header-new-message-notice')
 @endif

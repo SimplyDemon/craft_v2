@@ -42,11 +42,17 @@ $( '.search-input' ).bind( 'keyup click', function() {
                         code += '<li>Ничего не найдено.</li>';
                     }
 
-                    $( '#search_result-ul' ).html( code );
+                    $('#search_result-ul').html(code);
                 }
-            } );
-        }, 400 );
+            });
+        }, 400);
     } else {
-        $( '#search_result-ul' ).html( '' );
+        $('#search_result-ul').html('');
     }
-} )
+})
+
+$('.sd-popup-notice .nk-info-box-close').click(function (e) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + (1 * 60 * 60 * 1000));
+    document.cookie = 'isClosedMessagesPopupRecently' + '=' + 1 + ';expires=' + expires.toUTCString() + '; path=/';
+});
