@@ -15,7 +15,7 @@ $isAdmin = $isAuth && $user->isAdmin;
     <title>{{ config('app.name', 'Калькулятор крафта Asterios') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script defer src="{{ asset('js/app.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -117,9 +117,9 @@ $isAdmin = $isAuth && $user->isAdmin;
     </div>
 </main>
 
-<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-<script src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
+<script defer src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script defer src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script defer src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
 
 
 @stack('footer_scripts')

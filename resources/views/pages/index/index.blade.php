@@ -21,5 +21,5 @@
 @endsection
 
 @push('extra-scripts')
-    <script src="/ScrollToPlugin.min.js"></script>
+    <script defer src="/ScrollToPlugin.min.js"></script>
 @endpush
