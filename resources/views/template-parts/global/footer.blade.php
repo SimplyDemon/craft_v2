@@ -8,7 +8,8 @@
             @if(!Route::is('index') )
                 <a href="{{route('index')}}">
                     @endif
-                    <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="craft_logo" width="120" height="28">
+                    <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="logo footer" width="120"
+                         height="28">
                     @if(!Route::is('index') )
                 </a>
             @endif

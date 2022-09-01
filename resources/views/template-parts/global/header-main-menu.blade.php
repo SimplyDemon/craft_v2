@@ -6,7 +6,7 @@
                     @else
                         <div class="nk-nav-logo">
                             @endif
-                            <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="90" height="21">
+                            <img src="{{ asset('images/logo.webp' ) }}" alt="logo header" width="90" height="21">
                         @if(!Route::is('index') )
                 </a>
             @else

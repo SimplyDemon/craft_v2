@@ -38,9 +38,9 @@
         <meta property="og:description" content="@yield('description')">
     @else
         <meta itemprop="description" name="description"
-              content="@yield('meta_description','Калькулятор крафта Астериос создан для людей, которые увлекаются крафтом или просто накопили кучу ресурсов и ищут что с ними сделать. Стоит ли крафтить предмет, выгодно ли это или стоит продать все ресурсы на рынок? Какой шанс крафта Рар предмета и что вообще даёт Masterwork? Нормальная ли это цена за ресурс или раньше она сильно упала? Когда реснутся сабкласс РБ или Эпик РБ? Ответы на вопросы найдёшь на этом сайте!')">
+              content="@yield('meta_description','Калькулятор крафта Астериос создан для людей, которые увлекаются крафтом или просто накопили кучу ресурсов и ищут что с ними сделать. Стоит ли крафтить предмет, выгодно ли это или стоит продать все ресурсы на рынок? Какой шанс крафта Рар предмета и что вообще даёт Masterwork? Когда реснутся сабкласс РБ или Эпик РБ? Ответы на вопросы найдёшь на этом сайте!')">
         <meta property="og:description"
-              content="@yield('meta_description','Калькулятор крафта Астериос создан для людей, которые увлекаются крафтом или просто накопили кучу ресурсов и ищут что с ними сделать. Стоит ли крафтить предмет, выгодно ли это или стоит продать все ресурсы на рынок? Какой шанс крафта Рар предмета и что вообще даёт Masterwork? Нормальная ли это цена за ресурс или раньше она сильно упала? Когда реснутся сабкласс РБ или Эпик РБ? Ответы на вопросы найдёшь на этом сайте!')">
+              content="@yield('meta_description','Калькулятор крафта Астериос создан для людей, которые увлекаются крафтом или просто накопили кучу ресурсов и ищут что с ними сделать. Стоит ли крафтить предмет, выгодно ли это или стоит продать все ресурсы на рынок? Какой шанс крафта Рар предмета и что вообще даёт Masterwork? Когда реснутся сабкласс РБ или Эпик РБ? Ответы на вопросы найдёшь на этом сайте!')">
     @endif
 
     @if(isset($faq))
@@ -55,7 +55,7 @@
         <meta itemprop="keywords" name="keywords" content="@yield('meta_keywords') @yield('title')">
     @else
         <meta itemprop="keywords" name="keywords"
-              content="@yield('meta_keywords','калькулятор крафта астериос, крафт, крафтинг, кальк, астериос, craft calc, craft, calculator asterios, crafting') @yield('title')">
+              content="@yield('meta_keywords','калькулятор крафта астериос, крафт, кальк, астериос, craft calc, craft') @yield('title')">
     @endif
 
     @if(Route::is('recipes.show') && View::hasSection('canonical'))
@@ -145,11 +145,6 @@
 
 <nav class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-lg nk-navbar-align-center nk-navbar-overlay-content"
      id="nk-side">
-    <div class="nk-navbar-bg">
-        <div class="bg-image">
-            <img src="{{ asset('images/navbar-bg.webp' ) }}" alt="Elfie" class="img-fluid jarallax-img sd-navbar-bg">
-        </div>
-    </div>
 
     <div class="nano">
         <div class="nano-content">
@@ -161,7 +156,8 @@
                             @else
                                 <div class="nk-nav-logo">
                                     @endif
-                                    <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="150" height="35">
+                                    <img src="{{ asset('images/logo.webp' ) }}" alt="logo header 2" width="150"
+                                         height="35">
                                 @if(!Route::is('index') )
                         </a>
                     @else
@@ -182,7 +178,7 @@
                     @else
                         <div class="nk-nav-logo">
                             @endif
-                            <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="90" height="21">
+                            <img src="{{ asset('images/logo.webp' ) }}" alt="logo header 3" width="90" height="21">
                         @if(!Route::is('index') )
                 </a>
             @else
