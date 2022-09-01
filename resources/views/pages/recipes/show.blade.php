@@ -4,7 +4,7 @@
 @section('content')
     @if(isset($title))
 @section('title', $title . ' | Предметы')
-@section('description', "Информация о крафте рецепта {$title}.")
+@section('description',$single->description_seo_text)
 @endif
 
 @if($single->keywords)
@@ -28,17 +28,9 @@
     <div class="container">
         <div class="row recipe-info">
             <div class="col-5">
-                <img
-                    class="rounded
-@if($single->favorite_text) recipe-info_favorite-img @elseif($single->is_available_for_sub_quest) recipe-info_sub-quest-img @endif
-                        " width="50"
-                    src="{{asset('storage') . '/' . $single->img}}" alt="show"
-                    @if($single->favorite_text)data-toggle="tooltip" data-placement="top"
-                    title="{{$single->favorite_text}}" @elseif($single->is_available_for_sub_quest)
-                    data-toggle="tooltip" data-placement="top"
-                    title="Оружие подходит для саб класс квеста." @endif
-
-                >
+                @include('shared.recipe.thumbnail', [
+                 'single' => $single,
+                ])
                 @if($single->gradeImage)
                     <img class="grade" src="{{$single->gradeImage}}" alt="grade">
                 @endif
@@ -106,24 +98,24 @@
                     @endif
 
                     @if($single->m_def)
-                            <div><img
-                                    class="rounded"
-                                    height="18px"
-                                    src="{{asset('images/magic_barrier.webp' )}}"
-                                    alt="magic def">
-                                Маг защита:
-                                <span class="nk-btn-color-main-1">{{$single->m_def}}</span></div>
-                        @endif
+                        <div><img
+                                class="rounded"
+                                height="18px"
+                                src="{{asset('images/magic_barrier.webp' )}}"
+                                alt="magic def">
+                            Маг защита:
+                            <span class="nk-btn-color-main-1">{{$single->m_def}}</span></div>
+                    @endif
 
-                        @if($single->noble_stones_for_upgrade)
-                            <span>Необходимо <img width="20" src="{{asset('images/noble_stone.webp' )}}"
-                                                  alt="noble stones">
+                    @if($single->noble_stones_for_upgrade)
+                        <span>Необходимо <img width="20" src="{{asset('images/noble_stone.webp' )}}"
+                                              alt="noble stones">
                             <span class="nk-btn-color-main-1">{{$single->noble_stones_for_upgrade}}</span> для апгрейда.</span>
-                        @endif
+                    @endif
 
-                        @if($single->description)
-                            {!! $single->description !!}
-                        @endif
+                    @if($single->description)
+                        {!! $single->description !!}
+                    @endif
                 </div>
             </div>
             <div class="col-7 @if($single->recipes) recipe_recipe-container @endif">
@@ -134,7 +126,7 @@
                         <div class="recipe_recipe">
                             <a href="{{route('recipes.show', $contentRecipe)}}">
                                 <img class="rounded" src="{{asset('storage') . '/' . $contentRecipe->img}}"
-                                     alt="{{$contentRecipe->name}}">
+                                     alt="{{$contentRecipe->name}}" width="32">
                                 <span>{{$contentRecipe->name}}</span>
 
                             </a>
@@ -192,7 +184,8 @@
                         @if($contentRecipe->pivot->is_duplicate)
                             <div class="recipe_recipe">
                                 <a href="{{route('recipes.show', $contentRecipe)}}">
-                                    <img class="rounded" src="{{asset('storage') . '/' . $contentRecipe->img}}"
+                                    <img width="32" class="rounded"
+                                         src="{{asset('storage') . '/' . $contentRecipe->img}}"
                                          alt="{{$contentRecipe->name}}">
                                     <span>{{$contentRecipe->name}}</span>
 
@@ -220,6 +213,9 @@
                     'resource' => $resource ?? null,
                 ])
             </div>
+        @endif
+        @if($single->content)
+            <p class="text-center">{!! $single->content !!}</p>
         @endif
     </div>
 

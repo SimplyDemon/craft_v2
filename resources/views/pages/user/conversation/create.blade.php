@@ -3,7 +3,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
-@section('description', 'Создание беседы.')
+@section('description', 'Создание новой беседы.')
 <form method="post" action="{{ route( 'conversations.store' ) }}">
     @csrf
     <div class="form-group">

@@ -20,7 +20,8 @@
         "jenssegers/agent": "^2.6",
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.3"
+        "laravel/ui": "^3.3",
+        "van-ons/laraberg": "^2.0"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",

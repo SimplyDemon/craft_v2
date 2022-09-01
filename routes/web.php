@@ -14,9 +14,12 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\ResourceController;
+use App\Http\Controllers\BeltController;
 use App\Http\Controllers\BossesRespawnController;
 use App\Http\Controllers\ConversationController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\JewelryEpicController;
+use App\Http\Controllers\JewelryTWController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PriceParserController;
 use App\Http\Controllers\SearchController;
@@ -34,7 +37,7 @@ Route::middleware( 'auth.dev' )->group( function () {
         'register' => true, // Registration Routes...
         'reset'    => false, // Password Reset Routes...
         'verify'   => false, // Email Verification Routes...
-    ] );
+    ]);
 
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::get('/bosses-respawn', [BossesRespawnController::class, 'index'])->name('bosses_respawn');
@@ -43,6 +46,10 @@ Route::middleware( 'auth.dev' )->group( function () {
     })->name('public');
     Route::get('/search', [SearchController::class, 'index'])->name('search');
     Route::post('/search', [SearchController::class, 'ajax'])->name('search.ajax');
+
+    Route::get('/jewelry-tw', [JewelryTWController::class, 'index'])->name('jewelry.tw');
+    Route::get('/jewelry-epic', [JewelryEpicController::class, 'index'])->name('jewelry.epic');
+    Route::get('/belt', [BeltController::class, 'index'])->name('belt');
 
     Route::resource('recipes', RecipeController::class)->parameters([
         'recipes' => 'id',

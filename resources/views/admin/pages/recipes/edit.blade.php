@@ -142,5 +142,7 @@
 @endsection
 
 @push('footer_scripts')
-
+    <script>
+        Laraberg.init('description');
+    </script>
 @endpush

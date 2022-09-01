@@ -8,24 +8,36 @@
 
     $isActivateFirstTimeAnimation = ! session('isAnimationWasShowed', false);
     $isEnableAnimation            = ($isAuth && $user->isEnableAnimation) || ($isActivateFirstTimeAnimation && ! $isMobile);
+    $currentPageUrl = url()->full();
 @endphp
-        <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="ru">
 <head itemscope itemtype="http://schema.org/WPHeader">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{$currentPageUrl}}">
+    <link rel="canonical" href="{{$currentPageUrl}}">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Калькулятор крафта Asterios">
 
     @if(View::hasSection('title'))
         <title itemprop="headline">@yield('title') | Калькулятор крафта Asterios</title>
+        <meta property="og:title" content="@yield('title') | Калькулятор крафта Asterios">
     @else
         <title itemprop="headline">Калькулятор крафта Asterios</title>
+        <meta property="og:title" content="Калькулятор крафта Asterios">
     @endif
 
     @if(View::hasSection('description'))
         <meta itemprop="description" name="description" content="@yield('description')">
+        <meta property="og:description" content="@yield('description')">
     @else
-        <meta itemprop="description" name="description" content="@yield('meta_description','Калькулятор крафта Астериос создан для людей, которые увлекаются крафтом или просто накопили кучу ресурсов и ищут что с ними сделать. Стоит ли крафтить предмет, выгодно ли это или стоит продать все ресурсы на рынок? Какой шанс крафта Рар предмета и что вообще даёт Masterwork? Нормальная ли это цена за ресурс или раньше она сильно упала? Когда реснутся сабкласс РБ или Эпик РБ? Ответы на вопросы найдёшь на этом сайте!')">
+        <meta itemprop="description" name="description"
+              content="@yield('meta_description','Калькулятор крафта Астериос создан для людей, которые увлекаются крафтом или просто накопили кучу ресурсов и ищут что с ними сделать. Стоит ли крафтить предмет, выгодно ли это или стоит продать все ресурсы на рынок? Какой шанс крафта Рар предмета и что вообще даёт Masterwork? Нормальная ли это цена за ресурс или раньше она сильно упала? Когда реснутся сабкласс РБ или Эпик РБ? Ответы на вопросы найдёшь на этом сайте!')">
+        <meta property="og:description"
+              content="@yield('meta_description','Калькулятор крафта Астериос создан для людей, которые увлекаются крафтом или просто накопили кучу ресурсов и ищут что с ними сделать. Стоит ли крафтить предмет, выгодно ли это или стоит продать все ресурсы на рынок? Какой шанс крафта Рар предмета и что вообще даёт Masterwork? Нормальная ли это цена за ресурс или раньше она сильно упала? Когда реснутся сабкласс РБ или Эпик РБ? Ответы на вопросы найдёшь на этом сайте!')">
     @endif
 
     @if(isset($faq))
@@ -39,30 +51,31 @@
     @if(Route::is('recipes.show') && View::hasSection('single'))
         <meta itemprop="keywords" name="keywords" content="@yield('meta_keywords') @yield('title')">
     @else
-        <meta itemprop="keywords" name="keywords" content="@yield('meta_keywords','калькулятор крафта астериос, крафт, крафтинг, кальк, астериос, craft calc, craft, calculator asterios, crafting') @yield('title')">
+        <meta itemprop="keywords" name="keywords"
+              content="@yield('meta_keywords','калькулятор крафта астериос, крафт, крафтинг, кальк, астериос, craft calc, craft, calculator asterios, crafting') @yield('title')">
     @endif
 
     @if(Route::is('recipes.show') && View::hasSection('canonical'))
-        <link rel="canonical" href="@yield('canonical')" />
+        <link rel="canonical" href="@yield('canonical')"/>
     @endif
 
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @if (env( 'APP_ENV' ) === 'prod')
-        <meta name="google-site-verification" content="r5IgAcubOAf7hWByU2jIi90T51Fy4wYNeLTcvH8vFaE" />
-        <link rel="icon" type="image/png" href="{{ URL::to('/') }}/favicon.ico" />
+        <meta name="google-site-verification" content="r5IgAcubOAf7hWByU2jIi90T51Fy4wYNeLTcvH8vFaE"/>
+        <link rel="icon" type="image/png" href="{{ URL::to('/') }}/favicon.ico"/>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-87WEW2EL6C"></script>
         <script>
-			window.dataLayer = window.dataLayer || [];
+            window.dataLayer = window.dataLayer || [];
 
-			function gtag() {
-				dataLayer.push( arguments );
-			}
+            function gtag() {
+                dataLayer.push(arguments);
+            }
 
-			gtag( 'js', new Date() );
+            gtag('js', new Date());
 
-			gtag( 'config', 'G-87WEW2EL6C' );
+            gtag('config', 'G-87WEW2EL6C');
         </script>
     @endif
 
@@ -77,16 +90,16 @@
 
 @if (env( 'APP_ENV' ) === 'prod')
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript"> (function ( m, e, t, r, i, k, a ) {
-			m[ i ] = m[ i ] || function () {
-				(m[ i ].a = m[ i ].a || []).push( arguments )
-			};
-			m[ i ].l = 1 * new Date();
-			k = e.createElement( t ), a = e.getElementsByTagName( t )[ 0 ], k.async = 1, k.src = r, a.parentNode.insertBefore( k, a )
-		})( window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym" );
-		ym( 86545727, "init", {clickmap: true, trackLinks: true, accurateTrackBounce: true} ); </script>
+    <script type="text/javascript"> (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(86545727, "init", {clickmap: true, trackLinks: true, accurateTrackBounce: true}); </script>
     <noscript>
-        <div><img src="https://mc.yandex.ru/watch/86545727" style="position:absolute; left:-9999px;" alt="" /></div>
+        <div><img src="https://mc.yandex.ru/watch/86545727" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript> <!-- /Yandex.Metrika counter -->
 @endif
 
@@ -107,7 +120,8 @@
 
         <div class="nk-preloader-content">
             <div>
-                <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="Калькулятор крафта Asterios" width="170" height="40">
+                <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="Калькулятор крафта Asterios" width="170"
+                     height="40">
                 <div class="nk-preloader-animation"></div>
             </div>
         </div>
@@ -126,7 +140,8 @@
     @include('template-parts.global.header-main-menu')
 </header>
 
-<nav class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-lg nk-navbar-align-center nk-navbar-overlay-content" id="nk-side">
+<nav class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-lg nk-navbar-align-center nk-navbar-overlay-content"
+     id="nk-side">
     <div class="nk-navbar-bg">
         <div class="bg-image">
             <img src="{{ asset('images/navbar-bg.webp' ) }}" alt="Elfie" class="img-fluid jarallax-img sd-navbar-bg">
@@ -138,44 +153,45 @@
             <div class="nk-nav-table">
 
                 <div class="nk-nav-row">
-                    <a href="{{route('index')}}" class="nk-nav-logo">
-                        <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="150" height="35">
-                    </a>
+                    @if(!Route::is('index') )
+                        <a href="{{route('index')}}" class="nk-nav-logo">
+                            @else
+                                <div class="nk-nav-logo">
+                                    @endif
+                                    <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="150" height="35">
+                                @if(!Route::is('index') )
+                        </a>
+                    @else
                 </div>
-
-                <div class="nk-nav-row nk-nav-row-full nk-nav-row-center">
-                    <ul class="nk-nav">
-                        <li>
-                            <a href="{{route('bosses_respawn')}}">
-                                Респ РБ
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('non_craftable')}}">
-                                Предметы, которые не крафтятся
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
+                @endif
             </div>
+
         </div>
+    </div>
     </div>
 </nav>
 
 <div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-left-side nk-navbar-overlay-content d-lg-none">
     <div class="nano">
         <div class="nano-content">
-            <a href="{{route('index')}}" class="nk-nav-logo">
-                <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="90" height="21">
-            </a>
-            <div class="nk-navbar-mobile-content">
-                <ul class="nk-nav">
-                    <!-- Here will be inserted menu from [data-mobile-menu="#nk-nav-mobile"] -->
-                </ul>
-            </div>
+            @if(!Route::is('index') )
+                <a href="{{route('index')}}" class="nk-nav-logo">
+                    @else
+                        <div class="nk-nav-logo">
+                            @endif
+                            <img src="{{ asset('images/logo.webp' ) }}" alt="logo" width="90" height="21">
+                        @if(!Route::is('index') )
+                </a>
+            @else
+        </div>
+        @endif
+        <div class="nk-navbar-mobile-content">
+            <ul class="nk-nav">
+                <!-- Here will be inserted menu from [data-mobile-menu="#nk-nav-mobile"] -->
+            </ul>
         </div>
     </div>
+</div>
 </div>
 
 @if($errors->any())

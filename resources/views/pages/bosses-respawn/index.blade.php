@@ -2,7 +2,7 @@
 @section('content')
     @if(isset($title))
 @section('title', $title)
-@section('description', 'Таймеры показывают время респа нубл и эпик РБ на всех серверах.')
+@section('description', 'Таймеры показывают время респа Саб РБ (Кабрио, Халат, Кернон, Голконда) и Эпик РБ (Анатарас, Валакас, Баюм) на всех серверах Asterios. Shilen\'s Messenger Cabrio, Death Lord Hallate, Kernon, Longhorn Golkonda, Antharas, Valakas, Baium все они есть тут.')
 @endif
 <div class="nk-main">
     <div class="nk-box bg-dark-1 sd-background">

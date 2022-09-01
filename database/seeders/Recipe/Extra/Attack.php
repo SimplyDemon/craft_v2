@@ -205,10 +205,11 @@ class Attack extends RecipesExtraSeeder
                 'attackMagic' => 114,
             ],
             [
-                'name'         => 'Sword of Miracles',
-                'isMage'       => true,
+                'name' => 'Sword of Miracles',
+                'isMage' => true,
                 'attackPhysic' => 186,
-                'attackMagic'  => 152,
+                'attackMagic' => 152,
+                'masterworkDescription' => 'Увеличивает количество получаемого Хила на 37',
             ],
             [
                 'name'         => 'Dark Legion\'s Edge',
@@ -529,6 +530,7 @@ class Attack extends RecipesExtraSeeder
                 'attackPhysic' => 189,
                 'attackMagic' => 145,
                 'isAvailableForSubQuest' => true,
+                'masterworkDescription' => 'Увеличивает количество получаемого Хила на 33',
             ],
             [
                 'name' => 'Kaim Vanul\'s Bones',
@@ -1128,6 +1130,7 @@ class Attack extends RecipesExtraSeeder
                 isMage: $weapon['isMage'],
                 attackPhysic: $weapon['attackPhysic'],
                 attackMagic: $weapon['attackMagic'],
+                masterworkDescription: $weapon['masterworkDescription'] ?? null,
                 favoriteText: $weapon['favoriteText'] ?? null,
                 isTwoHands: $weapon['isTwoHands'] ?? false,
                 age: $weapon['age'] ?? null,

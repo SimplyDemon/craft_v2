@@ -8,12 +8,29 @@
                 <div class="nk-header-text">
                     <h1 class="nk-title display-3">{{$title ?? 'Калькулятор крафта Asterios'}}</h1>
                     <div class="nk-gap-2"></div>
-                    <a href="{{route('recipes.index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
-                        <span>Каталог предметов</span>
-                    </a>
-                    <a href="{{route('bosses_respawn')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-1">
-                        Респ РБ
-                    </a>
+                    <div>
+                        <a href="{{route('recipes.index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
+                            <span>Каталог предметов</span>
+                        </a>
+                        <a href="{{route('bosses_respawn')}}"
+                           class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-1">
+                            Респ РБ
+                        </a>
+                        <a href="{{route('non_craftable')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
+                            Предметы, которые не крафтятся
+                        </a>
+                    </div>
+                    <div>
+                        <a href="{{route('jewelry.epic')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
+                            Эпик бижа
+                        </a>
+                        <a href="{{route('jewelry.tw')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
+                            ТВ бижа
+                        </a>
+                        <a href="{{route('belt')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
+                            Пояса
+                        </a>
+                    </div>
                     <div class="nk-gap-4"></div>
                 </div>
             </div>

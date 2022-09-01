@@ -69,7 +69,11 @@ function seederAddRecipe(
     int $nobleStonesForUpgrade = null,
     bool $isAvailableForSubQuest = false,
     bool $isNonCraftable = false,
-
+    string $description = null,
+    string $content = null,
+    bool $isEpic = false,
+    string $descriptionSeo = null,
+    bool $isTw = false,
 ) {
     /* case for 100% recipes, don't want copy paste every image B-grade */
     $imageName = str_replace(' 100%', '', $name);
@@ -115,6 +119,11 @@ function seederAddRecipe(
         'noble_stones_for_upgrade' => $nobleStonesForUpgrade,
         'is_available_for_sub_quest' => $isAvailableForSubQuest,
         'is_non_craftable' => $isNonCraftable,
+        'description' => $description,
+        'content' => $content,
+        'is_epic' => $isEpic,
+        'description_seo' => $descriptionSeo,
+        'is_tw' => $isTw,
     ]);
 }
 

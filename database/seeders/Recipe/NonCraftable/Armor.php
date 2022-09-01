@@ -38,6 +38,8 @@ class Armor extends NonCraftableRecipesSeeder
     protected Category $armorRobeBootCategory;
     protected Category $armorRobeGlovesCategory;
 
+    protected Category $beltCategory;
+
     public function seed()
     {
         try {
@@ -146,6 +148,7 @@ class Armor extends NonCraftableRecipesSeeder
             'category_id',
             $this->armorHeavyCategory->id
         )->firstOrFail();
+        $this->beltCategory = Category::where('name', 'Belt')->firstOrFail();
     }
 
     protected function addArmors()
@@ -155,6 +158,7 @@ class Armor extends NonCraftableRecipesSeeder
         $this->addArmorRobe();
         $this->addShield();
         $this->addSigil();
+        $this->addBelt();
     }
 
     protected function addArmorLight()
@@ -197,10 +201,11 @@ class Armor extends NonCraftableRecipesSeeder
                 0,
                 'S-84',
                 $categoryId,
-                keywords: 'Ворпал щит',
+                keywords: 'Ворпал щит, shield',
                 crystalsCount: 704,
                 defencePhysic: 399,
                 isNonCraftable: true,
+                descriptionSeo: 'Vorpal Shield характеристики и статы щита Ворпал.',
             )
         );
 
@@ -211,10 +216,11 @@ class Armor extends NonCraftableRecipesSeeder
                 0,
                 'S-84',
                 $categoryId,
-                keywords: 'Элегия щит',
+                keywords: 'Элегия щит, shield',
                 crystalsCount: 844,
                 defencePhysic: 413,
                 isNonCraftable: true,
+                descriptionSeo: 'Elegia Shield характеристики и статы щита Элегии.',
             )
         );
     }
@@ -235,6 +241,7 @@ class Armor extends NonCraftableRecipesSeeder
                 crystalsCount: 704,
                 defencePhysic: 19,
                 isNonCraftable: true,
+                descriptionSeo: 'Vorpal Sigil характеристики и статы сигиля Ворпал.',
             )
         );
         $this->addedRecipesCollection->push(
@@ -248,6 +255,7 @@ class Armor extends NonCraftableRecipesSeeder
                 crystalsCount: 844,
                 defencePhysic: 21,
                 isNonCraftable: true,
+                descriptionSeo: 'Elegia Sigil характеристики и статы сигиля Элегии.',
             )
         );
     }
@@ -269,6 +277,7 @@ class Armor extends NonCraftableRecipesSeeder
                 crystalsCount: 2010,
                 defencePhysic: 197,
                 isNonCraftable: true,
+                descriptionSeo: 'Vorpal Leather Breastplate характеристики и статы лайт Ворпал верха.',
             )
         );
         $this->addedRecipesCollection->push(
@@ -282,6 +291,7 @@ class Armor extends NonCraftableRecipesSeeder
                 crystalsCount: 2410,
                 defencePhysic: 204,
                 isNonCraftable: true,
+                descriptionSeo: 'Elegia Leather Breastplate характеристики и статы лайт Элегия верха.',
             )
         );
     }
@@ -302,6 +312,7 @@ class Armor extends NonCraftableRecipesSeeder
                 crystalsCount: 1256,
                 defencePhysic: 123,
                 isNonCraftable: true,
+                descriptionSeo: 'Vorpal Leather Leggings характеристики и статы лайт Ворпал низа.',
             )
         );
         $this->addedRecipesCollection->push(
@@ -315,6 +326,7 @@ class Armor extends NonCraftableRecipesSeeder
                 crystalsCount: 1506,
                 defencePhysic: 128,
                 isNonCraftable: true,
+                descriptionSeo: 'Elegia Leather Leggings характеристики и статы лайт Элегия низа.',
             )
         );
     }
@@ -335,6 +347,7 @@ class Armor extends NonCraftableRecipesSeeder
                 crystalsCount: 1005,
                 defencePhysic: 107,
                 isNonCraftable: true,
+                descriptionSeo: 'Vorpal Leather Helmet характеристики и статы лайт Элегия низа.',
             )
         );
         $this->addedRecipesCollection->push(
@@ -747,5 +760,738 @@ class Armor extends NonCraftableRecipesSeeder
         );
     }
 
+    protected function addBelt()
+    {
+        $categoryId = $this->beltCategory->id;
+        $imagePath = 'other/belt';
 
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Pouch Mithril Belt',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает количество слотов в инвентаре на 27',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Pouch Mithril Belt',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает количество слотов в инвентаре на 30',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Pouch Mithril Belt',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает количество слотов в инвентаре на 33',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Pouch Mithril Belt',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает количество слотов в инвентаре на 36',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Pin Mithril Belt',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает грузоподъёмность на 9000',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Pin Mithril Belt',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает грузоподъёмность на 10000',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Pin Mithril Belt',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает грузоподъёмность на 11000',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Pin Mithril Belt',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает грузоподъёмность на 12000',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Rune Clip Mithril Belt HP Recovery',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает ХП реген на 0.78',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Rune Clip Mithril Belt HP Recovery',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает ХП реген на 1.95',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Rune Clip Mithril Belt HP Recovery',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает ХП реген на 2.73',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Rune Clip Mithril Belt HP Recovery',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает ХП реген на 3.9',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Rune Clip Mithril Belt MP Recovery',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает МП реген на 0.3',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Rune Clip Mithril Belt MP Recovery',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает МП реген на 0.75',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Rune Clip Mithril Belt MP Recovery',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает МП реген на 1.05',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Rune Clip Mithril Belt MP Recovery',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает МП реген на 1.5',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Ornament Mithril Belt PvP Physical Attack',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от автоатаки на 1%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Ornament Mithril Belt PvP Physical Attack',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от автоатаки на 2.5%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Ornament Mithril Belt PvP Physical Attack',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от автоатаки на 3.5%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Ornament Mithril Belt PvP Physical Attack',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от автоатаки на 5%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Ornament Mithril Belt PvP Skill Attack',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от скилов на 1%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Ornament Mithril Belt PvP Skill Attack',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от скилов на 2.5%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Ornament Mithril Belt PvP Skill Attack',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от скилов на 3.5%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Ornament Mithril Belt PvP Skill Attack',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от скилов на 5%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Ornament Mithril Belt PvP Defense',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает защиту в ПвП от скилов и автоатак на 1.2%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Ornament Mithril Belt PvP Defense',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает защиту в ПвП от скилов и автоатак на 3%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Ornament Mithril Belt PvP Defense',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает защиту в ПвП от скилов и автоатак на 4.2%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Ornament Mithril Belt PvP Defense',
+                $imagePath,
+                0,
+                'S',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, S grade, Ы',
+                defencePhysic: 14,
+                isNonCraftable: true,
+                description: 'Увеличивает защиту в ПвП от скилов и автоатак на 6%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Pouch Iron Belt',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает количество слотов в инвентаре на 21',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Pouch Iron Belt',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает количество слотов в инвентаре на 24',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Pouch Iron Belt',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает количество слотов в инвентаре на 27',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Pouch Iron Belt',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает количество слотов в инвентаре на 30',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Pin Iron Belt',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает грузоподъёмность на 7000',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Pin Iron Belt',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает грузоподъёмность на 8000',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Pin Iron Belt',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает грузоподъёмность на 9000',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Pin Iron Belt',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает грузоподъёмность на 10000',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Rune Clip Iron Belt HP Recovery',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает ХП реген на 0.4',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Rune Clip Iron Belt HP Recovery',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает ХП реген на 1',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Rune Clip Iron Belt HP Recovery',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает ХП реген на 1.4',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Rune Clip Iron Belt HP Recovery',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает ХП реген на 2',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Rune Clip Iron Belt MP Recovery',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает МП реген на 0.14',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Rune Clip Iron Belt MP Recovery',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает МП реген на 0.35',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Rune Clip Iron Belt MP Recovery',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает МП реген на 0.49',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Rune Clip Iron Belt MP Recovery',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает МП реген на 0.7',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Ornament Iron Belt PvP Physical Attack',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от автоатаки на 0.6%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Ornament Iron Belt PvP Physical Attack',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от автоатаки на 1.5%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Ornament Iron Belt PvP Physical Attack',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от автоатаки на 2.1%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Ornament Iron Belt PvP Physical Attack',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от автоатаки на 3%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Ornament Iron Belt PvP Skill Attack',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от скилов на 0.6%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Ornament Iron Belt PvP Skill Attack',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от скилов на 1.5%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Ornament Iron Belt PvP Skill Attack',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от скилов на 2.1%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Ornament Iron Belt PvP Skill Attack',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает урон в ПвП от скилов на 3%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Low-grade Magic Ornament Iron Belt PvP Defense',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает защиту в ПвП от скилов и автоатак на 0.6%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Standard Magic Ornament Iron Belt PvP Defense',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает защиту в ПвП от скилов и автоатак на 1.5%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'High-grade Magic Ornament Iron Belt PvP Defense',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает защиту в ПвП от скилов и автоатак на 2.1%',
+            )
+        );
+        $this->addedRecipesCollection->push(
+            seederAddRecipe(
+                'Top-grade Magic Ornament Iron Belt PvP Defense',
+                $imagePath,
+                0,
+                'A',
+                $categoryId,
+                keywords: 'Пояс, belt, бонусы, A grade, А',
+                defencePhysic: 12,
+                isNonCraftable: true,
+                description: 'Увеличивает защиту в ПвП от скилов и автоатак на 3%',
+            )
+        );
+    }
 }

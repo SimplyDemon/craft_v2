@@ -14,32 +14,33 @@
         </div>
     </div>
 
-        <div class="container">
-            @if ($resources && $recipes)
-                <form method="post">
-                    @csrf
-                    @method('POST')
+    <div class="container">
+        @if ($resources && $recipes)
+            <form method="post">
+                @csrf
+                @method('POST')
 
-                    <h2>Ресурсы</h2>
-                    <input type="search" class="form-control input-price-search" id="item-search" placeholder="Поиск" aria-label="" autocomplete="off">
-                    @include('shared.price.table', [
-                        'all' => $resources,
-                        'prefix' => 'resources',
-                    ])
+                <h2>Ресурсы</h2>
+                <input type="search" class="form-control input-price-search" id="item-search" placeholder="Поиск"
+                       aria-label="" autocomplete="off">
+                @include('shared.price.table', [
+                    'all' => $resources,
+                    'prefix' => 'resources',
+                ])
 
-                    <h2>Предметы</h2>
-                    @include('shared.price.table', [
-                        'all' => $recipes,
-                        'prefix' => 'recipes',
-                    ])
-                    <button class="btn btn-primary fixed-bottom save-prices">Сохранить</button>
-                </form>
-            @endif
+                <h2>Предметы</h2>
+                @include('shared.price.table', [
+                    'all' => $recipes,
+                    'prefix' => 'recipes',
+                ])
+                <button class="btn btn-primary fixed-bottom save-prices">Сохранить</button>
+            </form>
+        @endif
 
-            <div class="nk-gap-4"></div>
-            <div class="nk-gap-3"></div>
-        </div>
-
+        <div class="nk-gap-4"></div>
+        <div class="nk-gap-3"></div>
     </div>
+
+</div>
 
 @endsection

@@ -22,6 +22,7 @@ $isAdmin = $isAuth && $user->isAdmin;
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css.gz') }}" rel="stylesheet">
@@ -105,8 +106,8 @@ $isAdmin = $isAuth && $user->isAdmin;
                                 <li class="list-group-item">
                                     {{ $error }}
                                 </li>
-                            @endforeach
-                            @yield('content')
+                                @endforeach
+                                @yield('content')
 
                         </div>
                     </div>
@@ -115,6 +116,12 @@ $isAdmin = $isAuth && $user->isAdmin;
         </div>
     </div>
 </main>
+
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
+
+
 @stack('footer_scripts')
 </body>
 </html>

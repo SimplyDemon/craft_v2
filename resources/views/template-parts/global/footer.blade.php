@@ -5,14 +5,18 @@
     <div class="container">
         <div class="nk-gap-2"></div>
         <div class="nk-footer-logos">
-            <a href="{{route('index')}}">
-                <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="craft_logo" width="120" height="28">
-            </a>
+            @if(!Route::is('index') )
+                <a href="{{route('index')}}">
+                    @endif
+                    <img class="nk-img" src="{{ asset('images/logo.webp' ) }}" alt="craft_logo" width="120" height="28">
+                    @if(!Route::is('index') )
+                </a>
+            @endif
         </div>
         <div class="nk-gap"></div>
         <meta itemprop="copyrightYear" content="2021">
         <p>
-            &copy; <?= date( 'Y' ) == 2021 ? 2021 : '2021—' . date( 'Y' )?>
+            &copy; <?= date('Y') == 2021 ? 2021 : '2021—' . date('Y')?>
         </p>
 
         <div class="nk-gap-4"></div>
@@ -33,7 +37,8 @@
 
                     <form method="post" class="nk-sign-form-login active" action="{{ route('login') }}">
                         @csrf
-                        <input class="form-control" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email">
+                        <input class="form-control" type="email" name="email" placeholder="Email"
+                               value="{{ old('email') }}" required autocomplete="email">
                         <div class="nk-gap-2"></div>
 
                         <input class="form-control" type="password" placeholder="Пароль" name="password"
@@ -63,10 +68,12 @@
                                value="{{ old('email') }}" required autocomplete="email">
                         <div class="nk-gap-2"></div>
 
-                        <input class="form-control" type="password" placeholder="Пароль" name="password" required autocomplete="new-password">
+                        <input class="form-control" type="password" placeholder="Пароль" name="password" required
+                               autocomplete="new-password">
                         <div class="nk-gap-2"></div>
 
-                        <input class="form-control" type="password" placeholder="Подтвердите пароль" name="password_confirmation" required autocomplete="new-password">
+                        <input class="form-control" type="password" placeholder="Подтвердите пароль"
+                               name="password_confirmation" required autocomplete="new-password">
                         <div class="nk-gap-2"></div>
                         <button class="nk-btn nk-btn-color-white float-right">Регистрация</button>
                     </form>

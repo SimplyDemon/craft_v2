@@ -3,7 +3,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
-@section('description', 'Личный кабинет.')
+@section('description', 'Личный кабинет пользователя. Можно изменить различные настройки и перейти на страницу, что бы указать свои собственные цены.')
 <p>Email: {{$user->email}}</p>
 <p>Name: {{$user->name}}</p>
 

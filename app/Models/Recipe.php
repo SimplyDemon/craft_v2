@@ -520,4 +520,38 @@ class Recipe extends Model
 
         return $cost;
     }
+
+    public function getDescriptionSeoTextAttribute()
+    {
+        if (!empty($this->descrioption_seo)) {
+            return $this->descrioption_seo;
+        }
+        $descriptionSeoText = "Информация об итеме {$this->name}.";
+        if (!$this->is_non_craftable) {
+            $descriptionSeoText .= ' Как его можно скрафтить, сколько для этого необходимо ресурсов и каковая будет стоимость.';
+        } else {
+            $descriptionSeoText .= ' Предмет невозможно скрафтить.';
+        }
+
+        if ($this->is_epic) {
+            $descriptionSeoText .= ' Это Эпическая бижутерия.';
+        }
+        if ($this->is_available_for_sub_quest) {
+            $descriptionSeoText .= ' Оружие можно использовать для квеста на саб класс.';
+        }
+        if ($this->noble_stones_for_upgrade) {
+            $descriptionSeoText .= ' Предмет можно улучшить с помощью нубл камней.';
+        }
+        if ($this->sa_lvl) {
+            $descriptionSeoText .= ' Данные о СА, его уровне, бонусах, стоимости гемов.';
+        }
+        if ($this->masterwork_description) {
+            $descriptionSeoText .= ' Сведения о МВ (мастерворк) бонусе.';
+        }
+        if ($this->is_tw) {
+            $descriptionSeoText .= ' Бижутерия добывается за квесты на ТВ (Территориальные войны).';
+        }
+
+        return $descriptionSeoText;
+    }
 }

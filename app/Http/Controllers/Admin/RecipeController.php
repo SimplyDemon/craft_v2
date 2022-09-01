@@ -309,12 +309,19 @@ class RecipeController extends Controller {
                     'ring' => 'Кольца',
                 ],
             ],
+            'other' => [
+                'title' => 'Другое',
+                'list' => [
+                    'belt' => 'Пояса',
+                ],
+            ],
         ];
 
         return view($this->folderPathUser . 'index', [
             'categories' => $categories,
             'recipes' => $recipes,
-            'title' => 'Предметы, которые нельзя скрафтить',
+            'title' => 'Не крафтовые предметы',
+            'isNonCraftable' => true,
         ]);
     }
 }

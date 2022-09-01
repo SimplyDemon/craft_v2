@@ -41,11 +41,11 @@ class BossesRespawnController extends Controller
 */
 
         return view('pages.bosses-respawn.index', [
-            'bossesX1'           => $bossesX1,
-            'bossesX5'           => $bossesX5,
+            'bossesX1' => $bossesX1,
+            'bossesX5' => $bossesX5,
             //            'bossesX7'                => $bossesX7,
             'bossesChosenServer' => $bossesChosenServer,
-            'title'              => 'Респ РБ',
+            'title' => 'Респ Саб РБ и Эпик РБ',
         ]);
     }
 

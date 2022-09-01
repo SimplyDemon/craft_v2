@@ -3,7 +3,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
-@section('description', 'Поиск рецепта на сайте.')
+@section('description', 'Поиск рецепта на сайте. Можно найти предмет по более распространённым названиям, а не только по точному, например "Валя", "Хома".')
 <div class="nk-main">
 
     <div class="nk-box">
@@ -21,19 +21,11 @@
         @endif
 
         @if(!$recipes->isEmpty())
-            <ul class="list-group">
-                @foreach($recipes as $recipe)
-                    <li class="list-group-item">
-                        <img width="30" src="{{asset('storage') . '/' . $recipe->img}}" alt="img">
-                        <a href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
-                            {{$recipe->name}}
-                        </a>
-                        @if($recipe->gradeImage)
-                            <img src="{{$recipe->gradeImage}}" alt="grade">
-                        @endif
-                    </li>
-                @endforeach
-            </ul>
+
+            @include('shared.recipe.list', [
+               'recipes' => $recipes,
+            ])
+
         @elseif($search)
             <h4>Ничего не нашли, попробуйте воспользоваться
                 <a href="{{route('recipes.index')}}">каталогом предметов</a> с крутыми фильтрами!</h4>

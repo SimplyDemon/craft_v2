@@ -3,7 +3,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
-@section('description', 'Информация о всех предметах, которые можно скрафтить.')
+@section('description', 'Все предметы, которые можно скрафтить, начиная от C заканчивая S-84 грейдом. Данные о бонусе СА, Мастерворке, PvP вставке. Удобный фильтр по категориям или другим критериям. ')
 <div class="nk-main">
 
     <div class="nk-box">
@@ -62,9 +62,11 @@
                         <li class="active">
                             <a data-grade="any" href="#">Любой</a>
                         </li>
+                        @if(empty($isNonCraftable))
                         <li>
                             <a data-grade="c" href="#">C</a>
                         </li>
+                        @endif
                         <li>
                             <a data-grade="b" href="#">B</a>
                         </li>
@@ -82,6 +84,7 @@
                         </li>
 
                     </ul>
+                    @if(empty($isNonCraftable))
                     <ul class="percent">
                         <li class="nk-btn-color-warning">Шанс:</li>
                         <li class="active">
@@ -97,6 +100,7 @@
                             <a data-percent="100" data-toggle="tooltip" data-placement="top" title="Предметы B грейда, соски, ресуры" href="#">100%</a>
                         </li>
                     </ul>
+                    @endif
                 </div>
                 <div class="row">
                     @foreach( $recipes as $recipe)
@@ -128,15 +132,9 @@
                             <div class="filter__recipe-item-info-special">
                                 <a class="image-link-no-underline"
                                    href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
-                                    <img
-                                        class="rounded @if($recipe->favorite_text) recipe-info_favorite-img @elseif($recipe->is_available_for_sub_quest) recipe-info_sub-quest-img @endif
-                                            "
-                                        width="30" src="{{asset('storage') . '/' . $recipe->img}}"
-                                        alt="{{$recipe->name}}" @if($recipe->favorite_text)data-toggle="tooltip"
-                                        data-placement="top" title="{{$recipe->favorite_text}}"
-                                        @elseif($recipe->is_available_for_sub_quest)
-                                        data-toggle="tooltip" data-placement="top"
-                                        title="Оружие подходит для саб класс квеста." @endif>
+                                    @include('shared.recipe.thumbnail', [
+                                       'single' => $recipe,
+                                    ])
                                 </a>
                                 @if($recipe->masterworkText)
                                     @php

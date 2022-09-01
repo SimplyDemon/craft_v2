@@ -3,7 +3,7 @@
     @if(isset($title))
 @section('title', $title)
 @endif
-@section('description', 'Информация о всех ресурсах.')
+@section('description', 'Информация о всех ресурсах, которые пригодятся для крафта, динамика изменения цен, топ ресурсов, у которых больше всего выросла или упала цена.')
 <div class="nk-main">
 
     <div class="nk-box">

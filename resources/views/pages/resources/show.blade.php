@@ -2,7 +2,7 @@
 @section('content')
     @if(isset($title))
 @section('title', $title . ' | Ресурсы')
-@section('description', "Информация о ресурсе {$title}.")
+@section('description', $single->description_seo_text)
 @endif
 <div id="chart-config"
      @if($priceHistoryDates)

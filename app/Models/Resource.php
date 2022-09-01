@@ -60,14 +60,19 @@ class Resource extends Model {
             'imgUrl'               => asset( 'storage' ) . '/' . $this->img,
             'name'                 => $this->name,
             'quantity'             => $resourceQuantity,
-            'price'                => $resourcePrice,
-            'linePrice'            => $linePrice,
-            'adminLinePrice'       => $adminLinePrice,
-            'isPriceDifferent'     => $isPriceDifferent,
-            'tooltipPriceText'     => $tooltipPriceText,
+            'price' => $resourcePrice,
+            'linePrice' => $linePrice,
+            'adminLinePrice' => $adminLinePrice,
+            'isPriceDifferent' => $isPriceDifferent,
+            'tooltipPriceText' => $tooltipPriceText,
             'tooltipLinePriceText' => $tooltipLinePriceText,
-            'subResources'         => $subResources ?? null,
-            'subResourcesData'     => $subResourcesData ?? null,
+            'subResources' => $subResources ?? null,
+            'subResourcesData' => $subResourcesData ?? null,
         ];
+    }
+
+    public function getDescriptionSeoTextAttribute()
+    {
+        return "Информация о ресурсе {$this->name}. В каких рецептах он используется, график изменения цен в течении времени.";
     }
 }

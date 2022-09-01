@@ -785,8 +785,8 @@ class Weapon extends NonCraftableRecipesSeeder
             isMage: false,
             attackPhysic: 236,
             attackMagic: 99,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает Скорость Атаки на 4%',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает Скорость Атаки на 4%',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -803,8 +803,8 @@ class Weapon extends NonCraftableRecipesSeeder
             isMage: false,
             attackPhysic: 259,
             attackMagic: 107,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает Скорость Атаки на 8%',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает Скорость Атаки на 8%',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -823,8 +823,8 @@ class Weapon extends NonCraftableRecipesSeeder
             isMage: false,
             attackPhysic: 275,
             attackMagic: 112,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает ХП на 25%',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает ХП на 25%',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -844,8 +844,8 @@ class Weapon extends NonCraftableRecipesSeeder
             isMage: false,
             attackPhysic: 282,
             attackMagic: 114,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает Точность на 6',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает Точность на 6',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -863,8 +863,8 @@ class Weapon extends NonCraftableRecipesSeeder
             crystalsCount: 2157,
             attackPhysic: 305,
             attackMagic: 121,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает Скорость Атаки на 8%',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает Скорость Атаки на 8%',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -882,9 +882,9 @@ class Weapon extends NonCraftableRecipesSeeder
             crystalsCount: 2052,
             attackPhysic: 342,
             attackMagic: 132,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает ХП на 15%, МП на 20%, ЦП на 30%',
             age: 's',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает ХП на 15%, МП на 20%, ЦП на 30%',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -902,9 +902,9 @@ class Weapon extends NonCraftableRecipesSeeder
             crystalsCount: 3597,
             attackPhysic: 405,
             attackMagic: 151,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает ХП на 10%, Шанс Крита на 109',
             age: 'dynasty',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает ХП на 10%, Шанс Крита на 109',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -922,9 +922,10 @@ class Weapon extends NonCraftableRecipesSeeder
             crystalsCount: 3597,
             attackPhysic: 405,
             attackMagic: 151,
-            favoriteText: 'С вероятностью 2%, во время атаки, уменьшит Физ Защиту врага на 23%. При заточки на +4 появляется бонус: Увеличивает ХП на 10%, Шанс Крита на 109',
+            favoriteText: 'С вероятностью 2%, во время атаки, уменьшит Физ Защиту врага на 23%',
             age: 'dynasty',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает ХП на 10%, Шанс Крита на 109',
         );
         $this->addedRecipesCollection->push($recipe);
 
@@ -939,9 +940,9 @@ class Weapon extends NonCraftableRecipesSeeder
             crystalsCount: 4965,
             attackPhysic: 442,
             attackMagic: 163,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает ХП на 10%, Шанс Крита на 109',
             age: 'moirai',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает ХП на 10%, Шанс Крита на 109',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -959,9 +960,9 @@ class Weapon extends NonCraftableRecipesSeeder
             crystalsCount: 7050,
             attackPhysic: 482,
             attackMagic: 176,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает ХП на 10%, Шанс Крита на 109',
             age: 'vesper',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает ХП на 10%, Шанс Крита на 109',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -979,9 +980,9 @@ class Weapon extends NonCraftableRecipesSeeder
             crystalsCount: 7050,
             attackPhysic: 505,
             attackMagic: 183,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает ХП на 10%, Шанс Крита на 109',
             age: 'vorpal',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает ХП на 10%, Шанс Крита на 109',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -999,9 +1000,9 @@ class Weapon extends NonCraftableRecipesSeeder
             crystalsCount: 7050,
             attackPhysic: 532,
             attackMagic: 192,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает ХП на 10%, Шанс Крита на 109',
             age: 'elegia',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает ХП на 10%, Шанс Крита на 109',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -1026,9 +1027,9 @@ class Weapon extends NonCraftableRecipesSeeder
             isMage: false,
             attackPhysic: 304,
             attackMagic: 157,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает Шанс Крита на 109',
             age: 'dynasty',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает Шанс Крита на 109',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -1047,9 +1048,9 @@ class Weapon extends NonCraftableRecipesSeeder
             isMage: false,
             attackPhysic: 332,
             attackMagic: 169,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает Шанс Крита на 109',
             age: 'moirai',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает Шанс Крита на 109',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -1068,9 +1069,10 @@ class Weapon extends NonCraftableRecipesSeeder
             isMage: false,
             attackPhysic: 332,
             attackMagic: 169,
-            favoriteText: 'С вероятностью 2%, во время атаки, вызывает кровотечении (67 урона в секунду) в течении 20 сек. При заточки на +4 появляется бонус: Увеличивает Шанс Крита на 109',
+            favoriteText: 'С вероятностью 2%, во время атаки, вызывает кровотечении (67 урона в секунду) в течении 20 сек',
             age: 'moirai',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает Шанс Крита на 109',
         );
         $this->addedRecipesCollection->push($recipe);
 
@@ -1086,9 +1088,9 @@ class Weapon extends NonCraftableRecipesSeeder
             isMage: false,
             attackPhysic: 360,
             attackMagic: 181,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает Шанс Крита на 109',
             age: 'vesper',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает Шанс Крита на 109',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -1107,9 +1109,9 @@ class Weapon extends NonCraftableRecipesSeeder
             isMage: false,
             attackPhysic: 415,
             attackMagic: 183,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает Шанс Крита на 109',
             age: 'vorpal',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает Шанс Крита на 109',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
@@ -1128,9 +1130,9 @@ class Weapon extends NonCraftableRecipesSeeder
             isMage: false,
             attackPhysic: 437,
             attackMagic: 192,
-            favoriteText: 'При заточки на +4 появляется бонус: Увеличивает Шанс Крита на 109',
             age: 'elegia',
             isNonCraftable: true,
+            description: 'При заточки на +4 появляется бонус: Увеличивает Шанс Крита на 109',
         );
         $this->addedRecipesCollection->push($recipe);
         $recipe->recipes()->attach([
