@@ -265,3 +265,13 @@ function curlRequestWithProxy(string $url, bool $isRemoveHeaders = true)
 
     return $response;
 }
+
+function isGooglePageSpeedVisit(): bool
+{
+    /* Disable for a temp */
+
+    return (
+        isset($_SERVER['HTTP_USER_AGENT'])
+        && preg_match('/chrome-lighthouse/i', $_SERVER['HTTP_USER_AGENT'])
+    );
+}

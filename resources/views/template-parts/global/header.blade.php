@@ -65,7 +65,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @if (env( 'APP_ENV' ) === 'prod')
+    @if (env( 'APP_ENV' ) === 'prod' && !isGooglePageSpeedVisit())
         <meta name="google-site-verification" content="r5IgAcubOAf7hWByU2jIi90T51Fy4wYNeLTcvH8vFaE"/>
         <link rel="icon" type="image/png" href="{{ URL::to('/') }}/favicon.ico"/>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-87WEW2EL6C"></script>
@@ -91,7 +91,7 @@
 
 <body>
 
-@if (env( 'APP_ENV' ) === 'prod')
+@if (env( 'APP_ENV' ) === 'prod' && !isGooglePageSpeedVisit())
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript"> (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () {
@@ -106,7 +106,7 @@
     </noscript> <!-- /Yandex.Metrika counter -->
 @endif
 
-@if($isEnableAnimation)
+@if($isEnableAnimation && !isGooglePageSpeedVisit())
     @php
         session(['isAnimationWasShowed' => true]);
     @endphp
@@ -149,9 +149,9 @@
     <div class="nano">
         <div class="nano-content">
             <div class="nk-nav-table">
-
                 <div class="nk-nav-row">
-                    @if(!Route::is('index') )
+
+                @if(!Route::is('index') )
                         <a href="{{route('index')}}" class="nk-nav-logo">
                             @else
                                 <div class="nk-nav-logo">
