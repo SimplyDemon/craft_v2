@@ -14,7 +14,10 @@
     </div>
 
     <button class="nk-btn ready">
-        <span class="link-effect-inner"><span class="link-effect-l"><span>Создать</span></span><span class="link-effect-r"><span>Создать</span></span><span class="link-effect-shade"><span>Создать</span></span></span>
+        <span class="link-effect-inner">
+            <span class="link-effect-l">
+                <span>Создать</span>
+            </span>
     </button>
 </form>
 @endsection

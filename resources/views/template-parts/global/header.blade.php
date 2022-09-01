@@ -2,7 +2,9 @@
     $user    = auth()->user();
     $isAuth  = $user;
     $isAdmin = $isAuth && $user->isAdmin;
-
+    if($isAuth) {
+        $userIsHaveNewMessage = $user->is_has_new_message;
+    }
     $agent    = new \Jenssegers\Agent\Agent();
     $isMobile = $agent->isMobile();
 
@@ -209,10 +211,16 @@
 @endif
 
 @if (Session::has('message'))
-    <div class="nk-info-box nk-info-box-noicon">
-        <div class="nk-info-box-close nk-info-box-close-btn">
-            <i class="ion-android-close"></i>
+    <div class="container text-center">
+        <div class="nk-info-box nk-info-box-noicon">
+            <div class="nk-info-box-close nk-info-box-close-btn">
+                <i class="ion-android-close"></i>
+            </div>
+            {!! session('message') !!}
         </div>
-        {!! session('message') !!}
     </div>
+@endif
+
+@if(!empty($userIsHaveNewMessage))
+    @include('template-parts.global.header-new-message-notice')
 @endif

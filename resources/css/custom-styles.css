@@ -333,3 +333,25 @@ img.sd-navbar-bg {
     margin-top: 5px;
     align-self: baseline;
 }
+
+.ion-android-close:before {
+    display: inline-block;
+    content: "\00d7";
+}
+
+.sd-popup-notice {
+    width: 45%;
+    position: absolute;
+    z-index: 3;
+    top: 96px;
+    right: 32px;
+}
+
+.sd-conversation__new-message-color {
+    color: #dcc84c;
+}
+
+
+.first-buttons-row {
+    padding-bottom: 6px;
+}

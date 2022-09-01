@@ -13,17 +13,22 @@ class MessageController extends Controller {
     const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
 
     public function store( AddMessage $request ) {
-        $all          = $request->all();
-        $user         = auth()->user();
-        $conversation = Conversation::findOrFail( $all['conversation_id'] );
+        $all = $request->all();
+        $user = auth()->user();
+        $conversation = Conversation::findOrFail($all['conversation_id']);
 
-        if ( ! $user->isAdmin && $conversation->user_id !== $user->id ) {
-            return Redirect::to( route( 'conversations.index' ) );
+        $columnNameForUpdate = $user->is_admin ? 'is_has_new_messages_for_user' : 'is_has_new_messages_for_admin';
+        $conversation->update([
+            $columnNameForUpdate => 1,
+        ]);
+
+        if (!$user->isAdmin && $conversation->user_id !== $user->id) {
+            return Redirect::to(route('conversations.index'));
         }
 
-        $request->merge( [
+        $request->merge([
             'user_id' => $user->id,
-        ] );
+        ]);
 
 
         try {

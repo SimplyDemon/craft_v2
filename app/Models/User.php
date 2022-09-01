@@ -62,13 +62,40 @@ class User extends Authenticatable {
         return $this->attributes['is_admin'];
     }
 
-    public function getIsCanUpdatePriceAttribute() {
-
+    public function getIsCanUpdatePriceAttribute()
+    {
         return $this->attributes['is_can_update_price'];
     }
 
-    public function getIsEnableAnimationAttribute() {
-
+    public function getIsEnableAnimationAttribute()
+    {
         return $this->attributes['is_enable_animation'];
+    }
+
+    public function getIsHasNewMessageAttribute()
+    {
+        return $this->is_has_new_messages_for_admin || $this->is_has_new_messages_for_user;
+    }
+
+    public function getIsHasNewMessagesForAdminAttribute()
+    {
+        $isCurrentUserAdmin = $this->is_admin;
+        if (!$isCurrentUserAdmin) {
+            return false;
+        }
+
+        $conversationsWithNewMessagesForAdmin = Conversation::where('is_has_new_messages_for_admin', true)->get();
+
+        return $conversationsWithNewMessagesForAdmin->count() > 0;
+    }
+
+    public function getIsHasNewMessagesForUserAttribute()
+    {
+        $conversationsWithNewMessagesForUser = Conversation::where('user_id', $this->id)->where(
+            'is_has_new_messages_for_user',
+            true
+        )->get();
+
+        return $conversationsWithNewMessagesForUser->count() > 0;
     }
 }

@@ -41,7 +41,6 @@ class ConversationController extends Controller {
         $request->merge( [ 'user_id' => $user->id ] );
         try {
             $single        = Conversation::create( $request->except( '_token' ) );
-            $message       = 'Запрос был успешно создан';
             $redirectRoute = route( $this->name . 'show', [
                 'id' => $single->id,
             ] );
@@ -51,26 +50,36 @@ class ConversationController extends Controller {
             $redirectRoute = route( $this->name . 'create' );
         }
 
-        $request->session()->flash( 'message', $message );
 
         return Redirect::to( $redirectRoute );
     }
 
 
     public function show( int $id ) {
-        $single = Conversation::findOrFail( $id );
-        $user   = auth()->user();
+        $single = Conversation::findOrFail($id);
+        $user = auth()->user();
 
-        if ( ! $user->isAdmin && $single->user_id !== $user->id ) {
-            return Redirect::to( route( $this->name . 'index' ) );
+        if (!$user->isAdmin && $single->user_id !== $user->id) {
+            return Redirect::to(route($this->name . 'index'));
         }
 
-        $messages = Message::orderBy( 'id', 'asc' )->where( 'conversation_id', $single->id )->get();
+        $messages = Message::orderBy('id', 'asc')->where('conversation_id', $single->id)->get();
+        $messagesNotRead = Message::orderBy('id', 'asc')->where('conversation_id', $single->id)->where(
+            'is_read',
+            0
+        )->where('user_id', '!=', $user->id);
+        if ($messagesNotRead->count() > 0) {
+            $messagesNotRead->update(['is_read' => 1]);
+            $columnNameForUpdate = $user->is_admin ? 'is_has_new_messages_for_admin' : 'is_has_new_messages_for_user';
+            $single->update([
+                $columnNameForUpdate => 0,
+            ]);
+        }
 
-        return view( $this->folderPath . 'show', [
-            'single'   => $single,
+        return view($this->folderPath . 'show', [
+            'single' => $single,
             'messages' => $messages,
-            'title'    => $single->title,
-        ] );
+            'title' => $single->title,
+        ]);
     }
 }

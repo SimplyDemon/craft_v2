@@ -11,22 +11,24 @@
     @if(!$messages->isEmpty())
         @foreach($messages as $message)
             <div class="nk-social-messages-single">
-                <div class="nk-social-messages-single-content text-position-{{$currentUser->id === $message->user->id ? 'right' : 'left' }}">
+                <div
+                    class="nk-social-messages-single-content text-position-{{$currentUser->id === $message->user->id ? 'right' : 'left' }}">
                     <div class="nk-social-messages-single-meta">
-                            <p><b>{{$message->user->name}}</b> {{date('d-m-Y H:i:s',strtotime($message->created_at))}}
-                            </p>
-                        </div>
-                        <div class="nk-social-messages-single-text">
-                            {{$message->text}}
-                        </div>
+                        <p><b>{{$message->user->name}}</b> {{date('d-m-Y H:i:s',strtotime($message->created_at))}}
+                        </p>
+                    </div>
+                    <div
+                        class="nk-social-messages-single-text @if(!$message->is_read)sd-conversation__new-message-color @endif">
+                        {{$message->text}}
                     </div>
                 </div>
-            @endforeach
-        @endif
-        <form method="post" action="{{route('messages.store')}}">
-            @csrf
-            <input type="hidden" name="conversation_id" value="{{$single->id}}">
-            <div class="nk-social-messages-single">
+            </div>
+        @endforeach
+    @endif
+    <form method="post" action="{{route('messages.store')}}">
+        @csrf
+        <input type="hidden" name="conversation_id" value="{{$single->id}}">
+        <div class="nk-social-messages-single">
                 <div class="nk-social-messages-single-content">
                     <div class="nk-social-messages-single-text">
                         <form action="#" novalidate="novalidate">

@@ -8,7 +8,7 @@
                 <div class="nk-header-text">
                     <h1 class="nk-title display-3">{{$title ?? 'Калькулятор крафта Asterios'}}</h1>
                     <div class="nk-gap-2"></div>
-                    <div>
+                    <div class="first-buttons-row">
                         <a href="{{route('recipes.index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
                             <span>Каталог предметов</span>
                         </a>
@@ -20,7 +20,7 @@
                             Не крафтовые предметы
                         </a>
                     </div>
-                    <div>
+                    <div class="second-buttons-row">
                         <a href="{{route('jewelry.epic')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
                             Эпик бижа
                         </a>

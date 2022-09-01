@@ -20,15 +20,16 @@
             <tbody>
             @foreach($all as $single)
                 <tr>
-                        <td class="nk-social-messages-description">
-                            <div class="nk-social-messages-subject">
-                                <a href="{{ route( 'conversations.show', [ 'id' => $single->id ] ) }}"> {{$single->title}}</a>
-                            </div>
-                        </td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div>
-    @endif
+                    <td class="nk-social-messages-description">
+                        <div
+                            class="nk-social-messages-subject @if(auth()->user()->is_admin && $single->is_has_new_messages_for_admin || $single->is_has_new_messages_for_user)sd-conversation__new-message-color @endif">
+                            <a href="{{ route( 'conversations.show', [ 'id' => $single->id ] ) }}"> {{$single->title}}</a>
+                        </div>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
+@endif
 @endsection
