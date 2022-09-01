@@ -12,7 +12,7 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::table('Recipes', function (Blueprint $table) {
+        Schema::table('recipes', function (Blueprint $table) {
             $table->boolean('is_non_craftable')->default(0);
         });
     }
@@ -24,7 +24,7 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::table('Recipes', function (Blueprint $table) {
+        Schema::table('recipes', function (Blueprint $table) {
             $table->dropColumn('is_non_craftable');
         });
     }
