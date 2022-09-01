@@ -355,3 +355,9 @@ img.sd-navbar-bg {
 .first-buttons-row {
     padding-bottom: 6px;
 }
+
+@media (max-width: 420px) {
+    .nk-navbar.nk-navbar-top .nk-nav-logo {
+        display: table-cell;
+    }
+}

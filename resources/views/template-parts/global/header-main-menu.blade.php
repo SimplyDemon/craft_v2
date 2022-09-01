@@ -12,9 +12,9 @@
             @else
         </div>
         @endif
-        <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="nk-nav nk-nav-right d-none d-lg-block"
+        <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="nk-nav nk-nav-right"
             data-nav-mobile="#nk-nav-mobile">
-            <li>
+            <li class="d-none d-lg-inline-block">
                 <form action="{{route('search')}}" method="get">
                     @csrf
                     <div class="input-group">
@@ -25,22 +25,22 @@
                 <div class="search_result">
                     <ul id="search_result-ul">
 
-                        </ul>
-                    </div>
-                </li>
+                    </ul>
+                </div>
+            </li>
 
-            <li class="{{Route::is('recipes.index') ? 'active' : ''}}">
+            <li class="d-none d-sm-inline-block {{Route::is('recipes.index') ? 'active' : ''}}">
                 <a class="color-main-1-hover" itemprop="url" href="{{ route('recipes.index') }}">
                     Предметы
                 </a>
             </li>
-            <li class="{{Route::is('resources.index') ? 'active' : ''}}">
+            <li class="{{Route::is('resources.index') ? 'active' : ''}} d-none d-lg-inline-block">
                 <a class="color-main-1-hover" itemprop="url" href="{{ route('resources.index') }}">
                     Ресурсы
                 </a>
             </li>
-            <li class="nk-drop-item {{Route::is('jewelry.epic') || Route::is('jewelry.tw') || Route::is('bosses_respawn') || Route::is('non_craftable') || Route::is('belt') ? 'active' : ''}}">
-                <a class="color-main-1-hover" itemprop="url" href="{{route('user')}}">
+            <li class="d-none d-md-inline-block nk-drop-item {{Route::is('jewelry.epic') || Route::is('jewelry.tw') || Route::is('bosses_respawn') || Route::is('non_craftable') || Route::is('belt') ? 'active' : ''}}">
+                <a class="color-main-1-hover" itemprop="url" href="#1">
                     Разное
                 </a>
                 <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="dropdown">
@@ -80,34 +80,34 @@
                         <li class="{{Route::is('user') ? 'active' : ''}}">
                             <a class="color-main-1-hover" itemprop="url" href="{{route('user')}}">
                                 Аккаунт
-                                </a>
-                            </li>
-                            <li class="{{Route::is('user.price') ? 'active' : ''}}">
-                                <a class="color-main-1-hover" itemprop="url" href="{{route('user.price')}}">
-                                    Цены
-                                </a>
-                            </li>
-                            <li class="{{Route::is('conversations.index') ? 'active' : ''}}">
-                                <a class="color-main-1-hover" itemprop="url" href="{{route('conversations.index')}}">
-                                    Поддержка
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                @endif
-            </ul>
+                            </a>
+                        </li>
+                        <li class="{{Route::is('user.price') ? 'active' : ''}}">
+                            <a class="color-main-1-hover" itemprop="url" href="{{route('user.price')}}">
+                                Цены
+                            </a>
+                        </li>
+                        <li class="{{Route::is('conversations.index') ? 'active' : ''}}">
+                            <a class="color-main-1-hover" itemprop="url" href="{{route('conversations.index')}}">
+                                Поддержка
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
+        </ul>
 
-            <ul class="nk-nav nk-nav-right nk-nav-icons">
+        <ul class="nk-nav nk-nav-right nk-nav-icons">
 
-                @if(!$isAuth)
-                    <li class="single-icon">
-                        <a href="#" class="nk-sign-toggle no-link-effect">
-                            <img width="20" height="20" src="{{ asset('images/icon-login.svg' ) }}" alt="login">
-                        </a>
-                    </li>
-                @endif
+            @if(!$isAuth)
+                <li class="single-icon">
+                    <a href="#" class="nk-sign-toggle no-link-effect">
+                        <img width="20" height="20" src="{{ asset('images/icon-login.svg' ) }}" alt="login">
+                    </a>
+                </li>
+            @endif
 
-            </ul>
-        </div>
+        </ul>
+    </div>
     </div>
 </nav>

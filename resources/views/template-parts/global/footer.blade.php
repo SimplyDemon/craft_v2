@@ -1,6 +1,6 @@
 <footer itemscope itemtype="http://schema.org/WPFooter" class="nk-footer nk-footer-parallax nk-footer-parallax-opacity">
-    <img class="nk-footer-top-corner" src="{{ asset('images/footer-corner.webp' ) }}" alt="footer-corner">
-
+    <img loading="lazy" class="nk-footer-top-corner" src="{{ asset('images/footer-corner.webp' ) }}"
+         alt="footer-corner">
 
     <div class="container">
         <div class="nk-gap-2"></div>

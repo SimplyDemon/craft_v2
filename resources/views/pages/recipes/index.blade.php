@@ -104,7 +104,7 @@
                 </div>
                 <div class="row">
                     @foreach( $recipes as $recipe)
-                        <div class="col-4 item"
+                        <div class="item col-12 col-sm-6 col-lg-4"
                              @if($recipe->name)
                              data-name="{{strtolower($recipe->name)}}"
                              @endif

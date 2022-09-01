@@ -1,6 +1,6 @@
 <div class="row">
     @foreach($recipes as $recipe)
-        <div class="col-{{$colValue ?? 4}}">
+        <div class="col-12 col-sm-6 col-lg-{{$colValue ?? 4}}">
             <p>
                 <a href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
                     @include('shared.recipe.thumbnail', [
