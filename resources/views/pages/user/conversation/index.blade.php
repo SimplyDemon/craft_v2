@@ -22,7 +22,7 @@
                 <tr>
                     <td class="nk-social-messages-description">
                         <div
-                            class="nk-social-messages-subject @if(auth()->user()->is_admin && $single->is_has_new_messages_for_admin || $single->is_has_new_messages_for_user)sd-conversation__new-message-color @endif">
+                            class="nk-social-messages-subject @if((auth()->user()->is_admin && $single->is_has_new_messages_for_admin) || (!auth()->user()->is_admin && $single->is_has_new_messages_for_user))sd-conversation__new-message-color @endif">
                             <a href="{{ route( 'conversations.show', [ 'id' => $single->id ] ) }}"> {{$single->title}}</a>
                         </div>
                     </td>
