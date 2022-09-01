@@ -55,7 +55,7 @@
         <meta itemprop="keywords" name="keywords" content="@yield('meta_keywords') @yield('title')">
     @else
         <meta itemprop="keywords" name="keywords"
-              content="@yield('meta_keywords','Калькулятор крафта Астериос, Респ РБ, таймер, список Эпик, ТВ бижи, пояса') @yield('title')">
+              content="@yield('meta_keywords','Калькулятор крафта Астериос, Респ РБ, таймер, список Эпик, ТВ бижи, пояс') @yield('title')">
     @endif
 
     @if(Route::is('recipes.show') && View::hasSection('canonical'))
