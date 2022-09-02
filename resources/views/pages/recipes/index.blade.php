@@ -135,7 +135,7 @@
                         >
                             <div class="filter__recipe-item-info-special">
                                 <a class="image-link-no-underline"
-                                   href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
+                                   href="{{ route( 'recipes.show', $recipe  ) }}">
                                     @include('shared.recipe.thumbnail', [
                                        'single' => $recipe,
                                     ])
@@ -155,7 +155,7 @@
                                 @if($recipe->gradeImage)
                                     <img src="{{$recipe->gradeImage}}" alt="grade">
                                 @endif
-                                <a href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
+                                <a href="{{ route( 'recipes.show',  $recipe  ) }}">
                                     {{$recipe->name}}
                                 </a>
                             </div>

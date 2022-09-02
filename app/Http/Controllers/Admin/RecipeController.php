@@ -132,93 +132,93 @@ class RecipeController extends Controller {
     }
 
 
-    public function show( int $id ) {
-        $single          = Recipe::findOrFail( $id );
-        $user            = auth()->user();
-        $recipe100       = Recipe::where( 'name', $single->name . ' 100%' )->first();
-        $canonicalUrl    = ( $single->percent === '60' && $recipe100 ) ? route( 'recipes.show', [ 'id' => $recipe100->id ] ) : null;
-        $recipePrice     = $single->price;
-        $chanceText      = 'MasterWork';
-        $prepareRecipe   = new PrepareRecipeResourcesService();
-        $recipeData      = $prepareRecipe->prepare( $single );
+    public function show(Recipe $recipe)
+    {
+        $user = auth()->user();
+        $recipe100 = Recipe::where('name', $recipe->name . ' 100%')->first();
+        $canonicalUrl = ($recipe->percent === '60' && $recipe100) ? route('recipes.show', $recipe100) : null;
+
+        $recipePrice = $recipe->price;
+        $chanceText = 'MasterWork';
+        $prepareRecipe = new PrepareRecipeResourcesService();
+        $recipeData = $prepareRecipe->prepare($recipe);
         $tooltipPriceImg = public_path() . '/question.svg';
-        if ( $single->grade === 'C' ) {
+        if ($recipe->grade === 'C') {
             $chanceText = 'DoubleCraft';
         }
 
-        return view( $this->folderPathUser . 'show', [
-            'single'                => $single,
-            'id'                    => $single->id,
-            'user'                  => $user,
-            'title'                 => $single->name,
-            'canonicalUrl'          => $canonicalUrl,
-            'recipePrice'           => $recipePrice,
-            'chanceText'            => $chanceText,
-            'total'                 => $recipeData['total'],
-            'totalText'             => $recipeData['totalText'],
-            'totalAdminPrice'       => $recipeData['totalAdminPrice'],
-            'totalAdminPriceText'   => $recipeData['totalAdminPriceText'],
-            'isCountMoreThenOne'    => $recipeData['isCountMoreThenOne'],
+        return view($this->folderPathUser . 'show', [
+            'single' => $recipe,
+            'id' => $recipe->id,
+            'user' => $user,
+            'title' => $recipe->name,
+            'canonicalUrl' => $canonicalUrl,
+            'recipePrice' => $recipePrice,
+            'chanceText' => $chanceText,
+            'total' => $recipeData['total'],
+            'totalText' => $recipeData['totalText'],
+            'totalAdminPrice' => $recipeData['totalAdminPrice'],
+            'totalAdminPriceText' => $recipeData['totalAdminPriceText'],
+            'isCountMoreThenOne' => $recipeData['isCountMoreThenOne'],
             'isTotalPriceDifferent' => $recipeData['isTotalPriceDifferent'],
-            'resourcesData'         => $recipeData['resourcesData'],
+            'resourcesData' => $recipeData['resourcesData'],
             'tooltipPriceImg'       => $tooltipPriceImg,
         ] );
     }
 
 
-    public function edit( int $id ) {
-        $single       = Recipe::findOrFail( $id );
-        $percentTypes = DB::select( DB::raw( 'SHOW COLUMNS FROM recipes WHERE Field = "percent"' ) )[0]->Type;
-        $gradeTypes   = DB::select( DB::raw( 'SHOW COLUMNS FROM recipes WHERE Field = "grade"' ) )[0]->Type;
+    public function edit(Recipe $recipe)
+    {
+        $percentTypes = DB::select(DB::raw('SHOW COLUMNS FROM recipes WHERE Field = "percent"'))[0]->Type;
+        $gradeTypes = DB::select(DB::raw('SHOW COLUMNS FROM recipes WHERE Field = "grade"'))[0]->Type;
 
-        preg_match( '/^enum\((.*)\)$/', $percentTypes, $matches );
+        preg_match('/^enum\((.*)\)$/', $percentTypes, $matches);
         $percentValues = [];
-        foreach ( explode( ',', $matches[1] ) as $value ) {
-            $percentValues[] = trim( $value, "'" );
+        foreach (explode(',', $matches[1]) as $value) {
+            $percentValues[] = trim($value, "'");
         }
 
-        preg_match( '/^enum\((.*)\)$/', $gradeTypes, $matches );
+        preg_match('/^enum\((.*)\)$/', $gradeTypes, $matches);
         $gradeValues = [];
         foreach ( explode( ',', $matches[1] ) as $value ) {
             $gradeValues[] = trim( $value, "'" );
         }
 
 
-        $recipeResources = DB::table( 'recipe_resource' )->where( [
-            [ 'recipe_id', '=', $single->id ],
+        $recipeResources = DB::table( 'recipe_resource' )->where([
+            ['recipe_id', '=', $recipe->id],
         ] )->get();
 
         $categories = Category::orderBy( 'name', 'asc' )->get();
         $resources  = Resource::orderBy( 'name', 'asc' )->get();
 
         return view( $this->folderPath . 'edit', [
-            'single'          => $single,
-            'percentValues'   => $percentValues,
-            'gradeValues'     => $gradeValues,
-            'categories'      => $categories,
-            'resources'       => $resources,
+            'single' => $recipe,
+            'percentValues' => $percentValues,
+            'gradeValues' => $gradeValues,
+            'categories' => $categories,
+            'resources' => $resources,
             'recipeResources' => $recipeResources,
         ] );
     }
 
 
-    public function update( EditRecipe $request, int $id ) {
-        $method             = $request->input( 'method' );
-        $resourceIDs        = $request->input( 'resource_ids' );
-        $resourceQuantities = $request->input( 'resource_quantity' );
-
-        $single = Recipe::findOrFail( $id );
+    public function update(EditRecipe $request, Recipe $recipe)
+    {
+        $method = $request->input('method');
+        $resourceIDs = $request->input('resource_ids');
+        $resourceQuantities = $request->input('resource_quantity');
 
 
         //default delete all recipe values and write again its much better then make 1000 checks
-        DB::table( 'recipe_resource' )->where( [
-            [ 'recipe_id', '=', $single->id ],
-        ] )->delete();
+        DB::table('recipe_resource')->where([
+            ['recipe_id', '=', $recipe->id],
+        ])->delete();
 
         $i = 0;
         if ( $resourceIDs && is_array( $resourceIDs ) ) {
             foreach ( $resourceIDs as $resourceID ) {
-                $single->resources()->attach( $resourceID, [ 'resource_quantity' => $resourceQuantities[ $i ] ] );
+                $recipe->resources()->attach($resourceID, ['resource_quantity' => $resourceQuantities[$i]]);
 
                 $i ++;
             }
@@ -227,11 +227,10 @@ class RecipeController extends Controller {
         $all = Recipe::orderBy( 'name', 'asc' )->get();
 
         try {
+            $slug = Str::slug($request->name, '-');
+            $request->merge(['slug' => $slug]);
 
-            $slug = Str::slug( $request->name, '-' );
-            $request->merge( [ 'slug' => $slug ] );
-
-            $single->update( $request->except( 'currentID', 'method', 'image', 'resource_ids', 'resource_quantity' ) );;
+            $recipe->update($request->except('currentID', 'method', 'image', 'resource_ids', 'resource_quantity'));;
             $message = 'Обновление выполнено успешно!';
         }
         catch ( QueryException $exception ) {
@@ -243,8 +242,8 @@ class RecipeController extends Controller {
         if ( $method == 'Применить' ) {
             return Redirect::to(
                 route($this->name . 'edit', [
-                    'id' => $single->id,
-                    'single' => $single,
+                    'id' => $recipe->id,
+                    'single' => $recipe,
                     'all' => $all,
                 ])
             );
@@ -256,11 +255,10 @@ class RecipeController extends Controller {
     }
 
 
-    public function destroy( int $id ) {
-        $single = Recipe::findOrFail( $id );
-
+    public function destroy(Recipe $recipe)
+    {
         try {
-            $single->delete();
+            $recipe->delete();
             $message = 'Удаление выполнено успешно!';
         } catch (QueryException $exception) {
             $message = $exception->errorInfo[self::QUERY_EXCEPTION_READABLE_MESSAGE];

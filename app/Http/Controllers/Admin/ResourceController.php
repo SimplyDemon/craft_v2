@@ -21,15 +21,15 @@ class ResourceController extends Controller {
 
 
     public function index() {
-        $all = Resource::orderBy( 'name', 'asc' )->where( 'type', 'resource' )->get();
+        $all = Resource::orderBy('name', 'asc')->where('type', 'resource')->get();
 
         $historyDifferencePositive = [];
         $historyDifferenceNegative = [];
 
-        foreach ( $all as $single ) {
-            $historyDifference = $this->getHistoryDifference( $single );
-            if ( isset( $historyDifference['isDifferencePositive'] ) ) {
-                if ( $historyDifference['isDifferencePositive'] ) {
+        foreach ($all as $resource) {
+            $historyDifference = $this->getHistoryDifference($resource);
+            if (isset($historyDifference['isDifferencePositive'])) {
+                if ($historyDifference['isDifferencePositive']) {
                     $historyDifferencePositive[] = $historyDifference;
                 } else {
                     $historyDifferenceNegative[] = $historyDifference;
@@ -86,52 +86,52 @@ class ResourceController extends Controller {
 
             $url     = route( $this->name . 'show', [ 'single' => $resource, 'id' => $resource->id ] );
             $message = "Добавление выполнено успешно! Нажмите <a href='{$url}'>сюда</a> что бы посмотреть";
-        }
-        catch ( QueryException $exception ) {
-            $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
+        } catch (QueryException $exception) {
+            $message = $exception->errorInfo[self::QUERY_EXCEPTION_READABLE_MESSAGE];
         }
 
-        $request->session()->flash( 'message', $message );
+        $request->session()->flash('message', $message);
 
-        return Redirect::to( route( $this->name . 'create' ) );
+        return Redirect::to(route($this->name . 'create'));
     }
 
 
-    public function show( int $id ) {
-        $single        = Resource::findOrFail( $id );
-        $pricesHistory = ResourceAdminPrice::where( 'resource_id', $id )->orderBy( 'id', 'desc' )->limit( 12 )->get()->reverse();
+    public function show(Resource $resource)
+    {
+        $pricesHistory = ResourceAdminPrice::where('resource_id', $resource->id)->orderBy('id', 'desc')->limit(12)->get(
+        )->reverse();
 
-        $priceHistoryDates  = [];
+        $priceHistoryDates = [];
         $priceHistoryPrices = [];
-        $historyDifference  = [];
-        if ( ! $pricesHistory->isEmpty() ) {
-            foreach ( $pricesHistory as $priceHistory ) {
-                $priceHistoryDates[]  = date( 'd.m.Y', strtotime( $priceHistory->created_at ) );
+        $historyDifference = [];
+        if (!$pricesHistory->isEmpty()) {
+            foreach ($pricesHistory as $priceHistory) {
+                $priceHistoryDates[] = date('d.m.Y', strtotime($priceHistory->created_at));
                 $priceHistoryPrices[] = $priceHistory->price_sell;
             }
         }
 
         if ( $pricesHistory->count() > 1 ) {
-            $historyDifference = $this->getHistoryDifference( $single );
+            $historyDifference = $this->getHistoryDifference($resource);
         }
 
         return view( $this->folderPathUser . 'show', [
-            'single'                        => $single,
-            'title'                         => $single->name,
-            'priceHistoryDates'             => json_encode( $priceHistoryDates ),
-            'priceHistoryPrices'            => json_encode( $priceHistoryPrices ),
-            'priceHistoryDifference'        => $historyDifference['text'] ?? null,
+            'single' => $resource,
+            'title' => $resource->name,
+            'priceHistoryDates' => json_encode($priceHistoryDates),
+            'priceHistoryPrices' => json_encode($priceHistoryPrices),
+            'priceHistoryDifference' => $historyDifference['text'] ?? null,
             'priceHistoryDifferencePercent' => $historyDifference['percentText'] ?? null,
-            'priceHistoryDifferenceClass'   => $historyDifference['class'] ?? null,
+            'priceHistoryDifferenceClass' => $historyDifference['class'] ?? null,
         ] );
     }
 
 
-    public function edit( int $id ) {
-        $single = Resource::findOrFail( $id );
-        $all    = Resource::orderBy( 'name', 'asc' )->get();
+    public function edit(Resource $resource)
+    {
+        $all = Resource::orderBy('name', 'asc')->get();
 
-        return view( $this->folderPath . 'edit', [ 'single' => $single, 'all' => $all ] );
+        return view($this->folderPath . 'edit', ['single' => $resource, 'all' => $all]);
     }
 
 
@@ -145,9 +145,9 @@ class ResourceController extends Controller {
      * Имя файла - текущая метка юникс( для уникальности имен) + слаг имени файла без расширения + расширение файла
      */
     public function update( EditResource $request, int $id ) {
-        $method = $request->input( 'method' );
-        $single = Resource::findOrFail( $id );
-        $all    = Resource::orderBy( 'name', 'asc' )->get();
+        $method = $request->input('method');
+        $resource = Resource::findOrFail($id);
+        $all = Resource::orderBy('name', 'asc')->get();
 
 
         try {
@@ -160,8 +160,8 @@ class ResourceController extends Controller {
 
                 $request->merge( [ 'img' => $imgPath ] );
             }
-            $request->merge( [ 'slug' => $slug ] );
-            $single->update( $request->except( 'currentID', 'method', 'image' ) );
+            $request->merge(['slug' => $slug]);
+            $resource->update($request->except('currentID', 'method', 'image'));
 
             $message = 'Обновление выполнено успешно!';
         }
@@ -173,9 +173,9 @@ class ResourceController extends Controller {
 
         if ( $method == 'Применить' ) {
             return Redirect::to( route( $this->name . 'edit', [
-                'single' => $single,
-                'all'    => $all,
-                'id'     => $single->id,
+                'single' => $resource,
+                'all' => $all,
+                'id' => $resource->id,
             ] ) );
         }
 
@@ -186,37 +186,36 @@ class ResourceController extends Controller {
     }
 
 
-    public function destroy( int $id ) {
-        $single = Resource::findOrFail( $id );
-
+    public function destroy(Resource $resource)
+    {
         try {
-            $single->delete();
+            $resource->delete();
             $message = 'Удаление выполнено успешно!';
-        }
-        catch ( QueryException $exception ) {
-            $message = $exception->errorInfo[ self::QUERY_EXCEPTION_READABLE_MESSAGE ];
+        } catch (QueryException $exception) {
+            $message = $exception->errorInfo[self::QUERY_EXCEPTION_READABLE_MESSAGE];
         }
 
-        Session::flash( 'message', $message );
+        Session::flash('message', $message);
 
-        return Redirect::to( route( $this->name . 'index' ) );
+        return Redirect::to(route($this->name . 'index'));
     }
 
 
     /*
      * Show how price was changed from last prices update
      */
-    protected function getHistoryDifference( Resource $single ): array {
-        $pricesHistory = ResourceAdminPrice::where( 'resource_id', $single->id )->orderBy( 'id', 'desc' )->limit( 12 )->get()->reverse();
-        $result        = [];
-        if ( $pricesHistory->count() > 1 && $single->price_sell > 0 && $pricesHistory[1]->price_sell > 0 ) {
-
+    protected function getHistoryDifference(Resource $resource): array
+    {
+        $pricesHistory = ResourceAdminPrice::where('resource_id', $resource->id)->orderBy('id', 'desc')->limit(12)->get(
+        )->reverse();
+        $result = [];
+        if ($pricesHistory->count() > 1 && $resource->price_sell > 0 && $pricesHistory[1]->price_sell > 0) {
             $priceHistoryPreLast = $pricesHistory[1];
-            $result['number']    = $single->price_sell - $priceHistoryPreLast->price_sell;
+            $result['number'] = $resource->price_sell - $priceHistoryPreLast->price_sell;
 
             $result['isDifferencePositive'] = $result['number'] >= 0;
-            $result['resourceId']           = $single->id;
-            $result['class']                = $result['isDifferencePositive'] ? 'sd-color-green' : 'sd-color-red';
+            $result['resourceId'] = $resource->id;
+            $result['class'] = $result['isDifferencePositive'] ? 'sd-color-green' : 'sd-color-red';
 
             /* If value positive add symbol "+" if value is negative symbol "-" already set */
             $result['text'] = $result['isDifferencePositive'] ? '+' : '';
@@ -224,10 +223,10 @@ class ResourceController extends Controller {
 
 
             /* Show percent only if current price not 0 and previously price not 0 */
-            if ( $single->price_sell > 0 && $priceHistoryPreLast->price_sell > 0 ) {
-                $result['percentText']   = $result['isDifferencePositive'] ? '+' : '';
-                $result['percentNumber'] = ( $single->price_sell * 100 ) / $priceHistoryPreLast->price_sell - 100;
-                $result['percentText']   .= number_format( $result['percentNumber'], '2', ',', ' ' ) . '%';
+            if ($resource->price_sell > 0 && $priceHistoryPreLast->price_sell > 0) {
+                $result['percentText'] = $result['isDifferencePositive'] ? '+' : '';
+                $result['percentNumber'] = ($resource->price_sell * 100) / $priceHistoryPreLast->price_sell - 100;
+                $result['percentText'] .= number_format($result['percentNumber'], '2', ',', ' ') . '%';
             }
         }
 

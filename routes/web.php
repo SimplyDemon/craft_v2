@@ -51,16 +51,12 @@ Route::middleware( 'auth.dev' )->group( function () {
     Route::get('/jewelry-epic', [JewelryEpicController::class, 'index'])->name('jewelry.epic');
     Route::get('/belt', [BeltController::class, 'index'])->name('belt');
 
-    Route::resource('recipes', RecipeController::class)->parameters([
-        'recipes' => 'id',
-    ])->only(['index', 'show']);
+    Route::resource('recipes', RecipeController::class)->only(['index', 'show']);
 
     Route::get('/non-craftable', [RecipeController::class, 'nonCraftableItems'])->name('non_craftable');
 
 
-    Route::resource('resources', ResourceController::class)->parameters([
-        'resources' => 'id',
-    ])->only(['show']);
+    Route::resource('resources', ResourceController::class)->only(['show']);
     Route::get('/resources_list', [ResourceController::class, 'index'])->name('resources.index');
 
     Route::middleware('auth')->group(function () {

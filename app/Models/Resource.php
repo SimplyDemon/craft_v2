@@ -41,9 +41,9 @@ class Resource extends Model {
         $tooltipLinePriceText = 'Цена по умолчанию:<br><b>' . prettifyNumber( $adminLinePrice ) . '</b>';
 
         if ( $this->recipe ) {
-            $resourceUrl = route( 'recipes.show', [ 'id' => $this->recipe ] );
+            $resourceUrl = route('recipes.show', $this->recipe);
         } else {
-            $resourceUrl = route( 'resources.show', [ 'id' => $this ] );
+            $resourceUrl = route('resources.show', $this);
         }
 
         if ( $this->recipe && $this->recipe->resources ) {
@@ -74,5 +74,15 @@ class Resource extends Model {
     public function getDescriptionSeoTextAttribute()
     {
         return "Информация о ресурсе {$this->name}. В каких рецептах он используется, график изменения цен в течении времени.";
+    }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
     }
 }

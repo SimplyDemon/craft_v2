@@ -189,7 +189,7 @@ function generateSitemap()
 
     foreach ($recipes as $recipe) {
         $xml->startElement('url');
-        $xml->writeElement('loc', route('recipes.show', $recipe->id));
+        $xml->writeElement('loc', route('recipes.show', $recipe));
         $xml->writeElement('lastmod', date('c', strtotime($recipe->updated_at)));
         $xml->writeElement('changefreq', 'weekly');
         $xml->writeElement('priority', '0.5');
@@ -198,7 +198,7 @@ function generateSitemap()
 
     foreach ($resources as $resource) {
         $xml->startElement('url');
-        $xml->writeElement('loc', route('recipes.show', $resource->id));
+        $xml->writeElement('loc', route('resources.show', $resource));
         $xml->writeElement('lastmod', date('c', strtotime($resource->updated_at)));
         $xml->writeElement('changefreq', 'weekly');
         $xml->writeElement('priority', '0.5');

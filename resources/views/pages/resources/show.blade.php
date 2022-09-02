@@ -34,17 +34,19 @@
             <p>
                 Изменение цены:
                 @if($priceHistoryDifference)
-                    <span class="px-2 d-background-grey {{$priceHistoryDifferenceClass}}">{{ $priceHistoryDifference }}</span>
+                    <span
+                        class="px-2 d-background-grey {{$priceHistoryDifferenceClass}}">{{ $priceHistoryDifference }}</span>
                 @endif
 
                 @if($priceHistoryDifferencePercent)
-                    <span class="px-2 d-background-grey {{$priceHistoryDifferenceClass}}">{{$priceHistoryDifferencePercent}}</span>
+                    <span
+                        class="px-2 d-background-grey {{$priceHistoryDifferenceClass}}">{{$priceHistoryDifferencePercent}}</span>
                 @endif
             </p>
         @endif
 
         @if($single->recipe)
-            <a href="{{ route( 'recipes.show', [ 'id' => $single->recipe->id ] ) }}">
+            <a href="{{ route( 'recipes.show', $single->recipe ) }}">
                 <h3>Рецепт</h3>
             </a>
         @endif
@@ -57,7 +59,7 @@
 
                 @foreach($single->recipes as $single)
                     <div class="col-4 pb-10">
-                        <a href="{{ route( 'recipes.show', [ 'id' => $single->id ] ) }}">
+                        <a href="{{ route( 'recipes.show', $single ) }}">
                             <img width="30" src="{{asset('storage') . '/' . $single->img}}" alt="{{$single->name}}">
                             {{$single->name}}
                         </a>

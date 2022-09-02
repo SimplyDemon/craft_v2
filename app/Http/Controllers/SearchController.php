@@ -26,8 +26,8 @@ class SearchController extends Controller {
         $result = $this->getResults( $search, true );
         if ( ! empty( $result['recipes'] ) ) {
             foreach ( $result['recipes'] as &$recipe ) {
-                $recipe->jsUrl = route( 'recipes.show', [ 'id' => $recipe->id ] );
-                $recipe->jsImg = asset( 'storage' ) . '/' . $recipe->img;
+                $recipe->jsUrl = route('recipes.show', $recipe);
+                $recipe->jsImg = asset('storage') . '/' . $recipe->img;
             }
         }
 

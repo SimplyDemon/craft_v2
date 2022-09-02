@@ -2,7 +2,7 @@
     @foreach($recipes as $recipe)
         <div class="col-12 col-sm-6 col-lg-{{$colValue ?? 4}}">
             <p>
-                <a href="{{ route( 'recipes.show', [ 'id' => $recipe->id ] ) }}">
+                <a href="{{ route( 'recipes.show', $recipe ) }}">
                     @include('shared.recipe.thumbnail', [
                        'single' => $recipe,
                     ])
