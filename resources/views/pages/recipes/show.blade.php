@@ -6,7 +6,9 @@
 @section('title', $title . ' | Предметы')
 @section('description',$single->description_seo_text)
 @endif
-
+@if(!empty($single->img))
+    @section('seo-image', asset('storage') . '/' . $single->img)
+@endif
 @if($single->keywords)
     @section('meta_keywords', $single->keywords)
 @endif

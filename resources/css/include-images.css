@@ -1,5 +1,6 @@
 #hack-for-include-images-on-build:before {
     content: url("../image/theme/border-bottom.webp");
+    content: url("../image/theme/main_img.webp");
     content: url("../image/theme/border-left.webp");
     content: url("../image/theme/border-right.webp");
     content: url("../image/theme/border-top.webp");

@@ -4,6 +4,9 @@
 @section('title', $title . ' | Ресурсы')
 @section('description', $single->description_seo_text)
 @endif
+@if(!empty($single->img))
+    @section('seo-image', asset('storage') . '/' . $single->img)
+@endif
 <div id="chart-config"
      @if($priceHistoryDates)
      data-date="{{$priceHistoryDates}}"

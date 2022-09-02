@@ -24,7 +24,14 @@
     <link rel="canonical" href="{{$currentPageUrl}}">
     <meta property="og:locale" content="ru_RU">
     <meta property="og:site_name" content="Калькулятор крафта Asterios">
+    <meta property="og:locale" content="ru_RU">
 
+
+    @if(View::hasSection('seo-image'))
+        <meta property="og:image" content="@yield('seo-image')"/>
+    @else
+        <meta property="og:image" content="{{ asset('images/main_img.webp' ) }}"/>
+    @endif
     @if(View::hasSection('title'))
         <title itemprop="headline">@yield('title') | Калькулятор крафта Asterios</title>
         <meta property="og:title" content="@yield('title') | Калькулятор крафта Asterios">
@@ -151,7 +158,7 @@
             <div class="nk-nav-table">
                 <div class="nk-nav-row">
 
-                @if(!Route::is('index') )
+                    @if(!Route::is('index') )
                         <a href="{{route('index')}}" class="nk-nav-logo">
                             @else
                                 <div class="nk-nav-logo">
