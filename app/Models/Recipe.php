@@ -554,4 +554,35 @@ class Recipe extends Model
 
         return $descriptionSeoText;
     }
+
+    public function getDescriptionSchemaAttribute()
+    {
+        $descriptionSchema = "";
+        if (!empty($this->category)) {
+            $descriptionSchema .= "{$this->category->name}.";
+        }
+        if (!empty($this->grade)) {
+            $descriptionSchema .= " Грейд {$this->grade}.";
+        }
+        if (!empty($this->m_attack)) {
+            $descriptionSchema .= " Маг. Атк. {$this->m_attack}.";
+        }
+        if (!empty($this->p_attack)) {
+            $descriptionSchema .= " Физ. Атк. {$this->p_attack}.";
+        }
+        if (!empty($this->p_def)) {
+            $descriptionSchema .= " Физ. Защ. {$this->p_def}.";
+        }
+        if (!empty($this->m_def)) {
+            $descriptionSchema .= " Маг. Защ. {$this->m_def}.";
+        }
+        if ($this->is_available_for_sub_quest) {
+            $descriptionSchema .= ' Оружие можно использовать для квеста на саб класс.';
+        }
+        if ($this->noble_stones_for_upgrade) {
+            $descriptionSchema .= ' Предмет можно улучшить с помощью нубл камней.';
+        }
+
+        return $descriptionSchema;
+    }
 }
