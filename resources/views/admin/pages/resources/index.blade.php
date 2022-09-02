@@ -16,7 +16,7 @@
         <ul class="list-group">
             @foreach($all as $single)
                 <li class="list-group-item">
-                    <a href="{{ route( 'resources.show', [ 'id' => $single->id ] ) }}">
+                    <a href="{{ route( 'resources.show',$single ) }}">
                         {{$single->name}}
                     </a>
                 </li>

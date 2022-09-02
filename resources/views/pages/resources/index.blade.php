@@ -23,7 +23,7 @@
 
                 @foreach($all as $single)
                     <div class="col-4 pb-10">
-                        <a href="{{ route( 'resources.show',$single ) }}">
+                        <a href="{{ route( 'resources.show', $single ) }}">
                             <img width="30" src="{{asset('storage') . '/' . $single->img}}" alt="{{$single->name}}">
                             {{$single->name}} ({{prettifyNumber($single->price_sell)}})
                         </a>

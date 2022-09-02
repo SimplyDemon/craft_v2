@@ -201,7 +201,7 @@
         </div>
 
         @if($single->resource)
-            <a href="{{ route( 'resources.show', [ 'id' => $single->resource->id ] ) }}">
+            <a href="{{ route( 'resources.show',  $single->resource ) }}">
                 <h3>Ресурс</h3>
             </a>
         @endif
