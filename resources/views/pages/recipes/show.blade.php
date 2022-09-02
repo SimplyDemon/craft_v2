@@ -225,26 +225,7 @@
 </div>
 
 @if(!$single->resources->isEmpty() && !empty($resourcesData))
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Recipe",
-      "author": "SD",
-      "datePublished": "{{date( 'Y-m-d', strtotime( $single->created_at ) )}}",
-      "description": "{{$single->description_schema}}",
-      "image": "{{asset('storage') . '/' . $single->img}}",
-      "recipeIngredient": [
-        @foreach($resourcesData as $resource)
-            "{{$resource['name']}} x {{$resource['quantity']}}"{{$loop->last ? '' : ','}}
-        @endforeach
-        ],
-        "name": "{{$single->name}}"
-    }
-
-
-
-
-    </script>
+    @include('pages.recipes.schema')
 @endif
 
 @endsection

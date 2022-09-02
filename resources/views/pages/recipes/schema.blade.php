@@ -2,17 +2,16 @@
     {
       "@context": "https://schema.org",
       "@type": "Recipe",
-      "author": "Craft Calc",
-      "datePublished": "{{$single->created_at}}",
-      "description": "{{$single->name}}",
+      "author": "Craft Calculator",
+      "datePublished": "{{date( 'Y-m-d', strtotime( $single->created_at ) )}}",
+      "description": "{{$single->description_schema}}",
       "image": "{{asset('storage') . '/' . $single->img}}",
       "recipeIngredient": [
-        @foreach($single->resources as $resource)
-        "{{$resource->name}} {{$resource->pivot->resource_quantity}}"{{$loop->last ? '' : ','}}
+        @foreach($resourcesData as $resource)
+        "{{$resource['name']}} x {{$resource['quantity']}}"{{$loop->last ? '' : ','}}
     @endforeach
     ],
-"recipeYield": "{{$single->craft_count}} шт."
+    "name": "{{$single->name}}"
     }
-
 
 </script>
