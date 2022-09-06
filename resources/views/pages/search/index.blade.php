@@ -19,7 +19,7 @@
         @if($search)
             <h2>Результаты поиска по запросу "{{$search}}"</h2>
         @endif
-{{route('recipes.show', \App\Models\Recipe::first())}}
+
         @if(!$recipes->isEmpty())
 
             @include('shared.recipe.list', [
