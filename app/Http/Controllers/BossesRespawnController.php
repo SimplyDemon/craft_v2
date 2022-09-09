@@ -23,13 +23,13 @@ class BossesRespawnController extends Controller
     {
         $bossesChosenServer = $_COOKIE['bossesChosenServer'] ?? 'x1';
         $raidBossController = new RaidBossController();
-        $bossesX1           = [
+        $bossesX1 = [
             'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x1'),
-            'epic'     => $raidBossController->getBossesDeathTime('epic', 'x1'),
+            'epic' => $raidBossController->getBossesDeathTime('epic', 'x1'),
         ];
-        $bossesX5           = [
+        $bossesX5 = [
             'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x5'),
-            'epic'     => $raidBossController->getBossesDeathTime('epic', 'x5'),
+            'epic' => $raidBossController->getBossesDeathTime('epic', 'x5'),
         ];
 
         /*
@@ -40,10 +40,18 @@ class BossesRespawnController extends Controller
         ];
 */
 
+
+        $bossesX15 = [
+            'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x1.5'),
+            'epic' => $raidBossController->getBossesDeathTime('epic', 'x1.5'),
+        ];
+
+
         return view('pages.bosses-respawn.index', [
             'bossesX1' => $bossesX1,
             'bossesX5' => $bossesX5,
             //            'bossesX7'                => $bossesX7,
+            'bossesX15' => $bossesX15,
             'bossesChosenServer' => $bossesChosenServer,
             'title' => 'Респ Саб РБ и Эпик РБ',
         ]);

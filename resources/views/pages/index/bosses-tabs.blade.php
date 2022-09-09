@@ -3,7 +3,7 @@
         <li class="nav-item">
             <a class="nav-link active color-main-1-important" href="#{{$server}}-subclass" role="tab" data-toggle="tab">Сабкласс РБ</a>
         </li>
-        @if(!empty($bosses['epic']))
+        @if($bosses['epic']->isNotEmpty())
         <li class="nav-item">
             <a class="nav-link color-main-1-important" href="#{{$server}}-epic" role="tab" data-toggle="tab">Эпик РБ</a>
         </li>
@@ -27,7 +27,7 @@
 
             <div class="nk-gap-1"></div>
         </div>
-        @if(!empty($bosses['epic']))
+        @if($bosses['epic']->isNotEmpty())
         <div role="tabpanel" class="tab-pane fade" id="{{$server}}-epic">
             <div class="nk-gap-1"></div>
 

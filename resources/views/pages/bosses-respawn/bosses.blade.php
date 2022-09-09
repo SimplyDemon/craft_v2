@@ -7,18 +7,27 @@
         @endif
         @if(isset($bossesX5))
             <li class="nav-item">
-                <a class="nav-link color-main-1-important bosses-chose-server @if($bossesChosenServer === 'x5')active @endif" href="#server-x5" data-server="x5" role="tab" data-toggle="tab">x5 - Asterios</a>
+                <a class="nav-link color-main-1-important bosses-chose-server @if($bossesChosenServer === 'x5')active @endif"
+                   href="#server-x5" data-server="x5" role="tab" data-toggle="tab">x5 - Asterios</a>
             </li>
         @endif
         @if(isset($bossesX7))
             <li class="nav-item">
-                <a class="nav-link color-main-1-important bosses-chose-server @if($bossesChosenServer === 'x7')active @endif" href="#server-x7" data-server="x7" role="tab" data-toggle="tab">x7 - Phoenix</a>
+                <a class="nav-link color-main-1-important bosses-chose-server @if($bossesChosenServer === 'x7')active @endif"
+                   href="#server-x7" data-server="x7" role="tab" data-toggle="tab">x7 - Phoenix</a>
+            </li>
+        @endif
+        @if(isset($bossesX15))
+            <li class="nav-item">
+                <a class="nav-link color-main-1-important bosses-chose-server @if($bossesChosenServer === 'x1.5')active @endif"
+                   href="#server-x15" data-server="x1.5" role="tab" data-toggle="tab">x1.5 - Pride</a>
             </li>
         @endif
     </ul>
     <div class="tab-content">
         @if(isset($bossesX1))
-            <div role="tabpanel" class="tab-pane fade @if($bossesChosenServer === 'x1')show active @endif" id="server-x1">
+            <div role="tabpanel" class="tab-pane fade @if($bossesChosenServer === 'x1')show active @endif"
+                 id="server-x1">
                 <div class="nk-gap-1"></div>
 
                 <h2 class="nk-title h1">x1 - Prime</h2>
@@ -63,6 +72,24 @@
                     @include('pages.index.bosses-tabs', [
                           'bosses' => $bossesX7,
                           'server' => 'x7',
+                      ])
+                </div>
+
+                <div class="nk-gap-1"></div>
+            </div>
+        @endif
+        @if(isset($bossesX15))
+            <div role="tabpanel" class="tab-pane fade @if($bossesChosenServer === 'x1.5')show active @endif"
+                 id="server-x15">
+                <div class="nk-gap-1"></div>
+
+                <h2 class="nk-title h1">x1.5 - Pride</h2>
+                <div class="nk-gap-2"></div>
+                <div class="no-gutters">
+
+                    @include('pages.index.bosses-tabs', [
+                          'bosses' => $bossesX15,
+                          'server' => 'x1.5',
                       ])
                 </div>
 

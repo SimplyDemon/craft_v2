@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="container text-center">
-            @if($bossesX1 && $bossesX5)
+            @if($bossesX1 || $bossesX5 || $bossesX15)
                 @include('pages.bosses-respawn.bosses')
             @endif
         </div>

@@ -20,6 +20,6 @@
     <script defer src="{{ mix('js/chart.js') }}"></script>
 @endif
 
-@if(Route::is('index'))
+@if(Route::is('bosses_respawn'))
     <script defer src="{{ mix('js/index.js') }}"></script>
 @endif

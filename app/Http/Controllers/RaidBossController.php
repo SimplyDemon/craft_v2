@@ -30,6 +30,8 @@ class RaidBossController extends Controller
             $feedServer = 0;
         } elseif ($server === 'x7') {
             $feedServer = 8;
+        } elseif ($server === 'x1.5') {
+            $feedServer = 7;
         } else {
             return null;
         }
@@ -43,11 +45,13 @@ class RaidBossController extends Controller
         ])->get()->first();
 
         /* Update respawn info by interval time */
-        if (getCurrentTimeInUnix() > strtotime("+{$this->intervalForUpdateBossTimerInMin} minutes",
-                strtotime($boss->updated_at))) {
+        if (!empty($boss) && getCurrentTimeInUnix() > strtotime(
+                "+{$this->intervalForUpdateBossTimerInMin} minutes",
+                strtotime($boss->updated_at)
+            )) {
             try {
                 if ($this->isUseProxy) {
-                    $feedXml            = curlRequestWithProxy($feed);
+                    $feedXml = curlRequestWithProxy($feed);
                     $subclassBossesFeed = simplexml_load_string($feedXml);
                 } else {
                     $subclassBossesFeed = simplexml_load_file($feed);
