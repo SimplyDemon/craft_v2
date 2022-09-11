@@ -11,32 +11,41 @@ class PriceParserController extends Controller
     protected array $blackListItems;
     protected array $replaceWorldsRules;
 
-    public function start()
+    public function start($command)
     {
-
-        $filePath           = $this->getFilePath();
-        $parsedResources    = json_decode(file_get_contents($filePath), true);
+        $filePath = $this->getFilePath();
+        $command->info('File is: ' . $filePath);
+        $parsedResources = json_decode(file_get_contents($filePath), true);
         $resourcesBlackList = $this->getResourcesBlackList();
         $replaceWorldsRules = $this->getReplaceWorldsRules();
 
         foreach ($parsedResources as $parsedResource) {
             /* Ignore items in black list */
             if (in_array($parsedResource['name'], $resourcesBlackList)) {
+                $command->info('Resource in black list: ' . $parsedResource['name']);
                 continue;
             }
 
             /* If name is incorrect - replace it with correct one */
             if (isset($replaceWorldsRules[$parsedResource['name']])) {
+                $command->info(
+                    "Name '{$parsedResource['name']}' incorrect, replaced on '{$replaceWorldsRules[$parsedResource['name']]}'."
+                );
                 $parsedResource['name'] = $replaceWorldsRules[$parsedResource['name']];
             }
             $resource = Resource::where('name', $parsedResource['name'])->get();
 
             /* Log if item name was not parsed correct */
             if ($resource->isEmpty()) {
-                Log::channel('parser')->info("Resource {$parsedResource['name']} was not found. File ".$filePath);
+                $command->info('Resource not found: ' . $parsedResource['name']);
+                Log::channel('parser')->info("Resource {$parsedResource['name']} was not found. File " . $filePath);
             } elseif ($resource->count() > 1) {
-                Log::channel('parser')->info("Resource {$parsedResource['name']} found for than one item. File ".$filePath);
+                $command->info("Resource {$parsedResource['name']} found for than one item. File " . $filePath);
+                Log::channel('parser')->info(
+                    "Resource {$parsedResource['name']} found for than one item. File " . $filePath
+                );
             } else {
+                $command->info("Resource '{$parsedResource['name']}' new price is " . (int)$parsedResource['price']);
                 $resource = $resource->first();
                 $resource->update([
                     'price_sell' => (int)$parsedResource['price'],

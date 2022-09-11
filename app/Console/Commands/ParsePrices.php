@@ -33,6 +33,8 @@ class ParsePrices extends Command
 
     public function handle()
     {
-        app(PriceParserController::class)->start();
+        $this->info('Parse started.');
+        app(PriceParserController::class)->start($this);
+        $this->info('Parse ended.');
     }
 }
