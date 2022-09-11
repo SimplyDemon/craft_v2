@@ -182,14 +182,14 @@ $( '.resource_table_line-expand-resource, .resource_table_line-de-expand-resourc
 
     if ( $( this ).hasClass( 'resource_table_line-de-expand-resource' ) ) {
         /* If clicked minus de-expand all child tr */
-        tr.removeClass( 'disabled-with-js' );
-        disableCheckbox.prop( 'disabled', false ).prop( 'checked', false );
-        let nextTr = tr.next()
-        while ( nextTr.hasClass( 'child' ) ) {
-            nextTr.addClass( 'disabled-with-js' ).addClass( 'd-none' );
-            nextTr.find( '.resource_table_line-de-expand-resource' ).addClass( 'd-none' );
-            nextTr.find( '.resource_table_line-expand-resource' ).removeClass( 'd-none' );
-            nextTr.find( '.disable-row' ).prop( 'checked', false );
+        tr.removeClass('disabled-with-js');
+        disableCheckbox.prop('disabled', false).prop('checked', false);
+        let nextTr = tr.next();
+        while (nextTr.hasClass('child') && nextTr.find($(this)).length > 0) {
+            nextTr.addClass('disabled-with-js').addClass('d-none');
+            nextTr.find('.resource_table_line-de-expand-resource').addClass('d-none');
+            nextTr.find('.resource_table_line-expand-resource').removeClass('d-none');
+            nextTr.find('.disable-row').prop('checked', false);
             nextTr = nextTr.next();
         }
     } else {
