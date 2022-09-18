@@ -37,15 +37,14 @@ class PriceParserController extends Controller
 
             /* Log if item name was not parsed correct */
             if ($resource->isEmpty()) {
-                $command->info('Resource not found: ' . $parsedResource['name']);
+                $command->warn('Resource not found: ' . $parsedResource['name']);
                 Log::channel('parser')->info("Resource {$parsedResource['name']} was not found. File " . $filePath);
             } elseif ($resource->count() > 1) {
-                $command->info("Resource {$parsedResource['name']} found for than one item. File " . $filePath);
+                $command->warn("Resource {$parsedResource['name']} found for than one item. File " . $filePath);
                 Log::channel('parser')->info(
                     "Resource {$parsedResource['name']} found for than one item. File " . $filePath
                 );
             } else {
-                $command->info("Resource '{$parsedResource['name']}' new price is " . (int)$parsedResource['price']);
                 $resource = $resource->first();
                 $resource->update([
                     'price_sell' => (int)$parsedResource['price'],
