@@ -339,7 +339,6 @@ class Recipe extends Model
         return $bonusInfo;
     }
 
-
     protected function getBonusPvpWeapon(Recipe $single)
     {
         $parentCategoryId = $this->category->category_id ?? null;
@@ -442,13 +441,9 @@ class Recipe extends Model
         /* Skull Edge Dagger Dual, top s84, Mamba Edge Dual Daggers 50 000 славы + 10 563 400 */
 
         $cost = match ($single->age) {
-            's' => [
+            's', 'dynasty' => [
                 'adena' => 1154520,
                 'fame' => 11545,
-            ],
-            'dynasty' => [
-                'adena' => 3747300,
-                'fame' => 18700,
             ],
             'moirai' => [
                 'adena' => 5171950,

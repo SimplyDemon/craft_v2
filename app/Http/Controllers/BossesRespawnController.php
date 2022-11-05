@@ -53,7 +53,7 @@ class BossesRespawnController extends Controller
             //            'bossesX7'                => $bossesX7,
             'bossesX15' => $bossesX15,
             'bossesChosenServer' => $bossesChosenServer,
-            'title' => 'Респ Саб РБ и Эпик РБ',
+            'title' => 'Asterios Респ РБ Саб и Эпик',
         ]);
     }
 

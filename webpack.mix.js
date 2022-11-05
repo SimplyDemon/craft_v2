@@ -13,9 +13,10 @@ const mix = require('laravel-mix');
 const CompressionPlugin = require( "compression-webpack-plugin" );
 const zlib              = require( "zlib" );
 
-mix.js( 'resources/js/app.js', 'public/js' )
-    .js( 'resources/js/recipes.js', 'public/js' )
-    .js( 'resources/js/recipes-show.js', 'public/js' )
+mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/recipes.js', 'public/js')
+    .js('resources/js/recipes-show.js', 'public/js')
+    .js('resources/js/swiper.js', 'public/js')
     .js( 'resources/js/ajax-search.js', 'public/js' )
     .js( 'resources/js/chart.js', 'public/js' )
     .js( 'resources/js/index.js', 'public/js' )

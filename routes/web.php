@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ResourceController;
 use App\Http\Controllers\BeltController;
 use App\Http\Controllers\BossesRespawnController;
 use App\Http\Controllers\ConversationController;
+use App\Http\Controllers\EnchantmentController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\JewelryEpicController;
 use App\Http\Controllers\JewelryTWController;
@@ -50,6 +51,8 @@ Route::middleware( 'auth.dev' )->group( function () {
     Route::get('/jewelry-tw', [JewelryTWController::class, 'index'])->name('jewelry.tw');
     Route::get('/jewelry-epic', [JewelryEpicController::class, 'index'])->name('jewelry.epic');
     Route::get('/belt', [BeltController::class, 'index'])->name('belt');
+
+    Route::get('/enchantment', [EnchantmentController::class, 'index'])->name('enchantment');
 
     Route::resource('recipes', RecipeController::class)->only(['index', 'show']);
 

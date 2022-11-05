@@ -90,7 +90,13 @@ class PriceParserController extends Controller
     {
         $this->replaceWorldsRules = [
             'Animal Bone Fragment' => 'Animal Bone',
-            'Warsmith\' Holder'    => 'Warsmith Holder',
+            'Warsmith\' Holder' => 'Warsmith Holder',
+            'Durable Metal Piate' => 'Durable Metal Plate',
+            'Crystal (S-grade)' => 'Crystal S',
+            'Crystal (A-grade)' => 'Crystal A',
+            'Crystal (B-grade)' => 'Crystal B',
+            'Crystal (C-grade)' => 'Crystal C',
+            'Crystal (D-grade)' => 'Crystal D',
         ];
     }
 

@@ -23,3 +23,7 @@
 @if(Route::is('bosses_respawn'))
     <script defer src="{{ mix('js/index.js') }}"></script>
 @endif
+
+@if(Route::is('enchantment'))
+    <script defer src="{{ mix('js/swiper.js') }}"></script>
+@endif
