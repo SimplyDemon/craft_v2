@@ -1,17 +1,19 @@
 <div class="nk-tabs">
     <ul class="nav nav-tabs rb-tab" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active color-main-1-important" href="#{{$server}}-subclass" role="tab" data-toggle="tab">Сабкласс РБ</a>
+            <a class="nav-link active color-main-1-important" href="#{{removeDot($server)}}-subclass" role="tab"
+               data-toggle="tab">Сабкласс РБ</a>
         </li>
         @if($bosses['epic']->isNotEmpty())
             <li class="nav-item">
-                <a class="nav-link color-main-1-important" href="#{{$server}}-epic" role="tab" data-toggle="tab">Эпик
+                <a class="nav-link color-main-1-important" href="#{{removeDot($server)}}-epic" role="tab"
+                   data-toggle="tab">Эпик
                     РБ</a>
             </li>
         @endif
     </ul>
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade show active" id="{{$server}}-subclass">
+        <div role="tabpanel" class="tab-pane fade show active" id="{{removeDot($server)}}-subclass">
             <div class="nk-gap-1"></div>
 
             <h2 class="nk-title h1">Респ сабкласс РБ {{$server}}</h2>
@@ -29,7 +31,7 @@
             <div class="nk-gap-1"></div>
         </div>
         @if($bosses['epic']->isNotEmpty())
-            <div role="tabpanel" class="tab-pane fade" id="{{$server}}-epic">
+            <div role="tabpanel" class="tab-pane fade" id="{{removeDot($server)}}-epic">
                 <div class="nk-gap-1"></div>
 
                 <h2 class="nk-title h1">Респ эпик РБ {{$server}}</h2>

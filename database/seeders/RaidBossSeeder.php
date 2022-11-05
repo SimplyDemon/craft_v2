@@ -191,15 +191,23 @@ class RaidBossSeeder extends Seeder {
 
         $antharasArgsX5['server'] = 'x5';
         $valacasArgsX5['server']  = 'x5';
-        $baiumArgsX5['server']    = 'x5';
+        $baiumArgsX5['server'] = 'x5';
 
         $antharasArgsX7 = $antharasArgs;
-        $valacasArgsX7  = $valacasArgs;
-        $baiumArgsX7    = $baiumArgs;
+        $valacasArgsX7 = $valacasArgs;
+        $baiumArgsX7 = $baiumArgs;
 
         $antharasArgsX7['server'] = 'x7';
-        $valacasArgsX7['server']  = 'x7';
-        $baiumArgsX7['server']    = 'x7';
+        $valacasArgsX7['server'] = 'x7';
+        $baiumArgsX7['server'] = 'x7';
+
+        $antharasArgsX15 = $antharasArgs;
+        $valacasArgsX15 = $valacasArgs;
+        $baiumArgsX15 = $baiumArgs;
+
+        $antharasArgsX15['server'] = 'x1.5';
+        $valacasArgsX15['server'] = 'x1.5';
+        $baiumArgsX15['server'] = 'x1.5';
 
         /* x1 bosses */
         RaidBoss::create($antharasArgs);
@@ -215,5 +223,10 @@ class RaidBossSeeder extends Seeder {
         RaidBoss::create($antharasArgsX7);
         RaidBoss::create($valacasArgsX7);
         RaidBoss::create($baiumArgsX7);
+
+        /* x1.5 bosses */
+        RaidBoss::create($antharasArgsX15);
+        RaidBoss::create($valacasArgsX15);
+        RaidBoss::create($baiumArgsX15);
     }
 }

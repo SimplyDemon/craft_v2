@@ -275,3 +275,8 @@ function isGooglePageSpeedVisit(): bool
         && preg_match('/chrome-lighthouse/i', $_SERVER['HTTP_USER_AGENT'])
     );
 }
+
+function removeDot(string $string): array|string
+{
+    return str_replace('.', '', $string);
+}
