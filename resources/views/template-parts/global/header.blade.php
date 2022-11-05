@@ -33,11 +33,11 @@
         <meta property="og:image" content="{{ asset('images/main_img.webp' ) }}"/>
     @endif
     @if(View::hasSection('title'))
-        <title itemprop="headline">@yield('title') | Калькулятор крафта Asterios</title>
-        <meta property="og:title" content="@yield('title') | Калькулятор крафта Asterios">
+        <title itemprop="headline">@yield('title') | Калькулятор крафта Asterios для La 2</title>
+        <meta property="og:title" content="@yield('title') | Калькулятор крафта Asterios для La 2">
     @else
-        <title itemprop="headline">Калькулятор крафта Asterios для Lineage 2</title>
-        <meta property="og:title" content="Калькулятор крафта Asterios для Lineage 2">
+        <title itemprop="headline">Калькулятор крафта Asterios для La 2</title>
+        <meta property="og:title" content="Калькулятор крафта Asterios для La 2">
     @endif
 
     @if(View::hasSection('description'))
@@ -45,9 +45,9 @@
         <meta property="og:description" content="@yield('description')">
     @else
         <meta itemprop="description" name="description"
-              content="@yield('meta_description','Калькулятор крафта Астериос для Lineage 2. Список ТВ бижи, Эпик бижутерии, поясов и тд. Таймер показывает респ Саб класс РБ и Эпик РБ.')">
+              content="@yield('meta_description','Калькулятор крафта Астериос для La 2. Список ТВ бижи, Эпик бижутерии, поясов и тд. Таймер показывает респ Саб класс РБ и Эпик РБ.')">
         <meta property="og:description"
-              content="@yield('meta_description','Калькулятор крафта Астериос для Lineage 2. Список ТВ бижи, Эпик бижутерии, поясов и тд. Таймер показывает респ Саб класс РБ и Эпик РБ.')">
+              content="@yield('meta_description','Калькулятор крафта Астериос для La 2. Список ТВ бижи, Эпик бижутерии, поясов и тд. Таймер показывает респ Саб класс РБ и Эпик РБ.')">
     @endif
 
     @if(isset($faq))
