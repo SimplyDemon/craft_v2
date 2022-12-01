@@ -15,7 +15,7 @@
             {{date( 'd.m.Y', strtotime( $single->created_at ) )}}
         </div>
         <div class="nk-post-text">
-            {{ $single->description_seo }}
+            {{ $single->excerpt }}
         </div>
         <a href="{{route('posts.show', $single)}}" class="nk-btn link-effect-4">
             Читать
