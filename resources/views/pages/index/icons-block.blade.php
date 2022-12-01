@@ -9,7 +9,7 @@
                 </div>
                 <div class="nk-ibox-cont">
                     <h2 class="nk-ibox-title">Игровой сервер</h2>
-                    Калькулятор сделан для сервера Asterios.tm
+                    Калькулятор сделан для сервера Asterios
                 </div>
             </div>
         </div>
