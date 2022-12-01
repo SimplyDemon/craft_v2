@@ -28,6 +28,9 @@ class IndexController extends Controller
     {
         $recipesCount = Recipe::where('category_id', '!=', 5)->where('category_id', '!=', 4)->count();
         $resourcesCount = Resource::where('type', 'resource')->count();
+        $postController = new PostController();
+
+        $recentPosts = $postController->getRecentPosts(0, 2);
 
         $resourcesLink = route('resources.index');
         $faq = [];
@@ -44,6 +47,7 @@ class IndexController extends Controller
             'title' => 'Калькулятор крафта Asterios',
             'lastResourcesUpdateTime' => $lastResourcesUpdateTime ?? '???',
             'faq' => $faq,
+            'recentPosts' => $recentPosts,
         ]);
     }
 

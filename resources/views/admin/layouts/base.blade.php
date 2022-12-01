@@ -117,6 +117,9 @@ $isAdmin = $isAuth && $user->isAdmin;
     </div>
 </main>
 
+<script src="{{ mix('js/manifest.js') }}"></script>
+<script src="{{ mix('js/jquery.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 <script defer src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
 <script defer src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 <script defer src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>

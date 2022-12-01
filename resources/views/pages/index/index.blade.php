@@ -4,7 +4,9 @@
 @section('content')
     <div class="nk-main">
         @include('pages.index.hero')
-        @include('pages.index.blog-fresh')
+        @if($recentPosts->isNotEmpty())
+            @include('pages.index.posts-recent')
+        @endif
         @include('pages.index.description')
         @include('pages.index.icons-block')
         @if($faq && is_array($faq))

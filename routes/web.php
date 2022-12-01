@@ -22,6 +22,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\JewelryEpicController;
 use App\Http\Controllers\JewelryTWController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\PriceParserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TestController;
@@ -52,24 +53,24 @@ Route::middleware( 'auth.dev' )->group( function () {
     Route::get('/jewelry-epic', [JewelryEpicController::class, 'index'])->name('jewelry.epic');
     Route::get('/belt', [BeltController::class, 'index'])->name('belt');
 
+    Route::get('/non-craftable', [RecipeController::class, 'nonCraftableItems'])->name('non_craftable');
+    Route::get('/resources_list', [ResourceController::class, 'index'])->name('resources.index');
+
     Route::get('/enchantment', [EnchantmentController::class, 'index'])->name('enchantment');
 
     Route::resource('recipes', RecipeController::class)->only(['index', 'show']);
-
-    Route::get('/non-craftable', [RecipeController::class, 'nonCraftableItems'])->name('non_craftable');
-
-
     Route::resource('resources', ResourceController::class)->only(['show']);
-    Route::get('/resources_list', [ResourceController::class, 'index'])->name('resources.index');
+    Route::resource('posts', PostController::class)->only(['index', 'show']);
+
 
     Route::middleware('auth')->group(function () {
         Route::resource('conversations', ConversationController::class)->parameters([
             'conversations' => 'id',
-        ] )->only( [ 'index', 'create', 'store', 'show' ] );
+        ])->only(['index', 'create', 'store', 'show']);
 
-        Route::resource( 'messages', MessageController::class )->parameters( [
+        Route::resource('messages', MessageController::class)->parameters([
             'messages' => 'id',
-        ] )->only( [ 'store' ] );
+        ])->only(['store']);
 
         Route::prefix( 'user' )->group( function () {
             Route::get( '/', [ UserController::class, 'index' ] )->name( 'user' );
@@ -105,13 +106,11 @@ Route::middleware( 'auth.dev' )->group( function () {
                 'categories' => 'id',
             ]);
 
-            Route::resource('recipes', RecipeController::class)->parameters([
-                'recipes' => 'id',
-            ])->except(['index', 'show']);
+            Route::resource('recipes', RecipeController::class)->except(['index', 'show']);
 
-            Route::resource('resources', ResourceController::class)->parameters([
-                'resources' => 'id',
-            ] )->except( [ 'index', 'show' ] );
+            Route::resource('posts', PostController::class)->except(['index', 'show', 'destroy']);
+
+            Route::resource('resources', ResourceController::class)->except(['index', 'show']);
         } );
 
     } );

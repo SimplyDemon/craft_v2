@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
 class CategoryController extends Controller {
     protected string $name = 'categories.';
     protected string $folderPath = 'admin.pages.categories.';
-    const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
+    public const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
 
 
     public function index() {

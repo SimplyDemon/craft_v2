@@ -7,11 +7,13 @@
       "description": "{{$single->description_schema}}",
       "image": "{{asset('storage') . '/' . $single->img}}",
       "recipeIngredient": [
-        @foreach($resourcesData as $resource)
+            @foreach($resourcesData as $resource)
         "{{$resource['name']}} x {{$resource['quantity']}}"{{$loop->last ? '' : ','}}
     @endforeach
     ],
-    "name": "{{$single->name}}"
+"name": "{{$single->name}}"
     }
+
+
 
 </script>

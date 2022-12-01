@@ -9,6 +9,7 @@ use App\Models\Recipe;
 use App\Models\Resource;
 use App\Services\PrepareRecipeResourcesService;
 use Illuminate\Database\QueryException;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -20,7 +21,7 @@ class RecipeController extends Controller {
     protected string $name = 'recipes.';
     protected string $folderPath = 'admin.pages.recipes.';
     protected string $folderPathUser = 'pages.recipes.';
-    const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
+    public const QUERY_EXCEPTION_READABLE_MESSAGE = 2;
 
 
     public function index() {
@@ -203,7 +204,7 @@ class RecipeController extends Controller {
     }
 
 
-    public function update(EditRecipe $request, Recipe $recipe)
+    public function update(EditRecipe $request, Recipe $recipe): RedirectResponse
     {
         $method = $request->input('method');
         $resourceIDs = $request->input('resource_ids');

@@ -54,7 +54,7 @@
         {!! getFaqSchemaHtml($faq) !!}
     @endif
 
-    @if(Route::is('recipes.show') && View::hasSection('single'))
+    @if( View::hasSection('meta_keywords'))
         <meta itemprop="keywords" name="keywords" content="@yield('meta_keywords') @yield('title')">
     @else
         <meta itemprop="keywords" name="keywords"
@@ -92,7 +92,7 @@
     @endif
 </head>
 
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
 
 @if (env( 'APP_ENV' ) === 'prod' && !isGooglePageSpeedVisit())
     <!-- Yandex.Metrika counter -->
@@ -169,7 +169,6 @@
             </div>
 
         </div>
-    </div>
     </div>
 </nav>
 

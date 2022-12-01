@@ -16,6 +16,9 @@
                            class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-1">
                             Респ РБ
                         </a>
+                        <a href="{{route('posts.index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
+                            <span class="index-new-button-span">NEW</span> <span>Статьи</span>
+                        </a>
                         <a href="{{route('non_craftable')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
                             Не крафтовые предметы
                         </a>

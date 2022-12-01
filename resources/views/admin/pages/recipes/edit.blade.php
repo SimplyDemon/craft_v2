@@ -20,7 +20,7 @@
         </h1>
     </div>
 
-    <form method="POST" action="{{ route( 'recipes.update', [ 'id' => $single->id ] ) }}">
+    <form method="POST" action="{{ route( 'recipes.update', [ 'recipe' => $single ] ) }}">
         @csrf
         @method('PUT')
         <input type="hidden" name="currentID" value="{{$single->id}}">
@@ -142,7 +142,9 @@
 @endsection
 
 @push('footer_scripts')
-    <script>
-        Laraberg.init('description');
+    <script defer>
+        $(document).ready(function () {
+            Laraberg.init('description');
+        });
     </script>
 @endpush
