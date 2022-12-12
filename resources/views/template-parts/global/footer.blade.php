@@ -1,3 +1,16 @@
+<div class="nk-share-buttons nk-share-buttons-left d-none d-md-flex">
+    <ul>
+        <li>
+            <span class="nk-share-icon" title="Присоединиться к Discord" data-share="discord">
+                <a href="https://discord.gg/m9wKv8BRBR" target="_blank" rel="nofollow">
+                    <img width="20" height="20" src="{{ asset('images/discord-ico.svg' ) }}" alt="discord">
+                </a>
+            </span>
+            <span class="nk-share-name">Discord</span>
+        </li>
+    </ul>
+</div>
+
 <footer itemscope itemtype="http://schema.org/WPFooter" class="nk-footer nk-footer-parallax nk-footer-parallax-opacity">
     <img loading="lazy" class="nk-footer-top-corner" src="{{ asset('images/footer-corner.webp' ) }}"
          alt="footer-corner">
@@ -17,7 +30,7 @@
         <div class="nk-gap"></div>
         <meta itemprop="copyrightYear" content="2021">
         <p>
-            &copy; <?= date('Y') == 2021 ? 2021 : '2021—' . date('Y')?>
+            &copy; <?= date('Y') == 2021 ? 2021 : '2021—' . date('Y') ?>
         </p>
 
         <div class="nk-gap-4"></div>
