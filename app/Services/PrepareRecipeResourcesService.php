@@ -34,14 +34,15 @@ class PrepareRecipeResourcesService {
         }
 
         return [
-            'recipe'                => $recipe,
-            'total'                 => $this->total,
-            'totalText'             => $totalText,
-            'totalAdminPrice'       => $this->totalAdminPrice,
-            'totalAdminPriceText'   => $totalAdminPriceText,
-            'isCountMoreThenOne'    => $isCountMoreThenOne,
+            'recipe' => $recipe,
+            'total' => $this->total,
+            'totalText' => $totalText,
+            'totalAdminPrice' => $this->totalAdminPrice,
+            'totalAdminPriceText' => $totalAdminPriceText,
+            'isCountMoreThenOne' => $isCountMoreThenOne,
             'isTotalPriceDifferent' => $isTotalPriceDifferent,
-            'resourcesData'         => $resourcesData,
+            'resourcesData' => $resourcesData,
+            'craftCount' => $recipe->craft_count,
         ];
 
     }

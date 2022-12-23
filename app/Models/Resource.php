@@ -58,8 +58,8 @@ class Resource extends Model {
             'url'                  => $resourceUrl,
             'id'                   => $this->id,
             'imgUrl'               => asset( 'storage' ) . '/' . $this->img,
-            'name'                 => $this->name,
-            'quantity'             => $resourceQuantity,
+            'name' => $this->name,
+            'quantity' => $resourceQuantity,
             'price' => $resourcePrice,
             'linePrice' => $linePrice,
             'adminLinePrice' => $adminLinePrice,
@@ -68,6 +68,7 @@ class Resource extends Model {
             'tooltipLinePriceText' => $tooltipLinePriceText,
             'subResources' => $subResources ?? null,
             'subResourcesData' => $subResourcesData ?? null,
+            'craftCount' => $this->recipe->craft_count ?? 1,
         ];
     }
 

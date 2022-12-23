@@ -14,7 +14,9 @@
     $uniqueTrString = md5(uniqid(rand(), true));
 @endphp
 <tr class="resource_table_line {{$class}}" data-tr-unique="{{$uniqueTrString}}" data-id="{{$resource['id']}}"
-    data-parent-tr-unique="{{$parentUniqueTrString ?? ''}}" data-parent-id="{{$parentResourceId ?? '' }}">
+    data-parent-tr-unique="{{$parentUniqueTrString ?? ''}}" data-parent-id="{{$parentResourceId ?? '' }}"
+    data-craft-count="{{$resource['craftCount']}}"
+>
     <td>
         <a class="resource-link" href="{{$resource['url']}}">
             <img width="30" src="{{$resource['imgUrl']}}" alt="{{$resource['name']}}">

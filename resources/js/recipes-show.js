@@ -1,4 +1,5 @@
 let isConfirmAdded = false;
+updateQuantities();
 function updatePrices() {
     let tables = $( 'table' );
     if ( !isConfirmAdded ) {
@@ -142,22 +143,32 @@ $( "tr.tr-total td[data-craft-count] input" ).on( 'change', function() {
         recipeQuantity.html( recipeQuantityTotal.toLocaleString() );
     }
 
-    updateColumn( input, 'data-craft-count', value );
-    let table      = input.closest( 'table' );
-    let quantities = table.find( 'td[data-quantity]' );
-    quantities.each( function() {
-        let quantityBase = $( this ).attr( 'data-quantity-base' );
-        let maxQuantity  = parseInt( quantityBase ) * value;
-        $( this ).attr( 'data-quantity', maxQuantity );
-        $( this ).html( (parseInt( quantityBase ) * value).toLocaleString() );
-        $( this ).closest( 'tr' ).find( '[data-has] input' ).prop( 'max', maxQuantity );
-        updateRowTotal( $( this ).closest( 'tr' ) );
-    } );
-
+    updateQuantities(value);
     updateRecipesTotal();
     updatePrices();
 } );
 
+function updateQuantities(value = 1) {
+    let table = $('table');
+    let quantities = table.find('td[data-quantity]');
+    quantities.each(function () {
+        let quantityBase = $(this).attr('data-quantity-base');
+        let maxQuantity = parseInt(quantityBase) * value;
+        let parentId = $(this).closest('tr').attr('data-parent-id');
+        if (parentId.length > 0) {
+            let parentCraftCount = parseInt(table.find("[data-id='" + parentId + "']").attr('data-craft-count'));
+            if (parentCraftCount > 1) {
+                maxQuantity = Math.ceil(maxQuantity / parentCraftCount);
+            }
+        }
+
+        $(this).attr('data-quantity', maxQuantity);
+        $(this).html((maxQuantity).toLocaleString());
+        $(this).closest('tr').find('[data-has] input').prop('max', maxQuantity);
+
+        updateRowTotal($(this).closest('tr'));
+    });
+}
 $( function() {
     $( '[data-toggle="tooltip"]' ).tooltip()
 } );

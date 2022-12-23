@@ -163,7 +163,8 @@ class RecipeController extends Controller {
             'isCountMoreThenOne' => $recipeData['isCountMoreThenOne'],
             'isTotalPriceDifferent' => $recipeData['isTotalPriceDifferent'],
             'resourcesData' => $recipeData['resourcesData'],
-            'tooltipPriceImg'       => $tooltipPriceImg,
+            'tooltipPriceImg' => $tooltipPriceImg,
+            'craftCount' => $recipe->craft_count,
         ] );
     }
 
