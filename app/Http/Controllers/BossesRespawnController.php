@@ -32,26 +32,23 @@ class BossesRespawnController extends Controller
             'epic' => $raidBossController->getBossesDeathTime('epic', 'x5'),
         ];
 
-        /*
-         * x7 was merged, temp dont show x7 bosses on index
-        $bossesX7           = [
+        $bossesX7 = [
             'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x7'),
-            'epic'     => $raidBossController->getBossesDeathTime('epic', 'x7'),
+            'epic' => $raidBossController->getBossesDeathTime('epic', 'x7'),
         ];
-*/
 
 
-        $bossesX15 = [
-            'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x1.5'),
-            'epic' => $raidBossController->getBossesDeathTime('epic', 'x1.5'),
-        ];
+//        $bossesX15 = [
+//            'subclass' => $raidBossController->getBossesDeathTime('subclass', 'x1.5'),
+//            'epic' => $raidBossController->getBossesDeathTime('epic', 'x1.5'),
+//        ];
 
 
         return view('pages.bosses-respawn.index', [
             'bossesX1' => $bossesX1,
             'bossesX5' => $bossesX5,
-            //            'bossesX7'                => $bossesX7,
-            'bossesX15' => $bossesX15,
+            'bossesX7' => $bossesX7,
+//            'bossesX15' => $bossesX15,
             'bossesChosenServer' => $bossesChosenServer,
             'title' => 'Asterios Респ РБ Саб и Эпик',
         ]);
