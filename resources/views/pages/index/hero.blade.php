@@ -16,9 +16,10 @@
                            class="nk-btn nk-btn-lg nk-btn-color-main-1 link-effect-1">
                             Респ РБ
                         </a>
-                        <a href="{{route('posts.index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
-                            <span class="index-new-button-span">NEW</span> <span>Статьи</span>
+                        <a href="{{route('enchantment')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
+                            <span class="index-new-button-span">NEW</span> <span>Калькулятор заточки</span>
                         </a>
+
                         <a href="{{route('non_craftable')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
                             Не крафтовые предметы
                         </a>
@@ -32,6 +33,9 @@
                         </a>
                         <a href="{{route('belt')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
                             Пояса
+                        </a>
+                        <a href="{{route('posts.index')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
+                            Статьи
                         </a>
                     </div>
                     <div class="nk-gap-4"></div>
