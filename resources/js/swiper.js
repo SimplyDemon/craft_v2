@@ -32,7 +32,11 @@ $('.sd-test').click(function () {
 
 });
 $('.recipes-list__enchant-button').click(function () {
+    $('.recipes-list__enchant-button_active').removeClass('recipes-list__enchant-button_active');
+    $(this).addClass('recipes-list__enchant-button_active');
+    $('.sd-active-recipe').removeClass('sd-active-recipe');
     let recipe = $(this).closest('.swiper-slide');
+    recipe.addClass('sd-active-recipe');
     let url = recipe.find('div > a').attr('href');
     let gradeImg = recipe.find('div > img').attr('src');
     let img = recipe.find('div > a > img').attr('src');
@@ -62,10 +66,11 @@ $('.recipes-list__enchant-button').click(function () {
     enchantmentItem.find('.enchantment-item__soulshot-img').attr('src', soulshotImg);
     enchantmentItem.find('.enchantment-item__spiritshot-img').attr('src', spiritshotImg);
 
-});
+    $('.sd-color-green').removeClass('sd-color-green');
+    $('.enchantment-item__change-value').val(0);
+    enchantmentChangeByValue(0);
 
-$('.enchantment-item-container__reset-button').click(function () {
-
+    $('.enchantment-item-container').show();
 });
 
 $('.enchantment-category-button').click(function () {
@@ -73,18 +78,21 @@ $('.enchantment-category-button').click(function () {
     let key = $(this).attr('data-key');
     let swiper = $('.swiper[data-key=' + key + ']');
     swiper.removeClass('d-none').addClass('sd-swiper-active');
+    $('.enchantment-item-container').hide();
+    $('.enchantment-category-button_active').removeClass('enchantment-category-button_active');
+    $(this).addClass('enchantment-category-button_active');
 });
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
 
-$("#enchantment-change-value").change(function () {
-    let enchantmentValue = parseInt($(this).val());
+function enchantmentChangeByValue(enchantmentValue) {
     if (enchantmentValue < 0 || enchantmentValue > 16) {
         return false;
     }
-    let item = $(this).closest('.enchantment-item');
+    let item = $('.enchantment-item');
+    let isMage = $('.sd-active-recipe').attr('data-is-mage') === 'true';
     let primaryPAttack = parseInt(item.attr('data-p-attack'));
     let primaryMAttack = parseInt(item.attr('data-m-attack'));
     let grade = item.attr('data-grade');
@@ -115,16 +123,25 @@ $("#enchantment-change-value").change(function () {
         bonusEnchantAttackM = bonusPerEnchant['m'] * 3;
         bonusEnchantAttackM += bonusPerEnchant['m'] * (enchantmentValue - 3) * 2;
     }
-
+    let attackValue;
     let totalPAttack = primaryPAttack + bonusEnchantAttackP;
     let totalMAttack = primaryMAttack + bonusEnchantAttackM;
-    slideToClosestAttack(totalPAttack);
+    if (isMage) {
+        attackValue = totalMAttack;
+    } else {
+        attackValue = totalPAttack;
+    }
+    slideToClosestAttack(attackValue, isMage);
 
     displayPAttack.text(totalPAttack);
     displayMAttack.text(totalMAttack);
 
     attackExtraP.text('(+' + bonusEnchantAttackP + ')');
     attackExtraM.text('(+' + bonusEnchantAttackM + ')');
+}
+$("#enchantment-change-value").change(function () {
+    let enchantmentValue = parseInt($(this).val());
+    enchantmentChangeByValue(enchantmentValue);
 });
 
 
@@ -234,11 +251,34 @@ function getEnchantmentChance(enchantmentValue) {
     return (Math.pow(baseChance, enchantmentValue - safeEnchantment) * 100).toFixed(2);
 }
 
-function slideToClosestAttack(value, isMage = false) {
+function slideToClosestAttack(currentAttack, isMage = false) {
     let swiperActiveIndex = getSwiperActiveIndex();
     if (swiperActiveIndex.length === 0) {
         return;
     }
-    let searchWeaponIndex = $('.sd-swiper-active .swiper-slide[data-p-attack="' + value + '"]').index();
-    swiper[swiperActiveIndex].slideTo(searchWeaponIndex)
+
+    let attackType;
+    if (isMage) {
+        attackType = 'm';
+    } else {
+        attackType = 'p';
+    }
+
+    let swiperSlides = $('.sd-swiper-active .swiper-slide');
+    let bestDifferent = null;
+    let bestDifferentIndex;
+    swiperSlides.each(function (index, value) {
+        let weaponAttack = $(value).attr('data-' + attackType + '-attack');
+        let different = Math.abs(parseInt(currentAttack) - parseInt(weaponAttack));
+
+        if ((bestDifferent === null || bestDifferent > different) && currentAttack >= weaponAttack) {
+            bestDifferent = different;
+            bestDifferentIndex = index;
+        }
+    });
+    $('.sd-color-green').removeClass('sd-color-green');
+    $(swiperSlides[bestDifferentIndex]).find('.recipe__' + attackType + '-attack span').addClass('sd-color-green');
+
+
+    swiper[swiperActiveIndex].slideTo(bestDifferentIndex);
 }

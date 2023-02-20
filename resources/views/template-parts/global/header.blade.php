@@ -90,6 +90,10 @@
     @if(Route::is('recipes.index') || Route::is('non_craftable') )
         <link href="{{ mix('css/recipes.css') }}" rel="stylesheet">
     @endif
+
+    @if(Route::is('enchantment') )
+        <link href="{{ mix('css/enchantment.css') }}" rel="stylesheet">
+    @endif
 </head>
 
 <body itemscope itemtype="https://schema.org/WebPage">

@@ -152,6 +152,10 @@ canvas#price-chart {
     color: rgba(92, 184, 92, .9);
 }
 
+.sd-color-green:hover {
+    color: rgba(92, 184, 92, .9);
+}
+
 .sd-color-red {
     color: rgba(217, 83, 79, 0.9);
 }

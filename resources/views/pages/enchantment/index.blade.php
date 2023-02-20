@@ -17,57 +17,7 @@
             <p>
                 {!! $content !!}
             </p>
-            <style>
-                .swiper-button-next, .swiper-button-prev {
-                    color: aqua;
-                    top: 152px;
-                    margin-top: 0;
-                }
 
-                .swiper-pagination {
-                    position: inherit;
-                    width: 80% !important;
-                    margin: 30px auto 30px;
-                }
-
-                .enchantment-item {
-                    margin-top: 10px;
-                    border: 2px solid #8b5151;
-                    padding: 10px;
-                    display: inline-block;
-                }
-
-                .enchantment-item-container {
-                    text-align: center;
-                }
-
-                .recipes-list__enchant-button:focus {
-                    outline: none;
-                }
-
-                .enchantment-item-container {
-                    display: flex;
-                    justify-content: center;
-                }
-
-                .enchantment-item-container__reset {
-                    align-self: center;
-                }
-
-                .enchantment-item__change {
-                    display: flex;
-                    align-items: baseline;
-                    justify-content: space-around;
-                }
-
-                .enchantment-item__change-value {
-                    width: 50%;
-                }
-
-                .enchantment-item__color-green {
-                    color: #17ea17;
-                }
-            </style>
             <div class="weapon-types">
                 <button class="nk-btn nk-btn-lg nk-btn-color-main-1 enchantment-category-button" data-key="sword">
                     <span>Мечи</span>
@@ -113,7 +63,7 @@
                     ])
                 @endforeach
             </div>
-            <div class="enchantment-item-container">
+            <div class="enchantment-item-container" style="display: none">
                 <div class="">
                     <div class="enchantment-item">
                         <div>
@@ -150,7 +100,7 @@
                             <input id="enchantment-change-value" class="enchantment-item__change-value form-control"
                                    type="number" min="0" max="16" value="0">
                         </div>
-                        <div class="form-group enchantment-item__chance">
+                        <div class="form-group enchantment-item__chance" style="display:none;">
                             <span class="enchantment-item__chance-text">Вероятность: <span
                                     class="enchantment-item__chance-value"></span>%</span>
                         </div>

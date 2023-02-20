@@ -1,0 +1,69 @@
+.recipes-list {
+    div.swiper-button-next, div.swiper-button-prev {
+        color: aqua;
+        margin-top: 50px;
+    }
+
+    div.swiper-pagination {
+        position: unset;
+        width: 80% !important;
+        margin: 30px auto;
+    }
+}
+
+.enchantment-item {
+    margin-top: 10px;
+    border: 2px solid #8b5151;
+    padding: 10px;
+    display: inline-block;
+}
+
+.enchantment-item-container {
+    text-align: center;
+}
+
+.recipes-list__enchant-button:focus {
+    outline: none;
+}
+
+.enchantment-item-container {
+    display: flex;
+    justify-content: center;
+}
+
+.enchantment-item-container__reset {
+    align-self: center;
+}
+
+.enchantment-item__change {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.enchantment-item__change-value {
+    width: 50%;
+}
+
+.enchantment-item__color-green {
+    color: #17ea17;
+}
+
+.enchantment-category-button:focus,
+.enchantment-category-button:active {
+    outline: none;
+}
+
+.enchantment-category-button_active,
+.enchantment-category-button_active:hover {
+    color: white;
+}
+
+.recipes-list__enchant-button_active,
+.recipes-list__enchant-button_active:hover {
+    color: white;
+}
+
+.recipe-list {
+    margin-top: 12px;
+}
