@@ -67,20 +67,20 @@
                 <div class="">
                     <div class="enchantment-item">
                         <div>
-                            <a class="enchantment-item__url" href="https://craft.test/recipes/blood-brother">
+                            <a class="enchantment-item__url" href="/recipes/blood-brother">
                                 <img class="rounded enchantment-item__img" width="32"
-                                     src="https://craft.test/storage/uploads/item/weapon/sword/Blood Brother.webp"
+                                     src="/storage/uploads/item/weapon/sword/Blood Brother.webp"
                                      alt="Blood Brother">
                                 <span class="enchantment-item__title">Blood Brother</span>
                             </a>
 
                             <img class="enchantment-item__grade-img"
-                                 src="https://craft.test/storage/uploads/grade/S.png" alt="grade">
+                                 src="/storage/uploads/grade/S.png" alt="grade">
                         </div>
 
                         <div>
                             <img class="rounded enchantment-item__soulshot-img" height="18px"
-                                 src="https://craft.test/storage/uploads/other/Soulshot (S-grade).webp" alt="soul shot">
+                                 src="/storage/uploads/other/Soulshot (S-grade).webp" alt="soul shot">
                             Физ
                             атака:
                             <span class="nk-btn-color-main-1 enchantment-item__p-attack">405</span>
@@ -88,7 +88,7 @@
                         </div>
                         <div>
                             <img class="rounded enchantment-item__spiritshot-img" height="18px"
-                                 src="https://craft.test/storage/uploads/other/Blessed Spiritshot (S-grade).webp"
+                                 src="/storage/uploads/other/Blessed Spiritshot (S-grade).webp"
                                  alt="spirit shots"> Маг атака:
 
                             <span class="nk-btn-color-main-1 enchantment-item__m-attack">151</span>
