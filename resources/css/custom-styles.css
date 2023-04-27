@@ -378,3 +378,12 @@ img.sd-navbar-bg {
     font-size: large;
     font-weight: 800;
 }
+
+.recipes-index_sa-img {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.recipes-index_sa-level {
+    margin-top: 5px;
+}
