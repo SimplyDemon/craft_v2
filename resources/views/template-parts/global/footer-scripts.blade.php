@@ -4,6 +4,9 @@
 
 @stack('extra-scripts')
 
+@if(Route::is('chose-buffer'))
+    <script defer src="{{ mix('js/chose-buffer.js') }}"></script>
+@endif
 @if(Route::is('recipes.index') || Route::is('non_craftable'))
     <script defer src="{{ mix('js/recipes.js') }}"></script>
 @endif

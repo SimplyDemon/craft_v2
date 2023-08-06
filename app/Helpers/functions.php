@@ -3,6 +3,9 @@
 use App\Models\RaidBoss;
 use App\Models\Recipe;
 use App\Models\Resource;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
@@ -83,7 +86,7 @@ function seederAddRecipe(
         $price = $resource->price_sell;
         $resourceId = $resource->id;
     }
-    var_dump($name);
+
     return Recipe::create([
         'name' => $name,
         'slug' => Str::slug($name, '-'),
@@ -229,6 +232,20 @@ function getRecipeSchemaHtml($recipe)
 }
 
 /**
+ * @param $title // For alt
+ * @param $imgSrc // For src
+ * @return View|Factory|Application
+ */
+function getSkillIconImg($title, $imgSrc): View|Factory|Application
+{
+    return view('pages.chose-buffer.parts.index.skill-icon', [
+        'title' => $title,
+        'imgSrc' => $imgSrc,
+    ]);
+}
+
+
+/**
  * Access to url with curl and proxy
  *
  * @param string $url
@@ -244,7 +261,7 @@ function curlRequestWithProxy(string $url, bool $isRemoveHeaders = true)
     $proxyLogin = env('PROXY_LOGIN');
     $proxyPassword = env('PROXY_PASSWORD');
     if (empty($proxyIp) || empty($proxyPort) || empty($proxyLogin) || empty($proxyPassword)) {
-        throw new \Exception('Not enough proxy data');
+        throw new Exception('Not enough proxy data');
     }
     $proxy = "{$proxyIp}:{$proxyPort}";
     $proxyAuth = "{$proxyLogin}:{$proxyPassword}";

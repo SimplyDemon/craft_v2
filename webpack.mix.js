@@ -15,6 +15,7 @@ const zlib              = require( "zlib" );
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/recipes.js', 'public/js')
+    .js('resources/js/chose-buffer.js', 'public/js')
     .js('resources/js/recipes-show.js', 'public/js')
     .js('resources/js/swiper.js', 'public/js')
     .js('resources/js/ajax-search.js', 'public/js')

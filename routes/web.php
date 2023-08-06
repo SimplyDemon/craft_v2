@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\ResourceController;
 use App\Http\Controllers\BeltController;
 use App\Http\Controllers\BossesRespawnController;
+use App\Http\Controllers\ChoseBufferController;
 use App\Http\Controllers\ConversationController;
 use App\Http\Controllers\EnchantmentController;
 use App\Http\Controllers\IndexController;
@@ -57,6 +58,7 @@ Route::middleware( 'auth.dev' )->group( function () {
     Route::get('/resources_list', [ResourceController::class, 'index'])->name('resources.index');
 
     Route::get('/enchantment', [EnchantmentController::class, 'index'])->name('enchantment');
+    Route::get('/chose-buffer', [ChoseBufferController::class, 'index'])->name('chose-buffer');
 
     Route::resource('recipes', RecipeController::class)->only(['index', 'show']);
     Route::resource('resources', ResourceController::class)->only(['show']);

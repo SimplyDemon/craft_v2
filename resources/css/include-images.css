@@ -16,4 +16,35 @@
     content: url("../image/sa/SA Green.webp");
     content: url("../image/sa/SA Blue.webp");
     content: url("../image/theme/posts-index.png");
+
+    /* PP */
+    content: url("../image/chose-buffer/pp/Bless Shield.webp");
+    content: url("../image/chose-buffer/pp/Counter Critical.webp");
+    content: url("../image/chose-buffer/pp/Bless the Body.webp");
+    content: url("../image/chose-buffer/pp/Bless the Soul.webp");
+    content: url("../image/chose-buffer/pp/Dryad Root.webp");
+    content: url("../image/chose-buffer/pp/Invigor.webp");
+    content: url("../image/chose-buffer/pp/Mental Shield.webp");
+    content: url("../image/chose-buffer/pp/Prophet.webp");
+    content: url("../image/chose-buffer/pp/Regeneration.webp");
+    content: url("../image/chose-buffer/pp/Resist Aqua.webp");
+    content: url("../image/chose-buffer/pp/Resist Dark.webp");
+    content: url("../image/chose-buffer/pp/Resist Earth.webp");
+    content: url("../image/chose-buffer/pp/Resist Fire.webp");
+    content: url("../image/chose-buffer/pp/Resist Holy.webp");
+    content: url("../image/chose-buffer/pp/Resist Poison.webp");
+    content: url("../image/chose-buffer/pp/Resist Wind.webp");
+    content: url("../image/chose-buffer/pp/Spell Force.webp");
+    content: url("../image/chose-buffer/pp/Holy Weapon.webp");
+
+    /* SE */
+    content: url("../image/chose-buffer/se/Chain Heal.webp");
+    content: url("../image/chose-buffer/se/Holy Pomander.webp");
+    content: url("../image/chose-buffer/se/SE.webp");
+
+    /* WC */
+    content: url("../image/chose-buffer/wc/Chant of Victory.webp");
+    content: url("../image/chose-buffer/wc/Gate Chant.webp");
+    content: url("../image/chose-buffer/wc/Great Fury.webp");
+    content: url("../image/chose-buffer/wc/WC.webp");
 }
