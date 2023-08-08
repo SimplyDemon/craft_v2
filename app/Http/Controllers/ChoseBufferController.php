@@ -11,8 +11,8 @@ class ChoseBufferController extends Controller
     public function index()
     {
 
-        $description = 'Какого выбрать баффера на старте? Всего за пару минут подберёшь идеальный вариант.';
-        $content = 'Думаешь какого баффера выбрать? Пройди быстрый опрос и подберём тебе идеальный вариант.';
+        $description = 'Какого выбрать бафера на старте? Всего за пару минут подберёшь идеальный вариант.';
+        $content = 'Извечный спорт ВК или ПП? А кого лучше взять магу? Сейчас мы быстро закроем эти вопросы!';
 
         $questions = [
             [
@@ -137,10 +137,15 @@ class ChoseBufferController extends Controller
             'Chain Heal',
             'Holy Pomander',
             'SE',
+            'PP',
             'Chant of Victory',
             'Gate Chant',
             'Great Fury',
             'WC',
+            'Battle Heal',
+            'Heal',
+            'Peace',
+            'Resurrection',
         ];
 
         foreach ($imagesList as $imageName) {

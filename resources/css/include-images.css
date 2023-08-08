@@ -25,7 +25,7 @@
     content: url("../image/chose-buffer/pp/Dryad Root.webp");
     content: url("../image/chose-buffer/pp/Invigor.webp");
     content: url("../image/chose-buffer/pp/Mental Shield.webp");
-    content: url("../image/chose-buffer/pp/Prophet.webp");
+    content: url("../image/chose-buffer/pp/PP.webp");
     content: url("../image/chose-buffer/pp/Regeneration.webp");
     content: url("../image/chose-buffer/pp/Resist Aqua.webp");
     content: url("../image/chose-buffer/pp/Resist Dark.webp");
@@ -36,6 +36,10 @@
     content: url("../image/chose-buffer/pp/Resist Wind.webp");
     content: url("../image/chose-buffer/pp/Spell Force.webp");
     content: url("../image/chose-buffer/pp/Holy Weapon.webp");
+    content: url("../image/chose-buffer/pp/Battle Heal.webp");
+    content: url("../image/chose-buffer/pp/Heal.webp");
+    content: url("../image/chose-buffer/pp/Peace.webp");
+    content: url("../image/chose-buffer/pp/Resurrection.webp");
 
     /* SE */
     content: url("../image/chose-buffer/se/Chain Heal.webp");

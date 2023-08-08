@@ -37,6 +37,11 @@
                 display: none;
             }
 
+            .chose__class-img {
+                margin-left: 10px;
+                margin-bottom: 10px;
+            }
+
         </style>
         <div class="container">
             <p>
