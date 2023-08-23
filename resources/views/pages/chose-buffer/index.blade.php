@@ -12,41 +12,12 @@
                 <h1 class="nk-title">{{ $title }}</h1>
             </div>
         </div>
-        <style>
-            .chose-buffer .question {
-                display: none;
-            }
 
-            .chose-buffer .question:first-child {
-                display: block;
-            }
-
-            .chose {
-                display: none;
-            }
-
-            .chose button {
-                display: none;
-            }
-
-            .question__buttons {
-                margin-top: 5px;
-            }
-
-            .why-not {
-                display: none;
-            }
-
-            .chose__class-img {
-                margin-left: 10px;
-                margin-bottom: 10px;
-            }
-
-        </style>
         <div class="container">
             <p>
                 {!! $content !!}
             </p>
+
 
             @include('pages.chose-buffer.parts.index.chose-pp')
             @include('pages.chose-buffer.parts.index.chose-wc')
@@ -62,11 +33,12 @@
                     @include('pages.chose-buffer.parts.index.question', [
                           'question' => $question,
                        ])
-
                 @endforeach
-
-
             </div>
+
+            <button class="nk-btn nk-btn-rounded nk-btn-color-main-1 reset-chose-buffer">
+                Сбросить
+            </button>
 
             <div class="nk-gap-4"></div>
             <div class="nk-gap-3"></div>

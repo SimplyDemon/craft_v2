@@ -1,0 +1,32 @@
+.chose-buffer .question {
+    display: none;
+}
+
+.chose-buffer .question:first-child {
+    display: block;
+}
+
+.chose {
+    display: none;
+}
+
+.chose button {
+    display: none;
+}
+
+.question__buttons {
+    margin-top: 5px;
+}
+
+.why-not {
+    display: none;
+}
+
+.chose__class-img {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.reset-chose-buffer {
+    display: none;
+}

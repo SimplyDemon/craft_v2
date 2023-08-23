@@ -91,6 +91,10 @@
         <link href="{{ mix('css/recipes.css') }}" rel="stylesheet">
     @endif
 
+    @if(Route::is('chose-buffer'))
+        <link href="{{ mix('css/chose-buffer.css') }}" rel="stylesheet">
+    @endif
+
     @if(Route::is('enchantment') )
         <link href="{{ mix('css/enchantment.css') }}" rel="stylesheet">
     @endif

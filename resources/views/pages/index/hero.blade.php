@@ -17,7 +17,10 @@
                             Респ РБ
                         </a>
                         <a href="{{route('enchantment')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
-                            <span class="index-new-button-span">NEW</span> <span>Калькулятор заточки</span>
+                            <span>Калькулятор заточки</span>
+                        </a>
+                        <a href="{{route('chose-buffer')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">
+                            <span class="index-new-button-span">NEW</span> <span>Выбор баффера</span>
                         </a>
 
                         <a href="{{route('non_craftable')}}" class="nk-btn nk-btn-lg nk-btn-color-main-1">

@@ -1,4 +1,3 @@
-console.log($('.question:first-child'));
 let isPhysic, isArcher, is83, is78, isSummoner, isUseFinalServitor;
 
 $('.chose-buffer button[data-answer="physic"]').not('.disabled').click(function (e) {
@@ -116,6 +115,7 @@ function choseWC(reason = '') {
     textBlock.removeClass('d-none');
     $('.chose__wc').fadeIn();
     $('.chose-buffer button[data-answer="why-not-pp"]').delay(3000).fadeIn();
+    showResetButton();
 }
 
 function chosePP(reason = '') {
@@ -132,11 +132,17 @@ function chosePP(reason = '') {
     textBlock.removeClass('d-none');
     $('.chose__pp').fadeIn();
     $('.chose-buffer button[data-answer="why-not-wc"]').delay(3000).fadeIn();
+    showResetButton();
 }
 
 function choseSE() {
     $('.chose__se').fadeIn();
     $('.chose-buffer button[data-answer="why-not-ee"]').delay(3000).fadeIn();
+    showResetButton();
+}
+
+function showResetButton() {
+    $('.reset-chose-buffer').delay(5000).fadeIn();
 }
 
 
@@ -159,3 +165,11 @@ $('.chose-buffer button[data-answer="why-not-wc"]').click(function (e) {
     $('.why-not__wc').show();
 });
 
+$('.reset-chose-buffer').click(function (e) {
+    $('.chose').hide();
+    $('.chose button').hide();
+    $('.questions .question').hide();
+    $('.why-not').hide();
+    $('.questions .question.class-type').show();
+    $('.reset-chose-buffer').hide();
+});
