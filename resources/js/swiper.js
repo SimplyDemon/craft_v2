@@ -189,8 +189,8 @@ function getEnchantmentBonus(grade, categoryId, isTwoHands) {
      * 37 - dagger
      * 38 - polearm
      * 39 - fist
-     * 42 - dual swords
-     * 43 - dual daggers
+     * 43 - dual swords
+     * 44 - dual daggers
      */
 
 
@@ -207,8 +207,8 @@ function getEnchantmentBonus(grade, categoryId, isTwoHands) {
                 enchantmentAttackP = oneHandIncreaseAttackP;
             }
             break;
-        case 42:
         case 43:
+        case 44:
         case 39:
             enchantmentAttackP = twoHandIncreaseAttackP;
             break;
